@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://qpnmemj38143"
+path="res://.godot/imported/Fish popapopapopapopa.ogg-46b792fa2e25e55289fbf3ac5868790c.oggvorbisstr"
+
+[deps]
+
+source_file="res://Fish the fishes/sounds/Fish popapopapopapopa.ogg"
+dest_files=["res://.godot/imported/Fish popapopapopapopa.ogg-46b792fa2e25e55289fbf3ac5868790c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://f8tkwqdr0cs8"
+path="res://.godot/imported/Fish fushfushfushfush.wav-74568b1fbf2b9ea5527a8b14d033a634.sample"
+
+[deps]
+
+source_file="res://Fish the fishes/sounds/Fish fushfushfushfush.wav"
+dest_files=["res://.godot/imported/Fish fushfushfushfush.wav-74568b1fbf2b9ea5527a8b14d033a634.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

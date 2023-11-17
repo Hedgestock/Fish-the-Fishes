@@ -1,0 +1,42 @@
+[gd_scene load_steps=11 format=3 uid="uid://bobu5ktj8jlil"]
+
+[ext_resource type="Script" path="res://Fish the fishes/FTFMain.cs" id="1_aa6xe"]
+[ext_resource type="PackedScene" uid="uid://oxxpqubwwblb" path="res://Fish the fishes/Fishes/AnguilleFish.tscn" id="2_2mx17"]
+[ext_resource type="PackedScene" uid="uid://ysvrflpejd5u" path="res://Fish the fishes/Fishes/YellowFish.tscn" id="2_ar1tq"]
+[ext_resource type="PackedScene" uid="uid://dsv67b7l0uq40" path="res://Fish the fishes/Fishes/GreenFish.tscn" id="2_ecihw"]
+[ext_resource type="PackedScene" uid="uid://kht2ykhuglmd" path="res://Fish the fishes/FTFHud.tscn" id="3_32l76"]
+[ext_resource type="PackedScene" uid="uid://co0xglrn1rvre" path="res://Fish the fishes/Trashes/Can.tscn" id="5_i1d7f"]
+[ext_resource type="PackedScene" uid="uid://8pxdejw8ptee" path="res://Fish the fishes/Trashes/Shoe.tscn" id="6_6svor"]
+[ext_resource type="PackedScene" uid="uid://lvuam8fndp75" path="res://Fish the fishes/Trashes/Tire.tscn" id="7_thtir"]
+[ext_resource type="Texture2D" uid="uid://xvra7re1p3ch" path="res://Fish the fishes/art/BG 1 FTF.png" id="8_fxx33"]
+[ext_resource type="PackedScene" uid="uid://bnkmwtljf2o3p" path="res://Fish the fishes/FishingLine.tscn" id="10_gmb6a"]
+
+[node name="FTFMain" type="Node"]
+script = ExtResource("1_aa6xe")
+Fishes = Array[PackedScene]([ExtResource("2_2mx17"), ExtResource("2_ecihw"), ExtResource("2_ar1tq")])
+Trashes = Array[PackedScene]([ExtResource("5_i1d7f"), ExtResource("6_6svor"), ExtResource("7_thtir")])
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_fxx33")
+
+[node name="FTFHud" parent="." instance=ExtResource("3_32l76")]
+
+[node name="FishTimer" type="Timer" parent="."]
+
+[node name="TrashTimer" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="FishingLine" parent="." instance=ExtResource("10_gmb6a")]
+visible = false
+
+[connection signal="EndGame" from="FTFHud" to="." method="EndGame"]
+[connection signal="StartGame" from="FTFHud" to="." method="StartGame"]
+[connection signal="timeout" from="FishTimer" to="." method="_on_fish_timer_timeout"]
+[connection signal="timeout" from="TrashTimer" to="." method="_on_trash_timer_timeout"]
+[connection signal="Hit" from="FishingLine" to="FTFHud" method="_on_fishing_line_hit"]
+[connection signal="Score" from="FishingLine" to="FTFHud" method="_on_fishing_line_score"]

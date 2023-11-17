@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cosdyyoyl7ays"
+path="res://.godot/imported/Toyouying.ogg-7c480974f403b7f1c3b07140781a5dcf.oggvorbisstr"
+
+[deps]
+
+source_file="res://Fish the fishes/sounds/Toyouying.ogg"
+dest_files=["res://.godot/imported/Toyouying.ogg-7c480974f403b7f1c3b07140781a5dcf.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

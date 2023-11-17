@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://8pxdejw8ptee"]
+
+[ext_resource type="PackedScene" uid="uid://cnjq5le44dwec" path="res://Fish the fishes/Trashes/Trash.tscn" id="1_2cnjb"]
+[ext_resource type="Texture2D" uid="uid://csin3qoh6ulue" path="res://Fish the fishes/art/shoe.png" id="2_puqq0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qhlts"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_puqq0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yx7oq"]
+size = Vector2(64, 64)
+
+[node name="Shoe" instance=ExtResource("1_2cnjb")]
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_qhlts")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("RectangleShape2D_yx7oq")
