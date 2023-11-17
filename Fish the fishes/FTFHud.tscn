@@ -94,6 +94,7 @@ text = "Score:
 horizontal_alignment = 1
 
 [node name="BackButton" type="TextureButton" parent="."]
+visible = false
 offset_left = 10.0
 offset_top = 10.0
 offset_right = 110.0
@@ -134,4 +135,3 @@ frame = 1
 frame_progress = 0.77835
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

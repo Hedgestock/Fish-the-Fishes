@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Godot"
-run/main_scene="res://Menu.tscn"
+config/name="Fish the Fishes"
+run/main_scene="res://Fish the fishes/FTFMain.tscn"
 config/features=PackedStringArray("4.2", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 

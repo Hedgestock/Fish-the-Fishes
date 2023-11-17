@@ -31,7 +31,7 @@ public partial class FTFHud : CanvasLayer
 	private void _on_start_button_pressed()
 	{
 		GetNode<Button>("StartButton").Hide();
-		GetNode<TextureButton>("BackButton").Hide();
+		//GetNode<TextureButton>("BackButton").Hide();
 		GetNode<Label>("Message").Hide();
 		GetNode<Label>("Score").Show();
 		LivesContainer.Show();
@@ -63,7 +63,7 @@ public partial class FTFHud : CanvasLayer
 		GetNode<Label>("Score").Hide();
 		LivesContainer.Hide();
 		GetNode<Button>("StartButton").Show();
-		GetNode<TextureButton>("BackButton").Show();
+		//GetNode<TextureButton>("BackButton").Show();
 		GetNode<Label>("Message").Text = "Score: \n" + score.ToString();
 		GetNode<Label>("Message").Show();
 		score = 0;
