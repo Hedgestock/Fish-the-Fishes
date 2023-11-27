@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bobu5ktj8jlil"]
+[gd_scene load_steps=12 format=3 uid="uid://bobu5ktj8jlil"]
 
 [ext_resource type="Script" path="res://Fish the fishes/FTFMain.cs" id="1_aa6xe"]
 [ext_resource type="PackedScene" uid="uid://oxxpqubwwblb" path="res://Fish the fishes/Fishes/AnguilleFish.tscn" id="2_2mx17"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://lvuam8fndp75" path="res://Fish the fishes/Trashes/Tire.tscn" id="7_thtir"]
 [ext_resource type="Texture2D" uid="uid://xvra7re1p3ch" path="res://Fish the fishes/art/BG 1 FTF.png" id="8_fxx33"]
 [ext_resource type="PackedScene" uid="uid://bnkmwtljf2o3p" path="res://Fish the fishes/FishingLine.tscn" id="10_gmb6a"]
+[ext_resource type="AudioStream" uid="uid://cejn28367eqbj" path="res://Fish the fishes/sounds/ftf.ogg" id="11_ifio5"]
 
 [node name="FTFMain" type="Node"]
 script = ExtResource("1_aa6xe")
@@ -33,6 +34,10 @@ wait_time = 3.0
 
 [node name="FishingLine" parent="." instance=ExtResource("10_gmb6a")]
 visible = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_ifio5")
+autoplay = true
 
 [connection signal="EndGame" from="FTFHud" to="." method="EndGame"]
 [connection signal="StartGame" from="FTFHud" to="." method="StartGame"]
