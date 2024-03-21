@@ -26,7 +26,7 @@ public partial class FTFMain : Node
 	
 	public void StartGame() {
 		GetNode<Timer>("FishTimer").Start();
-		//GetNode<Timer>("TrashTimer").Start();
+		GetNode<Timer>("TrashTimer").Start();
 		GetNode<FishingLine>("FishingLine").Show();
 	}
 

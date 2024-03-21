@@ -4,9 +4,9 @@
 [ext_resource type="FontFile" uid="uid://bfbfdje68lt7w" path="res://fonts/Amatic-Bold.ttf" id="1_achoq"]
 [ext_resource type="Texture2D" uid="uid://dvkg44r1oulcs" path="res://Fish the fishes/art/retour.png" id="3_q4sut"]
 [ext_resource type="Texture2D" uid="uid://bjbotgfwig38a" path="res://Fish the fishes/art/retour click.png" id="4_n1q1v"]
-[ext_resource type="Texture2D" uid="uid://be5i1d24vek86" path="res://Fish the fishes/art/Vie2.png" id="4_ryiyr"]
 [ext_resource type="Texture2D" uid="uid://bx8qk7jnypm0" path="res://Fish the fishes/art/retour hover.png" id="5_6fiq3"]
 [ext_resource type="Texture2D" uid="uid://bi3pts224egt6" path="res://Fish the fishes/art/Vie 1.png" id="5_obi1n"]
+[ext_resource type="Texture2D" uid="uid://r8hgxewljrec" path="res://Fish the fishes/art/Vie 2.png" id="6_2gp2q"]
 [ext_resource type="Texture2D" uid="uid://c05mhtfd1por7" path="res://Fish the fishes/art/Vie 3.png" id="6_ivpgh"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_e7hax"]
@@ -25,7 +25,7 @@ events = [SubResource("InputEventAction_qkuki")]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_ryiyr")
+"texture": ExtResource("6_2gp2q")
 }],
 "loop": true,
 "name": &"death",
@@ -115,23 +115,17 @@ position = Vector2(336, 32)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_3wgkp")
 animation = &"life"
-frame = 1
-frame_progress = 0.77835
 
 [node name="Life2" type="AnimatedSprite2D" parent="Lives"]
 position = Vector2(392, 32)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_3wgkp")
 animation = &"life"
-frame = 1
-frame_progress = 0.77835
 
 [node name="Life3" type="AnimatedSprite2D" parent="Lives"]
 position = Vector2(448, 32)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_3wgkp")
 animation = &"life"
-frame = 1
-frame_progress = 0.77835
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
