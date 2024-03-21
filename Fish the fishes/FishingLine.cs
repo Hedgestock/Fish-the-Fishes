@@ -6,13 +6,13 @@ using System;
 public partial class FishingLine : RigidBody2D
 {
 	enum State
-    {
+	{
 		Stopped,
 		Moving,
 		Fishing,
 		Hit,
 		Resetting
-    }
+	}
 
 	[Signal]
 	public delegate void ScoreEventHandler();
@@ -68,7 +68,8 @@ public partial class FishingLine : RigidBody2D
 					break;
 				case State.Fishing:
 					Hitbox.Disabled = true;
-					EmitSignal(SignalName.Score, score);
+					GD.Print("scoring : ", fibo2(score), " for fishes : ", score);
+					EmitSignal(SignalName.Score, fibo2(score));
 					score = 0;
 					Fishes.Clear();
 					Line.Animation = "loose";
@@ -88,8 +89,8 @@ public partial class FishingLine : RigidBody2D
 		}        
 	}
 
-    public override void _Input(InputEvent @event)
-    {
+	public override void _Input(InputEvent @event)
+	{
 		if (state != State.Stopped || Visible == false) return;
 		// Mouse in viewport coordinates.
 		if (@event is InputEventMouseButton eventMouseButton && @event.IsActionPressed("screen_tap"))
@@ -100,34 +101,49 @@ public partial class FishingLine : RigidBody2D
 	}
 
 	private void MoveTowards(Vector2 position)
-    {
-        destination = position;
-        start = Position;
-        LinearVelocity = (position - Position).Normalized() * speed;
-    }
+	{
+		destination = position;
+		start = Position;
+		LinearVelocity = (position - Position).Normalized() * speed;
+	}
 
 	void _on_area_2d_body_entered(Node2D body)
 	{
 		if (body is Fish)
-        {
+		{
 			Fishes.Add(body as Fish);
 			(body as Fish).LinearVelocity = LinearVelocity;
 			score++;
-        } else if (score > 0 && body is Trash)
-        {
+		} else if (score > 0 && body is Trash)
+		{
 			EmitSignal(SignalName.Hit);
 			score = 0;
 			GetNode<AudioStreamPlayer>("HitSound").Play();
 			foreach (Fish fish in Fishes)
-            {
+			{
 				fish.LinearVelocity = new Vector2(0, 0);
 				fish.GravityScale = 1;
-            }
+			}
 			Fishes.Clear();
 			LinearVelocity = new Vector2(0, 0);
 			Line.Animation = "hit";
 			Hitbox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
-            GetTree().CreateTimer(1).Timeout += () => { MoveTowards(destination); Line.Animation = "loose"; };
-        }
+			GetTree().CreateTimer(1).Timeout += () => { MoveTowards(destination); Line.Animation = "loose"; };
+		}
+	}
+
+
+	private uint fibo2(uint num)
+	{
+		if (num <= 1) return num;
+		uint prev = 1;
+		uint res = 1;
+		for (uint i = 0; i < num; i++)
+		{
+			uint tmp = res;
+			res += prev;
+			prev = tmp;
+		}
+		return res - 1;
 	}
 }
