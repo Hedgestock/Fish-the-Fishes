@@ -68,7 +68,6 @@ public partial class FishingLine : RigidBody2D
 					break;
 				case State.Fishing:
 					Hitbox.Disabled = true;
-					GD.Print("scoring : ", fibo2(score), " for fishes : ", score);
 					EmitSignal(SignalName.Score, fibo2(score));
 					score = 0;
 					Fishes.Clear();

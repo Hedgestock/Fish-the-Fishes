@@ -9,17 +9,17 @@
 [ext_resource type="Texture2D" uid="uid://r8hgxewljrec" path="res://Fish the fishes/art/Vie 2.png" id="6_2gp2q"]
 [ext_resource type="Texture2D" uid="uid://c05mhtfd1por7" path="res://Fish the fishes/art/Vie 3.png" id="6_ivpgh"]
 
-[sub_resource type="InputEventAction" id="InputEventAction_e7hax"]
-action = &"start_game"
-
-[sub_resource type="Shortcut" id="Shortcut_y7htk"]
-events = [SubResource("InputEventAction_e7hax")]
-
 [sub_resource type="InputEventAction" id="InputEventAction_qkuki"]
 action = &"menu_go_back"
 
 [sub_resource type="Shortcut" id="Shortcut_or0vj"]
 events = [SubResource("InputEventAction_qkuki")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_e7hax"]
+action = &"start_game"
+
+[sub_resource type="Shortcut" id="Shortcut_y7htk"]
+events = [SubResource("InputEventAction_e7hax")]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3wgkp"]
 animations = [{
@@ -46,7 +46,73 @@ animations = [{
 [node name="FTFHud" type="CanvasLayer"]
 script = ExtResource("1_7pjme")
 
-[node name="StartButton" type="Button" parent="."]
+[node name="Score" type="Label" parent="."]
+visible = false
+offset_left = 10.0
+offset_right = 50.0
+offset_bottom = 72.0
+theme_override_fonts/font = ExtResource("1_achoq")
+theme_override_font_sizes/font_size = 64
+text = "0"
+
+[node name="MenuUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackButton" type="TextureButton" parent="MenuUI"]
+visible = false
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 110.0
+offset_bottom = 110.0
+scale = Vector2(0.5, 0.5)
+shortcut = SubResource("Shortcut_or0vj")
+texture_normal = ExtResource("3_q4sut")
+texture_pressed = ExtResource("4_n1q1v")
+texture_hover = ExtResource("5_6fiq3")
+
+[node name="HighScore" type="Label" parent="MenuUI"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -77.0
+offset_top = 40.0
+offset_right = 77.0
+offset_bottom = 181.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_achoq")
+theme_override_font_sizes/font_size = 64
+text = "HighScore
+0"
+horizontal_alignment = 1
+
+[node name="Message" type="Label" parent="MenuUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -106.5
+offset_right = 48.0
+offset_bottom = 106.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_achoq")
+theme_override_font_sizes/font_size = 64
+text = "Fish
+The
+Fishes"
+horizontal_alignment = 1
+
+[node name="StartButton" type="Button" parent="MenuUI"]
+layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -64,46 +130,6 @@ theme_override_fonts/font = ExtResource("1_achoq")
 theme_override_font_sizes/font_size = 64
 shortcut = SubResource("Shortcut_y7htk")
 text = "Play"
-
-[node name="Score" type="Label" parent="."]
-visible = false
-offset_left = 10.0
-offset_right = 50.0
-offset_bottom = 72.0
-theme_override_fonts/font = ExtResource("1_achoq")
-theme_override_font_sizes/font_size = 64
-text = "0"
-
-[node name="Message" type="Label" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -48.0
-offset_top = -72.0
-offset_right = 48.0
-offset_bottom = 72.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("1_achoq")
-theme_override_font_sizes/font_size = 64
-text = "Fish
-The
-Fishes"
-horizontal_alignment = 1
-
-[node name="BackButton" type="TextureButton" parent="."]
-visible = false
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 110.0
-offset_bottom = 110.0
-scale = Vector2(0.5, 0.5)
-shortcut = SubResource("Shortcut_or0vj")
-texture_normal = ExtResource("3_q4sut")
-texture_pressed = ExtResource("4_n1q1v")
-texture_hover = ExtResource("5_6fiq3")
 
 [node name="Lives" type="HBoxContainer" parent="."]
 visible = false
@@ -128,4 +154,4 @@ scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_3wgkp")
 animation = &"life"
 
-[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MenuUI/StartButton" to="." method="_on_start_button_pressed"]

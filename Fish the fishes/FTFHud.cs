@@ -10,7 +10,8 @@ public partial class FTFHud : CanvasLayer
 	public delegate void EndGameEventHandler();
 
 	private uint score = 0;
-	private uint lives = 3;
+	private uint highScore = 0;
+    private uint lives = 3;
 
 	private HBoxContainer LivesContainer;
 	
@@ -30,9 +31,7 @@ public partial class FTFHud : CanvasLayer
 
 	private void _on_start_button_pressed()
 	{
-		GetNode<Button>("StartButton").Hide();
-		//GetNode<TextureButton>("BackButton").Hide();
-		GetNode<Label>("Message").Hide();
+		GetNode<Control>("MenuUI").Hide();
 		GetNode<Label>("Score").Show();
 		LivesContainer.Show();
 		EmitSignal(SignalName.StartGame);
@@ -60,12 +59,12 @@ public partial class FTFHud : CanvasLayer
 
 	private void ResetGame()
     {
+		if (score > highScore) highScore = score;
 		GetNode<Label>("Score").Hide();
 		LivesContainer.Hide();
-		GetNode<Button>("StartButton").Show();
-		//GetNode<TextureButton>("BackButton").Show();
-		GetNode<Label>("Message").Text = "Score: \n" + score.ToString();
-		GetNode<Label>("Message").Show();
+		GetNode<Label>("MenuUI/Message").Text = "Last Score: \n" + score.ToString();
+		GetNode<Label>("MenuUI/HighScore").Text = "High Score: \n" + highScore.ToString();
+        GetNode<Control>("MenuUI").Show();
 		score = 0;
 		lives = 3;
 		LivesContainer.GetNode<AnimatedSprite2D>("Life1").Animation = LivesContainer.GetNode<AnimatedSprite2D>("Life2").Animation = LivesContainer.GetNode<AnimatedSprite2D>("Life3").Animation = "life";
