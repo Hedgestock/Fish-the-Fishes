@@ -1,6 +1,5 @@
 using Godot;
 using Godot.Collections;
-using System;
 
 
 public partial class FishingLine : RigidBody2D
@@ -26,6 +25,7 @@ public partial class FishingLine : RigidBody2D
 	private Vector2 destination;
 	private Vector2 start;
 	private State state;
+	private bool invincible;
 
 	private uint score;
 
@@ -43,6 +43,7 @@ public partial class FishingLine : RigidBody2D
 		BasePosition = new Vector2(ScreenSize.X / 2, 50);
 		Position = BasePosition;
 		state = State.Stopped;
+		invincible = true;
 		Hitbox = GetNode<Area2D>("Area2D").GetNode<CollisionShape2D>("CollisionShape2D");
 		Hitbox.Disabled = true;
 		score = 0;
@@ -88,6 +89,11 @@ public partial class FishingLine : RigidBody2D
 		}        
 	}
 
+	public void setInvicibility(bool invincibility)
+	{
+		invincible = invincibility;
+	}
+
 	public override void _Input(InputEvent @event)
 	{
 		if (state != State.Stopped || Visible == false) return;
@@ -110,12 +116,13 @@ public partial class FishingLine : RigidBody2D
 	{
 		if (body is Fish)
 		{
+			GD.Print("body is Fish");
 			Fishes.Add(body as Fish);
 			(body as Fish).LinearVelocity = LinearVelocity;
 			score++;
-		} else if (score > 0 && body is Trash)
+		} else if (score > 0 && body is Trash && !invincible)
 		{
-			EmitSignal(SignalName.Hit);
+            EmitSignal(SignalName.Hit);
 			score = 0;
 			GetNode<AudioStreamPlayer>("HitSound").Play();
 			foreach (Fish fish in Fishes)

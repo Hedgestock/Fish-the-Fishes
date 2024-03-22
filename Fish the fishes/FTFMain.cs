@@ -74,4 +74,21 @@ public partial class FTFMain : Node
 		// Spawn the mob by adding it to the Main scene.
 		AddChild(trash);
 	}
+
+	private void _on_invicibility_area_entered(Area2D area)
+	{
+		var parent = area.GetParent();
+		if (parent is FishingLine) {
+			(parent as FishingLine).setInvicibility(true);
+		}
+	}
+
+    private void _on_invicibility_area_exited(Area2D area)
+    {
+        var parent = area.GetParent();
+        if (parent is FishingLine)
+        {
+            (parent as FishingLine).setInvicibility(false);
+        }
+    }
 }

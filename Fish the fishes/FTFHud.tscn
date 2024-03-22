@@ -65,6 +65,7 @@ grow_vertical = 2
 
 [node name="BackButton" type="TextureButton" parent="MenuUI"]
 visible = false
+layout_mode = 0
 offset_left = 10.0
 offset_top = 10.0
 offset_right = 110.0

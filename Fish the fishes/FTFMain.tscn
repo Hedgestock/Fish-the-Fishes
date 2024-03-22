@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bobu5ktj8jlil"]
+[gd_scene load_steps=13 format=3 uid="uid://bobu5ktj8jlil"]
 
 [ext_resource type="Script" path="res://Fish the fishes/FTFMain.cs" id="1_aa6xe"]
 [ext_resource type="PackedScene" uid="uid://oxxpqubwwblb" path="res://Fish the fishes/Fishes/AnguilleFish.tscn" id="2_2mx17"]
@@ -11,6 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://xvra7re1p3ch" path="res://Fish the fishes/art/BG 1 FTF.png" id="8_fxx33"]
 [ext_resource type="PackedScene" uid="uid://bnkmwtljf2o3p" path="res://Fish the fishes/FishingLine.tscn" id="10_gmb6a"]
 [ext_resource type="AudioStream" uid="uid://cejn28367eqbj" path="res://Fish the fishes/sounds/ftf.ogg" id="11_ifio5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aai3y"]
+radius = 12.0
+height = 236.0
 
 [node name="FTFMain" type="Node"]
 script = ExtResource("1_aa6xe")
@@ -35,6 +39,21 @@ wait_time = 3.0
 [node name="FishingLine" parent="." instance=ExtResource("10_gmb6a")]
 visible = false
 
+[node name="FrustrationFix" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Area2D" type="Area2D" parent="FrustrationFix"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FrustrationFix/Area2D"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_aai3y")
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_ifio5")
 autoplay = true
@@ -45,3 +64,5 @@ autoplay = true
 [connection signal="timeout" from="TrashTimer" to="." method="_on_trash_timer_timeout"]
 [connection signal="Hit" from="FishingLine" to="FTFHud" method="_on_fishing_line_hit"]
 [connection signal="Score" from="FishingLine" to="FTFHud" method="_on_fishing_line_score"]
+[connection signal="area_entered" from="FrustrationFix/Area2D" to="." method="_on_invicibility_area_entered"]
+[connection signal="area_exited" from="FrustrationFix/Area2D" to="." method="_on_invicibility_area_exited"]
