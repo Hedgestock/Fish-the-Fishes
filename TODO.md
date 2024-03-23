@@ -41,3 +41,10 @@
     - [ ] Allemand
     - [ ] Thai
 - [ ] Support de différentes tailles d'écran
+
+# Modes de jeu
+
+- [ ] Go green
+- [ ] training mode
+- [ ] contre la montre
+- [ ] zen
