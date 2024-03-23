@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://oxxpqubwwblb"]
 
-[ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Fish the fishes/Fishes/Fish.tscn" id="1_sfjne"]
+[ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Fish the fishes/Assets/Fishes/Fish.tscn" id="1_sfjne"]
 [ext_resource type="Texture2D" uid="uid://cwisgdsyedsof" path="res://Fish the fishes/art/anguille 1.png" id="2_jrhtn"]
 [ext_resource type="Texture2D" uid="uid://elowhxro52v4" path="res://Fish the fishes/art/anguille 3.png" id="3_72xx0"]
 [ext_resource type="Texture2D" uid="uid://b1u2xwtds4pv" path="res://Fish the fishes/art/anguille 2.png" id="4_bk7b7"]

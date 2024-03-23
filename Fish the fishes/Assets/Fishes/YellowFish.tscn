@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://ysvrflpejd5u"]
 
-[ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Fish the fishes/Fishes/Fish.tscn" id="1_tu3r7"]
+[ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Fish the fishes/Assets/Fishes/Fish.tscn" id="1_tu3r7"]
 [ext_resource type="Texture2D" uid="uid://dvl10p1p3g15b" path="res://Fish the fishes/art/yellow fish 1.png" id="3_fd2nb"]
 [ext_resource type="Texture2D" uid="uid://b188tojfwmkxm" path="res://Fish the fishes/art/yellow fish 2.png" id="4_c1sqc"]
 [ext_resource type="Texture2D" uid="uid://bj0btonslwrsr" path="res://Fish the fishes/art/yellow fish 3.png" id="5_170mi"]

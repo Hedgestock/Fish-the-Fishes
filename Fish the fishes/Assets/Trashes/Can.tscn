@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://co0xglrn1rvre"]
 
-[ext_resource type="PackedScene" uid="uid://cnjq5le44dwec" path="res://Fish the fishes/Trashes/Trash.tscn" id="1_jbe3e"]
+[ext_resource type="PackedScene" uid="uid://cnjq5le44dwec" path="res://Fish the fishes/Assets/Trashes/Trash.tscn" id="1_jbe3e"]
 [ext_resource type="Texture2D" uid="uid://baku04tyxkn56" path="res://Fish the fishes/art/can.png" id="2_yuwf3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_e3mf4"]

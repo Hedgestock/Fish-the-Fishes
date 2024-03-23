@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://mpb5fpciv02u"]
 
-[ext_resource type="Script" path="res://Fish the fishes/Fishes/Fish.cs" id="1_kms23"]
+[ext_resource type="Script" path="res://Fish the fishes/Assets/Fishes/Fish.cs" id="1_kms23"]
 
 [node name="Fish" type="RigidBody2D" groups=["items"]]
 collision_mask = 0

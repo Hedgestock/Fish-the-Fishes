@@ -12,7 +12,7 @@ public partial class SplashScreen : CanvasLayer
 		tween.TweenProperty(GetNode<CanvasModulate>("CanvasModulate"), "modulate", Colors.White, 2.0f);
 		tween.TweenProperty(GetNode<CanvasModulate>("CanvasModulate"), "modulate", Colors.White, 1.0f);
 		tween.TweenProperty(GetNode<CanvasModulate>("CanvasModulate"), "modulate", Colors.Black, 2.0f);
-		tween.TweenCallback(Callable.From(() => GetTree().ChangeSceneToFile("res://Fish the fishes/FTFMain.tscn")));
+		tween.TweenCallback(Callable.From(() => GetTree().ChangeSceneToFile("res://Fish the fishes/Scenes/FTFMain.tscn")));
 
 	}
 
