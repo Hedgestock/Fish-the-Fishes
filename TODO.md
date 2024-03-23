@@ -40,3 +40,4 @@
     - [ ] Français
     - [ ] Allemand
     - [ ] Thai
+- [ ] Support de différentes tailles d'écran
