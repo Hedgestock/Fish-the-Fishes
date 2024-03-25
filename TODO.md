@@ -16,11 +16,16 @@
 # Poissons
 
 - [ ] Poisson doré
+- [ ] Poisson rouge
 - [ ] Poisson venimeux
 - [ ] Poisson bombe
 - [ ] Poisson erratique
 - [ ] Crabe d'appat
 - [ ] Méduse de vie
+- [ ] Nautile bonus
+- [ ] Calamar encreur
+- [ ] Banc de poisson
+- [ ] Espadon embrocheur
 
 # Gameplay
 
