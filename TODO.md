@@ -24,8 +24,13 @@
 - [ ] Méduse de vie
 - [ ] Nautile bonus
 - [ ] Calamar encreur
-- [ ] Banc de poisson
+- [ ] Banc de poisson (sardines)
 - [ ] Espadon embrocheur
+- [ ] Étoile de mer d'invincibilité
+- [ ] Raie manta répulsive
+- [ ] Requin qui casse l'écran
+- [ ] Phoque qui attire l'orque
+- [ ] Orque
 
 # Gameplay
 
