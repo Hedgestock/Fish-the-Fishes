@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c317iayuk0325"
-path="res://.godot/imported/Bad fish 1.png-47713ae77bc64970c35003af8310a873.ctex"
+path="res://.godot/imported/red fish 1.png-e7e9a91c000e21b4ae68acbdbeffebba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fish the fishes/art/Bad fish 1.png"
-dest_files=["res://.godot/imported/Bad fish 1.png-47713ae77bc64970c35003af8310a873.ctex"]
+source_file="res://Fish the fishes/art/red fish 1.png"
+dest_files=["res://.godot/imported/red fish 1.png-e7e9a91c000e21b4ae68acbdbeffebba.ctex"]
 
 [params]
 

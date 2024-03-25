@@ -52,21 +52,9 @@ public partial class Game : Node
         bool flip = (GD.Randi() % 2) != 0;
         Vector2 fishSpawnLocation = new Vector2(flip ? -100 : ScreenSize.X + 100, (float)GD.RandRange(0, ScreenSize.Y));
         fish.Position = fishSpawnLocation;
+        fish.flip = flip;
 
-
-        if (flip)
-        {
-            fish.LinearVelocity = new Vector2((float)GD.RandRange(150.0, 250.0), 0);
-        }
-        else
-        {
-            fish.LinearVelocity = new Vector2((float)GD.RandRange(-150.0, -250.0), 0);
-        }
-
-        fish.GetNode<AnimatedSprite2D>("AnimatedSprite2D").FlipH = flip;
-
-
-        // Spawn the mob by adding it to the Main scene.
+        // spawn the mob by adding it to the main scene.
         AddChild(fish);
     }
 
