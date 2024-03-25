@@ -20,6 +20,7 @@ public partial class FTFHud : CanvasLayer
 		LivesContainer.GetNode<AnimatedSprite2D>("Life1").Play();
 		LivesContainer.GetNode<AnimatedSprite2D>("Life2").Play();
 		LivesContainer.GetNode<AnimatedSprite2D>("Life3").Play();
+
         GetNode<Label>("MenuUI/HighScore").Text = "High Score: \n" + gameManager.highScore.ToString();
 
     }

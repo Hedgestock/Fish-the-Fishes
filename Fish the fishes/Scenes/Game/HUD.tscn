@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://yi82g384vgwb"]
+
+[ext_resource type="Script" path="res://Fish the fishes/Scenes/Game/HUD.cs" id="1_6mcuw"]
+[ext_resource type="FontFile" uid="uid://bfbfdje68lt7w" path="res://fonts/Amatic-Bold.ttf" id="1_tvh2u"]
+[ext_resource type="Texture2D" uid="uid://r8hgxewljrec" path="res://Fish the fishes/art/Vie 2.png" id="2_47qlu"]
+[ext_resource type="Texture2D" uid="uid://bi3pts224egt6" path="res://Fish the fishes/art/Vie 1.png" id="3_o5krk"]
+[ext_resource type="Texture2D" uid="uid://c05mhtfd1por7" path="res://Fish the fishes/art/Vie 3.png" id="4_jt1fa"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_352nl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_47qlu")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_o5krk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jt1fa")
+}],
+"loop": true,
+"name": &"life",
+"speed": 5.0
+}]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_6mcuw")
+
+[node name="Score" type="Label" parent="."]
+offset_left = 10.0
+offset_right = 50.0
+offset_bottom = 72.0
+theme_override_fonts/font = ExtResource("1_tvh2u")
+theme_override_font_sizes/font_size = 64
+text = "0"
+
+[node name="Lives" type="HBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Life1" type="AnimatedSprite2D" parent="Lives"]
+position = Vector2(336, 32)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_352nl")
+animation = &"life"
+
+[node name="Life2" type="AnimatedSprite2D" parent="Lives"]
+position = Vector2(392, 32)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_352nl")
+animation = &"life"
+
+[node name="Life3" type="AnimatedSprite2D" parent="Lives"]
+position = Vector2(448, 32)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_352nl")
+animation = &"life"

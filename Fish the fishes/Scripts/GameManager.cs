@@ -3,10 +3,12 @@ using System;
 
 public partial class GameManager : Node
 {
+    public Game.Mode mode = Game.Mode.Classic;
     public uint score = 0;
     public uint highScore = 0;
     public uint lives = 3;
-    
+
+    public string PrevScene = "";
     private string saveFile = "user://data.save";
 
     // Called when the node enters the scene tree for the first time.
@@ -22,6 +24,7 @@ public partial class GameManager : Node
 
     private Godot.Collections.Dictionary<string, Variant> Save()
     {
+        if (score > highScore) { highScore = score; }
         return new Godot.Collections.Dictionary<string, Variant>()
         {
             { "HighScore", highScore },
@@ -62,5 +65,24 @@ public partial class GameManager : Node
             var nodeData = new Godot.Collections.Dictionary<string, Variant>((Godot.Collections.Dictionary)json.Data);
             highScore = (uint)nodeData["HighScore"];
         }
+    }
+
+    public void ChangeSceneToFile(string file)
+    {
+        PrevScene = GetTree().CurrentScene.SceneFilePath;
+        GetTree().ChangeSceneToFile(file);
+    }
+
+    public void ChangeSceneToPacked(PackedScene scene)
+    {
+        PrevScene = GetTree().CurrentScene.SceneFilePath;
+        GetTree().ChangeSceneToPacked(scene);
+    }
+
+    public void GoToPreviousScene()
+    {
+        var _tmpPrevScene = GetTree().CurrentScene.SceneFilePath;
+        GetTree().ChangeSceneToFile(PrevScene);
+        PrevScene = _tmpPrevScene;
     }
 }

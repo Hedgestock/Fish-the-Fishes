@@ -1,0 +1,61 @@
+[gd_scene load_steps=12 format=3 uid="uid://0sb3i5bm7j4p"]
+
+[ext_resource type="Texture2D" uid="uid://xvra7re1p3ch" path="res://Fish the fishes/art/BG 1 FTF.png" id="1_2rjoh"]
+[ext_resource type="Script" path="res://Fish the fishes/Scenes/Game/Game.cs" id="1_et1ja"]
+[ext_resource type="PackedScene" uid="uid://ysvrflpejd5u" path="res://Fish the fishes/Assets/Fishes/YellowFish.tscn" id="2_efly4"]
+[ext_resource type="PackedScene" uid="uid://yi82g384vgwb" path="res://Fish the fishes/Scenes/Game/HUD.tscn" id="3_0ebou"]
+[ext_resource type="PackedScene" uid="uid://bnkmwtljf2o3p" path="res://Fish the fishes/Assets/FishingLine.tscn" id="3_kichm"]
+[ext_resource type="PackedScene" uid="uid://dsv67b7l0uq40" path="res://Fish the fishes/Assets/Fishes/GreenFish.tscn" id="3_q5yjq"]
+[ext_resource type="PackedScene" uid="uid://oxxpqubwwblb" path="res://Fish the fishes/Assets/Fishes/AnguilleFish.tscn" id="4_npbod"]
+[ext_resource type="PackedScene" uid="uid://co0xglrn1rvre" path="res://Fish the fishes/Assets/Trashes/Can.tscn" id="5_lqe2k"]
+[ext_resource type="PackedScene" uid="uid://8pxdejw8ptee" path="res://Fish the fishes/Assets/Trashes/Shoe.tscn" id="6_vsv0t"]
+[ext_resource type="PackedScene" uid="uid://lvuam8fndp75" path="res://Fish the fishes/Assets/Trashes/Tire.tscn" id="7_7egbd"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ksc04"]
+radius = 12.0
+height = 236.0
+
+[node name="Game" type="Node"]
+script = ExtResource("1_et1ja")
+Fishes = Array[PackedScene]([ExtResource("2_efly4"), ExtResource("3_q5yjq"), ExtResource("4_npbod")])
+Trashes = Array[PackedScene]([ExtResource("5_lqe2k"), ExtResource("6_vsv0t"), ExtResource("7_7egbd")])
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+autoplay = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_2rjoh")
+
+[node name="HUD" parent="." instance=ExtResource("3_0ebou")]
+
+[node name="FishTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="TrashTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="FrustrationFix" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Area2D" type="Area2D" parent="FrustrationFix"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FrustrationFix/Area2D"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_ksc04")
+
+[node name="FishingLine" parent="." instance=ExtResource("3_kichm")]
+
+[connection signal="timeout" from="FishTimer" to="." method="_on_fish_timer_timeout"]
+[connection signal="timeout" from="TrashTimer" to="." method="_on_trash_timer_timeout"]

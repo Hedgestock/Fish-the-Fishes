@@ -1,0 +1,103 @@
+[gd_scene load_steps=12 format=3 uid="uid://blkg0i7vjb6il"]
+
+[ext_resource type="Texture2D" uid="uid://4sfuxo2673qo" path="res://Fish the fishes/art/BG 2 FTF.png" id="1_4aplq"]
+[ext_resource type="Script" path="res://Fish the fishes/Scenes/Home.cs" id="1_ptl5f"]
+[ext_resource type="Texture2D" uid="uid://dvkg44r1oulcs" path="res://Fish the fishes/art/retour.png" id="2_brr3r"]
+[ext_resource type="AudioStream" uid="uid://cejn28367eqbj" path="res://Fish the fishes/sounds/ftf.ogg" id="2_itj28"]
+[ext_resource type="Texture2D" uid="uid://bjbotgfwig38a" path="res://Fish the fishes/art/retour click.png" id="3_0m1qj"]
+[ext_resource type="Texture2D" uid="uid://bx8qk7jnypm0" path="res://Fish the fishes/art/retour hover.png" id="4_rfqgo"]
+[ext_resource type="FontFile" uid="uid://bfbfdje68lt7w" path="res://fonts/Amatic-Bold.ttf" id="5_l2w4f"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_qkuki"]
+action = &"menu_go_back"
+
+[sub_resource type="Shortcut" id="Shortcut_15eaq"]
+events = [SubResource("InputEventAction_qkuki")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_e7hax"]
+action = &"start_game"
+
+[sub_resource type="Shortcut" id="Shortcut_hi4rs"]
+events = [SubResource("InputEventAction_e7hax")]
+
+[node name="Home" type="CanvasLayer"]
+script = ExtResource("1_ptl5f")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_itj28")
+autoplay = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_4aplq")
+
+[node name="BackButton" type="TextureButton" parent="."]
+visible = false
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 110.0
+offset_bottom = 110.0
+scale = Vector2(0.5, 0.5)
+shortcut = SubResource("Shortcut_15eaq")
+texture_normal = ExtResource("2_brr3r")
+texture_pressed = ExtResource("3_0m1qj")
+texture_hover = ExtResource("4_rfqgo")
+
+[node name="HighScore" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -77.0
+offset_top = 40.0
+offset_right = 77.0
+offset_bottom = 181.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("5_l2w4f")
+theme_override_font_sizes/font_size = 64
+text = "HighScore
+0"
+horizontal_alignment = 1
+
+[node name="Message" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -106.5
+offset_right = 48.0
+offset_bottom = 106.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_l2w4f")
+theme_override_font_sizes/font_size = 64
+text = "Fish
+The
+Fishes"
+horizontal_alignment = 1
+
+[node name="ClassicButton" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -36.0
+offset_top = -140.0
+offset_right = 36.0
+offset_bottom = -63.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("5_l2w4f")
+theme_override_font_sizes/font_size = 64
+shortcut = SubResource("Shortcut_hi4rs")
+text = "Play"
+
+[connection signal="pressed" from="ClassicButton" to="." method="PlayClassic"]
