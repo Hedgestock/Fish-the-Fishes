@@ -9,6 +9,18 @@ public partial class Home : CanvasLayer
     public override void _Ready()
 	{
         gameManager = GetNode<GameManager>("/root/GameManager");
+
+        GetNode<Label>("HighScore").Text = "High Score: \n" + gameManager.highScore.ToString();
+
+        if (gameManager.PrevScene == "res://SplashScreen.tscn")
+        {
+            GetNode<AudioStreamPlayer>("AudioStreamPlayer").Play();
+
+        } else
+        {
+            GetNode<Label>("Message").Text = "Last Score: \n" + gameManager.score.ToString();
+
+        }
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.

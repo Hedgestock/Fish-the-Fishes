@@ -12,8 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://lvuam8fndp75" path="res://Fish the fishes/Assets/Trashes/Tire.tscn" id="7_7egbd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ksc04"]
-radius = 12.0
-height = 236.0
+radius = 18.0
+height = 350.0
 
 [node name="Game" type="Node"]
 script = ExtResource("1_et1ja")
@@ -57,5 +57,10 @@ shape = SubResource("CapsuleShape2D_ksc04")
 
 [node name="FishingLine" parent="." instance=ExtResource("3_kichm")]
 
+[connection signal="EndGame" from="HUD" to="." method="EndGame"]
 [connection signal="timeout" from="FishTimer" to="." method="_on_fish_timer_timeout"]
 [connection signal="timeout" from="TrashTimer" to="." method="_on_trash_timer_timeout"]
+[connection signal="area_entered" from="FrustrationFix/Area2D" to="FishingLine" method="MakeInvincible"]
+[connection signal="area_exited" from="FrustrationFix/Area2D" to="FishingLine" method="MakeVincible"]
+[connection signal="Hit" from="FishingLine" to="HUD" method="_on_fishing_line_hit"]
+[connection signal="Score" from="FishingLine" to="HUD" method="_on_fishing_line_score"]

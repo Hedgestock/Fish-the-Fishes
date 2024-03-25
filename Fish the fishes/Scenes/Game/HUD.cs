@@ -40,7 +40,7 @@ public partial class HUD : CanvasLayer
         LivesContainer.GetNode<AnimatedSprite2D>("Life" + (3 - gameManager.lives)).Animation = "death";
         if (gameManager.lives <= 0)
         {
-            GetTree().CreateTimer(1).Timeout += () => { EmitSignal(SignalName.EndGame); ResetGame(); };
+            GetTree().CreateTimer(1).Timeout += () => { EmitSignal(SignalName.EndGame); };
         }
     }
 

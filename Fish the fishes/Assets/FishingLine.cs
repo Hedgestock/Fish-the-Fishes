@@ -1,5 +1,6 @@
 using Godot;
 using Godot.Collections;
+using System;
 
 
 public partial class FishingLine : RigidBody2D
@@ -29,27 +30,29 @@ public partial class FishingLine : RigidBody2D
 
 	private uint score;
 
-	private Vector2 ScreenSize;
-	private Vector2 BasePosition;
+	private Vector2 screenSize;
+	private Vector2 basePosition;
 
-	private CollisionShape2D Hitbox;
-	private AnimatedSprite2D Line;
-	private Array<Fish> Fishes;
+	private Area2D area;
+	private CollisionShape2D hitbox;
+	private AnimatedSprite2D line;
+	private Array<Fish> fishes;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		ScreenSize = GetViewport().GetVisibleRect().Size;
-		BasePosition = new Vector2(ScreenSize.X / 2, 50);
-		Position = BasePosition;
+		screenSize = GetViewport().GetVisibleRect().Size;
+		basePosition = new Vector2(screenSize.X / 2, 50);
+		Position = basePosition;
 		state = State.Stopped;
-		invincible = true;
-		Hitbox = GetNode<Area2D>("Area2D").GetNode<CollisionShape2D>("CollisionShape2D");
-		Hitbox.Disabled = true;
+		invincible = false;
+		area = GetNode<Area2D>("Area2D");
+		hitbox = area.GetNode<CollisionShape2D>("CollisionShape2D");
+		hitbox.Disabled = true;
 		score = 0;
-		Fishes = new Array<Fish>();
-		Line = GetNode<AnimatedSprite2D>("Line");
-		Line.Play();
+		fishes = new Array<Fish>();
+		line = GetNode<AnimatedSprite2D>("Line");
+		line.Play();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -63,20 +66,20 @@ public partial class FishingLine : RigidBody2D
 			{
 				case State.Moving:
 					state = State.Fishing;
-					MoveTowards(new Vector2(ScreenSize.X / 2, -50));
-					Hitbox.Disabled = false;
-					Line.Animation = "weighted";
+					MoveTowards(new Vector2(screenSize.X / 2, -50));
+					hitbox.Disabled = false;
+					line.Animation = "weighted";
 					break;
 				case State.Fishing:
-					Hitbox.Disabled = true;
+					hitbox.Disabled = true;
 					EmitSignal(SignalName.Score, fibo2(score));
 					score = 0;
-					Fishes.Clear();
-					Line.Animation = "loose";
+					fishes.Clear();
+					line.Animation = "loose";
 					goto case State.Hit;
 				case State.Hit:
 					state = State.Resetting;
-					MoveTowards(BasePosition);
+					MoveTowards(basePosition);
 					break;
 				case State.Resetting:
 					state = State.Stopped;
@@ -89,12 +92,28 @@ public partial class FishingLine : RigidBody2D
 		}        
 	}
 
-	public void setInvicibility(bool invincibility)
+	private void setInvicibility(bool invincibility)
 	{
 		invincible = invincibility;
 	}
 
-	public override void _Input(InputEvent @event)
+    private void MakeInvincible(Area2D area)
+    {
+		if (area == this.area)
+		{
+            setInvicibility(true);
+		}
+    }
+
+    private void MakeVincible(Area2D area)
+    {
+        if (area == this.area)
+        {
+            setInvicibility(false);
+        }
+    }
+
+    public override void _Input(InputEvent @event)
 	{
 		if (state != State.Stopped || Visible == false) return;
 		// Mouse in viewport coordinates.
@@ -117,7 +136,7 @@ public partial class FishingLine : RigidBody2D
 		if (body is Fish)
 		{
 			GD.Print("body is Fish");
-			Fishes.Add(body as Fish);
+			fishes.Add(body as Fish);
 			(body as Fish).LinearVelocity = LinearVelocity;
 			score++;
 		} else if (score > 0 && body is Trash && !invincible)
@@ -125,16 +144,20 @@ public partial class FishingLine : RigidBody2D
             EmitSignal(SignalName.Hit);
 			score = 0;
 			GetNode<AudioStreamPlayer>("HitSound").Play();
-			foreach (Fish fish in Fishes)
+			foreach (Fish fish in fishes)
 			{
 				fish.LinearVelocity = new Vector2(0, 0);
 				fish.GravityScale = 1;
 			}
-			Fishes.Clear();
+			fishes.Clear();
 			LinearVelocity = new Vector2(0, 0);
-			Line.Animation = "hit";
-			Hitbox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
-			GetTree().CreateTimer(1).Timeout += () => { MoveTowards(destination); Line.Animation = "loose"; };
+			line.Animation = "hit";
+			hitbox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
+			GetTree().CreateTimer(1).Timeout += () => { MoveTowards(destination); line.Animation = "loose"; };
+		}
+		else
+		{
+			GD.Print(body);
 		}
 	}
 

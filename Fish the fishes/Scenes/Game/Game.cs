@@ -40,10 +40,8 @@ public partial class Game : Node
 
     public void EndGame()
     {
-        GetTree().CallGroup("items", Node.MethodName.QueueFree);
-        GetNode<Timer>("FishTimer").Stop();
-        GetNode<Timer>("TrashTimer").Stop();
-        GetNode<FishingLine>("FishingLine").Hide();
+        gameManager.SaveGame();
+        gameManager.ChangeSceneToFile("res://Fish the fishes/Scenes/Home.tscn");
     }
 
     private void _on_fish_timer_timeout()
@@ -82,23 +80,5 @@ public partial class Game : Node
 
         // Spawn the mob by adding it to the Main scene.
         AddChild(trash);
-    }
-
-    private void _on_invicibility_area_entered(Area2D area)
-    {
-        var parent = area.GetParent();
-        if (parent is FishingLine)
-        {
-            (parent as FishingLine).setInvicibility(true);
-        }
-    }
-
-    private void _on_invicibility_area_exited(Area2D area)
-    {
-        var parent = area.GetParent();
-        if (parent is FishingLine)
-        {
-            (parent as FishingLine).setInvicibility(false);
-        }
     }
 }

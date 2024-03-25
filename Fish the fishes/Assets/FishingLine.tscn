@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bnkmwtljf2o3p"]
+[gd_scene load_steps=9 format=3 uid="uid://bnkmwtljf2o3p"]
 
 [ext_resource type="Script" path="res://Fish the fishes/Assets/FishingLine.cs" id="1_n5cos"]
 [ext_resource type="Texture2D" uid="uid://bomtf706jn6xi" path="res://Fish the fishes/art/line 1.png" id="1_x570d"]
@@ -36,6 +36,8 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_tpqt2"]
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v6hva"]
 radius = 32.0
 height = 64.0
@@ -58,6 +60,7 @@ texture = ExtResource("3_j3quy")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+material = SubResource("CanvasItemMaterial_tpqt2")
 position = Vector2(0, 16)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_v6hva")
