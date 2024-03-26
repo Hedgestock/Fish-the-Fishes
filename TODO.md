@@ -24,7 +24,7 @@
 - [ ] Méduse de vie
 - [ ] Nautile bonus
 - [ ] Calamar encreur
-- [ ] Banc de poisson (sardines)
+- [x] Banc de poisson (sardines)
 - [ ] Espadon embrocheur
 - [ ] Étoile de mer d'invincibilité
 - [ ] Raie manta répulsive
@@ -43,6 +43,13 @@
     - [ ] Truc pour virer les déchêts
 - [ ] Ajouter des biomes et des niveaux de difficulté
 
+# Modes de jeu
+
+- [ ] Go green
+- [ ] training mode
+- [ ] contre la montre
+- [ ] zen
+
 # Autre
 
 - [ ] Support de différentes langues
@@ -51,10 +58,6 @@
     - [ ] Allemand
     - [ ] Thai
 - [ ] Support de différentes tailles d'écran
-
-# Modes de jeu
-
-- [ ] Go green
-- [ ] training mode
-- [ ] contre la montre
-- [ ] zen
+- [ ] Ajouter des poissons à chemins
+- [ ] Empêcher les poissons rouges de s'entretuer
+- [ ] Ajouter une probabilité d'apparition
