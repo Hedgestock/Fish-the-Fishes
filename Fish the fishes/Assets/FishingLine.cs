@@ -67,11 +67,11 @@ public partial class FishingLine : RigidBody2D
 				case State.Moving:
 					state = State.Fishing;
 					MoveTowards(new Vector2(screenSize.X / 2, -50));
-					hitbox.Disabled = false;
+					hitbox.SetDeferred(CollisionShape2D.PropertyName.Disabled, false);
 					line.Animation = "weighted";
 					break;
 				case State.Fishing:
-					hitbox.Disabled = true;
+					hitbox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
 					EmitSignal(SignalName.Score, fibo2(score));
 					score = 0;
 					fishes.Clear();
@@ -146,8 +146,7 @@ public partial class FishingLine : RigidBody2D
 			GetNode<AudioStreamPlayer>("HitSound").Play();
 			foreach (Fish fish in fishes)
 			{
-				fish.LinearVelocity = new Vector2(0, 0);
-				fish.GravityScale = 1;
+				fish.Die();
 			}
 			fishes.Clear();
 			LinearVelocity = new Vector2(0, 0);

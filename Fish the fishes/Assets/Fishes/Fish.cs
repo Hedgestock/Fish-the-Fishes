@@ -6,12 +6,24 @@ public partial class Fish : RigidBody2D
 {
 	public bool flip = false;
 
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
+    private AnimatedSprite2D sprite;
+	private CollisionShape2D hurtBox;
+
+    // Called when the node enters the scene tree for the first time.
+    public override void _Ready()
 	{
-		LinearVelocity = new Vector2((float)GD.RandRange(150.0, 250.0) * (flip ? 1 : -1), 0);
-        //GetNode<AnimatedSprite2D>("AnimatedSprite2D").FlipH = flip;
-        GetNode<AnimatedSprite2D>("AnimatedSprite2D").Play();
+		sprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+		hurtBox = GetNode<CollisionShape2D>("HurtBox");
+
+        LinearVelocity = new Vector2((float)GD.RandRange(150.0, 250.0) * (flip ? 1 : -1), 0);
+		sprite.FlipH = flip;
+		if (flip)
+		{
+			Flip(GetNode<CollisionShape2D>("HurtBox"));
+        }
+
+		sprite.Animation = "alive";
+        sprite.Play();
     }
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -23,6 +35,25 @@ public partial class Fish : RigidBody2D
 	{
 		GetTree().CreateTimer(1).Timeout += QueueFree;
 	}
+
+	protected void Flip(Node2D node)
+	{
+        Vector2 unflipped = node.Position;
+        node.Position = new Vector2(unflipped.X * -1, unflipped.Y);
+    }
+
+    public void Trigger()
+	{
+		Die();
+	}
+
+	public void Die()
+	{
+        hurtBox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
+        LinearVelocity = new Vector2(0, 0);
+        GravityScale = 1;
+		sprite.Animation = "dead";
+    }
 }
 
 
