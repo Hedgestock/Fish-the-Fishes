@@ -42,9 +42,8 @@ animations = [{
 radius = 32.0
 height = 64.0
 
-[node name="FishingLine" type="RigidBody2D"]
+[node name="FishingLine" type="CharacterBody2D"]
 collision_mask = 0
-gravity_scale = 0.0
 script = ExtResource("1_n5cos")
 speed = 800
 

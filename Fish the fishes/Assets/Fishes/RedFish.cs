@@ -25,7 +25,7 @@ public partial class RedFish : Fish
 	{
         if (body != this && body is Fish)
 		{
-			(body as Fish).Die();
+			(body as Fish).Kill();
 		}
     }
 }

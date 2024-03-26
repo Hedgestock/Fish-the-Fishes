@@ -3,7 +3,7 @@ using Godot.Collections;
 using System;
 
 
-public partial class FishingLine : RigidBody2D
+public partial class FishingLine : CharacterBody2D
 {
 	enum State
 	{
@@ -28,8 +28,6 @@ public partial class FishingLine : RigidBody2D
 	private State state;
 	private bool invincible;
 
-	private uint score;
-
 	private Vector2 screenSize;
 	private Vector2 basePosition;
 
@@ -49,7 +47,6 @@ public partial class FishingLine : RigidBody2D
 		area = GetNode<Area2D>("Area2D");
 		hitbox = area.GetNode<CollisionShape2D>("CollisionShape2D");
 		hitbox.Disabled = true;
-		score = 0;
 		fishes = new Array<Fish>();
 		line = GetNode<AnimatedSprite2D>("Line");
 		line.Play();
@@ -58,9 +55,13 @@ public partial class FishingLine : RigidBody2D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+		
 		if (state == State.Stopped) return;
 
-		if (start.DistanceTo(Position) > start.DistanceTo(destination))
+        MoveAndSlide();
+
+
+        if (start.DistanceTo(Position) > start.DistanceTo(destination))
 		{
 			switch (state)
 			{
@@ -72,8 +73,7 @@ public partial class FishingLine : RigidBody2D
 					break;
 				case State.Fishing:
 					hitbox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
-					EmitSignal(SignalName.Score, fibo2(score));
-					score = 0;
+					EmitSignal(SignalName.Score, ComputeScore());
 					fishes.Clear();
 					line.Animation = "loose";
 					goto case State.Hit;
@@ -83,13 +83,14 @@ public partial class FishingLine : RigidBody2D
 					break;
 				case State.Resetting:
 					state = State.Stopped;
-					LinearVelocity = new Vector2(0, 0);
+					Velocity = new Vector2(0, 0);
 					break;
 				case State.Stopped:
 				default:
 					return;
 			}
-		}        
+		} 
+		
 	}
 
 	private void setInvicibility(bool invincibility)
@@ -128,47 +129,60 @@ public partial class FishingLine : RigidBody2D
 	{
 		destination = position;
 		start = Position;
-		LinearVelocity = (position - Position).Normalized() * speed;
+        Velocity = (position - Position).Normalized() * speed;
 	}
 
 	void _on_area_2d_body_entered(Node2D body)
 	{
 		if (body is Fish)
 		{
-			GD.Print("body is Fish");
-			fishes.Add(body as Fish);
-			(body as Fish).LinearVelocity = LinearVelocity;
-			score++;
-		} else if (score > 0 && body is Trash && !invincible)
+			Fish fish = (Fish) body;
+			fishes.Add(fish);
+			fish.Catch();
+			fish.LinearVelocity = Velocity;
+		} else if (fishes.Count > 0 && body is Trash && !invincible)
 		{
             EmitSignal(SignalName.Hit);
-			score = 0;
 			GetNode<AudioStreamPlayer>("HitSound").Play();
 			foreach (Fish fish in fishes)
 			{
-				fish.Die();
+				fish.Kill();
 			}
 			fishes.Clear();
-			LinearVelocity = new Vector2(0, 0);
+			Velocity = new Vector2(0, 0);
 			line.Animation = "hit";
 			hitbox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
 			GetTree().CreateTimer(1).Timeout += () => { MoveTowards(destination); line.Animation = "loose"; };
 		}
-		else
-		{
-			GD.Print(body);
-		}
 	}
 
+	private int ComputeScore()
+	{
+		float scoref = 0;
+        foreach (Fish fish in fishes)
+        {
+			scoref += fish.value;
+        }
+		int score = fibo2((int)Math.Ceiling(scoref));
+        foreach (Fish fish in fishes)
+        {
+			if (fish.isNegative)
+			{
+				score = -score;
+				break;
+			}
+        }
+        return score;
+    }
 
-	private uint fibo2(uint num)
+	private int fibo2(int num)
 	{
 		if (num <= 1) return num;
-		uint prev = 1;
-		uint res = 1;
-		for (uint i = 0; i < num; i++)
+		int prev = 1;
+		int res = 1;
+		for (int i = 0; i < num; i++)
 		{
-			uint tmp = res;
+			int tmp = res;
 			res += prev;
 			prev = tmp;
 		}

@@ -1,14 +1,15 @@
-[gd_scene load_steps=13 format=3 uid="uid://0sb3i5bm7j4p"]
+[gd_scene load_steps=14 format=3 uid="uid://0sb3i5bm7j4p"]
 
 [ext_resource type="Texture2D" uid="uid://xvra7re1p3ch" path="res://Fish the fishes/art/BG 1 FTF.png" id="1_2rjoh"]
 [ext_resource type="Script" path="res://Fish the fishes/Scenes/Game/Game.cs" id="1_et1ja"]
-[ext_resource type="PackedScene" uid="uid://ysvrflpejd5u" path="res://Fish the fishes/Assets/Fishes/YellowFish.tscn" id="2_efly4"]
+[ext_resource type="PackedScene" uid="uid://c0df7a2ej0abq" path="res://Fish the fishes/Assets/Fishes/SardineFish.tscn" id="2_1m73u"]
 [ext_resource type="PackedScene" uid="uid://yi82g384vgwb" path="res://Fish the fishes/Scenes/Game/HUD.tscn" id="3_0ebou"]
+[ext_resource type="PackedScene" uid="uid://ysvrflpejd5u" path="res://Fish the fishes/Assets/Fishes/YellowFish.tscn" id="3_4fml3"]
 [ext_resource type="PackedScene" uid="uid://bnkmwtljf2o3p" path="res://Fish the fishes/Assets/FishingLine.tscn" id="3_kichm"]
-[ext_resource type="PackedScene" uid="uid://dsv67b7l0uq40" path="res://Fish the fishes/Assets/Fishes/GreenFish.tscn" id="3_q5yjq"]
-[ext_resource type="PackedScene" uid="uid://oxxpqubwwblb" path="res://Fish the fishes/Assets/Fishes/AnguilleFish.tscn" id="4_npbod"]
+[ext_resource type="PackedScene" uid="uid://ct3hvitsd17g5" path="res://Fish the fishes/Assets/Fishes/RedFish.tscn" id="4_ve4bt"]
+[ext_resource type="PackedScene" uid="uid://dsv67b7l0uq40" path="res://Fish the fishes/Assets/Fishes/GreenFish.tscn" id="5_3egut"]
 [ext_resource type="PackedScene" uid="uid://co0xglrn1rvre" path="res://Fish the fishes/Assets/Trashes/Can.tscn" id="5_lqe2k"]
-[ext_resource type="PackedScene" uid="uid://ct3hvitsd17g5" path="res://Fish the fishes/Assets/Fishes/RedFish.tscn" id="5_mj6mv"]
+[ext_resource type="PackedScene" uid="uid://oxxpqubwwblb" path="res://Fish the fishes/Assets/Fishes/AnguilleFish.tscn" id="6_3ne2k"]
 [ext_resource type="PackedScene" uid="uid://8pxdejw8ptee" path="res://Fish the fishes/Assets/Trashes/Shoe.tscn" id="6_vsv0t"]
 [ext_resource type="PackedScene" uid="uid://lvuam8fndp75" path="res://Fish the fishes/Assets/Trashes/Tire.tscn" id="7_7egbd"]
 
@@ -18,7 +19,7 @@ height = 350.0
 
 [node name="Game" type="Node"]
 script = ExtResource("1_et1ja")
-Fishes = Array[PackedScene]([ExtResource("2_efly4"), ExtResource("3_q5yjq"), ExtResource("4_npbod"), ExtResource("5_mj6mv")])
+Fishes = Array[PackedScene]([ExtResource("2_1m73u"), ExtResource("3_4fml3"), ExtResource("4_ve4bt"), ExtResource("5_3egut"), ExtResource("6_3ne2k")])
 Trashes = Array[PackedScene]([ExtResource("5_lqe2k"), ExtResource("6_vsv0t"), ExtResource("7_7egbd")])
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -35,7 +36,6 @@ texture = ExtResource("1_2rjoh")
 [node name="HUD" parent="." instance=ExtResource("3_0ebou")]
 
 [node name="FishTimer" type="Timer" parent="."]
-wait_time = 0.2
 autostart = true
 
 [node name="TrashTimer" type="Timer" parent="."]

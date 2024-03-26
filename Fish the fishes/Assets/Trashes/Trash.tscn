@@ -5,6 +5,7 @@
 [node name="Trash" type="RigidBody2D" groups=["items"]]
 collision_mask = 0
 gravity_scale = 0.1
+lock_rotation = true
 script = ExtResource("1_8ptuq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
