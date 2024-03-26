@@ -11,6 +11,9 @@ public partial class SardineFish : Fish
     public override void _Ready()
 	{
 		base._Ready();
+        sprite.SpeedScale = GD.Randf() + 0.5f;
+        float modulation = (float)GD.RandRange(0.8, 1.2);
+        sprite.SelfModulate = new Color(modulation, modulation, modulation, 1);
         SpawnShoalMember();
     }
 
@@ -21,15 +24,18 @@ public partial class SardineFish : Fish
 
     private void SpawnShoalMember()
     {
-        
+
         if (GD.Randi() % shoalSize == 0) return;
 
-        int offsetX = ((int)GD.Randi() % shoalRadius) - shoalRadius/2;
-        int offsetY = ((int)GD.Randi() % shoalRadius) - shoalRadius/2;
+        float newPosX = Position.X + (GD.Randi() % shoalRadius) - shoalRadius / 2;
+        float newPosY = Position.Y + (GD.Randi() % shoalRadius) - shoalRadius / 2;
+
+        if (newPosX > -20 && newPosX < GetViewport().GetVisibleRect().Size.X + 20)
+                newPosX = flip ? -20 : GetViewport().GetVisibleRect().Size.X + 20;
 
         Fish fish = ResourceLoader.Load<PackedScene>(SceneFilePath).Instantiate() as Fish;
 
-        Vector2 fishSpawnLocation = new Vector2(Position.X + offsetX, Position.Y + offsetY);
+        Vector2 fishSpawnLocation = new Vector2(newPosX, newPosY);
 
         fish.Position = fishSpawnLocation;
         fish.LinearVelocity = LinearVelocity;

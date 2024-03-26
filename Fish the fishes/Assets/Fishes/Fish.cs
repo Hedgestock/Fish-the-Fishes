@@ -4,7 +4,7 @@ using System;
 
 public partial class Fish : RigidBody2D
 {
-    enum State
+    protected enum State
     {
         Alive,
 		Dead
@@ -21,9 +21,9 @@ public partial class Fish : RigidBody2D
 
     public bool flip = false;
 
-    private AnimatedSprite2D sprite;
-	private CollisionShape2D hurtBox;
-	private State state;
+    protected AnimatedSprite2D sprite;
+	protected CollisionShape2D hurtBox;
+	protected State state;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()

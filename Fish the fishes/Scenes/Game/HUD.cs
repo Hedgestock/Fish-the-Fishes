@@ -30,7 +30,6 @@ public partial class HUD : CanvasLayer
 
     private void _on_fishing_line_score(int score)
     {
-        GD.Print("scoring: ",  score);
         // We need to do this to avoid uint underflow
         if (-score > gameManager.score) gameManager.score = 0;
         else gameManager.score = (uint)((int)gameManager.score +  score);

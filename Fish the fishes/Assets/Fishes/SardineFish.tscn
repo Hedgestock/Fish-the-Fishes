@@ -1,23 +1,31 @@
-[gd_scene load_steps=6 format=3 uid="uid://c0df7a2ej0abq"]
+[gd_scene load_steps=8 format=3 uid="uid://c0df7a2ej0abq"]
 
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Fish the fishes/Assets/Fishes/Fish.tscn" id="1_alpsf"]
 [ext_resource type="Script" path="res://Fish the fishes/Assets/Fishes/SardineFish.cs" id="2_fqsd3"]
-[ext_resource type="Texture2D" uid="uid://c5irwduqs58yb" path="res://Fish the fishes/art/sardine.png" id="3_e6fed"]
+[ext_resource type="Texture2D" uid="uid://bqntm4q0nil8i" path="res://Fish the fishes/art/sardine 1.png" id="3_v2pw4"]
+[ext_resource type="Texture2D" uid="uid://bn7r241d2ehsj" path="res://Fish the fishes/art/sardine 2.png" id="4_utswb"]
+[ext_resource type="Texture2D" uid="uid://d0qv8h3333jiv" path="res://Fish the fishes/art/sardine 3.png" id="5_tpf2o"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6mf8i"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_e6fed")
+"texture": ExtResource("3_v2pw4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_utswb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_v2pw4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tpf2o")
 }],
 "loop": true,
 "name": &"alive",
-"speed": 5.0
+"speed": 8.0
 }, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_e6fed")
-}],
+"frames": [],
 "loop": true,
 "name": &"dead",
 "speed": 5.0
@@ -28,7 +36,7 @@ height = 52.0
 
 [node name="SardineFish" instance=ExtResource("1_alpsf")]
 script = ExtResource("2_fqsd3")
-shoalRadius = 20
+shoalRadius = 40
 shoalSize = 6
 value = 0.5
 
@@ -37,5 +45,6 @@ sprite_frames = SubResource("SpriteFrames_6mf8i")
 animation = &"alive"
 
 [node name="HurtBox" parent="." index="2"]
+visible = false
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_8sec2")
