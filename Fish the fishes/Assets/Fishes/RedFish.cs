@@ -23,7 +23,7 @@ public partial class RedFish : Fish
 
 	private void _on_body_entered(Node body)
 	{
-        if (body != this && body is Fish)
+        if (body is Fish && !(body is RedFish))
 		{
 			(body as Fish).Kill();
 		}

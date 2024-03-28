@@ -1,0 +1,64 @@
+[gd_scene load_steps=10 format=3 uid="uid://degr1jad0c22l"]
+
+[ext_resource type="Script" path="res://Fish the fishes/Scenes/Game/Game.cs" id="1_xyk67"]
+[ext_resource type="PackedScene" uid="uid://ct3hvitsd17g5" path="res://Fish the fishes/Assets/Fishes/RedFish.tscn" id="4_b6f4y"]
+[ext_resource type="PackedScene" uid="uid://co0xglrn1rvre" path="res://Fish the fishes/Assets/Trashes/Can.tscn" id="7_shv3f"]
+[ext_resource type="PackedScene" uid="uid://8pxdejw8ptee" path="res://Fish the fishes/Assets/Trashes/Shoe.tscn" id="8_lgmqh"]
+[ext_resource type="PackedScene" uid="uid://lvuam8fndp75" path="res://Fish the fishes/Assets/Trashes/Tire.tscn" id="9_d7khh"]
+[ext_resource type="Texture2D" uid="uid://xvra7re1p3ch" path="res://Fish the fishes/art/BG 1 FTF.png" id="10_1aid6"]
+[ext_resource type="PackedScene" uid="uid://yi82g384vgwb" path="res://Fish the fishes/Scenes/Game/HUD.tscn" id="11_icwb4"]
+[ext_resource type="PackedScene" uid="uid://bnkmwtljf2o3p" path="res://Fish the fishes/Assets/FishingLine.tscn" id="12_7y5im"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ksc04"]
+radius = 18.0
+height = 350.0
+
+[node name="Game" type="Node"]
+script = ExtResource("1_xyk67")
+Fishes = Array[PackedScene]([ExtResource("4_b6f4y")])
+Trashes = Array[PackedScene]([ExtResource("7_shv3f"), ExtResource("8_lgmqh"), ExtResource("9_d7khh")])
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+autoplay = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_1aid6")
+
+[node name="HUD" parent="." instance=ExtResource("11_icwb4")]
+
+[node name="FishTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="TrashTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="FrustrationFix" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Area2D" type="Area2D" parent="FrustrationFix"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FrustrationFix/Area2D"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_ksc04")
+
+[node name="FishingLine" parent="." instance=ExtResource("12_7y5im")]
+
+[connection signal="EndGame" from="HUD" to="." method="EndGame"]
+[connection signal="timeout" from="FishTimer" to="." method="_on_fish_timer_timeout"]
+[connection signal="timeout" from="TrashTimer" to="." method="_on_trash_timer_timeout"]
+[connection signal="area_entered" from="FrustrationFix/Area2D" to="FishingLine" method="MakeInvincible"]
+[connection signal="area_exited" from="FrustrationFix/Area2D" to="FishingLine" method="MakeVincible"]
+[connection signal="Hit" from="FishingLine" to="HUD" method="_on_fishing_line_hit"]
+[connection signal="Score" from="FishingLine" to="HUD" method="_on_fishing_line_score"]
