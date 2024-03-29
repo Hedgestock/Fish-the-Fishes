@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Fish the fishes/Assets/Fishes/Fish.cs" id="1_kms23"]
 
-[node name="Fish" type="RigidBody2D" groups=["items"]]
+[node name="Fish" type="RigidBody2D" groups=["Fishes"]]
 collision_mask = 0
 gravity_scale = 0.0
 lock_rotation = true
@@ -10,7 +10,9 @@ script = ExtResource("1_kms23")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Flipacious" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Flipacious"]
 
 [node name="HurtBox" type="CollisionShape2D" parent="."]
 

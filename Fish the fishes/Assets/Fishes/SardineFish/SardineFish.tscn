@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0df7a2ej0abq"]
+
+[ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Fish the fishes/Assets/Fishes/Fish.tscn" id="1_wxgi5"]
+[ext_resource type="Script" path="res://Fish the fishes/Assets/Fishes/SardineFish/SardineFish.cs" id="2_kltwx"]
+[ext_resource type="SpriteFrames" uid="uid://dytgg6dbrwhc7" path="res://Fish the fishes/Assets/Fishes/SardineFish/SardineFishAnimation.tres" id="3_kidlv"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8sec2"]
+radius = 8.0
+height = 52.0
+
+[node name="SardineFish" instance=ExtResource("1_wxgi5")]
+script = ExtResource("2_kltwx")
+value = 0.5
+shoalRadius = 40
+shoalSize = 6
+
+[node name="HurtBox" parent="." index="1"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_8sec2")
+
+[node name="AnimatedSprite2D" parent="Flipacious" index="0"]
+sprite_frames = ExtResource("3_kidlv")
+animation = &"alive"
+frame_progress = 0.650529

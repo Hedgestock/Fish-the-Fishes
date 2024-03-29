@@ -7,13 +7,6 @@ public partial class RedFish : Fish
 	public override void _Ready()
 	{
 		base._Ready();
-		if (flip)
-		{
-            if (flip)
-            {
-                Flip(GetNode<Area2D>("HitBox"));
-            }
-        }
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

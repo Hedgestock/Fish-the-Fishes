@@ -1,38 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://oxxpqubwwblb"]
+[gd_scene load_steps=6 format=3 uid="uid://oxxpqubwwblb"]
 
-[ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Fish the fishes/Assets/Fishes/Fish.tscn" id="1_sfjne"]
-[ext_resource type="Texture2D" uid="uid://cwisgdsyedsof" path="res://Fish the fishes/art/anguille 1.png" id="2_jrhtn"]
-[ext_resource type="Texture2D" uid="uid://elowhxro52v4" path="res://Fish the fishes/art/anguille 3.png" id="3_72xx0"]
-[ext_resource type="Texture2D" uid="uid://b1u2xwtds4pv" path="res://Fish the fishes/art/anguille 2.png" id="4_bk7b7"]
-[ext_resource type="Texture2D" uid="uid://nu1vrcd84eeo" path="res://Fish the fishes/art/anguille dead.png" id="5_cjod5"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_jmhcu"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_jrhtn")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_72xx0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_bk7b7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_72xx0")
-}],
-"loop": true,
-"name": &"alive",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_cjod5")
-}],
-"loop": true,
-"name": &"dead",
-"speed": 5.0
-}]
+[ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Fish the fishes/Assets/Fishes/Fish.tscn" id="1_d3b32"]
+[ext_resource type="SpriteFrames" uid="uid://l22v2s0dn5uh" path="res://Fish the fishes/Assets/Fishes/AnguilleFish/AnguilleFishAnimation.tres" id="2_2ati3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lvcgl"]
 radius = 22.0
@@ -47,15 +16,16 @@ sampling_rate = 44100.0
 packet_sequence = SubResource("OggPacketSequence_yp0lj")
 loop = true
 
-[node name="AnguilleFish" instance=ExtResource("1_sfjne")]
+[node name="AnguilleFish" instance=ExtResource("1_d3b32")]
 
-[node name="AnimatedSprite2D" parent="." index="1"]
-sprite_frames = SubResource("SpriteFrames_jmhcu")
-animation = &"alive"
-
-[node name="HurtBox" parent="." index="2"]
+[node name="HurtBox" parent="." index="1"]
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_lvcgl")
+
+[node name="AnimatedSprite2D" parent="Flipacious" index="0"]
+sprite_frames = ExtResource("2_2ati3")
+animation = &"alive"
+frame_progress = 0.156995
 
 [node name="AudioStreamPlayer" parent="." index="3"]
 stream = SubResource("AudioStreamOggVorbis_pqph6")

@@ -1,0 +1,34 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://dxpxq818n4txw"]
+
+[ext_resource type="Texture2D" uid="uid://d1f2bts2l28am" path="res://Fish the fishes/art/green fish 1.png" id="1_oiurm"]
+[ext_resource type="Texture2D" uid="uid://bnk8nt1dxqr2r" path="res://Fish the fishes/art/green fish 3.png" id="2_n3y1v"]
+[ext_resource type="Texture2D" uid="uid://b7eexluqilbai" path="res://Fish the fishes/art/green fish 2.png" id="3_kye7x"]
+[ext_resource type="Texture2D" uid="uid://cm7tb6575pedr" path="res://Fish the fishes/art/green fish dead.png" id="4_x0w6u"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_oiurm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_n3y1v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_kye7x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_n3y1v")
+}],
+"loop": true,
+"name": &"alive",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_x0w6u")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}]

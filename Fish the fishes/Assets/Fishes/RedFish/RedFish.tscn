@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://ct3hvitsd17g5"]
+
+[ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Fish the fishes/Assets/Fishes/Fish.tscn" id="1_vcqog"]
+[ext_resource type="Script" path="res://Fish the fishes/Assets/Fishes/RedFish/RedFish.cs" id="2_xfklb"]
+[ext_resource type="SpriteFrames" uid="uid://bp5itcp0b03xn" path="res://Fish the fishes/Assets/Fishes/RedFish/RedFishAnimation.tres" id="3_wupup"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t08b6"]
+radius = 44.0114
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bpbot"]
+radius = 36.0
+
+[node name="RedFish" instance=ExtResource("1_vcqog")]
+script = ExtResource("2_xfklb")
+isNegative = true
+
+[node name="AnimatedSprite2D" parent="Flipacious" index="0"]
+sprite_frames = ExtResource("3_wupup")
+animation = &"alive"
+
+[node name="HitBox" type="Area2D" parent="Flipacious" index="1"]
+position = Vector2(-5, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flipacious/HitBox" index="0"]
+shape = SubResource("CircleShape2D_t08b6")
+
+[node name="HurtBox" parent="." index="2"]
+position = Vector2(-5, 0)
+shape = SubResource("CircleShape2D_bpbot")
+
+[connection signal="body_entered" from="Flipacious/HitBox" to="." method="_on_body_entered"]

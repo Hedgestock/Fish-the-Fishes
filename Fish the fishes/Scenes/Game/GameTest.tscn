@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://degr1jad0c22l"]
 
 [ext_resource type="Script" path="res://Fish the fishes/Scenes/Game/Game.cs" id="1_xyk67"]
-[ext_resource type="PackedScene" uid="uid://ct3hvitsd17g5" path="res://Fish the fishes/Assets/Fishes/RedFish.tscn" id="4_b6f4y"]
+[ext_resource type="PackedScene" uid="uid://ct3hvitsd17g5" path="res://Fish the fishes/Assets/Fishes/RedFish/RedFish.tscn" id="4_b6f4y"]
 [ext_resource type="PackedScene" uid="uid://co0xglrn1rvre" path="res://Fish the fishes/Assets/Trashes/Can.tscn" id="7_shv3f"]
 [ext_resource type="PackedScene" uid="uid://8pxdejw8ptee" path="res://Fish the fishes/Assets/Trashes/Shoe.tscn" id="8_lgmqh"]
 [ext_resource type="PackedScene" uid="uid://lvuam8fndp75" path="res://Fish the fishes/Assets/Trashes/Tire.tscn" id="9_d7khh"]

@@ -1,0 +1,22 @@
+[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://bp5itcp0b03xn"]
+
+[ext_resource type="Texture2D" uid="uid://kwufmqe7o6dh" path="res://Fish the fishes/art/red fish 1.png" id="1_lomvr"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_lomvr")
+}],
+"loop": true,
+"name": &"alive",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_lomvr")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}]

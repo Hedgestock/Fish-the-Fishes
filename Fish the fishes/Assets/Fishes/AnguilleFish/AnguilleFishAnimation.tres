@@ -1,0 +1,34 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://l22v2s0dn5uh"]
+
+[ext_resource type="Texture2D" uid="uid://cwisgdsyedsof" path="res://Fish the fishes/art/anguille 1.png" id="1_fe8ja"]
+[ext_resource type="Texture2D" uid="uid://elowhxro52v4" path="res://Fish the fishes/art/anguille 3.png" id="2_0ya1h"]
+[ext_resource type="Texture2D" uid="uid://b1u2xwtds4pv" path="res://Fish the fishes/art/anguille 2.png" id="3_mepay"]
+[ext_resource type="Texture2D" uid="uid://nu1vrcd84eeo" path="res://Fish the fishes/art/anguille dead.png" id="4_htt4e"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_fe8ja")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_0ya1h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mepay")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_0ya1h")
+}],
+"loop": true,
+"name": &"alive",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_htt4e")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}]

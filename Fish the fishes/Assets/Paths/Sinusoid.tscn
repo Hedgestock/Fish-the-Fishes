@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cupa0leqodptl"]
 
-[ext_resource type="PackedScene" uid="uid://ct3hvitsd17g5" path="res://Fish the fishes/Assets/Fishes/RedFish.tscn" id="1_efuis"]
+[ext_resource type="PackedScene" uid="uid://ct3hvitsd17g5" path="res://Fish the fishes/Assets/Fishes/RedFish/RedFish.tscn" id="1_efuis"]
 
 [sub_resource type="Curve2D" id="Curve2D_c0dn7"]
 _data = {

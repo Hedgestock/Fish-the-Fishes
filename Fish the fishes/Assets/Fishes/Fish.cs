@@ -10,36 +10,48 @@ public partial class Fish : RigidBody2D
 		Dead
     }
 
-	[Export]
+    [ExportGroup("Scoring")]
+    [Export]
     public float value = 1;
 	[Export]
 	public int multiplier = 1;
 	[Export]
 	public bool isNegative = false;
-	[Export]
+
+    [ExportGroup("Behaviour")]
+    [Export]
+    public float minSpeed = 150;
+    [Export]
+    public float maxSpeed = 250;
+    [Export]
 	public Path2D path = null;
 
     public bool flip = false;
 
-    protected AnimatedSprite2D sprite;
+	protected Node2D flipacious;
 	protected CollisionShape2D hurtBox;
-	protected State state;
+    protected AnimatedSprite2D sprite;
+    protected State state;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
 	{
-        sprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+		flipacious = GetNode<Node2D>("Flipacious");
 		hurtBox = GetNode<CollisionShape2D>("HurtBox");
-		state = State.Alive;
+        sprite = flipacious.GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+        state = State.Alive;
 
 		if (LinearVelocity.X == 0)
 		{
 			LinearVelocity = new Vector2((float)GD.RandRange(150.0, 250.0) * (flip ? 1 : -1), 0);
 		}
-		sprite.FlipH = flip;
 		if (flip)
 		{
-			Flip(hurtBox);
+			flipacious.Scale = new Vector2(-1, 1);
+
+            Vector2 unflipped = hurtBox.Position;
+            hurtBox.Position = new Vector2(unflipped.X * -1, unflipped.Y);
+            hurtBox.Scale = new Vector2(-1, 1);
         }
 
         sprite.Animation = "alive";
@@ -55,12 +67,6 @@ public partial class Fish : RigidBody2D
 	{
 		GetTree().CreateTimer(1).Timeout += QueueFree;
 	}
-
-	protected void Flip(Node2D node)
-	{
-        Vector2 unflipped = node.Position;
-        node.Position = new Vector2(unflipped.X * -1, unflipped.Y);
-    }
 
 	public void Catch()
 	{
