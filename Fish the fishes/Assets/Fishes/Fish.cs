@@ -43,7 +43,7 @@ public partial class Fish : RigidBody2D
 
 		if (LinearVelocity.X == 0)
 		{
-			LinearVelocity = new Vector2((float)GD.RandRange(150.0, 250.0) * (flip ? 1 : -1), 0);
+			LinearVelocity = new Vector2((float)GD.RandRange(minSpeed, maxSpeed) * (flip ? 1 : -1), 0);
 		}
 		if (flip)
 		{
