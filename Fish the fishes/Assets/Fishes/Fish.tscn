@@ -14,7 +14,7 @@ script = ExtResource("1_kms23")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Flipacious"]
 
-[node name="HurtBox" type="CollisionShape2D" parent="."]
+[node name="HurtBox" type="CollisionShape2D" parent="." groups=["Hurtboxes"]]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 

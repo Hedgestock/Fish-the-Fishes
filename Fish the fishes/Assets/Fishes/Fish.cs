@@ -1,5 +1,7 @@
 using Godot;
+using Godot.Collections;
 using System;
+using System.Linq;
 
 
 public partial class Fish : RigidBody2D
@@ -29,7 +31,7 @@ public partial class Fish : RigidBody2D
     public bool flip = false;
 
 	protected Node2D flipacious;
-	protected CollisionShape2D hurtBox;
+	protected Array<CollisionShape2D> hurtBoxes;
     protected AnimatedSprite2D sprite;
     protected State state;
 
@@ -37,7 +39,7 @@ public partial class Fish : RigidBody2D
     public override void _Ready()
 	{
 		flipacious = GetNode<Node2D>("Flipacious");
-		hurtBox = GetNode<CollisionShape2D>("HurtBox");
+        hurtBoxes = (Array<CollisionShape2D>) GetHurtboxes();
         sprite = flipacious.GetNode<AnimatedSprite2D>("AnimatedSprite2D");
         state = State.Alive;
 
@@ -45,13 +47,13 @@ public partial class Fish : RigidBody2D
 		{
 			LinearVelocity = new Vector2((float)GD.RandRange(minSpeed, maxSpeed) * (flip ? 1 : -1), 0);
 		}
-		if (flip)
-		{
-			flipacious.Scale = new Vector2(-1, 1);
-
-            Vector2 unflipped = hurtBox.Position;
-            hurtBox.Position = new Vector2(unflipped.X * -1, unflipped.Y);
-            hurtBox.Scale = new Vector2(-1, 1);
+        if (flip)
+        {
+            flipacious.Scale = new Vector2(-1, 1);
+            foreach (CollisionShape2D hurtBox in hurtBoxes)
+            {
+                FlipHurtbox(hurtBox);
+            }
         }
 
         sprite.Animation = "alive";
@@ -63,6 +65,17 @@ public partial class Fish : RigidBody2D
 	{
     }
 
+    private Variant GetHurtboxes()
+    {
+        return GetChildren().Where(child => child.GetGroups().Contains("Hurtboxes")).ToArray();
+    }
+
+    private void FlipHurtbox(Node2D node)
+    {
+        Vector2 unflipped = node.Position;
+        node.Position = new Vector2(unflipped.X * -1, unflipped.Y);
+        node.Scale = new Vector2(-1, 1);
+    }
     private void DelayedDispose()
 	{
 		GetTree().CreateTimer(1).Timeout += QueueFree;
@@ -70,7 +83,10 @@ public partial class Fish : RigidBody2D
 
 	public void Catch()
 	{
-        hurtBox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
+        foreach (CollisionShape2D hurtBox in hurtBoxes)
+        {
+            hurtBox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
+        }
     }
 
     public void Trigger()
