@@ -13,6 +13,8 @@ radius = 36.0
 [node name="RedFish" instance=ExtResource("1_vcqog")]
 script = ExtResource("2_xfklb")
 isNegative = true
+minSpeed = 50.0
+maxSpeed = 100.0
 
 [node name="AnimatedSprite2D" parent="Flipacious" index="0"]
 sprite_frames = ExtResource("3_wupup")

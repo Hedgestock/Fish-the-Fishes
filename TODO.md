@@ -61,8 +61,9 @@
 - [ ] Ajouter des poissons à chemins
 - [ ] Empêcher les poissons rouges de s'entretuer
 - [ ] Ajouter une probabilité d'apparition
-- [ ] Ajouter une vitesse propre à chaque poisson
+- [x] Ajouter une vitesse propre à chaque poisson
 
 # Corrections
 
-- [ ] Corriger le retournement des poissons (`CollisionShape2D`)
+- [x] Corriger le retournement des poissons (`CollisionShape2D`)
+- [ ] Corriger la vélocité non constante des poissons

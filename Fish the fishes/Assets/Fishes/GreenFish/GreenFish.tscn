@@ -16,14 +16,16 @@ packet_sequence = SubResource("OggPacketSequence_sqimx")
 loop = true
 
 [node name="GreenFish" instance=ExtResource("1_8tk53")]
-
-[node name="HurtBox" parent="." index="1"]
-shape = SubResource("RectangleShape2D_bgw5p")
+minSpeed = 175.0
+maxSpeed = 225.0
 
 [node name="AnimatedSprite2D" parent="Flipacious" index="0"]
 sprite_frames = ExtResource("2_50e46")
 animation = &"alive"
 frame_progress = 0.735181
+
+[node name="HurtBox" parent="." index="2"]
+shape = SubResource("RectangleShape2D_bgw5p")
 
 [node name="AudioStreamPlayer" parent="." index="3"]
 stream = SubResource("AudioStreamOggVorbis_m4e2m")

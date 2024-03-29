@@ -17,15 +17,17 @@ packet_sequence = SubResource("OggPacketSequence_yp0lj")
 loop = true
 
 [node name="AnguilleFish" instance=ExtResource("1_d3b32")]
-
-[node name="HurtBox" parent="." index="1"]
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_lvcgl")
+minSpeed = 200.0
+maxSpeed = 300.0
 
 [node name="AnimatedSprite2D" parent="Flipacious" index="0"]
 sprite_frames = ExtResource("2_2ati3")
 animation = &"alive"
 frame_progress = 0.156995
+
+[node name="HurtBox" parent="." index="2"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_lvcgl")
 
 [node name="AudioStreamPlayer" parent="." index="3"]
 stream = SubResource("AudioStreamOggVorbis_pqph6")
