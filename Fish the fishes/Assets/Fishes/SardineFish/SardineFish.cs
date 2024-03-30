@@ -38,7 +38,7 @@ public partial class SardineFish : Fish
         Vector2 fishSpawnLocation = new Vector2(newPosX, newPosY);
 
         fish.Position = fishSpawnLocation;
-        fish.LinearVelocity = LinearVelocity;
+        fish.actualSpeed = actualSpeed;
         fish.flip = flip;
         // spawn the mob by adding it to the main scene.
         GetTree().CurrentScene.AddChild(fish);

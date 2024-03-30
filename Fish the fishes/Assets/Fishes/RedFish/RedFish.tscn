@@ -12,6 +12,10 @@ radius = 36.0
 
 [node name="RedFish" instance=ExtResource("1_vcqog")]
 script = ExtResource("2_xfklb")
+wavePeriod = 1.0
+wavePeriodVariation = 0.2
+waveInverseAmplitude = 100.0
+waveInverseAmplitudeVariation = 20.0
 isNegative = true
 minSpeed = 50.0
 maxSpeed = 100.0
@@ -19,6 +23,7 @@ maxSpeed = 100.0
 [node name="AnimatedSprite2D" parent="Flipacious" index="0"]
 sprite_frames = ExtResource("3_wupup")
 animation = &"alive"
+frame_progress = 0.628646
 
 [node name="HitBox" type="Area2D" parent="Flipacious" index="1"]
 position = Vector2(-5, 0)

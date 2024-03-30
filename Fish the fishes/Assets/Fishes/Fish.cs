@@ -25,14 +25,14 @@ public partial class Fish : RigidBody2D
     public float minSpeed = 150;
     [Export]
     public float maxSpeed = 250;
-    [Export]
-	public Path2D path = null;
 
     public bool flip = false;
+    public float actualSpeed = 0;
 
 	protected Node2D flipacious;
 	protected Array<CollisionShape2D> hurtBoxes;
     protected AnimatedSprite2D sprite;
+
     protected State state;
 
     // Called when the node enters the scene tree for the first time.
@@ -41,12 +41,16 @@ public partial class Fish : RigidBody2D
 		flipacious = GetNode<Node2D>("Flipacious");
         hurtBoxes = (Array<CollisionShape2D>) GetHurtboxes();
         sprite = flipacious.GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+
         state = State.Alive;
 
-		if (LinearVelocity.X == 0)
-		{
-			LinearVelocity = new Vector2((float)GD.RandRange(minSpeed, maxSpeed) * (flip ? 1 : -1), 0);
+        if (actualSpeed == 0)
+        {
+            actualSpeed = (float) GD.RandRange(minSpeed, maxSpeed) * (flip ? 1 : -1);
 		}
+
+        LinearVelocity = new Vector2(actualSpeed, 0);
+
         if (flip)
         {
             flipacious.Scale = new Vector2(-1, 1);
