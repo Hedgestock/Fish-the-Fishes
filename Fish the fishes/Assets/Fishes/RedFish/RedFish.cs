@@ -12,7 +12,6 @@ public partial class RedFish : Fish
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-        GD.Print("velocity ", LinearVelocity);
     }
 
     private void _on_body_entered(Node body)

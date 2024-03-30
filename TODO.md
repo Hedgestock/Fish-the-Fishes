@@ -66,4 +66,5 @@
 # Corrections
 
 - [x] Corriger le retournement des poissons (`CollisionShape2D`)
-- [ ] Corriger la vélocité non constante des poissons
+- [X] Corriger la vélocité non constante des poissons
+- [ ] Corriger la gravité en pêche de poisson mort
