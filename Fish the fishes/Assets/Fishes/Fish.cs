@@ -9,7 +9,8 @@ public partial class Fish : RigidBody2D
     protected enum State
     {
         Alive,
-		Dead
+		Dead,
+        Fished
     }
 
     [ExportGroup("Scoring")]
@@ -85,8 +86,11 @@ public partial class Fish : RigidBody2D
 		GetTree().CreateTimer(1).Timeout += QueueFree;
 	}
 
-	public void Catch()
+	public void Catch(Vector2 Velocity)
 	{
+        state = State.Fished;
+        GravityScale = 0;
+        LinearVelocity = Velocity;
         foreach (CollisionShape2D hurtBox in hurtBoxes)
         {
             hurtBox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);

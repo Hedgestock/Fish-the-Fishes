@@ -29,6 +29,8 @@ public partial class RedFish : Fish
 	public override void _Process(double delta)
 	{
 		base._Process(delta);
+        if (state != State.Alive) return;
+
 		Vector2 tmp = new Vector2(1, (float) Math.Sin(Position.X/waveActualInverseAmplitude) * waveActualPeriod);
         LinearVelocity = tmp.Normalized() * actualSpeed;
 

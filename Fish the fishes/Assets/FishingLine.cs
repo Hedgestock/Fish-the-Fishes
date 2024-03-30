@@ -138,8 +138,7 @@ public partial class FishingLine : CharacterBody2D
 		{
 			Fish fish = (Fish) body;
 			fishes.Add(fish);
-			fish.Catch();
-			fish.LinearVelocity = Velocity;
+			fish.Catch(Velocity);
 		} else if (fishes.Count > 0 && body is Trash && !invincible)
 		{
             EmitSignal(SignalName.Hit);

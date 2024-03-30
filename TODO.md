@@ -67,5 +67,5 @@
 - [x] Empêcher les poissons rouges de s'entretuer
 - [x] Corriger le retournement des poissons (`CollisionShape2D`)
 - [X] Corriger la vélocité non constante des poissons
-- [ ] Corriger la gravité en pêche de poisson mort
+- [x] Corriger la gravité en pêche de poisson mort
 - [ ] Corriger la disparition des poissions hors écran
