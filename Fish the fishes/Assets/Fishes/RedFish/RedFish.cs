@@ -25,15 +25,13 @@ public partial class RedFish : Fish
 
     }
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
+	public override void _PhysicsProcess(double delta)
 	{
-		base._Process(delta);
+		base._PhysicsProcess(delta);
         if (state != State.Alive) return;
 
 		Vector2 tmp = new Vector2(1, (float) Math.Sin(Position.X/waveActualInverseAmplitude) * waveActualPeriod);
         LinearVelocity = tmp.Normalized() * actualSpeed;
-
     }
 
     private void _on_body_entered(Node body)

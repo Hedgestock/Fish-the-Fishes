@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://0sb3i5bm7j4p"]
+[gd_scene load_steps=15 format=3 uid="uid://0sb3i5bm7j4p"]
 
 [ext_resource type="Texture2D" uid="uid://xvra7re1p3ch" path="res://Fish the fishes/art/BG 1 FTF.png" id="1_2rjoh"]
 [ext_resource type="Script" path="res://Fish the fishes/Scenes/Game/Game.cs" id="1_et1ja"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dsv67b7l0uq40" path="res://Fish the fishes/Assets/Fishes/GreenFish/GreenFish.tscn" id="6_p2ryo"]
 [ext_resource type="PackedScene" uid="uid://8pxdejw8ptee" path="res://Fish the fishes/Assets/Trashes/Shoe.tscn" id="6_vsv0t"]
 [ext_resource type="PackedScene" uid="uid://lvuam8fndp75" path="res://Fish the fishes/Assets/Trashes/Tire.tscn" id="7_7egbd"]
+[ext_resource type="PackedScene" uid="uid://be1nxedcwhn2i" path="res://Fish the fishes/Assets/Fishes/SwordFish/SwordFish.tscn" id="7_ekome"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ksc04"]
 radius = 18.0
@@ -19,7 +20,7 @@ height = 350.0
 
 [node name="Game" type="Node"]
 script = ExtResource("1_et1ja")
-Fishes = Array[PackedScene]([ExtResource("2_1m73u"), ExtResource("3_co4dd"), ExtResource("4_ma8bn"), ExtResource("5_bfco0"), ExtResource("6_p2ryo")])
+Fishes = Array[PackedScene]([ExtResource("2_1m73u"), ExtResource("3_co4dd"), ExtResource("4_ma8bn"), ExtResource("5_bfco0"), ExtResource("6_p2ryo"), ExtResource("7_ekome")])
 Trashes = Array[PackedScene]([ExtResource("5_lqe2k"), ExtResource("6_vsv0t"), ExtResource("7_7egbd")])
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

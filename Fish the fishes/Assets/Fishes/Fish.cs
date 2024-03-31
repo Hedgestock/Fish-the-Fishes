@@ -85,6 +85,7 @@ public partial class Fish : RigidBody2D
         Vector2 unflipped = node.Position;
         node.Position = new Vector2(unflipped.X * -1, unflipped.Y);
         node.Scale = new Vector2(-1, 1);
+        node.Rotation = -node.Rotation;
     }
     private void DelayedDispose()
 	{
