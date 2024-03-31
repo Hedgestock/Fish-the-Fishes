@@ -36,9 +36,14 @@ public partial class Fish : RigidBody2D
 
     protected State state;
 
+    private Timer disposeTimer;
+
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
 	{
+        disposeTimer = GetNode<Timer>("DisposeTimer");
+        disposeTimer.Timeout += QueueFree;
+
 		flipacious = GetNode<Node2D>("Flipacious");
         hurtBoxes = (Array<CollisionShape2D>) GetHurtboxes();
         sprite = flipacious.GetNode<AnimatedSprite2D>("AnimatedSprite2D");
@@ -83,10 +88,15 @@ public partial class Fish : RigidBody2D
     }
     private void DelayedDispose()
 	{
-		GetTree().CreateTimer(1).Timeout += QueueFree;
+        disposeTimer.Start();
 	}
 
-	public void Catch(Vector2 Velocity)
+    private void CancelDispose()
+    {
+        disposeTimer.Stop();
+    }
+
+    public void Catch(Vector2 Velocity)
 	{
         state = State.Fished;
         GravityScale = 0;

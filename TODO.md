@@ -61,6 +61,7 @@
 - [ ] [**Solution autre**] Ajouter des poissons à chemins
 - [ ] Ajouter une probabilité d'apparition
 - [x] Ajouter une vitesse propre à chaque poisson
+- [ ] Rendre le délai d'apparition aléatoire
 
 # Corrections
 
@@ -68,4 +69,5 @@
 - [x] Corriger le retournement des poissons (`CollisionShape2D`)
 - [X] Corriger la vélocité non constante des poissons
 - [x] Corriger la gravité en pêche de poisson mort
-- [ ] Corriger la disparition des poissions hors écran
+- [x] Corriger la disparition des poissions hors écran
+- [ ] Attention le poisson ne sait s'il est mort et pêché en même temps

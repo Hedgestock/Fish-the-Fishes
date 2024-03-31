@@ -5,13 +5,13 @@ public partial class RedFish : Fish
 {
 
     [Export]
-    public float wavePeriod = 1;
+    public float waveAmplitude = 1;
     [Export]
-    public float wavePeriodVariation = 0.2f;
+    public float waveAmplitudeVariation = 0.2f;
     [Export]
-    public float waveInverseAmplitude = 100;
+    public float waveInversePeriod = 100;
     [Export]
-    public float waveInverseAmplitudeVariation = 20;
+    public float waveInversePeriodVariation = 20;
 
     private float waveActualPeriod = 0;
     private float waveActualInverseAmplitude = 0;
@@ -20,8 +20,8 @@ public partial class RedFish : Fish
     public override void _Ready()
 	{
 		base._Ready();
-        waveActualPeriod = wavePeriod + (float)GD.RandRange(-wavePeriodVariation, wavePeriodVariation);
-        waveActualInverseAmplitude = waveInverseAmplitude + (float) GD.RandRange(-waveInverseAmplitudeVariation, waveInverseAmplitudeVariation);
+        waveActualPeriod = waveAmplitude + (float)GD.RandRange(-waveAmplitudeVariation, waveAmplitudeVariation);
+        waveActualInverseAmplitude = waveInversePeriod + (float) GD.RandRange(-waveInversePeriodVariation, waveInversePeriodVariation);
 
     }
 
