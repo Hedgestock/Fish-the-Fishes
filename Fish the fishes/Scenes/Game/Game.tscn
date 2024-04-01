@@ -16,7 +16,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ksc04"]
 radius = 18.0
-height = 350.0
+height = 812.0
 
 [node name="Game" type="Node"]
 script = ExtResource("1_et1ja")

@@ -52,7 +52,7 @@ public partial class Game : Node
         bool flip = (GD.Randi() % 2) != 0;
         Vector2 fishSpawnLocation = new Vector2(flip ? -100 : ScreenSize.X + 100, (float)GD.RandRange(0, ScreenSize.Y));
         fish.Position = fishSpawnLocation;
-        fish.flip = flip;
+        fish.Flip = flip;
 
         // spawn the mob by adding it to the main scene.
         AddChild(fish);

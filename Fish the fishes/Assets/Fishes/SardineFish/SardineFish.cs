@@ -11,9 +11,9 @@ public partial class SardineFish : Fish
     public override void _Ready()
 	{
 		base._Ready();
-        sprite.SpeedScale = GD.Randf() + 0.5f;
+        Sprite.SpeedScale = GD.Randf() + 0.5f;
         float modulation = (float)GD.RandRange(0.8, 1.2);
-        sprite.SelfModulate = new Color(modulation, modulation, modulation, 1);
+        Sprite.SelfModulate = new Color(modulation, modulation, modulation, 1);
         SpawnShoalMember();
     }
 
@@ -32,15 +32,15 @@ public partial class SardineFish : Fish
         float newPosY = Position.Y + (GD.Randi() % shoalRadius) - shoalRadius / 2;
 
         if (newPosX > -20 && newPosX < GetViewport().GetVisibleRect().Size.X + 20)
-                newPosX = flip ? -20 : GetViewport().GetVisibleRect().Size.X + 20;
+                newPosX = Flip ? -20 : GetViewport().GetVisibleRect().Size.X + 20;
 
         Fish fish = ResourceLoader.Load<PackedScene>(SceneFilePath).Instantiate() as Fish;
 
         Vector2 fishSpawnLocation = new Vector2(newPosX, newPosY);
 
         fish.Position = fishSpawnLocation;
-        fish.actualSpeed = actualSpeed;
-        fish.flip = flip;
+        fish.ActualSpeed = ActualSpeed;
+        fish.Flip = Flip;
         // spawn the mob by adding it to the main scene.
         GetTree().CurrentScene.AddChild(fish);
     }

@@ -10,12 +10,12 @@ public partial class HUD : CanvasLayer
     public delegate void EndGameEventHandler();
 
     private HBoxContainer LivesContainer;
-    private GameManager gameManager;
+    private GameManager GM;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        gameManager = GetNode<GameManager>("/root/GameManager");
+        GM = GetNode<GameManager>("/root/GameManager");
 
         LivesContainer = GetNode<HBoxContainer>("Lives");
         LivesContainer.GetNode<AnimatedSprite2D>("Life1").Play();
@@ -31,16 +31,16 @@ public partial class HUD : CanvasLayer
     private void _on_fishing_line_score(int score)
     {
         // We need to do this to avoid uint underflow
-        if (-score > gameManager.score) gameManager.score = 0;
-        else gameManager.score = (uint)((int)gameManager.score +  score);
-        GetNode<Label>("Score").Text = gameManager.score.ToString();
+        if (-score > GM.score) GM.score = 0;
+        else GM.score = (uint)((int)GM.score +  score);
+        GetNode<Label>("Score").Text = GM.score.ToString();
     }
 
     private void _on_fishing_line_hit()
     {
-        gameManager.lives--;
-        LivesContainer.GetNode<AnimatedSprite2D>("Life" + (3 - gameManager.lives)).Animation = "death";
-        if (gameManager.lives <= 0)
+        GM.lives--;
+        LivesContainer.GetNode<AnimatedSprite2D>("Life" + (3 - GM.lives)).Animation = "death";
+        if (GM.lives <= 0)
         {
             GetTree().CreateTimer(1).Timeout += () => { EmitSignal(SignalName.EndGame); };
         }
@@ -48,7 +48,7 @@ public partial class HUD : CanvasLayer
 
     private void ResetGame()
     {
-        gameManager.SaveGame();
+        GM.SaveGame();
     }
 }
 

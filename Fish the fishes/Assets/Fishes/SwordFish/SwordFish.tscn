@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://be1nxedcwhn2i"]
+[gd_scene load_steps=6 format=3 uid="uid://be1nxedcwhn2i"]
 
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Fish the fishes/Assets/Fishes/Fish.tscn" id="1_jmf7p"]
 [ext_resource type="Script" path="res://Fish the fishes/Assets/Fishes/SwordFish/SwordFish.cs" id="2_q8hjt"]
@@ -8,12 +8,16 @@
 radius = 28.2805
 height = 293.708
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rp7cb"]
+radius = 5.0
+height = 122.0
+
 [node name="SwordFish" instance=ExtResource("1_jmf7p")]
 script = ExtResource("2_q8hjt")
-dashSpeed = 600.0
-value = 2.0
+DashSpeed = 600.0
+MinSpeed = 200.0
 
-[node name="AnimatedSprite2D" parent="Flipacious" index="0"]
+[node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = ExtResource("2_qxon2")
 animation = &"alive"
 
@@ -21,5 +25,10 @@ animation = &"alive"
 position = Vector2(51, 5)
 rotation = 1.65806
 shape = SubResource("CapsuleShape2D_l8r55")
+
+[node name="HitBox" type="CollisionShape2D" parent="." index="5"]
+position = Vector2(-149, 5)
+rotation = 1.53589
+shape = SubResource("CapsuleShape2D_rp7cb")
 
 [connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="SeekTarget"]

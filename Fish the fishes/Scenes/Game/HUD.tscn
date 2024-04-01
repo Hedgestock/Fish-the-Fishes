@@ -40,23 +40,27 @@ theme_override_font_sizes/font_size = 64
 text = "0"
 
 [node name="Lives" type="HBoxContainer" parent="."]
-offset_right = 40.0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
 offset_bottom = 40.0
+grow_horizontal = 0
 
 [node name="Life1" type="AnimatedSprite2D" parent="Lives"]
-position = Vector2(336, 32)
+position = Vector2(-112, 32)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_352nl")
 animation = &"life"
 
 [node name="Life2" type="AnimatedSprite2D" parent="Lives"]
-position = Vector2(392, 32)
+position = Vector2(-56, 32)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_352nl")
 animation = &"life"
 
 [node name="Life3" type="AnimatedSprite2D" parent="Lives"]
-position = Vector2(448, 32)
+position = Vector2(0, 32)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_352nl")
 animation = &"life"

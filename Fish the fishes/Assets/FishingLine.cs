@@ -160,12 +160,12 @@ public partial class FishingLine : CharacterBody2D
 		float scoref = 0;
         foreach (Fish fish in fishes)
         {
-			scoref += fish.value;
+			scoref += fish.Value;
         }
 		int score = fibo2((int)Math.Ceiling(scoref));
         foreach (Fish fish in fishes)
         {
-			if (fish.isNegative)
+			if (fish.IsNegative)
 			{
 				score = -score;
 				break;

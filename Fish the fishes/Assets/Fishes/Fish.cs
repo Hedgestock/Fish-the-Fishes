@@ -4,7 +4,7 @@ using System;
 using System.Linq;
 
 
-public partial class Fish : RigidBody2D
+public partial class Fish : CharacterBody2D
 {
     protected enum State
     {
@@ -15,59 +15,53 @@ public partial class Fish : RigidBody2D
 
     [ExportGroup("Scoring")]
     [Export]
-    public float value = 1;
+    public float Value = 1;
 	[Export]
-	public int multiplier = 1;
+	public int Multiplier = 1;
 	[Export]
-	public bool isNegative = false;
+	public bool IsNegative = false;
 
     [ExportGroup("Behaviour")]
     [Export]
-    public float minSpeed = 150;
+    public float MinSpeed = 150;
     [Export]
-    public float maxSpeed = 250;
+    public float MaxSpeed = 250;
+    [Export]
+    public float GravityScale = 0;
 
-    public bool flip = false;
-    public float actualSpeed = 0;
+    public bool Flip = false;
+    public float ActualSpeed = 0;
 
-	protected Node2D flipacious;
-	protected Array<CollisionShape2D> hurtBoxes;
-    protected AnimatedSprite2D sprite;
+    protected AnimatedSprite2D Sprite;
 
     protected State state;
 
-    private Timer disposeTimer;
+    private Timer DisposeTimer;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
 	{
-        disposeTimer = GetNode<Timer>("DisposeTimer");
-        disposeTimer.Timeout += QueueFree;
+        DisposeTimer = GetNode<Timer>("DisposeTimer");
+        DisposeTimer.Timeout += QueueFree;
 
-		flipacious = GetNode<Node2D>("Flipacious");
-        hurtBoxes = (Array<CollisionShape2D>) GetHurtboxes();
-        sprite = flipacious.GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+        Sprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 
         state = State.Alive;
 
-        if (actualSpeed == 0)
+        if (ActualSpeed == 0)
         {
-            actualSpeed = (float) GD.RandRange(minSpeed, maxSpeed) * (flip ? 1 : -1);
+            ActualSpeed = (float) GD.RandRange(MinSpeed, MaxSpeed) * (Flip ? 1 : -1);
 		}
 
-        LinearVelocity = new Vector2(actualSpeed, 0);
+        Velocity = new Vector2(ActualSpeed, 0);
 
-        if (flip)
+        if (Flip)
         {
-            flipacious.Scale = new Vector2(-1, 1);
-            foreach (CollisionShape2D hurtBox in hurtBoxes)
-            {
-                FlipHurtbox(hurtBox);
-            }
+            Scale = new Vector2(-1, 1);
         }
 
-        sprite.Animation = "alive";
-        sprite.Play();
+        Sprite.Animation = "alive";
+        Sprite.Play();
     }
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -75,40 +69,31 @@ public partial class Fish : RigidBody2D
 	{
     }
 
-    protected void SetRotation(float angle)
+    public override void _PhysicsProcess(double delta)
     {
-        flipacious.Rotation = angle + (flip ? 0 : Mathf.Pi);
-    }
-
-    private Variant GetHurtboxes()
-    {
-        return GetChildren().Where(child => child.GetGroups().Contains("Hurtboxes")).ToArray();
-    }
-
-    private void FlipHurtbox(Node2D node)
-    {
-        Vector2 unflipped = node.Position;
-        node.Position = new Vector2(unflipped.X * -1, unflipped.Y);
-        node.Scale = new Vector2(-1, 1);
-        node.Rotation = -node.Rotation;
+        GD.Print(Velocity);
+        var velocity = Velocity;
+        velocity.Y += (float)delta * GravityScale * (int)ProjectSettings.GetSetting("physics/2d/default_gravity");
+        Velocity = velocity;
+        MoveAndSlide();
     }
 
     private void DelayedDispose()
 	{
-        disposeTimer.Start();
+        DisposeTimer.Start();
 	}
 
     private void CancelDispose()
     {
-        disposeTimer.Stop();
+        DisposeTimer.Stop();
     }
 
     public void Catch(Vector2 Velocity)
-	{
+    {
         state = State.Fished;
         GravityScale = 0;
-        LinearVelocity = Velocity;
-        foreach (CollisionShape2D hurtBox in hurtBoxes)
+        this.Velocity = Velocity;
+        foreach (CollisionShape2D hurtBox in GetChildren().Where(child => child.GetGroups().Contains("Hurtboxes")))
         {
             hurtBox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
         }
@@ -123,9 +108,9 @@ public partial class Fish : RigidBody2D
 	{
 		if (state == State.Dead) return;
 		state = State.Dead;
-        LinearVelocity = new Vector2(0, 0);
-        GravityScale = 1;
-		sprite.Animation = "dead";
+        Velocity = new Vector2(0, 0);
+        GravityScale = 0.6f;
+		Sprite.Animation = "dead";
     }
 }
 

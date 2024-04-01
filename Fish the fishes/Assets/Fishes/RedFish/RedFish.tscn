@@ -12,27 +12,27 @@ radius = 36.0
 
 [node name="RedFish" instance=ExtResource("1_vcqog")]
 script = ExtResource("2_xfklb")
-waveAmplitude = 1.0
-waveAmplitudeVariation = 0.2
-waveInversePeriod = 100.0
-waveInversePeriodVariation = 20.0
-isNegative = true
-minSpeed = 50.0
-maxSpeed = 50.0
+WaveAmplitude = 1.0
+WaveAmplitudeVariation = 0.2
+WaveInversePeriod = 100.0
+WaveInversePeriodVariation = 20.0
+IsNegative = true
+MinSpeed = 50.0
+MaxSpeed = 100.0
 
-[node name="AnimatedSprite2D" parent="Flipacious" index="0"]
+[node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = ExtResource("3_wupup")
 animation = &"alive"
 frame_progress = 0.628646
 
-[node name="HitBox" type="Area2D" parent="Flipacious" index="1"]
+[node name="HitBox" type="Area2D" parent="." index="2"]
 position = Vector2(-5, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Flipacious/HitBox" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" index="0"]
 shape = SubResource("CircleShape2D_t08b6")
 
-[node name="HurtBox" parent="." index="2"]
+[node name="HurtBox" parent="." index="3"]
 position = Vector2(-5, 0)
 shape = SubResource("CircleShape2D_bpbot")
 
-[connection signal="body_entered" from="Flipacious/HitBox" to="." method="_on_body_entered"]
+[connection signal="body_entered" from="HitBox" to="." method="_on_body_entered"]

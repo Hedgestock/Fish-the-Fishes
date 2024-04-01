@@ -43,9 +43,11 @@ radius = 32.0
 height = 64.0
 
 [node name="FishingLine" type="CharacterBody2D"]
+scale = Vector2(2, 2)
 collision_mask = 0
+motion_mode = 1
 script = ExtResource("1_n5cos")
-speed = 800
+speed = 1600
 
 [node name="Line" type="AnimatedSprite2D" parent="."]
 position = Vector2(-4, -432)

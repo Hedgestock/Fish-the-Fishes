@@ -18,15 +18,15 @@ loop = true
 
 [node name="YellowFish" instance=ExtResource("1_lk6on")]
 
-[node name="HurtBox" parent="." index="1"]
-position = Vector2(2, 0)
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_dfnsu")
-
-[node name="AnimatedSprite2D" parent="Flipacious" index="0"]
+[node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = ExtResource("2_e3t31")
 animation = &"alive"
 frame_progress = 0.702968
+
+[node name="HurtBox" parent="." index="2"]
+position = Vector2(2, 0)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_dfnsu")
 
 [node name="AudioStreamPlayer" parent="." index="3"]
 stream = SubResource("AudioStreamOggVorbis_5c370")

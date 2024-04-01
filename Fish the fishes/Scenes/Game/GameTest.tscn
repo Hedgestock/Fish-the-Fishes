@@ -1,23 +1,22 @@
-[gd_scene load_steps=11 format=3 uid="uid://degr1jad0c22l"]
+[gd_scene load_steps=10 format=3 uid="uid://72tcole4bkvg"]
 
-[ext_resource type="Script" path="res://Fish the fishes/Scenes/Game/Game.cs" id="1_xyk67"]
-[ext_resource type="PackedScene" uid="uid://be1nxedcwhn2i" path="res://Fish the fishes/Assets/Fishes/SwordFish/SwordFish.tscn" id="2_ju8vh"]
-[ext_resource type="PackedScene" uid="uid://dsv67b7l0uq40" path="res://Fish the fishes/Assets/Fishes/GreenFish/GreenFish.tscn" id="3_wpq30"]
-[ext_resource type="PackedScene" uid="uid://co0xglrn1rvre" path="res://Fish the fishes/Assets/Trashes/Can.tscn" id="7_shv3f"]
-[ext_resource type="PackedScene" uid="uid://8pxdejw8ptee" path="res://Fish the fishes/Assets/Trashes/Shoe.tscn" id="8_lgmqh"]
-[ext_resource type="PackedScene" uid="uid://lvuam8fndp75" path="res://Fish the fishes/Assets/Trashes/Tire.tscn" id="9_d7khh"]
-[ext_resource type="Texture2D" uid="uid://xvra7re1p3ch" path="res://Fish the fishes/art/BG 1 FTF.png" id="10_1aid6"]
-[ext_resource type="PackedScene" uid="uid://yi82g384vgwb" path="res://Fish the fishes/Scenes/Game/HUD.tscn" id="11_icwb4"]
-[ext_resource type="PackedScene" uid="uid://bnkmwtljf2o3p" path="res://Fish the fishes/Assets/FishingLine.tscn" id="12_7y5im"]
+[ext_resource type="Script" path="res://Fish the fishes/Scenes/Game/Game.cs" id="1_u1bt7"]
+[ext_resource type="PackedScene" uid="uid://ct3hvitsd17g5" path="res://Fish the fishes/Assets/Fishes/RedFish/RedFish.tscn" id="4_w2tuu"]
+[ext_resource type="PackedScene" uid="uid://co0xglrn1rvre" path="res://Fish the fishes/Assets/Trashes/Can.tscn" id="8_y6d2i"]
+[ext_resource type="PackedScene" uid="uid://8pxdejw8ptee" path="res://Fish the fishes/Assets/Trashes/Shoe.tscn" id="9_1uygg"]
+[ext_resource type="PackedScene" uid="uid://lvuam8fndp75" path="res://Fish the fishes/Assets/Trashes/Tire.tscn" id="10_7luie"]
+[ext_resource type="Texture2D" uid="uid://xvra7re1p3ch" path="res://Fish the fishes/art/BG 1 FTF.png" id="11_6tjx1"]
+[ext_resource type="PackedScene" uid="uid://yi82g384vgwb" path="res://Fish the fishes/Scenes/Game/HUD.tscn" id="12_1kawo"]
+[ext_resource type="PackedScene" uid="uid://bnkmwtljf2o3p" path="res://Fish the fishes/Assets/FishingLine.tscn" id="13_32nur"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ksc04"]
 radius = 18.0
-height = 350.0
+height = 812.0
 
 [node name="Game" type="Node"]
-script = ExtResource("1_xyk67")
-Fishes = Array[PackedScene]([ExtResource("2_ju8vh"), ExtResource("3_wpq30")])
-Trashes = Array[PackedScene]([ExtResource("7_shv3f"), ExtResource("8_lgmqh"), ExtResource("9_d7khh")])
+script = ExtResource("1_u1bt7")
+Fishes = Array[PackedScene]([ExtResource("4_w2tuu")])
+Trashes = Array[PackedScene]([ExtResource("8_y6d2i"), ExtResource("9_1uygg"), ExtResource("10_7luie")])
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 autoplay = true
@@ -28,9 +27,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("10_1aid6")
+texture = ExtResource("11_6tjx1")
 
-[node name="HUD" parent="." instance=ExtResource("11_icwb4")]
+[node name="HUD" parent="." instance=ExtResource("12_1kawo")]
 
 [node name="FishTimer" type="Timer" parent="."]
 autostart = true
@@ -54,7 +53,7 @@ size_flags_vertical = 4
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_ksc04")
 
-[node name="FishingLine" parent="." instance=ExtResource("12_7y5im")]
+[node name="FishingLine" parent="." instance=ExtResource("13_32nur")]
 
 [connection signal="EndGame" from="HUD" to="." method="EndGame"]
 [connection signal="timeout" from="FishTimer" to="." method="_on_fish_timer_timeout"]

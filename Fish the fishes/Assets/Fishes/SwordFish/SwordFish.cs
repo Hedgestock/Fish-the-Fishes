@@ -4,7 +4,7 @@ using System.Linq;
 public partial class SwordFish : Fish
 {
 	[Export]
-	public float dashSpeed = 600;
+	public float DashSpeed = 600;
 
 	private Fish target = null;
 	// Called when the node enters the scene tree for the first time.
@@ -36,7 +36,7 @@ public partial class SwordFish : Fish
 		VisibleOnScreenNotifier2D test = target.GetNode<VisibleOnScreenNotifier2D>("VisibleOnScreenNotifier2D");
 
 		Vector2 direction = target.Position - Position;
-		SetRotation(direction.Angle());
-		LinearVelocity = direction;
+		Velocity = direction;
+		Rotation = direction.Angle() - Mathf.Pi;
     }
 }
