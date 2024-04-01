@@ -1,5 +1,4 @@
 using Godot;
-using Godot.Collections;
 using System.Linq;
 
 public partial class SwordFish : Fish
@@ -34,10 +33,10 @@ public partial class SwordFish : Fish
 		if (fishes.Length == 0) return;
 		
 		target = (Fish) fishes[(int)(GD.Randi() % fishes.Length)];
-		GD.Print(target);
-		Vector2 direction = target.Position - this.Position;
-		Rotation = direction.Angle();
+		VisibleOnScreenNotifier2D test = target.GetNode<VisibleOnScreenNotifier2D>("VisibleOnScreenNotifier2D");
+
+		Vector2 direction = target.Position - Position;
+		SetRotation(direction.Angle());
 		LinearVelocity = direction;
-		GD.Print(direction);
     }
 }

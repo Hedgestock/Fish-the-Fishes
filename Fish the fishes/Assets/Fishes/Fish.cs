@@ -75,6 +75,11 @@ public partial class Fish : RigidBody2D
 	{
     }
 
+    protected void SetRotation(float angle)
+    {
+        flipacious.Rotation = angle + (flip ? 0 : Mathf.Pi);
+    }
+
     private Variant GetHurtboxes()
     {
         return GetChildren().Where(child => child.GetGroups().Contains("Hurtboxes")).ToArray();
@@ -87,6 +92,7 @@ public partial class Fish : RigidBody2D
         node.Scale = new Vector2(-1, 1);
         node.Rotation = -node.Rotation;
     }
+
     private void DelayedDispose()
 	{
         disposeTimer.Start();
