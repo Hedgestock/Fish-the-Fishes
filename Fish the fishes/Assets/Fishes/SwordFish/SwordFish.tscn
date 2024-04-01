@@ -14,8 +14,10 @@ height = 122.0
 
 [node name="SwordFish" instance=ExtResource("1_jmf7p")]
 script = ExtResource("2_q8hjt")
-DashSpeed = 600.0
+Strikes = 3
+Value = 2.0
 MinSpeed = 200.0
+MaxSpeed = 500.0
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = ExtResource("2_qxon2")
@@ -26,9 +28,12 @@ position = Vector2(51, 5)
 rotation = 1.65806
 shape = SubResource("CapsuleShape2D_l8r55")
 
-[node name="HitBox" type="CollisionShape2D" parent="." index="5"]
+[node name="HitBox" type="Area2D" parent="." index="5"]
 position = Vector2(-149, 5)
 rotation = 1.53589
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" index="0"]
 shape = SubResource("CapsuleShape2D_rp7cb")
 
 [connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="SeekTarget"]
+[connection signal="body_entered" from="HitBox" to="." method="OnFishSkewered"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://72tcole4bkvg"]
+[gd_scene load_steps=11 format=3 uid="uid://72tcole4bkvg"]
 
-[ext_resource type="Script" path="res://Fish the fishes/Scenes/Game/Game.cs" id="1_u1bt7"]
-[ext_resource type="PackedScene" uid="uid://ct3hvitsd17g5" path="res://Fish the fishes/Assets/Fishes/RedFish/RedFish.tscn" id="4_w2tuu"]
+[ext_resource type="Script" path="res://Fish the fishes/Scenes/Game/GameTest.cs" id="1_15fs3"]
+[ext_resource type="PackedScene" uid="uid://dsv67b7l0uq40" path="res://Fish the fishes/Assets/Fishes/GreenFish/GreenFish.tscn" id="2_1tbne"]
+[ext_resource type="PackedScene" uid="uid://be1nxedcwhn2i" path="res://Fish the fishes/Assets/Fishes/SwordFish/SwordFish.tscn" id="7_g46w2"]
 [ext_resource type="PackedScene" uid="uid://co0xglrn1rvre" path="res://Fish the fishes/Assets/Trashes/Can.tscn" id="8_y6d2i"]
 [ext_resource type="PackedScene" uid="uid://8pxdejw8ptee" path="res://Fish the fishes/Assets/Trashes/Shoe.tscn" id="9_1uygg"]
 [ext_resource type="PackedScene" uid="uid://lvuam8fndp75" path="res://Fish the fishes/Assets/Trashes/Tire.tscn" id="10_7luie"]
@@ -14,8 +15,8 @@ radius = 18.0
 height = 812.0
 
 [node name="Game" type="Node"]
-script = ExtResource("1_u1bt7")
-Fishes = Array[PackedScene]([ExtResource("4_w2tuu")])
+script = ExtResource("1_15fs3")
+Fishes = Array[PackedScene]([ExtResource("2_1tbne"), ExtResource("2_1tbne"), ExtResource("7_g46w2"), ExtResource("2_1tbne"), ExtResource("2_1tbne")])
 Trashes = Array[PackedScene]([ExtResource("8_y6d2i"), ExtResource("9_1uygg"), ExtResource("10_7luie")])
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

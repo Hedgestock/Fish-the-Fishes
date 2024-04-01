@@ -6,7 +6,7 @@ using System.Linq;
 
 public partial class Fish : CharacterBody2D
 {
-    protected enum State
+    public enum FishState
     {
         Alive,
 		Dead,
@@ -17,7 +17,7 @@ public partial class Fish : CharacterBody2D
     [Export]
     public float Value = 1;
 	[Export]
-	public int Multiplier = 1;
+	public uint Multiplier = 1;
 	[Export]
 	public bool IsNegative = false;
 
@@ -31,10 +31,10 @@ public partial class Fish : CharacterBody2D
 
     public bool Flip = false;
     public float ActualSpeed = 0;
+    public FishState State;
 
     protected AnimatedSprite2D Sprite;
 
-    protected State state;
 
     private Timer DisposeTimer;
 
@@ -46,7 +46,7 @@ public partial class Fish : CharacterBody2D
 
         Sprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 
-        state = State.Alive;
+        State = FishState.Alive;
 
         if (ActualSpeed == 0)
         {
@@ -71,7 +71,6 @@ public partial class Fish : CharacterBody2D
 
     public override void _PhysicsProcess(double delta)
     {
-        GD.Print(Velocity);
         var velocity = Velocity;
         velocity.Y += (float)delta * GravityScale * (int)ProjectSettings.GetSetting("physics/2d/default_gravity");
         Velocity = velocity;
@@ -90,7 +89,7 @@ public partial class Fish : CharacterBody2D
 
     public void Catch(Vector2 Velocity)
     {
-        state = State.Fished;
+        State = FishState.Fished;
         GravityScale = 0;
         this.Velocity = Velocity;
         foreach (CollisionShape2D hurtBox in GetChildren().Where(child => child.GetGroups().Contains("Hurtboxes")))
@@ -99,16 +98,16 @@ public partial class Fish : CharacterBody2D
         }
     }
 
-    public void Trigger()
+    public virtual void Trigger()
 	{
 		Kill();
 	}
 
-	public void Kill()
+	public virtual void Kill()
 	{
-		if (state == State.Dead) return;
-		state = State.Dead;
-        Velocity = new Vector2(0, 0);
+		if (State == FishState.Dead) return;
+		State = FishState.Dead;
+        Velocity = Vector2.Zero;
         GravityScale = 0.6f;
 		Sprite.Animation = "dead";
     }

@@ -28,15 +28,21 @@ public partial class RedFish : Fish
 	public override void _PhysicsProcess(double delta)
 	{
 		base._PhysicsProcess(delta);
-        if (state != State.Alive) return;
+        if (State != FishState.Alive) return;
 
 		Vector2 tmp = new Vector2(1, (float) Math.Sin(Position.X/WaveActualInverseAmplitude) * WaveActualPeriod);
         Velocity = tmp.Normalized() * ActualSpeed;
     }
 
+    public override void Kill()
+    {
+        base.Kill();
+        GetNode<CollisionShape2D>("HitBox/CollisionShape2D").SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
+    }
+
     private void _on_body_entered(Node body)
 	{
-        if (body is Fish && body != this)//!(body is RedFish))
+        if (body is Fish && !(body is RedFish))
 		{
 			(body as Fish).Kill();
 		}

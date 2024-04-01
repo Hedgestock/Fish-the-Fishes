@@ -12,6 +12,7 @@
 - [ ] Ajouter un compendium
 - [ ] Ajouter des hauts faits
 - [ ] Ajourter un tutoriel
+- [ ] Utiliser des hameçons pour la vie
 
 # Poissons
 
@@ -57,11 +58,12 @@
     - [ ] Français
     - [ ] Allemand
     - [ ] Thai
-- [ ] Support de différentes tailles d'écran
+- [x] Support de différentes tailles d'écran
 - [ ] [**Solution autre**] Ajouter des poissons à chemins
 - [ ] Ajouter une probabilité d'apparition
 - [x] Ajouter une vitesse propre à chaque poisson
 - [ ] Rendre le délai d'apparition aléatoire
+- [ ] Ajouter des morts différentes
 
 # Corrections
 
@@ -71,3 +73,4 @@
 - [x] Corriger la gravité en pêche de poisson mort
 - [x] Corriger la disparition des poissions hors écran
 - [ ] Attention le poisson ne sait s'il est mort et pêché en même temps
+- [ ] Couper le son d'un poisson mort

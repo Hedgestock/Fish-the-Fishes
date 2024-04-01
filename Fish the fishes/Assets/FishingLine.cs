@@ -21,7 +21,7 @@ public partial class FishingLine : CharacterBody2D
 	public delegate void HitEventHandler();
 
 	[Export]
-	public uint speed;
+	public uint Speed;
 
 	private Vector2 destination;
 	private Vector2 start;
@@ -129,7 +129,7 @@ public partial class FishingLine : CharacterBody2D
 	{
 		destination = position;
 		start = Position;
-        Velocity = (position - Position).Normalized() * speed;
+        Velocity = (position - Position).Normalized() * Speed;
 	}
 
 	void _on_area_2d_body_entered(Node2D body)
@@ -157,12 +157,14 @@ public partial class FishingLine : CharacterBody2D
 
 	private int ComputeScore()
 	{
-		float scoref = 0;
+		float score = 0;
         foreach (Fish fish in fishes)
         {
-			scoref += fish.Value;
+			score += fish.Value;
         }
-		int score = fibo2((int)Math.Ceiling(scoref));
+		GD.Print("score + ", score);
+		score = fibo2((int)Math.Ceiling(score));
+        GD.Print("score fibo ", score);
         foreach (Fish fish in fishes)
         {
 			if (fish.IsNegative)
@@ -171,7 +173,12 @@ public partial class FishingLine : CharacterBody2D
 				break;
 			}
         }
-        return score;
+        foreach (Fish fish in fishes)
+        {
+            score *= fish.Multiplier;
+        }
+		GD.Print("score x ", score);
+        return (int)score;
     }
 
 	private int fibo2(int num)
