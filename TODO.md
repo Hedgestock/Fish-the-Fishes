@@ -17,8 +17,10 @@
 
 # Poissons
 
-- [ ] Poisson doré
 - [x] Poisson rouge
+- [x] Banc de poisson (sardines)
+- [x] Espadon embrocheur
+- [ ] Poisson doré
 - [ ] Poisson venimeux
 - [ ] Poisson bombe
 - [ ] Poisson erratique
@@ -26,8 +28,6 @@
 - [ ] Méduse de vie
 - [ ] Nautile bonus
 - [ ] Calamar encreur
-- [x] Banc de poisson (sardines)
-- [ ] Espadon embrocheur
 - [ ] Étoile de mer d'invincibilité
 - [ ] Raie manta répulsive
 - [ ] Requin qui casse l'écran
@@ -54,15 +54,15 @@
 
 # Autre
 
+- [x] Support de différentes tailles d'écran
+- [x] Ajouter une vitesse propre à chaque poisson
 - [ ] Support de différentes langues
     - [x] Anglais
     - [ ] Français
     - [ ] Allemand
     - [ ] Thai
-- [x] Support de différentes tailles d'écran
 - [ ] [**Solution autre**] Ajouter des poissons à chemins
 - [ ] Ajouter une probabilité d'apparition
-- [x] Ajouter une vitesse propre à chaque poisson
 - [ ] Rendre le délai d'apparition aléatoire
 - [ ] Ajouter des morts différentes
 
@@ -73,6 +73,7 @@
 - [X] Corriger la vélocité non constante des poissons
 - [x] Corriger la gravité en pêche de poisson mort
 - [x] Corriger la disparition des poissions hors écran
-- [ ] Attention le poisson ne sait s'il est mort et pêché en même temps
+- [x] Attention le poisson ne sait s'il est mort et pêché en même temps
+- [x] Corriger le comportement de l'espadon quand il est pêché
 - [ ] Couper le son d'un poisson mort
-- [ ] Corriger le comportement de l'espadon quand il est pêché
+- [ ] Changer la diparition par chronomêtre pour une disparition par zone
