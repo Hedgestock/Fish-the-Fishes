@@ -62,7 +62,10 @@ public partial class SwordFish : Fish
 	{
         if (!Actionable || State == Action.Seeking) return;
 
-		Node[] fishes = GetTree().GetNodesInGroup("Fishes").Where(fish => (fish as Fish).IsAlive && !(fish is SwordFish)).ToArray();
+		Node[] fishes = GetTree().GetNodesInGroup("Fishes")
+            .Where(fish => (fish as Fish).IsAlive && (fish as Fish).IsOnScreen && !(fish is SwordFish))
+            .ToArray();
+
         if (fishes.Length == 0) {
             GD.Print("No fishes found");
             Leave();

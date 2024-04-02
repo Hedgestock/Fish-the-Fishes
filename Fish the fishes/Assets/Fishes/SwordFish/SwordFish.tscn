@@ -20,6 +20,10 @@ Value = 2.0
 MinSpeed = 500.0
 MaxSpeed = 700.0
 
+[node name="VisibleOnScreenNotifier2D" parent="." index="0"]
+position = Vector2(-44.5, 7)
+scale = Vector2(14.25, 2.5)
+
 [node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = ExtResource("2_qxon2")
 animation = &"alive"

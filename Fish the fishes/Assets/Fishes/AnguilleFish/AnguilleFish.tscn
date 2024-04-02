@@ -20,6 +20,9 @@ loop = true
 MinSpeed = 200.0
 MaxSpeed = 300.0
 
+[node name="VisibleOnScreenNotifier2D" parent="." index="0"]
+scale = Vector2(6, 2)
+
 [node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = ExtResource("2_2ati3")
 animation = &"alive"

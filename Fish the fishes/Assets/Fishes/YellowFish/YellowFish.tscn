@@ -18,13 +18,15 @@ loop = true
 
 [node name="YellowFish" instance=ExtResource("1_lk6on")]
 
+[node name="VisibleOnScreenNotifier2D" parent="." index="0"]
+scale = Vector2(3, 2)
+
 [node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = ExtResource("2_e3t31")
 animation = &"alive"
 frame_progress = 0.702968
 
 [node name="HurtBox" parent="." index="2"]
-position = Vector2(2, 0)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_dfnsu")
 

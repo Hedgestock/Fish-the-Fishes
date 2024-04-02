@@ -37,6 +37,11 @@ public partial class Fish : CharacterBody2D
         get { return IsAlive && !IsCaught; }
     }
 
+    public bool IsOnScreen
+    {
+        get { return GetNode<VisibleOnScreenNotifier2D>("VisibleOnScreenNotifier2D").IsOnScreen(); }
+    }
+
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
 	{
