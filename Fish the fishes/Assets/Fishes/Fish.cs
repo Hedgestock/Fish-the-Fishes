@@ -50,7 +50,7 @@ public partial class Fish : CharacterBody2D
 
         if (ActualSpeed == 0)
         {
-            ActualSpeed = (float) GD.RandRange(MinSpeed, MaxSpeed) * (Flip ? 1 : -1);
+            ActualSpeed = (float) GD.RandRange(MinSpeed, MaxSpeed) * (Flip ? -1 : 1);
 		}
 
         Velocity = new Vector2(ActualSpeed, 0);

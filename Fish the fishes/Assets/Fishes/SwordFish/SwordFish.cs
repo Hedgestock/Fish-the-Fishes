@@ -49,8 +49,6 @@ public partial class SwordFish : Fish
 
     private void SeekTarget()
 	{
-        GD.Print("Seek ", Strikes);
-
         if (State != FishState.Alive || Action == Step.Seeking) return;
 
 		Node[] fishes = GetTree().GetNodesInGroup("Fishes").Where(fish => (fish as Fish).State == FishState.Alive && !(fish is SwordFish)).ToArray();
@@ -66,7 +64,8 @@ public partial class SwordFish : Fish
 
         Vector2 direction = GetDirectionTo(Target);
         Tween tween = GetTree().CreateTween();
-        tween.TweenProperty(this, "rotation", direction.Angle() - Mathf.Pi, 1);
+        GD.Print(direction.Angle(), " , ", Rotation);
+        tween.TweenProperty(this, "rotation", direction.Angle(), 1);
         tween.TweenCallback(Callable.From(Launch));
         Velocity = Vector2.Zero;
     }
@@ -75,7 +74,7 @@ public partial class SwordFish : Fish
 	{
         Vector2 direction = GetDirectionTo(Target);
         Velocity = direction;
-        Rotation = direction.Angle() - Mathf.Pi;
+        Rotation = direction.Angle();
         Action = Step.Launched;
     }
 
@@ -84,17 +83,15 @@ public partial class SwordFish : Fish
         Velocity = new Vector2(ActualSpeed, 0);
 
         Tween tween = GetTree().CreateTween();
-        tween.TweenProperty(this, "rotation", Velocity.Angle() - Mathf.Pi, 1);
+        GD.Print(Velocity.Angle(), " , ", Rotation);
+        tween.TweenProperty(this, "rotation", Velocity.Angle(), 1);
 
         Action = Step.Leaving;
     }
 
 	private void OnFishSkewered(Node2D body)
 	{
-        GD.Print("check ", Action);
-
         if (!(Action == Step.Launched) || !(body is Fish) || body == this) return;
-		GD.Print("Skew ", body, " -- ", Strikes);
 
 		Target = body as Fish;
 
@@ -125,4 +122,10 @@ public partial class SwordFish : Fish
 	{
 		return Target.Position + (Target.Velocity * 0.7f) - Position;
     }
+
+    //private float GetClosestRotation(float angle)
+    //{
+    //    float res = angle;
+    //    if (angle > 0)
+    //}
 }

@@ -50,7 +50,7 @@ public partial class Game : Node
         Fish fish = FishScene.Instantiate<Fish>();
 
         bool flip = (GD.Randi() % 2) != 0;
-        Vector2 fishSpawnLocation = new Vector2(flip ? -100 : ScreenSize.X + 100, (float)GD.RandRange(0, ScreenSize.Y));
+        Vector2 fishSpawnLocation = new Vector2(flip ? ScreenSize.X + 100 : -100, (float)GD.RandRange(0, ScreenSize.Y));
         fish.Position = fishSpawnLocation;
         fish.Flip = flip;
 

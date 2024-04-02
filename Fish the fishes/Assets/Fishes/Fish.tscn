@@ -13,6 +13,7 @@ script = ExtResource("1_kms23")
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+flip_h = true
 
 [node name="HurtBox" type="CollisionShape2D" parent="." groups=["Hurtboxes"]]
 

@@ -26,13 +26,13 @@ animation = &"alive"
 frame_progress = 0.628646
 
 [node name="HitBox" type="Area2D" parent="." index="2"]
-position = Vector2(-5, 0)
+position = Vector2(5, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" index="0"]
 shape = SubResource("CircleShape2D_t08b6")
 
 [node name="HurtBox" parent="." index="3"]
-position = Vector2(-5, 0)
+position = Vector2(5, 0)
 shape = SubResource("CircleShape2D_bpbot")
 
 [connection signal="body_entered" from="HitBox" to="." method="_on_body_entered"]
