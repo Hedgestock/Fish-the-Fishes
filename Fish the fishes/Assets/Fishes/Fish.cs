@@ -30,8 +30,6 @@ public partial class Fish : CharacterBody2D
 
     protected AnimatedSprite2D Sprite;
 
-    private Timer DisposeTimer;
-
     public bool Actionable
     {
         get { return IsAlive && !IsCaught; }
@@ -45,9 +43,6 @@ public partial class Fish : CharacterBody2D
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
 	{
-        DisposeTimer = GetNode<Timer>("DisposeTimer");
-        DisposeTimer.Timeout += QueueFree;
-
         Sprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 
         if (ActualSpeed == 0)
@@ -77,16 +72,6 @@ public partial class Fish : CharacterBody2D
         velocity.Y += (float)delta * GravityScale * (int)ProjectSettings.GetSetting("physics/2d/default_gravity");
         Velocity = velocity;
         MoveAndSlide();
-    }
-
-    private void DelayedDispose()
-	{
-        DisposeTimer.Start();
-	}
-
-    private void CancelDispose()
-    {
-        DisposeTimer.Stop();
     }
 
     public virtual void Catch(Vector2 Velocity)

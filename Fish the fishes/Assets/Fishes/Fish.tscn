@@ -18,9 +18,3 @@ flip_h = true
 [node name="HurtBox" type="CollisionShape2D" parent="." groups=["Hurtboxes"]]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-
-[node name="DisposeTimer" type="Timer" parent="."]
-wait_time = 4.0
-
-[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="CancelDispose"]
-[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="DelayedDispose"]

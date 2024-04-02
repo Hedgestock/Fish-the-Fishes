@@ -44,13 +44,13 @@ public partial class Game : Node
         gameManager.ChangeSceneToFile("res://Fish the fishes/Scenes/Home.tscn");
     }
 
-    private void _on_fish_timer_timeout()
+    private void SpawnFish()
     {
         PackedScene FishScene = Fishes[(int)(GD.Randi() % Fishes.Count)];
         Fish fish = FishScene.Instantiate<Fish>();
 
         bool flip = (GD.Randi() % 2) != 0;
-        Vector2 fishSpawnLocation = new Vector2(flip ? ScreenSize.X + 100 : -100, (float)GD.RandRange(0, ScreenSize.Y));
+        Vector2 fishSpawnLocation = new Vector2(flip ? ScreenSize.X + 200 : -200, (float)GD.RandRange(0, ScreenSize.Y));
         fish.Position = fishSpawnLocation;
         fish.Flip = flip;
 
@@ -58,7 +58,12 @@ public partial class Game : Node
         AddChild(fish);
     }
 
-    private void _on_trash_timer_timeout()
+    private void Despawn(Node2D body)
+    {
+        body.QueueFree();
+    }
+
+    private void SpawnTrash()
     {
         PackedScene TrashScene = Trashes[(int)(GD.Randi() % Trashes.Count)];
         Trash trash = TrashScene.Instantiate<Trash>();

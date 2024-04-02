@@ -65,6 +65,8 @@
 - [ ] Ajouter une probabilité d'apparition
 - [ ] Rendre le délai d'apparition aléatoire
 - [ ] Ajouter des morts différentes
+- [ ] Refondre la structure de dossier pour `art`
+- [ ] Retravailler la logique de la ligne de pêche
 
 # Corrections
 
@@ -75,5 +77,5 @@
 - [x] Corriger la disparition des poissions hors écran
 - [x] Attention le poisson ne sait s'il est mort et pêché en même temps
 - [x] Corriger le comportement de l'espadon quand il est pêché
+- [x] Changer la diparition par chronomêtre pour une disparition par zone
 - [ ] Couper le son d'un poisson mort
-- [ ] Changer la diparition par chronomêtre pour une disparition par zone
