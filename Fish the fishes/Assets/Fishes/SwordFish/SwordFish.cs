@@ -16,8 +16,11 @@ public partial class SwordFish : Fish
 	//private float DashSpeed = 600;
 
     [Export]
-    private int Strikes = 3;
+    private int MaxStrikes = 5;
+    [Export]
+    private int MinStrikes = 1;
 
+    private int Strikes = 3;
     private CollisionShape2D HitBox;
 	private Fish Target = null;
 	private Step Action = Step.Swimming;
@@ -28,6 +31,7 @@ public partial class SwordFish : Fish
 	{
 		base._Ready();
 		HitBox = GetNode<CollisionShape2D>("HitBox/CollisionShape2D");
+        Strikes = GD.RandRange(MinStrikes, MaxStrikes);
     }
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -54,27 +58,32 @@ public partial class SwordFish : Fish
 		Node[] fishes = GetTree().GetNodesInGroup("Fishes").Where(fish => (fish as Fish).State == FishState.Alive && !(fish is SwordFish)).ToArray();
 		if (fishes.Length == 0) return;
 
-		Action = Step.Seeking;
-		
 		Target = (Fish) fishes[(int)(GD.Randi() % fishes.Length)];
-        HitBox.SetDeferred(CollisionShape2D.PropertyName.Disabled, false);
 
-
-        VisibleOnScreenNotifier2D test = Target.GetNode<VisibleOnScreenNotifier2D>("VisibleOnScreenNotifier2D");
-
-        Vector2 direction = GetDirectionTo(Target);
-        Tween tween = GetTree().CreateTween();
-        GD.Print(direction.Angle(), " , ", Rotation);
-        tween.TweenProperty(this, "rotation", direction.Angle(), 1);
-        tween.TweenCallback(Callable.From(Launch));
         Velocity = Vector2.Zero;
+
+        Tween tween = RotateAtConstantSpeed(GetDirectionTo(Target).Angle());
+        tween.TweenCallback(Callable.From(() => CallDeferred("Launch")));
+
+        Action = Step.Seeking;
+        //VisibleOnScreenNotifier2D test = Target.GetNode<VisibleOnScreenNotifier2D>("VisibleOnScreenNotifier2D");
     }
 
 	private void Launch()
 	{
-        Vector2 direction = GetDirectionTo(Target);
-        Velocity = direction;
-        Rotation = direction.Angle();
+        if (!IsInstanceValid(Target))
+        {
+            Action = Step.Swimming;
+            SeekTarget();
+            return;
+        }
+
+        Strikes--;
+        HitBox.SetDeferred(CollisionShape2D.PropertyName.Disabled, false);
+
+        Velocity = GetDirectionTo(Target);
+        Rotation = Velocity.Angle();
+
         Action = Step.Launched;
     }
 
@@ -82,9 +91,7 @@ public partial class SwordFish : Fish
     {
         Velocity = new Vector2(ActualSpeed, 0);
 
-        Tween tween = GetTree().CreateTween();
-        GD.Print(Velocity.Angle(), " , ", Rotation);
-        tween.TweenProperty(this, "rotation", Velocity.Angle(), 1);
+        RotateAtConstantSpeed(Velocity.Angle());
 
         Action = Step.Leaving;
     }
@@ -106,7 +113,6 @@ public partial class SwordFish : Fish
 
         
         HitBox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
-        Strikes--;
         if (Strikes > 0) SeekTarget();
         else Leave();
     }
@@ -120,12 +126,15 @@ public partial class SwordFish : Fish
 
 	private Vector2 GetDirectionTo(Fish target)
 	{
-		return Target.Position + (Target.Velocity * 0.7f) - Position;
+		return Target.Position + (Target.Velocity * 0.8f) - Position;
     }
 
-    //private float GetClosestRotation(float angle)
-    //{
-    //    float res = angle;
-    //    if (angle > 0)
-    //}
+    private Tween RotateAtConstantSpeed(float angle)
+    {
+        Tween tween = CreateTween();
+        angle = Mathf.LerpAngle(Rotation, angle, 1);
+        // This timig allows for constant rotation velocity (1s for 180 degrees)
+        tween.TweenProperty(this, "rotation", angle, Mathf.Abs(Rotation - angle) / Mathf.Pi);
+        return tween;
+    }
 }

@@ -48,13 +48,13 @@ public partial class GameTest : Node
 
     private void _on_fish_timer_timeout()
     {
-        if (FishNum == 6) return;
+        //if (FishNum == 6) return;
         PackedScene FishScene = Fishes[FishNum % Fishes.Count];
         FishNum++;
         Fish fish = FishScene.Instantiate<Fish>();
 
         bool flip = (GD.Randi() % 2) != 0;
-        Vector2 fishSpawnLocation = new Vector2(flip ? -100 : ScreenSize.X + 100, (float)GD.RandRange(0, ScreenSize.Y));
+        Vector2 fishSpawnLocation = new Vector2(flip ? ScreenSize.X + 100 : -100, (float)GD.RandRange(0, ScreenSize.Y));
         fish.Position = fishSpawnLocation;
         fish.Flip = flip;
 

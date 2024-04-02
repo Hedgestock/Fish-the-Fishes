@@ -162,9 +162,7 @@ public partial class FishingLine : CharacterBody2D
         {
 			score += fish.Value;
         }
-		GD.Print("score + ", score);
 		score = fibo2((int)Math.Ceiling(score));
-        GD.Print("score fibo ", score);
         foreach (Fish fish in fishes)
         {
 			if (fish.IsNegative)
@@ -177,7 +175,6 @@ public partial class FishingLine : CharacterBody2D
         {
             score *= fish.Multiplier;
         }
-		GD.Print("score x ", score);
         return (int)score;
     }
 
