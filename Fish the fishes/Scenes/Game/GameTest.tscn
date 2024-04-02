@@ -33,7 +33,6 @@ texture = ExtResource("11_6tjx1")
 [node name="HUD" parent="." instance=ExtResource("12_1kawo")]
 
 [node name="FishTimer" type="Timer" parent="."]
-wait_time = 4.0
 autostart = true
 
 [node name="TrashTimer" type="Timer" parent="."]

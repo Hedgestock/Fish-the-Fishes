@@ -2,17 +2,11 @@ using Godot;
 using Godot.Collections;
 using System;
 using System.Linq;
+using System.Xml.Linq;
 
 
 public partial class Fish : CharacterBody2D
 {
-    public enum FishState
-    {
-        Alive,
-		Dead,
-        Fished
-    }
-
     [ExportGroup("Scoring")]
     [Export]
     public float Value = 1;
@@ -31,12 +25,17 @@ public partial class Fish : CharacterBody2D
 
     public bool Flip = false;
     public float ActualSpeed = 0;
-    public FishState State;
+    public bool IsAlive = true;
+    public bool IsCaught = false;
 
     protected AnimatedSprite2D Sprite;
 
-
     private Timer DisposeTimer;
+
+    public bool Actionable
+    {
+        get { return IsAlive && !IsCaught; }
+    }
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -45,8 +44,6 @@ public partial class Fish : CharacterBody2D
         DisposeTimer.Timeout += QueueFree;
 
         Sprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
-
-        State = FishState.Alive;
 
         if (ActualSpeed == 0)
         {
@@ -87,9 +84,9 @@ public partial class Fish : CharacterBody2D
         DisposeTimer.Stop();
     }
 
-    public void Catch(Vector2 Velocity)
+    public virtual void Catch(Vector2 Velocity)
     {
-        State = FishState.Fished;
+        IsCaught = true;
         GravityScale = 0;
         this.Velocity = Velocity;
         foreach (CollisionShape2D hurtBox in GetChildren().Where(child => child.GetGroups().Contains("Hurtboxes")))
@@ -105,8 +102,8 @@ public partial class Fish : CharacterBody2D
 
 	public virtual void Kill()
 	{
-		if (State == FishState.Dead) return;
-		State = FishState.Dead;
+		if (!IsAlive) return;
+        IsAlive = false;
         Velocity = Vector2.Zero;
         GravityScale = 0.6f;
 		Sprite.Animation = "dead";

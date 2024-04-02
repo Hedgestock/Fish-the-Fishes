@@ -4,7 +4,7 @@ using static Godot.TextServer;
 
 public partial class SwordFish : Fish
 {
-    private enum Step
+    private enum Action
     {
         Swimming,
         Seeking,
@@ -23,7 +23,7 @@ public partial class SwordFish : Fish
     private int Strikes = 3;
     private CollisionShape2D HitBox;
 	private Fish Target = null;
-	private Step Action = Step.Swimming;
+	private Action State = Action.Swimming;
 
 
     // Called when the node enters the scene tree for the first time.
@@ -45,6 +45,13 @@ public partial class SwordFish : Fish
     {
         base._PhysicsProcess(delta);
     }
+
+    public override void Catch(Vector2 Velocity)
+    {
+        base.Catch(Velocity);
+        HitBox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
+    }
+
     public override void Kill()
     {
         base.Kill();
@@ -53,9 +60,9 @@ public partial class SwordFish : Fish
 
     private void SeekTarget()
 	{
-        if (State != FishState.Alive || Action == Step.Seeking) return;
+        if (!Actionable || State == Action.Seeking) return;
 
-		Node[] fishes = GetTree().GetNodesInGroup("Fishes").Where(fish => (fish as Fish).State == FishState.Alive && !(fish is SwordFish)).ToArray();
+		Node[] fishes = GetTree().GetNodesInGroup("Fishes").Where(fish => (fish as Fish).IsAlive && !(fish is SwordFish)).ToArray();
         if (fishes.Length == 0) {
             GD.Print("No fishes found");
             Leave();
@@ -69,15 +76,16 @@ public partial class SwordFish : Fish
         Tween tween = RotateAtConstantSpeed(GetDirectionTo(Target).Angle());
         tween.TweenCallback(Callable.From(() => CallDeferred("Launch")));
 
-        Action = Step.Seeking;
+        State = Action.Seeking;
         //VisibleOnScreenNotifier2D test = Target.GetNode<VisibleOnScreenNotifier2D>("VisibleOnScreenNotifier2D");
     }
 
 	private void Launch()
 	{
+        if (!Actionable) return;
         if (!IsInstanceValid(Target))
         {
-            Action = Step.Swimming;
+            State = Action.Swimming;
             SeekTarget();
             return;
         }
@@ -88,21 +96,22 @@ public partial class SwordFish : Fish
         Velocity = GetDirectionTo(Target);
         Rotation = Velocity.Angle();
 
-        Action = Step.Launched;
+        State = Action.Launched;
     }
 
     private void Leave()
     {
+        if (!Actionable) return;
         Velocity = new Vector2(ActualSpeed, 0);
 
         RotateAtConstantSpeed(Velocity.Angle());
 
-        Action = Step.Leaving;
+        State = Action.Leaving;
     }
 
 	private void OnFishSkewered(Node2D body)
 	{
-        if (!(Action == Step.Launched) || !(body is Fish) || body == this) return;
+        if (!(State == Action.Launched) || !(body is Fish) || body == this) return;
 
 		Target = body as Fish;
 
@@ -121,6 +130,7 @@ public partial class SwordFish : Fish
         else Leave();
     }
 
+    #region helpers
     private void AlterScore(Fish fish)
 	{
 		Value += fish.Value;
@@ -141,4 +151,5 @@ public partial class SwordFish : Fish
         tween.TweenProperty(this, "rotation", angle, Mathf.Abs(Rotation - angle) / Mathf.Pi);
         return tween;
     }
+    #endregion helpers
 }
