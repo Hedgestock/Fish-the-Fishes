@@ -13,6 +13,7 @@
 - [ ] Ajouter des hauts faits
 - [ ] Ajourter un tutoriel
 - [ ] Utiliser des hameçons pour la vie
+- [ ] Faire clignoter le score pour la perte de points
 
 # Poissons
 
@@ -74,3 +75,4 @@
 - [x] Corriger la disparition des poissions hors écran
 - [ ] Attention le poisson ne sait s'il est mort et pêché en même temps
 - [ ] Couper le son d'un poisson mort
+- [ ] Corriger le comportement de l'espadon quand il est pêché

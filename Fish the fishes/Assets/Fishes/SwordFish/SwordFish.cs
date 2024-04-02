@@ -56,7 +56,11 @@ public partial class SwordFish : Fish
         if (State != FishState.Alive || Action == Step.Seeking) return;
 
 		Node[] fishes = GetTree().GetNodesInGroup("Fishes").Where(fish => (fish as Fish).State == FishState.Alive && !(fish is SwordFish)).ToArray();
-		if (fishes.Length == 0) return;
+        if (fishes.Length == 0) {
+            GD.Print("No fishes found");
+            Leave();
+            return;
+        }
 
 		Target = (Fish) fishes[(int)(GD.Randi() % fishes.Length)];
 

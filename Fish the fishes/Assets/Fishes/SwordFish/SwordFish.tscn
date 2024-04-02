@@ -14,10 +14,11 @@ height = 66.0
 
 [node name="SwordFish" instance=ExtResource("1_jmf7p")]
 script = ExtResource("2_q8hjt")
-Strikes = 3
+MaxStrikes = 5
+MinStrikes = 1
 Value = 2.0
-MinSpeed = 300.0
-MaxSpeed = 500.0
+MinSpeed = 500.0
+MaxSpeed = 700.0
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = ExtResource("2_qxon2")
