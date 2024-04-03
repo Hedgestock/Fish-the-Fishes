@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://0sb3i5bm7j4p"]
+[gd_scene load_steps=17 format=3 uid="uid://0sb3i5bm7j4p"]
 
 [ext_resource type="Texture2D" uid="uid://xvra7re1p3ch" path="res://Fish the fishes/art/BG 1 FTF.png" id="1_2rjoh"]
 [ext_resource type="Script" path="res://Fish the fishes/Scenes/Game/Game.cs" id="1_et1ja"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://8pxdejw8ptee" path="res://Fish the fishes/Assets/Trashes/Shoe.tscn" id="6_vsv0t"]
 [ext_resource type="PackedScene" uid="uid://lvuam8fndp75" path="res://Fish the fishes/Assets/Trashes/Tire.tscn" id="7_7egbd"]
 [ext_resource type="PackedScene" uid="uid://be1nxedcwhn2i" path="res://Fish the fishes/Assets/Fishes/SwordFish/SwordFish.tscn" id="7_ekome"]
+[ext_resource type="PackedScene" uid="uid://ifoga56i10w3" path="res://Fish the fishes/Assets/RandomTimer.tscn" id="13_7sxe6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fibe0"]
 size = Vector2(1480, 2320)
@@ -54,12 +55,13 @@ texture = ExtResource("1_2rjoh")
 
 [node name="HUD" parent="." instance=ExtResource("3_0ebou")]
 
-[node name="FishTimer" type="Timer" parent="."]
-autostart = true
+[node name="FishTimer" parent="." instance=ExtResource("13_7sxe6")]
+Deviation = 0.5
 
-[node name="TrashTimer" type="Timer" parent="."]
-wait_time = 3.0
+[node name="TrashTimer" parent="." instance=ExtResource("13_7sxe6")]
 autostart = true
+WaitTimeAverage = 3.0
+Deviation = 2.0
 
 [node name="FrustrationFix" type="Control" parent="."]
 layout_mode = 3

@@ -56,6 +56,7 @@
 
 - [x] Support de différentes tailles d'écran
 - [x] Ajouter une vitesse propre à chaque poisson
+- [x] Rendre le délai d'apparition aléatoire
 - [ ] Support de différentes langues
     - [x] Anglais
     - [ ] Français
@@ -63,7 +64,6 @@
     - [ ] Thai
 - [ ] [**Solution autre**] Ajouter des poissons à chemins
 - [ ] Ajouter une probabilité d'apparition
-- [ ] Rendre le délai d'apparition aléatoire
 - [ ] Ajouter des morts différentes
 - [ ] Refondre la structure de dossier pour `art`
 - [ ] Retravailler la logique de la ligne de pêche

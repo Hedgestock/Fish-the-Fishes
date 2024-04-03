@@ -2,7 +2,7 @@ using Godot;
 using Godot.Collections;
 using System;
 
-public partial class Game : Node
+public partial class GameTest : Node
 {
     [Export]
     public Array<PackedScene> Fishes { get; set; }
@@ -10,7 +10,7 @@ public partial class Game : Node
     [Export]
     public Array<PackedScene> Trashes { get; set; }
 
-    private GameManager GM;
+    private GameManager gameManager;
 
     public enum Mode
     {
@@ -28,9 +28,9 @@ public partial class Game : Node
     {
         ScreenSize = GetViewport().GetVisibleRect().Size;
 
-        GM = GetNode<GameManager>("/root/GameManager");
-        GM.score = 0;
-        GM.lives = 3;
+        gameManager = GetNode<GameManager>("/root/GameManager");
+        gameManager.score = 0;
+        gameManager.lives = 3;
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -40,13 +40,13 @@ public partial class Game : Node
 
     public void EndGame()
     {
-        GM.SaveGame();
-        GM.ChangeSceneToFile("res://Fish the fishes/Scenes/Home.tscn");
+        gameManager.SaveGame();
+        gameManager.ChangeSceneToFile("res://Fish the fishes/Scenes/Home.tscn");
     }
-
+    private int num = 0;
     private void SpawnFish()
     {
-        PackedScene FishScene = Fishes[(int)(GD.Randi() % Fishes.Count)];
+        PackedScene FishScene = Fishes[num++ % Fishes.Count];
         Fish fish = FishScene.Instantiate<Fish>();
 
         bool flip = (GD.Randi() % 2) != 0;

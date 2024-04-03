@@ -5,7 +5,7 @@ using System;
 
 public partial class FishingLine : CharacterBody2D
 {
-	enum State
+	enum Action
 	{
 		Stopped,
 		Moving,
@@ -23,69 +23,69 @@ public partial class FishingLine : CharacterBody2D
 	[Export]
 	public uint Speed;
 
-	private Vector2 destination;
-	private Vector2 start;
-	private State state;
-	private bool invincible;
+	private Vector2 Destination;
+	private Vector2 Start;
+	private Action State;
+	private bool Invincible;
 
-	private Vector2 screenSize;
-	private Vector2 basePosition;
+	private Vector2 ScreenSize;
+	private Vector2 BasePosition;
 
-	private Area2D area;
-	private CollisionShape2D hitbox;
-	private AnimatedSprite2D line;
-	private Array<Fish> fishes;
+	private Area2D Area;
+	private CollisionShape2D Hitbox;
+	private AnimatedSprite2D Line;
+	private Array<Fish> Fishes;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		screenSize = GetViewport().GetVisibleRect().Size;
-		basePosition = new Vector2(screenSize.X / 2, 50);
-		Position = basePosition;
-		state = State.Stopped;
-		invincible = false;
-		area = GetNode<Area2D>("Area2D");
-		hitbox = area.GetNode<CollisionShape2D>("CollisionShape2D");
-		hitbox.Disabled = true;
-		fishes = new Array<Fish>();
-		line = GetNode<AnimatedSprite2D>("Line");
-		line.Play();
+		ScreenSize = GetViewport().GetVisibleRect().Size;
+		BasePosition = new Vector2(ScreenSize.X / 2, 50);
+		Position = BasePosition;
+		State = Action.Stopped;
+		Invincible = false;
+		Area = GetNode<Area2D>("Area2D");
+		Hitbox = Area.GetNode<CollisionShape2D>("CollisionShape2D");
+		Hitbox.Disabled = true;
+		Fishes = new Array<Fish>();
+		Line = GetNode<AnimatedSprite2D>("Line");
+		Line.Play();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
 		
-		if (state == State.Stopped) return;
+		if (State == Action.Stopped) return;
 
         MoveAndSlide();
 
 
-        if (start.DistanceTo(Position) > start.DistanceTo(destination))
+        if (Start.DistanceTo(Position) > Start.DistanceTo(Destination))
 		{
-			switch (state)
+			switch (State)
 			{
-				case State.Moving:
-					state = State.Fishing;
-					MoveTowards(new Vector2(screenSize.X / 2, -50));
-					hitbox.SetDeferred(CollisionShape2D.PropertyName.Disabled, false);
-					line.Animation = "weighted";
+				case Action.Moving:
+					State = Action.Fishing;
+					MoveTowards(new Vector2(ScreenSize.X / 2, -50));
+					Hitbox.SetDeferred(CollisionShape2D.PropertyName.Disabled, false);
+					Line.Animation = "weighted";
 					break;
-				case State.Fishing:
-					hitbox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
+				case Action.Fishing:
+					Hitbox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
 					EmitSignal(SignalName.Score, ComputeScore());
-					fishes.Clear();
-					line.Animation = "loose";
-					goto case State.Hit;
-				case State.Hit:
-					state = State.Resetting;
-					MoveTowards(basePosition);
+					Fishes.Clear();
+					Line.Animation = "loose";
+					goto case Action.Hit;
+				case Action.Hit:
+					State = Action.Resetting;
+					MoveTowards(BasePosition);
 					break;
-				case State.Resetting:
-					state = State.Stopped;
+				case Action.Resetting:
+					State = Action.Stopped;
 					Velocity = new Vector2(0, 0);
 					break;
-				case State.Stopped:
+				case Action.Stopped:
 				default:
 					return;
 			}
@@ -95,12 +95,12 @@ public partial class FishingLine : CharacterBody2D
 
 	private void setInvicibility(bool invincibility)
 	{
-		invincible = invincibility;
+		Invincible = invincibility;
 	}
 
     private void MakeInvincible(Area2D area)
     {
-		if (area == this.area)
+		if (area == this.Area)
 		{
             setInvicibility(true);
 		}
@@ -108,7 +108,7 @@ public partial class FishingLine : CharacterBody2D
 
     private void MakeVincible(Area2D area)
     {
-        if (area == this.area)
+        if (area == this.Area)
         {
             setInvicibility(false);
         }
@@ -116,19 +116,19 @@ public partial class FishingLine : CharacterBody2D
 
     public override void _Input(InputEvent @event)
 	{
-		if (state != State.Stopped || Visible == false) return;
+		if (State != Action.Stopped || Visible == false) return;
 		// Mouse in viewport coordinates.
 		if (@event is InputEventMouseButton eventMouseButton && @event.IsActionPressed("screen_tap"))
 		{
-			state = State.Moving;
+			State = Action.Moving;
 			MoveTowards(eventMouseButton.Position);
 		}
 	}
 
 	private void MoveTowards(Vector2 position)
 	{
-		destination = position;
-		start = Position;
+		Destination = position;
+		Start = Position;
         Velocity = (position - Position).Normalized() * Speed;
 	}
 
@@ -137,33 +137,33 @@ public partial class FishingLine : CharacterBody2D
 		if (body is Fish)
 		{
 			Fish fish = (Fish) body;
-			fishes.Add(fish);
+			Fishes.Add(fish);
 			fish.Catch(Velocity);
-		} else if (fishes.Count > 0 && body is Trash && !invincible)
+		} else if (Fishes.Count > 0 && body is Trash && !Invincible)
 		{
             EmitSignal(SignalName.Hit);
 			GetNode<AudioStreamPlayer>("HitSound").Play();
-			foreach (Fish fish in fishes)
+			foreach (Fish fish in Fishes)
 			{
 				fish.Kill();
 			}
-			fishes.Clear();
+			Fishes.Clear();
 			Velocity = new Vector2(0, 0);
-			line.Animation = "hit";
-			hitbox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
-			GetTree().CreateTimer(1).Timeout += () => { MoveTowards(destination); line.Animation = "loose"; };
+			Line.Animation = "hit";
+			Hitbox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
+			GetTree().CreateTimer(1).Timeout += () => { MoveTowards(Destination); Line.Animation = "loose"; };
 		}
 	}
 
 	private int ComputeScore()
 	{
 		float score = 0;
-        foreach (Fish fish in fishes)
+        foreach (Fish fish in Fishes)
         {
 			score += fish.Value;
         }
 		score = fibo2((int)Math.Ceiling(score));
-        foreach (Fish fish in fishes)
+        foreach (Fish fish in Fishes)
         {
 			if (fish.IsNegative)
 			{
@@ -171,9 +171,10 @@ public partial class FishingLine : CharacterBody2D
 				break;
 			}
         }
-        foreach (Fish fish in fishes)
+        foreach (Fish fish in Fishes)
         {
             score *= fish.Multiplier;
+			fish.QueueFree();
         }
         return (int)score;
     }
