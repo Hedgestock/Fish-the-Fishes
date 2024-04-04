@@ -1,6 +1,6 @@
 [gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://dlql6k643iy6w"]
 
-[ext_resource type="Texture2D" uid="uid://o5gwo8f5h36n" path="res://Fish the fishes/art/sword fish 1.png" id="1_s8li7"]
+[ext_resource type="Texture2D" uid="uid://o5gwo8f5h36n" path="res://Fish the fishes/art/fish/sword/sword fish 1.png" id="1_s8li7"]
 
 [resource]
 animations = [{
@@ -12,10 +12,7 @@ animations = [{
 "name": &"alive",
 "speed": 5.0
 }, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_s8li7")
-}],
+"frames": [],
 "loop": true,
 "name": &"dead",
 "speed": 5.0

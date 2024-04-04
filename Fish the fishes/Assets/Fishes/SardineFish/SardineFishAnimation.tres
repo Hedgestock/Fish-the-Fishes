@@ -1,33 +1,18 @@
-[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://dytgg6dbrwhc7"]
+[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://dytgg6dbrwhc7"]
 
-[ext_resource type="Texture2D" uid="uid://bqntm4q0nil8i" path="res://Fish the fishes/art/sardine 1.png" id="1_8p6l4"]
-[ext_resource type="Texture2D" uid="uid://bn7r241d2ehsj" path="res://Fish the fishes/art/sardine 2.png" id="2_fxa88"]
-[ext_resource type="Texture2D" uid="uid://d0qv8h3333jiv" path="res://Fish the fishes/art/sardine 3.png" id="3_ig11m"]
-[ext_resource type="Texture2D" uid="uid://db2vobeef6ex" path="res://Fish the fishes/art/sardine dead.png" id="4_4k2tv"]
+[ext_resource type="Texture2D" uid="uid://dsnbmphv0scr7" path="res://Fish the fishes/art/fish/sardine/sardine_alive_1.png" id="1_ee22k"]
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_8p6l4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_fxa88")
-}, {
-"duration": 1.0,
-"texture": ExtResource("1_8p6l4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_ig11m")
+"texture": ExtResource("1_ee22k")
 }],
 "loop": true,
 "name": &"alive",
 "speed": 7.0
 }, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_4k2tv")
-}],
+"frames": [],
 "loop": true,
 "name": &"dead",
 "speed": 5.0

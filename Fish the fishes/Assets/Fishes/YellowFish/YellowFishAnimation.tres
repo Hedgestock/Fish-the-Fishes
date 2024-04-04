@@ -1,24 +1,12 @@
-[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://dib3yn73u4ctr"]
+[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://dib3yn73u4ctr"]
 
-[ext_resource type="Texture2D" uid="uid://dvl10p1p3g15b" path="res://Fish the fishes/art/yellow fish 1.png" id="1_6627m"]
-[ext_resource type="Texture2D" uid="uid://bj0btonslwrsr" path="res://Fish the fishes/art/yellow fish 3.png" id="2_0b7h0"]
-[ext_resource type="Texture2D" uid="uid://b188tojfwmkxm" path="res://Fish the fishes/art/yellow fish 2.png" id="3_yf4gw"]
-[ext_resource type="Texture2D" uid="uid://byw3o0ur6eyco" path="res://Fish the fishes/art/yellow fish dead.png" id="4_rxf4m"]
+[ext_resource type="Texture2D" uid="uid://bs6psgplrpsp7" path="res://Fish the fishes/art/fish/yellow/yellow_alive_1.png" id="1_lyems"]
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_6627m")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_0b7h0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_yf4gw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_0b7h0")
+"texture": ExtResource("1_lyems")
 }],
 "loop": true,
 "name": &"alive",
@@ -26,7 +14,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_rxf4m")
+"texture": null
 }],
 "loop": true,
 "name": &"dead",

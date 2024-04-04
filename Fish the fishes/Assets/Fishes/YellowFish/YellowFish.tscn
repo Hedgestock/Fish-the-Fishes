@@ -19,7 +19,7 @@ loop = true
 [node name="YellowFish" instance=ExtResource("1_lk6on")]
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0"]
-scale = Vector2(3, 2)
+scale = Vector2(4, 2)
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = ExtResource("2_e3t31")
