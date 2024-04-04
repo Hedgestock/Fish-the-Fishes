@@ -54,7 +54,7 @@ public partial class Fish : CharacterBody2D
 
         if (Flip)
         {
-            Scale = new Vector2(-1, 1);
+            Scale *= new Vector2(-1, 1);
         }
 
         Sprite.Animation = "alive";

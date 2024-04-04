@@ -6,18 +6,17 @@ public partial class SplashScreen : CanvasLayer
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		var modulator = GetNode<CanvasModulate>("CanvasModulate");
-		modulator.Modulate = Colors.Black;
-		Tween tween = GetTree().CreateTween();
-		tween.TweenProperty(GetNode<CanvasModulate>("CanvasModulate"), "modulate", Colors.White, 2.0f);
-		tween.TweenProperty(GetNode<CanvasModulate>("CanvasModulate"), "modulate", Colors.White, 1.0f);
-		tween.TweenProperty(GetNode<CanvasModulate>("CanvasModulate"), "modulate", Colors.Black, 2.0f);
-		tween.TweenCallback(Callable.From(() => GetNode<GameManager>("/root/GameManager").ChangeSceneToFile("res://Fish the fishes/Scenes/Home.tscn")));
+        var background = GetNode<ColorRect>("ColorRect");
+        background.Modulate = Colors.Black;
+        Tween tween = GetTree().CreateTween();
+        tween.TweenProperty(background, "modulate", Colors.White, 2.0f);
+        tween.TweenProperty(background, "modulate", Colors.White, 1.0f);
+        tween.TweenProperty(background, "modulate", Colors.Black, 2.0f);
+        tween.TweenCallback(Callable.From(() => GetNode<GameManager>("/root/GameManager").ChangeSceneToFile("res://Fish the fishes/Scenes/Home.tscn")));
+    }
 
-	}
-
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
+    // Called every frame. 'delta' is the elapsed time since the previous frame.
+    public override void _Process(double delta)
 	{
 	}
 }

@@ -54,7 +54,7 @@ public partial class Game : Node
         fish.Position = fishSpawnLocation;
         fish.Flip = flip;
 
-        // spawn the mob by adding it to the main scene.
+        // Spawn the fish by adding it to the main scene.
         AddChild(fish);
     }
 
@@ -70,9 +70,9 @@ public partial class Game : Node
         Trash trash = TrashScene.Instantiate<Trash>();
         Vector2 trashSpawnLocation = new Vector2(GD.Randi() % ScreenSize.X, -50);
         trash.Position = trashSpawnLocation;
-        trash.LinearVelocity = new Vector2(GD.RandRange(-100, 100), 0);
+        trash.LinearVelocity = new Vector2(GD.RandRange(-200, 200), 0);
 
-        // Spawn the mob by adding it to the Main scene.
+        // Spawn the trash by adding it to the Main scene.
         AddChild(trash);
     }
 }
