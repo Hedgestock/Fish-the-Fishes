@@ -1,6 +1,7 @@
-[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://dytgg6dbrwhc7"]
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://dytgg6dbrwhc7"]
 
 [ext_resource type="Texture2D" uid="uid://dsnbmphv0scr7" path="res://Fish the fishes/art/fish/sardine/sardine_alive_1.png" id="1_ee22k"]
+[ext_resource type="Texture2D" uid="uid://bwcdofp5spd74" path="res://Fish the fishes/art/fish/sardine/sardine_dead.png" id="2_rugpi"]
 
 [resource]
 animations = [{
@@ -12,7 +13,10 @@ animations = [{
 "name": &"alive",
 "speed": 7.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rugpi")
+}],
 "loop": true,
 "name": &"dead",
 "speed": 5.0

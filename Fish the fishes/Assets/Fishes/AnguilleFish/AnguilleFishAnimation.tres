@@ -1,6 +1,7 @@
-[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://l22v2s0dn5uh"]
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://l22v2s0dn5uh"]
 
 [ext_resource type="Texture2D" uid="uid://btbbki4iq1kcw" path="res://Fish the fishes/art/fish/anguille/anguille_alive_1.png" id="1_bslsq"]
+[ext_resource type="Texture2D" uid="uid://cjaucjb2p0twd" path="res://Fish the fishes/art/fish/anguille/anguille_dead.png" id="2_jauo0"]
 
 [resource]
 animations = [{
@@ -12,7 +13,10 @@ animations = [{
 "name": &"alive",
 "speed": 8.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jauo0")
+}],
 "loop": true,
 "name": &"dead",
 "speed": 5.0
