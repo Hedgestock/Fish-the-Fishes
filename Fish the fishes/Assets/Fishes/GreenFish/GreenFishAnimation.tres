@@ -1,6 +1,7 @@
-[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://dxpxq818n4txw"]
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://dxpxq818n4txw"]
 
 [ext_resource type="Texture2D" uid="uid://da6lvk01aj30y" path="res://Fish the fishes/art/fish/green/green_alive_1.png" id="1_rmayw"]
+[ext_resource type="Texture2D" uid="uid://c5c8adta2sm6x" path="res://Fish the fishes/art/fish/green/green_dead.png" id="2_6wwfr"]
 
 [resource]
 animations = [{
@@ -12,7 +13,10 @@ animations = [{
 "name": &"alive",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6wwfr")
+}],
 "loop": true,
 "name": &"dead",
 "speed": 5.0
