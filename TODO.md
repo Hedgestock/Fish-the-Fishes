@@ -67,6 +67,7 @@
 - [ ] Ajouter des morts différentes
 - [ ] Refondre la structure de dossier pour `art`
 - [ ] Retravailler la logique de la ligne de pêche
+- [ ] Utiliser une boucle avec une clause d'essai pour éviter les erreurs lors de la récupération de la sauvegarde
 
 # Corrections
 

@@ -3,13 +3,14 @@ using System;
 
 public partial class GameManager : Node
 {
-    public Game.Mode mode = Game.Mode.Classic;
-    public uint score = 0;
-    public uint highScore = 0;
-    public uint lives = 3;
+    public Game.Mode Mode = Game.Mode.Classic;
+    public uint Score = 0;
+    public uint ClassicHighScore = 0;
+    public uint TimeAttackHighScore = 0;
+    public uint Lives = 3;
 
     public string PrevScene = "";
-    private string saveFile = "user://data.save";
+    private string SaveFile = "user://data.save";
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -17,23 +18,20 @@ public partial class GameManager : Node
         LoadSave();
     }
 
-    // Called every frame. 'delta' is the elapsed time since the previous frame.
-    public override void _Process(double delta)
-    {
-    }
-
     private Godot.Collections.Dictionary<string, Variant> Save()
     {
-        if (score > highScore) { highScore = score; }
+        if (Mode == Game.Mode.Classic && Score > ClassicHighScore) ClassicHighScore = Score;
+        if (Mode == Game.Mode.TimeAttack && Score > TimeAttackHighScore) TimeAttackHighScore = Score;
         return new Godot.Collections.Dictionary<string, Variant>()
         {
-            { "HighScore", highScore },
+            { "ClassicHighScore", ClassicHighScore },
+            { "TimeAttackHighScore", TimeAttackHighScore },
         };
     }
 
     public void SaveGame()
     {
-        using var gameSave = FileAccess.Open(saveFile, FileAccess.ModeFlags.Write);
+        using var gameSave = FileAccess.Open(SaveFile, FileAccess.ModeFlags.Write);
 
         gameSave.StoreLine(Json.Stringify(Save()));
     }
@@ -41,12 +39,12 @@ public partial class GameManager : Node
     private void LoadSave()
     {
 
-        if (!FileAccess.FileExists(saveFile))
+        if (!FileAccess.FileExists(SaveFile))
         {
             return;
         }
 
-        using var saveGame = FileAccess.Open(saveFile, FileAccess.ModeFlags.Read);
+        using var saveGame = FileAccess.Open(SaveFile, FileAccess.ModeFlags.Read);
 
         while (saveGame.GetPosition() < saveGame.GetLength())
         {
@@ -63,7 +61,8 @@ public partial class GameManager : Node
 
             // Get the data from the JSON object
             var nodeData = new Godot.Collections.Dictionary<string, Variant>((Godot.Collections.Dictionary)json.Data);
-            highScore = (uint)nodeData["HighScore"];
+            ClassicHighScore = (uint)nodeData["ClassicHighScore"];
+            TimeAttackHighScore = (uint)nodeData["TimeAttackHighScore"];
         }
     }
 

@@ -3,23 +3,23 @@ using System;
 
 public partial class Home : CanvasLayer
 {
-    private GameManager gameManager;
+    private GameManager GM;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
 	{
-        gameManager = GetNode<GameManager>("/root/GameManager");
+        GM = GetNode<GameManager>("/root/GameManager");
 
-        GetNode<Label>("HighScore").Text = "High Score: \n" + gameManager.highScore.ToString();
+        GetNode<Label>("Messages/HighScores/Classic").Text = "Classic High Score: \n" + GM.ClassicHighScore.ToString();
+        GetNode<Label>("Messages/HighScores/TimeAttack").Text = "Time Attack High Score: \n" + GM.TimeAttackHighScore.ToString();
 
-        if (gameManager.PrevScene == "res://SplashScreen.tscn")
+        if (GM.PrevScene == "res://SplashScreen.tscn")
         {
             GetNode<AudioStreamPlayer>("AudioStreamPlayer").Play();
 
         } else
         {
-            GetNode<Label>("Message").Text = "Last Score: \n" + gameManager.score.ToString();
-
+            GetNode<Label>("Messages/Message").Text = "Last Score: \n" + GM.Score.ToString();
         }
     }
 
@@ -30,12 +30,27 @@ public partial class Home : CanvasLayer
 
    	private void Play(Game.Mode mode)
 	{
-        gameManager.mode = mode;
-        gameManager.ChangeSceneToFile("res://Fish the fishes/Scenes/Game/Game.tscn");
+        GM.Mode = mode;
+        GM.ChangeSceneToFile("res://Fish the fishes/Scenes/Game/Game.tscn");
 	}
 
     private void PlayClassic()
     {
         Play(Game.Mode.Classic);
+    }
+
+    private void PlayTimeAttack()
+    {
+        Play(Game.Mode.TimeAttack);
+    }
+
+    private void GoToSettings()
+    {
+        GM.ChangeSceneToFile("res://Fish the fishes/Scenes/Settings/Settings.tscn");
+    }
+
+    private void GoToCompendium()
+    {
+        GM.ChangeSceneToFile("res://Fish the fishes/Scenes/Compendium/Compendium.tscn");
     }
 }

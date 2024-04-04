@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://b0nv1b3x0suu5"]
+[gd_scene load_steps=8 format=3 uid="uid://b0nv1b3x0suu5"]
 
+[ext_resource type="Script" path="res://Fish the fishes/Scenes/Compendium/Compendium.cs" id="1_lwdf7"]
 [ext_resource type="Texture2D" uid="uid://4sfuxo2673qo" path="res://Fish the fishes/art/BG 2 FTF.png" id="1_x6noe"]
-[ext_resource type="Texture2D" uid="uid://dvkg44r1oulcs" path="res://Fish the fishes/art/retour.png" id="2_mhjxi"]
-[ext_resource type="Texture2D" uid="uid://bjbotgfwig38a" path="res://Fish the fishes/art/retour click.png" id="3_xgqri"]
-[ext_resource type="Texture2D" uid="uid://bx8qk7jnypm0" path="res://Fish the fishes/art/retour hover.png" id="4_5k6ur"]
+[ext_resource type="Texture2D" uid="uid://dvkg44r1oulcs" path="res://Fish the fishes/art/UI/retour.png" id="2_mhjxi"]
+[ext_resource type="Texture2D" uid="uid://bjbotgfwig38a" path="res://Fish the fishes/art/UI/retour click.png" id="3_xgqri"]
+[ext_resource type="Texture2D" uid="uid://bx8qk7jnypm0" path="res://Fish the fishes/art/UI/retour hover.png" id="4_5k6ur"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_qkuki"]
 action = &"menu_go_back"
@@ -12,6 +13,7 @@ action = &"menu_go_back"
 events = [SubResource("InputEventAction_qkuki")]
 
 [node name="Compendium" type="CanvasLayer"]
+script = ExtResource("1_lwdf7")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -20,6 +22,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_x6noe")
+stretch_mode = 6
 
 [node name="BackButton" type="TextureButton" parent="."]
 offset_left = 10.0
@@ -32,3 +35,5 @@ texture_normal = ExtResource("2_mhjxi")
 texture_pressed = ExtResource("3_xgqri")
 texture_hover = ExtResource("4_5k6ur")
 stretch_mode = 0
+
+[connection signal="pressed" from="BackButton" to="." method="GoToHome"]

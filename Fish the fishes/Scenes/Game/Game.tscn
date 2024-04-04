@@ -52,6 +52,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_2rjoh")
+stretch_mode = 6
 
 [node name="HUD" parent="." instance=ExtResource("3_0ebou")]
 

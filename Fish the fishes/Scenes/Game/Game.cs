@@ -29,8 +29,8 @@ public partial class Game : Node
         ScreenSize = GetViewport().GetVisibleRect().Size;
 
         GM = GetNode<GameManager>("/root/GameManager");
-        GM.score = 0;
-        GM.lives = 3;
+        GM.Score = 0;
+        GM.Lives = 3;
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.

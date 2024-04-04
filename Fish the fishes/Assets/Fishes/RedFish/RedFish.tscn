@@ -34,6 +34,7 @@ position = Vector2(5, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" index="0"]
 shape = SubResource("CircleShape2D_t08b6")
+debug_color = Color(1, 0, 0, 0.419608)
 
 [node name="HurtBox" parent="." index="3"]
 position = Vector2(5, 0)

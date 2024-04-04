@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=3 uid="uid://dwv4cu7q6wlf6"]
+
+[ext_resource type="Script" path="res://Fish the fishes/Scenes/Settings/Settings.cs" id="1_pgx6s"]
+[ext_resource type="Texture2D" uid="uid://4sfuxo2673qo" path="res://Fish the fishes/art/BG 2 FTF.png" id="2_okyw8"]
+[ext_resource type="Texture2D" uid="uid://dvkg44r1oulcs" path="res://Fish the fishes/art/UI/retour.png" id="3_d41ef"]
+[ext_resource type="Texture2D" uid="uid://bjbotgfwig38a" path="res://Fish the fishes/art/UI/retour click.png" id="4_6vns6"]
+[ext_resource type="Texture2D" uid="uid://bx8qk7jnypm0" path="res://Fish the fishes/art/UI/retour hover.png" id="5_rejhq"]
+[ext_resource type="FontFile" uid="uid://bfbfdje68lt7w" path="res://fonts/Amatic-Bold.ttf" id="6_ys5mf"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_qkuki"]
+action = &"menu_go_back"
+
+[sub_resource type="Shortcut" id="Shortcut_y2krb"]
+events = [SubResource("InputEventAction_qkuki")]
+
+[node name="Settings" type="CanvasLayer"]
+script = ExtResource("1_pgx6s")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_okyw8")
+stretch_mode = 6
+
+[node name="BackButton" type="TextureButton" parent="."]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 210.0
+offset_bottom = 210.0
+scale = Vector2(0.5, 0.5)
+shortcut = SubResource("Shortcut_y2krb")
+texture_normal = ExtResource("3_d41ef")
+texture_pressed = ExtResource("4_6vns6")
+texture_hover = ExtResource("5_rejhq")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="."]
+offset_left = 285.0
+offset_top = 454.0
+offset_right = 779.0
+offset_bottom = 629.0
+theme_override_fonts/font = ExtResource("6_ys5mf")
+theme_override_font_sizes/font_size = 128
+text = "Settings"
+
+[connection signal="pressed" from="BackButton" to="." method="GoToHome"]

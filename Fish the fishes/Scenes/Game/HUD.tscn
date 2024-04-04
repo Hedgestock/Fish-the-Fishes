@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://Fish the fishes/Scenes/Game/HUD.cs" id="1_6mcuw"]
 [ext_resource type="FontFile" uid="uid://bfbfdje68lt7w" path="res://fonts/Amatic-Bold.ttf" id="1_tvh2u"]
-[ext_resource type="Texture2D" uid="uid://r8hgxewljrec" path="res://Fish the fishes/art/Vie 2.png" id="2_47qlu"]
-[ext_resource type="Texture2D" uid="uid://bi3pts224egt6" path="res://Fish the fishes/art/Vie 1.png" id="3_o5krk"]
-[ext_resource type="Texture2D" uid="uid://c05mhtfd1por7" path="res://Fish the fishes/art/Vie 3.png" id="4_jt1fa"]
+[ext_resource type="Texture2D" uid="uid://r8hgxewljrec" path="res://Fish the fishes/art/UI/Vie 2.png" id="2_47qlu"]
+[ext_resource type="Texture2D" uid="uid://bi3pts224egt6" path="res://Fish the fishes/art/UI/Vie 1.png" id="3_o5krk"]
+[ext_resource type="Texture2D" uid="uid://c05mhtfd1por7" path="res://Fish the fishes/art/UI/Vie 3.png" id="4_jt1fa"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_352nl"]
 animations = [{
@@ -36,16 +36,19 @@ offset_left = 10.0
 offset_right = 50.0
 offset_bottom = 72.0
 theme_override_fonts/font = ExtResource("1_tvh2u")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 128
 text = "0"
 
 [node name="Lives" type="HBoxContainer" parent="."]
+visible = false
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -40.0
+offset_left = -80.0
+offset_right = -40.0
 offset_bottom = 40.0
 grow_horizontal = 0
+scale = Vector2(2, 2)
 
 [node name="Life1" type="AnimatedSprite2D" parent="Lives"]
 position = Vector2(-112, 32)
@@ -64,3 +67,21 @@ position = Vector2(0, 32)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_352nl")
 animation = &"life"
+
+[node name="Time" type="Label" parent="."]
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -60.0
+offset_right = -19.0
+offset_bottom = 138.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("1_tvh2u")
+theme_override_font_sizes/font_size = 128
+text = "0"
+
+[node name="GameTimer" type="Timer" parent="."]
+wait_time = 60.0
+
+[connection signal="timeout" from="GameTimer" to="." method="EndCurrentGame"]
