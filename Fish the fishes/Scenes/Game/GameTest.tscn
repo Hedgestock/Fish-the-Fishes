@@ -50,7 +50,6 @@ texture = ExtResource("11_6tjx1")
 [node name="HUD" parent="." instance=ExtResource("12_1kawo")]
 
 [node name="FishTimer" type="Timer" parent="."]
-wait_time = 4.686
 autostart = true
 
 [node name="TrashTimer" type="Timer" parent="."]
@@ -75,6 +74,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_ksc04")
 
 [node name="FishingLine" parent="." instance=ExtResource("13_32nur")]
+Speed = 3200
 
 [connection signal="body_exited" from="PlayingZone/Area2D" to="." method="Despawn"]
 [connection signal="EndGame" from="HUD" to="." method="EndGame"]

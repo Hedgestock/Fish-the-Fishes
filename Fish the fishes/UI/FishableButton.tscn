@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://cifa65xrf1ken"]
+
+[ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://FTF_theme.tres" id="1_vttsl"]
+[ext_resource type="Script" path="res://Fish the fishes/UI/FishableButton.cs" id="2_tjulj"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_e7hax"]
+action = &"start_game"
+
+[sub_resource type="Shortcut" id="Shortcut_hi4rs"]
+events = [SubResource("InputEventAction_e7hax")]
+
+[node name="Button" type="Button"]
+offset_right = 239.0
+offset_bottom = 146.0
+theme = ExtResource("1_vttsl")
+shortcut = SubResource("Shortcut_hi4rs")
+text = "Button"
+script = ExtResource("2_tjulj")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]

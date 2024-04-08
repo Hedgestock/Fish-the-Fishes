@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dqud8bhj4fopd"]
+
+[ext_resource type="FontFile" uid="uid://bfbfdje68lt7w" path="res://fonts/Amatic-Bold.ttf" id="1_fkn7n"]
+
+[resource]
+resource_name = "FTF"
+default_font = ExtResource("1_fkn7n")
+default_font_size = 128

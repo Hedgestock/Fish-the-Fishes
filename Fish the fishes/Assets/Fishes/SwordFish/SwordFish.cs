@@ -1,8 +1,10 @@
 using Godot;
+using Godot.Fish_the_fishes.Scripts;
+using System.Collections.Generic;
 using System.Linq;
 using static Godot.TextServer;
 
-public partial class SwordFish : Fish
+public partial class SwordFish : Fish, IFisher
 {
     private enum Action
     {
@@ -19,6 +21,8 @@ public partial class SwordFish : Fish
     private int MaxStrikes = 5;
     [Export]
     private int MinStrikes = 1;
+
+    public List<IFishable> FishedThings { get; } = new List<IFishable>();
 
     private int Strikes = 3;
     private CollisionShape2D HitBox;
@@ -46,9 +50,9 @@ public partial class SwordFish : Fish
         base._PhysicsProcess(delta);
     }
 
-    public override void Catch(Vector2 Velocity)
+    public override void GetCaughtBy(IFisher by)
     {
-        base.Catch(Velocity);
+        base.GetCaughtBy(by);
         HitBox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
     }
 
@@ -80,7 +84,6 @@ public partial class SwordFish : Fish
         tween.TweenCallback(Callable.From(() => CallDeferred("Launch")));
 
         State = Action.Seeking;
-        //VisibleOnScreenNotifier2D test = Target.GetNode<VisibleOnScreenNotifier2D>("VisibleOnScreenNotifier2D");
     }
 
 	private void Launch()
@@ -120,14 +123,8 @@ public partial class SwordFish : Fish
 
 		Target.Kill();
         Velocity = Vector2.Zero;
-        Target.Catch(Vector2.Zero);
+        Target.GetCaughtBy(this);
 
-		AlterScore(Target);
-
-
-        Target.CallDeferred(Node.MethodName.Reparent, this);
-
-        
         HitBox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
         if (Strikes > 0) SeekTarget();
         else Leave();

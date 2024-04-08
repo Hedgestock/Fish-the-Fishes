@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://blkg0i7vjb6il"]
+[gd_scene load_steps=8 format=3 uid="uid://blkg0i7vjb6il"]
 
 [ext_resource type="Texture2D" uid="uid://4sfuxo2673qo" path="res://Fish the fishes/art/BG 2 FTF.png" id="1_4aplq"]
 [ext_resource type="Script" path="res://Fish the fishes/Scenes/Home.cs" id="1_ptl5f"]
 [ext_resource type="AudioStream" uid="uid://cejn28367eqbj" path="res://Fish the fishes/sounds/ftf.ogg" id="2_itj28"]
-[ext_resource type="FontFile" uid="uid://bfbfdje68lt7w" path="res://fonts/Amatic-Bold.ttf" id="5_l2w4f"]
+[ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://FTF_theme.tres" id="5_mnxty"]
+[ext_resource type="PackedScene" uid="uid://cifa65xrf1ken" path="res://Fish the fishes/UI/FishableButton.tscn" id="5_o3gki"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_e7hax"]
 action = &"start_game"
@@ -26,140 +27,141 @@ grow_vertical = 2
 texture = ExtResource("1_4aplq")
 stretch_mode = 6
 
-[node name="Messages" type="VBoxContainer" parent="."]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -154.0
-offset_top = 80.0
-offset_right = 154.0
-offset_bottom = 899.0
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
-theme_override_constants/separation = 120
-alignment = 1
+grow_vertical = 2
+theme = ExtResource("5_mnxty")
+ratio = 0.5625
 
-[node name="HighScores" type="HBoxContainer" parent="Messages"]
+[node name="MarginContainer" type="MarginContainer" parent="AspectRatioContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AspectRatioContainer/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("5_mnxty")
+
+[node name="Messages" type="VBoxContainer" parent="AspectRatioContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("5_mnxty")
+theme_override_constants/separation = 120
+
+[node name="HighScores" type="HBoxContainer" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Messages"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("5_mnxty")
 theme_override_constants/separation = 80
 
-[node name="Classic" type="Label" parent="Messages/HighScores"]
+[node name="Classic" type="Label" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Messages/HighScores"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("5_l2w4f")
-theme_override_font_sizes/font_size = 128
+theme = ExtResource("5_mnxty")
 text = "Classic
 High Score
 0"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="TimeAttack" type="Label" parent="Messages/HighScores"]
+[node name="TimeAttack" type="Label" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Messages/HighScores"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("5_l2w4f")
-theme_override_font_sizes/font_size = 128
+theme = ExtResource("5_mnxty")
 text = "Time Attack
 High Score
 0"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Message" type="Label" parent="Messages"]
+[node name="Message" type="Label" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Messages"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("5_l2w4f")
-theme_override_font_sizes/font_size = 128
+size_flags_horizontal = 4
+theme = ExtResource("5_mnxty")
 text = "Fish
 The
 Fishes"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Menu" type="HBoxContainer" parent="."]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -404.5
-offset_top = -676.0
-offset_right = 404.5
-offset_bottom = -80.0
-grow_horizontal = 2
-grow_vertical = 0
+[node name="Menu" type="HBoxContainer" parent="AspectRatioContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("5_mnxty")
 theme_override_constants/separation = 80
 alignment = 1
 
-[node name="Other" type="VBoxContainer" parent="Menu"]
+[node name="Other" type="VBoxContainer" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu"]
 layout_mode = 2
+size_flags_vertical = 8
+theme = ExtResource("5_mnxty")
 theme_override_constants/separation = 40
 alignment = 1
 
-[node name="SettingsButton" type="Button" parent="Menu/Other"]
+[node name="SettingsButton" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/Other" instance=ExtResource("5_o3gki")]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_fonts/font = ExtResource("5_l2w4f")
-theme_override_font_sizes/font_size = 128
-shortcut = SubResource("Shortcut_hi4rs")
-text = "Settings
-"
+text = "Settings"
 
-[node name="CompendiumButton" type="Button" parent="Menu/Other"]
+[node name="CompendiumButton" type="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/Other"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_fonts/font = ExtResource("5_l2w4f")
-theme_override_font_sizes/font_size = 128
+theme = ExtResource("5_mnxty")
 shortcut = SubResource("Shortcut_hi4rs")
 text = "Compendium
 "
 
-[node name="Play" type="VBoxContainer" parent="Menu"]
+[node name="CreditsButton" type="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/Other"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("5_mnxty")
+text = "Credits"
+
+[node name="Play" type="VBoxContainer" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu"]
+layout_mode = 2
+size_flags_vertical = 8
+theme = ExtResource("5_mnxty")
 theme_override_constants/separation = 40
 alignment = 1
 
-[node name="TimeAttackButton" type="Button" parent="Menu/Play"]
+[node name="TimeAttackButton" type="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/Play"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_fonts/font = ExtResource("5_l2w4f")
-theme_override_font_sizes/font_size = 128
+theme = ExtResource("5_mnxty")
 shortcut = SubResource("Shortcut_hi4rs")
 text = "60s"
 
-[node name="GoGreenButton" type="Button" parent="Menu/Play"]
+[node name="GoGreenButton" type="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/Play"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_fonts/font = ExtResource("5_l2w4f")
-theme_override_font_sizes/font_size = 128
+theme = ExtResource("5_mnxty")
 shortcut = SubResource("Shortcut_hi4rs")
 text = "Go Green
 "
 
-[node name="ZenButton" type="Button" parent="Menu/Play"]
+[node name="ZenButton" type="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/Play"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_fonts/font = ExtResource("5_l2w4f")
-theme_override_font_sizes/font_size = 128
+theme = ExtResource("5_mnxty")
 shortcut = SubResource("Shortcut_hi4rs")
 text = "Zen Mode"
 
-[node name="ClassicButton" type="Button" parent="Menu/Play"]
+[node name="ClassicButton" type="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/Play"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_fonts/font = ExtResource("5_l2w4f")
-theme_override_font_sizes/font_size = 128
+theme = ExtResource("5_mnxty")
 shortcut = SubResource("Shortcut_hi4rs")
 text = "Classic"
 
-[connection signal="pressed" from="Menu/Other/SettingsButton" to="." method="GoToSettings"]
-[connection signal="pressed" from="Menu/Other/CompendiumButton" to="." method="GoToCompendium"]
-[connection signal="pressed" from="Menu/Play/TimeAttackButton" to="." method="PlayTimeAttack"]
-[connection signal="pressed" from="Menu/Play/GoGreenButton" to="." method="PlayClassic"]
-[connection signal="pressed" from="Menu/Play/ZenButton" to="." method="PlayClassic"]
-[connection signal="pressed" from="Menu/Play/ClassicButton" to="." method="PlayClassic"]
+[connection signal="pressed" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/Other/CompendiumButton" to="." method="GoToCompendium"]
+[connection signal="pressed" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/Play/TimeAttackButton" to="." method="PlayTimeAttack"]
+[connection signal="pressed" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/Play/GoGreenButton" to="." method="PlayClassic"]
+[connection signal="pressed" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/Play/ZenButton" to="." method="PlayClassic"]
+[connection signal="pressed" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/Play/ClassicButton" to="." method="PlayClassic"]

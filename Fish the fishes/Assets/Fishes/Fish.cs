@@ -1,11 +1,12 @@
 using Godot;
 using Godot.Collections;
+using Godot.Fish_the_fishes.Scripts;
 using System;
 using System.Linq;
 using System.Xml.Linq;
 
 
-public partial class Fish : CharacterBody2D
+public partial class Fish : CharacterBody2D, IFishable
 {
 	[ExportGroup("Scoring")]
 	[Export]
@@ -74,15 +75,25 @@ public partial class Fish : CharacterBody2D
 		MoveAndSlide();
 	}
 
-	public virtual void Catch(Vector2 Velocity)
+	public virtual void GetCaughtBy(IFisher by)
 	{
-		IsCaught = true;
-		GravityScale = 0;
-		this.Velocity = Velocity;
-		foreach (CollisionShape2D hurtBox in GetChildren().Where(child => child.GetGroups().Contains("Hurtboxes")))
+		var parent = GetParent();
+		if (parent == by) return; // This avoids multiple calls on reparenting
+		if (IsCaught && parent is IFishable)
 		{
-			hurtBox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
-		}
+			(parent as IFishable).GetCaughtBy(by);
+			return;
+		};
+        if (this is IFisher)
+        {
+            by.FishedThings.AddRange((this as IFisher).FishedThings);
+            (this as IFisher).FishedThings.Clear();
+        }
+        IsCaught = true;
+		GravityScale = 0;
+		Velocity = Vector2.Zero;
+		by.FishedThings.Add(this);
+        CallDeferred(Node.MethodName.Reparent, by as Node);
 	}
 
 	public virtual void Trigger()
