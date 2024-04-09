@@ -15,7 +15,6 @@ disabled = true
 offset_right = 8.0
 offset_bottom = 8.0
 theme = ExtResource("1_vttsl")
-text = "B"
+text = "Button"
 
-[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="ChangeScene"]
 [connection signal="pressed" from="Button" to="." method="OnPressed"]

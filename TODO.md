@@ -79,4 +79,5 @@
 - [x] Attention le poisson ne sait s'il est mort et pêché en même temps
 - [x] Corriger le comportement de l'espadon quand il est pêché
 - [x] Changer la diparition par chronomêtre pour une disparition par zone
+- [ ] Corriger le reparentage lors de la touche d'un déchêt
 - [ ] Couper le son d'un poisson mort

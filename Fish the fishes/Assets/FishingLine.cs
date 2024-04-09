@@ -51,7 +51,33 @@ public partial class FishingLine : CharacterBody2D, IFisher
 		Hitbox.Disabled = true;
 		Line = GetNode<AnimatedSprite2D>("Line");
 		Line.Play();
-	}
+
+		GD.Print("fibo 1 ", fibo2(1));
+		GD.Print("fibo 2 ", fibo2(2));
+		GD.Print("fibo 3 ", fibo2(3));
+		GD.Print("fibo 4 ", fibo2(4));
+		GD.Print("fibo 5 ", fibo2(5));
+		GD.Print("fibo 6 ", fibo2(6));
+		GD.Print("fibo 7 ", fibo2(7));
+		GD.Print("fibo 8 ", fibo2(8));
+		GD.Print("fibo 9 ", fibo2(9));
+		GD.Print("fibo 10 ", fibo2(10));
+		GD.Print("fibo 11 ", fibo2(11));
+		GD.Print("fibo 12 ", fibo2(12));
+		GD.Print("fibo 13 ", fibo2(13));
+		GD.Print("fibo 14 ", fibo2(14));
+		GD.Print("fibo 15 ", fibo2(15));
+		GD.Print("fibo 16 ", fibo2(16));
+		GD.Print("fibo 17 ", fibo2(17));
+		GD.Print("fibo 18 ", fibo2(18));
+		GD.Print("fibo 19 ", fibo2(19));
+		GD.Print("fibo 20 ", fibo2(20));
+		GD.Print("fibo 21 ", fibo2(21));
+		GD.Print("fibo 22 ", fibo2(22));
+		GD.Print("fibo 23 ", fibo2(23));
+		GD.Print("fibo 24 ", fibo2(24));
+		GD.Print("fibo 25 ", fibo2(25));
+    }
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
@@ -68,7 +94,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
 			{
 				case Action.Moving:
 					State = Action.Fishing;
-					MoveTowards(new Vector2(ScreenSize.X / 2, -50));
+					MoveTowards(new Vector2(ScreenSize.X / 2, -150));
 					Hitbox.SetDeferred(CollisionShape2D.PropertyName.Disabled, false);
 					Line.Animation = "weighted";
 					break;
