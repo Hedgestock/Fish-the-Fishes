@@ -51,32 +51,6 @@ public partial class FishingLine : CharacterBody2D, IFisher
 		Hitbox.Disabled = true;
 		Line = GetNode<AnimatedSprite2D>("Line");
 		Line.Play();
-
-		GD.Print("fibo 1 ", fibo2(1));
-		GD.Print("fibo 2 ", fibo2(2));
-		GD.Print("fibo 3 ", fibo2(3));
-		GD.Print("fibo 4 ", fibo2(4));
-		GD.Print("fibo 5 ", fibo2(5));
-		GD.Print("fibo 6 ", fibo2(6));
-		GD.Print("fibo 7 ", fibo2(7));
-		GD.Print("fibo 8 ", fibo2(8));
-		GD.Print("fibo 9 ", fibo2(9));
-		GD.Print("fibo 10 ", fibo2(10));
-		GD.Print("fibo 11 ", fibo2(11));
-		GD.Print("fibo 12 ", fibo2(12));
-		GD.Print("fibo 13 ", fibo2(13));
-		GD.Print("fibo 14 ", fibo2(14));
-		GD.Print("fibo 15 ", fibo2(15));
-		GD.Print("fibo 16 ", fibo2(16));
-		GD.Print("fibo 17 ", fibo2(17));
-		GD.Print("fibo 18 ", fibo2(18));
-		GD.Print("fibo 19 ", fibo2(19));
-		GD.Print("fibo 20 ", fibo2(20));
-		GD.Print("fibo 21 ", fibo2(21));
-		GD.Print("fibo 22 ", fibo2(22));
-		GD.Print("fibo 23 ", fibo2(23));
-		GD.Print("fibo 24 ", fibo2(24));
-		GD.Print("fibo 25 ", fibo2(25));
     }
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -189,7 +163,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
 			score += fish.Value;
         }
 		GD.Print(score);
-		score = fibo2((int)Math.Ceiling(score));
+		score = ScoringFunction((int)Math.Ceiling(score));
         foreach (Fish fish in FishedThings)
         {
 			if (fish.IsNegative)
@@ -207,17 +181,8 @@ public partial class FishingLine : CharacterBody2D, IFisher
         return (int)score;
     }
 
-	private int fibo2(int num)
+	private int ScoringFunction(int num, int b = 3)
 	{
-		if (num <= 1) return num;
-		int prev = 1;
-		int res = 1;
-		for (int i = 0; i < num; i++)
-		{
-			int tmp = res;
-			res += prev;
-			prev = tmp;
-		}
-		return res - 1;
+		return (int)(num * MathF.Log(num, b) + 1);
 	}
 }

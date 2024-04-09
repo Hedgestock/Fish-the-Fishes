@@ -1,6 +1,6 @@
 # Scoring
 
-- [ ] Plus de points pour plus de poissons pêchés en un coup [x(log_3(x))+1]
+- [x] Plus de points pour plus de poissons pêchés en un coup [x(log_3(x))+1]
 - [ ] [**Solution autre**] Plus de points pour les poissons plus loin sur l'écran
 - [ ] [**Solution autre**] Multiplicateur pour les combos
 - [ ] Multiplicateur en fonction de la difficulté
@@ -80,6 +80,6 @@
 - [x] Attention le poisson ne sait s'il est mort et pêché en même temps
 - [x] Corriger le comportement de l'espadon quand il est pêché
 - [x] Changer la diparition par chronomêtre pour une disparition par zone
-- [ ] Limiter la vitesse minimum des espadons à la charge
+- [x] Limiter la vitesse minimum des espadons à la charge
 - [ ] Corriger le reparentage lors de la touche d'un déchêt
 - [ ] Couper le son d'un poisson mort
