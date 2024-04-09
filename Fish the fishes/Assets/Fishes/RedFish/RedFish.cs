@@ -31,7 +31,7 @@ public partial class RedFish : Fish
         if (!Actionable) return;
 
 		Vector2 tmp = new Vector2(1, (float) Math.Sin(Position.X/WaveActualInverseAmplitude) * WaveActualPeriod);
-        Velocity = tmp.Normalized() * ActualSpeed;
+        Velocity = tmp.Normalized() * ActualSpeed * (Flip ? -1 : 1);
     }
 
     public override void Kill()

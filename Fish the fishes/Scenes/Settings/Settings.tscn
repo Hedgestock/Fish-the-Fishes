@@ -38,9 +38,13 @@ texture_hover = ExtResource("5_rejhq")
 stretch_mode = 0
 
 [node name="CheckBox" type="CheckBox" parent="."]
-offset_right = 24.0
-offset_bottom = 24.0
+offset_left = 230.0
+offset_top = 360.0
+offset_right = 829.0
+offset_bottom = 506.0
+size_flags_horizontal = 3
 theme = ExtResource("6_pkcc8")
 text = "Competitive Mode"
+expand_icon = true
 
 [connection signal="pressed" from="BackButton" to="." method="GoToHome"]
