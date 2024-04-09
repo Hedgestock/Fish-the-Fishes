@@ -13,8 +13,9 @@ action = &"menu_go_back"
 [sub_resource type="Shortcut" id="Shortcut_y2krb"]
 events = [SubResource("InputEventAction_qkuki")]
 
-[node name="Settings" type="CanvasLayer"]
+[node name="Settings" type="CanvasLayer" node_paths=PackedStringArray("CompetitiveMode")]
 script = ExtResource("1_pgx6s")
+CompetitiveMode = NodePath("CompetitiveModeCheckBox")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -37,7 +38,7 @@ texture_pressed = ExtResource("4_6vns6")
 texture_hover = ExtResource("5_rejhq")
 stretch_mode = 0
 
-[node name="CheckBox" type="CheckBox" parent="."]
+[node name="CompetitiveModeCheckBox" type="CheckBox" parent="."]
 offset_left = 230.0
 offset_top = 360.0
 offset_right = 829.0
@@ -48,4 +49,4 @@ text = "Competitive Mode"
 expand_icon = true
 
 [connection signal="pressed" from="BackButton" to="." method="GoToHome"]
-[connection signal="toggled" from="CheckBox" to="." method="SetCompetitiveMode"]
+[connection signal="toggled" from="CompetitiveModeCheckBox" to="." method="SetCompetitiveMode"]
