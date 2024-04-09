@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqntm4q0nil8i"
-path="res://.godot/imported/sardine 1.png-fbe1b2a72e169e17b03b9f77b098bd5d.ctex"
+uid="uid://b7mjsysxdi08h"
+path="res://.godot/imported/red_alive_3.png-3cbe5867a29ad90266b69718005922a7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fish the fishes/art/fish/sardine/sardine 1.png"
-dest_files=["res://.godot/imported/sardine 1.png-fbe1b2a72e169e17b03b9f77b098bd5d.ctex"]
+source_file="res://Fish the fishes/art/fish/red/red_alive_3.png"
+dest_files=["res://.godot/imported/red_alive_3.png-3cbe5867a29ad90266b69718005922a7.ctex"]
 
 [params]
 

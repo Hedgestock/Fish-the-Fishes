@@ -1,13 +1,24 @@
-[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://dib3yn73u4ctr"]
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://dib3yn73u4ctr"]
 
 [ext_resource type="Texture2D" uid="uid://bs6psgplrpsp7" path="res://Fish the fishes/art/fish/yellow/yellow_alive_1.png" id="1_lyems"]
 [ext_resource type="Texture2D" uid="uid://cbqtdehdboo8y" path="res://Fish the fishes/art/fish/yellow/yellow_dead.png" id="2_bbmi7"]
+[ext_resource type="Texture2D" uid="uid://bi5803mwbf4d1" path="res://Fish the fishes/art/fish/yellow/yellow_alive_2.png" id="2_plura"]
+[ext_resource type="Texture2D" uid="uid://bavhal4ovf1ic" path="res://Fish the fishes/art/fish/yellow/yellow_alive_3.png" id="3_tbegp"]
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_lyems")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_plura")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_lyems")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_tbegp")
 }],
 "loop": true,
 "name": &"alive",

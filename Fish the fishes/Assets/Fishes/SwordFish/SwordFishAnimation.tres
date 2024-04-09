@@ -1,18 +1,22 @@
-[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://dlql6k643iy6w"]
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://dlql6k643iy6w"]
 
-[ext_resource type="Texture2D" uid="uid://o5gwo8f5h36n" path="res://Fish the fishes/art/fish/sword/sword fish 1.png" id="1_s8li7"]
+[ext_resource type="Texture2D" uid="uid://ddmab508xlbtg" path="res://Fish the fishes/art/fish/sword/swordfish_alive_1.png" id="1_76oxb"]
+[ext_resource type="Texture2D" uid="uid://clp2u6ep7ey1i" path="res://Fish the fishes/art/fish/sword/swordfish_dead.png" id="2_0iyiy"]
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_s8li7")
+"texture": ExtResource("1_76oxb")
 }],
 "loop": true,
 "name": &"alive",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_0iyiy")
+}],
 "loop": true,
 "name": &"dead",
 "speed": 5.0

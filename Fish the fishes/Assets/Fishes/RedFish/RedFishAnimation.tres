@@ -1,12 +1,24 @@
-[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://bp5itcp0b03xn"]
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://bp5itcp0b03xn"]
 
 [ext_resource type="Texture2D" uid="uid://165l2gumtvkr" path="res://Fish the fishes/art/fish/red/red_alive_1.png" id="1_cued8"]
+[ext_resource type="Texture2D" uid="uid://b2rofas27gvrw" path="res://Fish the fishes/art/fish/red/red_dead.png" id="2_iu2a3"]
+[ext_resource type="Texture2D" uid="uid://bw7drsbqkyjid" path="res://Fish the fishes/art/fish/red/red_alive_2.png" id="2_n7lmx"]
+[ext_resource type="Texture2D" uid="uid://b7mjsysxdi08h" path="res://Fish the fishes/art/fish/red/red_alive_3.png" id="3_5mqxe"]
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_cued8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_n7lmx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_cued8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5mqxe")
 }],
 "loop": true,
 "name": &"alive",
@@ -14,7 +26,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_cued8")
+"texture": ExtResource("2_iu2a3")
 }],
 "loop": true,
 "name": &"dead",

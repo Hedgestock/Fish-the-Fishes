@@ -13,7 +13,6 @@ radius = 5.0
 height = 66.0
 
 [node name="SwordFish" instance=ExtResource("1_jmf7p")]
-scale = Vector2(1.5, 1.5)
 script = ExtResource("2_q8hjt")
 MaxStrikes = 5
 MinStrikes = 1
