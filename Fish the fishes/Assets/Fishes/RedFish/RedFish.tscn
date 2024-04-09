@@ -29,14 +29,14 @@ sprite_frames = ExtResource("3_wupup")
 animation = &"dead"
 
 [node name="HitBox" type="Area2D" parent="." index="2"]
-position = Vector2(6, -1)
+position = Vector2(6, -2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" index="0"]
 shape = SubResource("CircleShape2D_t08b6")
 debug_color = Color(1, 0, 0, 0.419608)
 
 [node name="HurtBox" parent="." index="3"]
-position = Vector2(6, -1)
+position = Vector2(6, -2)
 shape = SubResource("CircleShape2D_bpbot")
 
 [connection signal="body_entered" from="HitBox" to="." method="_on_body_entered"]

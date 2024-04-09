@@ -11,6 +11,7 @@ public partial class GameManager : Node
 
     public string PrevScene = "";
     private string SaveFile = "user://data.save";
+    private string SettingsFile = "user://settings.save";
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()

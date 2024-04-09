@@ -103,8 +103,8 @@ theme = ExtResource("5_mnxty")
 position = Vector2(198, 168)
 
 [node name="VisibleOnScreenNotifier2D" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/SettingsButton" index="0"]
-position = Vector2(141, 73)
-scale = Vector2(14, 7)
+position = Vector2(141, 0)
+scale = Vector2(14, 1)
 
 [node name="CollisionShape2D" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/SettingsButton" index="1"]
 position = Vector2(141, 73)
@@ -118,8 +118,8 @@ text = "Settings"
 position = Vector2(61, 437)
 
 [node name="VisibleOnScreenNotifier2D" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/CompendiumButton" index="0"]
-position = Vector2(217, 72)
-scale = Vector2(22, 7)
+position = Vector2(217, 0)
+scale = Vector2(22, 1)
 
 [node name="CollisionShape2D" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/CompendiumButton" index="1"]
 position = Vector2(217, 72)
@@ -133,8 +133,8 @@ text = "Compendium"
 position = Vector2(420, 683)
 
 [node name="VisibleOnScreenNotifier2D" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/CreditsButton" index="0"]
-position = Vector2(119, 74)
-scale = Vector2(12, 7)
+position = Vector2(119, 0)
+scale = Vector2(12, 1)
 
 [node name="CollisionShape2D" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/CreditsButton" index="1"]
 position = Vector2(119, 74)
@@ -148,8 +148,8 @@ text = "Credits"
 position = Vector2(715, 454)
 
 [node name="VisibleOnScreenNotifier2D" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTimeAttackButton" index="0"]
-position = Vector2(56.5, 73.5)
-scale = Vector2(5.5, 7)
+position = Vector2(56.5, 0)
+scale = Vector2(5.5, 1)
 
 [node name="CollisionShape2D" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTimeAttackButton" index="1"]
 position = Vector2(56.5, 73.5)
@@ -164,8 +164,8 @@ text = "60s"
 position = Vector2(761, 184)
 
 [node name="VisibleOnScreenNotifier2D" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayClassicButton" index="0"]
-position = Vector2(118, 73)
-scale = Vector2(12, 7)
+position = Vector2(118, 0)
+scale = Vector2(12, 1)
 
 [node name="CollisionShape2D" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayClassicButton" index="1"]
 position = Vector2(118, 73)

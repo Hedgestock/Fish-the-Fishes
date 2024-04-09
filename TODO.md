@@ -57,6 +57,7 @@
 - [x] Support de différentes tailles d'écran
 - [x] Ajouter une vitesse propre à chaque poisson
 - [x] Rendre le délai d'apparition aléatoire
+- [x] Refondre la structure de dossier pour `art`
 - [ ] Support de différentes langues
     - [x] Anglais
     - [ ] Français
@@ -66,8 +67,9 @@
 - [ ] Ajouter une probabilité d'apparition
 - [ ] Ajouter des morts différentes
 - [ ] Ajouter une vitesse de descente et de remontée différente pour la ligne
-- [ ] Refondre la structure de dossier pour `art`
 - [ ] Retravailler la logique de la ligne de pêche
+- [ ] Trouver comment générer de la corde
+- [ ] Ajouter la sauvegarde des paramètres
 - [ ] Utiliser une boucle avec une clause d'essai pour éviter les erreurs lors de la récupération de la sauvegarde
 
 # Corrections

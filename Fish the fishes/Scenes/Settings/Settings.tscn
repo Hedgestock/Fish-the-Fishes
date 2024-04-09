@@ -48,3 +48,4 @@ text = "Competitive Mode"
 expand_icon = true
 
 [connection signal="pressed" from="BackButton" to="." method="GoToHome"]
+[connection signal="toggled" from="CheckBox" to="." method="SetCompetitiveMode"]
