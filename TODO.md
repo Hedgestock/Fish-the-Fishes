@@ -9,6 +9,7 @@
 
 - [x] Changer l'icône de mort
 - [x] Enregistrer le meilleur score
+- [ ] Faire des boutons en poisson
 - [ ] Ajouter un compendium
 - [ ] Ajouter des hauts faits
 - [ ] Ajourter un tutoriel
@@ -24,7 +25,6 @@
 - [ ] Poisson venimeux
 - [ ] Poisson bombe
 - [ ] Poisson erratique
-- [ ] Crabe d'appat
 - [ ] Méduse de vie
 - [ ] Nautile bonus
 - [ ] Calamar encreur
@@ -33,6 +33,19 @@
 - [ ] Requin qui casse l'écran
 - [ ] Phoque qui attire l'orque
 - [ ] Orque
+- [ ] Seiche (change de motif aléatoirement)
+
+# Objets pêchables
+- [ ] Crabe d'appât
+- [ ] Oursin
+- [ ] Anémone avec des bonus
+- [ ] Crevettes d'appât
+
+# Biomes
+
+- [ ] Plage (départ)
+- [ ] Epave (pont)
+- [ ] Epave (intérieur)
 
 # Gameplay
 
@@ -47,10 +60,11 @@
 
 # Modes de jeu
 
+- [x] Contre la montre
+- [ ] Poissons ciblés
+- [ ] Zen
 - [ ] Go green
 - [ ] Training mode
-- [ ] Contre la montre
-- [ ] Zen
 
 # Autre
 

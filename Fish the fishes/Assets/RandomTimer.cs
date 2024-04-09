@@ -17,7 +17,7 @@ public partial class RandomTimer : Timer
 
         Connect(Timer.SignalName.Timeout, Callable.From(() =>
 		{
-			WaitTime = MathF.Max(0, (float)GD.Randfn(WaitTimeAverage, Deviation));
+			WaitTime = MathF.Max(0.1f, (float)GD.Randfn(WaitTimeAverage, Deviation));
 		}
 		));
     }
