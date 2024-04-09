@@ -183,6 +183,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
 
 	private int ScoringFunction(int num, int b = 3)
 	{
+		if (num <= 0) return 0;
 		return (int)(num * MathF.Log(num, b) + 1);
 	}
 }

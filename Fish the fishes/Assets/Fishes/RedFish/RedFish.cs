@@ -7,11 +7,11 @@ public partial class RedFish : Fish
 	[Export]
 	public float WaveAmplitude = 1;
 	[Export]
-	public float WaveAmplitudeVariation = 0.2f;
+	public float WaveAmplitudeDeviation = 0.2f;
 	[Export]
 	public float WaveInversePeriod = 100;
 	[Export]
-	public float WaveInversePeriodVariation = 20;
+	public float WaveInversePeriodDeviation = 20;
 
 	private float WaveActualPeriod = 0;
 	private float WaveActualInverseAmplitude = 0;
@@ -20,8 +20,8 @@ public partial class RedFish : Fish
 	public override void _Ready()
 	{
 		base._Ready();
-		WaveActualPeriod = WaveAmplitude + (float)GD.RandRange(-WaveAmplitudeVariation, WaveAmplitudeVariation);
-		WaveActualInverseAmplitude = WaveInversePeriod + (float) GD.RandRange(-WaveInversePeriodVariation, WaveInversePeriodVariation);
+		WaveActualPeriod = (float)GD.Randfn(WaveAmplitude, WaveAmplitudeDeviation);
+		WaveActualInverseAmplitude = (float)GD.Randfn(WaveInversePeriod , WaveInversePeriodDeviation);
 
 	}
 
@@ -31,7 +31,7 @@ public partial class RedFish : Fish
 		if (!Actionable) return;
 
 		Vector2 tmp = new Vector2(1, (float) Math.Sin(Position.X/WaveActualInverseAmplitude) * WaveActualPeriod);
-		Velocity = tmp.Normalized() * ActualSpeed;
+		Velocity = tmp.Normalized() * ActualSpeed * (Flip ? -1 : 1);
 	}
 
 	public override void Kill()

@@ -1,9 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://cfhu43aheqbip"]
+[gd_scene load_steps=10 format=3 uid="uid://cfhu43aheqbip"]
 
 [ext_resource type="Script" path="res://Fish the fishes/Scenes/Game/GameTest.cs" id="1_15fs3"]
-[ext_resource type="PackedScene" uid="uid://c0df7a2ej0abq" path="res://Fish the fishes/Assets/Fishes/SardineFish/SardineFish.tscn" id="2_h4u1b"]
-[ext_resource type="PackedScene" uid="uid://be1nxedcwhn2i" path="res://Fish the fishes/Assets/Fishes/SwordFish/SwordFish.tscn" id="7_g46w2"]
-[ext_resource type="PackedScene" uid="uid://ifoga56i10w3" path="res://Fish the fishes/Assets/RandomTimer.tscn" id="7_qtw0h"]
+[ext_resource type="PackedScene" uid="uid://dsv67b7l0uq40" path="res://Fish the fishes/Assets/Fishes/GreenFish/GreenFish.tscn" id="2_1tbne"]
+[ext_resource type="PackedScene" uid="uid://ct3hvitsd17g5" path="res://Fish the fishes/Assets/Fishes/RedFish/RedFish.tscn" id="2_vo8so"]
 [ext_resource type="PackedScene" uid="uid://co0xglrn1rvre" path="res://Fish the fishes/Assets/Trashes/Can.tscn" id="8_y6d2i"]
 [ext_resource type="Texture2D" uid="uid://xvra7re1p3ch" path="res://Fish the fishes/art/BG 1 FTF.png" id="11_6tjx1"]
 [ext_resource type="PackedScene" uid="uid://yi82g384vgwb" path="res://Fish the fishes/Scenes/Game/HUD.tscn" id="12_1kawo"]
@@ -18,7 +17,7 @@ height = 812.0
 
 [node name="Game" type="Node"]
 script = ExtResource("1_15fs3")
-Fishes = Array[PackedScene]([ExtResource("2_h4u1b"), ExtResource("7_g46w2"), ExtResource("2_h4u1b")])
+Fishes = Array[PackedScene]([ExtResource("2_vo8so"), ExtResource("2_1tbne")])
 Trashes = Array[PackedScene]([ExtResource("8_y6d2i")])
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -53,10 +52,6 @@ texture = ExtResource("11_6tjx1")
 autostart = true
 
 [node name="TrashTimer" type="Timer" parent="."]
-wait_time = 3.0
-
-[node name="RandomTimer" parent="." instance=ExtResource("7_qtw0h")]
-autostart = true
 
 [node name="FrustrationFix" type="Control" parent="."]
 layout_mode = 3
