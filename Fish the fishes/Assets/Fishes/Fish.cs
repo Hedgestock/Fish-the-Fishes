@@ -84,16 +84,16 @@ public partial class Fish : CharacterBody2D, IFishable
 			(parent as IFishable).GetCaughtBy(by);
 			return;
 		};
-        if (this is IFisher)
-        {
-            by.FishedThings.AddRange((this as IFisher).FishedThings);
-            (this as IFisher).FishedThings.Clear();
-        }
-        IsCaught = true;
+		if (this is IFisher)
+		{
+			by.FishedThings.AddRange((this as IFisher).FishedThings);
+			(this as IFisher).FishedThings.Clear();
+		}
+		IsCaught = true;
 		GravityScale = 0;
 		Velocity = Vector2.Zero;
 		by.FishedThings.Add(this);
-        CallDeferred(Node.MethodName.Reparent, by as Node);
+		CallDeferred(Node.MethodName.Reparent, by as Node);
 	}
 
 	public virtual void Trigger()

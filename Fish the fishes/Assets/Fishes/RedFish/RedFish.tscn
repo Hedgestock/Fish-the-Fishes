@@ -5,10 +5,10 @@
 [ext_resource type="SpriteFrames" uid="uid://bp5itcp0b03xn" path="res://Fish the fishes/Assets/Fishes/RedFish/RedFishAnimation.tres" id="3_wupup"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_t08b6"]
-radius = 44.0114
+radius = 73.0274
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bpbot"]
-radius = 36.0
+radius = 51.0
 
 [node name="RedFish" instance=ExtResource("1_vcqog")]
 script = ExtResource("2_xfklb")
@@ -26,18 +26,17 @@ scale = Vector2(3, 3)
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = ExtResource("3_wupup")
-animation = &"alive"
-frame_progress = 0.628646
+animation = &"dead"
 
 [node name="HitBox" type="Area2D" parent="." index="2"]
-position = Vector2(5, 0)
+position = Vector2(6, -1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" index="0"]
 shape = SubResource("CircleShape2D_t08b6")
 debug_color = Color(1, 0, 0, 0.419608)
 
 [node name="HurtBox" parent="." index="3"]
-position = Vector2(5, 0)
+position = Vector2(6, -1)
 shape = SubResource("CircleShape2D_bpbot")
 
 [connection signal="body_entered" from="HitBox" to="." method="_on_body_entered"]

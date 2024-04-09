@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://sbexekdve7qk"
-path="res://.godot/imported/red fish 2.png-52a2ccc66704ef7ce12a62c7662b9247.ctex"
+uid="uid://165l2gumtvkr"
+path="res://.godot/imported/red_alive_1.png-5c32377dd7bfca41e8d3bbbfff9d129b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fish the fishes/art/fish/red/red fish 2.png"
-dest_files=["res://.godot/imported/red fish 2.png-52a2ccc66704ef7ce12a62c7662b9247.ctex"]
+source_file="res://Fish the fishes/art/fish/red/red_alive_1.png"
+dest_files=["res://.godot/imported/red_alive_1.png-5c32377dd7bfca41e8d3bbbfff9d129b.ctex"]
 
 [params]
 
