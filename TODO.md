@@ -21,6 +21,7 @@
 - [x] Poisson rouge
 - [x] Banc de poisson (sardines)
 - [x] Espadon embrocheur
+- [ ] Poisson volant
 - [ ] Poisson doré
 - [ ] Poisson venimeux
 - [ ] Poisson bombe
@@ -85,6 +86,8 @@
 - [ ] Trouver comment générer de la corde
 - [ ] Ajouter la sauvegarde des paramètres
 - [ ] Utiliser une boucle avec une clause d'essai pour éviter les erreurs lors de la récupération de la sauvegarde
+- [ ] SLB dans le fond
+- [ ] Faire des recherches sur l'intégration en page d'accueil
 
 # Corrections
 

@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://bnkmwtljf2o3p"]
 
 [ext_resource type="Script" path="res://Fish the fishes/Assets/FishingLine.cs" id="1_n5cos"]
-[ext_resource type="Texture2D" uid="uid://bomtf706jn6xi" path="res://Fish the fishes/art/line 1.png" id="1_x570d"]
-[ext_resource type="Texture2D" uid="uid://reinm7r7t34w" path="res://Fish the fishes/art/line 2.png" id="2_xtw2r"]
-[ext_resource type="Texture2D" uid="uid://bm8si1gdsldf2" path="res://Fish the fishes/art/hook 2.png" id="3_j3quy"]
+[ext_resource type="Texture2D" uid="uid://bomtf706jn6xi" path="res://Fish the fishes/art/player/line 1.png" id="1_x570d"]
+[ext_resource type="Texture2D" uid="uid://reinm7r7t34w" path="res://Fish the fishes/art/player/line 2.png" id="2_xtw2r"]
+[ext_resource type="Texture2D" uid="uid://bm8si1gdsldf2" path="res://Fish the fishes/art/player/hook 2.png" id="3_j3quy"]
 [ext_resource type="AudioStream" uid="uid://cosdyyoyl7ays" path="res://Fish the fishes/sounds/Toyouying.ogg" id="5_1g0aw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p0rii"]
