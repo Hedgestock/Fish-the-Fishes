@@ -4,16 +4,11 @@ using System;
 
 public partial class FishableButton : StaticBody2D, IFishable
 {
-	[Export]
-	PackedScene TargetScene;
-
-    private GameManager GM;
     private CollisionShape2D CollisionShape;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
 	{
-        GM = GetNode<GameManager>("/root/GameManager");
         CollisionShape = GetNode<CollisionShape2D>("CollisionShape2D");
     }
 
@@ -31,9 +26,4 @@ public partial class FishableButton : StaticBody2D, IFishable
     {
         CollisionShape.SetDeferred(CollisionShape2D.PropertyName.Disabled, false);
     }
-
-    public void ChangeScene()
-	{
-        GM.ChangeSceneToPacked(TargetScene);
-	}
 }

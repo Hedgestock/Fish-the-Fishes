@@ -3,6 +3,15 @@ using System;
 
 public partial class Home : CanvasLayer
 {
+    [Export]
+    private Label ClassicHighScore;
+    
+    [Export]
+    private Label TimeAttackHighScore;
+
+    [Export]
+    private Label Message;
+
     private GameManager GM;
 
     // Called when the node enters the scene tree for the first time.
@@ -10,8 +19,8 @@ public partial class Home : CanvasLayer
 	{
         GM = GetNode<GameManager>("/root/GameManager");
 
-        GetNode<Label>("Messages/HighScores/Classic").Text = "Classic High Score: \n" + GM.ClassicHighScore.ToString();
-        GetNode<Label>("Messages/HighScores/TimeAttack").Text = "Time Attack High Score: \n" + GM.TimeAttackHighScore.ToString();
+        ClassicHighScore.Text = "Classic\nHigh Score:\n" + GM.ClassicHighScore.ToString();
+        TimeAttackHighScore.Text = "Time Attack\nHigh Score:\n" + GM.TimeAttackHighScore.ToString();
 
         if (GM.PrevScene == "res://SplashScreen.tscn")
         {
@@ -19,7 +28,7 @@ public partial class Home : CanvasLayer
 
         } else
         {
-            GetNode<Label>("Messages/Message").Text = "Last Score: \n" + GM.Score.ToString();
+            Message.Text = "Last Score:\n" + GM.Score.ToString();
         }
     }
 
@@ -52,5 +61,10 @@ public partial class Home : CanvasLayer
     private void GoToCompendium()
     {
         GM.ChangeSceneToFile("res://Fish the fishes/Scenes/Compendium/Compendium.tscn");
+    }
+
+    private void GoToCredits()
+    {
+        GM.ChangeSceneToFile("res://Fish the fishes/Scenes/Credits/Credits.tscn");
     }
 }

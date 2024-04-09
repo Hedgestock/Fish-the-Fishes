@@ -14,9 +14,6 @@ public partial class SwordFish : Fish, IFisher
         Leaving
     }
 
-	//[Export]
-	//private float DashSpeed = 600;
-
     [Export]
     private int MaxStrikes = 5;
     [Export]
@@ -100,6 +97,12 @@ public partial class SwordFish : Fish, IFisher
         Strikes--;
 
         Velocity = GetDirectionTo(Target);
+        GD.Print("Velocity ", Velocity.Length());
+        if (Velocity.Length() < ActualSpeed)
+        {
+            Velocity = Velocity.Normalized() * ActualSpeed;
+        }
+        GD.Print("Velocity ", Velocity.Length(), " , ", ActualSpeed);
         Rotation = Velocity.Angle();
 
         State = Action.Launched;
@@ -109,7 +112,7 @@ public partial class SwordFish : Fish, IFisher
     {
         GD.Print("Leave", Actionable);
         if (!Actionable) return;
-        Velocity = new Vector2(ActualSpeed, 0);
+        Velocity = new Vector2(ActualSpeed * (Flip ? -1 : 1), 0);
 
         RotateAtConstantSpeed(Velocity.Angle());
 

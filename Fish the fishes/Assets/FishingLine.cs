@@ -51,7 +51,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
 		Hitbox.Disabled = true;
 		Line = GetNode<AnimatedSprite2D>("Line");
 		Line.Play();
-	}
+    }
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
@@ -68,7 +68,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
 			{
 				case Action.Moving:
 					State = Action.Fishing;
-					MoveTowards(new Vector2(ScreenSize.X / 2, -50));
+					MoveTowards(new Vector2(ScreenSize.X / 2, -150));
 					Hitbox.SetDeferred(CollisionShape2D.PropertyName.Disabled, false);
 					Line.Animation = "weighted";
 					break;
@@ -163,7 +163,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
 			score += fish.Value;
         }
 		GD.Print(score);
-		score = fibo2((int)Math.Ceiling(score));
+		score = ScoringFunction((int)Math.Ceiling(score));
         foreach (Fish fish in FishedThings)
         {
 			if (fish.IsNegative)
@@ -181,17 +181,8 @@ public partial class FishingLine : CharacterBody2D, IFisher
         return (int)score;
     }
 
-	private int fibo2(int num)
+	private int ScoringFunction(int num, int b = 3)
 	{
-		if (num <= 1) return num;
-		int prev = 1;
-		int res = 1;
-		for (int i = 0; i < num; i++)
-		{
-			int tmp = res;
-			res += prev;
-			prev = tmp;
-		}
-		return res - 1;
+		return (int)(num * MathF.Log(num, b) + 1);
 	}
 }

@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dvkg44r1oulcs" path="res://Fish the fishes/art/UI/retour.png" id="3_d41ef"]
 [ext_resource type="Texture2D" uid="uid://bjbotgfwig38a" path="res://Fish the fishes/art/UI/retour click.png" id="4_6vns6"]
 [ext_resource type="Texture2D" uid="uid://bx8qk7jnypm0" path="res://Fish the fishes/art/UI/retour hover.png" id="5_rejhq"]
-[ext_resource type="FontFile" uid="uid://bfbfdje68lt7w" path="res://fonts/Amatic-Bold.ttf" id="6_ys5mf"]
+[ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://FTF_theme.tres" id="6_pkcc8"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_qkuki"]
 action = &"menu_go_back"
@@ -37,13 +37,14 @@ texture_pressed = ExtResource("4_6vns6")
 texture_hover = ExtResource("5_rejhq")
 stretch_mode = 0
 
-[node name="Label" type="Label" parent="."]
-offset_left = 285.0
-offset_top = 454.0
-offset_right = 779.0
-offset_bottom = 629.0
-theme_override_fonts/font = ExtResource("6_ys5mf")
-theme_override_font_sizes/font_size = 128
-text = "Settings"
+[node name="CheckBox" type="CheckBox" parent="."]
+offset_left = 230.0
+offset_top = 360.0
+offset_right = 829.0
+offset_bottom = 506.0
+size_flags_horizontal = 3
+theme = ExtResource("6_pkcc8")
+text = "Competitive Mode"
+expand_icon = true
 
 [connection signal="pressed" from="BackButton" to="." method="GoToHome"]
