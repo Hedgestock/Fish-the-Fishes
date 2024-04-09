@@ -38,12 +38,6 @@ public partial class SwordFish : Fish, IFisher
         Strikes = GD.RandRange(MinStrikes, MaxStrikes);
     }
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-        base._Process(delta);
-
-    }
 
     public override void _PhysicsProcess(double delta)
     {
@@ -64,6 +58,7 @@ public partial class SwordFish : Fish, IFisher
 
     private void SeekTarget()
 	{
+        GD.Print("Seek", State);
         if (!Actionable || State == Action.Seeking) return;
 
 		Node[] fishes = GetTree().GetNodesInGroup("Fishes")
@@ -71,33 +66,38 @@ public partial class SwordFish : Fish, IFisher
             .ToArray();
 
         if (fishes.Length == 0) {
-            GD.Print("No fishes found");
+            GD.Print("No fishes found ", Strikes);
             Leave();
             return;
         }
 
 		Target = (Fish) fishes[(int)(GD.Randi() % fishes.Length)];
 
+        GD.Print("found target ", Target);
+
         Velocity = Vector2.Zero;
+
+        State = Action.Seeking;
+
 
         Tween tween = RotateAtConstantSpeed(GetDirectionTo(Target).Angle());
         tween.TweenCallback(Callable.From(() => CallDeferred("Launch")));
 
-        State = Action.Seeking;
     }
 
 	private void Launch()
 	{
+        GD.Print("Launch");
         if (!Actionable) return;
         if (!IsInstanceValid(Target))
         {
             State = Action.Swimming;
             SeekTarget();
+            GD.Print("2");
             return;
         }
 
         Strikes--;
-        HitBox.SetDeferred(CollisionShape2D.PropertyName.Disabled, false);
 
         Velocity = GetDirectionTo(Target);
         Rotation = Velocity.Angle();
@@ -107,6 +107,7 @@ public partial class SwordFish : Fish, IFisher
 
     private void Leave()
     {
+        GD.Print("Leave", Actionable);
         if (!Actionable) return;
         Velocity = new Vector2(ActualSpeed, 0);
 
@@ -117,27 +118,26 @@ public partial class SwordFish : Fish, IFisher
 
 	private void OnFishSkewered(Node2D body)
 	{
-        if (!(State == Action.Launched) || !(body is Fish) || body == this) return;
+        if ( !(body is Fish) || FishedThings.Contains(body as Fish) || body == this) return;
 
-		Target = body as Fish;
+		Fish Skew = body as Fish;
 
-		Target.Kill();
-        Velocity = Vector2.Zero;
-        Target.GetCaughtBy(this);
+		Skew.Kill();
+        Skew.GetCaughtBy(this);
 
-        HitBox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
-        if (Strikes > 0) SeekTarget();
-        else Leave();
+        if (Skew == Target)
+        {
+            Velocity = Vector2.Zero;
+            if (Strikes > 0)
+            {
+                SeekTarget();
+                GD.Print("1");
+            }
+            else Leave();
+        }
     }
 
     #region helpers
-    private void AlterScore(Fish fish)
-	{
-		Value += fish.Value;
-		if (fish.IsNegative) IsNegative = true;
-		Multiplier *= fish.Multiplier;
-    }
-
 	private Vector2 GetDirectionTo(Fish target)
 	{
 		return Target.Position + (Target.Velocity * 0.8f) - Position;

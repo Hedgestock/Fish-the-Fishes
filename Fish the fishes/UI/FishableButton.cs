@@ -2,20 +2,38 @@ using Godot;
 using Godot.Fish_the_fishes.Scripts;
 using System;
 
-public partial class FishableButton : Button, IFishable
+public partial class FishableButton : StaticBody2D, IFishable
 {
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
-	}
+	[Export]
+	PackedScene TargetScene;
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
+    private GameManager GM;
+    private CollisionShape2D CollisionShape;
+
+    // Called when the node enters the scene tree for the first time.
+    public override void _Ready()
+	{
+        GM = GetNode<GameManager>("/root/GameManager");
+        CollisionShape = GetNode<CollisionShape2D>("CollisionShape2D");
+    }
+
+    // Called every frame. 'delta' is the elapsed time since the previous frame.
+    public override void _Process(double delta)
 	{
 	}
 
     public void GetCaughtBy(IFisher by)
     {
-        throw new NotImplementedException();
+        CallDeferred(Node.MethodName.Reparent, by as Node);
     }
+
+    public void OnPressed()
+    {
+        CollisionShape.SetDeferred(CollisionShape2D.PropertyName.Disabled, false);
+    }
+
+    public void ChangeScene()
+	{
+        GM.ChangeSceneToPacked(TargetScene);
+	}
 }
