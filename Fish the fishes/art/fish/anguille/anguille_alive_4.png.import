@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://elowhxro52v4"
-path="res://.godot/imported/anguille 3.png-740a373191c299c74807f85c3af290ca.ctex"
+uid="uid://ci4lgt1sgrcqm"
+path="res://.godot/imported/anguille_alive_4.png-8eecbcfbe792f0fccea82f2c9283206a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fish the fishes/art/fish/anguille/anguille 3.png"
-dest_files=["res://.godot/imported/anguille 3.png-740a373191c299c74807f85c3af290ca.ctex"]
+source_file="res://Fish the fishes/art/fish/anguille/anguille_alive_4.png"
+dest_files=["res://.godot/imported/anguille_alive_4.png-8eecbcfbe792f0fccea82f2c9283206a.ctex"]
 
 [params]
 
