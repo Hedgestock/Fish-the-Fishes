@@ -78,7 +78,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
 					Hitbox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
 					EmitSignal(SignalName.Score, ComputeScore());
 					FishedThings.Clear();
-					Line.Animation = "loose";
+                    Line.Animation = "loose";
 					goto case Action.Hit;
 				case Action.Hit:
 					State = Action.Resetting;
@@ -148,8 +148,9 @@ public partial class FishingLine : CharacterBody2D, IFisher
 			foreach (Fish fish in FishedThings)
 			{
 				fish.Kill();
-			}
-			FishedThings.Clear();
+                fish.CallDeferred(Node.MethodName.Reparent, GetParent());
+            }
+            FishedThings.Clear();
 			Velocity = new Vector2(0, 0);
 			Line.Animation = "hit";
 			Hitbox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);

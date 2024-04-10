@@ -100,5 +100,5 @@
 - [x] Corriger le comportement de l'espadon quand il est pêché
 - [x] Changer la diparition par chronomêtre pour une disparition par zone
 - [x] Limiter la vitesse minimum des espadons à la charge
-- [ ] Corriger le reparentage lors de la touche d'un déchêt
+- [x] Corriger le reparentage lors de la touche d'un déchêt
 - [ ] Couper le son d'un poisson mort
