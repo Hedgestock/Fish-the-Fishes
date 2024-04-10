@@ -13,7 +13,7 @@ public partial class RandomTimer : Timer
 	public override void _Ready()
 	{
 		base._Ready();
-        WaitTime = MathF.Max(0, (float)GD.Randfn(WaitTimeAverage, Deviation));
+        WaitTime = MathF.Max(0.1f, (float)GD.Randfn(WaitTimeAverage, Deviation));
 
         Connect(Timer.SignalName.Timeout, Callable.From(() =>
 		{
@@ -29,7 +29,7 @@ public partial class RandomTimer : Timer
 			WaitTimeAverage = timeSec;
 		}
 
-        WaitTime = MathF.Max(0, (float)GD.Randfn(WaitTimeAverage, Deviation));
+        WaitTime = MathF.Max(0.1f, (float)GD.Randfn(WaitTimeAverage, Deviation));
 
         base.Start();
 	}

@@ -8,6 +8,7 @@ public partial class GameManager : Node
     public uint ClassicHighScore = 0;
     public uint TimeAttackHighScore = 0;
     public uint Lives = 3;
+    public Vector2 ScreenSize;
 
     public string PrevScene = "";
     private string SaveFile = "user://data.save";
@@ -17,6 +18,9 @@ public partial class GameManager : Node
     public override void _Ready()
     {
         LoadSave();
+        ScreenSize = GetViewport().GetVisibleRect().Size;
+        GD.Print(ScreenSize);
+        GetTree().Root.SizeChanged += OnScreenResize;
     }
 
     private Godot.Collections.Dictionary<string, Variant> Save()
@@ -86,5 +90,8 @@ public partial class GameManager : Node
         PrevScene = _tmpPrevScene;
     }
 
-    
+    private void OnScreenResize()
+    {
+        ScreenSize = GetViewport().GetVisibleRect().Size;
+    }
 }

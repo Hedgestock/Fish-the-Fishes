@@ -30,6 +30,15 @@ Trashes = Array[PackedScene]([ExtResource("5_lqe2k"), ExtResource("6_vsv0t"), Ex
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 autoplay = true
 
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_2rjoh")
+stretch_mode = 6
+
 [node name="PlayingZone" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 8
@@ -44,15 +53,6 @@ grow_vertical = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayingZone/Area2D"]
 shape = SubResource("RectangleShape2D_fibe0")
-
-[node name="TextureRect" type="TextureRect" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_2rjoh")
-stretch_mode = 6
 
 [node name="HUD" parent="." instance=ExtResource("3_0ebou")]
 

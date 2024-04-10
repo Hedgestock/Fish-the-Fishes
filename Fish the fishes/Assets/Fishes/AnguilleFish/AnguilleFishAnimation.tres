@@ -39,7 +39,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"alive",
-"speed": 8.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,

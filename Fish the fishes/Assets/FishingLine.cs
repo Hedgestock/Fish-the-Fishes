@@ -31,9 +31,8 @@ public partial class FishingLine : CharacterBody2D, IFisher
 	private Action State;
 	private bool Invincible;
 
-	private Vector2 ScreenSize;
 	private Vector2 BasePosition;
-
+	private GameManager GM;
 	private Area2D Area;
 	private CollisionShape2D Hitbox;
 	private AnimatedSprite2D Line;
@@ -41,8 +40,9 @@ public partial class FishingLine : CharacterBody2D, IFisher
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
 	{
-		ScreenSize = GetViewport().GetVisibleRect().Size;
-		BasePosition = new Vector2(ScreenSize.X / 2, 50);
+        GM = GetNode<GameManager>("/root/GameManager");
+
+        BasePosition = new Vector2(GM.ScreenSize.X / 2, 50);
 		Position = BasePosition;
 		State = Action.Stopped;
 		Invincible = false;
@@ -51,10 +51,12 @@ public partial class FishingLine : CharacterBody2D, IFisher
 		Hitbox.Disabled = true;
 		Line = GetNode<AnimatedSprite2D>("Line");
 		Line.Play();
+
+        GetTree().Root.SizeChanged += OnScreenResize;
     }
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
+    // Called every frame. 'delta' is the elapsed time since the previous frame.
+    public override void _Process(double delta)
 	{
 		
 		if (State == Action.Stopped) return;
@@ -68,7 +70,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
 			{
 				case Action.Moving:
 					State = Action.Fishing;
-					MoveTowards(new Vector2(ScreenSize.X / 2, -150));
+					MoveTowards(new Vector2(GM.ScreenSize.X / 2, -150));
 					Hitbox.SetDeferred(CollisionShape2D.PropertyName.Disabled, false);
 					Line.Animation = "weighted";
 					break;
@@ -186,4 +188,9 @@ public partial class FishingLine : CharacterBody2D, IFisher
 		if (num <= 0) return 0;
 		return (int)(num * MathF.Log(num, b) + 1);
 	}
+
+    private void OnScreenResize()
+    {
+        BasePosition = new Vector2(GM.ScreenSize.X / 2, 50);
+    }
 }
