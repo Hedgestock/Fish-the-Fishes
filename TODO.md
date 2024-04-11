@@ -15,6 +15,7 @@
 - [ ] Ajourter un tutoriel
 - [ ] Utiliser des hameçons pour la vie
 - [ ] Faire clignoter le score pour la perte de points
+- [ ] Ajouter une page de statistiques
 
 # Poissons
 

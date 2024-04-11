@@ -67,4 +67,14 @@ public partial class Home : CanvasLayer
     {
         GM.ChangeSceneToFile("res://Fish the fishes/Scenes/Credits/Credits.tscn");
     }
+
+    private void GoToStats()
+    {
+        GM.ChangeSceneToFile("res://Fish the fishes/Scenes/Stats/Stats.tscn");
+    }
+
+    private void GoToTutorial()
+    {
+        GM.ChangeSceneToFile("res://Fish the fishes/Scenes/Tutorial/Tutorial.tscn");
+    }
 }

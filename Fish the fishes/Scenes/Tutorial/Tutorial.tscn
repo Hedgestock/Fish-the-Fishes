@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=3 uid="uid://jdvp2d8dcy53"]
+
+[ext_resource type="Script" path="res://Fish the fishes/Scenes/Tutorial/Tutorial.cs" id="1_2td3o"]
+[ext_resource type="Texture2D" uid="uid://4sfuxo2673qo" path="res://Fish the fishes/art/BG 2 FTF.png" id="2_yr4dm"]
+[ext_resource type="Texture2D" uid="uid://dvkg44r1oulcs" path="res://Fish the fishes/art/UI/retour.png" id="3_dm1so"]
+[ext_resource type="Texture2D" uid="uid://bjbotgfwig38a" path="res://Fish the fishes/art/UI/retour click.png" id="4_qbwrj"]
+[ext_resource type="Texture2D" uid="uid://bx8qk7jnypm0" path="res://Fish the fishes/art/UI/retour hover.png" id="5_iaxvs"]
+[ext_resource type="FontFile" uid="uid://bfbfdje68lt7w" path="res://fonts/Amatic-Bold.ttf" id="6_0v75d"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_qkuki"]
+action = &"menu_go_back"
+
+[sub_resource type="Shortcut" id="Shortcut_y2krb"]
+events = [SubResource("InputEventAction_qkuki")]
+
+[node name="Stats" type="CanvasLayer"]
+script = ExtResource("1_2td3o")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_yr4dm")
+stretch_mode = 6
+
+[node name="BackButton" type="TextureButton" parent="."]
+offset_left = 11.0
+offset_top = 13.0
+offset_right = 211.0
+offset_bottom = 213.0
+scale = Vector2(0.5, 0.5)
+shortcut = SubResource("Shortcut_y2krb")
+texture_normal = ExtResource("3_dm1so")
+texture_pressed = ExtResource("4_qbwrj")
+texture_hover = ExtResource("5_iaxvs")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="."]
+offset_left = 285.0
+offset_top = 454.0
+offset_right = 779.0
+offset_bottom = 629.0
+theme_override_fonts/font = ExtResource("6_0v75d")
+theme_override_font_sizes/font_size = 128
+text = "Tutorial"
+
+[connection signal="pressed" from="BackButton" to="." method="GoToHome"]
