@@ -101,12 +101,13 @@ public partial class Fish : CharacterBody2D, IFishable
 		Kill();
 	}
 
-	public virtual void Kill()
-	{
-		IsAlive = false;
-		Sprite.Animation = "dead";
-		if (!IsCaught) GravityScale = 0.6f;
-	}
+    public virtual void Kill()
+    {
+        GD.Print("alive: ", IsAlive, " caught: ", IsCaught);
+        IsAlive = false;
+        Sprite.Animation = "dead";
+        if (!IsCaught) GravityScale = 0.6f;
+    }
 }
 
 

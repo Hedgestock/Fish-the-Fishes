@@ -19,25 +19,23 @@ public partial class GameManager : Node
     {
         LoadData();
         ScreenSize = GetViewport().GetVisibleRect().Size;
-        GD.Print(UserData.Serialize());
         GetTree().Root.SizeChanged += OnScreenResize;
     }
 
     public void WriteHighScore()
     {
-        //Dictionary<string, uint> scores = UserSettings.CompetitiveMode ? UserData.CompetitiveScores : UserData.CasualScores;
-        //if (Score > scores[Mode.ToString()])
-        //{
-        //    if (UserSettings.CompetitiveMode)
-        //    {
-        //        UserData.CompetitiveScores[Mode.ToString()] = Score;
-        //    }
-        //    else
-        //    {
-        //        UserData.CasualScores[Mode.ToString()] = Score;
-        //    }
-        //}
-        GD.Print(UserData.Serialize());
+        Dictionary<string, uint> scores = UserSettings.CompetitiveMode ? UserData.Instance.CompetitiveScores : UserData.Instance.CasualScores;
+        if (Score > scores[Mode.ToString()])
+        {
+            if (UserSettings.CompetitiveMode)
+            {
+                UserData.Instance.CompetitiveScores[Mode.ToString()] = Score;
+            }
+            else
+            {
+                UserData.Instance.CasualScores[Mode.ToString()] = Score;
+            }
+        }
     }
 
     public void SaveData()
@@ -52,6 +50,7 @@ public partial class GameManager : Node
 
         if (!FileAccess.FileExists(SaveFile))
         {
+            GD.PrintErr("No save file to load");
             return;
         }
 
@@ -59,7 +58,8 @@ public partial class GameManager : Node
 
         string jsonString = saveGame.GetAsText();
 
-        UserData.Deserialize(jsonString);
+        if (!UserData.Deserialize(jsonString))
+            GD.PrintErr("Failed to deserialize save file");
     }
 
     //private void LoadSettings()

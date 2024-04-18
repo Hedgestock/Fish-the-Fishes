@@ -139,7 +139,6 @@ public partial class FishingLine : CharacterBody2D, IFisher
     {
         if (body is IFishable)
         {
-            GD.Print("catching ", body);
             (body as IFishable).GetCaughtBy(this);
         }
         else if (FishedThings.Count > 0 && body is Trash && !Invincible)
@@ -147,8 +146,10 @@ public partial class FishingLine : CharacterBody2D, IFisher
             EmitSignal(SignalName.Hit);
             Hitbox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
             GetNode<AudioStreamPlayer>("HitSound").Play();
+            GD.Print(FishedThings.ToArray());
             foreach (Fish fish in FishedThings)
             {
+                GD.Print("killing fish ", fish);
                 fish.IsCaught = false;
                 fish.Kill();
                 fish.CallDeferred(Node.MethodName.Reparent, GetParent());
@@ -162,26 +163,34 @@ public partial class FishingLine : CharacterBody2D, IFisher
     private int ComputeScore()
     {
         float score = 0;
-        foreach (Fish fish in FishedThings)
+        try
         {
-            score += fish.Value;
-        }
-        score = ScoringFunction((int)Math.Ceiling(score));
-        foreach (Fish fish in FishedThings)
-        {
-            if (fish.IsNegative)
+            foreach (Fish fish in FishedThings)
             {
-                score = -score;
-                break;
+                score += fish.Value;
             }
+            score = ScoringFunction((int)Math.Ceiling(score));
+            foreach (Fish fish in FishedThings)
+            {
+                if (fish.IsNegative)
+                {
+                    score = -score;
+                    break;
+                }
+            }
+            foreach (Fish fish in FishedThings)
+            {
+                score *= fish.Multiplier;
+                fish.QueueFree();
+            }
+            return (int)score;
         }
-        foreach (Fish fish in FishedThings)
+        catch (Exception e)
         {
-            score *= fish.Multiplier;
-            fish.QueueFree();
+            GD.PrintErr(e);
+            return 0;
         }
-        GD.Print("scoring ", score, " for ", FishedThings.Count);
-        return (int)score;
+
     }
 
     private int ScoringFunction(int num, int b = 3)

@@ -3,44 +3,47 @@ using System.Text.Json;
 
 namespace Godot.Fish_the_fishes.Scripts
 {
-    public static class UserData
+    public class UserData
     {
-        private class SerializableData
+        private static UserData _instance = null;
+
+        public static UserData Instance
         {
-            public Dictionary<string, uint> CompetitiveScores { get; set; }
-            public Dictionary<string, uint> CasualScores { get; set; }
-            public Dictionary<string, dynamic> Statistics { get; set; }
+            get
+            {
+                if (_instance == null) _instance = new UserData();
+                return _instance;
+            }
         }
 
-        public static Dictionary<string, uint> CompetitiveScores = new Dictionary<string, uint>()
-        {
-            {"Classic", 0},
-            {"TimeAttack", 0}
-        };
+        public Dictionary<string, uint> CompetitiveScores { get; set; }
+        public Dictionary<string, uint> CasualScores { get; set; }
+        public Dictionary<string, dynamic> Statistics { get; set; }
 
-        public static Dictionary<string, uint> CasualScores = new Dictionary<string, uint>()
+        public UserData()
         {
-            {"Classic", 0},
-            {"TimeAttack", 0}
-        };
-        public static Dictionary<string, dynamic> Statistics = new Dictionary<string, dynamic>()
-        {
-            {"TotalFishedFishes", 0},
-            {"MaxFishedFishes", 0}
-        };
+            CompetitiveScores = new Dictionary<string, uint>();
+            CasualScores = new Dictionary<string, uint>();
+            Statistics = new Dictionary<string, dynamic>();
+        }
 
         public static string Serialize()
         {
-            var tmp = new SerializableData() { CompetitiveScores = CompetitiveScores, CasualScores = CasualScores, Statistics = Statistics };
-            return JsonSerializer.Serialize(tmp);
+            return JsonSerializer.Serialize(Instance);
         }
 
-        public static void Deserialize(string json)
+        public static bool Deserialize(string json)
         {
-            SerializableData tmp = JsonSerializer.Deserialize<SerializableData>(json);
-            CompetitiveScores = tmp.CompetitiveScores;
-            CasualScores = tmp.CasualScores;
-            Statistics = tmp.Statistics;
+            try
+            {
+                _instance = JsonSerializer.Deserialize<UserData>(json);
+                return true;
+            }
+            catch (System.Exception e)
+            {
+                GD.PrintErr(e);
+                return false;
+            }
         }
     }
 }

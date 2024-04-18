@@ -1,4 +1,5 @@
 using Godot;
+using Godot.Fish_the_fishes.Scripts;
 using System;
 
 public partial class Home : CanvasLayer
@@ -18,9 +19,6 @@ public partial class Home : CanvasLayer
     public override void _Ready()
     {
         GM = GetNode<GameManager>("/root/GameManager");
-
-        //ClassicHighScore.Text = "Classic\nHigh Score:\n" + GM.ClassicHighScore.ToString();
-        //TimeAttackHighScore.Text = "Time Attack\nHigh Score:\n" + GM.TimeAttackHighScore.ToString();
 
         if (GM.PrevScene == "res://SplashScreen.tscn")
         {
