@@ -1,7 +1,14 @@
-[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://dlql6k643iy6w"]
+[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://dlql6k643iy6w"]
 
 [ext_resource type="Texture2D" uid="uid://ddmab508xlbtg" path="res://Fish the fishes/art/fish/sword/swordfish_alive_1.png" id="1_76oxb"]
 [ext_resource type="Texture2D" uid="uid://clp2u6ep7ey1i" path="res://Fish the fishes/art/fish/sword/swordfish_dead.png" id="2_0iyiy"]
+[ext_resource type="Texture2D" uid="uid://dso772udxca44" path="res://Fish the fishes/art/fish/sword/sword_dash_test_0001.png" id="2_6pynp"]
+[ext_resource type="Texture2D" uid="uid://qwq7twsmvemq" path="res://Fish the fishes/art/fish/sword/sword_dash_test_0002.png" id="3_ljlmo"]
+[ext_resource type="Texture2D" uid="uid://dqkn2v4jkxp1k" path="res://Fish the fishes/art/fish/sword/sword_dash_test_0003.png" id="4_32j8i"]
+[ext_resource type="Texture2D" uid="uid://bii6tfc33k3gd" path="res://Fish the fishes/art/fish/sword/sword_dash_test_0004.png" id="5_vw721"]
+[ext_resource type="Texture2D" uid="uid://wyg6twqkn4x" path="res://Fish the fishes/art/fish/sword/sword_dash_test_0005.png" id="6_tuxie"]
+[ext_resource type="Texture2D" uid="uid://diykvlx1ly3bi" path="res://Fish the fishes/art/fish/sword/sword_dash_test_0006.png" id="7_d06vt"]
+[ext_resource type="Texture2D" uid="uid://f73n15yk4ff6" path="res://Fish the fishes/art/fish/sword/sword_dash_test_0007.png" id="8_v8q1p"]
 
 [resource]
 animations = [{
@@ -15,9 +22,43 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("2_6pynp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ljlmo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_32j8i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_vw721")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_tuxie")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_d06vt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_v8q1p")
+}],
+"loop": true,
+"name": &"dash",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("2_0iyiy")
 }],
 "loop": true,
 "name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_76oxb")
+}],
+"loop": true,
+"name": &"seek",
 "speed": 5.0
 }]

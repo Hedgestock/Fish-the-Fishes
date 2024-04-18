@@ -97,15 +97,15 @@ public partial class SwordFish : Fish, IFisher
 		}
 		Rotation = Velocity.Angle();
 
-        Sprite.Animation = "dash";
+		Sprite.Animation = "dash";
 
-        State = Action.Launched;
+		State = Action.Launched;
 	}
 
 	private void Leave()
 	{
-        Sprite.Animation = IsAlive ? "alive" : "dead";
-        if (!Actionable) return;
+		Sprite.Animation = IsAlive ? "alive" : "dead";
+		if (!Actionable) return;
 		Velocity = new Vector2(ActualSpeed * (Flip ? -1 : 1), 0);
 
 		RotateAtConstantSpeed(Velocity.Angle());
@@ -145,9 +145,9 @@ public partial class SwordFish : Fish, IFisher
 		angle = Mathf.LerpAngle(Rotation, angle, 1);
 		// This timig allows for constant rotation velocity (1s for 180 degrees)
 		float duration = Mathf.Abs(Rotation - angle) / Mathf.Pi;
-        tween.TweenProperty(this, "rotation", angle, duration);
+		tween.TweenProperty(this, "rotation", angle, duration);
 
-	    return tween;
+		return tween;
 	}
 	#endregion helpers
 }

@@ -5,7 +5,7 @@
 [ext_resource type="SpriteFrames" uid="uid://dlql6k643iy6w" path="res://Fish the fishes/Assets/Fishes/SwordFish/SwordFishAnimation.tres" id="2_qxon2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l8r55"]
-radius = 36.2116
+radius = 41.1926
 height = 413.57
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rp7cb"]
@@ -27,10 +27,11 @@ scale = Vector2(14.25, 2.5)
 [node name="AnimatedSprite2D" parent="." index="1"]
 position = Vector2(-144, 0)
 sprite_frames = ExtResource("2_qxon2")
-animation = &"alive"
+animation = &"dash"
+frame_progress = 0.804082
 
 [node name="HurtBox" parent="." index="2"]
-position = Vector2(-200, 6)
+position = Vector2(-200, 10)
 rotation = -1.65806
 shape = SubResource("CapsuleShape2D_l8r55")
 
