@@ -2,13 +2,13 @@
 
 [ext_resource type="Texture2D" uid="uid://ddmab508xlbtg" path="res://Fish the fishes/art/fish/sword/swordfish_alive_1.png" id="1_76oxb"]
 [ext_resource type="Texture2D" uid="uid://clp2u6ep7ey1i" path="res://Fish the fishes/art/fish/sword/swordfish_dead.png" id="2_0iyiy"]
-[ext_resource type="Texture2D" uid="uid://dso772udxca44" path="res://Fish the fishes/art/fish/sword/sword_dash_test_0001.png" id="2_6pynp"]
-[ext_resource type="Texture2D" uid="uid://qwq7twsmvemq" path="res://Fish the fishes/art/fish/sword/sword_dash_test_0002.png" id="3_ljlmo"]
-[ext_resource type="Texture2D" uid="uid://dqkn2v4jkxp1k" path="res://Fish the fishes/art/fish/sword/sword_dash_test_0003.png" id="4_32j8i"]
-[ext_resource type="Texture2D" uid="uid://bii6tfc33k3gd" path="res://Fish the fishes/art/fish/sword/sword_dash_test_0004.png" id="5_vw721"]
-[ext_resource type="Texture2D" uid="uid://wyg6twqkn4x" path="res://Fish the fishes/art/fish/sword/sword_dash_test_0005.png" id="6_tuxie"]
-[ext_resource type="Texture2D" uid="uid://diykvlx1ly3bi" path="res://Fish the fishes/art/fish/sword/sword_dash_test_0006.png" id="7_d06vt"]
-[ext_resource type="Texture2D" uid="uid://f73n15yk4ff6" path="res://Fish the fishes/art/fish/sword/sword_dash_test_0007.png" id="8_v8q1p"]
+[ext_resource type="Texture2D" uid="uid://bxay6ctr678jw" path="res://Fish the fishes/art/fish/sword/sword_dash_test_1.png" id="2_d7e78"]
+[ext_resource type="Texture2D" uid="uid://dbesa3mauseso" path="res://Fish the fishes/art/fish/sword/sword_dash_test_2.png" id="3_xgmkf"]
+[ext_resource type="Texture2D" uid="uid://rbsmt33d54c4" path="res://Fish the fishes/art/fish/sword/sword_dash_test_3.png" id="4_tj74v"]
+[ext_resource type="Texture2D" uid="uid://bel8o7p82f0rk" path="res://Fish the fishes/art/fish/sword/sword_dash_test_4.png" id="5_5od13"]
+[ext_resource type="Texture2D" uid="uid://b00rviduv7osx" path="res://Fish the fishes/art/fish/sword/sword_dash_test_5.png" id="6_0v2sr"]
+[ext_resource type="Texture2D" uid="uid://cchgm1ctb5idn" path="res://Fish the fishes/art/fish/sword/sword_dash_test_6.png" id="7_w70mi"]
+[ext_resource type="Texture2D" uid="uid://7x7wvovq4asm" path="res://Fish the fishes/art/fish/sword/sword_dash_test_7.png" id="8_avdxa"]
 
 [resource]
 animations = [{
@@ -22,25 +22,25 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_6pynp")
+"texture": ExtResource("2_d7e78")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_ljlmo")
+"texture": ExtResource("3_xgmkf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_32j8i")
+"texture": ExtResource("4_tj74v")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_vw721")
+"texture": ExtResource("5_5od13")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_tuxie")
+"texture": ExtResource("6_0v2sr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_d06vt")
+"texture": ExtResource("7_w70mi")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_v8q1p")
+"texture": ExtResource("8_avdxa")
 }],
 "loop": true,
 "name": &"dash",
