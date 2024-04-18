@@ -97,12 +97,15 @@ public partial class SwordFish : Fish, IFisher
 		}
 		Rotation = Velocity.Angle();
 
-		State = Action.Launched;
+        Sprite.Animation = "dash";
+
+        State = Action.Launched;
 	}
 
 	private void Leave()
 	{
-		if (!Actionable) return;
+        Sprite.Animation = IsAlive ? "alive" : "dead";
+        if (!Actionable) return;
 		Velocity = new Vector2(ActualSpeed * (Flip ? -1 : 1), 0);
 
 		RotateAtConstantSpeed(Velocity.Angle());
