@@ -9,13 +9,13 @@
 
 - [x] Changer l'icône de mort
 - [x] Enregistrer le meilleur score
+- [x] Ajouter une page de statistiques
 - [ ] Faire des boutons en poisson
 - [ ] Ajouter un compendium
 - [ ] Ajouter des hauts faits
 - [ ] Ajourter un tutoriel
 - [ ] Utiliser des hameçons pour la vie
 - [ ] Faire clignoter le score pour la perte de points
-- [ ] Ajouter une page de statistiques
 
 # Poissons
 
@@ -74,6 +74,7 @@
 - [x] Ajouter une vitesse propre à chaque poisson
 - [x] Rendre le délai d'apparition aléatoire
 - [x] Refondre la structure de dossier pour `art`
+- [x] Utiliser une boucle avec une clause d'essai pour éviter les erreurs lors de la récupération de la sauvegarde
 - [ ] Support de différentes langues
     - [x] Anglais
     - [ ] Français
@@ -86,7 +87,6 @@
 - [ ] Retravailler la logique de la ligne de pêche
 - [ ] Trouver comment générer de la corde
 - [ ] Ajouter la sauvegarde des paramètres
-- [ ] Utiliser une boucle avec une clause d'essai pour éviter les erreurs lors de la récupération de la sauvegarde
 - [ ] SLB dans le fond
 - [ ] Faire des recherches sur l'intégration en page d'accueil
 

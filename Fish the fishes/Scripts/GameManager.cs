@@ -25,7 +25,7 @@ public partial class GameManager : Node
     public void WriteHighScore()
     {
         Dictionary<string, uint> scores = UserSettings.CompetitiveMode ? UserData.Instance.CompetitiveScores : UserData.Instance.CasualScores;
-        if (Score > scores[Mode.ToString()])
+        if (!scores.ContainsKey(Mode.ToString()) || Score > scores[Mode.ToString()])
         {
             if (UserSettings.CompetitiveMode)
             {
