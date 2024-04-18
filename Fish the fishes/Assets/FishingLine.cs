@@ -150,7 +150,6 @@ public partial class FishingLine : CharacterBody2D, IFisher
             foreach (Fish fish in FishedThings)
             {
                 GD.Print("killing fish ", fish);
-                fish.IsCaught = false;
                 fish.Kill();
                 fish.CallDeferred(Node.MethodName.Reparent, GetParent());
             }
