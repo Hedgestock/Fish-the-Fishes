@@ -55,7 +55,7 @@ public partial class Fish : CharacterBody2D, IFishable
 
 		if (Flip)
 		{
-			Scale *= new Vector2(-1, 1);
+			Scale = new Vector2(-1, 1);
 		}
 
 		Sprite.Animation = "alive";
@@ -77,8 +77,8 @@ public partial class Fish : CharacterBody2D, IFishable
 
 	public virtual void GetCaughtBy(IFisher by)
 	{
+		if (by.FishedThings.Contains(this)) return; // This avoids multiple calls on reparenting
 		var parent = GetParent();
-		if (parent == by) return; // This avoids multiple calls on reparenting
 		if (IsCaught && parent is IFishable)
 		{
 			(parent as IFishable).GetCaughtBy(by);
@@ -103,9 +103,7 @@ public partial class Fish : CharacterBody2D, IFishable
 
 	public virtual void Kill()
 	{
-		if (!IsAlive) return;
 		IsAlive = false;
-		Velocity = Vector2.Zero;
 		GravityScale = 0.6f;
 		Sprite.Animation = "dead";
 	}

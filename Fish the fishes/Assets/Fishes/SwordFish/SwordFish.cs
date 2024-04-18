@@ -55,7 +55,6 @@ public partial class SwordFish : Fish, IFisher
 
 	private void SeekTarget()
 	{
-		GD.Print("Seek", State);
 		if (!Actionable || State == Action.Seeking) return;
 
 		Node[] fishes = GetTree().GetNodesInGroup("Fishes")
@@ -63,14 +62,11 @@ public partial class SwordFish : Fish, IFisher
 			.ToArray();
 
 		if (fishes.Length == 0) {
-			GD.Print("No fishes found ", Strikes);
 			Leave();
 			return;
 		}
 
 		Target = (Fish) fishes[(int)(GD.Randi() % fishes.Length)];
-
-		GD.Print("found target ", Target);
 
 		Velocity = Vector2.Zero;
 
@@ -84,25 +80,21 @@ public partial class SwordFish : Fish, IFisher
 
 	private void Launch()
 	{
-		GD.Print("Launch");
 		if (!Actionable) return;
 		if (!IsInstanceValid(Target))
 		{
 			State = Action.Swimming;
 			SeekTarget();
-			GD.Print("2");
 			return;
 		}
 
 		Strikes--;
 
 		Velocity = GetDirectionTo(Target);
-		GD.Print("Velocity ", Velocity.Length());
 		if (Velocity.Length() < ActualSpeed)
 		{
 			Velocity = Velocity.Normalized() * ActualSpeed;
 		}
-		GD.Print("Velocity ", Velocity.Length(), " , ", ActualSpeed);
 		Rotation = Velocity.Angle();
 
 		State = Action.Launched;
@@ -110,7 +102,6 @@ public partial class SwordFish : Fish, IFisher
 
 	private void Leave()
 	{
-		GD.Print("Leave", Actionable);
 		if (!Actionable) return;
 		Velocity = new Vector2(ActualSpeed * (Flip ? -1 : 1), 0);
 
@@ -134,7 +125,6 @@ public partial class SwordFish : Fish, IFisher
 			if (Strikes > 0)
 			{
 				SeekTarget();
-				GD.Print("1");
 			}
 			else Leave();
 		}
@@ -151,8 +141,10 @@ public partial class SwordFish : Fish, IFisher
 		Tween tween = CreateTween();
 		angle = Mathf.LerpAngle(Rotation, angle, 1);
 		// This timig allows for constant rotation velocity (1s for 180 degrees)
-		tween.TweenProperty(this, "rotation", angle, Mathf.Abs(Rotation - angle) / Mathf.Pi);
-		return tween;
+		float duration = Mathf.Abs(Rotation - angle) / Mathf.Pi;
+        tween.TweenProperty(this, "rotation", angle, duration);
+
+	    return tween;
 	}
 	#endregion helpers
 }

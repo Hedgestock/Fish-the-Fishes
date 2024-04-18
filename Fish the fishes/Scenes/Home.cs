@@ -19,8 +19,8 @@ public partial class Home : CanvasLayer
 	{
         GM = GetNode<GameManager>("/root/GameManager");
 
-        ClassicHighScore.Text = "Classic\nHigh Score:\n" + GM.ClassicHighScore.ToString();
-        TimeAttackHighScore.Text = "Time Attack\nHigh Score:\n" + GM.TimeAttackHighScore.ToString();
+        //ClassicHighScore.Text = "Classic\nHigh Score:\n" + GM.ClassicHighScore.ToString();
+        //TimeAttackHighScore.Text = "Time Attack\nHigh Score:\n" + GM.TimeAttackHighScore.ToString();
 
         if (GM.PrevScene == "res://SplashScreen.tscn")
         {

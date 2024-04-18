@@ -1,12 +1,12 @@
 using Godot;
+using Godot.Fish_the_fishes.Scripts;
 using System;
+using System.Collections.Generic;
 
 public partial class GameManager : Node
 {
     public Game.Mode Mode = Game.Mode.Classic;
     public uint Score = 0;
-    public uint ClassicHighScore = 0;
-    public uint TimeAttackHighScore = 0;
     public uint Lives = 3;
     public Vector2 ScreenSize;
 
@@ -17,31 +17,37 @@ public partial class GameManager : Node
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        LoadSave();
+        LoadData();
         ScreenSize = GetViewport().GetVisibleRect().Size;
-        GD.Print(ScreenSize);
+        GD.Print(UserData.Serialize());
         GetTree().Root.SizeChanged += OnScreenResize;
     }
 
-    private Godot.Collections.Dictionary<string, Variant> Save()
+    public void WriteHighScore()
     {
-        if (Mode == Game.Mode.Classic && Score > ClassicHighScore) ClassicHighScore = Score;
-        if (Mode == Game.Mode.TimeAttack && Score > TimeAttackHighScore) TimeAttackHighScore = Score;
-        return new Godot.Collections.Dictionary<string, Variant>()
-        {
-            { "ClassicHighScore", ClassicHighScore },
-            { "TimeAttackHighScore", TimeAttackHighScore },
-        };
+        //Dictionary<string, uint> scores = UserSettings.CompetitiveMode ? UserData.CompetitiveScores : UserData.CasualScores;
+        //if (Score > scores[Mode.ToString()])
+        //{
+        //    if (UserSettings.CompetitiveMode)
+        //    {
+        //        UserData.CompetitiveScores[Mode.ToString()] = Score;
+        //    }
+        //    else
+        //    {
+        //        UserData.CasualScores[Mode.ToString()] = Score;
+        //    }
+        //}
+        GD.Print(UserData.Serialize());
     }
 
-    public void SaveGame()
+    public void SaveData()
     {
         using var gameSave = FileAccess.Open(SaveFile, FileAccess.ModeFlags.Write);
 
-        gameSave.StoreLine(Json.Stringify(Save()));
+        gameSave.StoreString(UserData.Serialize());
     }
 
-    private void LoadSave()
+    private void LoadData()
     {
 
         if (!FileAccess.FileExists(SaveFile))
@@ -51,25 +57,25 @@ public partial class GameManager : Node
 
         using var saveGame = FileAccess.Open(SaveFile, FileAccess.ModeFlags.Read);
 
-        while (saveGame.GetPosition() < saveGame.GetLength())
-        {
-            var jsonString = saveGame.GetLine();
+        string jsonString = saveGame.GetAsText();
 
-            // Creates the helper class to interact with JSON
-            var json = new Json();
-            var parseResult = json.Parse(jsonString);
-            if (parseResult != Error.Ok)
-            {
-                GD.Print($"JSON Parse Error: {json.GetErrorMessage()} in {jsonString} at line {json.GetErrorLine()}");
-                continue;
-            }
-
-            // Get the data from the JSON object
-            var nodeData = new Godot.Collections.Dictionary<string, Variant>((Godot.Collections.Dictionary)json.Data);
-            ClassicHighScore = (uint)nodeData["ClassicHighScore"];
-            TimeAttackHighScore = (uint)nodeData["TimeAttackHighScore"];
-        }
+        UserData.Deserialize(jsonString);
     }
+
+    //private void LoadSettings()
+    //{
+
+    //    if (!FileAccess.FileExists(SettingsFile))
+    //    {
+    //        return;
+    //    }
+
+    //    using var saveGame = FileAccess.Open(SettingsFile, FileAccess.ModeFlags.Read);
+
+    //    string jsonString = saveGame.GetAsText();
+
+    //    UserSettings.Deserialize(jsonString);
+    //}
 
     public void ChangeSceneToFile(string file)
     {

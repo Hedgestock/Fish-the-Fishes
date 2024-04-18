@@ -139,22 +139,22 @@ public partial class FishingLine : CharacterBody2D, IFisher
 	{
 		if (body is IFishable)
 		{
-			GD.Print("fishing ling caught ", body);
+            GD.Print("catching ", body);
             (body as IFishable).GetCaughtBy(this);
 		} else if (FishedThings.Count > 0 && body is Trash && !Invincible)
 		{
             EmitSignal(SignalName.Hit);
-			GetNode<AudioStreamPlayer>("HitSound").Play();
+            Hitbox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
+            GetNode<AudioStreamPlayer>("HitSound").Play();
 			foreach (Fish fish in FishedThings)
 			{
+				GD.Print("releasing ", fish);
 				fish.Kill();
                 fish.CallDeferred(Node.MethodName.Reparent, GetParent());
             }
-            FishedThings.Clear();
 			Velocity = new Vector2(0, 0);
 			Line.Animation = "hit";
-			Hitbox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
-			GetTree().CreateTimer(1).Timeout += () => { MoveTowards(Destination); Line.Animation = "loose"; };
+			GetTree().CreateTimer(1).Timeout += () => { MoveTowards(Destination); Line.Animation = "loose"; FishedThings.Clear();};
 		}
 	}
 
@@ -165,7 +165,6 @@ public partial class FishingLine : CharacterBody2D, IFisher
         {
 			score += fish.Value;
         }
-		GD.Print(score);
 		score = ScoringFunction((int)Math.Ceiling(score));
         foreach (Fish fish in FishedThings)
         {
