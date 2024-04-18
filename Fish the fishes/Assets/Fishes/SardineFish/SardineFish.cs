@@ -9,19 +9,19 @@ public partial class SardineFish : Fish
     public int shoalSize = 6;
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
-	{
-		base._Ready();
+    {
+        base._Ready();
         Sprite.SpeedScale = GD.Randf() + 0.5f;
         float modulation = (float)GD.RandRange(0.8, 1.2);
         Sprite.SelfModulate = new Color(modulation, modulation, modulation, 1);
         SpawnShoalMember();
     }
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
+    // Called every frame. 'delta' is the elapsed time since the previous frame.
+    public override void _Process(double delta)
+    {
         base._Process(delta);
-	}
+    }
 
     private void SpawnShoalMember()
     {
@@ -32,7 +32,7 @@ public partial class SardineFish : Fish
         float newPosY = Position.Y + (GD.Randi() % shoalRadius) - shoalRadius / 2;
 
         if (newPosX > -20 && newPosX < GetViewport().GetVisibleRect().Size.X + 20)
-                newPosX = Flip ? -20 : GetViewport().GetVisibleRect().Size.X + 20;
+            newPosX = Flip ? -20 : GetViewport().GetVisibleRect().Size.X + 20;
 
         Fish fish = ResourceLoader.Load<PackedScene>(SceneFilePath).Instantiate() as Fish;
 

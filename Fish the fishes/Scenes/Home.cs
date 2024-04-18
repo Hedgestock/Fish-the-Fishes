@@ -5,7 +5,7 @@ public partial class Home : CanvasLayer
 {
     [Export]
     private Label ClassicHighScore;
-    
+
     [Export]
     private Label TimeAttackHighScore;
 
@@ -16,7 +16,7 @@ public partial class Home : CanvasLayer
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
-	{
+    {
         GM = GetNode<GameManager>("/root/GameManager");
 
         //ClassicHighScore.Text = "Classic\nHigh Score:\n" + GM.ClassicHighScore.ToString();
@@ -26,7 +26,8 @@ public partial class Home : CanvasLayer
         {
             GetNode<AudioStreamPlayer>("AudioStreamPlayer").Play();
 
-        } else
+        }
+        else
         {
             Message.Text = "Last Score:\n" + GM.Score.ToString();
         }
@@ -34,14 +35,14 @@ public partial class Home : CanvasLayer
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
     public override void _Process(double delta)
-	{
-	}
+    {
+    }
 
-   	private void Play(Game.Mode mode)
-	{
+    private void Play(Game.Mode mode)
+    {
         GM.Mode = mode;
         GM.ChangeSceneToFile("res://Fish the fishes/Scenes/Game/Game.tscn");
-	}
+    }
 
     private void PlayClassic()
     {
