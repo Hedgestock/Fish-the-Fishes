@@ -47,9 +47,9 @@ public partial class SwordFish : Fish, IFisher
 		HitBox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
 	}
 
-	public override void Kill()
-	{
-		base.Kill();
+	public override void Kill(bool whileCaught = false)
+    {
+        base.Kill(whileCaught);
 		HitBox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
 	}
 
@@ -122,7 +122,7 @@ public partial class SwordFish : Fish, IFisher
 
 		Fish Skew = body as Fish;
 
-		Skew.Kill();
+		Skew.Kill(true);
 		Skew.GetCaughtBy(this);
 
 		if (Skew == Target)

@@ -34,9 +34,9 @@ public partial class RedFish : Fish
 		Velocity = tmp.Normalized() * ActualSpeed * (Flip ? -1 : 1);
 	}
 
-	public override void Kill()
+	public override void Kill(bool whileCaught = false)
 	{
-		base.Kill();
+		base.Kill(whileCaught);
 		GetNode<CollisionShape2D>("HitBox/CollisionShape2D").SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
 	}
 
@@ -44,7 +44,7 @@ public partial class RedFish : Fish
 	{
 		if (body is Fish && !(body is RedFish))
 		{
-			(body as Fish).Kill();
+			(body as Fish).Kill((body as Fish).IsCaught);
 		}
 	}
 }
