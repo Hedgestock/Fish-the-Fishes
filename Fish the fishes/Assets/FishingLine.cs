@@ -146,7 +146,10 @@ public partial class FishingLine : CharacterBody2D, IFisher
             EmitSignal(SignalName.Hit);
             Hitbox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
             GetNode<AudioStreamPlayer>("HitSound").Play();
-            GD.Print(FishedThings.ToArray());
+
+            UserData.Instance.Statistics[Constants.TotalTrashesHit] = UserData.Instance.Statistics.GetValueOrDefault(Constants.TotalTrashesHit) + 1;
+            UserData.Instance.Statistics[Constants.TotalLostFishes] = UserData.Instance.Statistics.GetValueOrDefault(Constants.TotalLostFishes) + (uint)FishedThings.Count;
+
             foreach (Fish fish in FishedThings)
             {
                 GD.Print("killing fish ", fish);
@@ -177,11 +180,19 @@ public partial class FishingLine : CharacterBody2D, IFisher
                     break;
                 }
             }
+
+            UserData.Instance.Statistics[Constants.MaxFishedFishes] = (uint)Math.Max(UserData.Instance.Statistics.GetValueOrDefault(Constants.MaxFishedFishes), FishedThings.Count);
+            UserData.Instance.Statistics[Constants.TotalFishedFishes] = UserData.Instance.Statistics.GetValueOrDefault(Constants.TotalFishedFishes) + (uint)FishedThings.Count;
+
             foreach (Fish fish in FishedThings)
             {
                 score *= fish.Multiplier;
                 fish.QueueFree();
             }
+
+            UserData.Instance.Statistics[Constants.MaxPointScored] = (uint) Math.Max(UserData.Instance.Statistics.GetValueOrDefault(Constants.MaxPointScored), score);
+            UserData.Instance.Statistics[Constants.TotalPointsScored] = UserData.Instance.Statistics.GetValueOrDefault(Constants.TotalPointsScored) + (uint)score;
+
             return (int)score;
         }
         catch (Exception e)

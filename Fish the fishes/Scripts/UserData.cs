@@ -18,13 +18,13 @@ namespace Godot.Fish_the_fishes.Scripts
 
         public Dictionary<string, uint> CompetitiveScores { get; set; }
         public Dictionary<string, uint> CasualScores { get; set; }
-        public Dictionary<string, dynamic> Statistics { get; set; }
+        public Dictionary<string, uint> Statistics { get; set; }
 
         public UserData()
         {
             CompetitiveScores = new Dictionary<string, uint>();
             CasualScores = new Dictionary<string, uint>();
-            Statistics = new Dictionary<string, dynamic>();
+            Statistics = new Dictionary<string, uint>();
         }
 
         public static string Serialize()

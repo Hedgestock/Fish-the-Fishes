@@ -14,8 +14,14 @@ action = &"menu_go_back"
 [sub_resource type="Shortcut" id="Shortcut_y2krb"]
 events = [SubResource("InputEventAction_qkuki")]
 
-[node name="Stats" type="CanvasLayer" node_paths=PackedStringArray("CasualClassicHighScore", "CasualTimeAttackHighScore", "CompetitiveClassicHighScore", "CompetitiveTimeAttackHighScore")]
+[node name="Stats" type="CanvasLayer" node_paths=PackedStringArray("TotalFishedFishes", "TotalPointsScored", "TotalTrashesHit", "TotalLostFishes", "MaxFishedFishes", "MaxPointScored", "CasualClassicHighScore", "CasualTimeAttackHighScore", "CompetitiveClassicHighScore", "CompetitiveTimeAttackHighScore")]
 script = ExtResource("1_yiwnl")
+TotalFishedFishes = NodePath("ScrollContainer/VBoxContainer/Statistics/Statistics/TotalPointsScoredNumber")
+TotalPointsScored = NodePath("ScrollContainer/VBoxContainer/Statistics/Statistics/TotalFishedFishesNumber")
+TotalTrashesHit = NodePath("ScrollContainer/VBoxContainer/Statistics/Statistics/TotalTrashesHitNumber")
+TotalLostFishes = NodePath("ScrollContainer/VBoxContainer/Statistics/Statistics/TotalLostFishesNumber")
+MaxFishedFishes = NodePath("ScrollContainer/VBoxContainer/Statistics/Statistics/MaxFishedFishesNumber")
+MaxPointScored = NodePath("ScrollContainer/VBoxContainer/Statistics/Statistics/MaxPointsScoredNumber")
 CasualClassicHighScore = NodePath("ScrollContainer/VBoxContainer/Casual/Casual/ClassicHighScoreValue")
 CasualTimeAttackHighScore = NodePath("ScrollContainer/VBoxContainer/Casual/Casual/TimeAttackHighScoreValue")
 CompetitiveClassicHighScore = NodePath("ScrollContainer/VBoxContainer/Competitive/Competitive/ClassicHighScoreValue")
@@ -66,7 +72,7 @@ columns = 2
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("7_sdtto")
-text = "Total fished fishes"
+text = "Total fishes fished"
 autowrap_mode = 3
 
 [node name="TotalFishedFishesNumber" type="Label" parent="ScrollContainer/VBoxContainer/Statistics/Statistics"]
@@ -84,6 +90,34 @@ text = "Total points scored"
 autowrap_mode = 3
 
 [node name="TotalPointsScoredNumber" type="Label" parent="ScrollContainer/VBoxContainer/Statistics/Statistics"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("7_sdtto")
+text = "0"
+horizontal_alignment = 2
+
+[node name="TotalTrashesHitLabel" type="Label" parent="ScrollContainer/VBoxContainer/Statistics/Statistics"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("7_sdtto")
+text = "Total trashes hit"
+autowrap_mode = 3
+
+[node name="TotalTrashesHitNumber" type="Label" parent="ScrollContainer/VBoxContainer/Statistics/Statistics"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("7_sdtto")
+text = "0"
+horizontal_alignment = 2
+
+[node name="TotalLostFishesLabel" type="Label" parent="ScrollContainer/VBoxContainer/Statistics/Statistics"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("7_sdtto")
+text = "Total fishes lost"
+autowrap_mode = 3
+
+[node name="TotalLostFishesNumber" type="Label" parent="ScrollContainer/VBoxContainer/Statistics/Statistics"]
 layout_mode = 2
 size_flags_horizontal = 8
 theme = ExtResource("7_sdtto")
