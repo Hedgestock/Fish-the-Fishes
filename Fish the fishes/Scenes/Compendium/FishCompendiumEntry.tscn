@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnjmqrlebmhdu"]
+
+[ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://FTF_theme.tres" id="1_0rl6u"]
+[ext_resource type="Script" path="res://Fish the fishes/Scenes/Compendium/FishCompendiumEntry.cs" id="2_o0dw6"]
+[ext_resource type="Theme" uid="uid://cmnrxxeo4xdgp" path="res://FTF_descriptions_theme.tres" id="2_vin7i"]
+
+[node name="HBoxContainer" type="HBoxContainer" node_paths=PackedStringArray("CompendiumName", "CompendiumDescription", "NumberFished", "NumberSeen", "AnimatedSprite")]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 284.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_0rl6u")
+script = ExtResource("2_o0dw6")
+CompendiumName = NodePath("VBoxContainer/CompendiumName")
+CompendiumDescription = NodePath("VBoxContainer/CompendiumDescription")
+NumberFished = NodePath("VBoxContainer/HBoxContainer/NumberOfTimesFished")
+NumberSeen = NodePath("VBoxContainer/HBoxContainer/NumberOfTimesSeen")
+AnimatedSprite = NodePath("AnimatedSprite2D")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CompendiumName" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "???"
+
+[node name="CompendiumDescription" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_vin7i")
+text = "???"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_vin7i")
+alignment = 2
+
+[node name="Fished" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Fished: "
+
+[node name="NumberOfTimesFished" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "0
+"
+
+[node name="Seen" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Seen: "
+
+[node name="NumberOfTimesSeen" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "0
+"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

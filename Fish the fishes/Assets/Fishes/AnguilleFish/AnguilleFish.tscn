@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://oxxpqubwwblb"]
+[gd_scene load_steps=7 format=3 uid="uid://oxxpqubwwblb"]
 
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Fish the fishes/Assets/Fishes/Fish.tscn" id="1_d3b32"]
 [ext_resource type="SpriteFrames" uid="uid://l22v2s0dn5uh" path="res://Fish the fishes/Assets/Fishes/AnguilleFish/AnguilleFishAnimation.tres" id="2_2ati3"]
+[ext_resource type="Script" path="res://Fish the fishes/Assets/Fishes/AnguilleFish/AnguilleFish.cs" id="2_focob"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lvcgl"]
 radius = 31.0
@@ -17,8 +18,7 @@ packet_sequence = SubResource("OggPacketSequence_yp0lj")
 loop = true
 
 [node name="AnguilleFish" instance=ExtResource("1_d3b32")]
-MinSpeed = 200.0
-MaxSpeed = 300.0
+script = ExtResource("2_focob")
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0"]
 scale = Vector2(13, 3)

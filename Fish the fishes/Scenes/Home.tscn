@@ -25,9 +25,9 @@ size = Vector2(281, 145)
 
 [node name="Home" type="CanvasLayer" node_paths=PackedStringArray("ClassicHighScore", "TimeAttackHighScore", "Message")]
 script = ExtResource("1_ptl5f")
-ClassicHighScore = NodePath("AspectRatioContainer/MarginContainer/VBoxContainer/Messages/HighScores/Classic")
-TimeAttackHighScore = NodePath("AspectRatioContainer/MarginContainer/VBoxContainer/Messages/HighScores/TimeAttack")
-Message = NodePath("AspectRatioContainer/MarginContainer/VBoxContainer/Messages/Message")
+ClassicHighScore = NodePath("")
+TimeAttackHighScore = NodePath("")
+Message = NodePath("AspectRatioContainer/MarginContainer/VBoxContainer/Message")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_itj28")
@@ -59,40 +59,10 @@ layout_mode = 2
 layout_mode = 2
 theme = ExtResource("5_mnxty")
 
-[node name="Messages" type="VBoxContainer" parent="AspectRatioContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("5_mnxty")
-theme_override_constants/separation = 120
-
-[node name="HighScores" type="HBoxContainer" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Messages"]
+[node name="Message" type="Label" parent="AspectRatioContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme = ExtResource("5_mnxty")
-theme_override_constants/separation = 80
-
-[node name="Classic" type="Label" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Messages/HighScores"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme = ExtResource("5_mnxty")
-text = "Classic
-High Score
-0"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="TimeAttack" type="Label" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Messages/HighScores"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme = ExtResource("5_mnxty")
-text = "Time Attack
-High Score
-0"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Message" type="Label" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Messages"]
-layout_mode = 2
-size_flags_horizontal = 4
+size_flags_vertical = 6
 theme = ExtResource("5_mnxty")
 text = "Fish
 The

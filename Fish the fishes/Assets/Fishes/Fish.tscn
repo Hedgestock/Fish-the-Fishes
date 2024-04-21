@@ -1,6 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://mpb5fpciv02u"]
-
-[ext_resource type="Script" path="res://Fish the fishes/Assets/Fishes/Fish.cs" id="1_kms23"]
+[gd_scene format=3 uid="uid://mpb5fpciv02u"]
 
 [node name="Fish" type="CharacterBody2D" groups=["Fishes"]]
 collision_mask = 0
@@ -8,7 +6,6 @@ motion_mode = 1
 floor_stop_on_slope = false
 floor_constant_speed = true
 floor_block_on_wall = false
-script = ExtResource("1_kms23")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 

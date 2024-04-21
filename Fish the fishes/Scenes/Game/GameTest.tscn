@@ -18,7 +18,6 @@ height = 812.0
 
 [node name="Game" type="Node"]
 script = ExtResource("1_kjtri")
-
 Fishes = Array[PackedScene]([ExtResource("5_oorh7"), ExtResource("3_kjhjl")])
 Trashes = Array[PackedScene]([ExtResource("8_xxsm0")])
 

@@ -4,5 +4,10 @@
 
 [resource]
 resource_name = "FTF"
+default_base_scale = 8.9
 default_font = ExtResource("1_fkn7n")
 default_font_size = 128
+MarginContainer/constants/margin_bottom = 20
+MarginContainer/constants/margin_left = 20
+MarginContainer/constants/margin_right = 20
+MarginContainer/constants/margin_top = 20

@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dsv67b7l0uq40"]
+[gd_scene load_steps=7 format=3 uid="uid://dsv67b7l0uq40"]
 
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Fish the fishes/Assets/Fishes/Fish.tscn" id="1_8tk53"]
 [ext_resource type="SpriteFrames" uid="uid://dxpxq818n4txw" path="res://Fish the fishes/Assets/Fishes/GreenFish/GreenFishAnimation.tres" id="2_50e46"]
+[ext_resource type="Script" path="res://Fish the fishes/Assets/Fishes/GreenFish/GreenFish.cs" id="2_xkmaw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nhaen"]
 radius = 34.0
@@ -17,8 +18,7 @@ packet_sequence = SubResource("OggPacketSequence_sqimx")
 loop = true
 
 [node name="GreenFish" instance=ExtResource("1_8tk53")]
-MinSpeed = 175.0
-MaxSpeed = 225.0
+script = ExtResource("2_xkmaw")
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0"]
 position = Vector2(-5, 0)

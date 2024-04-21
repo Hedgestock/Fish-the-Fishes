@@ -1,40 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bnkmwtljf2o3p"]
+[gd_scene load_steps=7 format=3 uid="uid://bnkmwtljf2o3p"]
 
 [ext_resource type="Script" path="res://Fish the fishes/Assets/FishingLine.cs" id="1_n5cos"]
-[ext_resource type="Texture2D" uid="uid://bomtf706jn6xi" path="res://Fish the fishes/art/player/line 1.png" id="1_x570d"]
-[ext_resource type="Texture2D" uid="uid://reinm7r7t34w" path="res://Fish the fishes/art/player/line 2.png" id="2_xtw2r"]
 [ext_resource type="Texture2D" uid="uid://bm8si1gdsldf2" path="res://Fish the fishes/art/player/hook 2.png" id="3_j3quy"]
+[ext_resource type="SpriteFrames" uid="uid://bi72ueuctbdl3" path="res://Fish the fishes/Assets/LineAnimation.tres" id="4_l5pqx"]
 [ext_resource type="AudioStream" uid="uid://cosdyyoyl7ays" path="res://Fish the fishes/sounds/Toyouying.ogg" id="5_1g0aw"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_p0rii"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_x570d")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_xtw2r")
-}],
-"loop": true,
-"name": &"hit",
-"speed": 15.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_xtw2r")
-}],
-"loop": true,
-"name": &"loose",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_x570d")
-}],
-"loop": true,
-"name": &"weighted",
-"speed": 5.0
-}]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_tpqt2"]
 
@@ -50,10 +19,10 @@ script = ExtResource("1_n5cos")
 Speed = 1600
 
 [node name="Line" type="AnimatedSprite2D" parent="."]
-position = Vector2(-4, -432)
-sprite_frames = SubResource("SpriteFrames_p0rii")
+texture_repeat = 2
+position = Vector2(-3, -120)
+sprite_frames = ExtResource("4_l5pqx")
 animation = &"loose"
-frame_progress = 0.721069
 
 [node name="Hook" type="Sprite2D" parent="."]
 texture = ExtResource("3_j3quy")

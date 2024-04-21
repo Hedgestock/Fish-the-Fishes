@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Fish the fishes/Assets/Fishes/Fish.tscn" id="1_jmf7p"]
 [ext_resource type="Script" path="res://Fish the fishes/Assets/Fishes/SwordFish/SwordFish.cs" id="2_q8hjt"]
-[ext_resource type="SpriteFrames" uid="uid://dlql6k643iy6w" path="res://Fish the fishes/Assets/Fishes/SwordFish/SwordFishAnimation.tres" id="2_qxon2"]
+[ext_resource type="SpriteFrames" uid="uid://cyv8fnlha8eri" path="res://Fish the fishes/Assets/Fishes/SwordFish/SwordFishAnimation.tres" id="3_rsy4g"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l8r55"]
 radius = 36.2116
@@ -26,8 +26,8 @@ scale = Vector2(14.25, 2.5)
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 position = Vector2(-144, 0)
-sprite_frames = ExtResource("2_qxon2")
-animation = &"new_animation"
+sprite_frames = ExtResource("3_rsy4g")
+animation = &"seek"
 
 [node name="HurtBox" parent="." index="2"]
 position = Vector2(-200, 6)

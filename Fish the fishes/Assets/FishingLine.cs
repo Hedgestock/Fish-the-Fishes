@@ -170,6 +170,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
             foreach (Fish fish in FishedThings)
             {
                 score += fish.Value;
+                UserData.Instance.Compendium[fish.GetType().Name].Caught++;
             }
             score = ScoringFunction((int)Math.Ceiling(score));
             foreach (Fish fish in FishedThings)

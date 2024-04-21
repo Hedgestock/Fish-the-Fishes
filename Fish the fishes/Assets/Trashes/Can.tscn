@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://co0xglrn1rvre"]
 
 [ext_resource type="PackedScene" uid="uid://cnjq5le44dwec" path="res://Fish the fishes/Assets/Trashes/Trash.tscn" id="1_jbe3e"]
-[ext_resource type="Texture2D" uid="uid://baku04tyxkn56" path="res://Fish the fishes/art/can.png" id="2_yuwf3"]
+[ext_resource type="Texture2D" uid="uid://baku04tyxkn56" path="res://Fish the fishes/art/trash/can/can.png" id="2_yuwf3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_e3mf4"]
 animations = [{
@@ -21,7 +21,9 @@ height = 80.0
 [node name="Can" instance=ExtResource("1_jbe3e")]
 
 [node name="AnimatedSprite2D" parent="." index="0"]
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_e3mf4")
 
 [node name="CollisionShape2D" parent="." index="1"]
+scale = Vector2(2, 2)
 shape = SubResource("CapsuleShape2D_r4b5q")

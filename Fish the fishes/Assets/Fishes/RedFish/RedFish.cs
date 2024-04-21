@@ -3,6 +3,8 @@ using System;
 
 public partial class RedFish : Fish
 {
+    new public static string CompendiumName = "Red Fish";
+    new public static string CompendiumDescription = "This is a red fish";
 
 	[Export]
 	public float WaveAmplitude = 1;

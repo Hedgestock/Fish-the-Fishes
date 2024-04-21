@@ -32,6 +32,10 @@ window/ios/hide_status_bar=false
 
 project/assembly_name="Godot"
 
+[gui]
+
+theme/custom_font="res://fonts/Amatic-Bold.ttf"
+
 [input]
 
 move_right={

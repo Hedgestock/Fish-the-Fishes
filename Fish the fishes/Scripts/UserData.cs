@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Text.Json;
 
 namespace Godot.Fish_the_fishes.Scripts
@@ -19,12 +20,14 @@ namespace Godot.Fish_the_fishes.Scripts
         public Dictionary<string, uint> CompetitiveScores { get; set; }
         public Dictionary<string, uint> CasualScores { get; set; }
         public Dictionary<string, uint> Statistics { get; set; }
+        public Dictionary<string, CompendiumEntry> Compendium { get; set; }
 
         public UserData()
         {
             CompetitiveScores = new Dictionary<string, uint>();
             CasualScores = new Dictionary<string, uint>();
             Statistics = new Dictionary<string, uint>();
+            Compendium = new Dictionary<string, CompendiumEntry>();
         }
 
         public static string Serialize()
@@ -43,6 +46,18 @@ namespace Godot.Fish_the_fishes.Scripts
             {
                 GD.PrintErr(e);
                 return false;
+            }
+        }
+
+        public class CompendiumEntry
+        {
+            public Type Type;
+            public uint Caught { get; set; }
+            public uint Seen { get; set; }
+            public CompendiumEntry()
+            {
+                Caught = 0;
+                Seen = 1;
             }
         }
     }

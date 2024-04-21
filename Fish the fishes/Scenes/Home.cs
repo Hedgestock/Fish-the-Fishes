@@ -5,12 +5,6 @@ using System;
 public partial class Home : CanvasLayer
 {
     [Export]
-    private Label ClassicHighScore;
-
-    [Export]
-    private Label TimeAttackHighScore;
-
-    [Export]
     private Label Message;
 
     private GameManager GM;

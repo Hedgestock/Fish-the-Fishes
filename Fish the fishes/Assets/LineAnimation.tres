@@ -1,0 +1,34 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://bi72ueuctbdl3"]
+
+[ext_resource type="Texture2D" uid="uid://bomtf706jn6xi" path="res://Fish the fishes/art/player/line 1.png" id="1_3hive"]
+[ext_resource type="Texture2D" uid="uid://reinm7r7t34w" path="res://Fish the fishes/art/player/line 2.png" id="2_r364n"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3hive")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_r364n")
+}],
+"loop": true,
+"name": &"hit",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_r364n")
+}],
+"loop": true,
+"name": &"loose",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3hive")
+}],
+"loop": true,
+"name": &"weighted",
+"speed": 5.0
+}]

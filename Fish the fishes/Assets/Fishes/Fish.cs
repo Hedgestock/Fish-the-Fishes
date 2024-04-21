@@ -6,8 +6,11 @@ using System.Linq;
 using System.Xml.Linq;
 
 
-public partial class Fish : CharacterBody2D, IFishable
+public abstract partial class Fish : CharacterBody2D, IFishable
 {
+    public static string CompendiumName = "Fish";
+    public static string CompendiumDescription = "This is a fish";
+
     [ExportGroup("Scoring")]
     [Export]
     public float Value = 1;
@@ -23,6 +26,7 @@ public partial class Fish : CharacterBody2D, IFishable
     public float MaxSpeed = 250;
     [Export]
     public float GravityScale = 0;
+
 
     public bool Flip = false;
     public float ActualSpeed = 0;
@@ -44,6 +48,8 @@ public partial class Fish : CharacterBody2D, IFishable
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
+        NotifySpawn();
+
         Sprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 
         if (ActualSpeed == 0)
@@ -106,6 +112,18 @@ public partial class Fish : CharacterBody2D, IFishable
         IsAlive = false;
         Sprite.Animation = "dead";
         if (!whileCaught) GravityScale = 0.6f;
+    }
+
+    protected void NotifySpawn()
+    {
+        if (UserData.Instance.Compendium.TryGetValue(GetType().Name, out UserData.CompendiumEntry entry))
+        {
+            entry.Seen++;
+        }
+        else
+        {
+            UserData.Instance.Compendium[GetType().Name] = new UserData.CompendiumEntry() { Type = GetType() };
+        }
     }
 }
 

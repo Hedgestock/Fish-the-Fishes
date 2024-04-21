@@ -1,19 +1,23 @@
-[gd_scene load_steps=8 format=3 uid="uid://b0nv1b3x0suu5"]
+[gd_scene load_steps=10 format=3 uid="uid://b0nv1b3x0suu5"]
 
 [ext_resource type="Script" path="res://Fish the fishes/Scenes/Compendium/Compendium.cs" id="1_lwdf7"]
 [ext_resource type="Texture2D" uid="uid://4sfuxo2673qo" path="res://Fish the fishes/art/BG 2 FTF.png" id="1_x6noe"]
+[ext_resource type="PackedScene" uid="uid://cnjmqrlebmhdu" path="res://Fish the fishes/Scenes/Compendium/FishCompendiumEntry.tscn" id="2_8qvf3"]
 [ext_resource type="Texture2D" uid="uid://dvkg44r1oulcs" path="res://Fish the fishes/art/UI/retour.png" id="2_mhjxi"]
 [ext_resource type="Texture2D" uid="uid://bjbotgfwig38a" path="res://Fish the fishes/art/UI/retour click.png" id="3_xgqri"]
+[ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://FTF_theme.tres" id="3_y1rnp"]
 [ext_resource type="Texture2D" uid="uid://bx8qk7jnypm0" path="res://Fish the fishes/art/UI/retour hover.png" id="4_5k6ur"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_qkuki"]
 action = &"menu_go_back"
 
-[sub_resource type="Shortcut" id="Shortcut_y2krb"]
+[sub_resource type="Shortcut" id="Shortcut_02116"]
 events = [SubResource("InputEventAction_qkuki")]
 
-[node name="Compendium" type="CanvasLayer"]
+[node name="Compendium" type="CanvasLayer" node_paths=PackedStringArray("Fishes")]
 script = ExtResource("1_lwdf7")
+FishEntry = ExtResource("2_8qvf3")
+Fishes = NodePath("VBoxContainer/MarginContainer/TabContainer/Fishes/CompendiumEntriesContainer")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -24,16 +28,70 @@ grow_vertical = 2
 texture = ExtResource("1_x6noe")
 stretch_mode = 6
 
-[node name="BackButton" type="TextureButton" parent="."]
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 210.0
-offset_bottom = 210.0
-scale = Vector2(0.5, 0.5)
-shortcut = SubResource("Shortcut_y2krb")
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_y1rnp")
+
+[node name="Control" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Control"]
+layout_mode = 2
+offset_right = 140.0
+offset_bottom = 140.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="BackButton" type="TextureButton" parent="VBoxContainer/Control/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+shortcut = SubResource("Shortcut_02116")
 texture_normal = ExtResource("2_mhjxi")
 texture_pressed = ExtResource("3_xgqri")
 texture_hover = ExtResource("4_5k6ur")
 stretch_mode = 0
 
-[connection signal="pressed" from="BackButton" to="." method="GoToHome"]
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_y1rnp")
+text = "Compendium"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TabContainer" type="TabContainer" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+tab_alignment = 1
+
+[node name="Fishes" type="ScrollContainer" parent="VBoxContainer/MarginContainer/TabContainer"]
+layout_mode = 2
+
+[node name="CompendiumEntriesContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/TabContainer/Fishes"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Trashes" type="ScrollContainer" parent="VBoxContainer/MarginContainer/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/TabContainer/Trashes"]
+layout_mode = 2
+text = "Trashes"
+
+[node name="Biomes" type="ScrollContainer" parent="VBoxContainer/MarginContainer/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/TabContainer/Biomes"]
+layout_mode = 2
+text = "Biomes"
+
+[connection signal="pressed" from="VBoxContainer/Control/MarginContainer/BackButton" to="." method="GoToHome"]
