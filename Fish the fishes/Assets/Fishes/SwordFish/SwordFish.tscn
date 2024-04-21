@@ -14,8 +14,6 @@ height = 82.0
 
 [node name="SwordFish" instance=ExtResource("1_jmf7p")]
 script = ExtResource("2_q8hjt")
-MaxStrikes = 5
-MinStrikes = 1
 Value = 2.0
 MinSpeed = 500.0
 MaxSpeed = 700.0

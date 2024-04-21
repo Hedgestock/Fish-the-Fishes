@@ -10,8 +10,6 @@ height = 86.0
 
 [node name="SardineFish" instance=ExtResource("1_wxgi5")]
 script = ExtResource("2_kltwx")
-shoalRadius = 40
-shoalSize = 6
 Value = 0.5
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0"]

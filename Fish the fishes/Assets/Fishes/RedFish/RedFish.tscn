@@ -12,10 +12,6 @@ radius = 51.0
 
 [node name="RedFish" instance=ExtResource("1_vcqog")]
 script = ExtResource("2_xfklb")
-WaveAmplitude = 1.0
-WaveAmplitudeDeviation = 0.5
-WaveInversePeriod = 100.0
-WaveInversePeriodDeviation = 20.0
 IsNegative = true
 MinSpeed = 50.0
 MaxSpeed = 100.0

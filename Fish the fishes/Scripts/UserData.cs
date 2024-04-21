@@ -51,7 +51,6 @@ namespace Godot.Fish_the_fishes.Scripts
 
         public class CompendiumEntry
         {
-            public Type Type;
             public uint Caught { get; set; }
             public uint Seen { get; set; }
             public CompendiumEntry()

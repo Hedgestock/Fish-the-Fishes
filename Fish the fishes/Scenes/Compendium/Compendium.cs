@@ -20,24 +20,19 @@ public partial class Compendium : CanvasLayer
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        int entryCount = 0;
         foreach (var entry in UserData.Instance.Compendium)
         {
-            FishCompendiumEntry newEntry = FishEntry.Instantiate<FishCompendiumEntry>();
-            newEntry.FishTypeString = entry.Key;
-            Fishes.AddChild(newEntry);
-            entryCount++;
+            AddEntry(entry.Key);
         }
 
-        var listOfExistingFishes = AppDomain.CurrentDomain.GetAssemblies()
+        var listOfExistingFishTypes = AppDomain.CurrentDomain.GetAssemblies()
          .SelectMany(domainAssembly => domainAssembly.GetTypes())
          .Where(type => type.IsSubclassOf(typeof(Fish))
-         ).ToArray();
+         ).Select(type => type.Name).Except(UserData.Instance.Compendium.Keys);
 
-        for (; entryCount < listOfExistingFishes.Length; entryCount++)
+        foreach (var fishType in listOfExistingFishTypes)
         {
-            FishCompendiumEntry newEntry = FishEntry.Instantiate<FishCompendiumEntry>();
-            Fishes.AddChild(newEntry);
+            AddEntry(fishType);
         }
     }
 
@@ -49,5 +44,12 @@ public partial class Compendium : CanvasLayer
     private void GoToHome()
     {
         GetNode<GameManager>("/root/GameManager").ChangeSceneToFile("res://Fish the fishes/Scenes/Home.tscn");
+    }
+
+    private void AddEntry(string fishType)
+    {
+        FishCompendiumEntry newEntry = FishEntry.Instantiate<FishCompendiumEntry>();
+        newEntry.FishTypeString = fishType;
+        Fishes.AddChild(newEntry);
     }
 }

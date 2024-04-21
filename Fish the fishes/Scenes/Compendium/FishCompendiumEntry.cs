@@ -26,29 +26,6 @@ public partial class FishCompendiumEntry : HBoxContainer
 
         Type FishType = Type.GetType(FishTypeString);
 
-        try
-        {
-            NumberSeen.Text = UserData.Instance.Compendium[FishTypeString].Seen.ToString();
-            NumberFished.Text = UserData.Instance.Compendium[FishTypeString].Caught.ToString();
-
-            CompendiumName.Text = (string)FishType.GetField(nameof(CompendiumName)).GetValue(FishType);
-        }
-        catch (Exception e)
-        {
-            GD.PrintErr(e);
-            GD.PrintErr("YOU SHOULD PROBABLY ADD A STATIC NAME AND DESCRIPTION TO THIS FISH !");
-        }
-
-        if (UserData.Instance.Compendium[FishTypeString].Caught > 0)
-        {
-            CompendiumDescription.Text = (string)FishType.GetField(nameof(CompendiumDescription)).GetValue(FishType);
-        }
-        else
-        {
-            AnimatedSprite.Modulate = new Color(0, 0, 0);
-        }
-
-
         string ressourcePath = $"res://Fish the fishes/Assets/Fishes/{FishTypeString}/{FishTypeString}Animation.tres";
 
         if (FileAccess.FileExists(ressourcePath))
@@ -57,10 +34,29 @@ public partial class FishCompendiumEntry : HBoxContainer
             AnimatedSprite.Animation = "alive";
             AnimatedSprite.Play();
             CallDeferred(MethodName.PlaceAnimatedSprite);
+            if (!UserData.Instance.Compendium.ContainsKey(FishTypeString))
+            {
+                AnimatedSprite.Modulate = new Color(0, 0, 0);
+                return;
+            }
         }
         else
         {
             GD.PrintErr("No animation resource found at path: ", ressourcePath);
+        }
+
+
+
+
+        NumberSeen.Text = UserData.Instance.Compendium[FishTypeString].Seen.ToString();
+        NumberFished.Text = UserData.Instance.Compendium[FishTypeString].Caught.ToString();
+
+        CompendiumName.Text = (string)FishType.GetField(nameof(CompendiumName)).GetValue(FishType);
+
+
+        if (UserData.Instance.Compendium[FishTypeString].Caught > 0)
+        {
+            CompendiumDescription.Text = (string)FishType.GetField(nameof(CompendiumDescription)).GetValue(FishType);
         }
     }
 
