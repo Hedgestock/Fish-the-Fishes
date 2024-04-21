@@ -16,8 +16,8 @@ events = [SubResource("InputEventAction_qkuki")]
 
 [node name="Stats" type="CanvasLayer" node_paths=PackedStringArray("TotalFishedFishes", "TotalPointsScored", "TotalTrashesHit", "TotalLostFishes", "MaxFishedFishes", "MaxPointScored", "CasualClassicHighScore", "CasualTimeAttackHighScore", "CompetitiveClassicHighScore", "CompetitiveTimeAttackHighScore")]
 script = ExtResource("1_yiwnl")
-TotalFishedFishes = NodePath("ScrollContainer/VBoxContainer/Statistics/Statistics/TotalPointsScoredNumber")
-TotalPointsScored = NodePath("ScrollContainer/VBoxContainer/Statistics/Statistics/TotalFishedFishesNumber")
+TotalFishedFishes = NodePath("ScrollContainer/VBoxContainer/Statistics/Statistics/TotalFishedFishesNumber")
+TotalPointsScored = NodePath("ScrollContainer/VBoxContainer/Statistics/Statistics/TotalPointsScoredNumber")
 TotalTrashesHit = NodePath("ScrollContainer/VBoxContainer/Statistics/Statistics/TotalTrashesHitNumber")
 TotalLostFishes = NodePath("ScrollContainer/VBoxContainer/Statistics/Statistics/TotalLostFishesNumber")
 MaxFishedFishes = NodePath("ScrollContainer/VBoxContainer/Statistics/Statistics/MaxFishedFishesNumber")
