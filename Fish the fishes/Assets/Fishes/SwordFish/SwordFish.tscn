@@ -27,7 +27,7 @@ scale = Vector2(14.25, 2.5)
 [node name="AnimatedSprite2D" parent="." index="1"]
 position = Vector2(-144, 0)
 sprite_frames = ExtResource("2_qxon2")
-animation = &"seek"
+animation = &"new_animation"
 
 [node name="HurtBox" parent="." index="2"]
 position = Vector2(-200, 6)

@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://dlql6k643iy6w"]
+[gd_resource type="SpriteFrames" load_steps=24 format=3 uid="uid://dlql6k643iy6w"]
 
 [ext_resource type="Texture2D" uid="uid://ddmab508xlbtg" path="res://Fish the fishes/art/fish/sword/swordfish_alive_1.png" id="1_76oxb"]
 [ext_resource type="Texture2D" uid="uid://clp2u6ep7ey1i" path="res://Fish the fishes/art/fish/sword/swordfish_dead.png" id="2_0iyiy"]
@@ -9,6 +9,20 @@
 [ext_resource type="Texture2D" uid="uid://b00rviduv7osx" path="res://Fish the fishes/art/fish/sword/sword_dash_test_5.png" id="6_0v2sr"]
 [ext_resource type="Texture2D" uid="uid://cchgm1ctb5idn" path="res://Fish the fishes/art/fish/sword/sword_dash_test_6.png" id="7_w70mi"]
 [ext_resource type="Texture2D" uid="uid://7x7wvovq4asm" path="res://Fish the fishes/art/fish/sword/sword_dash_test_7.png" id="8_avdxa"]
+[ext_resource type="Texture2D" uid="uid://wcbb4k400mgm" path="res://Fish the fishes/art/fish/sword/sword_big_0002.png" id="10_p1f3o"]
+[ext_resource type="Texture2D" uid="uid://cx1ycop254sh5" path="res://Fish the fishes/art/fish/sword/sword_big_0003.png" id="11_oga3u"]
+[ext_resource type="Texture2D" uid="uid://df02g4y7pnl64" path="res://Fish the fishes/art/fish/sword/sword_seek_1.png" id="12_w7l0u"]
+[ext_resource type="Texture2D" uid="uid://r57f8sifrlir" path="res://Fish the fishes/art/fish/sword/sword_seek_2.png" id="13_wqbv1"]
+[ext_resource type="Texture2D" uid="uid://cjy26ouvfnqtc" path="res://Fish the fishes/art/fish/sword/sword_seek_3.png" id="14_ahryi"]
+[ext_resource type="Texture2D" uid="uid://7dmtbp5c7nqd" path="res://Fish the fishes/art/fish/sword/sword_seek_4.png" id="15_vgt6u"]
+[ext_resource type="Texture2D" uid="uid://cmxsdjtqoiw5i" path="res://Fish the fishes/art/fish/sword/sword_seek_5.png" id="16_hhixx"]
+[ext_resource type="Texture2D" uid="uid://b32g3lr2l7iwl" path="res://Fish the fishes/art/fish/sword/sword_seek_6.png" id="17_e5t1l"]
+[ext_resource type="Texture2D" uid="uid://cf6n1denek0eb" path="res://Fish the fishes/art/fish/sword/sword_seek_7.png" id="18_6r24f"]
+[ext_resource type="Texture2D" uid="uid://de1oqe5lh1dx2" path="res://Fish the fishes/art/fish/sword/sword_seek_8.png" id="19_vg60j"]
+[ext_resource type="Texture2D" uid="uid://druf2peaea7hx" path="res://Fish the fishes/art/fish/sword/sword_seek_9.png" id="20_7m6py"]
+[ext_resource type="Texture2D" uid="uid://dhkxhsyxkfg7" path="res://Fish the fishes/art/fish/sword/sword_seek_10.png" id="21_64jmb"]
+[ext_resource type="Texture2D" uid="uid://c2owotfrk6imw" path="res://Fish the fishes/art/fish/sword/sword_seek_11.png" id="22_rdat8"]
+[ext_resource type="Texture2D" uid="uid://i3xvsqdi4bo7" path="res://Fish the fishes/art/fish/sword/sword_seek_12.png" id="23_5iph5"]
 
 [resource]
 animations = [{
@@ -56,9 +70,53 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_76oxb")
+"texture": ExtResource("10_p1f3o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_oga3u")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_w7l0u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_wqbv1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ahryi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_vgt6u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_hhixx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_e5t1l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_6r24f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_vg60j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_7m6py")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_64jmb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_rdat8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_5iph5")
 }],
 "loop": true,
 "name": &"seek",
-"speed": 5.0
+"speed": 15.0
 }]

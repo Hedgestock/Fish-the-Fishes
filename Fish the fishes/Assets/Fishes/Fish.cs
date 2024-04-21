@@ -79,8 +79,8 @@ public partial class Fish : CharacterBody2D, IFishable
 	{
 		if (by.FishedThings.Contains(this)) return; // This avoids multiple calls on reparenting
 		Velocity = Vector2.Zero;
-        GravityScale = 0;
-        var parent = GetParent();
+		GravityScale = 0;
+		var parent = GetParent();
 		if (IsCaught && parent is IFishable)
 		{
 			(parent as IFishable).GetCaughtBy(by);
@@ -101,13 +101,13 @@ public partial class Fish : CharacterBody2D, IFishable
 		Kill();
 	}
 
-    public virtual void Kill()
-    {
-        GD.Print("alive: ", IsAlive, " caught: ", IsCaught);
-        IsAlive = false;
-        Sprite.Animation = "dead";
-        GravityScale = 0.6f;
-    }
+	public virtual void Kill()
+	{
+		GD.Print("alive: ", IsAlive, " caught: ", IsCaught);
+		IsAlive = false;
+		Sprite.Animation = "dead";
+		GravityScale = 0.6f;
+	}
 }
 
 
