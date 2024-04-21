@@ -5,10 +5,17 @@ using System;
 public partial class Settings : CanvasLayer
 {
     [Export]
+    private Container DeleteDataPopup;
+
+    [Export]
     private CheckBox CompetitiveMode;
+
+    private GameManager GM;
+
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
+        GM = GetNode<GameManager>("/root/GameManager");
         CompetitiveMode.ButtonPressed = UserSettings.CompetitiveMode;
     }
 
@@ -26,5 +33,21 @@ public partial class Settings : CanvasLayer
     {
         GetTree().Root.ContentScaleAspect = (competition ? Window.ContentScaleAspectEnum.Keep : Window.ContentScaleAspectEnum.Expand);
         UserSettings.CompetitiveMode = competition;
+    }
+    
+    private void DisplayDeleteDataPopup()
+    {
+        DeleteDataPopup.Show();
+    }
+
+    private void HideDeleteDataPopup()
+    {
+        DeleteDataPopup.Hide();
+    }
+
+    private void DeleteData()
+    {
+        GM.EraseData();
+        HideDeleteDataPopup();
     }
 }

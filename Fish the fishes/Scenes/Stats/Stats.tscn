@@ -15,16 +15,16 @@ events = [SubResource("InputEventAction_qkuki")]
 
 [node name="Stats" type="CanvasLayer" node_paths=PackedStringArray("TotalFishedFishes", "TotalPointsScored", "TotalTrashesHit", "TotalLostFishes", "MaxFishedFishes", "MaxPointScored", "CasualClassicHighScore", "CasualTimeAttackHighScore", "CompetitiveClassicHighScore", "CompetitiveTimeAttackHighScore")]
 script = ExtResource("1_yiwnl")
-TotalFishedFishes = NodePath("VBoxContainer/ScrollContainer/VBoxContainer/Statistics/Statistics/TotalFishedFishesNumber")
-TotalPointsScored = NodePath("VBoxContainer/ScrollContainer/VBoxContainer/Statistics/Statistics/TotalPointsScoredNumber")
-TotalTrashesHit = NodePath("VBoxContainer/ScrollContainer/VBoxContainer/Statistics/Statistics/TotalTrashesHitNumber")
-TotalLostFishes = NodePath("VBoxContainer/ScrollContainer/VBoxContainer/Statistics/Statistics/TotalLostFishesNumber")
-MaxFishedFishes = NodePath("VBoxContainer/ScrollContainer/VBoxContainer/Statistics/Statistics/MaxFishedFishesNumber")
-MaxPointScored = NodePath("VBoxContainer/ScrollContainer/VBoxContainer/Statistics/Statistics/MaxPointsScoredNumber")
-CasualClassicHighScore = NodePath("VBoxContainer/ScrollContainer/VBoxContainer/Casual/Casual/ClassicHighScoreValue")
-CasualTimeAttackHighScore = NodePath("VBoxContainer/ScrollContainer/VBoxContainer/Casual/Casual/TimeAttackHighScoreValue")
-CompetitiveClassicHighScore = NodePath("VBoxContainer/ScrollContainer/VBoxContainer/Competitive/Competitive/ClassicHighScoreValue")
-CompetitiveTimeAttackHighScore = NodePath("VBoxContainer/ScrollContainer/VBoxContainer/Competitive/Competitive/TimeAttackHighScoreValue")
+TotalFishedFishes = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Statistics/TotalFishedFishesNumber")
+TotalPointsScored = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Statistics/TotalPointsScoredNumber")
+TotalTrashesHit = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Statistics/TotalTrashesHitNumber")
+TotalLostFishes = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Statistics/TotalLostFishesNumber")
+MaxFishedFishes = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Statistics/MaxFishedFishesNumber")
+MaxPointScored = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Statistics/MaxPointsScoredNumber")
+CasualClassicHighScore = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Casual/ClassicHighScoreValue")
+CasualTimeAttackHighScore = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Casual/TimeAttackHighScoreValue")
+CompetitiveClassicHighScore = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Competitive/ClassicHighScoreValue")
+CompetitiveTimeAttackHighScore = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Competitive/TimeAttackHighScoreValue")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -72,169 +72,172 @@ size_flags_horizontal = 6
 size_flags_vertical = 1
 text = "Statistics"
 
-[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer"]
+[node name="Panel" type="PanelContainer" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer/Panel"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Statistics" type="MarginContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 0
-theme_override_constants/margin_bottom = 40
-
-[node name="Statistics" type="GridContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/Statistics"]
+[node name="Statistics" type="GridContainer" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 columns = 2
 
-[node name="TotalFishedFishesLabel" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/Statistics/Statistics"]
+[node name="TotalFishedFishesLabel" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Statistics"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Total fishes fished"
 autowrap_mode = 3
 
-[node name="TotalFishedFishesNumber" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/Statistics/Statistics"]
+[node name="TotalFishedFishesNumber" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Statistics"]
 layout_mode = 2
 size_flags_horizontal = 8
 text = "0"
 horizontal_alignment = 2
 
-[node name="TotalPointsScoredLabel" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/Statistics/Statistics"]
+[node name="TotalPointsScoredLabel" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Statistics"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Total points scored"
 autowrap_mode = 3
 
-[node name="TotalPointsScoredNumber" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/Statistics/Statistics"]
+[node name="TotalPointsScoredNumber" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Statistics"]
 layout_mode = 2
 size_flags_horizontal = 8
 text = "0"
 horizontal_alignment = 2
 
-[node name="TotalTrashesHitLabel" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/Statistics/Statistics"]
+[node name="TotalTrashesHitLabel" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Statistics"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Total trashes hit"
 autowrap_mode = 3
 
-[node name="TotalTrashesHitNumber" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/Statistics/Statistics"]
+[node name="TotalTrashesHitNumber" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Statistics"]
 layout_mode = 2
 size_flags_horizontal = 8
 text = "0"
 horizontal_alignment = 2
 
-[node name="TotalLostFishesLabel" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/Statistics/Statistics"]
+[node name="TotalLostFishesLabel" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Statistics"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Total fishes lost"
 autowrap_mode = 3
 
-[node name="TotalLostFishesNumber" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/Statistics/Statistics"]
+[node name="TotalLostFishesNumber" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Statistics"]
 layout_mode = 2
 size_flags_horizontal = 8
 text = "0"
 horizontal_alignment = 2
 
-[node name="MaxFishedFishesLabel" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/Statistics/Statistics"]
+[node name="MaxFishedFishesLabel" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Statistics"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Maximum fishes in one catch"
 autowrap_mode = 3
 
-[node name="MaxFishedFishesNumber" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/Statistics/Statistics"]
+[node name="MaxFishedFishesNumber" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Statistics"]
 layout_mode = 2
 size_flags_horizontal = 8
 text = "0"
 horizontal_alignment = 2
 
-[node name="MaxPointsScoredLabel" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/Statistics/Statistics"]
+[node name="MaxPointsScoredLabel" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Statistics"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Maximum points in one catch"
 autowrap_mode = 3
 
-[node name="MaxPointsScoredNumber" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/Statistics/Statistics"]
+[node name="MaxPointsScoredNumber" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Statistics"]
 layout_mode = 2
 size_flags_horizontal = 8
 text = "0"
 horizontal_alignment = 2
 
-[node name="CasualHighScoresLabel" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="CasualHighScoresLabel" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 2
 text = "Casual HighScores"
 
-[node name="Casual" type="MarginContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 0
-theme_override_constants/margin_bottom = 40
-
-[node name="Casual" type="GridContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/Casual"]
+[node name="Casual" type="GridContainer" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 columns = 2
 
-[node name="ClassicHighScoreLabel" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/Casual/Casual"]
+[node name="ClassicHighScoreLabel" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Casual"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Classic"
 autowrap_mode = 3
 
-[node name="ClassicHighScoreValue" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/Casual/Casual"]
+[node name="ClassicHighScoreValue" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Casual"]
 layout_mode = 2
 size_flags_horizontal = 8
 text = "0"
 horizontal_alignment = 2
 
-[node name="TimeAttackHighScoreLabel" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/Casual/Casual"]
+[node name="TimeAttackHighScoreLabel" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Casual"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Time Attack"
 autowrap_mode = 3
 
-[node name="TimeAttackHighScoreValue" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/Casual/Casual"]
+[node name="TimeAttackHighScoreValue" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Casual"]
 layout_mode = 2
 size_flags_horizontal = 8
 text = "0"
 horizontal_alignment = 2
 
-[node name="CompetitiveHighScoresLabel" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="CompetitiveHighScoresLabel" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 1
 text = "Competitive HighScores"
 
-[node name="Competitive" type="MarginContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 0
-theme_override_constants/margin_bottom = 40
-
-[node name="Competitive" type="GridContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/Competitive"]
+[node name="Competitive" type="GridContainer" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 columns = 2
 
-[node name="ClassicHighScoreLabel" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/Competitive/Competitive"]
+[node name="ClassicHighScoreLabel" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Competitive"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Classic"
 autowrap_mode = 3
 
-[node name="ClassicHighScoreValue" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/Competitive/Competitive"]
+[node name="ClassicHighScoreValue" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Competitive"]
 layout_mode = 2
 size_flags_horizontal = 8
 text = "0"
 horizontal_alignment = 2
 
-[node name="TimeAttackHighScoreLabel" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/Competitive/Competitive"]
+[node name="TimeAttackHighScoreLabel" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Competitive"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Time Attack"
 autowrap_mode = 3
 
-[node name="TimeAttackHighScoreValue" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/Competitive/Competitive"]
+[node name="TimeAttackHighScoreValue" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Competitive"]
 layout_mode = 2
 size_flags_horizontal = 8
 text = "0"

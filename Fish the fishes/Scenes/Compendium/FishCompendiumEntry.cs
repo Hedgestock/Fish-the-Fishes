@@ -3,7 +3,7 @@ using Godot.Fish_the_fishes.Scripts;
 using System;
 using System.Linq;
 
-public partial class FishCompendiumEntry : HBoxContainer
+public partial class FishCompendiumEntry : PanelContainer
 {
 
     [Export]
@@ -28,9 +28,10 @@ public partial class FishCompendiumEntry : HBoxContainer
 
         string ressourcePath = $"res://Fish the fishes/Assets/Fishes/{FishTypeString}/{FishTypeString}Animation.tres";
 
-        if (FileAccess.FileExists(ressourcePath))
+        AnimatedSprite.SpriteFrames = GD.Load<SpriteFrames>(ressourcePath);
+
+        if (AnimatedSprite.SpriteFrames != null)
         {
-            AnimatedSprite.SpriteFrames = GD.Load<SpriteFrames>(ressourcePath);
             AnimatedSprite.Animation = "alive";
             AnimatedSprite.Play();
             CallDeferred(MethodName.PlaceAnimatedSprite);

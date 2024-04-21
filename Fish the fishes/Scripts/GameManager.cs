@@ -2,18 +2,19 @@ using Godot;
 using Godot.Fish_the_fishes.Scripts;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 public partial class GameManager : Node
 {
     public Game.Mode Mode = Game.Mode.Classic;
     public uint Score = 0;
     public uint Lives = 3;
+    public string PrevScene = "";
     public Vector2 ScreenSize;
 
-    public string PrevScene = "";
-    private string SaveFile = "user://data.save";
-    private string SettingsFile = "user://settings.save";
+    private static string SaveDirectory = "user://";
+    private static string SaveFileName = "data.save";
+    private static string SaveFilePath = SaveDirectory + SaveFileName;
+    private static string SettingsFile = "settings.save";
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -41,7 +42,7 @@ public partial class GameManager : Node
 
     public void SaveData()
     {
-        using var gameSave = FileAccess.Open(SaveFile, FileAccess.ModeFlags.Write);
+        using var gameSave = FileAccess.Open(SaveFilePath, FileAccess.ModeFlags.Write);
 
         gameSave.StoreString(UserData.Serialize());
     }
@@ -49,18 +50,34 @@ public partial class GameManager : Node
     private void LoadData()
     {
 
-        if (!FileAccess.FileExists(SaveFile))
+        if (!FileAccess.FileExists(SaveFilePath))
         {
             GD.PrintErr("No save file to load");
             return;
         }
 
-        using var saveGame = FileAccess.Open(SaveFile, FileAccess.ModeFlags.Read);
+        using var saveGame = FileAccess.Open(SaveFilePath, FileAccess.ModeFlags.Read);
 
         string jsonString = saveGame.GetAsText();
 
         if (!UserData.Deserialize(jsonString))
             GD.PrintErr("Failed to deserialize save file");
+    }
+
+    public void EraseData()
+    {
+
+        UserData.Reset();
+
+        if (!FileAccess.FileExists(SaveFilePath))
+        {
+            GD.PrintErr("No save file to erase");
+            return;
+        }
+
+        DirAccess dir = DirAccess.Open(SaveDirectory);
+
+        dir.Remove(SaveFileName);
     }
 
     //private void LoadSettings()

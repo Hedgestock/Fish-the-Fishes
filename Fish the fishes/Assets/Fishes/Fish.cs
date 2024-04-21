@@ -122,7 +122,7 @@ public abstract partial class Fish : CharacterBody2D, IFishable
         }
         else
         {
-            UserData.Instance.Compendium[GetType().Name] = new UserData.CompendiumEntry() { Type = GetType() };
+            UserData.Instance.Compendium[GetType().Name] = new UserData.CompendiumEntry();
         }
     }
 }

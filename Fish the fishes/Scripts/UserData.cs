@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Text.Json;
 
 namespace Godot.Fish_the_fishes.Scripts
@@ -30,6 +31,10 @@ namespace Godot.Fish_the_fishes.Scripts
             Compendium = new Dictionary<string, CompendiumEntry>();
         }
 
+        public static void Reset()
+        {
+            _instance = null;
+        }
         public static string Serialize()
         {
             return JsonSerializer.Serialize(Instance);
@@ -40,6 +45,17 @@ namespace Godot.Fish_the_fishes.Scripts
             try
             {
                 _instance = JsonSerializer.Deserialize<UserData>(json);
+                PropertyInfo[] properties = typeof(UserData).GetProperties();
+
+                // This makes sure that we recover from corrupted data where any property is set to `null`
+                // by replacing it with a new empty object.
+                foreach (PropertyInfo property in properties)
+                {
+                    if (typeof(UserData).GetProperty(property.Name).GetValue(_instance) == null)
+                    {
+                        typeof(UserData).GetProperty(property.Name).SetValue(_instance, property.PropertyType.GetConstructor(new Type[] { }).Invoke(new object[] { }));
+                    }
+                }
                 return true;
             }
             catch (System.Exception e)

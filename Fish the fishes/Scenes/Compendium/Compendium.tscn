@@ -17,7 +17,7 @@ events = [SubResource("InputEventAction_qkuki")]
 [node name="Compendium" type="CanvasLayer" node_paths=PackedStringArray("Fishes")]
 script = ExtResource("1_lwdf7")
 FishEntry = ExtResource("2_8qvf3")
-Fishes = NodePath("VBoxContainer/MarginContainer/TabContainer/Fishes/CompendiumEntriesContainer")
+Fishes = NodePath("VBoxContainer/MarginContainer/TabContainer/Fishes/MarginContainer/CompendiumEntriesContainer")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -74,7 +74,12 @@ tab_alignment = 1
 [node name="Fishes" type="ScrollContainer" parent="VBoxContainer/MarginContainer/TabContainer"]
 layout_mode = 2
 
-[node name="CompendiumEntriesContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/TabContainer/Fishes"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/TabContainer/Fishes"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CompendiumEntriesContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/TabContainer/Fishes/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
