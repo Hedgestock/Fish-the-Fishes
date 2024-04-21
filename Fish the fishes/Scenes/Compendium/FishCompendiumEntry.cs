@@ -22,24 +22,29 @@ public partial class FishCompendiumEntry : HBoxContainer
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-
         if (string.IsNullOrEmpty(FishTypeString)) return;
 
-        NumberSeen.Text = UserData.Instance.Compendium[FishTypeString].Seen.ToString();
-        NumberFished.Text = UserData.Instance.Compendium[FishTypeString].Caught.ToString();
         Type FishType = Type.GetType(FishTypeString);
 
-        CompendiumName.Text = (string) FishType.GetField(nameof(CompendiumName)).GetValue(FishType);
+        try
+        {
+            NumberSeen.Text = UserData.Instance.Compendium[FishTypeString].Seen.ToString();
+            NumberFished.Text = UserData.Instance.Compendium[FishTypeString].Caught.ToString();
 
-        GD.Print(FishTypeString, " ", UserData.Instance.Compendium[FishTypeString].Caught, " ", UserData.Instance.Compendium[FishTypeString].Caught > 0);
+            CompendiumName.Text = (string)FishType.GetField(nameof(CompendiumName)).GetValue(FishType);
+        }
+        catch (Exception e)
+        {
+            GD.PrintErr(e);
+            GD.PrintErr("YOU SHOULD PROBABLY ADD A STATIC NAME AND DESCRIPTION TO THIS FISH !");
+        }
+
         if (UserData.Instance.Compendium[FishTypeString].Caught > 0)
         {
-            GD.Print("yes");
             CompendiumDescription.Text = (string)FishType.GetField(nameof(CompendiumDescription)).GetValue(FishType);
         }
         else
         {
-            GD.Print("no");
             AnimatedSprite.Modulate = new Color(0, 0, 0);
         }
 
