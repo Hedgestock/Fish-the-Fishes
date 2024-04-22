@@ -1,13 +1,92 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dqud8bhj4fopd"]
+[gd_resource type="Theme" load_steps=13 format=3 uid="uid://dqud8bhj4fopd"]
 
+[ext_resource type="Texture2D" uid="uid://nxy12vspgvhr" path="res://Fish the fishes/art/fish/green/green_dead.png" id="1_0jx2o"]
 [ext_resource type="FontFile" uid="uid://bfbfdje68lt7w" path="res://fonts/Amatic-Bold.ttf" id="1_fkn7n"]
+[ext_resource type="Texture2D" uid="uid://da6lvk01aj30y" path="res://Fish the fishes/art/fish/green/green_alive_1.png" id="2_xe6cl"]
+[ext_resource type="Texture2D" uid="uid://b2rofas27gvrw" path="res://Fish the fishes/art/fish/red/red_dead.png" id="3_qqciv"]
+[ext_resource type="Texture2D" uid="uid://165l2gumtvkr" path="res://Fish the fishes/art/fish/red/red_alive_1.png" id="4_2qhqy"]
+[ext_resource type="Texture2D" uid="uid://bomtf706jn6xi" path="res://Fish the fishes/art/player/line 1.png" id="5_u8xa2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yqf4q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e005x"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.4)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 6
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vc5m5"]
+texture = ExtResource("5_u8xa2")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6cfm"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.75, 0.75, 0.75, 0.75)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_603q0"]
+content_margin_left = 4.0
+content_margin_top = 0.0
+content_margin_right = 4.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6txf4"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
 
 [resource]
 resource_name = "FTF"
-default_base_scale = 8.9
 default_font = ExtResource("1_fkn7n")
 default_font_size = 128
 MarginContainer/constants/margin_bottom = 20
 MarginContainer/constants/margin_left = 20
 MarginContainer/constants/margin_right = 20
 MarginContainer/constants/margin_top = 20
+ScrollContainer/styles/panel = SubResource("StyleBoxEmpty_yqf4q")
+TabContainer/icons/decrement = ExtResource("1_0jx2o")
+TabContainer/icons/decrement_highlight = ExtResource("2_xe6cl")
+TabContainer/icons/drop_mark = null
+TabContainer/icons/increment = ExtResource("3_qqciv")
+TabContainer/icons/increment_highlight = ExtResource("4_2qhqy")
+TabContainer/icons/menu = null
+TabContainer/icons/menu_highlight = null
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_e005x")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxTexture_vc5m5")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_q6cfm")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_603q0")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_6txf4")

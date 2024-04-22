@@ -66,6 +66,7 @@ public partial class Game : Node
 	private void Despawn(Node2D body)
 	{
 		if (body is Fish && (body as Fish).IsCaught) return;
+		GD.Print("despawning ",  body.GetType().Name);
 		body.QueueFree();
 	}
 

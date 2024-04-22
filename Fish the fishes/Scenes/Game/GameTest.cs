@@ -48,11 +48,10 @@ public partial class GameTest : Node
 		GM.SaveData();
 		GM.ChangeSceneToFile("res://Fish the fishes/Scenes/Home.tscn");
 	}
-
-	int i = 0;
+	private int i = 0;
 	private void SpawnFish()
 	{
-		PackedScene FishScene = Fishes[i++ % Fishes.Count];
+		PackedScene FishScene = Fishes[i % Fishes.Count];
 		Fish fish = FishScene.Instantiate<Fish>();
 
 		bool flip = (GD.Randi() % 2) != 0;
@@ -62,11 +61,13 @@ public partial class GameTest : Node
 
 		// Spawn the fish by adding it to the main scene.
 		AddChild(fish);
+		i++;
 	}
 
 	private void Despawn(Node2D body)
 	{
 		if (body is Fish && (body as Fish).IsCaught) return;
+		GD.Print("despawning ",  body.GetType().Name);
 		body.QueueFree();
 	}
 

@@ -45,7 +45,7 @@ public partial class HUD : CanvasLayer
         }
     }
 
-    private void _on_fishing_line_score(int score)
+    private void LineScore(int score)
     {
         // We need to do this to avoid uint underflow
         if (-score > GM.Score) GM.Score = 0;
@@ -53,7 +53,7 @@ public partial class HUD : CanvasLayer
         ScoreLabel.Text = GM.Score.ToString();
     }
 
-    private void _on_fishing_line_hit()
+    private void LineHit()
     {
         if (GM.Mode != Game.Mode.Classic) return;
         GM.Lives--;

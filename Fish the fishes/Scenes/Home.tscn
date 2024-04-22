@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cifa65xrf1ken" path="res://Fish the fishes/UI/FishableButton.tscn" id="5_o3gki"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w8qh7"]
+size = Vector2(11.1667, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4qjnw"]
 
@@ -23,10 +24,8 @@ size = Vector2(167, 146)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_stq48"]
 size = Vector2(281, 145)
 
-[node name="Home" type="CanvasLayer" node_paths=PackedStringArray("ClassicHighScore", "TimeAttackHighScore", "Message")]
+[node name="Home" type="CanvasLayer" node_paths=PackedStringArray("Message")]
 script = ExtResource("1_ptl5f")
-ClassicHighScore = NodePath("")
-TimeAttackHighScore = NodePath("")
 Message = NodePath("AspectRatioContainer/MarginContainer/VBoxContainer/Message")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -74,6 +73,21 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("5_mnxty")
+
+[node name="PlayTestButton" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu" instance=ExtResource("5_o3gki")]
+position = Vector2(711, -183)
+
+[node name="VisibleOnScreenNotifier2D" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTestButton" index="0"]
+position = Vector2(65, 0)
+scale = Vector2(6.5, 1)
+
+[node name="CollisionShape2D" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTestButton" index="1"]
+position = Vector2(65, 73)
+scale = Vector2(12, 7)
+shape = SubResource("RectangleShape2D_w8qh7")
+
+[node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTestButton" index="2"]
+text = "TEST"
 
 [node name="PlayClassicButton" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu" instance=ExtResource("5_o3gki")]
 position = Vector2(441, 133)
@@ -180,6 +194,7 @@ shape = SubResource("RectangleShape2D_stq48")
 [node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/TutorialButton" index="2"]
 text = "Tutorial"
 
+[connection signal="screen_exited" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTestButton/VisibleOnScreenNotifier2D" to="." method="PlayTest"]
 [connection signal="screen_exited" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayClassicButton/VisibleOnScreenNotifier2D" to="." method="PlayClassic"]
 [connection signal="screen_exited" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTimeAttackButton/VisibleOnScreenNotifier2D" to="." method="PlayTimeAttack"]
 [connection signal="screen_exited" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/SettingsButton/VisibleOnScreenNotifier2D" to="." method="GoToSettings"]
@@ -188,6 +203,7 @@ text = "Tutorial"
 [connection signal="screen_exited" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/StatsButton/VisibleOnScreenNotifier2D" to="." method="GoToStats"]
 [connection signal="screen_exited" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/TutorialButton/VisibleOnScreenNotifier2D" to="." method="GoToTutorial"]
 
+[editable path="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTestButton"]
 [editable path="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayClassicButton"]
 [editable path="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTimeAttackButton"]
 [editable path="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/SettingsButton"]

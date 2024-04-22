@@ -93,8 +93,8 @@ public partial class FishingLine : CharacterBody2D, IFisher
                     return;
             }
         }
-
     }
+
 
     private void setInvicibility(bool invincibility)
     {

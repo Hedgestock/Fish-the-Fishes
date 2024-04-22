@@ -17,9 +17,10 @@ public partial class FishableButton : StaticBody2D, IFishable
     {
     }
 
-    public void GetCaughtBy(IFisher by)
+    public IFishable GetCaughtBy(IFisher by)
     {
         CallDeferred(Node.MethodName.Reparent, by as Node);
+        return this;
     }
 
     public void OnPressed()

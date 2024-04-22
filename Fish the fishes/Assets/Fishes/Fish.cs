@@ -81,17 +81,28 @@ public abstract partial class Fish : CharacterBody2D, IFishable
         MoveAndSlide();
     }
 
-    public virtual void GetCaughtBy(IFisher by)
+    public virtual IFishable GetCaughtBy(IFisher by)
     {
-        if (by.FishedThings.Contains(this)) return; // This avoids multiple calls on reparenting
+        if (by == this || (by as Node).GetChildren().Contains(this))
+        {
+            GD.PrintErr(by, " is already a parent of ", this);
+            throw new Exception();
+        }
+
+        if (by.FishedThings.Contains(this))
+            return this; // This avoids multiple calls on reparenting
+
         Velocity = Vector2.Zero;
         GravityScale = 0;
+        if (IsAlive) Sprite.Animation = "alive";
+
+        // In case we are already caught by another fishable thing, we make that the target of the catching action
         var parent = GetParent();
         if (IsCaught && parent is IFishable)
         {
-            (parent as IFishable).GetCaughtBy(by);
-            return;
+            return (parent as IFishable).GetCaughtBy(by);
         };
+        // In case we are a fisher thing, we make sure to give all of our fished things to what is currently catching us
         if (this is IFisher)
         {
             by.FishedThings.AddRange((this as IFisher).FishedThings);
@@ -100,6 +111,7 @@ public abstract partial class Fish : CharacterBody2D, IFishable
         IsCaught = true;
         by.FishedThings.Add(this);
         CallDeferred(Node.MethodName.Reparent, by as Node);
+        return this;
     }
 
     public virtual void Trigger()

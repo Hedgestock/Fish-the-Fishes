@@ -34,7 +34,6 @@ project/assembly_name="Godot"
 
 [gui]
 
-theme/default_theme_scale=8.0
 theme/custom_font="res://fonts/Amatic-Bold.ttf"
 
 [input]

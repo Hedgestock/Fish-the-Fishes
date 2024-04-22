@@ -46,6 +46,12 @@ public partial class Home : CanvasLayer
         Play(Game.Mode.TimeAttack);
     }
 
+    private void PlayTest()
+    {
+        GM.Mode = Game.Mode.Classic;
+        GM.ChangeSceneToFile("res://Fish the fishes/Scenes/Game/GameTest.tscn");
+    }
+
     private void GoToSettings()
     {
         GM.ChangeSceneToFile("res://Fish the fishes/Scenes/Settings/Settings.tscn");

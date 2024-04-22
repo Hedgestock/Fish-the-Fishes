@@ -58,12 +58,11 @@ shape = SubResource("RectangleShape2D_fibe0")
 
 [node name="FishTimer" parent="." instance=ExtResource("13_7sxe6")]
 autostart = true
-Deviation = 0.5
 
 [node name="TrashTimer" parent="." instance=ExtResource("13_7sxe6")]
 autostart = true
 WaitTimeAverage = 3.0
-Deviation = 2.0
+Deviation = 0.5
 
 [node name="FrustrationFix" type="Control" parent="."]
 layout_mode = 3
@@ -88,5 +87,5 @@ shape = SubResource("CapsuleShape2D_ksc04")
 [connection signal="timeout" from="TrashTimer" to="." method="SpawnTrash"]
 [connection signal="area_entered" from="FrustrationFix/Area2D" to="FishingLine" method="MakeInvincible"]
 [connection signal="area_exited" from="FrustrationFix/Area2D" to="FishingLine" method="MakeVincible"]
-[connection signal="Hit" from="FishingLine" to="HUD" method="_on_fishing_line_hit"]
-[connection signal="Score" from="FishingLine" to="HUD" method="_on_fishing_line_score"]
+[connection signal="Hit" from="FishingLine" to="HUD" method="LineHit"]
+[connection signal="Score" from="FishingLine" to="HUD" method="LineScore"]
