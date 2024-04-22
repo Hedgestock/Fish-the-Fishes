@@ -58,7 +58,7 @@ namespace Godot.Fish_the_fishes.Scripts
                 }
                 return true;
             }
-            catch (System.Exception e)
+            catch (Exception e)
             {
                 GD.PrintErr(e);
                 return false;

@@ -21,7 +21,8 @@ loop = true
 script = ExtResource("2_6xyr6")
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0"]
-scale = Vector2(4, 2)
+position = Vector2(-0.499997, -0.500001)
+scale = Vector2(4.35, 2.75)
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = ExtResource("2_e3t31")

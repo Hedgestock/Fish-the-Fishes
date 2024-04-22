@@ -11,10 +11,12 @@ height = 86.0
 [node name="SardineFish" instance=ExtResource("1_wxgi5")]
 script = ExtResource("2_kltwx")
 shoalRadius = 40
+shoalSize = 6
 Value = 0.5
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0"]
-scale = Vector2(4, 1)
+position = Vector2(-1.43051e-06, -0.5)
+scale = Vector2(4.3, 1.35)
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = ExtResource("3_kidlv")

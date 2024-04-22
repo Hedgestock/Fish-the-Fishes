@@ -1,8 +1,8 @@
 # Scoring
 
 - [x] Plus de points pour plus de poissons pêchés en un coup [x(log_3(x))+1]
-- [ ] [**Solution autre**] Plus de points pour les poissons plus loin sur l'écran
-- [ ] [**Solution autre**] Multiplicateur pour les combos
+- [x] [**Solution autre**] Plus de points pour les poissons plus loin sur l'écran
+- [x] [**Solution autre**] Multiplicateur pour les combos
 - [ ] Multiplicateur en fonction de la difficulté
 
 # Menus et Interfaces
@@ -10,12 +10,13 @@
 - [x] Changer l'icône de mort
 - [x] Enregistrer le meilleur score
 - [x] Ajouter une page de statistiques
+- [x] Ajouter un compendium
 - [ ] Faire des boutons en poisson
-- [ ] Ajouter un compendium
 - [ ] Ajouter des hauts faits
 - [ ] Ajourter un tutoriel
 - [ ] Utiliser des hameçons pour la vie
 - [ ] Faire clignoter le score pour la perte de points
+- [ ] Ajouter une emphase visuelle sur les vies lors de la perte
 
 # Poissons
 
@@ -62,10 +63,11 @@
 
 # Modes de jeu
 
+- [x] Classique
 - [x] Contre la montre
+- [x] Go green
 - [ ] Poissons ciblés
 - [ ] Zen
-- [ ] Go green
 - [ ] Training mode
 
 # Autre
@@ -75,20 +77,21 @@
 - [x] Rendre le délai d'apparition aléatoire
 - [x] Refondre la structure de dossier pour `art`
 - [x] Utiliser une boucle avec une clause d'essai pour éviter les erreurs lors de la récupération de la sauvegarde
+- [x] Retravailler la logique de la ligne de pêche
+- [x] [**Actuellement impossible**]Trouver comment générer de la corde 
+- [x] [**Actuellement impossible**]Faire des recherches sur l'intégration en page d'accueil
+- [x] [**Solution autre**] Ajouter des poissons à chemins
 - [ ] Support de différentes langues
     - [x] Anglais
     - [ ] Français
     - [ ] Allemand
     - [ ] Thai
-- [ ] [**Solution autre**] Ajouter des poissons à chemins
 - [ ] Ajouter une probabilité d'apparition
 - [ ] Ajouter des morts différentes
 - [ ] Ajouter une vitesse de descente et de remontée différente pour la ligne
-- [ ] Retravailler la logique de la ligne de pêche
-- [ ] Trouver comment générer de la corde
 - [ ] Ajouter la sauvegarde des paramètres
 - [ ] SLB dans le fond
-- [ ] Faire des recherches sur l'intégration en page d'accueil
+- [ ] Mettre à jour les statistiques avec les nouveaux modes de jeu
 
 # Corrections
 
@@ -102,4 +105,6 @@
 - [x] Changer la diparition par chronomêtre pour une disparition par zone
 - [x] Limiter la vitesse minimum des espadons à la charge
 - [x] Corriger le reparentage lors de la touche d'un déchêt
+- [ ] Corriger le problème lorsqu'un espadon vole un poisson pêché
+- [ ] Corriger le problème du reparentage d'espadon
 - [ ] Couper le son d'un poisson mort

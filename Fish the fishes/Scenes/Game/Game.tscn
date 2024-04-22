@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://0sb3i5bm7j4p"]
+[gd_scene load_steps=16 format=3 uid="uid://0sb3i5bm7j4p"]
 
 [ext_resource type="Texture2D" uid="uid://xvra7re1p3ch" path="res://Fish the fishes/art/BG 1 FTF.png" id="1_2rjoh"]
 [ext_resource type="Script" path="res://Fish the fishes/Scenes/Game/Game.cs" id="1_et1ja"]
@@ -14,9 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://lvuam8fndp75" path="res://Fish the fishes/Assets/Trashes/Tire.tscn" id="7_7egbd"]
 [ext_resource type="PackedScene" uid="uid://be1nxedcwhn2i" path="res://Fish the fishes/Assets/Fishes/SwordFish/SwordFish.tscn" id="7_ekome"]
 [ext_resource type="PackedScene" uid="uid://ifoga56i10w3" path="res://Fish the fishes/Assets/RandomTimer.tscn" id="13_7sxe6"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fibe0"]
-size = Vector2(1480, 2320)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ksc04"]
 radius = 18.0
@@ -38,21 +35,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_2rjoh")
 stretch_mode = 6
-
-[node name="PlayingZone" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Area2D" type="Area2D" parent="PlayingZone"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayingZone/Area2D"]
-shape = SubResource("RectangleShape2D_fibe0")
 
 [node name="HUD" parent="." instance=ExtResource("3_0ebou")]
 
@@ -81,7 +63,6 @@ shape = SubResource("CapsuleShape2D_ksc04")
 
 [node name="FishingLine" parent="." instance=ExtResource("3_kichm")]
 
-[connection signal="body_exited" from="PlayingZone/Area2D" to="." method="Despawn"]
 [connection signal="EndGame" from="HUD" to="." method="EndGame"]
 [connection signal="timeout" from="FishTimer" to="." method="SpawnFish"]
 [connection signal="timeout" from="TrashTimer" to="." method="SpawnTrash"]

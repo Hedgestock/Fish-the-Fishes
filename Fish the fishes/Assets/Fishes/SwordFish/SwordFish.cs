@@ -50,10 +50,10 @@ public partial class SwordFish : Fish, IFisher
         return base.GetCaughtBy(by);
     }
 
-    public override void Kill(bool whileCaught = false)
+    public override void Kill()
     {
         HitBox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
-        base.Kill(whileCaught);
+        base.Kill();
     }
 
     private void SeekTarget()
@@ -125,9 +125,8 @@ public partial class SwordFish : Fish, IFisher
 
         Fish Skew = body as Fish;
 
-
         Skew = Skew.GetCaughtBy(this) as Fish;
-        Skew.Kill(true);
+        Skew.Kill();
 
         if (Skew == Target)
         {

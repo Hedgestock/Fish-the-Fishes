@@ -53,14 +53,15 @@ public partial class HUD : CanvasLayer
         ScoreLabel.Text = GM.Score.ToString();
     }
 
-    private void LineHit()
+    private void LineHit(FishingLine.DamageType damageType)
     {
-        if (GM.Mode != Game.Mode.Classic) return;
+        if (GM.Mode == Game.Mode.TimeAttack) return;
         GM.Lives--;
         LivesContainer.GetNode<AnimatedSprite2D>("Life" + (3 - GM.Lives)).Animation = "death";
         if (GM.Lives <= 0)
         {
-            GetTree().CreateTimer(1).Timeout += EndCurrentGame;
+            if (GM.Mode == Game.Mode.GoGreen)   EndCurrentGame();
+            else GetTree().CreateTimer(1).Timeout += EndCurrentGame;
         }
     }
 

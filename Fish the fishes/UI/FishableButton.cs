@@ -6,6 +6,8 @@ public partial class FishableButton : StaticBody2D, IFishable
 {
     private CollisionShape2D CollisionShape;
 
+    public bool IsCaught { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {

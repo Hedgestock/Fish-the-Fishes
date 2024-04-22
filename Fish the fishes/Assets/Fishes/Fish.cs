@@ -6,7 +6,7 @@ using System.Linq;
 using System.Xml.Linq;
 
 
-public abstract partial class Fish : CharacterBody2D, IFishable
+public partial class Fish : CharacterBody2D, IFishable
 {
     public static string CompendiumName = "Fish";
     public static string CompendiumDescription = "This is a fish";
@@ -31,7 +31,7 @@ public abstract partial class Fish : CharacterBody2D, IFishable
     public bool Flip = false;
     public float ActualSpeed = 0;
     public bool IsAlive = true;
-    public bool IsCaught = false;
+    public bool IsCaught {  get; set; }
 
     protected AnimatedSprite2D Sprite;
 
@@ -50,6 +50,8 @@ public abstract partial class Fish : CharacterBody2D, IFishable
     {
         NotifySpawn();
 
+        IsCaught = false;
+
         Sprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 
         if (ActualSpeed == 0)
@@ -66,11 +68,6 @@ public abstract partial class Fish : CharacterBody2D, IFishable
 
         Sprite.Animation = "alive";
         Sprite.Play();
-    }
-
-    // Called every frame. 'delta' is the elapsed time since the previous frame.
-    public override void _Process(double delta)
-    {
     }
 
     public override void _PhysicsProcess(double delta)
@@ -95,6 +92,7 @@ public abstract partial class Fish : CharacterBody2D, IFishable
         if( (by as Node).GetChildren().Contains(this))
         {
             GD.PrintErr(by, " is already a parent of ", this);
+            GD.PrintErr(new System.Diagnostics.StackTrace());
             return this;
         }
 
@@ -125,11 +123,19 @@ public abstract partial class Fish : CharacterBody2D, IFishable
         Kill();
     }
 
-    public virtual void Kill(bool whileCaught = false)
+    public virtual void Kill()
     {
         IsAlive = false;
         Sprite.Animation = "dead";
-        if (!whileCaught) GravityScale = 0.6f;
+        if (!IsCaught) GravityScale = 0.6f;
+    }
+
+    protected void Despawn()
+    {
+        if (!IsCaught)
+        {
+            QueueFree();
+        }
     }
 
     protected void NotifySpawn()

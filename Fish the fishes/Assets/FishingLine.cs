@@ -2,6 +2,7 @@ using Godot;
 using Godot.Fish_the_fishes.Scripts;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 
 public partial class FishingLine : CharacterBody2D, IFisher
@@ -13,6 +14,13 @@ public partial class FishingLine : CharacterBody2D, IFisher
         Fishing,
         Hit,
         Resetting
+    }
+
+    public enum DamageType
+    {
+        Default,
+        Trash,
+        Electric
     }
 
     [Signal]
@@ -77,7 +85,6 @@ public partial class FishingLine : CharacterBody2D, IFisher
                 case Action.Fishing:
                     Hitbox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
                     EmitSignal(SignalName.Score, ComputeScore());
-                    FishedThings.Clear();
                     Line.Animation = "loose";
                     goto case Action.Hit;
                 case Action.Hit:
@@ -103,7 +110,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
 
     private void MakeInvincible(Area2D area)
     {
-        if (area == this.Area)
+        if (area == Area)
         {
             setInvicibility(true);
         }
@@ -111,7 +118,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
 
     private void MakeVincible(Area2D area)
     {
-        if (area == this.Area)
+        if (area == Area)
         {
             setInvicibility(false);
         }
@@ -141,69 +148,117 @@ public partial class FishingLine : CharacterBody2D, IFisher
         {
             (body as IFishable).GetCaughtBy(this);
         }
-        else if (FishedThings.Count > 0 && body is Trash && !Invincible)
+    }
+
+    public void GetHit(DamageType damageType = DamageType.Trash)
+    {
+        if (FishedThings.Count == 0 || Invincible) return;
+        EmitSignal(SignalName.Hit, (int)damageType);
+        Hitbox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
+        GetNode<AudioStreamPlayer>("HitSound").Play();
+
+        UserData.Instance.Statistics[Constants.TotalTrashesHit] = UserData.Instance.Statistics.GetValueOrDefault(Constants.TotalTrashesHit) + 1;
+        UserData.Instance.Statistics[Constants.TotalLostFishes] = UserData.Instance.Statistics.GetValueOrDefault(Constants.TotalLostFishes) + (uint)FishedThings.Count;
+
+        foreach (IFishable thing in FishedThings)
         {
-            EmitSignal(SignalName.Hit);
-            Hitbox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
-            GetNode<AudioStreamPlayer>("HitSound").Play();
-
-            UserData.Instance.Statistics[Constants.TotalTrashesHit] = UserData.Instance.Statistics.GetValueOrDefault(Constants.TotalTrashesHit) + 1;
-            UserData.Instance.Statistics[Constants.TotalLostFishes] = UserData.Instance.Statistics.GetValueOrDefault(Constants.TotalLostFishes) + (uint)FishedThings.Count;
-
-            foreach (Fish fish in FishedThings)
+            (thing as Node).CallDeferred(Node.MethodName.Reparent, GetParent());
+            thing.IsCaught = false;
+            if (GM.Mode != Game.Mode.GoGreen)
             {
-                GD.Print("killing fish ", fish);
-                fish.Kill();
-                fish.CallDeferred(Node.MethodName.Reparent, GetParent());
+                (thing as Fish).Kill();
             }
-            Velocity = new Vector2(0, 0);
-            Line.Animation = "hit";
-            GetTree().CreateTimer(1).Timeout += () => { MoveTowards(Destination); Line.Animation = "loose"; FishedThings.Clear(); };
         }
+
+        Velocity = new Vector2(0, 0);
+        Line.Animation = "hit";
+
+        GetTree().CreateTimer(1).Timeout += () => { MoveTowards(Destination); Line.Animation = "loose"; FishedThings.Clear(); };
     }
 
     private int ComputeScore()
     {
-        float score = 0;
         try
         {
-            foreach (Fish fish in FishedThings)
+            switch (GM.Mode)
             {
-                score += fish.Value;
-                UserData.Instance.Compendium[fish.GetType().Name].Caught++;
-            }
-            score = ScoringFunction((int)Math.Ceiling(score));
-            foreach (Fish fish in FishedThings)
-            {
-                if (fish.IsNegative)
-                {
-                    score = -score;
+
+                case Game.Mode.GoGreen:
+                    return GoGreenScore();
+                case Game.Mode.Target:
                     break;
-                }
+                case Game.Mode.Training:
+                    break;
+                case Game.Mode.Zen:
+                    break;
+                case Game.Mode.Classic:
+                case Game.Mode.TimeAttack:
+                default:
+                    return ClassicScore();
             }
-
-            UserData.Instance.Statistics[Constants.MaxFishedFishes] = (uint)Math.Max(UserData.Instance.Statistics.GetValueOrDefault(Constants.MaxFishedFishes), FishedThings.Count);
-            UserData.Instance.Statistics[Constants.TotalFishedFishes] = UserData.Instance.Statistics.GetValueOrDefault(Constants.TotalFishedFishes) + (uint)FishedThings.Count;
-
-            foreach (Fish fish in FishedThings)
-            {
-                score *= fish.Multiplier;
-                fish.QueueFree();
-            }
-
-            UserData.Instance.Statistics[Constants.MaxPointScored] = (uint) Math.Max(UserData.Instance.Statistics.GetValueOrDefault(Constants.MaxPointScored), score);
-            UserData.Instance.Statistics[Constants.TotalPointsScored] = UserData.Instance.Statistics.GetValueOrDefault(Constants.TotalPointsScored) + (uint)score;
-
-            return (int)score;
         }
         catch (Exception e)
         {
             GD.PrintErr(e);
-            return 0;
         }
+        finally
+        {
+            FishedThings.Clear();
+        }
+        return 0;
+    }
+
+    private int ClassicScore()
+    {
+        float score = 0;
+
+        foreach (Fish fish in FishedThings)
+        {
+            score += fish.Value;
+            UserData.Instance.Compendium[fish.GetType().Name].Caught++;
+        }
+        score = ScoringFunction((int)Math.Ceiling(score));
+        foreach (Fish fish in FishedThings)
+        {
+            if (fish.IsNegative)
+            {
+                score = -score;
+                break;
+            }
+        }
+
+        UserData.Instance.Statistics[Constants.MaxFishedFishes] = (uint)Math.Max(UserData.Instance.Statistics.GetValueOrDefault(Constants.MaxFishedFishes), FishedThings.Count);
+        UserData.Instance.Statistics[Constants.TotalFishedFishes] = UserData.Instance.Statistics.GetValueOrDefault(Constants.TotalFishedFishes) + (uint)FishedThings.Count;
+
+        foreach (Fish fish in FishedThings)
+        {
+            score *= fish.Multiplier;
+            fish.QueueFree();
+        }
+
+        UserData.Instance.Statistics[Constants.MaxPointScored] = (uint)Math.Max(UserData.Instance.Statistics.GetValueOrDefault(Constants.MaxPointScored), score);
+        UserData.Instance.Statistics[Constants.TotalPointsScored] = UserData.Instance.Statistics.GetValueOrDefault(Constants.TotalPointsScored) + (uint)score;
+
+        return (int)score;
 
     }
 
+    private int GoGreenScore()
+    {
+        int score = FishedThings.Where(thing => thing is Trash).Count();
+
+        if (FishedThings.OfType<Fish>().Any())
+        {
+            CallDeferred(MethodName.EmitSignal, SignalName.Hit, (int) DamageType.Default);
+        }
+
+        foreach (Node thing in FishedThings)
+        {
+            thing.QueueFree();
+        }
+
+        return score;
+    }
     private int ScoringFunction(int num, int b = 3)
     {
         if (num <= 0) return 0;

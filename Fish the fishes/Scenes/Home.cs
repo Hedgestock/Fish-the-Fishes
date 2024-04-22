@@ -46,6 +46,21 @@ public partial class Home : CanvasLayer
         Play(Game.Mode.TimeAttack);
     }
 
+    private void PlayGoGreen()
+    {
+        Play(Game.Mode.GoGreen);
+    }
+
+    private void PlayTarget()
+    {
+        Play(Game.Mode.Target);
+    }
+
+    private void PlayZen()
+    {
+        Play(Game.Mode.Zen);
+    }
+
     private void PlayTest()
     {
         GM.Mode = Game.Mode.Classic;

@@ -1,90 +1,78 @@
 using Godot;
 using Godot.Collections;
+using Godot.Fish_the_fishes.Scripts;
 using System;
 
 public partial class GameTest : Node
 {
-	[Export]
-	public Array<PackedScene> Fishes { get; set; }
+    [Export]
+    public Array<PackedScene> Fishes { get; set; }
 
-	[Export]
-	public Array<PackedScene> Trashes { get; set; }
+    [Export]
+    public Array<PackedScene> Trashes { get; set; }
 
-	private GameManager GM;
-	private RectangleShape2D PlayingZone;
+    private GameManager GM;
 
-	public enum Mode
-	{
-		Classic,
-		GoGreen,
-		Training,
-		TimeAttack,
-		Zen
-	}
+    public enum Mode
+    {
+        Classic,
+        GoGreen,
+        Training,
+        TimeAttack,
+        Zen
+    }
 
 
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
-		GM = GetNode<GameManager>("/root/GameManager");
-		GM.Score = 0;
-		GM.Lives = 3;
+    // Called when the node enters the scene tree for the first time.
+    public override void _Ready()
+    {
+        GM = GetNode<GameManager>("/root/GameManager");
+        GM.Score = 0;
+        GM.Lives = 3;
+    }
 
-		PlayingZone = (RectangleShape2D)GetNode<CollisionShape2D>("PlayingZone/Area2D/CollisionShape2D").Shape;
+    // Called every frame. 'delta' is the elapsed time since the previous frame.
+    public override void _Process(double delta)
+    {
+    }
 
-		PlayingZone.Size = new Vector2(GM.ScreenSize.X + 400, GM.ScreenSize.Y + 400);
+    public void EndGame()
+    {
+        GM.WriteHighScore();
+        GM.SaveData();
+        GM.ChangeSceneToFile("res://Fish the fishes/Scenes/Home.tscn");
+    }
+    private int i = 0;
+    private void SpawnFish()
+    {
+        PackedScene FishScene = Fishes[i % Fishes.Count];
+        Fish fish = FishScene.Instantiate<Fish>();
 
-		GetTree().Root.SizeChanged += OnScreenResize;
-	}
+        bool flip = (GD.Randi() % 2) != 0;
+        Vector2 fishSpawnLocation = new Vector2(flip ? GM.ScreenSize.X + 200 : -200, (float)GD.RandRange(0, GM.ScreenSize.Y));
+        fish.Position = fishSpawnLocation;
+        fish.Flip = flip;
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
+        // Spawn the fish by adding it to the main scene.
+        AddChild(fish);
+        i++;
+    }
 
-	public void EndGame()
-	{
-		GM.WriteHighScore();
-		GM.SaveData();
-		GM.ChangeSceneToFile("res://Fish the fishes/Scenes/Home.tscn");
-	}
-	private int i = 0;
-	private void SpawnFish()
-	{
-		PackedScene FishScene = Fishes[i % Fishes.Count];
-		Fish fish = FishScene.Instantiate<Fish>();
+    private void Despawn(Node2D body)
+    {
+        if (body is IFishable && (body as IFishable).IsCaught) return;
+        body.QueueFree();
+    }
 
-		bool flip = (GD.Randi() % 2) != 0;
-		Vector2 fishSpawnLocation = new Vector2(flip ? GM.ScreenSize.X + 200 : -200, (float)GD.RandRange(0, GM.ScreenSize.Y));
-		fish.Position = fishSpawnLocation;
-		fish.Flip = flip;
+    private void SpawnTrash()
+    {
+        PackedScene TrashScene = Trashes[(int)(GD.Randi() % Trashes.Count)];
+        Trash trash = TrashScene.Instantiate<Trash>();
+        Vector2 trashSpawnLocation = new Vector2(GD.Randi() % GM.ScreenSize.X, -50);
+        trash.Position = trashSpawnLocation;
+        trash.Velocity = new Vector2(GD.RandRange(-200, 200), 0);
 
-		// Spawn the fish by adding it to the main scene.
-		AddChild(fish);
-		i++;
-	}
-
-	private void Despawn(Node2D body)
-	{
-		if (body is Fish && (body as Fish).IsCaught) return;
-		GD.Print("despawning ",  body.GetType().Name);
-		body.QueueFree();
-	}
-
-	private void SpawnTrash()
-	{
-		PackedScene TrashScene = Trashes[(int)(GD.Randi() % Trashes.Count)];
-		Trash trash = TrashScene.Instantiate<Trash>();
-		Vector2 trashSpawnLocation = new Vector2(GD.Randi() % GM.ScreenSize.X, -50);
-		trash.Position = trashSpawnLocation;
-		trash.LinearVelocity = new Vector2(GD.RandRange(-200, 200), 0);
-
-		// Spawn the trash by adding it to the Main scene.
-		AddChild(trash);
-	}
-
-	private void OnScreenResize()
-	{
-		PlayingZone.Size = new Vector2(GM.ScreenSize.X + 400, GM.ScreenSize.Y + 400);
-	}
+        // Spawn the trash by adding it to the Main scene.
+        AddChild(trash);
+    }
 }
