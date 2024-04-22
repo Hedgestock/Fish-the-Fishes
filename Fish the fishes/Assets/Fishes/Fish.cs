@@ -83,14 +83,20 @@ public abstract partial class Fish : CharacterBody2D, IFishable
 
     public virtual IFishable GetCaughtBy(IFisher by)
     {
-        if (by == this || (by as Node).GetChildren().Contains(this))
+        if (by == this)
         {
-            GD.PrintErr(by, " is already a parent of ", this);
-            throw new Exception();
+            GD.PrintErr(by, " is ", this);
+            return this;
         }
 
         if (by.FishedThings.Contains(this))
             return this; // This avoids multiple calls on reparenting
+
+        if( (by as Node).GetChildren().Contains(this))
+        {
+            GD.PrintErr(by, " is already a parent of ", this);
+            return this;
+        }
 
         Velocity = Vector2.Zero;
         GravityScale = 0;
