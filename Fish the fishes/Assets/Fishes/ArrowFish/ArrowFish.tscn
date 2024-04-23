@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://bkk5qxylrwsky"]
+
+[ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Fish the fishes/Assets/Fishes/Fish.tscn" id="1_7swat"]
+[ext_resource type="Script" path="res://Fish the fishes/Assets/Fishes/ArrowFish/ArrowFish.cs" id="2_1g5to"]
+[ext_resource type="SpriteFrames" uid="uid://b3if7btqlo4am" path="res://Fish the fishes/Assets/Fishes/ArrowFish/ArrowFishAnimation.tres" id="3_ju7kg"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_opr4b"]
+radius = 26.0
+height = 124.0
+
+[node name="ArrowFish" instance=ExtResource("1_7swat")]
+script = ExtResource("2_1g5to")
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="0"]
+position = Vector2(2, 1.90735e-06)
+scale = Vector2(6.1, 4.9)
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = ExtResource("3_ju7kg")
+animation = &"alive"
+
+[node name="HurtBox" parent="." index="2"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_opr4b")
