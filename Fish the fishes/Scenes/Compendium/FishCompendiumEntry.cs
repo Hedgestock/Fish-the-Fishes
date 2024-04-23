@@ -14,7 +14,11 @@ public partial class FishCompendiumEntry : PanelContainer
     [Export]
     private Label NumberSeen;
     [Export]
+    private BoxContainer Placeholder;
+    [Export]
     private AnimatedSprite2D AnimatedSprite;
+
+    private string CurrentAnimation = "alive";
 
     public string FishTypeString;
 
@@ -31,9 +35,12 @@ public partial class FishCompendiumEntry : PanelContainer
 
         if (AnimatedSprite.SpriteFrames != null)
         {
-            AnimatedSprite.Animation = "alive";
+            AnimatedSprite.Animation = CurrentAnimation;
             AnimatedSprite.Play();
+
+            Placeholder.CustomMinimumSize = AnimatedSprite.SpriteFrames.GetFrameTexture(CurrentAnimation, 0).GetSize();
             CallDeferred(MethodName.PlaceAnimatedSprite);
+
             if (!UserData.Instance.Compendium.ContainsKey(FishTypeString))
             {
                 AnimatedSprite.Modulate = new Color(0, 0, 0);
@@ -63,10 +70,11 @@ public partial class FishCompendiumEntry : PanelContainer
     // Called every frame. 'delta' is the elapsed time since the previous frame.
     public override void _Process(double delta)
     {
+        GD.Print(Placeholder.Position);
     }
 
     private void PlaceAnimatedSprite()
     {
-        AnimatedSprite.Position = new Vector2(Size.X / 2, Size.Y / 2);
+        AnimatedSprite.Position = new Vector2(Placeholder.Position.X + Placeholder.Size.X / 2, Placeholder.Position.Y + Placeholder.Size.Y / 2);
     }
 }

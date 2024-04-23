@@ -12,12 +12,13 @@ height = 124.0
 script = ExtResource("2_1g5to")
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0"]
-position = Vector2(2, 1.90735e-06)
-scale = Vector2(6.1, 4.9)
+scale = Vector2(6.1, 5)
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = ExtResource("3_ju7kg")
 animation = &"alive"
+frame = 3
+frame_progress = 0.568361
 
 [node name="HurtBox" parent="." index="2"]
 rotation = 1.5708

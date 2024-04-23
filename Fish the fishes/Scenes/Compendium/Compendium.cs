@@ -32,7 +32,7 @@ public partial class Compendium : CanvasLayer
 
         foreach (var fishType in listOfExistingFishTypes)
         {
-            //AddEntry(fishType);
+            AddEntry(fishType);
         }
     }
 

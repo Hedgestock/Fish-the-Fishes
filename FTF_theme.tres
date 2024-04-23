@@ -1,10 +1,8 @@
-[gd_resource type="Theme" load_steps=13 format=3 uid="uid://dqud8bhj4fopd"]
+[gd_resource type="Theme" load_steps=11 format=3 uid="uid://dqud8bhj4fopd"]
 
-[ext_resource type="Texture2D" uid="uid://nxy12vspgvhr" path="res://Fish the fishes/art/fish/green/green_dead.png" id="1_0jx2o"]
 [ext_resource type="FontFile" uid="uid://bfbfdje68lt7w" path="res://fonts/Amatic-Bold.ttf" id="1_fkn7n"]
-[ext_resource type="Texture2D" uid="uid://da6lvk01aj30y" path="res://Fish the fishes/art/fish/green/green_alive_1.png" id="2_xe6cl"]
-[ext_resource type="Texture2D" uid="uid://b2rofas27gvrw" path="res://Fish the fishes/art/fish/red/red_dead.png" id="3_qqciv"]
-[ext_resource type="Texture2D" uid="uid://165l2gumtvkr" path="res://Fish the fishes/art/fish/red/red_alive_1.png" id="4_2qhqy"]
+[ext_resource type="Texture2D" uid="uid://sf5nbt1ewklc" path="res://Fish the fishes/art/fish/arrow/arrow_left.png" id="1_p1tk7"]
+[ext_resource type="Texture2D" uid="uid://cdlcldgajtn4i" path="res://Fish the fishes/art/fish/arrow/arrow_alive_1.png" id="2_g1lsy"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_q8gnl"]
 content_margin_left = 4.0
@@ -96,11 +94,11 @@ MarginContainer/constants/margin_left = 20
 MarginContainer/constants/margin_right = 20
 MarginContainer/constants/margin_top = 20
 ScrollContainer/styles/panel = SubResource("StyleBoxEmpty_yqf4q")
-TabContainer/icons/decrement = ExtResource("1_0jx2o")
-TabContainer/icons/decrement_highlight = ExtResource("2_xe6cl")
+TabContainer/icons/decrement = ExtResource("1_p1tk7")
+TabContainer/icons/decrement_highlight = ExtResource("1_p1tk7")
 TabContainer/icons/drop_mark = null
-TabContainer/icons/increment = ExtResource("3_qqciv")
-TabContainer/icons/increment_highlight = ExtResource("4_2qhqy")
+TabContainer/icons/increment = ExtResource("2_g1lsy")
+TabContainer/icons/increment_highlight = ExtResource("2_g1lsy")
 TabContainer/icons/menu = null
 TabContainer/icons/menu_highlight = null
 VScrollBar/styles/grabber = SubResource("StyleBoxFlat_e005x")
