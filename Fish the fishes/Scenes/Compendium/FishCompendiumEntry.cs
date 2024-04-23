@@ -1,6 +1,7 @@
 using Godot;
 using Godot.Fish_the_fishes.Scripts;
 using System;
+using System.Linq;
 
 public partial class FishCompendiumEntry : PanelContainer
 {
@@ -17,8 +18,8 @@ public partial class FishCompendiumEntry : PanelContainer
     private BoxContainer Placeholder;
     [Export]
     private AnimatedSprite2D AnimatedSprite;
-
-    private string CurrentAnimation = "alive";
+    [Export]
+    private HBoxContainer AnimationButtons;
 
     public string FishTypeString;
 
@@ -35,10 +36,10 @@ public partial class FishCompendiumEntry : PanelContainer
 
         if (AnimatedSprite.SpriteFrames != null)
         {
-            AnimatedSprite.Animation = CurrentAnimation;
+            AnimatedSprite.Animation = "alive";
             AnimatedSprite.Play();
 
-            Placeholder.CustomMinimumSize = AnimatedSprite.SpriteFrames.GetFrameTexture(CurrentAnimation, 0).GetSize();
+            Placeholder.CustomMinimumSize = AnimatedSprite.SpriteFrames.GetFrameTexture(AnimatedSprite.Animation, 0).GetSize();
             CallDeferred(MethodName.PlaceAnimatedSprite);
 
             if (!UserData.Instance.Compendium.ContainsKey(FishTypeString))
@@ -64,17 +65,29 @@ public partial class FishCompendiumEntry : PanelContainer
         if (UserData.Instance.Compendium[FishTypeString].Caught > 0)
         {
             CompendiumDescription.Text = (string)FishType.GetField(nameof(CompendiumDescription)).GetValue(FishType);
+            AnimationButtons.Show();
         }
     }
 
-    // Called every frame. 'delta' is the elapsed time since the previous frame.
-    public override void _Process(double delta)
+    private void PreviousAnimation()
     {
-        GD.Print(Placeholder.Position);
+        ChangeAnimation(-1);
+    }
+
+    private void NextAnimation()
+    {
+        ChangeAnimation(1);
+    }
+
+    private void ChangeAnimation(int step)
+    {
+        string[] animationNames = AnimatedSprite.SpriteFrames.GetAnimationNames();
+        int currentIndex = Array.FindIndex(animationNames, animation => animation == AnimatedSprite.Animation);
+        AnimatedSprite.Animation = animationNames[Mathf.PosMod(currentIndex + step, animationNames.Length)];
     }
 
     private void PlaceAnimatedSprite()
     {
-        AnimatedSprite.Position = new Vector2(Placeholder.Position.X + Placeholder.Size.X / 2, Placeholder.Position.Y + Placeholder.Size.Y / 2);
+        AnimatedSprite.GlobalPosition = new Vector2(Placeholder.GlobalPosition.X + Placeholder.Size.X / 2, Placeholder.GlobalPosition.Y + Placeholder.Size.Y / 2);
     }
 }

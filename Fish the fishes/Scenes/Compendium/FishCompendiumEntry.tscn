@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cnjmqrlebmhdu"]
+[gd_scene load_steps=7 format=3 uid="uid://cnjmqrlebmhdu"]
 
 [ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://FTF_theme.tres" id="1_0rl6u"]
 [ext_resource type="Script" path="res://Fish the fishes/Scenes/Compendium/FishCompendiumEntry.cs" id="2_o0dw6"]
@@ -8,33 +8,28 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l1j6n"]
 
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_1ewqr"]
-thickness = 10
-vertical = true
-
-[node name="PanelContainer" type="PanelContainer" node_paths=PackedStringArray("CompendiumName", "CompendiumDescription", "NumberFished", "NumberSeen", "Placeholder", "AnimatedSprite")]
+[node name="PanelContainer" type="PanelContainer" node_paths=PackedStringArray("CompendiumName", "CompendiumDescription", "NumberFished", "NumberSeen", "Placeholder", "AnimatedSprite", "AnimationButtons")]
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 380.0
+offset_bottom = 324.0
 grow_horizontal = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
+size_flags_vertical = 0
 theme = ExtResource("1_0rl6u")
 theme_override_styles/panel = SubResource("StyleBoxFlat_l1j6n")
 script = ExtResource("2_o0dw6")
-CompendiumName = NodePath("MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/HBoxContainer/VBoxContainer/CompendiumName")
-CompendiumDescription = NodePath("MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/HBoxContainer/VBoxContainer/CompendiumDescription")
+CompendiumName = NodePath("MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/CompendiumName")
+CompendiumDescription = NodePath("MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/CompendiumDescription")
 NumberFished = NodePath("MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/NumberOfTimesFished")
 NumberSeen = NodePath("MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/NumberOfTimesSeen")
 Placeholder = NodePath("MarginContainer/HBoxContainer/VBoxContainer2/Placeholder")
 AnimatedSprite = NodePath("MarginContainer/HBoxContainer/AnimatedSprite2D")
+AnimationButtons = NodePath("MarginContainer/HBoxContainer/VBoxContainer2/AnimationButtons")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
@@ -43,19 +38,15 @@ size_flags_horizontal = 3
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="CompendiumName" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="CompendiumName" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "???"
 
-[node name="CompendiumDescription" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="CompendiumDescription" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_vin7i")
 text = "???"
@@ -82,26 +73,25 @@ text = "Seen: "
 
 [node name="NumberOfTimesSeen" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 3
 size_flags_vertical = 8
 text = "0
 "
 
-[node name="VSeparator" type="VSeparator" parent="MarginContainer/HBoxContainer"]
-layout_mode = 2
-theme_override_styles/separator = SubResource("StyleBoxLine_1ewqr")
-
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 8
 
 [node name="Placeholder" type="BoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_vertical = 6
 
 [node name="AnimationButtons" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+visible = false
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 8
+size_flags_vertical = 10
 
 [node name="PreviousAnimationButton" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer2/AnimationButtons"]
 layout_mode = 2
@@ -124,3 +114,6 @@ stretch_mode = 4
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MarginContainer/HBoxContainer"]
 position = Vector2(892, 102)
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer2/AnimationButtons/PreviousAnimationButton" to="." method="PreviousAnimation"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer2/AnimationButtons/NextAnimationButton" to="." method="NextAnimation"]
