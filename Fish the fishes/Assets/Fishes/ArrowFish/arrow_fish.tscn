@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://bkk5qxylrwsky"]
+
+[ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Fish the fishes/Assets/Fishes/Fish.tscn" id="1_yccf3"]
+[ext_resource type="Script" path="res://Fish the fishes/Assets/Fishes/ArrowFish/ArrowFish.cs" id="2_ntssj"]
+[ext_resource type="Texture2D" uid="uid://cdlcldgajtn4i" path="res://Fish the fishes/art/fish/arrow/arrow_alive_1.png" id="3_60msc"]
+[ext_resource type="Texture2D" uid="uid://bcg3wdk8om5h4" path="res://Fish the fishes/art/fish/arrow/arrow_alive_2.png" id="4_6vkqg"]
+[ext_resource type="Texture2D" uid="uid://csxfp4n3h00us" path="res://Fish the fishes/art/fish/arrow/arrow_alive_3.png" id="5_x24vs"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8wuna"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_60msc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6vkqg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_60msc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_x24vs")
+}],
+"loop": true,
+"name": &"alive",
+"speed": 8.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_opr4b"]
+radius = 26.0
+height = 124.0
+
+[node name="ArrowFish" instance=ExtResource("1_yccf3")]
+script = ExtResource("2_ntssj")
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="0"]
+position = Vector2(2, 1.90735e-06)
+scale = Vector2(6.1, 4.9)
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_8wuna")
+animation = &"alive"
+
+[node name="HurtBox" parent="." index="2"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_opr4b")

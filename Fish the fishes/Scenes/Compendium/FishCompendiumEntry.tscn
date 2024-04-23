@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cnjmqrlebmhdu"]
+[gd_scene load_steps=7 format=3 uid="uid://cnjmqrlebmhdu"]
 
 [ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://FTF_theme.tres" id="1_0rl6u"]
 [ext_resource type="Script" path="res://Fish the fishes/Scenes/Compendium/FishCompendiumEntry.cs" id="2_o0dw6"]
 [ext_resource type="Theme" uid="uid://cmnrxxeo4xdgp" path="res://FTF_descriptions_theme.tres" id="2_vin7i"]
+[ext_resource type="Texture2D" uid="uid://da6lvk01aj30y" path="res://Fish the fishes/art/fish/green/green_alive_1.png" id="4_i262p"]
+[ext_resource type="Texture2D" uid="uid://165l2gumtvkr" path="res://Fish the fishes/art/fish/red/red_alive_1.png" id="5_euslo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l1j6n"]
 
@@ -16,8 +18,8 @@ size_flags_vertical = 3
 theme = ExtResource("1_0rl6u")
 theme_override_styles/panel = SubResource("StyleBoxFlat_l1j6n")
 script = ExtResource("2_o0dw6")
-CompendiumName = NodePath("MarginContainer/HBoxContainer/VBoxContainer/CompendiumName")
-CompendiumDescription = NodePath("MarginContainer/HBoxContainer/VBoxContainer/CompendiumDescription")
+CompendiumName = NodePath("MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/VBoxContainer/CompendiumName")
+CompendiumDescription = NodePath("MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/VBoxContainer/CompendiumDescription")
 NumberFished = NodePath("MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/NumberOfTimesFished")
 NumberSeen = NodePath("MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/NumberOfTimesSeen")
 AnimatedSprite = NodePath("MarginContainer/HBoxContainer/AnimatedSprite2D")
@@ -33,11 +35,17 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="CompendiumName" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="CompendiumName" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
 layout_mode = 2
 text = "???"
 
-[node name="CompendiumDescription" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="CompendiumDescription" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_vin7i")
 text = "???"
@@ -45,24 +53,39 @@ text = "???"
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_vin7i")
-alignment = 2
 
 [node name="Fished" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 8
 text = "Fished: "
 
 [node name="NumberOfTimesFished" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 8
 text = "0
 "
 
 [node name="Seen" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 8
 text = "Seen: "
 
 [node name="NumberOfTimesSeen" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
 text = "0
 "
+
+[node name="PreviousAnimationButton" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_i262p")
+stretch_mode = 5
+
+[node name="NextAnimationButton" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+texture_normal = ExtResource("5_euslo")
+stretch_mode = 4
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MarginContainer/HBoxContainer"]
