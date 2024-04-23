@@ -11,12 +11,12 @@
 - [x] Enregistrer le meilleur score
 - [x] Ajouter une page de statistiques
 - [x] Ajouter un compendium
+- [x] Ajouter une emphase visuelle sur les vies lors de la perte
+- [x] Faire clignoter le score pour la perte de points
 - [ ] Faire des boutons en poisson
 - [ ] Ajouter des hauts faits
 - [ ] Ajourter un tutoriel
 - [ ] Utiliser des hameçons pour la vie
-- [ ] Faire clignoter le score pour la perte de points
-- [ ] Ajouter une emphase visuelle sur les vies lors de la perte
 
 # Poissons
 
@@ -108,3 +108,4 @@
 - [ ] Corriger le problème lorsqu'un espadon vole un poisson pêché
 - [ ] Corriger le problème du reparentage d'espadon
 - [ ] Couper le son d'un poisson mort
+- [ ] Verifier le passage en négatif de la statistique de score
