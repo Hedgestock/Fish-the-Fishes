@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://uv5gyiqah3ec"]
 
 [ext_resource type="Script" path="res://Fish the fishes/Scenes/Game/GameTest.cs" id="1_kjtri"]
-[ext_resource type="PackedScene" uid="uid://ct3hvitsd17g5" path="res://Fish the fishes/Assets/Fishes/RedFish/RedFish.tscn" id="2_e21ik"]
 [ext_resource type="PackedScene" uid="uid://oxxpqubwwblb" path="res://Fish the fishes/Assets/Fishes/AnguilleFish/AnguilleFish.tscn" id="5_oorh7"]
+[ext_resource type="PackedScene" uid="uid://be1nxedcwhn2i" path="res://Fish the fishes/Assets/Fishes/SwordFish/SwordFish.tscn" id="7_1fb6x"]
 [ext_resource type="PackedScene" uid="uid://co0xglrn1rvre" path="res://Fish the fishes/Assets/Trashes/Can.tscn" id="8_xxsm0"]
 [ext_resource type="PackedScene" uid="uid://yi82g384vgwb" path="res://Fish the fishes/Scenes/Game/HUD.tscn" id="12_v3vvr"]
 [ext_resource type="PackedScene" uid="uid://ifoga56i10w3" path="res://Fish the fishes/Assets/RandomTimer.tscn" id="13_k8syo"]
@@ -14,7 +14,7 @@ height = 812.0
 
 [node name="Game" type="Node"]
 script = ExtResource("1_kjtri")
-Fishes = Array[PackedScene]([ExtResource("2_e21ik"), ExtResource("2_e21ik"), ExtResource("5_oorh7"), ExtResource("2_e21ik"), ExtResource("2_e21ik"), ExtResource("2_e21ik"), ExtResource("2_e21ik"), ExtResource("2_e21ik"), ExtResource("2_e21ik"), ExtResource("2_e21ik"), ExtResource("2_e21ik"), ExtResource("2_e21ik"), ExtResource("2_e21ik"), ExtResource("2_e21ik")])
+Fishes = Array[PackedScene]([ExtResource("5_oorh7"), ExtResource("7_1fb6x")])
 Trashes = Array[PackedScene]([ExtResource("8_xxsm0")])
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
