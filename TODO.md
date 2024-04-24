@@ -105,7 +105,7 @@
 - [x] Changer la diparition par chronomêtre pour une disparition par zone
 - [x] Limiter la vitesse minimum des espadons à la charge
 - [x] Corriger le reparentage lors de la touche d'un déchêt
+- [x] Verifier le passage en négatif de la statistique de score
 - [ ] Corriger le problème lorsqu'un espadon vole un poisson pêché
 - [ ] Corriger le problème du reparentage d'espadon
 - [ ] Couper le son d'un poisson mort
-- [ ] Verifier le passage en négatif de la statistique de score

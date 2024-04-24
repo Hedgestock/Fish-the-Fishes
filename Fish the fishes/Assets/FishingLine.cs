@@ -236,8 +236,8 @@ public partial class FishingLine : CharacterBody2D, IFisher
             fish.QueueFree();
         }
 
-        UserData.Instance.Statistics[Constants.MaxPointScored] = (uint)Math.Max(UserData.Instance.Statistics.GetValueOrDefault(Constants.MaxPointScored), score);
-        UserData.Instance.Statistics[Constants.TotalPointsScored] = UserData.Instance.Statistics.GetValueOrDefault(Constants.TotalPointsScored) + (uint)score;
+        UserData.Instance.Statistics[Constants.MaxPointScored] = (uint)Math.Max(UserData.Instance.Statistics.GetValueOrDefault(Constants.MaxPointScored), (int)score);
+        UserData.Instance.Statistics[Constants.TotalPointsScored] = (uint)Math.Max(0, UserData.Instance.Statistics.GetValueOrDefault(Constants.TotalPointsScored) + (int)score);
 
         return (int)score;
 
@@ -249,7 +249,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
 
         if (FishedThings.OfType<Fish>().Any())
         {
-            CallDeferred(MethodName.EmitSignal, SignalName.Hit, (int) DamageType.Default);
+            CallDeferred(MethodName.EmitSignal, SignalName.Hit, (int)DamageType.Default);
         }
 
         foreach (Node thing in FishedThings)

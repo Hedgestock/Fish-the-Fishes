@@ -17,9 +17,10 @@ public partial class GameTest : Node
     {
         Classic,
         GoGreen,
+        Target,
         Training,
         TimeAttack,
-        Zen
+        Zen,
     }
 
 
@@ -42,10 +43,10 @@ public partial class GameTest : Node
         GM.SaveData();
         GM.ChangeSceneToFile("res://Fish the fishes/Scenes/Home.tscn");
     }
-    private int i = 0;
+
     private void SpawnFish()
     {
-        PackedScene FishScene = Fishes[i % Fishes.Count];
+        PackedScene FishScene = Fishes[(int)(GD.Randi() % Fishes.Count)];
         Fish fish = FishScene.Instantiate<Fish>();
 
         bool flip = (GD.Randi() % 2) != 0;
@@ -55,7 +56,6 @@ public partial class GameTest : Node
 
         // Spawn the fish by adding it to the main scene.
         AddChild(fish);
-        i++;
     }
 
     private void Despawn(Node2D body)
@@ -68,7 +68,7 @@ public partial class GameTest : Node
     {
         PackedScene TrashScene = Trashes[(int)(GD.Randi() % Trashes.Count)];
         Trash trash = TrashScene.Instantiate<Trash>();
-        Vector2 trashSpawnLocation = new Vector2(GD.Randi() % GM.ScreenSize.X, -50);
+        Vector2 trashSpawnLocation = new Vector2(GD.Randi() % GM.ScreenSize.X, -100);
         trash.Position = trashSpawnLocation;
         trash.Velocity = new Vector2(GD.RandRange(-200, 200), 0);
 
