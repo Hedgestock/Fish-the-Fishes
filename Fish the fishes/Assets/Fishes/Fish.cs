@@ -11,6 +11,11 @@ public partial class Fish : CharacterBody2D, IFishable
     public static string CompendiumName = "Fish";
     public static string CompendiumDescription = "This is a fish";
 
+    [Export]
+    protected AnimatedSprite2D Sprite;
+    [Export]
+    protected AudioStreamPlayer Sound;
+
     [ExportGroup("Scoring")]
     [Export]
     public float Value = 1;
@@ -21,19 +26,16 @@ public partial class Fish : CharacterBody2D, IFishable
 
     [ExportGroup("Behaviour")]
     [Export]
-    public float MinSpeed = 150;
+    private float MinSpeed = 150;
     [Export]
-    public float MaxSpeed = 250;
+    private float MaxSpeed = 250;
     [Export]
-    public float GravityScale = 0;
-
+    private float GravityScale = 0;
 
     public bool Flip = false;
     public float ActualSpeed = 0;
     public bool IsAlive = true;
     public bool IsCaught {  get; set; }
-
-    protected AnimatedSprite2D Sprite;
 
     public bool Actionable
     {
@@ -51,8 +53,6 @@ public partial class Fish : CharacterBody2D, IFishable
         NotifySpawn();
 
         IsCaught = false;
-
-        Sprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 
         if (ActualSpeed == 0)
         {
@@ -125,9 +125,11 @@ public partial class Fish : CharacterBody2D, IFishable
 
     public virtual void Kill()
     {
+        if (!IsCaught) GravityScale = 0.6f;
+        if (!IsAlive) return;
         IsAlive = false;
         Sprite.Animation = "dead";
-        if (!IsCaught) GravityScale = 0.6f;
+        Sound.Stop();
     }
 
     protected void Despawn()

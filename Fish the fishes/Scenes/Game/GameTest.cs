@@ -44,9 +44,10 @@ public partial class GameTest : Node
         GM.ChangeSceneToFile("res://Fish the fishes/Scenes/Home.tscn");
     }
 
+    int i = 0;
     private void SpawnFish()
     {
-        PackedScene FishScene = Fishes[(int)(GD.Randi() % Fishes.Count)];
+        PackedScene FishScene = Fishes[i++ % Fishes.Count];
         Fish fish = FishScene.Instantiate<Fish>();
 
         bool flip = (GD.Randi() % 2) != 0;

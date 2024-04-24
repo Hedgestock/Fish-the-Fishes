@@ -2,13 +2,15 @@
 
 [ext_resource type="Script" path="res://Fish the fishes/Assets/Fishes/Fish.cs" id="1_y6aq3"]
 
-[node name="Fish" type="CharacterBody2D" groups=["Fishes"]]
+[node name="Fish" type="CharacterBody2D" node_paths=PackedStringArray("Sprite", "Sound") groups=["Fishes"]]
 collision_mask = 0
 motion_mode = 1
 floor_stop_on_slope = false
 floor_constant_speed = true
 floor_block_on_wall = false
 script = ExtResource("1_y6aq3")
+Sprite = NodePath("AnimatedSprite2D")
+Sound = NodePath("AudioStreamPlayer")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
