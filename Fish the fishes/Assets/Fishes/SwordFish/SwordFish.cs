@@ -87,6 +87,7 @@ public partial class SwordFish : Fish, IFisher
     private void Launch()
     {
         if (!Actionable) return;
+
         if (!IsInstanceValid(Target))
         {
             State = Action.Swimming;

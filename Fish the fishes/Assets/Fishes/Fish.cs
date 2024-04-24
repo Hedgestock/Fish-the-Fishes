@@ -100,20 +100,26 @@ public partial class Fish : CharacterBody2D, IFishable
         GravityScale = 0;
         if (IsAlive) Sprite.Animation = "alive";
 
-        // In case we are already caught by another fishable thing, we make that the target of the catching action
         var parent = GetParent();
-        if (IsCaught && parent is IFishable)
+        if (IsCaught)
         {
-            return (parent as IFishable).GetCaughtBy(by);
+            // In case we are already caught by another fishable thing, we make that parent the target of the catching action
+            if (parent is IFishable)
+                return (parent as IFishable).GetCaughtBy(by);
+            // In case we are already caught by a non fishable thing, we make sure that we are removed from its list ("stolen")
+            //(parent as IFisher).FishedThings.Remove(this);
         };
+
+        by.FishedThings.Add(this);
+        IsCaught = true;
+
         // In case we are a fisher thing, we make sure to give all of our fished things to what is currently catching us
         if (this is IFisher)
         {
             by.FishedThings.AddRange((this as IFisher).FishedThings);
             (this as IFisher).FishedThings.Clear();
         }
-        IsCaught = true;
-        by.FishedThings.Add(this);
+
         CallDeferred(Node.MethodName.Reparent, by as Node);
         return this;
     }
