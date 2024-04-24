@@ -1,7 +1,6 @@
 using Godot;
 using Godot.Fish_the_fishes.Scripts;
 using System;
-using System.Linq;
 
 public partial class FishCompendiumEntry : PanelContainer
 {
@@ -23,6 +22,7 @@ public partial class FishCompendiumEntry : PanelContainer
 
     public string FishTypeString;
 
+
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
@@ -42,6 +42,8 @@ public partial class FishCompendiumEntry : PanelContainer
             Placeholder.CustomMinimumSize = AnimatedSprite.SpriteFrames.GetFrameTexture(AnimatedSprite.Animation, 0).GetSize();
             CallDeferred(MethodName.PlaceAnimatedSprite);
 
+            GetTree().Root.SizeChanged += PlaceAnimatedSprite;
+
             if (!UserData.Instance.Compendium.ContainsKey(FishTypeString))
             {
                 AnimatedSprite.Modulate = new Color(0, 0, 0);
@@ -52,8 +54,6 @@ public partial class FishCompendiumEntry : PanelContainer
         {
             GD.PrintErr("No animation resource found at path: ", ressourcePath);
         }
-
-
 
 
         NumberSeen.Text = UserData.Instance.Compendium[FishTypeString].Seen.ToString();
