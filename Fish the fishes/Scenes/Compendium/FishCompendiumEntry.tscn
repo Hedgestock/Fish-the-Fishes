@@ -14,6 +14,7 @@ anchor_right = 1.0
 offset_bottom = 324.0
 grow_horizontal = 2
 size_flags_vertical = 0
+mouse_filter = 1
 theme = ExtResource("1_0rl6u")
 theme_override_styles/panel = SubResource("StyleBoxFlat_l1j6n")
 script = ExtResource("2_o0dw6")
@@ -95,6 +96,7 @@ size_flags_vertical = 10
 
 [node name="PreviousAnimationButton" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer2/AnimationButtons"]
 layout_mode = 2
+mouse_filter = 1
 texture_normal = ExtResource("4_uw2jc")
 texture_pressed = ExtResource("4_uw2jc")
 texture_hover = ExtResource("4_uw2jc")
@@ -105,6 +107,7 @@ stretch_mode = 5
 [node name="NextAnimationButton" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer2/AnimationButtons"]
 layout_mode = 2
 size_flags_vertical = 0
+mouse_filter = 1
 texture_normal = ExtResource("5_isxl6")
 texture_pressed = ExtResource("5_isxl6")
 texture_hover = ExtResource("5_isxl6")
