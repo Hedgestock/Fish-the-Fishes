@@ -28,6 +28,7 @@ public partial class SwordFish : Fish, IFisher
     private CollisionShape2D HitBox;
     private Fish Target = null;
     private Action State = Action.Swimming;
+    private float LaunchedSpeed;
 
 
     // Called when the node enters the scene tree for the first time.
@@ -36,16 +37,22 @@ public partial class SwordFish : Fish, IFisher
         base._Ready();
         HitBox = GetNode<CollisionShape2D>("HitBox/CollisionShape2D");
         Strikes = GD.RandRange(MinStrikes, MaxStrikes);
+        LaunchedSpeed = ActualSpeed;
     }
 
 
     public override void _PhysicsProcess(double delta)
     {
         base._PhysicsProcess(delta);
+        if (State == Action.Launched)
+        {
+            TrackTarget();
+        }
     }
 
     public override IFishable GetCaughtBy(IFisher by)
     {
+        State = Action.Swimming;
         HitBox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
         return base.GetCaughtBy(by);
     }
@@ -58,7 +65,7 @@ public partial class SwordFish : Fish, IFisher
 
     private void SeekTarget()
     {
-        if (!Actionable || State == Action.Seeking) return;
+        if (!Actionable || State == Action.Seeking || Strikes <= 0) return;
 
         Sprite.Animation = "seek";
 
@@ -97,12 +104,7 @@ public partial class SwordFish : Fish, IFisher
 
         Strikes--;
 
-        Velocity = GetDirectionTo(Target);
-        if (Velocity.Length() < ActualSpeed)
-        {
-            Velocity = Velocity.Normalized() * ActualSpeed;
-        }
-        Rotation = Velocity.Angle();
+        LaunchedSpeed = TrackTarget(true);
 
         Sprite.Animation = "dash";
 
@@ -129,7 +131,7 @@ public partial class SwordFish : Fish, IFisher
         Skew = Skew.GetCaughtBy(this) as Fish;
         Skew.Kill();
 
-        if (Skew == Target)
+        if (FishedThings.Contains(Target))
         {
             Velocity = Vector2.Zero;
             if (Strikes > 0)
@@ -143,7 +145,35 @@ public partial class SwordFish : Fish, IFisher
     #region helpers
     private Vector2 GetDirectionTo(Fish target)
     {
-        return Target.Position + (Target.Velocity * 0.8f) - Position;
+        return target.GlobalPosition - GlobalPosition;
+    }
+
+    private float TrackTarget(bool atLaunch = false)
+    {
+        if (!Actionable) return 0;
+
+        if (!IsInstanceValid(Target))
+        {
+            State = Action.Swimming;
+            SeekTarget();
+            return 0;
+        }
+
+        Velocity = GetDirectionTo(Target);
+        if (atLaunch)
+        {
+            if (Velocity.Length() < ActualSpeed)
+                Velocity = Velocity.Normalized() * ActualSpeed;
+        }
+        else
+        {
+            Velocity = Velocity.Normalized() * LaunchedSpeed;
+        }
+
+
+        Rotation = Velocity.Angle();
+
+        return Velocity.Length();
     }
 
     private Tween RotateAtConstantSpeed(float angle)
