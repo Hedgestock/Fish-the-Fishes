@@ -1,8 +1,10 @@
-[gd_resource type="SpriteFrames" load_steps=22 format=3 uid="uid://cyv8fnlha8eri"]
+[gd_resource type="SpriteFrames" load_steps=24 format=3 uid="uid://cyv8fnlha8eri"]
 
 [ext_resource type="Texture2D" uid="uid://ddmab508xlbtg" path="res://Fish the fishes/art/fish/sword/swordfish_alive_1.png" id="1_76oxb"]
 [ext_resource type="Texture2D" uid="uid://clp2u6ep7ey1i" path="res://Fish the fishes/art/fish/sword/swordfish_dead.png" id="2_0iyiy"]
 [ext_resource type="Texture2D" uid="uid://bxay6ctr678jw" path="res://Fish the fishes/art/fish/sword/sword_dash_test_1.png" id="2_d7e78"]
+[ext_resource type="Texture2D" uid="uid://c4ctnd40uegir" path="res://Fish the fishes/art/fish/sword/swordfish_alive_2.png" id="2_lukw3"]
+[ext_resource type="Texture2D" uid="uid://gj5aghqqev6w" path="res://Fish the fishes/art/fish/sword/swordfish_alive_3.png" id="3_23bty"]
 [ext_resource type="Texture2D" uid="uid://dbesa3mauseso" path="res://Fish the fishes/art/fish/sword/sword_dash_test_2.png" id="3_xgmkf"]
 [ext_resource type="Texture2D" uid="uid://rbsmt33d54c4" path="res://Fish the fishes/art/fish/sword/sword_dash_test_3.png" id="4_tj74v"]
 [ext_resource type="Texture2D" uid="uid://bel8o7p82f0rk" path="res://Fish the fishes/art/fish/sword/sword_dash_test_4.png" id="5_5od13"]
@@ -27,6 +29,15 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_76oxb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_lukw3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_76oxb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_23bty")
 }],
 "loop": true,
 "name": &"alive",
