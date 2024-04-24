@@ -1,8 +1,10 @@
-[gd_resource type="Theme" load_steps=11 format=3 uid="uid://dqud8bhj4fopd"]
+[gd_resource type="Theme" load_steps=13 format=3 uid="uid://dqud8bhj4fopd"]
 
 [ext_resource type="FontFile" uid="uid://bfbfdje68lt7w" path="res://fonts/Amatic-Bold.ttf" id="1_fkn7n"]
 [ext_resource type="Texture2D" uid="uid://sf5nbt1ewklc" path="res://Fish the fishes/art/fish/arrow/arrow_left.png" id="1_p1tk7"]
+[ext_resource type="Texture2D" uid="uid://b3ygkwfip0qaj" path="res://Fish the fishes/art/fish/arrow/arrow_left_3.png" id="2_fu0oa"]
 [ext_resource type="Texture2D" uid="uid://cdlcldgajtn4i" path="res://Fish the fishes/art/fish/arrow/arrow_alive_1.png" id="2_g1lsy"]
+[ext_resource type="Texture2D" uid="uid://csxfp4n3h00us" path="res://Fish the fishes/art/fish/arrow/arrow_alive_3.png" id="4_j07dk"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_q8gnl"]
 content_margin_left = 4.0
@@ -95,10 +97,10 @@ MarginContainer/constants/margin_right = 20
 MarginContainer/constants/margin_top = 20
 ScrollContainer/styles/panel = SubResource("StyleBoxEmpty_yqf4q")
 TabContainer/icons/decrement = ExtResource("1_p1tk7")
-TabContainer/icons/decrement_highlight = ExtResource("1_p1tk7")
+TabContainer/icons/decrement_highlight = ExtResource("2_fu0oa")
 TabContainer/icons/drop_mark = null
 TabContainer/icons/increment = ExtResource("2_g1lsy")
-TabContainer/icons/increment_highlight = ExtResource("2_g1lsy")
+TabContainer/icons/increment_highlight = ExtResource("4_j07dk")
 TabContainer/icons/menu = null
 TabContainer/icons/menu_highlight = null
 VScrollBar/styles/grabber = SubResource("StyleBoxFlat_e005x")

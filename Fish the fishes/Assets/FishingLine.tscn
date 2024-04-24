@@ -20,9 +20,10 @@ Speed = 1600
 
 [node name="Line" type="AnimatedSprite2D" parent="."]
 texture_repeat = 2
-position = Vector2(-3, -120)
+position = Vector2(-5, -1547)
 sprite_frames = ExtResource("4_l5pqx")
-animation = &"loose"
+animation = &"hit"
+frame_progress = 0.53138
 
 [node name="Hook" type="Sprite2D" parent="."]
 texture = ExtResource("3_j3quy")

@@ -1,10 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://cnjmqrlebmhdu"]
+[gd_scene load_steps=12 format=3 uid="uid://cnjmqrlebmhdu"]
 
 [ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://FTF_theme.tres" id="1_0rl6u"]
 [ext_resource type="Script" path="res://Fish the fishes/Scenes/Compendium/FishCompendiumEntry.cs" id="2_o0dw6"]
 [ext_resource type="Theme" uid="uid://cmnrxxeo4xdgp" path="res://FTF_descriptions_theme.tres" id="2_vin7i"]
 [ext_resource type="Texture2D" uid="uid://sf5nbt1ewklc" path="res://Fish the fishes/art/fish/arrow/arrow_left.png" id="4_uw2jc"]
 [ext_resource type="Texture2D" uid="uid://cdlcldgajtn4i" path="res://Fish the fishes/art/fish/arrow/arrow_alive_1.png" id="5_isxl6"]
+[ext_resource type="Texture2D" uid="uid://b3ygkwfip0qaj" path="res://Fish the fishes/art/fish/arrow/arrow_left_3.png" id="5_wpdsa"]
+[ext_resource type="Texture2D" uid="uid://b6u50qvxp6of2" path="res://Fish the fishes/art/fish/arrow/arrow_left_2.png" id="6_eyq3p"]
+[ext_resource type="Texture2D" uid="uid://t6xoo5v6v31m" path="res://Fish the fishes/art/fish/arrow/arrow_dead.png" id="7_axp1e"]
+[ext_resource type="Texture2D" uid="uid://csxfp4n3h00us" path="res://Fish the fishes/art/fish/arrow/arrow_alive_3.png" id="9_fb2jn"]
+[ext_resource type="Texture2D" uid="uid://bcg3wdk8om5h4" path="res://Fish the fishes/art/fish/arrow/arrow_alive_2.png" id="10_2v0ay"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l1j6n"]
 
@@ -89,7 +94,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 6
 
 [node name="AnimationButtons" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 10
@@ -98,10 +102,9 @@ size_flags_vertical = 10
 layout_mode = 2
 mouse_filter = 1
 texture_normal = ExtResource("4_uw2jc")
-texture_pressed = ExtResource("4_uw2jc")
-texture_hover = ExtResource("4_uw2jc")
-texture_disabled = ExtResource("4_uw2jc")
-texture_focused = ExtResource("4_uw2jc")
+texture_pressed = ExtResource("5_wpdsa")
+texture_hover = ExtResource("6_eyq3p")
+texture_disabled = ExtResource("7_axp1e")
 stretch_mode = 5
 
 [node name="NextAnimationButton" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer2/AnimationButtons"]
@@ -109,10 +112,9 @@ layout_mode = 2
 size_flags_vertical = 0
 mouse_filter = 1
 texture_normal = ExtResource("5_isxl6")
-texture_pressed = ExtResource("5_isxl6")
-texture_hover = ExtResource("5_isxl6")
-texture_disabled = ExtResource("5_isxl6")
-texture_focused = ExtResource("5_isxl6")
+texture_pressed = ExtResource("9_fb2jn")
+texture_hover = ExtResource("10_2v0ay")
+texture_disabled = ExtResource("7_axp1e")
 stretch_mode = 4
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MarginContainer/HBoxContainer"]
