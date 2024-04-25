@@ -14,9 +14,7 @@ public partial class FishCompendiumEntry : PanelContainer
     [Export]
     private Label NumberSeen;
     [Export]
-    private BoxContainer Placeholder;
-    [Export]
-    private AnimatedSprite2D AnimatedSprite;
+    private AnimatedSpriteForUI Placeholder;
     [Export]
     private HBoxContainer AnimationButtons;
 
@@ -32,21 +30,16 @@ public partial class FishCompendiumEntry : PanelContainer
 
         string ressourcePath = $"res://Fish the fishes/Assets/Fishes/{FishTypeString}/{FishTypeString}Animation.tres";
 
-        AnimatedSprite.SpriteFrames = GD.Load<SpriteFrames>(ressourcePath);
+        Placeholder.SpriteFrames = GD.Load<SpriteFrames>(ressourcePath);
 
-        if (AnimatedSprite.SpriteFrames != null)
+        if (Placeholder.SpriteFrames != null)
         {
-            AnimatedSprite.Animation = "alive";
-            AnimatedSprite.Play();
+            Placeholder.Animation = "alive";
+            Placeholder.Play();
 
-            Placeholder.CustomMinimumSize = AnimatedSprite.SpriteFrames.GetFrameTexture(AnimatedSprite.Animation, 0).GetSize();
-            CallDeferred(MethodName.PlaceAnimatedSprite);
-
-            GetTree().Root.SizeChanged += PlaceAnimatedSprite;
-
-            if (!UserData.Instance.Compendium.ContainsKey(FishTypeString))
+            if (!UserData.Instance.FishCompendium.ContainsKey(FishTypeString))
             {
-                AnimatedSprite.Modulate = new Color(0, 0, 0);
+                Placeholder.Modulate = new Color(0, 0, 0);
                 return;
             }
         }
@@ -56,13 +49,13 @@ public partial class FishCompendiumEntry : PanelContainer
         }
 
 
-        NumberSeen.Text = UserData.Instance.Compendium[FishTypeString].Seen.ToString();
-        NumberFished.Text = UserData.Instance.Compendium[FishTypeString].Caught.ToString();
+        NumberSeen.Text = UserData.Instance.FishCompendium[FishTypeString].Seen.ToString();
+        NumberFished.Text = UserData.Instance.FishCompendium[FishTypeString].Caught.ToString();
 
         CompendiumName.Text = (string)FishType.GetField(nameof(CompendiumName)).GetValue(FishType);
 
 
-        if (UserData.Instance.Compendium[FishTypeString].Caught > 0)
+        if (UserData.Instance.FishCompendium[FishTypeString].Caught > 0)
         {
             CompendiumDescription.Text = (string)FishType.GetField(nameof(CompendiumDescription)).GetValue(FishType);
             AnimationButtons.Show();
@@ -81,13 +74,8 @@ public partial class FishCompendiumEntry : PanelContainer
 
     private void ChangeAnimation(int step)
     {
-        string[] animationNames = AnimatedSprite.SpriteFrames.GetAnimationNames();
-        int currentIndex = Array.FindIndex(animationNames, animation => animation == AnimatedSprite.Animation);
-        AnimatedSprite.Animation = animationNames[Mathf.PosMod(currentIndex + step, animationNames.Length)];
-    }
-
-    private void PlaceAnimatedSprite()
-    {
-        AnimatedSprite.GlobalPosition = new Vector2(Placeholder.GlobalPosition.X + Placeholder.Size.X / 2, Placeholder.GlobalPosition.Y + Placeholder.Size.Y / 2);
+        string[] animationNames = Placeholder.SpriteFrames.GetAnimationNames();
+        int currentIndex = Array.FindIndex(animationNames, animation => animation == Placeholder.Animation);
+        Placeholder.Animation = animationNames[Mathf.PosMod(currentIndex + step, animationNames.Length)];
     }
 }

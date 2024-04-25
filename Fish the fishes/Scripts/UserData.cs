@@ -21,14 +21,16 @@ namespace Godot.Fish_the_fishes.Scripts
         public Dictionary<string, uint> CompetitiveScores { get; set; }
         public Dictionary<string, uint> CasualScores { get; set; }
         public Dictionary<string, uint> Statistics { get; set; }
-        public Dictionary<string, CompendiumEntry> Compendium { get; set; }
+        public Dictionary<string, FishCompendiumEntry> FishCompendium { get; set; }
+        public Dictionary<string, TrashCompendiumEntry> TrashCompendium { get; set; }
 
         public UserData()
         {
             CompetitiveScores = new Dictionary<string, uint>();
             CasualScores = new Dictionary<string, uint>();
             Statistics = new Dictionary<string, uint>();
-            Compendium = new Dictionary<string, CompendiumEntry>();
+            FishCompendium = new Dictionary<string, FishCompendiumEntry>();
+            TrashCompendium = new Dictionary<string, TrashCompendiumEntry>();
         }
 
         public static void Reset()
@@ -65,13 +67,26 @@ namespace Godot.Fish_the_fishes.Scripts
             }
         }
 
-        public class CompendiumEntry
+        public class FishCompendiumEntry
         {
             public uint Caught { get; set; }
             public uint Seen { get; set; }
-            public CompendiumEntry()
+            public FishCompendiumEntry()
             {
                 Caught = 0;
+                Seen = 1;
+            }
+        }
+
+        public class TrashCompendiumEntry
+        {
+            public uint Hit { get; set; }
+            public uint Cleaned { get; set; }
+            public uint Seen { get; set; }
+            public TrashCompendiumEntry()
+            {
+                Hit = 0;
+                Cleaned = 0;
                 Seen = 1;
             }
         }

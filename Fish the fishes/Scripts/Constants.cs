@@ -4,11 +4,13 @@ namespace Godot.Fish_the_fishes.Scripts
 {
     public static class Constants
     {
-        public static string TotalFishedFishes = "TotalFishedFishes";
-        public static string TotalPointsScored = "TotalPointsScored";
-        public static string TotalTrashesHit = "TotalTrashesHit";
-        public static string TotalLostFishes = "TotalLostFishes";
-        public static string MaxFishedFishes = "MaxFishedFishes";
-        public static string MaxPointScored = "MaxPointScored";
+        public static string TotalFishedFishes = nameof(TotalFishedFishes);
+        public static string TotalPointsScored = nameof(TotalPointsScored);
+        public static string TotalTrashesHit = nameof(TotalTrashesHit);
+        public static string TotalLostFishes = nameof(TotalLostFishes);
+        public static string MaxFishedFishes = nameof(MaxFishedFishes);
+        public static string MaxPointScored = nameof(MaxPointScored);
+        public static string TotalTrashesCleaned = nameof(TotalTrashesCleaned);
+        public static string TotalEatenFishes = nameof(TotalEatenFishes);
     }
 }

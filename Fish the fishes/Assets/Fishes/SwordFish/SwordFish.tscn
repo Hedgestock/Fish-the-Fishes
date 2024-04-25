@@ -27,16 +27,16 @@ scale = Vector2(21.75, 9)
 [node name="AnimatedSprite2D" parent="." index="1"]
 position = Vector2(-144, 0)
 sprite_frames = ExtResource("3_rsy4g")
-animation = &"alive"
-frame_progress = 0.825118
+animation = &"seek"
+frame_progress = 0.0948545
 
 [node name="HurtBox" parent="." index="2"]
-position = Vector2(-200, 6)
+position = Vector2(-200, -4)
 rotation = -1.65806
 shape = SubResource("CapsuleShape2D_l8r55")
 
 [node name="HitBox" type="Area2D" parent="." index="4"]
-position = Vector2(40, 4)
+position = Vector2(45, -5)
 rotation = -1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" index="0"]

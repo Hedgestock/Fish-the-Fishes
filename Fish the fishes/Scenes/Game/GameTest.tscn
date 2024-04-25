@@ -34,7 +34,6 @@ stretch_mode = 6
 autostart = true
 
 [node name="TrashTimer" parent="." instance=ExtResource("13_k8syo")]
-autostart = true
 WaitTimeAverage = 3.0
 Deviation = 0.5
 

@@ -32,20 +32,19 @@ animations = [{
 script = ExtResource("1_6mcuw")
 
 [node name="Score" type="Label" parent="."]
-offset_left = 10.0
-offset_right = 51.0
+offset_left = 40.0
+offset_right = 81.0
 offset_bottom = 138.0
 theme_override_fonts/font = ExtResource("1_tvh2u")
 theme_override_font_sizes/font_size = 128
 text = "0"
 
 [node name="Lives" type="HBoxContainer" parent="."]
-visible = false
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -80.0
-offset_right = -40.0
+offset_left = -113.0
+offset_right = -73.0
 offset_bottom = 40.0
 grow_horizontal = 0
 scale = Vector2(2, 2)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bava3gbedxy51"
-path="res://.godot/imported/arrow_dead_left.png-6723620884032938d95dc79239e49392.ctex"
+uid="uid://bsb31mq4x1ll6"
+path="res://.godot/imported/arrow_dead_left.png-d73ec6eec22253b9c77485aaed1c5f8e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fish the fishes/art/fish/Arrow/arrow_dead_left.png"
-dest_files=["res://.godot/imported/arrow_dead_left.png-6723620884032938d95dc79239e49392.ctex"]
+source_file="res://Fish the fishes/art/fish/arrow/arrow_dead_left.png"
+dest_files=["res://.godot/imported/arrow_dead_left.png-d73ec6eec22253b9c77485aaed1c5f8e.ctex"]
 
 [params]
 
