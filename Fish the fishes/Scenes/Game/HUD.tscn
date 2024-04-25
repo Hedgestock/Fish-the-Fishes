@@ -1,16 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://yi82g384vgwb"]
+[gd_scene load_steps=8 format=3 uid="uid://yi82g384vgwb"]
 
 [ext_resource type="Script" path="res://Fish the fishes/Scenes/Game/HUD.cs" id="1_6mcuw"]
 [ext_resource type="FontFile" uid="uid://bfbfdje68lt7w" path="res://fonts/Amatic-Bold.ttf" id="1_tvh2u"]
-[ext_resource type="Texture2D" uid="uid://r8hgxewljrec" path="res://Fish the fishes/art/UI/Vie 2.png" id="2_47qlu"]
 [ext_resource type="Texture2D" uid="uid://bi3pts224egt6" path="res://Fish the fishes/art/UI/Vie 1.png" id="3_o5krk"]
+[ext_resource type="PackedScene" uid="uid://di7207b71mnm8" path="res://Fish the fishes/UI/AnimatedSpriteForUI/AnimatedSpriteForUI.tscn" id="4_38r4v"]
 [ext_resource type="Texture2D" uid="uid://c05mhtfd1por7" path="res://Fish the fishes/art/UI/Vie 3.png" id="4_jt1fa"]
+[ext_resource type="Texture2D" uid="uid://r8hgxewljrec" path="res://Fish the fishes/art/UI/Mort.png" id="5_pfixn"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_352nl"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_xewer"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_47qlu")
+"texture": ExtResource("5_pfixn")
 }],
 "loop": true,
 "name": &"death",
@@ -40,31 +41,37 @@ theme_override_font_sizes/font_size = 128
 text = "0"
 
 [node name="Lives" type="HBoxContainer" parent="."]
-anchors_preset = 1
-anchor_left = 1.0
+anchors_preset = 10
 anchor_right = 1.0
-offset_left = -113.0
-offset_right = -73.0
-offset_bottom = 40.0
-grow_horizontal = 0
-scale = Vector2(2, 2)
+grow_horizontal = 2
+size_flags_horizontal = 3
+alignment = 2
 
-[node name="Life1" type="AnimatedSprite2D" parent="Lives"]
-position = Vector2(-112, 32)
-scale = Vector2(0.5, 0.5)
-sprite_frames = SubResource("SpriteFrames_352nl")
+[node name="Label" type="Label" parent="Lives"]
+layout_mode = 2
+text = "test"
+
+[node name="Life1" parent="Lives" instance=ExtResource("4_38r4v")]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" parent="Lives/Life1" index="0"]
+sprite_frames = SubResource("SpriteFrames_xewer")
+animation = &"life"
+frame = 1
+frame_progress = 0.623795
+
+[node name="Life2" parent="Lives" instance=ExtResource("4_38r4v")]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" parent="Lives/Life2" index="0"]
+sprite_frames = SubResource("SpriteFrames_xewer")
 animation = &"life"
 
-[node name="Life2" type="AnimatedSprite2D" parent="Lives"]
-position = Vector2(-56, 32)
-scale = Vector2(0.5, 0.5)
-sprite_frames = SubResource("SpriteFrames_352nl")
-animation = &"life"
+[node name="Life3" parent="Lives" instance=ExtResource("4_38r4v")]
+layout_mode = 2
 
-[node name="Life3" type="AnimatedSprite2D" parent="Lives"]
-position = Vector2(0, 32)
-scale = Vector2(0.5, 0.5)
-sprite_frames = SubResource("SpriteFrames_352nl")
+[node name="AnimatedSprite2D" parent="Lives/Life3" index="0"]
+sprite_frames = SubResource("SpriteFrames_xewer")
 animation = &"life"
 
 [node name="Time" type="Label" parent="."]
@@ -84,3 +91,7 @@ text = "0"
 wait_time = 60.0
 
 [connection signal="timeout" from="GameTimer" to="." method="EndCurrentGame"]
+
+[editable path="Lives/Life1"]
+[editable path="Lives/Life2"]
+[editable path="Lives/Life3"]

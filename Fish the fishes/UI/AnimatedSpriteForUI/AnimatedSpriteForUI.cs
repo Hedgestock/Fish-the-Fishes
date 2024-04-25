@@ -9,19 +9,20 @@ public partial class AnimatedSpriteForUI : BoxContainer
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
+        TakeSpace();
+        CallDeferred(MethodName.AdaptPosition);
+
         GetTree().Root.SizeChanged += AdaptPosition;
     }
 
     private void TakeSpace()
     {
         CustomMinimumSize = Sprite.SpriteFrames.GetFrameTexture(Sprite.Animation, 0).GetSize();
-        GD.Print(CustomMinimumSize);
     }
 
     private void AdaptPosition()
     {
         Sprite.GlobalPosition = new Vector2(GlobalPosition.X + Size.X / 2, GlobalPosition.Y + Size.Y / 2);
-        GD.Print(Sprite.GlobalPosition);
     }
 
     #region AnimatedSprite2D Forwarding

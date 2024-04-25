@@ -31,9 +31,9 @@ public partial class HUD : CanvasLayer
         else
         {
             LivesContainer.Show();
-            LivesContainer.GetNode<AnimatedSprite2D>("Life1").Play();
-            LivesContainer.GetNode<AnimatedSprite2D>("Life2").Play();
-            LivesContainer.GetNode<AnimatedSprite2D>("Life3").Play();
+            LivesContainer.GetNode<AnimatedSpriteForUI>("Life1").Play();
+            LivesContainer.GetNode<AnimatedSpriteForUI>("Life2").Play();
+            LivesContainer.GetNode<AnimatedSpriteForUI>("Life3").Play();
         }
 
     }

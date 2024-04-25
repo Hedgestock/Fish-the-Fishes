@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://r8hgxewljrec"
-path="res://.godot/imported/Vie 2.png-6c79898fda9c8bce386b84c780bacada.ctex"
+path="res://.godot/imported/Mort.png-c5545d8be1f245e096c39ceee2f7e064.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fish the fishes/art/UI/Vie 2.png"
-dest_files=["res://.godot/imported/Vie 2.png-6c79898fda9c8bce386b84c780bacada.ctex"]
+source_file="res://Fish the fishes/art/UI/Mort.png"
+dest_files=["res://.godot/imported/Mort.png-c5545d8be1f245e096c39ceee2f7e064.ctex"]
 
 [params]
 
