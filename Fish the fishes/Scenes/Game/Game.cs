@@ -2,6 +2,7 @@ using Godot;
 using Godot.Collections;
 using Godot.Fish_the_fishes.Scripts;
 using System;
+using System.Linq;
 
 public partial class Game : Node
 {
@@ -30,6 +31,11 @@ public partial class Game : Node
         GM = GetNode<GameManager>("/root/GameManager");
         GM.Score = 0;
         GM.Lives = 3;
+        
+        if (GM.Mode == Mode.Target)
+        {
+            ChangeTarget();
+        }
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -74,5 +80,10 @@ public partial class Game : Node
 
         // Spawn the trash by adding it to the Main scene.
         AddChild(trash);
+    }
+
+    private void ChangeTarget()
+    {
+        GM.Target = Fishes[(int)(GD.Randi() % Fishes.Count)].Instantiate<Fish>().GetType().Name;
     }
 }

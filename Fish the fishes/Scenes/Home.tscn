@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://blkg0i7vjb6il"]
+[gd_scene load_steps=17 format=3 uid="uid://blkg0i7vjb6il"]
 
 [ext_resource type="Texture2D" uid="uid://4sfuxo2673qo" path="res://Fish the fishes/art/BG 2 FTF.png" id="1_4aplq"]
 [ext_resource type="Script" path="res://Fish the fishes/Scenes/Home.cs" id="1_ptl5f"]
@@ -29,6 +29,9 @@ size = Vector2(167, 146)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_stq48"]
 size = Vector2(281, 145)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ae2js"]
+size = Vector2(203.5, 143.5)
 
 [node name="Home" type="CanvasLayer" node_paths=PackedStringArray("Message")]
 script = ExtResource("1_ptl5f")
@@ -215,6 +218,21 @@ shape = SubResource("RectangleShape2D_stq48")
 [node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/TutorialButton" index="2"]
 text = "Tutorial"
 
+[node name="PlayTargetButton" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu" instance=ExtResource("5_o3gki")]
+position = Vector2(573, -109)
+
+[node name="VisibleOnScreenNotifier2D" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTargetButton" index="0"]
+position = Vector2(102.5, 0)
+scale = Vector2(10, 1)
+
+[node name="CollisionShape2D" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTargetButton" index="1"]
+position = Vector2(102, 73)
+shape = SubResource("RectangleShape2D_ae2js")
+
+[node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTargetButton" index="2"]
+text = "Target
+"
+
 [connection signal="screen_exited" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayGoGreenButton/VisibleOnScreenNotifier2D" to="." method="PlayGoGreen"]
 [connection signal="screen_exited" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTestButton/VisibleOnScreenNotifier2D" to="." method="PlayTest"]
 [connection signal="screen_exited" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayClassicButton/VisibleOnScreenNotifier2D" to="." method="PlayClassic"]
@@ -224,6 +242,7 @@ text = "Tutorial"
 [connection signal="screen_exited" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/CreditsButton/VisibleOnScreenNotifier2D" to="." method="GoToCredits"]
 [connection signal="screen_exited" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/StatsButton/VisibleOnScreenNotifier2D" to="." method="GoToStats"]
 [connection signal="screen_exited" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/TutorialButton/VisibleOnScreenNotifier2D" to="." method="GoToTutorial"]
+[connection signal="screen_exited" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTargetButton/VisibleOnScreenNotifier2D" to="." method="PlayTarget"]
 
 [editable path="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayGoGreenButton"]
 [editable path="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTestButton"]
@@ -234,3 +253,4 @@ text = "Tutorial"
 [editable path="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/CreditsButton"]
 [editable path="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/StatsButton"]
 [editable path="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/TutorialButton"]
+[editable path="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTargetButton"]

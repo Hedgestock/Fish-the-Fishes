@@ -64,6 +64,7 @@ shape = SubResource("CapsuleShape2D_ksc04")
 [node name="FishingLine" parent="." instance=ExtResource("3_kichm")]
 
 [connection signal="EndGame" from="HUD" to="." method="EndGame"]
+[connection signal="TargetFished" from="HUD" to="." method="ChangeTarget"]
 [connection signal="timeout" from="FishTimer" to="." method="SpawnFish"]
 [connection signal="timeout" from="TrashTimer" to="." method="SpawnTrash"]
 [connection signal="area_entered" from="FrustrationFix/Area2D" to="FishingLine" method="MakeInvincible"]

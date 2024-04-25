@@ -5,9 +5,25 @@ using System.Collections.Generic;
 
 public partial class GameManager : Node
 {
+    [Signal]
+    public delegate void TargetChangedEventHandler();
+
+
+    private string _target = "Fish";
+    public string Target
+    {
+        get { return _target; }
+        set
+        {
+            _target = value;
+            EmitSignal(SignalName.TargetChanged);
+        }
+    }
+
     public Game.Mode Mode = Game.Mode.Classic;
     public uint Score = 0;
     public uint Lives = 3;
+
     public string PrevScene = "";
     public Vector2 ScreenSize;
 

@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://Fish the fishes/UI/AnimatedSpriteForUI/AnimatedSpriteForUI.cs" id="1_rskyt"]
 
-[node name="Placeholder" type="BoxContainer" node_paths=PackedStringArray("Sprite")]
+[node name="Placeholder" type="BoxContainer" node_paths=PackedStringArray("_sprite")]
 size_flags_horizontal = 4
-size_flags_vertical = 6
+size_flags_vertical = 0
 script = ExtResource("1_rskyt")
-Sprite = NodePath("AnimatedSprite2D")
+_sprite = NodePath("AnimatedSprite2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

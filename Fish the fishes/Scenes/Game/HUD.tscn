@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://yi82g384vgwb"]
+[gd_scene load_steps=9 format=3 uid="uid://yi82g384vgwb"]
 
 [ext_resource type="Script" path="res://Fish the fishes/Scenes/Game/HUD.cs" id="1_6mcuw"]
 [ext_resource type="FontFile" uid="uid://bfbfdje68lt7w" path="res://fonts/Amatic-Bold.ttf" id="1_tvh2u"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://di7207b71mnm8" path="res://Fish the fishes/UI/AnimatedSpriteForUI/AnimatedSpriteForUI.tscn" id="4_38r4v"]
 [ext_resource type="Texture2D" uid="uid://c05mhtfd1por7" path="res://Fish the fishes/art/UI/Vie 3.png" id="4_jt1fa"]
 [ext_resource type="Texture2D" uid="uid://r8hgxewljrec" path="res://Fish the fishes/art/UI/Mort.png" id="5_pfixn"]
+[ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://FTF_theme.tres" id="6_7rq80"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xewer"]
 animations = [{
@@ -29,69 +30,93 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="HUD" type="CanvasLayer"]
+[node name="HUD" type="CanvasLayer" node_paths=PackedStringArray("ScoreLabel", "TimeLabel", "GameTimer", "LivesContainer", "Target")]
 script = ExtResource("1_6mcuw")
+ScoreLabel = NodePath("MarginContainer/HBoxContainer/Score")
+TimeLabel = NodePath("MarginContainer/HBoxContainer/Time")
+GameTimer = NodePath("GameTimer")
+LivesContainer = NodePath("MarginContainer/HBoxContainer/Lives")
+Target = NodePath("MarginContainer/HBoxContainer/Control/Target")
 
-[node name="Score" type="Label" parent="."]
-offset_left = 40.0
-offset_right = 81.0
-offset_bottom = 138.0
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("6_7rq80")
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_right = 40
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Score" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
 theme_override_fonts/font = ExtResource("1_tvh2u")
-theme_override_font_sizes/font_size = 128
 text = "0"
 
-[node name="Lives" type="HBoxContainer" parent="."]
-anchors_preset = 10
-anchor_right = 1.0
-grow_horizontal = 2
+[node name="Time" type="Label" parent="MarginContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+text = "0"
+
+[node name="Lives" type="HBoxContainer" parent="MarginContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
 size_flags_horizontal = 3
 alignment = 2
 
-[node name="Label" type="Label" parent="Lives"]
+[node name="Life1" parent="MarginContainer/HBoxContainer/Lives" instance=ExtResource("4_38r4v")]
 layout_mode = 2
-text = "test"
+size_flags_vertical = 4
+alignment = 1
 
-[node name="Life1" parent="Lives" instance=ExtResource("4_38r4v")]
-layout_mode = 2
-
-[node name="AnimatedSprite2D" parent="Lives/Life1" index="0"]
-sprite_frames = SubResource("SpriteFrames_xewer")
-animation = &"life"
-frame = 1
-frame_progress = 0.623795
-
-[node name="Life2" parent="Lives" instance=ExtResource("4_38r4v")]
-layout_mode = 2
-
-[node name="AnimatedSprite2D" parent="Lives/Life2" index="0"]
+[node name="AnimatedSprite2D" parent="MarginContainer/HBoxContainer/Lives/Life1" index="0"]
 sprite_frames = SubResource("SpriteFrames_xewer")
 animation = &"life"
 
-[node name="Life3" parent="Lives" instance=ExtResource("4_38r4v")]
+[node name="Life2" parent="MarginContainer/HBoxContainer/Lives" instance=ExtResource("4_38r4v")]
 layout_mode = 2
+size_flags_vertical = 4
 
-[node name="AnimatedSprite2D" parent="Lives/Life3" index="0"]
+[node name="AnimatedSprite2D" parent="MarginContainer/HBoxContainer/Lives/Life2" index="0"]
 sprite_frames = SubResource("SpriteFrames_xewer")
 animation = &"life"
 
-[node name="Time" type="Label" parent="."]
+[node name="Life3" parent="MarginContainer/HBoxContainer/Lives" instance=ExtResource("4_38r4v")]
+layout_mode = 2
+size_flags_vertical = 4
+alignment = 1
+
+[node name="AnimatedSprite2D" parent="MarginContainer/HBoxContainer/Lives/Life3" index="0"]
+sprite_frames = SubResource("SpriteFrames_xewer")
+animation = &"life"
+
+[node name="Control" type="Control" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Target" parent="MarginContainer/HBoxContainer/Control" instance=ExtResource("4_38r4v")]
 visible = false
-anchors_preset = 1
+modulate = Color(1, 1, 1, 0.498039)
+layout_mode = 1
+anchors_preset = 6
 anchor_left = 1.0
+anchor_top = 0.5
 anchor_right = 1.0
-offset_left = -60.0
-offset_right = -19.0
-offset_bottom = 138.0
+anchor_bottom = 0.5
 grow_horizontal = 0
-theme_override_fonts/font = ExtResource("1_tvh2u")
-theme_override_font_sizes/font_size = 128
-text = "0"
+grow_vertical = 2
+size_flags_horizontal = 8
 
 [node name="GameTimer" type="Timer" parent="."]
 wait_time = 60.0
 
 [connection signal="timeout" from="GameTimer" to="." method="EndCurrentGame"]
 
-[editable path="Lives/Life1"]
-[editable path="Lives/Life2"]
-[editable path="Lives/Life3"]
+[editable path="MarginContainer/HBoxContainer/Lives/Life1"]
+[editable path="MarginContainer/HBoxContainer/Lives/Life2"]
+[editable path="MarginContainer/HBoxContainer/Lives/Life3"]
+[editable path="MarginContainer/HBoxContainer/Control/Target"]

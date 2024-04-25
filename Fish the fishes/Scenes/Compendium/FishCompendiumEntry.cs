@@ -28,9 +28,9 @@ public partial class FishCompendiumEntry : PanelContainer
 
         Type FishType = Type.GetType(FishTypeString);
 
-        string ressourcePath = $"res://Fish the fishes/Assets/Fishes/{FishTypeString}/{FishTypeString}Animation.tres";
+        string resourcePath = $"res://Fish the fishes/Assets/Fishes/{FishTypeString}/{FishTypeString}Animation.tres";
 
-        Placeholder.SpriteFrames = GD.Load<SpriteFrames>(ressourcePath);
+        Placeholder.SpriteFrames = GD.Load<SpriteFrames>(resourcePath);
 
         if (Placeholder.SpriteFrames != null)
         {
@@ -45,7 +45,7 @@ public partial class FishCompendiumEntry : PanelContainer
         }
         else
         {
-            GD.PrintErr("No animation resource found at path: ", ressourcePath);
+            GD.PrintErr("No animation resource found at path: ", resourcePath);
         }
 
 

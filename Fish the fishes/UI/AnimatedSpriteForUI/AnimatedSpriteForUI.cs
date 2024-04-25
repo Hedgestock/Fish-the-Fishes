@@ -4,7 +4,9 @@ using System;
 public partial class AnimatedSpriteForUI : BoxContainer
 {
     [Export]
-    AnimatedSprite2D Sprite;
+    AnimatedSprite2D _sprite;
+
+    public AnimatedSprite2D Sprite { get { return _sprite; } }
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -17,6 +19,7 @@ public partial class AnimatedSpriteForUI : BoxContainer
 
     private void TakeSpace()
     {
+        if (Sprite.SpriteFrames == null) { return; }
         CustomMinimumSize = Sprite.SpriteFrames.GetFrameTexture(Sprite.Animation, 0).GetSize();
     }
 

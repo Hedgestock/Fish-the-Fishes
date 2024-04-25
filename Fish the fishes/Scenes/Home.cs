@@ -17,7 +17,6 @@ public partial class Home : CanvasLayer
         if (GM.PrevScene == "res://SplashScreen.tscn")
         {
             GetNode<AudioStreamPlayer>("AudioStreamPlayer").Play();
-
         }
         else
         {

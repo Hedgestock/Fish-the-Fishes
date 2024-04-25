@@ -84,7 +84,9 @@ public partial class FishingLine : CharacterBody2D, IFisher
                     break;
                 case Action.Fishing:
                     Hitbox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
-                    EmitSignal(SignalName.Score, ComputeScore());
+                    // This avoids loosing on target mode when we fish nothing
+                    if (FishedThings.Count > 0)
+                        EmitSignal(SignalName.Score, ComputeScore());
                     Line.Animation = "loose";
                     goto case Action.Hit;
                 case Action.Hit:
@@ -189,7 +191,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
                 case Game.Mode.GoGreen:
                     return GoGreenScore();
                 case Game.Mode.Target:
-                    break;
+                    return TargetScore();
                 case Game.Mode.Training:
                     break;
                 case Game.Mode.Zen:
@@ -265,6 +267,15 @@ public partial class FishingLine : CharacterBody2D, IFisher
 
         return score;
     }
+
+    private int TargetScore()
+    {
+        int score = FishedThings.Any(thing => thing.GetType().Name == GM.Target) ? 1 : 0;
+        FishedThings.ForEach(thing => (thing as Node).QueueFree());
+        FishedThings.Clear();
+        return score;
+    }
+
     private int ScoringFunction(int num, int b = 3)
     {
         if (num <= 0) return 0;
