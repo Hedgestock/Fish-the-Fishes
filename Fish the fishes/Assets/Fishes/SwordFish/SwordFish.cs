@@ -6,23 +6,23 @@ using static Godot.TextServer;
 
 public partial class SwordFish : Fish, IFisher
 {
-	new public static string CompendiumName = "Sword Fish";
-	new public static string CompendiumDescription = "This is a sword fish";
+    new public static string CompendiumName = "Sword Fish";
+    new public static string CompendiumDescription = "This is a sword fish";
 
-	private enum Action
-	{
-		Swimming,
-		Seeking,
-		Launched,
-		Leaving
-	}
+    private enum Action
+    {
+        Swimming,
+        Seeking,
+        Launched,
+        Leaving
+    }
 
-	[Export]
-	private int MaxStrikes = 5;
-	[Export]
-	private int MinStrikes = 1;
+    [Export]
+    private int MaxStrikes = 5;
+    [Export]
+    private int MinStrikes = 1;
 
-	public List<IFishable> FishedThings { get; } = new List<IFishable>();
+    public List<IFishable> FishedThings { get; } = new List<IFishable>();
 
 
     private int Strikes = 3;
@@ -58,39 +58,39 @@ public partial class SwordFish : Fish, IFisher
         return base.GetCaughtBy(by);
     }
 
-	public override void Kill()
-	{
-		HitBox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
-		base.Kill();
-	}
+    public override void Kill()
+    {
+        HitBox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
+        base.Kill();
+    }
 
     private void SeekTarget()
     {
         if (!Actionable || State == Action.Seeking || Strikes <= 0) return;
 
-		Sprite.Animation = "seek";
+        Sprite.Animation = "seek";
 
-		Node[] fishes = GetTree().GetNodesInGroup("Fishes")
-			.Where(fish => (fish as Fish).IsAlive && (fish as Fish).IsOnScreen && !(fish is SwordFish))
-			.ToArray();
+        Node[] fishes = GetTree().GetNodesInGroup("Fishes")
+            .Where(fish => (fish as Fish).IsAlive && (fish as Fish).IsOnScreen && !(fish is SwordFish))
+            .ToArray();
 
-		if (fishes.Length == 0)
-		{
-			Leave();
-			return;
-		}
+        if (fishes.Length == 0)
+        {
+            Leave();
+            return;
+        }
 
-		Target = (Fish)fishes[(int)(GD.Randi() % fishes.Length)];
+        Target = (Fish)fishes[(int)(GD.Randi() % fishes.Length)];
 
-		Velocity = Vector2.Zero;
+        Velocity = Vector2.Zero;
 
-		State = Action.Seeking;
+        State = Action.Seeking;
 
 
-		Tween tween = RotateAtConstantSpeed(GetDirectionTo(Target).Angle());
-		tween.TweenCallback(Callable.From(() => CallDeferred("Launch")));
+        Tween tween = RotateAtConstantSpeed(GetDirectionTo(Target).Angle());
+        tween.TweenCallback(Callable.From(() => CallDeferred("Launch")));
 
-	}
+    }
 
     private void Launch()
     {
@@ -103,34 +103,34 @@ public partial class SwordFish : Fish, IFisher
             return;
         }
 
-		Strikes--;
+        Strikes--;
 
         LaunchedSpeed = TrackTarget(true);
 
-		Sprite.Animation = "dash";
+        Sprite.Animation = "dash";
 
-		State = Action.Launched;
-	}
+        State = Action.Launched;
+    }
 
-	private void Leave()
-	{
-		Sprite.Animation = IsAlive ? "alive" : "dead";
-		if (!Actionable) return;
-		Velocity = new Vector2(ActualSpeed * (Flip ? -1 : 1), 0);
+    private void Leave()
+    {
+        Sprite.Animation = IsAlive ? "alive" : "dead";
+        if (!Actionable) return;
+        Velocity = new Vector2(ActualSpeed * (Flip ? -1 : 1), 0);
 
-		RotateAtConstantSpeed(Velocity.Angle());
+        RotateAtConstantSpeed(Velocity.Angle());
 
-		State = Action.Leaving;
-	}
+        State = Action.Leaving;
+    }
 
-	private void OnFishSkewered(Node2D body)
-	{
-		if (!(body is Fish) || FishedThings.Contains(body as Fish) || body == this) return;
+    private void OnFishSkewered(Node2D body)
+    {
+        if (!(body is Fish) || FishedThings.Contains(body as Fish) || body == this) return;
 
-		Fish Skew = body as Fish;
+        Fish Skew = body as Fish;
 
-		Skew = Skew.GetCaughtBy(this) as Fish;
-		Skew.Kill();
+        Skew = Skew.GetCaughtBy(this) as Fish;
+        Skew.Kill();
 
         if (FishedThings.Contains(Target))
         {
@@ -177,15 +177,15 @@ public partial class SwordFish : Fish, IFisher
         return Velocity.Length();
     }
 
-	private Tween RotateAtConstantSpeed(float angle)
-	{
-		Tween tween = CreateTween();
-		angle = Mathf.LerpAngle(Rotation, angle, 1);
-		// This timig allows for constant rotation velocity (1s for 180 degrees)
-		float duration = Mathf.Abs(Rotation - angle) / Mathf.Pi;
-		tween.TweenProperty(this, "rotation", angle, duration);
+    private Tween RotateAtConstantSpeed(float angle)
+    {
+        Tween tween = CreateTween();
+        angle = Mathf.LerpAngle(Rotation, angle, 1);
+        // This timig allows for constant rotation velocity (1s for 180 degrees)
+        float duration = Mathf.Abs(Rotation - angle) / Mathf.Pi;
+        tween.TweenProperty(this, "rotation", angle, duration);
 
-		return tween;
-	}
-	#endregion helpers
+        return tween;
+    }
+    #endregion helpers
 }
