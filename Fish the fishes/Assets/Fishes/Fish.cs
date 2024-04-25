@@ -107,11 +107,13 @@ public partial class Fish : CharacterBody2D, IFishable
             if (parent is IFishable)
                 return (parent as IFishable).GetCaughtBy(by);
             // In case we are already caught by a non fishable thing, we make sure that we are removed from its list ("stolen")
-            //(parent as IFisher).FishedThings.Remove(this);
+            // TO FIX: the stolen fish usually gets instantly recaught, leading to the thief to be caught as well
+            (parent as IFisher).FishedThings.Remove(this);
         };
 
         by.FishedThings.Add(this);
         IsCaught = true;
+        
 
         // In case we are a fisher thing, we make sure to give all of our fished things to what is currently catching us
         if (this is IFisher)
