@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://cejn28367eqbj" path="res://Fish the fishes/sounds/ftf.ogg" id="2_itj28"]
 [ext_resource type="PackedScene" uid="uid://bnkmwtljf2o3p" path="res://Fish the fishes/Assets/FishingLine.tscn" id="4_pulgk"]
 [ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://FTF_theme.tres" id="5_mnxty"]
-[ext_resource type="PackedScene" uid="uid://cifa65xrf1ken" path="res://Fish the fishes/UI/FishableButton.tscn" id="5_o3gki"]
+[ext_resource type="PackedScene" uid="uid://cifa65xrf1ken" path="res://Fish the fishes/UI/FishableButton/FishableButton.tscn" id="5_o3gki"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2s724"]
 size = Vector2(293, 145)

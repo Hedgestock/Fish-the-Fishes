@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://cnjmqrlebmhdu"]
+[gd_scene load_steps=13 format=3 uid="uid://cnjmqrlebmhdu"]
 
 [ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://FTF_theme.tres" id="1_0rl6u"]
 [ext_resource type="Script" path="res://Fish the fishes/Scenes/Compendium/FishCompendiumEntry.cs" id="2_o0dw6"]
 [ext_resource type="Theme" uid="uid://cmnrxxeo4xdgp" path="res://FTF_descriptions_theme.tres" id="2_vin7i"]
+[ext_resource type="PackedScene" uid="uid://di7207b71mnm8" path="res://Fish the fishes/UI/AnimatedSpriteForUI/AnimatedSpriteForUI.tscn" id="4_6of0o"]
 [ext_resource type="Texture2D" uid="uid://sf5nbt1ewklc" path="res://Fish the fishes/art/fish/arrow/arrow_left.png" id="4_uw2jc"]
 [ext_resource type="Texture2D" uid="uid://cdlcldgajtn4i" path="res://Fish the fishes/art/fish/arrow/arrow_alive_1.png" id="5_isxl6"]
 [ext_resource type="Texture2D" uid="uid://b3ygkwfip0qaj" path="res://Fish the fishes/art/fish/arrow/arrow_left_3.png" id="5_wpdsa"]
@@ -13,7 +14,7 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l1j6n"]
 
-[node name="PanelContainer" type="PanelContainer" node_paths=PackedStringArray("CompendiumName", "CompendiumDescription", "NumberFished", "NumberSeen", "Placeholder", "AnimatedSprite", "AnimationButtons")]
+[node name="PanelContainer" type="PanelContainer" node_paths=PackedStringArray("CompendiumName", "CompendiumDescription", "NumberFished", "NumberSeen", "Placeholder", "AnimationButtons")]
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 324.0
@@ -28,7 +29,6 @@ CompendiumDescription = NodePath("MarginContainer/HBoxContainer/VBoxContainer/HB
 NumberFished = NodePath("MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/NumberOfTimesFished")
 NumberSeen = NodePath("MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/NumberOfTimesSeen")
 Placeholder = NodePath("MarginContainer/HBoxContainer/VBoxContainer2/Placeholder")
-AnimatedSprite = NodePath("MarginContainer/HBoxContainer/AnimatedSprite2D")
 AnimationButtons = NodePath("MarginContainer/HBoxContainer/VBoxContainer2/AnimationButtons")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -88,10 +88,8 @@ text = "0
 layout_mode = 2
 size_flags_horizontal = 8
 
-[node name="Placeholder" type="BoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+[node name="Placeholder" parent="MarginContainer/HBoxContainer/VBoxContainer2" instance=ExtResource("4_6of0o")]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 6
 
 [node name="AnimationButtons" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
 visible = false
@@ -117,9 +115,6 @@ texture_pressed = ExtResource("9_fb2jn")
 texture_hover = ExtResource("10_2v0ay")
 texture_disabled = ExtResource("7_axp1e")
 stretch_mode = 4
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MarginContainer/HBoxContainer"]
-position = Vector2(892, 102)
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer2/AnimationButtons/PreviousAnimationButton" to="." method="PreviousAnimation"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer2/AnimationButtons/NextAnimationButton" to="." method="NextAnimation"]
