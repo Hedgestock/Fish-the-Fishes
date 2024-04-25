@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csxfp4n3h00us"
-path="res://.godot/imported/arrow_alive_3.png-f0faa2f98dcfe73c1dbd3114d6361d3f.ctex"
+uid="uid://c1prtketwlpvq"
+path="res://.godot/imported/sword_dash_0002.png-b1417d68561dfa9f9c5b24512f34b95f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fish the fishes/art/fish/Arrow/arrow_alive_3.png"
-dest_files=["res://.godot/imported/arrow_alive_3.png-f0faa2f98dcfe73c1dbd3114d6361d3f.ctex"]
+source_file="res://Fish the fishes/art/fish/sword/sword_dash_0002.png"
+dest_files=["res://.godot/imported/sword_dash_0002.png-b1417d68561dfa9f9c5b24512f34b95f.ctex"]
 
 [params]
 
