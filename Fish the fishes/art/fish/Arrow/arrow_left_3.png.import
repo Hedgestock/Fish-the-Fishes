@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b3ygkwfip0qaj"
-path="res://.godot/imported/arrow_left_3.png-437b477f8622498fea204c015071b422.ctex"
+path="res://.godot/imported/arrow_left_3.png-5f9095d3f1555765ead8ab8680252e92.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fish the fishes/art/fish/arrow/arrow_left_3.png"
-dest_files=["res://.godot/imported/arrow_left_3.png-437b477f8622498fea204c015071b422.ctex"]
+source_file="res://Fish the fishes/art/fish/Arrow/arrow_left_3.png"
+dest_files=["res://.godot/imported/arrow_left_3.png-5f9095d3f1555765ead8ab8680252e92.ctex"]
 
 [params]
 
