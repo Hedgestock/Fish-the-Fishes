@@ -157,16 +157,19 @@ public partial class FishingLine : CharacterBody2D, IFisher
         Hitbox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
         GetNode<AudioStreamPlayer>("HitSound").Play();
 
-        UserData.Instance.Statistics[Constants.TotalTrashesHit] = UserData.Instance.Statistics.GetValueOrDefault(Constants.TotalTrashesHit) + 1;
-        UserData.Instance.Statistics[Constants.TotalLostFishes] = UserData.Instance.Statistics.GetValueOrDefault(Constants.TotalLostFishes) + (uint)FishedThings.Count;
+        if (damageType == DamageType.Trash)
+        {
+            UserData.Instance.Statistics[Constants.TotalTrashesHit] = UserData.Instance.Statistics.GetValueOrDefault(Constants.TotalTrashesHit) + 1;
+        }
 
         foreach (IFishable thing in FishedThings)
         {
             (thing as Node).CallDeferred(Node.MethodName.Reparent, GetParent());
             thing.IsCaught = false;
-            if (GM.Mode != Game.Mode.GoGreen)
+            if (GM.Mode != Game.Mode.GoGreen && thing is Fish)
             {
                 (thing as Fish).Kill();
+                UserData.Instance.Statistics[Constants.TotalLostFishes] = UserData.Instance.Statistics.GetValueOrDefault(Constants.TotalLostFishes) + 1;
             }
         }
 
@@ -215,7 +218,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
         foreach (Fish fish in FishedThings)
         {
             score += fish.Value;
-            UserData.Instance.Compendium[fish.GetType().Name].Caught++;
+            UserData.Instance.FishCompendium[fish.GetType().Name].Caught++;
         }
         score = ScoringFunction((int)Math.Ceiling(score));
         foreach (Fish fish in FishedThings)
@@ -249,8 +252,11 @@ public partial class FishingLine : CharacterBody2D, IFisher
 
         if (FishedThings.OfType<Fish>().Any())
         {
+            UserData.Instance.Statistics[Constants.TotalEatenFishes] = UserData.Instance.Statistics.GetValueOrDefault(Constants.TotalEatenFishes) + (uint)FishedThings.Where(thing => thing is Fish).Count();
             CallDeferred(MethodName.EmitSignal, SignalName.Hit, (int)DamageType.Default);
         }
+
+        UserData.Instance.Statistics[Constants.TotalTrashesCleaned] = UserData.Instance.Statistics.GetValueOrDefault(Constants.TotalTrashesCleaned) + (uint)FishedThings.Where(thing => thing is Trash).Count();
 
         foreach (Node thing in FishedThings)
         {

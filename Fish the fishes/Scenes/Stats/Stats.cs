@@ -18,6 +18,12 @@ public partial class Stats : CanvasLayer
     [Export]
     Label MaxPointScored;
     [Export]
+    Label TotalTrashesCleaned;
+    [Export]
+    Label TotalEatenFishes;
+
+    [ExportGroup("HighScores")]
+    [Export]
     Label CasualClassicHighScore;
     [Export]
     Label CasualTimeAttackHighScore;
@@ -35,6 +41,9 @@ public partial class Stats : CanvasLayer
         TotalLostFishes.Text = TryGetValue(UserData.Instance.Statistics, Constants.TotalLostFishes)?.ToString() ?? "0";
         MaxFishedFishes.Text = TryGetValue(UserData.Instance.Statistics, Constants.MaxFishedFishes)?.ToString() ?? "0";
         MaxPointScored.Text = TryGetValue(UserData.Instance.Statistics, Constants.MaxPointScored)?.ToString() ?? "0";
+
+        TotalTrashesCleaned.Text = TryGetValue(UserData.Instance.Statistics, Constants.TotalTrashesCleaned)?.ToString() ?? "0";
+        TotalEatenFishes.Text = TryGetValue(UserData.Instance.Statistics, Constants.TotalEatenFishes)?.ToString() ?? "0";
 
         CasualClassicHighScore.Text = TryGetValue(UserData.Instance.CasualScores, Game.Mode.Classic.ToString())?.ToString() ?? "0";
         CasualTimeAttackHighScore.Text = TryGetValue(UserData.Instance.CasualScores, Game.Mode.TimeAttack.ToString())?.ToString() ?? "0";

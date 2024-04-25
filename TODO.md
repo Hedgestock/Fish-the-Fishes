@@ -81,6 +81,7 @@
 - [x] [**Actuellement impossible**]Trouver comment générer de la corde 
 - [x] [**Actuellement impossible**]Faire des recherches sur l'intégration en page d'accueil
 - [x] [**Solution autre**] Ajouter des poissons à chemins
+- [x] Mettre à jour les statistiques avec les nouveaux modes de jeu
 - [ ] Support de différentes langues
     - [x] Anglais
     - [ ] Français
@@ -91,7 +92,6 @@
 - [ ] Ajouter une vitesse de descente et de remontée différente pour la ligne
 - [ ] Ajouter la sauvegarde des paramètres
 - [ ] SLB dans le fond
-- [ ] Mettre à jour les statistiques avec les nouveaux modes de jeu
 
 # Corrections
 
