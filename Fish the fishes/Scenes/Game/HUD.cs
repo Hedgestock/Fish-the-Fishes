@@ -172,9 +172,6 @@ public partial class HUD : CanvasLayer
         string resourcePath = $"res://Fish the fishes/Assets/Fishes/{GM.Target}/{GM.Target}Animation.tres";
         Target.SpriteFrames = GD.Load<SpriteFrames>(resourcePath);
 
-        //Tween tween = CreateTween();
-        //tween.TweenProperty(Target, "scale", Vector2.One * 1.5f, 1f).SetTrans(Tween.TransitionType.Elastic);
-        //tween.TweenProperty(Target, "scale", Vector2.One, 0.5f).SetTrans(Tween.TransitionType.Elastic);
         Target.Play();
     }
 }
