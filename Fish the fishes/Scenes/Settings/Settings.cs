@@ -47,7 +47,7 @@ public partial class Settings : CanvasLayer
 
     private void DeleteData()
     {
-        GM.EraseData();
+        GameManager.EraseData();
         HideDeleteDataPopup();
     }
 }

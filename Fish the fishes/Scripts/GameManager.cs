@@ -44,7 +44,7 @@ public partial class GameManager : Node
         GetTree().Root.SizeChanged += OnScreenResize;
     }
 
-    public void WriteHighScore()
+    static public void WriteHighScore()
     {
         Dictionary<string, uint> scores = UserSettings.CompetitiveMode ? UserData.Instance.CompetitiveScores : UserData.Instance.CasualScores;
         if (!scores.ContainsKey(Mode.ToString()) || Score > scores[Mode.ToString()])
@@ -60,14 +60,14 @@ public partial class GameManager : Node
         }
     }
 
-    public void SaveData()
+    static public void SaveData()
     {
         using var gameSave = FileAccess.Open(SaveFilePath, FileAccess.ModeFlags.Write);
 
         gameSave.StoreString(UserData.Serialize());
     }
 
-    private void LoadData()
+    static private void LoadData()
     {
 
         if (!FileAccess.FileExists(SaveFilePath))
@@ -84,7 +84,7 @@ public partial class GameManager : Node
             GD.PrintErr("Failed to deserialize save file");
     }
 
-    public void EraseData()
+    static public void EraseData()
     {
 
         UserData.Reset();

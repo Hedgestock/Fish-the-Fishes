@@ -1,6 +1,5 @@
 [gd_scene load_steps=16 format=3 uid="uid://0sb3i5bm7j4p"]
 
-[ext_resource type="Texture2D" uid="uid://xvra7re1p3ch" path="res://Fish the fishes/art/BG 1 FTF.png" id="1_2rjoh"]
 [ext_resource type="Script" path="res://Fish the fishes/Scenes/Game/Game.cs" id="1_et1ja"]
 [ext_resource type="PackedScene" uid="uid://c0df7a2ej0abq" path="res://Fish the fishes/Assets/Fishes/SardineFish/SardineFish.tscn" id="2_1m73u"]
 [ext_resource type="PackedScene" uid="uid://yi82g384vgwb" path="res://Fish the fishes/Scenes/Game/HUD.tscn" id="3_0ebou"]
@@ -13,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://8pxdejw8ptee" path="res://Fish the fishes/Assets/Trashes/Shoe.tscn" id="6_vsv0t"]
 [ext_resource type="PackedScene" uid="uid://lvuam8fndp75" path="res://Fish the fishes/Assets/Trashes/Tire.tscn" id="7_7egbd"]
 [ext_resource type="PackedScene" uid="uid://be1nxedcwhn2i" path="res://Fish the fishes/Assets/Fishes/SwordFish/SwordFish.tscn" id="7_ekome"]
+[ext_resource type="Texture2D" uid="uid://dxslcf7yijvtu" path="res://Fish the fishes/art/BG FtF final.png" id="11_215hj"]
 [ext_resource type="PackedScene" uid="uid://ifoga56i10w3" path="res://Fish the fishes/Assets/RandomTimer.tscn" id="13_7sxe6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ksc04"]
@@ -35,7 +35,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
-texture = ExtResource("1_2rjoh")
+texture = ExtResource("11_215hj")
 stretch_mode = 6
 
 [node name="HUD" parent="." instance=ExtResource("3_0ebou")]

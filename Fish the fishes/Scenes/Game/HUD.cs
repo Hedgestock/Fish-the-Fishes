@@ -1,7 +1,5 @@
 using Godot;
 using System;
-using System.Reflection.Metadata;
-
 public partial class HUD : CanvasLayer
 {
     [Signal]
@@ -13,6 +11,8 @@ public partial class HUD : CanvasLayer
     [Export]
     private Label ScoreLabel;
     [Export]
+    private Label ScoreChangeLabel;
+    [Export]
     private Label TimeLabel;
     [Export]
     private Timer GameTimer;
@@ -22,11 +22,15 @@ public partial class HUD : CanvasLayer
     private AnimatedSpriteForUI Target;
 
     private GameManager GM;
+    private Tween tween;
+    private uint LocalScore { get; set; }
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
         GM = GetNode<GameManager>("/root/GameManager");
+
+        LocalScore = GameManager.Score;
 
         switch (GameManager.Mode)
         {
@@ -63,18 +67,39 @@ public partial class HUD : CanvasLayer
 
     private void LineScore(int score)
     {
-        // We need to do this to avoid uint underflow
+        // We need to do this to avoid uint underflow.
         if (-score > GameManager.Score) GameManager.Score = 0;
         else GameManager.Score = (uint)((int)GameManager.Score + score);
-        ScoreLabel.Text = GameManager.Score.ToString();
+
 
         if (score != 0)
         {
-            Tween tween = CreateTween();
+            // This is some dark magic to make the score animate
+            Tween tweenScore = CreateTween();
+            tweenScore.TweenMethod(Callable.From<uint>((s) => ScoreLabel.Text = s.ToString()),
+                LocalScore,
+                GameManager.Score,
+                1);
+            LocalScore = GameManager.Score;
+
+            // This is some dark magic to make the little "+X" score thing
+            if (tween != null)
+            {
+                tween.Kill();
+                CleanScoreChangeTween();
+            }
+
+            tween = CreateTween();
+            tween.TweenMethod(Callable.From<int>((fontSize) => ScoreChangeLabel.AddThemeFontSizeOverride("font_size", fontSize)),
+                ScoreChangeLabel.GetThemeFontSize("font_size") * 2,
+                ScoreChangeLabel.GetThemeFontSize("font_size"),
+                0.5f);
+
+            ScoreChangeLabel.Text = score.ToString("+#;-#;0");
 
             if (score > 0)
             {
-                ScoreLabel.AddThemeColorOverride("font_color", new Color(0.12f, 0.6f, 0));
+                ScoreChangeLabel.AddThemeColorOverride("font_color", new Color(0.12f, 0.6f, 0));
                 if (GameManager.Mode == Game.Mode.Target)
                 {
                     EmitSignal(SignalName.TargetFished);
@@ -82,10 +107,24 @@ public partial class HUD : CanvasLayer
             }
             else if (score < 0)
             {
-                ScoreLabel.AddThemeColorOverride("font_color", new Color(0.6f, 0.12f, 0));
+                ScoreChangeLabel.AddThemeColorOverride("font_color", new Color(0.6f, 0.12f, 0));
             }
 
-            tween.TweenCallback(Callable.From(() => ScoreLabel.RemoveThemeColorOverride("font_color")));
+            tween.TweenMethod(Callable.From<Color>((color) => ScoreChangeLabel.AddThemeColorOverride("font_color", color)),
+                ScoreChangeLabel.GetThemeColor("font_color"),
+                new Color(ScoreChangeLabel.GetThemeColor("font_color"), 0),
+                0.2f);
+
+            ScoreChangeLabel.Show();
+
+            tween.TweenCallback(Callable.From(CleanScoreChangeTween));
+
+            void CleanScoreChangeTween()
+            {
+                ScoreChangeLabel.Hide();
+                ScoreChangeLabel.RemoveThemeColorOverride("font_color");
+                ScoreChangeLabel.RemoveThemeFontSizeOverride("font_size");
+            }
         }
         else if (GameManager.Mode == Game.Mode.Target)
         {
@@ -94,9 +133,14 @@ public partial class HUD : CanvasLayer
 
     }
 
+    private void Test(Label testLabel, Color color)
+    {
+        testLabel.AddThemeColorOverride("font_color", color);
+    }
+
     private void LineHit(FishingLine.DamageType damageType)
     {
-        if (GameManager.Mode == Game.Mode.TimeAttack) return;
+        if (GameManager.Mode == Game.Mode.TimeAttack || GameManager.Mode == Game.Mode.Target) return;
         GameManager.Lives--;
 
         AnimatedSprite2D Life = LivesContainer.GetNode<AnimatedSpriteForUI>("Life" + (3 - GameManager.Lives)).Sprite;

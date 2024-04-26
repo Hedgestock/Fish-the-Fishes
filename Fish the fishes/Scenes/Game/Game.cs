@@ -45,8 +45,9 @@ public partial class Game : Node
 
     public void EndGame()
     {
-        GM.WriteHighScore();
-        GM.SaveData();
+        GameManager.WriteHighScore();
+        GameManager.SaveData();
+        GameManager.Mode = Mode.Menu;
         GM.ChangeSceneToFile("res://Fish the fishes/Scenes/Home.tscn");
     }
 
