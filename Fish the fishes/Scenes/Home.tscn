@@ -249,7 +249,8 @@ shape = SubResource("RectangleShape2D_stq48")
 [node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/TutorialButton" index="2"]
 text = "Tutorial"
 
-[node name="Button" type="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu"]
+[node name="Test" type="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu"]
+visible = false
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
@@ -266,7 +267,7 @@ text = "TEST"
 [connection signal="screen_exited" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/CreditsButton/VisibleOnScreenNotifier2D" to="." method="GoToCredits"]
 [connection signal="screen_exited" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/StatsButton/VisibleOnScreenNotifier2D" to="." method="GoToStats"]
 [connection signal="screen_exited" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/TutorialButton/VisibleOnScreenNotifier2D" to="." method="GoToTutorial"]
-[connection signal="pressed" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/Button" to="." method="PlayTest"]
+[connection signal="pressed" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/Test" to="." method="PlayTest"]
 
 [editable path="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTargetButton"]
 [editable path="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayGoGreenButton"]

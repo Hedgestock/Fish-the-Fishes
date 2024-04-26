@@ -13,6 +13,7 @@
 - [x] Ajouter un compendium
 - [x] Ajouter une emphase visuelle sur les vies lors de la perte
 - [x] Faire clignoter le score pour la perte de points
+- [x] Couper le son des poissons dans les menus
 - [ ] Faire des boutons en poisson
 - [ ] Ajouter des hauts faits
 - [ ] Ajourter un tutoriel
@@ -111,4 +112,5 @@
 - [x] Verifier le passage en négatif de la statistique de score
 - [x] Couper le son d'un poisson mort
 - [ ] Corriger le problème lorsqu'un espadon vole un poisson pêché
+- [ ] Corriger le problème des espadons fous
 - [ ] Corriger le problème du reparentage d'espadon

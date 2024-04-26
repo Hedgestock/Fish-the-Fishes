@@ -52,6 +52,11 @@ public partial class Fish : CharacterBody2D, IFishable
     {
         NotifySpawn();
 
+        if (GameManager.Mode == Game.Mode.Menu)
+        {
+            Sound.Stop();
+        }
+
         IsCaught = false;
 
         if (ActualSpeed == 0)
