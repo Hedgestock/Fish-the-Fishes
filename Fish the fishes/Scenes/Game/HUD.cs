@@ -28,22 +28,28 @@ public partial class HUD : CanvasLayer
     {
         GM = GetNode<GameManager>("/root/GameManager");
 
-        if (GameManager.Mode == Game.Mode.TimeAttack)
+        switch (GameManager.Mode)
         {
-            TimeLabel.Show();
-            GameTimer.Start();
-        }
-        if (GameManager.Mode == Game.Mode.Target)
-        {
-            GM.Connect(GameManager.SignalName.TargetChanged, Callable.From(ChangeTarget));
-            Target.Show();
-        }
-        else
-        {
-            LivesContainer.Show();
-            LivesContainer.GetNode<AnimatedSpriteForUI>("Life1").Play();
-            LivesContainer.GetNode<AnimatedSpriteForUI>("Life2").Play();
-            LivesContainer.GetNode<AnimatedSpriteForUI>("Life3").Play();
+            case Game.Mode.Menu:
+                break;
+            case Game.Mode.TimeAttack:
+                TimeLabel.Show();
+                GameTimer.Start();
+                break;
+            case Game.Mode.Target:
+                GM.Connect(GameManager.SignalName.TargetChanged, Callable.From(ChangeTarget));
+                Target.GetParent<Control>().Show();
+                break;
+            case Game.Mode.Classic:
+            case Game.Mode.GoGreen:
+            case Game.Mode.Zen:
+            case Game.Mode.Training:
+            default:
+                LivesContainer.Show();
+                LivesContainer.GetNode<AnimatedSpriteForUI>("Life1").Play();
+                LivesContainer.GetNode<AnimatedSpriteForUI>("Life2").Play();
+                LivesContainer.GetNode<AnimatedSpriteForUI>("Life3").Play();
+                break;
         }
     }
 
@@ -80,7 +86,8 @@ public partial class HUD : CanvasLayer
             }
 
             tween.TweenCallback(Callable.From(() => ScoreLabel.RemoveThemeColorOverride("font_color")));
-        } else if (GameManager.Mode == Game.Mode.Target)
+        }
+        else if (GameManager.Mode == Game.Mode.Target)
         {
             EndCurrentGame();
         }

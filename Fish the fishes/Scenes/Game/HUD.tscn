@@ -45,8 +45,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("6_7rq80")
-theme_override_constants/margin_left = 40
-theme_override_constants/margin_right = 40
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -60,7 +60,9 @@ text = "0"
 [node name="Time" type="Label" parent="MarginContainer/HBoxContainer"]
 visible = false
 layout_mode = 2
+size_flags_horizontal = 3
 text = "0"
+horizontal_alignment = 2
 
 [node name="Lives" type="HBoxContainer" parent="MarginContainer/HBoxContainer"]
 visible = false
@@ -73,7 +75,7 @@ layout_mode = 2
 size_flags_vertical = 4
 alignment = 1
 
-[node name="AnimatedSprite2D" parent="MarginContainer/HBoxContainer/Lives/Life1" index="1"]
+[node name="AnimatedSprite2D" parent="MarginContainer/HBoxContainer/Lives/Life1" index="0"]
 sprite_frames = SubResource("SpriteFrames_xewer")
 animation = &"life"
 
@@ -81,7 +83,7 @@ animation = &"life"
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="AnimatedSprite2D" parent="MarginContainer/HBoxContainer/Lives/Life2" index="1"]
+[node name="AnimatedSprite2D" parent="MarginContainer/HBoxContainer/Lives/Life2" index="0"]
 sprite_frames = SubResource("SpriteFrames_xewer")
 animation = &"life"
 
@@ -90,7 +92,7 @@ layout_mode = 2
 size_flags_vertical = 4
 alignment = 1
 
-[node name="AnimatedSprite2D" parent="MarginContainer/HBoxContainer/Lives/Life3" index="1"]
+[node name="AnimatedSprite2D" parent="MarginContainer/HBoxContainer/Lives/Life3" index="0"]
 sprite_frames = SubResource("SpriteFrames_xewer")
 animation = &"life"
 
