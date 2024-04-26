@@ -56,14 +56,14 @@ public partial class SwordFish : Fish, IFisher
     {
         State = Action.Swimming;
         HitBox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
-        SeekingTween.Kill();
+        if (SeekingTween != null) SeekingTween.Kill();
         return base.GetCaughtBy(by);
     }
 
     public override void Kill()
     {
         HitBox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
-        SeekingTween.Kill();
+        if (SeekingTween != null) SeekingTween.Kill();
         base.Kill();
     }
 

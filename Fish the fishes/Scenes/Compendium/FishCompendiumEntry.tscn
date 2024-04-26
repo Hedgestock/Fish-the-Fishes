@@ -90,6 +90,7 @@ size_flags_horizontal = 8
 
 [node name="Placeholder" parent="MarginContainer/HBoxContainer/VBoxContainer2" instance=ExtResource("4_6of0o")]
 layout_mode = 2
+size_flags_horizontal = 4
 
 [node name="AnimationButtons" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
 visible = false
