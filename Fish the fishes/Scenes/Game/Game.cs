@@ -2,15 +2,14 @@ using Godot;
 using Godot.Collections;
 using Godot.Fish_the_fishes.Scripts;
 using System;
-using System.Linq;
 
 public partial class Game : Node
 {
     [Export]
-    public Array<PackedScene> Fishes { get; set; }
+    public Array<PackedScene> Fishes;
 
     [Export]
-    public Array<PackedScene> Trashes { get; set; }
+    public Array<PackedScene> Trashes;
 
     private GameManager GM;
 

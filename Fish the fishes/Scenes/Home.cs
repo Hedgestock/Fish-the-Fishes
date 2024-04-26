@@ -1,11 +1,17 @@
 using Godot;
-using Godot.Fish_the_fishes.Scripts;
+using Godot.Collections;
 using System;
 
 public partial class Home : CanvasLayer
 {
     [Export]
     private Label Message;
+
+    [Export]
+    public Array<PackedScene> Fishes;
+
+    [Export]
+    public Node GameContainer;
 
     private GameManager GM;
 
@@ -22,11 +28,6 @@ public partial class Home : CanvasLayer
         {
             Message.Text = "Last Score:\n" + GM.Score.ToString();
         }
-    }
-
-    // Called every frame. 'delta' is the elapsed time since the previous frame.
-    public override void _Process(double delta)
-    {
     }
 
     private void Play(Game.Mode mode)
@@ -89,5 +90,18 @@ public partial class Home : CanvasLayer
     private void GoToTutorial()
     {
         GM.ChangeSceneToFile("res://Fish the fishes/Scenes/Tutorial/Tutorial.tscn");
+    }
+
+    private void SpawnFish()
+    {
+        PackedScene FishScene = Fishes[(int)(GD.Randi() % Fishes.Count)];
+        Fish fish = FishScene.Instantiate<Fish>();
+
+        bool flip = (GD.Randi() % 2) != 0;
+        Vector2 fishSpawnLocation = new Vector2(flip ? GM.ScreenSize.X + 200 : -200, (float)GD.RandRange(0, GM.ScreenSize.Y));
+        fish.Position = fishSpawnLocation;
+        fish.Flip = flip;
+
+        GameContainer.AddChild(fish);
     }
 }
