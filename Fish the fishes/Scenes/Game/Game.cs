@@ -15,6 +15,7 @@ public partial class Game : Node
 
     public enum Mode
     {
+        Menu,
         Classic,
         GoGreen,
         Target,
@@ -28,10 +29,10 @@ public partial class Game : Node
     public override void _Ready()
     {
         GM = GetNode<GameManager>("/root/GameManager");
-        GM.Score = 0;
-        GM.Lives = 3;
+        GameManager.Score = 0;
+        GameManager.Lives = 3;
         
-        if (GM.Mode == Mode.Target)
+        if (GameManager.Mode == Mode.Target)
         {
             ChangeTarget();
         }
@@ -55,7 +56,7 @@ public partial class Game : Node
         Fish fish = FishScene.Instantiate<Fish>();
 
         bool flip = (GD.Randi() % 2) != 0;
-        Vector2 fishSpawnLocation = new Vector2(flip ? GM.ScreenSize.X + 200 : -200, (float)GD.RandRange(0, GM.ScreenSize.Y));
+        Vector2 fishSpawnLocation = new Vector2(flip ? GameManager.ScreenSize.X + 200 : -200, (float)GD.RandRange(0, GameManager.ScreenSize.Y));
         fish.Position = fishSpawnLocation;
         fish.Flip = flip;
 
@@ -73,7 +74,7 @@ public partial class Game : Node
     {
         PackedScene TrashScene = Trashes[(int)(GD.Randi() % Trashes.Count)];
         Trash trash = TrashScene.Instantiate<Trash>();
-        Vector2 trashSpawnLocation = new Vector2(GD.Randi() % GM.ScreenSize.X, -100);
+        Vector2 trashSpawnLocation = new Vector2(GD.Randi() % GameManager.ScreenSize.X, -100);
         trash.Position = trashSpawnLocation;
         trash.Velocity = new Vector2(GD.RandRange(-200, 200), 0);
 

@@ -35,7 +35,7 @@ public partial class Fish : CharacterBody2D, IFishable
     public bool Flip = false;
     public float ActualSpeed = 0;
     public bool IsAlive = true;
-    public bool IsCaught {  get; set; }
+    public bool IsCaught { get; set; }
 
     public bool Actionable
     {
@@ -150,6 +150,7 @@ public partial class Fish : CharacterBody2D, IFishable
 
     protected void NotifySpawn()
     {
+        if (GameManager.Mode == Game.Mode.Menu) return;
         if (UserData.Instance.FishCompendium.TryGetValue(GetType().Name, out UserData.FishCompendiumEntry entry))
         {
             entry.Seen++;

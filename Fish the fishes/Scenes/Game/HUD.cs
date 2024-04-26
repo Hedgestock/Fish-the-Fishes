@@ -28,12 +28,12 @@ public partial class HUD : CanvasLayer
     {
         GM = GetNode<GameManager>("/root/GameManager");
 
-        if (GM.Mode == Game.Mode.TimeAttack)
+        if (GameManager.Mode == Game.Mode.TimeAttack)
         {
             TimeLabel.Show();
             GameTimer.Start();
         }
-        if (GM.Mode == Game.Mode.Target)
+        if (GameManager.Mode == Game.Mode.Target)
         {
             GM.Connect(GameManager.SignalName.TargetChanged, Callable.From(ChangeTarget));
             Target.Show();
@@ -49,7 +49,7 @@ public partial class HUD : CanvasLayer
 
     public override void _Process(double delta)
     {
-        if (GM.Mode == Game.Mode.TimeAttack)
+        if (GameManager.Mode == Game.Mode.TimeAttack)
         {
             TimeLabel.Text = ((int)GameTimer.TimeLeft).ToString();
         }
@@ -58,9 +58,9 @@ public partial class HUD : CanvasLayer
     private void LineScore(int score)
     {
         // We need to do this to avoid uint underflow
-        if (-score > GM.Score) GM.Score = 0;
-        else GM.Score = (uint)((int)GM.Score + score);
-        ScoreLabel.Text = GM.Score.ToString();
+        if (-score > GameManager.Score) GameManager.Score = 0;
+        else GameManager.Score = (uint)((int)GameManager.Score + score);
+        ScoreLabel.Text = GameManager.Score.ToString();
 
         if (score != 0)
         {
@@ -69,7 +69,7 @@ public partial class HUD : CanvasLayer
             if (score > 0)
             {
                 ScoreLabel.AddThemeColorOverride("font_color", new Color(0.12f, 0.6f, 0));
-                if (GM.Mode == Game.Mode.Target)
+                if (GameManager.Mode == Game.Mode.Target)
                 {
                     EmitSignal(SignalName.TargetFished);
                 }
@@ -80,7 +80,7 @@ public partial class HUD : CanvasLayer
             }
 
             tween.TweenCallback(Callable.From(() => ScoreLabel.RemoveThemeColorOverride("font_color")));
-        } else if (GM.Mode == Game.Mode.Target)
+        } else if (GameManager.Mode == Game.Mode.Target)
         {
             EndCurrentGame();
         }
@@ -89,10 +89,10 @@ public partial class HUD : CanvasLayer
 
     private void LineHit(FishingLine.DamageType damageType)
     {
-        if (GM.Mode == Game.Mode.TimeAttack) return;
-        GM.Lives--;
+        if (GameManager.Mode == Game.Mode.TimeAttack) return;
+        GameManager.Lives--;
 
-        AnimatedSprite2D Life = LivesContainer.GetNode<AnimatedSpriteForUI>("Life" + (3 - GM.Lives)).Sprite;
+        AnimatedSprite2D Life = LivesContainer.GetNode<AnimatedSpriteForUI>("Life" + (3 - GameManager.Lives)).Sprite;
         Life.Animation = "death";
 
         Life.Scale = Vector2.One * 2;
@@ -104,9 +104,9 @@ public partial class HUD : CanvasLayer
         tween.TweenProperty(Life, "scale", Vector2.One, 1).SetTrans(Tween.TransitionType.Elastic);
         tween.TweenProperty(Life, "position", originalPosition, 1).SetTrans(Tween.TransitionType.Elastic);
 
-        if (GM.Lives <= 0)
+        if (GameManager.Lives <= 0)
         {
-            if (GM.Mode == Game.Mode.GoGreen) EndCurrentGame();
+            if (GameManager.Mode == Game.Mode.GoGreen) EndCurrentGame();
             else GetTree().CreateTimer(1).Timeout += EndCurrentGame;
         }
     }

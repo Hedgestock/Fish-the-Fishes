@@ -57,7 +57,7 @@ public partial class Stats : CanvasLayer
         GetNode<GameManager>("/root/GameManager").ChangeSceneToFile("res://Fish the fishes/Scenes/Home.tscn");
     }
 
-    private string? TryGetValue<T>(Dictionary<string, T> dic, string key)
+    private string TryGetValue<T>(Dictionary<string, T> dic, string key)
     {
         T tmp;
         if (dic.TryGetValue(key, out tmp))

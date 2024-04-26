@@ -50,7 +50,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
     {
         GM = GetNode<GameManager>("/root/GameManager");
 
-        BasePosition = new Vector2(GM.ScreenSize.X / 2, 50);
+        BasePosition = new Vector2(GameManager.ScreenSize.X / 2, 50);
         Position = BasePosition;
         State = Action.Stopped;
         Invincible = false;
@@ -78,7 +78,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
             {
                 case Action.Moving:
                     State = Action.Fishing;
-                    MoveTowards(new Vector2(GM.ScreenSize.X / 2, -150));
+                    MoveTowards(new Vector2(GameManager.ScreenSize.X / 2, -150));
                     Hitbox.SetDeferred(CollisionShape2D.PropertyName.Disabled, false);
                     Line.Animation = "weighted";
                     break;
@@ -168,7 +168,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
         {
             (thing as Node).CallDeferred(Node.MethodName.Reparent, GetParent());
             thing.IsCaught = false;
-            if (GM.Mode != Game.Mode.GoGreen && thing is Fish)
+            if (GameManager.Mode != Game.Mode.GoGreen && thing is Fish)
             {
                 (thing as Fish).Kill();
                 UserData.Instance.Statistics[Constants.TotalLostFishes] = UserData.Instance.Statistics.GetValueOrDefault(Constants.TotalLostFishes) + 1;
@@ -185,7 +185,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
     {
         try
         {
-            switch (GM.Mode)
+            switch (GameManager.Mode)
             {
 
                 case Game.Mode.GoGreen:
@@ -284,6 +284,6 @@ public partial class FishingLine : CharacterBody2D, IFisher
 
     private void OnScreenResize()
     {
-        BasePosition = new Vector2(GM.ScreenSize.X / 2, 50);
+        BasePosition = new Vector2(GameManager.ScreenSize.X / 2, 50);
     }
 }
