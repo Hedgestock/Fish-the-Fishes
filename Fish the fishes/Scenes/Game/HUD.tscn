@@ -73,7 +73,7 @@ layout_mode = 2
 size_flags_vertical = 4
 alignment = 1
 
-[node name="AnimatedSprite2D" parent="MarginContainer/HBoxContainer/Lives/Life1" index="0"]
+[node name="AnimatedSprite2D" parent="MarginContainer/HBoxContainer/Lives/Life1" index="1"]
 sprite_frames = SubResource("SpriteFrames_xewer")
 animation = &"life"
 
@@ -81,7 +81,7 @@ animation = &"life"
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="AnimatedSprite2D" parent="MarginContainer/HBoxContainer/Lives/Life2" index="0"]
+[node name="AnimatedSprite2D" parent="MarginContainer/HBoxContainer/Lives/Life2" index="1"]
 sprite_frames = SubResource("SpriteFrames_xewer")
 animation = &"life"
 
@@ -90,16 +90,16 @@ layout_mode = 2
 size_flags_vertical = 4
 alignment = 1
 
-[node name="AnimatedSprite2D" parent="MarginContainer/HBoxContainer/Lives/Life3" index="0"]
+[node name="AnimatedSprite2D" parent="MarginContainer/HBoxContainer/Lives/Life3" index="1"]
 sprite_frames = SubResource("SpriteFrames_xewer")
 animation = &"life"
 
 [node name="Control" type="Control" parent="MarginContainer/HBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="Target" parent="MarginContainer/HBoxContainer/Control" instance=ExtResource("4_38r4v")]
-visible = false
 modulate = Color(1, 1, 1, 0.498039)
 layout_mode = 1
 anchors_preset = 6

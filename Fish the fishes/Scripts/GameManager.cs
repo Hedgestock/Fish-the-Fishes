@@ -8,7 +8,6 @@ public partial class GameManager : Node
     [Signal]
     public delegate void TargetChangedEventHandler();
 
-
     private string _target = "Fish";
     public string Target
     {
@@ -20,17 +19,22 @@ public partial class GameManager : Node
         }
     }
 
-    public Game.Mode Mode = Game.Mode.Classic;
-    public uint Score = 0;
-    public uint Lives = 3;
+    public static Game.Mode Mode = Game.Mode.Menu;
+    public static uint Score = 0;
+    public static uint Lives = 3;
 
-    public string PrevScene = "";
-    public Vector2 ScreenSize;
+    public static string PrevScene = "";
+    public static Vector2 ScreenSize;
 
     private static string SaveDirectory = "user://";
     private static string SaveFileName = "data.save";
     private static string SaveFilePath = SaveDirectory + SaveFileName;
     private static string SettingsFile = "settings.save";
+
+    //private GameManager()
+    //{
+        
+    //}
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()

@@ -20,19 +20,19 @@ public partial class Home : CanvasLayer
     {
         GM = GetNode<GameManager>("/root/GameManager");
 
-        if (GM.PrevScene == "res://SplashScreen.tscn")
+        if (GameManager.PrevScene == "res://SplashScreen.tscn")
         {
             GetNode<AudioStreamPlayer>("AudioStreamPlayer").Play();
         }
         else
         {
-            Message.Text = "Last Score:\n" + GM.Score.ToString();
+            Message.Text = "Last Score:\n" + GameManager.Score.ToString();
         }
     }
 
     private void Play(Game.Mode mode)
     {
-        GM.Mode = mode;
+        GameManager.Mode = mode;
         GM.ChangeSceneToFile("res://Fish the fishes/Scenes/Game/Game.tscn");
     }
 
@@ -63,7 +63,7 @@ public partial class Home : CanvasLayer
 
     private void PlayTest()
     {
-        GM.Mode = Game.Mode.Classic;
+        GameManager.Mode = Game.Mode.Classic;
         GM.ChangeSceneToFile("res://Fish the fishes/Scenes/Game/GameTest.tscn");
     }
 
@@ -98,10 +98,11 @@ public partial class Home : CanvasLayer
         Fish fish = FishScene.Instantiate<Fish>();
 
         bool flip = (GD.Randi() % 2) != 0;
-        Vector2 fishSpawnLocation = new Vector2(flip ? GM.ScreenSize.X + 200 : -200, (float)GD.RandRange(0, GM.ScreenSize.Y));
+        Vector2 fishSpawnLocation = new Vector2(flip ? GameManager.ScreenSize.X + 200 : -200, (float)GD.RandRange(0, GameManager.ScreenSize.Y));
         fish.Position = fishSpawnLocation;
         fish.Flip = flip;
 
         GameContainer.AddChild(fish);
+        
     }
 }

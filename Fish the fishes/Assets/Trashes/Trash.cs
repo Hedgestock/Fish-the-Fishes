@@ -31,7 +31,7 @@ public partial class Trash : CharacterBody2D, IFishable
     {
         if (by.GetType() == typeof(FishingLine))
         {
-            if (GM.Mode == Game.Mode.GoGreen)
+            if (GameManager.Mode == Game.Mode.GoGreen)
             {
                 if (by.FishedThings.Contains(this))
                     return this; // This avoids multiple calls on reparenting
