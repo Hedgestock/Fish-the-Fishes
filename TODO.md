@@ -94,6 +94,7 @@
 - [ ] Mettre à jour les statistiques avec les nouveaux modes de jeu
 - [ ] Mettre à jour les records avec les nouveaux modes de jeu
 - [ ] Ajouter une animation pour signifier la casse de l'hameçon à la remontée
+- [ ] Afficher un biome aléatoire dans ceux visités pour le fond du menu
 
 # Corrections
 
