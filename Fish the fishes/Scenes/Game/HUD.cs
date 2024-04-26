@@ -30,7 +30,7 @@ public partial class HUD : CanvasLayer
     {
         GM = GetNode<GameManager>("/root/GameManager");
 
-        LocalScore = GameManager.Score;
+        LocalScore = 0;
 
         switch (GameManager.Mode)
         {
