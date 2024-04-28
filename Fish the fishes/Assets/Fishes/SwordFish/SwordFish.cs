@@ -69,12 +69,18 @@ public partial class SwordFish : Fish, IFisher
 
     private void SeekTarget()
     {
-        if (!Actionable || State == Action.Seeking || Strikes <= 0) return;
+        if (!Actionable || State == Action.Seeking) return;
+
+        if (Strikes <= 0)
+        {
+            Leave();
+            return;
+        }
 
         Sprite.Animation = "seek";
 
         Node[] fishes = GetTree().GetNodesInGroup("Fishes")
-            .Where(fish => (fish as Fish).IsAlive && (fish as Fish).IsOnScreen && !(fish is SwordFish))
+            .Where(fish => (fish as Fish).IsAlive && (fish as Fish).IsOnScreen && !(fish is SwordFish) && !FishedThings.Contains(fish as Fish))
             .ToArray();
 
         if (fishes.Length == 0)
@@ -135,14 +141,11 @@ public partial class SwordFish : Fish, IFisher
         Skew = Skew.GetCaughtBy(this) as Fish;
         Skew.Kill();
 
+
         if (FishedThings.Contains(Target))
         {
             Velocity = Vector2.Zero;
-            if (Strikes > 0)
-            {
-                SeekTarget();
-            }
-            else Leave();
+            SeekTarget();
         }
     }
 
@@ -154,9 +157,10 @@ public partial class SwordFish : Fish, IFisher
 
     private float TrackTarget(bool atLaunch = false)
     {
+
         if (!Actionable) return 0;
 
-        if (!IsInstanceValid(Target))
+        if (!IsInstanceValid(Target) || FishedThings.Contains(Target))
         {
             State = Action.Swimming;
             SeekTarget();
@@ -164,6 +168,7 @@ public partial class SwordFish : Fish, IFisher
         }
 
         Velocity = GetDirectionTo(Target);
+
         if (atLaunch)
         {
             if (Velocity.Length() < ActualSpeed)

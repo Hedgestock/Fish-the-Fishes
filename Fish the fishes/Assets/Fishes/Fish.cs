@@ -94,10 +94,13 @@ public partial class Fish : CharacterBody2D, IFishable
         if (by.FishedThings.Contains(this))
             return this; // This avoids multiple calls on reparenting
 
-        if( (by as Node).GetChildren().Contains(this))
+        if ((by as Node).GetChildren().Contains(this))
         {
             GD.PrintErr(by, " is already a parent of ", this);
             GD.PrintErr(new System.Diagnostics.StackTrace());
+            GD.Print(by.FishedThings.ToArray());
+            GD.Print(by); (by as Node).PrintTreePretty();
+
             return this;
         }
 
@@ -118,7 +121,7 @@ public partial class Fish : CharacterBody2D, IFishable
 
         by.FishedThings.Add(this);
         IsCaught = true;
-        
+
 
         // In case we are a fisher thing, we make sure to give all of our fished things to what is currently catching us
         if (this is IFisher)
