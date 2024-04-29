@@ -182,12 +182,19 @@ public partial class FishingLine : CharacterBody2D, IFisher
     }
 
     private int ComputeScore()
-    {
+    { 
         try
         {
             switch (GameManager.Mode)
             {
 
+                case Game.Mode.Menu:
+                    foreach (Node node in FishedThings)
+                    {
+                        node.QueueFree();
+                    }
+                    FishedThings.Clear();
+                    return 0;
                 case Game.Mode.GoGreen:
                     return GoGreenScore();
                 case Game.Mode.Target:

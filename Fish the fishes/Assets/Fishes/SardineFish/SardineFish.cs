@@ -44,7 +44,7 @@ public partial class SardineFish : Fish
         fish.Position = fishSpawnLocation;
         fish.ActualSpeed = ActualSpeed;
         fish.Flip = Flip;
-        // spawn the mob by adding it to the main scene.
-        GetTree().CurrentScene.AddChild(fish);
+        // spawn the mob by adding it to the game node.
+        GetParent().AddChild(fish);
     }
 }
