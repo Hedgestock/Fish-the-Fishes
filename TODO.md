@@ -82,6 +82,8 @@
 - [x] [**Actuellement impossible**]Trouver comment générer de la corde 
 - [x] [**Actuellement impossible**]Faire des recherches sur l'intégration en page d'accueil
 - [x] [**Solution autre**] Ajouter des poissons à chemins
+- [x] Mettre à jour les statistiques avec les nouveaux modes de jeu
+- [x] Mettre à jour les records avec les nouveaux modes de jeu
 - [ ] Support de différentes langues
     - [x] Anglais
     - [ ] Français
@@ -89,11 +91,10 @@
     - [ ] Thai
 - [ ] Ajouter une probabilité d'apparition
 - [ ] Ajouter des morts différentes
+- [ ] Donner la responsabilité au poisson de se placer sur l'écran
 - [ ] Ajouter une vitesse de descente et de remontée différente pour la ligne
 - [ ] Ajouter la sauvegarde des paramètres
 - [ ] SLB dans le fond
-- [ ] Mettre à jour les statistiques avec les nouveaux modes de jeu
-- [ ] Mettre à jour les records avec les nouveaux modes de jeu
 - [ ] Ajouter une animation pour signifier la casse de l'hameçon à la remontée
 - [ ] Afficher un biome aléatoire dans ceux visités pour le fond du menu
 

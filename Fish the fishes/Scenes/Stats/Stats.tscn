@@ -13,7 +13,7 @@ action = &"menu_go_back"
 [sub_resource type="Shortcut" id="Shortcut_y2krb"]
 events = [SubResource("InputEventAction_qkuki")]
 
-[node name="Stats" type="CanvasLayer" node_paths=PackedStringArray("TotalFishedFishes", "TotalPointsScored", "TotalTrashesHit", "TotalLostFishes", "MaxFishedFishes", "MaxPointScored", "TotalTrashesCleaned", "TotalEatenFishes", "CasualClassicHighScore", "CasualTimeAttackHighScore", "CompetitiveClassicHighScore", "CompetitiveTimeAttackHighScore")]
+[node name="Stats" type="CanvasLayer" node_paths=PackedStringArray("TotalFishedFishes", "TotalPointsScored", "TotalTrashesHit", "TotalLostFishes", "MaxFishedFishes", "MaxPointScored", "TotalTrashesCleaned", "TotalEatenFishes", "CasualClassicHighScore", "CasualTimeAttackHighScore", "CasualTargetHighScore", "CasualGoGreenHighScore", "CompetitiveClassicHighScore", "CompetitiveTimeAttackHighScore", "CompetitiveTargetHighScore", "CompetitiveGoGreenHighScore")]
 script = ExtResource("1_yiwnl")
 TotalFishedFishes = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Statistics/TotalFishedFishesNumber")
 TotalPointsScored = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Statistics/TotalPointsScoredNumber")
@@ -25,8 +25,12 @@ TotalTrashesCleaned = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContai
 TotalEatenFishes = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/GoGreenStatistics/TotalEatenFishesNumber")
 CasualClassicHighScore = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Casual/ClassicHighScoreValue")
 CasualTimeAttackHighScore = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Casual/TimeAttackHighScoreValue")
+CasualTargetHighScore = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Casual/TargetHighScoreValue")
+CasualGoGreenHighScore = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Casual/GoGreenHighScoreValue")
 CompetitiveClassicHighScore = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Competitive/ClassicHighScoreValue")
 CompetitiveTimeAttackHighScore = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Competitive/TimeAttackHighScoreValue")
+CompetitiveTargetHighScore = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Competitive/TargetHighScoreValue")
+CompetitiveGoGreenHighScore = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Competitive/GoGreenHighScoreValue")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -177,7 +181,7 @@ theme_override_constants/separation = 40
 [node name="GoGreenLabel" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 6
-size_flags_vertical = 2
+size_flags_vertical = 1
 text = "Go Green"
 
 [node name="GoGreenStatistics" type="GridContainer" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer"]
@@ -214,7 +218,7 @@ layout_mode = 2
 [node name="CasualHighScoresLabel" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 6
-size_flags_vertical = 2
+size_flags_vertical = 1
 text = "Casual HighScores"
 
 [node name="Casual" type="GridContainer" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer"]
@@ -240,6 +244,30 @@ text = "Time Attack"
 autowrap_mode = 3
 
 [node name="TimeAttackHighScoreValue" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Casual"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "0"
+horizontal_alignment = 2
+
+[node name="TargetHighScoreLabel" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Casual"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Target"
+autowrap_mode = 3
+
+[node name="TargetHighScoreValue" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Casual"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "0"
+horizontal_alignment = 2
+
+[node name="GoGreenHighScoreLabel" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Casual"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Go Green"
+autowrap_mode = 3
+
+[node name="GoGreenHighScoreValue" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Casual"]
 layout_mode = 2
 size_flags_horizontal = 8
 text = "0"
@@ -278,6 +306,30 @@ text = "Time Attack"
 autowrap_mode = 3
 
 [node name="TimeAttackHighScoreValue" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Competitive"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "0"
+horizontal_alignment = 2
+
+[node name="TargetHighScoreLabel" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Competitive"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Target"
+autowrap_mode = 3
+
+[node name="TargetHighScoreValue" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Competitive"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "0"
+horizontal_alignment = 2
+
+[node name="GoGreenHighScoreLabel" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Competitive"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Go Green"
+autowrap_mode = 3
+
+[node name="GoGreenHighScoreValue" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Competitive"]
 layout_mode = 2
 size_flags_horizontal = 8
 text = "0"

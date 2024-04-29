@@ -48,10 +48,17 @@ autostart = true
 WaitTimeAverage = 3.0
 Deviation = 0.5
 
-[node name="FrustrationFix" type="Area2D" parent="."]
-position = Vector2(540, 0)
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+size_flags_horizontal = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FrustrationFix"]
+[node name="FrustrationFix" type="Area2D" parent="Control"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Control/FrustrationFix"]
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_ksc04")
 
@@ -61,7 +68,7 @@ shape = SubResource("CapsuleShape2D_ksc04")
 [connection signal="TargetFished" from="HUD" to="." method="ChangeTarget"]
 [connection signal="timeout" from="FishTimer" to="." method="SpawnFish"]
 [connection signal="timeout" from="TrashTimer" to="." method="SpawnTrash"]
-[connection signal="area_entered" from="FrustrationFix" to="FishingLine" method="MakeInvincible"]
-[connection signal="area_exited" from="FrustrationFix" to="FishingLine" method="MakeVincible"]
+[connection signal="area_entered" from="Control/FrustrationFix" to="FishingLine" method="MakeInvincible"]
+[connection signal="area_exited" from="Control/FrustrationFix" to="FishingLine" method="MakeVincible"]
 [connection signal="Hit" from="FishingLine" to="HUD" method="LineHit"]
 [connection signal="Score" from="FishingLine" to="HUD" method="LineScore"]
