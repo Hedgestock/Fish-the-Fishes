@@ -39,13 +39,15 @@ public partial class GameTest : Node
         GM.ChangeSceneToFile("res://Fish the fishes/Scenes/Home.tscn");
     }
 
+    int i = 0;
     private void SpawnFish()
     {
-        PackedScene FishScene = Fishes[(int)(GD.Randi() % Fishes.Count)];
+        if (i > 2) return;
+        PackedScene FishScene = Fishes[i++%Fishes.Count];
         Fish fish = FishScene.Instantiate<Fish>();
 
         bool flip = (GD.Randi() % 2) != 0;
-        Vector2 fishSpawnLocation = new Vector2(flip ? GameManager.ScreenSize.X + 200 : -200, (float)GD.RandRange(0, GameManager.ScreenSize.Y));
+        Vector2 fishSpawnLocation = new Vector2(flip ? GameManager.ScreenSize.X + 200 : -200, 500);
         fish.Position = fishSpawnLocation;
         fish.Flip = flip;
 

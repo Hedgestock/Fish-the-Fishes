@@ -35,4 +35,3 @@ shape = SubResource("CapsuleShape2D_dfnsu")
 
 [node name="AudioStreamPlayer" parent="." index="3"]
 stream = SubResource("AudioStreamOggVorbis_5c370")
-autoplay = true
