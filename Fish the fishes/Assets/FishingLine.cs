@@ -157,7 +157,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
         if (FishedThings.Count == 0 || Invincible) return;
         EmitSignal(SignalName.Hit, (int)damageType);
         Hitbox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
-        GetNode<AudioStreamPlayer>("HitSound").Play();
+        GetNode<AudioStreamPlayer2D>("HitSound").Play();
 
         if (damageType == DamageType.Trash)
         {

@@ -18,7 +18,7 @@ Sound = NodePath("AudioStreamPlayer")
 
 [node name="HurtBox" type="CollisionShape2D" parent="." groups=["Hurtboxes"]]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
 bus = &"Fishes"
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="Despawn"]

@@ -14,7 +14,7 @@ public partial class Fish : CharacterBody2D, IFishable
     [Export]
     protected AnimatedSprite2D Sprite;
     [Export]
-    protected AudioStreamPlayer Sound;
+    protected AudioStreamPlayer2D Sound;
 
     [ExportGroup("Scoring")]
     [Export]
