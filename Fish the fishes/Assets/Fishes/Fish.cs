@@ -59,6 +59,12 @@ public partial class Fish : CharacterBody2D, IFishable
 
         IsCaught = false;
 
+        if (Position == Vector2.Zero)
+        {
+            Flip = (GD.Randi() % 2) != 0;
+            Position = new Vector2(Flip ? GameManager.ScreenSize.X + 200 : -200, (float)GD.RandRange(0, GameManager.ScreenSize.Y));
+        }
+
         if (ActualSpeed == 0)
         {
             ActualSpeed = (float)GD.RandRange(MinSpeed, MaxSpeed);

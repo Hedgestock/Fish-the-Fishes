@@ -46,10 +46,10 @@ public partial class GameTest : Node
         PackedScene FishScene = Fishes[i++%Fishes.Count];
         Fish fish = FishScene.Instantiate<Fish>();
 
-        bool flip = (GD.Randi() % 2) != 0;
-        Vector2 fishSpawnLocation = new Vector2(flip ? GameManager.ScreenSize.X + 200 : -200, 500);
-        fish.Position = fishSpawnLocation;
-        fish.Flip = flip;
+        //bool flip = (GD.Randi() % 2) != 0;
+        //Vector2 fishSpawnLocation = new Vector2(flip ? GameManager.ScreenSize.X + 200 : -200, 500);
+        //fish.Position = fishSpawnLocation;
+        //fish.Flip = flip;
 
         // Spawn the fish by adding it to the main scene.
         AddChild(fish);
