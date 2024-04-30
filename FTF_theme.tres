@@ -1,7 +1,9 @@
-[gd_resource type="Theme" load_steps=13 format=3 uid="uid://dqud8bhj4fopd"]
+[gd_resource type="Theme" load_steps=17 format=3 uid="uid://dqud8bhj4fopd"]
 
 [ext_resource type="FontFile" uid="uid://bfbfdje68lt7w" path="res://fonts/Amatic-Bold.ttf" id="1_fkn7n"]
 [ext_resource type="Texture2D" uid="uid://sf5nbt1ewklc" path="res://Fish the fishes/art/fish/arrow/arrow_left.png" id="1_p1tk7"]
+[ext_resource type="Texture2D" uid="uid://dsnbmphv0scr7" path="res://Fish the fishes/art/fish/sardine/sardine_alive_1.png" id="1_pjvvj"]
+[ext_resource type="Texture2D" uid="uid://vkh1e4p832lp" path="res://Fish the fishes/art/fish/sardine/sardine_alive_2.png" id="2_6qka0"]
 [ext_resource type="Texture2D" uid="uid://b3ygkwfip0qaj" path="res://Fish the fishes/art/fish/arrow/arrow_left_3.png" id="2_fu0oa"]
 [ext_resource type="Texture2D" uid="uid://cdlcldgajtn4i" path="res://Fish the fishes/art/fish/arrow/arrow_alive_1.png" id="2_g1lsy"]
 [ext_resource type="Texture2D" uid="uid://csxfp4n3h00us" path="res://Fish the fishes/art/fish/arrow/arrow_alive_3.png" id="4_j07dk"]
@@ -13,6 +15,20 @@ content_margin_right = 4.0
 content_margin_bottom = 0.0
 color = Color(0.5, 0.5, 0.5, 1)
 thickness = 5
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_ake8j"]
+frames = 2
+speed_scale = 5.0
+frame_0/texture = ExtResource("1_pjvvj")
+frame_1/texture = ExtResource("2_6qka0")
+frame_1/duration = 1.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_wc5m5"]
+frames = 2
+speed_scale = 5.0
+frame_0/texture = ExtResource("1_pjvvj")
+frame_1/texture = ExtResource("2_6qka0")
+frame_1/duration = 1.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yqf4q"]
 
@@ -53,9 +69,9 @@ corner_radius_bottom_left = 10
 corner_detail = 6
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_603q0"]
-content_margin_left = 4.0
+content_margin_left = 15.0
 content_margin_top = 0.0
-content_margin_right = 4.0
+content_margin_right = 15.0
 content_margin_bottom = 0.0
 bg_color = Color(0.1, 0.1, 0.1, 0.6)
 corner_radius_top_left = 10
@@ -91,6 +107,8 @@ default_font = ExtResource("1_fkn7n")
 default_font_size = 128
 HSeparator/constants/separation = 20
 HSeparator/styles/separator = SubResource("StyleBoxLine_q8gnl")
+HSlider/icons/grabber = SubResource("AnimatedTexture_ake8j")
+HSlider/icons/grabber_highlight = SubResource("AnimatedTexture_wc5m5")
 MarginContainer/constants/margin_bottom = 20
 MarginContainer/constants/margin_left = 20
 MarginContainer/constants/margin_right = 20
