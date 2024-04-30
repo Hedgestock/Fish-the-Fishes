@@ -34,7 +34,7 @@
 - [ ] Calamar encreur
 - [ ] Étoile de mer d'invincibilité
 - [ ] Raie manta répulsive
-- [ ] Requin qui casse l'écran
+- [ ] Requin mange tout sur son passage
 - [ ] Phoque qui attire l'orque
 - [ ] Orque
 - [ ] Seiche (change de motif aléatoirement)
@@ -84,6 +84,7 @@
 - [x] [**Solution autre**] Ajouter des poissons à chemins
 - [x] Mettre à jour les statistiques avec les nouveaux modes de jeu
 - [x] Mettre à jour les records avec les nouveaux modes de jeu
+- [x] Donner la responsabilité au poisson de se placer sur l'écran
 - [ ] Support de différentes langues
     - [x] Anglais
     - [ ] Français
@@ -91,7 +92,6 @@
     - [ ] Thai
 - [ ] Ajouter une probabilité d'apparition
 - [ ] Ajouter des morts différentes
-- [ ] Donner la responsabilité au poisson de se placer sur l'écran
 - [ ] Ajouter une vitesse de descente et de remontée différente pour la ligne
 - [ ] Ajouter la sauvegarde des paramètres
 - [ ] SLB dans le fond
@@ -112,6 +112,6 @@
 - [x] Corriger le reparentage lors de la touche d'un déchêt
 - [x] Verifier le passage en négatif de la statistique de score
 - [x] Couper le son d'un poisson mort
-- [ ] Corriger le problème lorsqu'un espadon vole un poisson pêché
+- [x] [**Solution autre**] Corriger le problème lorsqu'un espadon vole un poisson pêché
 - [ ] Corriger le problème des espadons fous
 - [ ] Corriger le problème du reparentage d'espadon

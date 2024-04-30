@@ -19,10 +19,14 @@ bg_color = Color(0.392157, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vkyyb"]
 
-[node name="Settings" type="CanvasLayer" node_paths=PackedStringArray("DeleteDataPopup", "CompetitiveMode")]
+[node name="Settings" type="CanvasLayer" node_paths=PackedStringArray("DeleteDataPopup", "CompetitiveMode", "MuteMaster", "MuteMusic", "MuteSFX", "MuteFishes")]
 script = ExtResource("1_pgx6s")
 DeleteDataPopup = NodePath("ResetDataPopup")
 CompetitiveMode = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/CompetitiveModeCheckBox")
+MuteMaster = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/MuteMasterCheckBox")
+MuteMusic = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/MuteMusicCheckBox")
+MuteSFX = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/MuteSFXCheckBox")
+MuteFishes = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/MuteFishesCheckBox")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -94,6 +98,22 @@ size_flags_horizontal = 0
 text = "Competitive Mode"
 expand_icon = true
 
+[node name="MuteMasterCheckBox" type="CheckBox" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Mute Master"
+
+[node name="MuteMusicCheckBox" type="CheckBox" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Mute Music"
+
+[node name="MuteSFXCheckBox" type="CheckBox" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Mute SFX"
+
+[node name="MuteFishesCheckBox" type="CheckBox" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Mute Fishes"
+
 [node name="ResetButton" type="Button" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
@@ -154,6 +174,10 @@ text = "Proceed"
 
 [connection signal="pressed" from="VBoxContainer/Control/MarginContainer/BackButton" to="." method="GoToHome"]
 [connection signal="toggled" from="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/CompetitiveModeCheckBox" to="." method="SetCompetitiveMode"]
+[connection signal="toggled" from="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/MuteMasterCheckBox" to="." method="MuteMasterVolume"]
+[connection signal="toggled" from="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/MuteMusicCheckBox" to="." method="MuteMusicVolume"]
+[connection signal="toggled" from="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/MuteSFXCheckBox" to="." method="MuteSFXVolume"]
+[connection signal="toggled" from="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/MuteFishesCheckBox" to="." method="MuteFishesVolume"]
 [connection signal="pressed" from="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/ResetButton" to="." method="DisplayDeleteDataPopup"]
 [connection signal="pressed" from="ResetDataPopup/PanelContainer/VBoxContainer/MarginContainer2/HBoxContainer/CancelButton" to="." method="HideDeleteDataPopup"]
 [connection signal="pressed" from="ResetDataPopup/PanelContainer/VBoxContainer/MarginContainer2/HBoxContainer/ProceedButton" to="." method="DeleteData"]

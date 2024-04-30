@@ -38,5 +38,6 @@ shape = SubResource("CapsuleShape2D_v6hva")
 
 [node name="HitSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_1g0aw")
+bus = &"SFX"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
