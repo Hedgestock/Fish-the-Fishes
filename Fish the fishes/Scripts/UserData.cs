@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using System.Text.Json;
 
@@ -7,6 +8,7 @@ namespace Godot.Fish_the_fishes.Scripts
 {
     public class UserData
     {
+        #region serializable instance
         private static UserData _instance = null;
 
         public Dictionary<string, uint> _competitiveScores { get; set; }
@@ -14,12 +16,6 @@ namespace Godot.Fish_the_fishes.Scripts
         public Dictionary<string, uint> _statistics { get; set; }
         public Dictionary<string, FishCompendiumEntry> _fishCompendium { get; set; }
         public Dictionary<string, TrashCompendiumEntry> _trashCompendium { get; set; }
-
-        public static Dictionary<string, uint> CompetitiveScores { get {return _instance._competitiveScores; } set { _instance._competitiveScores = value; } }
-        public static Dictionary<string, uint> CasualScores { get {return _instance._casualScores; } set { _instance._casualScores = value; } }
-        public static Dictionary<string, uint> Statistics { get {return _instance._statistics; } set { _instance._statistics = value; } }
-        public static Dictionary<string, FishCompendiumEntry> FishCompendium { get {return _instance._fishCompendium; } set { _instance._fishCompendium = value; } }
-        public static Dictionary<string, TrashCompendiumEntry> TrashCompendium { get {return _instance._trashCompendium; } set { _instance._trashCompendium = value; } }
 
         public UserData()
         {
@@ -32,7 +28,15 @@ namespace Godot.Fish_the_fishes.Scripts
             _trashCompendium = new Dictionary<string, TrashCompendiumEntry>();
 
             _instance = this;
+            GD.Print(_instance._competitiveScores.ToArray());
         }
+        #endregion
+
+        public static Dictionary<string, uint> CompetitiveScores { get {return _instance._competitiveScores; } set { _instance._competitiveScores = value; } }
+        public static Dictionary<string, uint> CasualScores { get {return _instance._casualScores; } set { _instance._casualScores = value; } }
+        public static Dictionary<string, uint> Statistics { get {return _instance._statistics; } set { _instance._statistics = value; } }
+        public static Dictionary<string, FishCompendiumEntry> FishCompendium { get {return _instance._fishCompendium; } set { _instance._fishCompendium = value; } }
+        public static Dictionary<string, TrashCompendiumEntry> TrashCompendium { get {return _instance._trashCompendium; } set { _instance._trashCompendium = value; } }
 
         public static void Reset()
         {
@@ -69,6 +73,7 @@ namespace Godot.Fish_the_fishes.Scripts
             }
         }
 
+        #region helper classes
         public class FishCompendiumEntry
         {
             public uint Caught { get; set; }
@@ -92,5 +97,6 @@ namespace Godot.Fish_the_fishes.Scripts
                 Seen = 1;
             }
         }
+        #endregion
     }
 }

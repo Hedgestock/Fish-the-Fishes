@@ -49,13 +49,9 @@ public partial class Settings : CanvasLayer
         FishesVolume.Value = UserSettings.FishesVolume;
     }
 
-    // Called every frame. 'delta' is the elapsed time since the previous frame.
-    public override void _Process(double delta)
-    {
-    }
-
     private void GoToHome()
     {
+        GameManager.SaveSettings();
         GetNode<GameManager>("/root/GameManager").ChangeSceneToFile("res://Fish the fishes/Scenes/Home.tscn");
     }
 
@@ -65,49 +61,40 @@ public partial class Settings : CanvasLayer
         UserSettings.CompetitiveMode = competition;
     }
 
-    private void MuteMasterVolume(bool mute)
+    #region volume
+    private static void MuteMasterVolume(bool mute)
     {
-        AudioServer.SetBusMute(AudioServer.GetBusIndex("Master"), mute);
         UserSettings.MuteMaster = mute;
     }
-    private void MasterVolumeChanged(float volume)
+    private static void MasterVolumeChanged(float volume)
     {
-        AudioServer.SetBusVolumeDb(AudioServer.GetBusIndex("Master"), Mathf.LinearToDb(volume));
         UserSettings.MasterVolume = volume;
     }
-
-    private void MuteMusicVolume(bool mute)
+    private static void MuteMusicVolume(bool mute)
     {
-        AudioServer.SetBusMute(AudioServer.GetBusIndex("Music"), mute);
         UserSettings.MuteMusic = mute;
     }
-    private void MusicVolumeChanged(float volume)
+    private static void MusicVolumeChanged(float volume)
     {
-        AudioServer.SetBusVolumeDb(AudioServer.GetBusIndex("Music"), Mathf.LinearToDb(volume));
         UserSettings.MusicVolume = volume;
     }
-
-    private void MuteSFXVolume(bool mute)
+    private static void MuteSFXVolume(bool mute)
     {
-        AudioServer.SetBusMute(AudioServer.GetBusIndex("SFX"), mute);
         UserSettings.MuteSFX = mute;
     }
-    private void SFXVolumeChanged(float volume)
+    private static void SFXVolumeChanged(float volume)
     {
-        AudioServer.SetBusVolumeDb(AudioServer.GetBusIndex("SFX"), Mathf.LinearToDb(volume));
         UserSettings.SFXVolume = volume;
     }
-
-    private void MuteFishesVolume(bool mute)
+    private static void MuteFishesVolume(bool mute)
     {
-        AudioServer.SetBusMute(AudioServer.GetBusIndex("Fishes"), mute);
         UserSettings.MuteFishes = mute;
     }
-    private void FishesVolumeChanged(float volume)
+    private static void FishesVolumeChanged(float volume)
     {
-        AudioServer.SetBusVolumeDb(AudioServer.GetBusIndex("Fishes"), Mathf.LinearToDb(volume));
         UserSettings.FishesVolume = volume;
     }
+    #endregion
 
     private void DisplayDeleteDataPopup()
     {

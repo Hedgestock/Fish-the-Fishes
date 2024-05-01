@@ -29,16 +29,18 @@ public partial class GameManager : Node
     private static string SaveDirectory = "user://";
     private static string SaveFileName = "data.save";
     private static string SaveFilePath = SaveDirectory + SaveFileName;
-    private static string SettingsFile = "settings.save";
+    private static string SettingsFileName = "settings.save";
+    private static string SettingsFilePath = SaveDirectory + SettingsFileName;
 
     //private GameManager()
     //{
-        
+
     //}
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
+        LoadSettings();
         LoadData();
         ScreenSize = GetViewport().GetVisibleRect().Size;
         GetTree().Root.SizeChanged += OnScreenResize;
@@ -103,20 +105,32 @@ public partial class GameManager : Node
         dir.Remove(SaveFileName);
     }
 
-    //private void LoadSettings()
-    //{
+    static public void SaveSettings()
+    {
+        using var settings = FileAccess.Open(SettingsFilePath, FileAccess.ModeFlags.Write);
 
-    //    if (!FileAccess.FileExists(SettingsFile))
-    //    {
-    //        return;
-    //    }
+        settings.StoreString(UserSettings.Serialize());
+    }
 
-    //    using var saveGame = FileAccess.Open(SettingsFile, FileAccess.ModeFlags.Read);
+    static private void LoadSettings()
+    {
+        if (!FileAccess.FileExists(SettingsFilePath))
+        {
+            GD.PrintErr("No settings file to load");
+            new UserSettings();
+            return;
+        }
 
-    //    string jsonString = saveGame.GetAsText();
+        using var settings = FileAccess.Open(SettingsFilePath, FileAccess.ModeFlags.Read);
 
-    //    UserSettings.Deserialize(jsonString);
-    //}
+        string jsonString = settings.GetAsText();
+
+        if (!UserSettings.Deserialize(jsonString))
+        {
+            GD.PrintErr("Failed to deserialize settings file");
+            new UserSettings();
+        }
+    }
 
     public void ChangeSceneToFile(string file)
     {
