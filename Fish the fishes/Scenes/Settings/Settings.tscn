@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dwv4cu7q6wlf6"]
+[gd_scene load_steps=12 format=3 uid="uid://dwv4cu7q6wlf6"]
 
 [ext_resource type="Script" path="res://Fish the fishes/Scenes/Settings/Settings.cs" id="1_pgx6s"]
 [ext_resource type="Texture2D" uid="uid://4sfuxo2673qo" path="res://Fish the fishes/art/BG 2 FTF.png" id="2_okyw8"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://bx8qk7jnypm0" path="res://Fish the fishes/art/UI/retour hover.png" id="5_rejhq"]
 [ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://FTF_theme.tres" id="6_pkcc8"]
 [ext_resource type="Theme" uid="uid://cmnrxxeo4xdgp" path="res://FTF_descriptions_theme.tres" id="7_wo58i"]
-[ext_resource type="AudioStream" uid="uid://f8tkwqdr0cs8" path="res://Fish the fishes/sounds/Fish fushfushfushfush.wav" id="8_4yc0o"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_qkuki"]
 action = &"menu_go_back"
@@ -210,10 +209,6 @@ text = "Cancel"
 [node name="ProceedButton" type="Button" parent="ResetDataPopup/PanelContainer/VBoxContainer/MarginContainer2/HBoxContainer"]
 layout_mode = 2
 text = "Proceed"
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_4yc0o")
-autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/Control/MarginContainer/BackButton" to="." method="GoToHome"]
 [connection signal="toggled" from="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/CompetitiveModeCheckBox" to="." method="SetCompetitiveMode"]

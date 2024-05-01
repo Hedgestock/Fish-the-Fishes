@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Text.Json;
-using System.Threading;
-using static Godot.Fish_the_fishes.Scripts.UserData;
 
 namespace Godot.Fish_the_fishes.Scripts
 {
@@ -10,113 +8,152 @@ namespace Godot.Fish_the_fishes.Scripts
         #region serializable instance
         private static UserSettings _instance = null;
 
-        public bool _competitiveMode { get; set; }
-        public bool _muteMaster { get; set; }
-        public float _masterVolume { get; set; }
-        public bool _muteMusic { get; set; }
-        public float _musicVolume { get; set; }
-        public bool _muteSFX { get; set; }
-        public float _SFXVolume { get; set; }
-        public bool _muteFishes { get; set; }
-        public float _fishesVolume { get; set; }
+        private bool _competitiveMode = false;
+        public bool competitiveMode
+        {
+            get { return _competitiveMode; }
+            set
+            {
+                GameManager.Instance.GetTree().Root.ContentScaleAspect = value ? Window.ContentScaleAspectEnum.Keep : Window.ContentScaleAspectEnum.Expand;
+                _competitiveMode = value;
+            }
+        }
+
+        private bool _muteMaster = false;
+        public bool muteMaster
+        {
+            get { return _muteMaster; }
+            set
+            {
+                AudioServer.SetBusMute(AudioServer.GetBusIndex("Master"), value);
+                _muteMaster = value;
+            }
+        }
+        private float _masterVolume = 1;
+        public float masterVolume
+        {
+            get { return _masterVolume; }
+            set
+            {
+                AudioServer.SetBusVolumeDb(AudioServer.GetBusIndex("Master"), Mathf.LinearToDb(value));
+                _masterVolume = value;
+            }
+        }
+        private bool _muteMusic = false;
+        public bool muteMusic
+        {
+            get { return _muteMusic; }
+            set
+            {
+                AudioServer.SetBusMute(AudioServer.GetBusIndex("Music"), value);
+                _muteMusic = value;
+            }
+        }
+        private float _musicVolume = 1;
+        public float musicVolume
+        {
+            get { return _musicVolume; }
+            set
+            {
+                AudioServer.SetBusVolumeDb(AudioServer.GetBusIndex("Music"), Mathf.LinearToDb(value));
+                _musicVolume = value;
+            }
+        }
+        private bool _muteSFX = false;
+        public bool muteSFX
+        {
+            get { return _muteSFX; }
+            set
+            {
+                AudioServer.SetBusMute(AudioServer.GetBusIndex("SFX"), value);
+                _muteSFX = value;
+            }
+        }
+        private float _sfxVolume = 1;
+        public float sfxVolume
+        {
+            get { return _sfxVolume; }
+            set
+            {
+                AudioServer.SetBusVolumeDb(AudioServer.GetBusIndex("SFX"), Mathf.LinearToDb(value));
+                _sfxVolume = value;
+            }
+        }
+        private bool _muteFishes = false;
+        public bool muteFishes
+        {
+            get { return _muteFishes; }
+            set
+            {
+                AudioServer.SetBusMute(AudioServer.GetBusIndex("Fishes"), value);
+                _muteFishes = value;
+            }
+        }
+        private float _fishesVolume = 1;
+        public float fishesVolume
+        {
+            get { return _fishesVolume; }
+            set
+            {
+                AudioServer.SetBusVolumeDb(AudioServer.GetBusIndex("Fishes"), Mathf.LinearToDb(value));
+                _fishesVolume = value;
+            }
+        }
 
         public UserSettings()
         {
             if (_instance != null)
                 return;
-
-            _competitiveMode = false;
-            _muteMaster = false;
-            _masterVolume = 1;
-            _muteMusic = false;
-            _musicVolume = 1;
-            _muteSFX = false;
-            _SFXVolume = 1;
-            _muteFishes = false;
-            _fishesVolume = 1;
-
             _instance = this;
         }
         #endregion
 
         public static bool CompetitiveMode
         {
-            get { return _instance._competitiveMode; }
-            set { _instance._competitiveMode = value; }
+            get { return _instance.competitiveMode; }
+            set { _instance.competitiveMode = value; }
         }
 
         #region volume
         public static bool MuteMaster
         {
-            get { return _instance._muteMaster; }
-            set
-            {
-                AudioServer.SetBusMute(AudioServer.GetBusIndex("Master"), value);
-                _instance._muteMaster = value;
-            }
+            get { return _instance.muteMaster; }
+            set { _instance.muteMaster = value; }
         }
         public static float MasterVolume
         {
-            get { return _instance._masterVolume; }
-            set
-            {
-                AudioServer.SetBusVolumeDb(AudioServer.GetBusIndex("Master"), Mathf.LinearToDb(value));
-                _instance._masterVolume = value;
-            }
+            get { return _instance.masterVolume; }
+            set { _instance.masterVolume = value; }
         }
         public static bool MuteMusic
         {
-            get { return _instance._muteMusic; }
-            set
-            {
-                AudioServer.SetBusMute(AudioServer.GetBusIndex("Music"), value);
-                _instance._muteMusic = value;
-            }
+            get { return _instance.muteMusic; }
+            set { _instance.muteMusic = value; }
         }
         public static float MusicVolume
         {
-            get { return _instance._musicVolume; }
-            set
-            {
-                AudioServer.SetBusVolumeDb(AudioServer.GetBusIndex("Music"), Mathf.LinearToDb(value));
-                _instance._musicVolume = value;
-            }
+            get { return _instance.musicVolume; }
+            set { _instance.musicVolume = value; }
         }
         public static bool MuteSFX
         {
-            get { return _instance._muteSFX; }
-            set
-            {
-                AudioServer.SetBusMute(AudioServer.GetBusIndex("SFX"), value);
-                _instance._muteSFX = value;
-            }
+            get { return _instance.muteSFX; }
+            set { _instance.muteSFX = value; }
         }
         public static float SFXVolume
         {
-            get { return _instance._SFXVolume; }
-            set
-            {
-                AudioServer.SetBusVolumeDb(AudioServer.GetBusIndex("SFX"), Mathf.LinearToDb(value));
-                _instance._SFXVolume = value;
-            }
+            get { return _instance.sfxVolume; }
+            set { _instance.sfxVolume = value; }
         }
         public static bool MuteFishes
         {
-            get { return _instance._muteFishes; }
-            set
-            {
-                AudioServer.SetBusMute(AudioServer.GetBusIndex("Fishes"), value);
-                _instance._muteFishes = value;
-            }
+            get { return _instance.muteFishes; }
+            set { _instance.muteFishes = value; }
         }
         public static float FishesVolume
         {
-            get { return _instance._fishesVolume; }
-            set
-            {
-                AudioServer.SetBusVolumeDb(AudioServer.GetBusIndex("Fishes"), Mathf.LinearToDb(value));
-                _instance._fishesVolume = value;
-            }
+            get { return _instance.fishesVolume; }
+            set { _instance.fishesVolume = value; }
         }
         #endregion
 

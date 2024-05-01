@@ -30,12 +30,10 @@ public partial class Settings : CanvasLayer
     [Export]
     private Slider FishesVolume;
 
-    private GameManager GM;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        GM = GetNode<GameManager>("/root/GameManager");
         CompetitiveMode.ButtonPressed = UserSettings.CompetitiveMode;
 
         MuteMaster.ButtonPressed = UserSettings.MuteMaster;
@@ -52,49 +50,49 @@ public partial class Settings : CanvasLayer
     private void GoToHome()
     {
         GameManager.SaveSettings();
-        GetNode<GameManager>("/root/GameManager").ChangeSceneToFile("res://Fish the fishes/Scenes/Home.tscn");
+        GameManager.ChangeSceneToFile("res://Fish the fishes/Scenes/Home.tscn");
     }
 
     private void SetCompetitiveMode(bool competition)
     {
-        GetTree().Root.ContentScaleAspect = (competition ? Window.ContentScaleAspectEnum.Keep : Window.ContentScaleAspectEnum.Expand);
         UserSettings.CompetitiveMode = competition;
     }
 
-    #region volume
-    private static void MuteMasterVolume(bool mute)
+    private void MuteMasterVolume(bool mute)
     {
         UserSettings.MuteMaster = mute;
     }
-    private static void MasterVolumeChanged(float volume)
+    private void MasterVolumeChanged(float volume)
     {
         UserSettings.MasterVolume = volume;
     }
-    private static void MuteMusicVolume(bool mute)
+
+    private void MuteMusicVolume(bool mute)
     {
         UserSettings.MuteMusic = mute;
     }
-    private static void MusicVolumeChanged(float volume)
+    private void MusicVolumeChanged(float volume)
     {
         UserSettings.MusicVolume = volume;
     }
-    private static void MuteSFXVolume(bool mute)
+
+    private void MuteSFXVolume(bool mute)
     {
         UserSettings.MuteSFX = mute;
     }
-    private static void SFXVolumeChanged(float volume)
+    private void SFXVolumeChanged(float volume)
     {
         UserSettings.SFXVolume = volume;
     }
-    private static void MuteFishesVolume(bool mute)
+
+    private void MuteFishesVolume(bool mute)
     {
         UserSettings.MuteFishes = mute;
     }
-    private static void FishesVolumeChanged(float volume)
+    private void FishesVolumeChanged(float volume)
     {
         UserSettings.FishesVolume = volume;
     }
-    #endregion
 
     private void DisplayDeleteDataPopup()
     {
