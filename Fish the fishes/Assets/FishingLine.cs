@@ -40,7 +40,6 @@ public partial class FishingLine : CharacterBody2D, IFisher
     private bool Invincible;
 
     private Vector2 BasePosition;
-    private GameManager GM;
     private Area2D Area;
     private CollisionShape2D Hitbox;
     private AnimatedSprite2D Line;
@@ -48,8 +47,6 @@ public partial class FishingLine : CharacterBody2D, IFisher
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        GM = GetNode<GameManager>("/root/GameManager");
-
         BasePosition = new Vector2(GameManager.ScreenSize.X / 2, 50);
         Position = BasePosition;
         State = Action.Stopped;
@@ -277,7 +274,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
 
     private int TargetScore()
     {
-        int score = FishedThings.Any(thing => thing.GetType().Name == GM.Target) ? 1 : 0;
+        int score = FishedThings.Any(thing => thing.GetType().Name == GameManager.Target) ? 1 : 0;
         FishedThings.ForEach(thing => (thing as Node).QueueFree());
         FishedThings.Clear();
         return score;

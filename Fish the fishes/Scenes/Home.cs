@@ -13,13 +13,9 @@ public partial class Home : CanvasLayer
     [Export]
     public Node GameContainer;
 
-    private GameManager GM;
-
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        GM = GetNode<GameManager>("/root/GameManager");
-
         if (GameManager.PrevScene == "res://SplashScreen.tscn")
         {
             GetNode<AudioStreamPlayer>("AudioStreamPlayer").Play();
@@ -33,7 +29,7 @@ public partial class Home : CanvasLayer
     private void Play(Game.Mode mode)
     {
         GameManager.Mode = mode;
-        GM.ChangeSceneToFile("res://Fish the fishes/Scenes/Game/Game.tscn");
+        GameManager.ChangeSceneToFile("res://Fish the fishes/Scenes/Game/Game.tscn");
     }
 
     private void PlayClassic()
@@ -64,32 +60,32 @@ public partial class Home : CanvasLayer
     private void PlayTest()
     {
         GameManager.Mode = Game.Mode.Classic;
-        GM.ChangeSceneToFile("res://Fish the fishes/Scenes/Game/GameTest.tscn");
+        GameManager.ChangeSceneToFile("res://Fish the fishes/Scenes/Game/GameTest.tscn");
     }
 
     private void GoToSettings()
     {
-        GM.ChangeSceneToFile("res://Fish the fishes/Scenes/Settings/Settings.tscn");
+        GameManager.ChangeSceneToFile("res://Fish the fishes/Scenes/Settings/Settings.tscn");
     }
 
     private void GoToCompendium()
     {
-        GM.ChangeSceneToFile("res://Fish the fishes/Scenes/Compendium/Compendium.tscn");
+        GameManager.ChangeSceneToFile("res://Fish the fishes/Scenes/Compendium/Compendium.tscn");
     }
 
     private void GoToCredits()
     {
-        GM.ChangeSceneToFile("res://Fish the fishes/Scenes/Credits/Credits.tscn");
+        GameManager.ChangeSceneToFile("res://Fish the fishes/Scenes/Credits/Credits.tscn");
     }
 
     private void GoToStats()
     {
-        GM.ChangeSceneToFile("res://Fish the fishes/Scenes/Stats/Stats.tscn");
+        GameManager.ChangeSceneToFile("res://Fish the fishes/Scenes/Stats/Stats.tscn");
     }
 
     private void GoToTutorial()
     {
-        GM.ChangeSceneToFile("res://Fish the fishes/Scenes/Tutorial/Tutorial.tscn");
+        GameManager.ChangeSceneToFile("res://Fish the fishes/Scenes/Tutorial/Tutorial.tscn");
     }
 
     private void SpawnFish()

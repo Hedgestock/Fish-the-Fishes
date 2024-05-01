@@ -11,7 +11,6 @@ public partial class Game : Node
     [Export]
     public Array<PackedScene> Trashes;
 
-    private GameManager GM;
 
     public enum Mode
     {
@@ -28,7 +27,6 @@ public partial class Game : Node
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        GM = GetNode<GameManager>("/root/GameManager");
         GameManager.Score = 0;
         GameManager.Lives = 3;
         
@@ -48,7 +46,7 @@ public partial class Game : Node
         GameManager.WriteHighScore();
         GameManager.SaveData();
         GameManager.Mode = Mode.Menu;
-        GM.ChangeSceneToFile("res://Fish the fishes/Scenes/Home.tscn");
+        GameManager.ChangeSceneToFile("res://Fish the fishes/Scenes/Home.tscn");
     }
 
     private void SpawnFish()
@@ -80,6 +78,6 @@ public partial class Game : Node
 
     private void ChangeTarget()
     {
-        GM.Target = Fishes[(int)(GD.Randi() % Fishes.Count)].Instantiate<Fish>().GetType().Name;
+        GameManager.Target = Fishes[(int)(GD.Randi() % Fishes.Count)].Instantiate<Fish>().GetType().Name;
     }
 }

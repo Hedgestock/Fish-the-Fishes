@@ -43,7 +43,7 @@ public partial class Compendium : CanvasLayer
 
     private void GoToHome()
     {
-        GetNode<GameManager>("/root/GameManager").ChangeSceneToFile("res://Fish the fishes/Scenes/Home.tscn");
+        GameManager.ChangeSceneToFile("res://Fish the fishes/Scenes/Home.tscn");
     }
 
     private void AddFishEntry(string fishType)

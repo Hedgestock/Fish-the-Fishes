@@ -7,15 +7,11 @@ public partial class Trash : CharacterBody2D, IFishable
     [Export]
     private float GravityScale = 0.2f;
 
-    private GameManager GM;
-
     public bool IsCaught { get; set; }
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        GM = GetNode<GameManager>("/root/GameManager");
-
         GetNode<AnimatedSprite2D>("AnimatedSprite2D").Play();
     }
 

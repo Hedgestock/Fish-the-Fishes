@@ -1,6 +1,5 @@
 using Godot;
 using Godot.Fish_the_fishes.Scripts;
-using System;
 using System.Collections.Generic;
 
 public partial class GameManager : Node
@@ -8,14 +7,17 @@ public partial class GameManager : Node
     [Signal]
     public delegate void TargetChangedEventHandler();
 
+    static private GameManager _instance = null;
+    public static GameManager Instance {  get { return _instance; } }
+
     private string _target = "Fish";
-    public string Target
+    static public string Target
     {
-        get { return _target; }
+        get { return _instance._target; }
         set
         {
-            _target = value;
-            EmitSignal(SignalName.TargetChanged);
+            _instance._target = value;
+            _instance.EmitSignal(SignalName.TargetChanged);
         }
     }
 
@@ -32,10 +34,12 @@ public partial class GameManager : Node
     private static string SettingsFileName = "settings.save";
     private static string SettingsFilePath = SaveDirectory + SettingsFileName;
 
-    //private GameManager()
-    //{
-
-    //}
+    private GameManager()
+    {
+        if (_instance != null)
+            return;
+        _instance = this;
+    }
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -132,22 +136,22 @@ public partial class GameManager : Node
         }
     }
 
-    public void ChangeSceneToFile(string file)
+    static public void ChangeSceneToFile(string file)
     {
-        PrevScene = GetTree().CurrentScene.SceneFilePath;
-        GetTree().ChangeSceneToFile(file);
+        PrevScene = _instance.GetTree().CurrentScene.SceneFilePath;
+        _instance.GetTree().ChangeSceneToFile(file);
     }
 
-    public void ChangeSceneToPacked(PackedScene scene)
+    static public void ChangeSceneToPacked(PackedScene scene)
     {
-        PrevScene = GetTree().CurrentScene.SceneFilePath;
-        GetTree().ChangeSceneToPacked(scene);
+        PrevScene = _instance.GetTree().CurrentScene.SceneFilePath;
+        _instance.GetTree().ChangeSceneToPacked(scene);
     }
 
-    public void GoToPreviousScene()
+    static public void GoToPreviousScene()
     {
-        var _tmpPrevScene = GetTree().CurrentScene.SceneFilePath;
-        GetTree().ChangeSceneToFile(PrevScene);
+        var _tmpPrevScene = _instance.GetTree().CurrentScene.SceneFilePath;
+        _instance.GetTree().ChangeSceneToFile(PrevScene);
         PrevScene = _tmpPrevScene;
     }
 

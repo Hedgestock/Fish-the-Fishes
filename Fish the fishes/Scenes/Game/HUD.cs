@@ -21,15 +21,12 @@ public partial class HUD : CanvasLayer
     [Export]
     private AnimatedSpriteForUI Target;
 
-    private GameManager GM;
     private Tween tween;
     private uint LocalScore { get; set; }
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        GM = GetNode<GameManager>("/root/GameManager");
-
         LocalScore = 0;
 
         switch (GameManager.Mode)
@@ -41,7 +38,7 @@ public partial class HUD : CanvasLayer
                 GameTimer.Start();
                 break;
             case Game.Mode.Target:
-                GM.Connect(GameManager.SignalName.TargetChanged, Callable.From(ChangeTarget));
+                GameManager.Instance.Connect(GameManager.SignalName.TargetChanged, Callable.From(ChangeTarget));
                 Target.GetParent<Control>().Show();
                 break;
             case Game.Mode.Classic:
@@ -169,7 +166,7 @@ public partial class HUD : CanvasLayer
 
     private void ChangeTarget()
     {
-        string resourcePath = $"res://Fish the fishes/Assets/Fishes/{GM.Target}/{GM.Target}Animation.tres";
+        string resourcePath = $"res://Fish the fishes/Assets/Fishes/{GameManager.Target}/{GameManager.Target}Animation.tres";
         Target.SpriteFrames = GD.Load<SpriteFrames>(resourcePath);
 
         Target.Play();

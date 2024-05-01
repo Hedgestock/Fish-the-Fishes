@@ -15,6 +15,6 @@ public partial class Tutorial : CanvasLayer
 
     private void GoToHome()
     {
-        GetNode<GameManager>("/root/GameManager").ChangeSceneToFile("res://Fish the fishes/Scenes/Home.tscn");
+        GameManager.ChangeSceneToFile("res://Fish the fishes/Scenes/Home.tscn");
     }
 }
