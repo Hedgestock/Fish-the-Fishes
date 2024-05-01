@@ -20,7 +20,7 @@ public partial class Compendium : CanvasLayer
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        foreach (var entry in UserData.Instance.FishCompendium)
+        foreach (var entry in UserData.FishCompendium)
         {
             AddFishEntry(entry.Key);
         }
@@ -28,7 +28,7 @@ public partial class Compendium : CanvasLayer
         var listOfExistingFishTypes = AppDomain.CurrentDomain.GetAssemblies()
          .SelectMany(domainAssembly => domainAssembly.GetTypes())
          .Where(type => type.IsSubclassOf(typeof(Fish))
-         ).Select(type => type.Name).Except(UserData.Instance.FishCompendium.Keys);
+         ).Select(type => type.Name).Except(UserData.FishCompendium.Keys);
 
         foreach (var fishType in listOfExistingFishTypes)
         {

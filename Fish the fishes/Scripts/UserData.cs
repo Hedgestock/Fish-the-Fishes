@@ -9,37 +9,39 @@ namespace Godot.Fish_the_fishes.Scripts
     {
         private static UserData _instance = null;
 
-        public static UserData Instance
-        {
-            get
-            {
-                if (_instance == null) _instance = new UserData();
-                return _instance;
-            }
-        }
+        public Dictionary<string, uint> _competitiveScores { get; set; }
+        public Dictionary<string, uint> _casualScores { get; set; }
+        public Dictionary<string, uint> _statistics { get; set; }
+        public Dictionary<string, FishCompendiumEntry> _fishCompendium { get; set; }
+        public Dictionary<string, TrashCompendiumEntry> _trashCompendium { get; set; }
 
-        public Dictionary<string, uint> CompetitiveScores { get; set; }
-        public Dictionary<string, uint> CasualScores { get; set; }
-        public Dictionary<string, uint> Statistics { get; set; }
-        public Dictionary<string, FishCompendiumEntry> FishCompendium { get; set; }
-        public Dictionary<string, TrashCompendiumEntry> TrashCompendium { get; set; }
+        public static Dictionary<string, uint> CompetitiveScores { get {return _instance._competitiveScores; } set { _instance._competitiveScores = value; } }
+        public static Dictionary<string, uint> CasualScores { get {return _instance._casualScores; } set { _instance._casualScores = value; } }
+        public static Dictionary<string, uint> Statistics { get {return _instance._statistics; } set { _instance._statistics = value; } }
+        public static Dictionary<string, FishCompendiumEntry> FishCompendium { get {return _instance._fishCompendium; } set { _instance._fishCompendium = value; } }
+        public static Dictionary<string, TrashCompendiumEntry> TrashCompendium { get {return _instance._trashCompendium; } set { _instance._trashCompendium = value; } }
 
         public UserData()
         {
-            CompetitiveScores = new Dictionary<string, uint>();
-            CasualScores = new Dictionary<string, uint>();
-            Statistics = new Dictionary<string, uint>();
-            FishCompendium = new Dictionary<string, FishCompendiumEntry>();
-            TrashCompendium = new Dictionary<string, TrashCompendiumEntry>();
+            if (_instance != null)
+                return;
+            _competitiveScores = new Dictionary<string, uint>();
+            _casualScores = new Dictionary<string, uint>();
+            _statistics = new Dictionary<string, uint>();
+            _fishCompendium = new Dictionary<string, FishCompendiumEntry>();
+            _trashCompendium = new Dictionary<string, TrashCompendiumEntry>();
+
+            _instance = this;
         }
 
         public static void Reset()
         {
             _instance = null;
+            new UserData();
         }
         public static string Serialize()
         {
-            return JsonSerializer.Serialize(Instance);
+            return JsonSerializer.Serialize(_instance);
         }
 
         public static bool Deserialize(string json)

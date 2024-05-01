@@ -46,16 +46,16 @@ public partial class GameManager : Node
 
     static public void WriteHighScore()
     {
-        Dictionary<string, uint> scores = UserSettings.CompetitiveMode ? UserData.Instance.CompetitiveScores : UserData.Instance.CasualScores;
+        Dictionary<string, uint> scores = UserSettings.CompetitiveMode ? UserData.CompetitiveScores : UserData.CasualScores;
         if (!scores.ContainsKey(Mode.ToString()) || Score > scores[Mode.ToString()])
         {
             if (UserSettings.CompetitiveMode)
             {
-                UserData.Instance.CompetitiveScores[Mode.ToString()] = Score;
+                UserData.CompetitiveScores[Mode.ToString()] = Score;
             }
             else
             {
-                UserData.Instance.CasualScores[Mode.ToString()] = Score;
+                UserData.CasualScores[Mode.ToString()] = Score;
             }
         }
     }
@@ -69,10 +69,10 @@ public partial class GameManager : Node
 
     static private void LoadData()
     {
-
         if (!FileAccess.FileExists(SaveFilePath))
         {
             GD.PrintErr("No save file to load");
+            new UserData();
             return;
         }
 
@@ -81,7 +81,10 @@ public partial class GameManager : Node
         string jsonString = saveGame.GetAsText();
 
         if (!UserData.Deserialize(jsonString))
+        {
             GD.PrintErr("Failed to deserialize save file");
+            new UserData();
+        }
     }
 
     static public void EraseData()

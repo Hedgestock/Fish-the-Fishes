@@ -165,13 +165,13 @@ public partial class Fish : CharacterBody2D, IFishable
     protected void NotifySpawn()
     {
         if (GameManager.Mode == Game.Mode.Menu) return;
-        if (UserData.Instance.FishCompendium.TryGetValue(GetType().Name, out UserData.FishCompendiumEntry entry))
+        if (UserData.FishCompendium.TryGetValue(GetType().Name, out UserData.FishCompendiumEntry entry))
         {
             entry.Seen++;
         }
         else
         {
-            UserData.Instance.FishCompendium[GetType().Name] = new UserData.FishCompendiumEntry();
+            UserData.FishCompendium[GetType().Name] = new UserData.FishCompendiumEntry();
         }
     }
 }

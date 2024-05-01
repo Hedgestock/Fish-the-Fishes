@@ -37,7 +37,7 @@ public partial class FishCompendiumEntry : PanelContainer
             Placeholder.Animation = "alive";
             Placeholder.Play();
 
-            if (!UserData.Instance.FishCompendium.ContainsKey(FishTypeString))
+            if (!UserData.FishCompendium.ContainsKey(FishTypeString))
             {
                 Placeholder.Modulate = new Color(0, 0, 0);
                 return;
@@ -49,13 +49,13 @@ public partial class FishCompendiumEntry : PanelContainer
         }
 
 
-        NumberSeen.Text = UserData.Instance.FishCompendium[FishTypeString].Seen.ToString();
-        NumberFished.Text = UserData.Instance.FishCompendium[FishTypeString].Caught.ToString();
+        NumberSeen.Text = UserData.FishCompendium[FishTypeString].Seen.ToString();
+        NumberFished.Text = UserData.FishCompendium[FishTypeString].Caught.ToString();
 
         CompendiumName.Text = (string)FishType.GetField(nameof(CompendiumName)).GetValue(FishType);
 
 
-        if (UserData.Instance.FishCompendium[FishTypeString].Caught > 0)
+        if (UserData.FishCompendium[FishTypeString].Caught > 0)
         {
             CompendiumDescription.Text = (string)FishType.GetField(nameof(CompendiumDescription)).GetValue(FishType);
             AnimationButtons.Show();

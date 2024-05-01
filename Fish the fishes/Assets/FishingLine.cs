@@ -161,7 +161,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
 
         if (damageType == DamageType.Trash)
         {
-            UserData.Instance.Statistics[Constants.TotalTrashesHit] = UserData.Instance.Statistics.GetValueOrDefault(Constants.TotalTrashesHit) + 1;
+            UserData.Statistics[Constants.TotalTrashesHit] = UserData.Statistics.GetValueOrDefault(Constants.TotalTrashesHit) + 1;
         }
 
         foreach (IFishable thing in FishedThings)
@@ -171,7 +171,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
             if (GameManager.Mode != Game.Mode.GoGreen && thing is Fish)
             {
                 (thing as Fish).Kill();
-                UserData.Instance.Statistics[Constants.TotalLostFishes] = UserData.Instance.Statistics.GetValueOrDefault(Constants.TotalLostFishes) + 1;
+                UserData.Statistics[Constants.TotalLostFishes] = UserData.Statistics.GetValueOrDefault(Constants.TotalLostFishes) + 1;
             }
         }
 
@@ -227,7 +227,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
         foreach (Fish fish in FishedThings)
         {
             score += fish.Value;
-            UserData.Instance.FishCompendium[fish.GetType().Name].Caught++;
+            UserData.FishCompendium[fish.GetType().Name].Caught++;
         }
         score = ScoringFunction((int)Math.Ceiling(score));
         foreach (Fish fish in FishedThings)
@@ -239,8 +239,8 @@ public partial class FishingLine : CharacterBody2D, IFisher
             }
         }
 
-        UserData.Instance.Statistics[Constants.MaxFishedFishes] = (uint)Math.Max(UserData.Instance.Statistics.GetValueOrDefault(Constants.MaxFishedFishes), FishedThings.Count);
-        UserData.Instance.Statistics[Constants.TotalFishedFishes] = UserData.Instance.Statistics.GetValueOrDefault(Constants.TotalFishedFishes) + (uint)FishedThings.Count;
+        UserData.Statistics[Constants.MaxFishedFishes] = (uint)Math.Max(UserData.Statistics.GetValueOrDefault(Constants.MaxFishedFishes), FishedThings.Count);
+        UserData.Statistics[Constants.TotalFishedFishes] = UserData.Statistics.GetValueOrDefault(Constants.TotalFishedFishes) + (uint)FishedThings.Count;
 
         foreach (Fish fish in FishedThings)
         {
@@ -248,8 +248,8 @@ public partial class FishingLine : CharacterBody2D, IFisher
             fish.QueueFree();
         }
 
-        UserData.Instance.Statistics[Constants.MaxPointScored] = (uint)Math.Max(UserData.Instance.Statistics.GetValueOrDefault(Constants.MaxPointScored), (int)score);
-        UserData.Instance.Statistics[Constants.TotalPointsScored] = (uint)Math.Max(0, UserData.Instance.Statistics.GetValueOrDefault(Constants.TotalPointsScored) + (int)score);
+        UserData.Statistics[Constants.MaxPointScored] = (uint)Math.Max(UserData.Statistics.GetValueOrDefault(Constants.MaxPointScored), (int)score);
+        UserData.Statistics[Constants.TotalPointsScored] = (uint)Math.Max(0, UserData.Statistics.GetValueOrDefault(Constants.TotalPointsScored) + (int)score);
 
         return (int)score;
 
@@ -261,11 +261,11 @@ public partial class FishingLine : CharacterBody2D, IFisher
 
         if (FishedThings.OfType<Fish>().Any())
         {
-            UserData.Instance.Statistics[Constants.TotalEatenFishes] = UserData.Instance.Statistics.GetValueOrDefault(Constants.TotalEatenFishes) + (uint)FishedThings.Where(thing => thing is Fish).Count();
+            UserData.Statistics[Constants.TotalEatenFishes] = UserData.Statistics.GetValueOrDefault(Constants.TotalEatenFishes) + (uint)FishedThings.Where(thing => thing is Fish).Count();
             CallDeferred(MethodName.EmitSignal, SignalName.Hit, (int)DamageType.Default);
         }
 
-        UserData.Instance.Statistics[Constants.TotalTrashesCleaned] = UserData.Instance.Statistics.GetValueOrDefault(Constants.TotalTrashesCleaned) + (uint)FishedThings.Where(thing => thing is Trash).Count();
+        UserData.Statistics[Constants.TotalTrashesCleaned] = UserData.Statistics.GetValueOrDefault(Constants.TotalTrashesCleaned) + (uint)FishedThings.Where(thing => thing is Trash).Count();
 
         foreach (Node thing in FishedThings)
         {
