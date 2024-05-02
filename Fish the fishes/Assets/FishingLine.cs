@@ -275,8 +275,17 @@ public partial class FishingLine : CharacterBody2D, IFisher
     private int TargetScore()
     {
         int score = FishedThings.Any(thing => thing.GetType().Name == GameManager.Target) ? 1 : 0;
+
+        UserData.Statistics[Constants.MaxFishedFishes] = (uint)Math.Max(UserData.Statistics.GetValueOrDefault(Constants.MaxFishedFishes), FishedThings.Count);
+        UserData.Statistics[Constants.TotalFishedFishes] = UserData.Statistics.GetValueOrDefault(Constants.TotalFishedFishes) + (uint)FishedThings.Count;
+
+
         FishedThings.ForEach(thing => (thing as Node).QueueFree());
         FishedThings.Clear();
+
+        UserData.Statistics[Constants.MaxPointScored] = (uint)Math.Max(UserData.Statistics.GetValueOrDefault(Constants.MaxPointScored), score);
+        UserData.Statistics[Constants.TotalPointsScored] = (uint)Math.Max(0, UserData.Statistics.GetValueOrDefault(Constants.TotalPointsScored) + score);
+
         return score;
     }
 
