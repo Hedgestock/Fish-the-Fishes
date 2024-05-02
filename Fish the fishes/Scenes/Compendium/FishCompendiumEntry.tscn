@@ -18,23 +18,23 @@ NumberSeen = NodePath("MarginContainer/HBoxContainer/VBoxContainer/Stats/NumberO
 Placeholder = NodePath("MarginContainer/HBoxContainer/Graphic/Placeholder")
 AnimationButtons = NodePath("MarginContainer/HBoxContainer/Graphic/AnimationButtons")
 
-[node name="Fished" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Stats" index="0"]
+[node name="Seen" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Stats" index="0"]
 layout_mode = 2
 size_flags_vertical = 8
-text = "Fished: "
+text = "Seen: "
 
-[node name="NumberOfTimesFished" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Stats" index="1"]
+[node name="NumberOfTimesSeen" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Stats" index="1"]
 layout_mode = 2
 size_flags_vertical = 8
 text = "0
 "
 
-[node name="Seen" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Stats" index="2"]
+[node name="Fished" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Stats" index="2"]
 layout_mode = 2
 size_flags_vertical = 8
-text = "Seen: "
+text = " Fished: "
 
-[node name="NumberOfTimesSeen" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Stats" index="3"]
+[node name="NumberOfTimesFished" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Stats" index="3"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8

@@ -2,11 +2,13 @@ using Godot;
 using Godot.Fish_the_fishes.Scripts;
 using System;
 
-public partial class FishCompendiumEntry : CompendiumEntry
+public partial class TrashCompendiumEntry : CompendiumEntry
 {
 
     [Export]
-    private Label NumberFished;
+    private Label NumberCleaned;
+    [Export]
+    private Label NumberHit;
     [Export]
     private Label NumberSeen;
     [Export]
@@ -19,16 +21,15 @@ public partial class FishCompendiumEntry : CompendiumEntry
     {
         base._Ready();
 
-        string resourcePath = $"res://Fish the fishes/Assets/Fishes/{TypeString}/{TypeString}Animation.tres";
+        string resourcePath = $"res://Fish the fishes/Assets/Trashes/{TypeString}/{TypeString}Animation.tres";
 
         Placeholder.SpriteFrames = GD.Load<SpriteFrames>(resourcePath);
 
         if (Placeholder.SpriteFrames != null)
         {
-            Placeholder.Animation = "alive";
             Placeholder.Play();
 
-            if (!UserData.FishCompendium.ContainsKey(TypeString))
+            if (!UserData.TrashCompendium.ContainsKey(TypeString))
             {
                 Placeholder.Modulate = new Color(0, 0, 0);
                 return;
@@ -39,16 +40,13 @@ public partial class FishCompendiumEntry : CompendiumEntry
             GD.PrintErr("No animation resource found at path: ", resourcePath);
         }
 
-        NumberSeen.Text = UserData.FishCompendium[TypeString].Seen.ToString();
-        NumberFished.Text = UserData.FishCompendium[TypeString].Caught.ToString();
-
-        if (UserData.FishCompendium[TypeString].Caught > 0)
+        NumberSeen.Text = UserData.TrashCompendium[TypeString].Seen.ToString();
+        NumberHit.Text = UserData.TrashCompendium[TypeString].Hit.ToString();
+        NumberCleaned.Text = UserData.TrashCompendium[TypeString].Cleaned.ToString();
+        CompendiumDescription.Text = (string)EntryType.GetProperty(nameof(CompendiumDescription)).GetValue(EntryType);
+        if (Placeholder.SpriteFrames.GetAnimationNames().Length > 1)
         {
-            CompendiumDescription.Text = (string)EntryType.GetProperty(nameof(CompendiumDescription)).GetValue(EntryType);
-            if (Placeholder.SpriteFrames.GetAnimationNames().Length > 1)
-            {
-                AnimationButtons.Show();
-            }
+            AnimationButtons.Show();
         }
     }
 

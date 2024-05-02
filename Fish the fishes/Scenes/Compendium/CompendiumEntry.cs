@@ -1,5 +1,4 @@
 using Godot;
-using Godot.Fish_the_fishes.Scripts;
 using System;
 
 public partial class CompendiumEntry : PanelContainer
@@ -22,6 +21,6 @@ public partial class CompendiumEntry : PanelContainer
 
         EntryType = Type.GetType(TypeString);
 
-        CompendiumName.Text = (string)EntryType.GetField(nameof(CompendiumName)).GetValue(EntryType);
+        CompendiumName.Text = (string)EntryType.GetProperty(nameof(CompendiumName)).GetValue(EntryType);
     }
 }

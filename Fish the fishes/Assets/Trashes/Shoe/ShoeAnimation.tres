@@ -1,0 +1,14 @@
+[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://b1j2kn2ex1p1e"]
+
+[ext_resource type="Texture2D" uid="uid://csin3qoh6ulue" path="res://Fish the fishes/art/trash/shoe/shoe.png" id="1_7bddt"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7bddt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

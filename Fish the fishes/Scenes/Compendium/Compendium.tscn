@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://b0nv1b3x0suu5"]
+[gd_scene load_steps=11 format=3 uid="uid://b0nv1b3x0suu5"]
 
 [ext_resource type="Script" path="res://Fish the fishes/Scenes/Compendium/Compendium.cs" id="1_lwdf7"]
 [ext_resource type="Texture2D" uid="uid://4sfuxo2673qo" path="res://Fish the fishes/art/BG 2 FTF.png" id="1_x6noe"]
-[ext_resource type="PackedScene" uid="uid://cnjmqrlebmhdu" path="res://Fish the fishes/Scenes/Compendium/FishCompendiumEntry.tscn" id="2_8qvf3"]
+[ext_resource type="PackedScene" uid="uid://ci8y7xan6mlp2" path="res://Fish the fishes/Scenes/Compendium/FishCompendiumEntry.tscn" id="2_8qvf3"]
 [ext_resource type="Texture2D" uid="uid://dvkg44r1oulcs" path="res://Fish the fishes/art/UI/retour.png" id="2_mhjxi"]
+[ext_resource type="PackedScene" uid="uid://b04j074806j7k" path="res://Fish the fishes/Scenes/Compendium/TrashCompendiumEntry.tscn" id="3_vf8dp"]
 [ext_resource type="Texture2D" uid="uid://bjbotgfwig38a" path="res://Fish the fishes/art/UI/retour click.png" id="3_xgqri"]
 [ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://FTF_theme.tres" id="3_y1rnp"]
 [ext_resource type="Texture2D" uid="uid://bx8qk7jnypm0" path="res://Fish the fishes/art/UI/retour hover.png" id="4_5k6ur"]
@@ -14,10 +15,12 @@ action = &"menu_go_back"
 [sub_resource type="Shortcut" id="Shortcut_02116"]
 events = [SubResource("InputEventAction_qkuki")]
 
-[node name="Compendium" type="CanvasLayer" node_paths=PackedStringArray("Fishes")]
+[node name="Compendium" type="CanvasLayer" node_paths=PackedStringArray("Fishes", "Trashes")]
 script = ExtResource("1_lwdf7")
+Fishes = NodePath("VBoxContainer/MarginContainer/TabContainer/Fishes/MarginContainer/FishCompendiumEntriesContainer")
 FishEntry = ExtResource("2_8qvf3")
-Fishes = NodePath("VBoxContainer/MarginContainer/TabContainer/Fishes/MarginContainer/CompendiumEntriesContainer")
+Trashes = NodePath("VBoxContainer/MarginContainer/TabContainer/Trashes/TrashCompendiumEntriesContainer")
+TrashEntry = ExtResource("3_vf8dp")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -79,7 +82,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="CompendiumEntriesContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/TabContainer/Fishes/MarginContainer"]
+[node name="FishCompendiumEntriesContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/TabContainer/Fishes/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -87,9 +90,10 @@ size_flags_horizontal = 3
 visible = false
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/TabContainer/Trashes"]
+[node name="TrashCompendiumEntriesContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/TabContainer/Trashes"]
 layout_mode = 2
-text = "Trashes"
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="Biomes" type="ScrollContainer" parent="VBoxContainer/MarginContainer/TabContainer"]
 visible = false
@@ -105,6 +109,6 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="VBoxContainer/MarginContainer/TabContainer/Achievements"]
 layout_mode = 2
-text = "Biomes"
+text = "Achievements"
 
 [connection signal="pressed" from="VBoxContainer/Control/MarginContainer/BackButton" to="." method="GoToHome"]

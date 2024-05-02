@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://8pxdejw8ptee"]
+
+[ext_resource type="PackedScene" uid="uid://cnjq5le44dwec" path="res://Fish the fishes/Assets/Trashes/Trash.tscn" id="1_pn0g6"]
+[ext_resource type="Script" path="res://Fish the fishes/Assets/Trashes/Shoe/Shoe.cs" id="2_85vld"]
+[ext_resource type="SpriteFrames" uid="uid://b1j2kn2ex1p1e" path="res://Fish the fishes/Assets/Trashes/Shoe/ShoeAnimation.tres" id="3_q1qr1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yx7oq"]
+size = Vector2(64, 64)
+
+[node name="Shoe" instance=ExtResource("1_pn0g6")]
+script = ExtResource("2_85vld")
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("3_q1qr1")
+
+[node name="CollisionShape2D" parent="." index="1"]
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_yx7oq")
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="2"]
+scale = Vector2(7, 7)

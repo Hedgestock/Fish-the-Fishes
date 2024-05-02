@@ -1,13 +1,14 @@
 using Godot;
 using Godot.Fish_the_fishes.Scripts;
+using Godot.Fish_the_fishes.Scripts.Interfaces;
 using System;
 
 
 
-public partial class Fish : CharacterBody2D, IFishable
+public partial class Fish : CharacterBody2D, IFishable, IDescriptible
 {
-    public static string CompendiumName = "Fish";
-    public static string CompendiumDescription = "This is a fish";
+    public static string CompendiumName { get { return "Fish"; } }
+    public static string CompendiumDescription { get { return "This is a fish"; } }
 
     [Export]
     protected AnimatedSprite2D Sprite;

@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://oxxpqubwwblb" path="res://Fish the fishes/Assets/Fishes/AnguilleFish/AnguilleFish.tscn" id="1_0tu31"]
 [ext_resource type="Texture2D" uid="uid://dxslcf7yijvtu" path="res://Fish the fishes/Assets/Biomes/Beach/BeachBackground.png" id="1_lhq82"]
 [ext_resource type="PackedScene" uid="uid://bkk5qxylrwsky" path="res://Fish the fishes/Assets/Fishes/ArrowFish/ArrowFish.tscn" id="1_vsmye"]
-[ext_resource type="PackedScene" uid="uid://co0xglrn1rvre" path="res://Fish the fishes/Assets/Trashes/Can.tscn" id="2_wmfek"]
 [ext_resource type="Script" path="res://Fish the fishes/Assets/Biomes/Biome.cs" id="3_h68yh"]
 [ext_resource type="PackedScene" uid="uid://dsv67b7l0uq40" path="res://Fish the fishes/Assets/Fishes/GreenFish/GreenFish.tscn" id="3_hnmac"]
 [ext_resource type="PackedScene" uid="uid://ct3hvitsd17g5" path="res://Fish the fishes/Assets/Fishes/RedFish/RedFish.tscn" id="4_hkmgt"]
@@ -12,8 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://ysvrflpejd5u" path="res://Fish the fishes/Assets/Fishes/YellowFish/YellowFish.tscn" id="7_d0wgw"]
 [ext_resource type="Script" path="res://Fish the fishes/Scripts/WeightedItem.cs" id="9_8g0ae"]
 [ext_resource type="Resource" uid="uid://dpe15eoelonv6" path="res://Fish the fishes/Assets/Biomes/WreckDeck/WreckDeck.tres" id="9_objf1"]
-[ext_resource type="PackedScene" uid="uid://8pxdejw8ptee" path="res://Fish the fishes/Assets/Trashes/Shoe.tscn" id="9_p1sro"]
-[ext_resource type="PackedScene" uid="uid://lvuam8fndp75" path="res://Fish the fishes/Assets/Trashes/Tire.tscn" id="10_mrplq"]
+[ext_resource type="PackedScene" uid="uid://co0xglrn1rvre" path="res://Fish the fishes/Assets/Trashes/Can/Can.tscn" id="11_f1g8g"]
+[ext_resource type="PackedScene" uid="uid://8pxdejw8ptee" path="res://Fish the fishes/Assets/Trashes/Shoe/Shoe.tscn" id="12_pihri"]
+[ext_resource type="PackedScene" uid="uid://lvuam8fndp75" path="res://Fish the fishes/Assets/Trashes/Tire/Tire.tscn" id="13_bcxf4"]
 
 [sub_resource type="Resource" id="Resource_xtd4t"]
 script = ExtResource("9_8g0ae")
@@ -57,17 +57,17 @@ Weight = 100
 
 [sub_resource type="Resource" id="Resource_2a2vb"]
 script = ExtResource("9_8g0ae")
-Item = ExtResource("2_wmfek")
+Item = ExtResource("11_f1g8g")
 Weight = 100
 
 [sub_resource type="Resource" id="Resource_o5hry"]
 script = ExtResource("9_8g0ae")
-Item = ExtResource("9_p1sro")
+Item = ExtResource("12_pihri")
 Weight = 100
 
 [sub_resource type="Resource" id="Resource_87mgg"]
 script = ExtResource("9_8g0ae")
-Item = ExtResource("10_mrplq")
+Item = ExtResource("13_bcxf4")
 Weight = 100
 
 [resource]

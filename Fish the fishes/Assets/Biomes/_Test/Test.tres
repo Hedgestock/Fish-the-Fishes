@@ -8,10 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://c0df7a2ej0abq" path="res://Fish the fishes/Assets/Fishes/SardineFish/SardineFish.tscn" id="5_6oj7p"]
 [ext_resource type="PackedScene" uid="uid://be1nxedcwhn2i" path="res://Fish the fishes/Assets/Fishes/SwordFish/SwordFish.tscn" id="6_qjfku"]
 [ext_resource type="PackedScene" uid="uid://ysvrflpejd5u" path="res://Fish the fishes/Assets/Fishes/YellowFish/YellowFish.tscn" id="7_gch4c"]
-[ext_resource type="PackedScene" uid="uid://lvuam8fndp75" path="res://Fish the fishes/Assets/Trashes/Tire.tscn" id="8_oodvs"]
+[ext_resource type="PackedScene" uid="uid://lvuam8fndp75" path="res://Fish the fishes/Assets/Trashes/Tire/Tire.tscn" id="8_oodvs"]
 [ext_resource type="Script" path="res://Fish the fishes/Assets/Biomes/Biome.cs" id="9_6yh2b"]
-[ext_resource type="PackedScene" uid="uid://co0xglrn1rvre" path="res://Fish the fishes/Assets/Trashes/Can.tscn" id="9_kewq1"]
-[ext_resource type="PackedScene" uid="uid://8pxdejw8ptee" path="res://Fish the fishes/Assets/Trashes/Shoe.tscn" id="10_3dyjd"]
+[ext_resource type="PackedScene" uid="uid://co0xglrn1rvre" path="res://Fish the fishes/Assets/Trashes/Can/Can.tscn" id="9_kewq1"]
+[ext_resource type="PackedScene" uid="uid://8pxdejw8ptee" path="res://Fish the fishes/Assets/Trashes/Shoe/Shoe.tscn" id="10_3dyjd"]
 
 [sub_resource type="Gradient" id="Gradient_t0y5u"]
 

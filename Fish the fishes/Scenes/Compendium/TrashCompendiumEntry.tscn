@@ -1,0 +1,82 @@
+[gd_scene load_steps=11 format=3 uid="uid://b04j074806j7k"]
+
+[ext_resource type="PackedScene" uid="uid://cu4qvea6vce5v" path="res://Fish the fishes/Scenes/Compendium/CompendiumEntry.tscn" id="1_8dqlo"]
+[ext_resource type="PackedScene" uid="uid://di7207b71mnm8" path="res://Fish the fishes/UI/AnimatedSpriteForUI/AnimatedSpriteForUI.tscn" id="2_4kbf5"]
+[ext_resource type="Script" path="res://Fish the fishes/Scenes/Compendium/TrashCompendiumEntry.cs" id="2_axcsx"]
+[ext_resource type="Texture2D" uid="uid://sf5nbt1ewklc" path="res://Fish the fishes/art/fish/arrow/arrow_left.png" id="3_47nul"]
+[ext_resource type="Texture2D" uid="uid://b3ygkwfip0qaj" path="res://Fish the fishes/art/fish/arrow/arrow_left_3.png" id="4_do7if"]
+[ext_resource type="Texture2D" uid="uid://b6u50qvxp6of2" path="res://Fish the fishes/art/fish/arrow/arrow_left_2.png" id="5_uyisx"]
+[ext_resource type="Texture2D" uid="uid://t6xoo5v6v31m" path="res://Fish the fishes/art/fish/arrow/arrow_dead.png" id="6_75hkk"]
+[ext_resource type="Texture2D" uid="uid://cdlcldgajtn4i" path="res://Fish the fishes/art/fish/arrow/arrow_alive_1.png" id="7_isg6n"]
+[ext_resource type="Texture2D" uid="uid://csxfp4n3h00us" path="res://Fish the fishes/art/fish/arrow/arrow_alive_3.png" id="8_dycwy"]
+[ext_resource type="Texture2D" uid="uid://bcg3wdk8om5h4" path="res://Fish the fishes/art/fish/arrow/arrow_alive_2.png" id="9_dfptq"]
+
+[node name="PanelContainer" node_paths=PackedStringArray("NumberCleaned", "NumberHit", "NumberSeen", "Placeholder", "AnimationButtons") instance=ExtResource("1_8dqlo")]
+script = ExtResource("2_axcsx")
+NumberCleaned = NodePath("MarginContainer/HBoxContainer/VBoxContainer/Stats/NumberOfTimesCleaned")
+NumberHit = NodePath("MarginContainer/HBoxContainer/VBoxContainer/Stats/NumberOfTimesHit")
+NumberSeen = NodePath("MarginContainer/HBoxContainer/VBoxContainer/Stats/NumberOfTimesSeen")
+Placeholder = NodePath("MarginContainer/HBoxContainer/Graphic/Placeholder")
+AnimationButtons = NodePath("MarginContainer/HBoxContainer/Graphic/AnimationButtons")
+
+[node name="Seen" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Stats" index="0"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "Seen: "
+
+[node name="NumberOfTimesSeen" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Stats" index="1"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "0
+"
+
+[node name="Hit" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Stats" index="2"]
+layout_mode = 2
+size_flags_vertical = 8
+text = " Hit: "
+
+[node name="NumberOfTimesHit" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Stats" index="3"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "0
+"
+
+[node name="Cleaned" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Stats" index="4"]
+layout_mode = 2
+size_flags_vertical = 8
+text = " Cleaned: "
+
+[node name="NumberOfTimesCleaned" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Stats" index="5"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "0
+"
+
+[node name="Placeholder" parent="MarginContainer/HBoxContainer/Graphic" index="0" instance=ExtResource("2_4kbf5")]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="AnimationButtons" type="HBoxContainer" parent="MarginContainer/HBoxContainer/Graphic" index="1"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 10
+
+[node name="PreviousAnimationButton" type="TextureButton" parent="MarginContainer/HBoxContainer/Graphic/AnimationButtons" index="0"]
+layout_mode = 2
+mouse_filter = 1
+texture_normal = ExtResource("3_47nul")
+texture_pressed = ExtResource("4_do7if")
+texture_hover = ExtResource("5_uyisx")
+texture_disabled = ExtResource("6_75hkk")
+stretch_mode = 5
+
+[node name="NextAnimationButton" type="TextureButton" parent="MarginContainer/HBoxContainer/Graphic/AnimationButtons" index="1"]
+layout_mode = 2
+size_flags_vertical = 0
+mouse_filter = 1
+texture_normal = ExtResource("7_isg6n")
+texture_pressed = ExtResource("8_dycwy")
+texture_hover = ExtResource("9_dfptq")
+texture_disabled = ExtResource("6_75hkk")
+stretch_mode = 4

@@ -3,6 +3,6 @@ using System;
 
 public partial class YellowFish : Fish
 {
-    new public static string CompendiumName = "Yellow Fish";
-    new public static string CompendiumDescription = "This is a yellow fish";
+    public static new string CompendiumName { get { return "Yellow Fish"; } }
+    public static new string CompendiumDescription { get { return "This is a yellow fish"; } }
 }

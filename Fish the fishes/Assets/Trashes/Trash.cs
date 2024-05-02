@@ -1,9 +1,13 @@
 using Godot;
 using Godot.Fish_the_fishes.Scripts;
+using Godot.Fish_the_fishes.Scripts.Interfaces;
 using System;
 
-public partial class Trash : CharacterBody2D, IFishable
+public partial class Trash : CharacterBody2D, IFishable, IDescriptible
 {
+    public static string CompendiumName { get { return "Trash"; } }
+    public static string CompendiumDescription { get { return "This is a trash"; } }
+
     [Export]
     private float GravityScale = 0.2f;
 
@@ -12,6 +16,7 @@ public partial class Trash : CharacterBody2D, IFishable
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
+        NotifySpawn();
         GetNode<AnimatedSprite2D>("AnimatedSprite2D").Play();
     }
 
@@ -49,6 +54,19 @@ public partial class Trash : CharacterBody2D, IFishable
         if (!IsCaught)
         {
             QueueFree();
+        }
+    }
+
+    protected void NotifySpawn()
+    {
+        if (GameManager.Mode == Game.Mode.Menu) return;
+        if (UserData.TrashCompendium.TryGetValue(GetType().Name, out UserData.TrashCompendiumEntry entry))
+        {
+            entry.Seen++;
+        }
+        else
+        {
+            UserData.TrashCompendium[GetType().Name] = new UserData.TrashCompendiumEntry();
         }
     }
 }
