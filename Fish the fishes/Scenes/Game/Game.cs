@@ -44,7 +44,7 @@ public partial class Game : Node
 
     private void SpawnFish()
     {
-        PackedScene FishScene = GameManager.Biome.Fishes[(int)(GD.Randi() % GameManager.Biome.Fishes.Count)].Item;
+        PackedScene FishScene = Biome.ChooseFrom(GameManager.Biome.Fishes) as PackedScene;
         Fish fish = FishScene.Instantiate<Fish>();
 
         // Spawn the fish by adding it to the main scene.
@@ -59,7 +59,7 @@ public partial class Game : Node
 
     private void SpawnTrash()
     {
-        PackedScene TrashScene = GameManager.Biome.Trashes[(int)(GD.Randi() % GameManager.Biome.Trashes.Count)].Item;
+        PackedScene TrashScene = Biome.ChooseFrom(GameManager.Biome.Trashes) as PackedScene;
         Trash trash = TrashScene.Instantiate<Trash>();
         Vector2 trashSpawnLocation = new Vector2(GD.Randi() % GameManager.ScreenSize.X, -100);
         trash.Position = trashSpawnLocation;
@@ -72,13 +72,13 @@ public partial class Game : Node
     private void ChangeTarget()
     {
         // TO FIX
-        GameManager.Target = Biome.ChooseFrom(GameManager.Biome.Fishes).Instantiate<Fish>().GetType().Name;
+        GameManager.Target = (Biome.ChooseFrom(GameManager.Biome.Fishes) as PackedScene).Instantiate<Fish>().GetType().Name;
     }
 
     private void ChangeBiome()
     {
         if (GameManager.Biome.FollowupBiomes.Count == 0) return;
-        GameManager.Biome = GameManager.Biome.FollowupBiomes[(int)(GD.Randi() % GameManager.Biome.FollowupBiomes.Count)];
+        GameManager.Biome = Biome.ChooseFrom(GameManager.Biome.FollowupBiomes) as Biome;
         Background.Texture = GameManager.Biome.Background;
     }
 }

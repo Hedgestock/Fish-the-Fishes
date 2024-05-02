@@ -39,12 +39,22 @@
 - [ ] Orque
 - [ ] Seiche (change de motif aléatoirement)
 - [ ] Poisson chonomêtre
+- [ ] Araignée de mer
 
 # Objets pêchables
+
 - [ ] Crabe d'appât
 - [ ] Oursin
 - [ ] Anémone avec des bonus
 - [ ] Crevettes d'appât
+
+# Objets équipables
+
+- [ ] Poids (augmente la vitesse de descente, réduit la vitesse de remonté)
+- [ ] Flotteur (réduit la vitesse de descente, augmente la vitesse de remonté)
+- [ ] Hameçon plus grand (augmente la taille de la zone de pêche)
+- [ ] Leurre (attire les poissons)
+- [ ] Aimant (attire les déchêts)
 
 # Biomes
 
@@ -101,6 +111,7 @@
 - [ ] Afficher un biome aléatoire dans ceux visités pour le fond du menu
 - [ ] Mettre les chronomètres d'apparition des poissons et des déchêts sur les biomes
 - [ ] Ajouter un moyen de trier/filtrer le compendium
+- [ ] Ajouter un outil pour voire les graphs de selection des biomes ainsi que les probabilités d'apparition des poissons
 
 # Corrections
 

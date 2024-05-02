@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Biome" load_steps=26 format=3 uid="uid://dpe15eoelonv6"]
+[gd_resource type="Resource" script_class="Biome" load_steps=27 format=3 uid="uid://dpe15eoelonv6"]
 
 [ext_resource type="PackedScene" uid="uid://oxxpqubwwblb" path="res://Fish the fishes/Assets/Fishes/AnguilleFish/AnguilleFish.tscn" id="1_gld6o"]
 [ext_resource type="Script" path="res://Fish the fishes/Scripts/WeightedItem.cs" id="2_jggsh"]
@@ -57,6 +57,11 @@ script = ExtResource("2_jggsh")
 Item = ExtResource("4_fhygs")
 Weight = 20
 
+[sub_resource type="Resource" id="Resource_hmh7w"]
+script = ExtResource("2_jggsh")
+Item = ExtResource("8_why1g")
+Weight = 100
+
 [sub_resource type="Resource" id="Resource_40hio"]
 script = ExtResource("2_jggsh")
 Item = ExtResource("8_8r588")
@@ -76,5 +81,5 @@ Weight = 100
 script = ExtResource("11_ytjb7")
 Fishes = Array[Object]([SubResource("Resource_xexfc"), SubResource("Resource_6772y"), SubResource("Resource_nx36t"), SubResource("Resource_rat04"), SubResource("Resource_bx4cy"), SubResource("Resource_aucyb"), SubResource("Resource_714w8")])
 Trashes = Array[Object]([SubResource("Resource_40hio"), SubResource("Resource_67sae"), SubResource("Resource_g57c7")])
-FollowupBiomes = Array[Object]([ExtResource("8_why1g")])
+FollowupBiomes = Array[Object]([SubResource("Resource_hmh7w")])
 Background = SubResource("GradientTexture2D_cx4mk")

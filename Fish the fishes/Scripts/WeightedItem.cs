@@ -5,7 +5,7 @@ using System;
 public partial class WeightedItem : Resource
 {
     [Export]
-    public PackedScene Item { get; set; }
+    public GodotObject Item { get; set; }
     [Export]
     public uint Weight = 100;
 }

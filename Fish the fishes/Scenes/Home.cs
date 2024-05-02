@@ -88,7 +88,7 @@ public partial class Home : CanvasLayer
 
     private void SpawnFish()
     {
-        PackedScene FishScene = Biome.ChooseFrom(GameManager.Biome.Fishes);
+        PackedScene FishScene = Biome.ChooseFrom(GameManager.Biome.Fishes) as PackedScene;
         Fish fish = FishScene.Instantiate<Fish>();
 
         GameContainer.AddChild(fish);

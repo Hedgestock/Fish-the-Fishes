@@ -12,13 +12,13 @@ public partial class Biome : Resource
     public Array<WeightedItem> Trashes;
 
     [Export]
-    public Array<Biome> FollowupBiomes;
+    public Array<WeightedItem> FollowupBiomes;
 
     [ExportGroup("Ambiance")]
     [Export]
     public Texture2D Background;
 
-    public static PackedScene ChooseFrom(Array<WeightedItem> list)
+    public static GodotObject ChooseFrom(Array<WeightedItem> list)
     {
         uint totalWeight = 0;
         foreach (var item in list)
