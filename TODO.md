@@ -100,6 +100,7 @@
 - [ ] Ajouter une animation pour signifier la casse de l'hameçon à la remontée
 - [ ] Afficher un biome aléatoire dans ceux visités pour le fond du menu
 - [ ] Mettre les chronomètres d'apparition des poissons et des déchêts sur les biomes
+- [ ] Ajouter un moyen de trier/filtrer le compendium
 
 # Corrections
 
