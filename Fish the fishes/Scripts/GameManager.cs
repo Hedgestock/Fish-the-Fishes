@@ -22,6 +22,7 @@ public partial class GameManager : Node
     }
 
     public static Game.Mode Mode = Game.Mode.Menu;
+    public static Biome Biome;
     public static uint Score = 0;
     public static uint Lives = 3;
 

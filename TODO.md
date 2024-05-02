@@ -47,20 +47,21 @@
 
 # Biomes
 
-- [ ] Plage (départ)
-- [ ] Epave (pont)
-- [ ] Epave (intérieur)
+- [x] Plage (départ)
+- [x] Epave (pont)
+- [x] Epave (intérieur)
+- [x] Abysses
 
 # Gameplay
 
 - [x] Régler le problème de frustration
+- [x] Ajouter des biomes et des niveaux de difficulté
 - [ ] Rendre la taille des poissons aléatoire
 - [ ] Ajouter des objets équipables
 - [ ] Ajouter des objets activables en jeu
     - [ ] Appât
     - [ ] Filet
     - [ ] Truc pour virer les déchêts
-- [ ] Ajouter des biomes et des niveaux de difficulté
 
 # Modes de jeu
 
@@ -85,6 +86,7 @@
 - [x] Mettre à jour les statistiques avec les nouveaux modes de jeu
 - [x] Mettre à jour les records avec les nouveaux modes de jeu
 - [x] Donner la responsabilité au poisson de se placer sur l'écran
+- [x] Ajouter la sauvegarde des paramètres
 - [ ] Support de différentes langues
     - [x] Anglais
     - [ ] Français
@@ -93,7 +95,6 @@
 - [ ] Ajouter une probabilité d'apparition
 - [ ] Ajouter des morts différentes
 - [ ] Ajouter une vitesse de descente et de remontée différente pour la ligne
-- [ ] Ajouter la sauvegarde des paramètres
 - [ ] SLB dans le fond
 - [ ] Ajouter une animation pour signifier la casse de l'hameçon à la remontée
 - [ ] Afficher un biome aléatoire dans ceux visités pour le fond du menu

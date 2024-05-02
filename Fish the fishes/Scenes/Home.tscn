@@ -1,28 +1,19 @@
-[gd_scene load_steps=25 format=3 uid="uid://blkg0i7vjb6il"]
+[gd_scene load_steps=18 format=3 uid="uid://blkg0i7vjb6il"]
 
 [ext_resource type="Texture2D" uid="uid://4sfuxo2673qo" path="res://Fish the fishes/art/BG 2 FTF.png" id="1_4aplq"]
 [ext_resource type="Script" path="res://Fish the fishes/Scenes/Home.cs" id="1_ptl5f"]
-[ext_resource type="PackedScene" uid="uid://c0df7a2ej0abq" path="res://Fish the fishes/Assets/Fishes/SardineFish/SardineFish.tscn" id="2_f8aot"]
+[ext_resource type="Resource" uid="uid://cablkxc4svteo" path="res://Fish the fishes/Assets/Biomes/Beach/Beach.tres" id="2_amqur"]
 [ext_resource type="AudioStream" uid="uid://cejn28367eqbj" path="res://Fish the fishes/sounds/ftf.ogg" id="2_itj28"]
 [ext_resource type="PackedScene" uid="uid://ifoga56i10w3" path="res://Fish the fishes/Assets/RandomTimer.tscn" id="2_op8l2"]
-[ext_resource type="PackedScene" uid="uid://ysvrflpejd5u" path="res://Fish the fishes/Assets/Fishes/YellowFish/YellowFish.tscn" id="3_ikl0t"]
 [ext_resource type="PackedScene" uid="uid://bnkmwtljf2o3p" path="res://Fish the fishes/Assets/FishingLine.tscn" id="4_pulgk"]
-[ext_resource type="PackedScene" uid="uid://ct3hvitsd17g5" path="res://Fish the fishes/Assets/Fishes/RedFish/RedFish.tscn" id="4_v5n4h"]
 [ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://FTF_theme.tres" id="5_mnxty"]
-[ext_resource type="PackedScene" uid="uid://oxxpqubwwblb" path="res://Fish the fishes/Assets/Fishes/AnguilleFish/AnguilleFish.tscn" id="5_nuk6e"]
 [ext_resource type="PackedScene" uid="uid://cifa65xrf1ken" path="res://Fish the fishes/UI/FishableButton/FishableButton.tscn" id="5_o3gki"]
-[ext_resource type="PackedScene" uid="uid://dsv67b7l0uq40" path="res://Fish the fishes/Assets/Fishes/GreenFish/GreenFish.tscn" id="6_8wcny"]
-[ext_resource type="PackedScene" uid="uid://be1nxedcwhn2i" path="res://Fish the fishes/Assets/Fishes/SwordFish/SwordFish.tscn" id="7_d08qj"]
-[ext_resource type="PackedScene" uid="uid://bkk5qxylrwsky" path="res://Fish the fishes/Assets/Fishes/ArrowFish/ArrowFish.tscn" id="8_7mrxd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ae2js"]
 size = Vector2(203.5, 143.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2s724"]
 size = Vector2(293, 145)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3fnip"]
-size = Vector2(21.8151, 15.5319)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w8qh7"]
 size = Vector2(11.1667, 20)
@@ -44,8 +35,8 @@ size = Vector2(281, 145)
 [node name="Home" type="CanvasLayer" node_paths=PackedStringArray("Message", "GameContainer")]
 script = ExtResource("1_ptl5f")
 Message = NodePath("AspectRatioContainer/MarginContainer/VBoxContainer/Message")
-Fishes = Array[PackedScene]([ExtResource("2_f8aot"), ExtResource("3_ikl0t"), ExtResource("4_v5n4h"), ExtResource("5_nuk6e"), ExtResource("6_8wcny"), ExtResource("7_d08qj"), ExtResource("8_7mrxd")])
 GameContainer = NodePath("GameContainer")
+StartingBiome = ExtResource("2_amqur")
 
 [node name="FishTimer" parent="." instance=ExtResource("2_op8l2")]
 autostart = true
@@ -127,22 +118,6 @@ shape = SubResource("RectangleShape2D_2s724")
 [node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayGoGreenButton" index="2"]
 text = "Go Green
 "
-
-[node name="PlayTestButton" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu" instance=ExtResource("5_o3gki")]
-visible = false
-position = Vector2(829, -170)
-
-[node name="VisibleOnScreenNotifier2D" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTestButton" index="0"]
-position = Vector2(63, 0)
-scale = Vector2(6.5, 1)
-
-[node name="CollisionShape2D" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTestButton" index="1"]
-position = Vector2(63, 73)
-scale = Vector2(5.84, 9.39999)
-shape = SubResource("RectangleShape2D_3fnip")
-
-[node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTestButton" index="2"]
-text = "Test"
 
 [node name="PlayClassicButton" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu" instance=ExtResource("5_o3gki")]
 position = Vector2(441, 133)
@@ -258,7 +233,6 @@ text = "TEST"
 [connection signal="timeout" from="FishTimer" to="." method="SpawnFish"]
 [connection signal="screen_exited" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTargetButton/VisibleOnScreenNotifier2D" to="." method="PlayTarget"]
 [connection signal="screen_exited" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayGoGreenButton/VisibleOnScreenNotifier2D" to="." method="PlayGoGreen"]
-[connection signal="screen_exited" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTestButton/VisibleOnScreenNotifier2D" to="." method="PlayTest"]
 [connection signal="screen_exited" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayClassicButton/VisibleOnScreenNotifier2D" to="." method="PlayClassic"]
 [connection signal="screen_exited" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTimeAttackButton/VisibleOnScreenNotifier2D" to="." method="PlayTimeAttack"]
 [connection signal="screen_exited" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/SettingsButton/VisibleOnScreenNotifier2D" to="." method="GoToSettings"]
@@ -270,7 +244,6 @@ text = "TEST"
 
 [editable path="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTargetButton"]
 [editable path="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayGoGreenButton"]
-[editable path="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTestButton"]
 [editable path="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayClassicButton"]
 [editable path="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTimeAttackButton"]
 [editable path="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/SettingsButton"]

@@ -6,16 +6,15 @@ public partial class Home : CanvasLayer
 {
     [Export]
     private Label Message;
-
     [Export]
-    public Array<PackedScene> Fishes;
-
+    private Node GameContainer;
     [Export]
-    public Node GameContainer;
+    private Biome StartingBiome;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
+        if (GameManager.Biome == null) GameManager.Biome = StartingBiome;
         if (GameManager.PrevScene == "res://SplashScreen.tscn")
         {
             GetNode<AudioStreamPlayer>("AudioStreamPlayer").Play();
@@ -29,6 +28,7 @@ public partial class Home : CanvasLayer
     private void Play(Game.Mode mode)
     {
         GameManager.Mode = mode;
+        GameManager.Biome = StartingBiome;
         GameManager.ChangeSceneToFile("res://Fish the fishes/Scenes/Game/Game.tscn");
     }
 
@@ -50,11 +50,6 @@ public partial class Home : CanvasLayer
     private void PlayTarget()
     {
         Play(Game.Mode.Target);
-    }
-
-    private void PlayZen()
-    {
-        Play(Game.Mode.Zen);
     }
 
     private void PlayTest()
@@ -90,10 +85,9 @@ public partial class Home : CanvasLayer
 
     private void SpawnFish()
     {
-        PackedScene FishScene = Fishes[(int)(GD.Randi() % Fishes.Count)];
+        PackedScene FishScene = GameManager.Biome.Fishes[(int)(GD.Randi() % GameManager.Biome.Fishes.Count)].Item;
         Fish fish = FishScene.Instantiate<Fish>();
 
         GameContainer.AddChild(fish);
-        
     }
 }

@@ -6,11 +6,7 @@ using System;
 public partial class Game : Node
 {
     [Export]
-    public Array<PackedScene> Fishes;
-
-    [Export]
-    public Array<PackedScene> Trashes;
-
+    private TextureRect Background;
 
     public enum Mode
     {
@@ -29,16 +25,13 @@ public partial class Game : Node
     {
         GameManager.Score = 0;
         GameManager.Lives = 3;
-        
+
+        Background.Texture = GameManager.Biome.Background;
+
         if (GameManager.Mode == Mode.Target)
         {
             ChangeTarget();
         }
-    }
-
-    // Called every frame. 'delta' is the elapsed time since the previous frame.
-    public override void _Process(double delta)
-    {
     }
 
     public void EndGame()
@@ -51,7 +44,7 @@ public partial class Game : Node
 
     private void SpawnFish()
     {
-        PackedScene FishScene = Fishes[(int)(GD.Randi() % Fishes.Count)];
+        PackedScene FishScene = GameManager.Biome.Fishes[(int)(GD.Randi() % GameManager.Biome.Fishes.Count)].Item;
         Fish fish = FishScene.Instantiate<Fish>();
 
         // Spawn the fish by adding it to the main scene.
@@ -66,7 +59,7 @@ public partial class Game : Node
 
     private void SpawnTrash()
     {
-        PackedScene TrashScene = Trashes[(int)(GD.Randi() % Trashes.Count)];
+        PackedScene TrashScene = GameManager.Biome.Trashes[(int)(GD.Randi() % GameManager.Biome.Trashes.Count)].Item;
         Trash trash = TrashScene.Instantiate<Trash>();
         Vector2 trashSpawnLocation = new Vector2(GD.Randi() % GameManager.ScreenSize.X, -100);
         trash.Position = trashSpawnLocation;
@@ -78,6 +71,6 @@ public partial class Game : Node
 
     private void ChangeTarget()
     {
-        GameManager.Target = Fishes[(int)(GD.Randi() % Fishes.Count)].Instantiate<Fish>().GetType().Name;
+        GameManager.Target = GameManager.Biome.Fishes[(int)(GD.Randi() % GameManager.Biome.Fishes.Count)].Item.Instantiate<Fish>().GetType().Name;
     }
 }

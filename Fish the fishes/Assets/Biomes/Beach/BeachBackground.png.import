@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dxslcf7yijvtu"
-path="res://.godot/imported/BG FtF final.png-d04a1fb892b794051931b519417ebd8d.ctex"
+path="res://.godot/imported/BeachBackground.png-e5957eb86d5fda8f8a6497e91d64c499.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fish the fishes/art/BG FtF final.png"
-dest_files=["res://.godot/imported/BG FtF final.png-d04a1fb892b794051931b519417ebd8d.ctex"]
+source_file="res://Fish the fishes/Assets/Biomes/Beach/BeachBackground.png"
+dest_files=["res://.godot/imported/BeachBackground.png-e5957eb86d5fda8f8a6497e91d64c499.ctex"]
 
 [params]
 

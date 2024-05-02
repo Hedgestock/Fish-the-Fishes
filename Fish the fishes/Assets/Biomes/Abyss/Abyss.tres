@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="Biome" load_steps=14 format=3 uid="uid://cub1hi1q8poi"]
+
+[ext_resource type="PackedScene" uid="uid://oxxpqubwwblb" path="res://Fish the fishes/Assets/Fishes/AnguilleFish/AnguilleFish.tscn" id="2_hwpc2"]
+[ext_resource type="PackedScene" uid="uid://bkk5qxylrwsky" path="res://Fish the fishes/Assets/Fishes/ArrowFish/ArrowFish.tscn" id="3_eb5sq"]
+[ext_resource type="PackedScene" uid="uid://dsv67b7l0uq40" path="res://Fish the fishes/Assets/Fishes/GreenFish/GreenFish.tscn" id="4_oupba"]
+[ext_resource type="PackedScene" uid="uid://ct3hvitsd17g5" path="res://Fish the fishes/Assets/Fishes/RedFish/RedFish.tscn" id="5_yc61y"]
+[ext_resource type="PackedScene" uid="uid://c0df7a2ej0abq" path="res://Fish the fishes/Assets/Fishes/SardineFish/SardineFish.tscn" id="6_q1vpy"]
+[ext_resource type="PackedScene" uid="uid://be1nxedcwhn2i" path="res://Fish the fishes/Assets/Fishes/SwordFish/SwordFish.tscn" id="7_l22si"]
+[ext_resource type="PackedScene" uid="uid://ysvrflpejd5u" path="res://Fish the fishes/Assets/Fishes/YellowFish/YellowFish.tscn" id="8_3vc2i"]
+[ext_resource type="PackedScene" uid="uid://co0xglrn1rvre" path="res://Fish the fishes/Assets/Trashes/Can.tscn" id="9_0b2lw"]
+[ext_resource type="PackedScene" uid="uid://8pxdejw8ptee" path="res://Fish the fishes/Assets/Trashes/Shoe.tscn" id="10_pkjlf"]
+[ext_resource type="PackedScene" uid="uid://lvuam8fndp75" path="res://Fish the fishes/Assets/Trashes/Tire.tscn" id="11_tm33b"]
+[ext_resource type="Script" path="res://Fish the fishes/Assets/Biomes/Biome.cs" id="12_3mbs0"]
+
+[sub_resource type="Gradient" id="Gradient_hem5c"]
+colors = PackedColorArray(0, 0, 0, 1, 0.277528, 0.277528, 0.277528, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cx4mk"]
+gradient = SubResource("Gradient_hem5c")
+fill_from = Vector2(1, 0)
+fill_to = Vector2(1, 1)
+
+[resource]
+script = ExtResource("12_3mbs0")
+Background = SubResource("GradientTexture2D_cx4mk")
+Fishes = Array[PackedScene]([ExtResource("2_hwpc2"), ExtResource("3_eb5sq"), ExtResource("4_oupba"), ExtResource("5_yc61y"), ExtResource("6_q1vpy"), ExtResource("7_l22si"), ExtResource("8_3vc2i")])
+Trashes = Array[PackedScene]([ExtResource("9_0b2lw"), ExtResource("10_pkjlf"), ExtResource("11_tm33b")])

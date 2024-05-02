@@ -1,0 +1,73 @@
+[gd_resource type="Resource" script_class="Biome" load_steps=25 format=3 uid="uid://cablkxc4svteo"]
+
+[ext_resource type="PackedScene" uid="uid://oxxpqubwwblb" path="res://Fish the fishes/Assets/Fishes/AnguilleFish/AnguilleFish.tscn" id="1_0tu31"]
+[ext_resource type="Texture2D" uid="uid://dxslcf7yijvtu" path="res://Fish the fishes/Assets/Biomes/Beach/BeachBackground.png" id="1_lhq82"]
+[ext_resource type="PackedScene" uid="uid://bkk5qxylrwsky" path="res://Fish the fishes/Assets/Fishes/ArrowFish/ArrowFish.tscn" id="1_vsmye"]
+[ext_resource type="PackedScene" uid="uid://co0xglrn1rvre" path="res://Fish the fishes/Assets/Trashes/Can.tscn" id="2_wmfek"]
+[ext_resource type="Script" path="res://Fish the fishes/Assets/Biomes/Biome.cs" id="3_h68yh"]
+[ext_resource type="PackedScene" uid="uid://dsv67b7l0uq40" path="res://Fish the fishes/Assets/Fishes/GreenFish/GreenFish.tscn" id="3_hnmac"]
+[ext_resource type="PackedScene" uid="uid://ct3hvitsd17g5" path="res://Fish the fishes/Assets/Fishes/RedFish/RedFish.tscn" id="4_hkmgt"]
+[ext_resource type="PackedScene" uid="uid://c0df7a2ej0abq" path="res://Fish the fishes/Assets/Fishes/SardineFish/SardineFish.tscn" id="5_dajse"]
+[ext_resource type="PackedScene" uid="uid://be1nxedcwhn2i" path="res://Fish the fishes/Assets/Fishes/SwordFish/SwordFish.tscn" id="6_nwddn"]
+[ext_resource type="PackedScene" uid="uid://ysvrflpejd5u" path="res://Fish the fishes/Assets/Fishes/YellowFish/YellowFish.tscn" id="7_d0wgw"]
+[ext_resource type="Script" path="res://Fish the fishes/Scripts/WeightedItem.cs" id="9_8g0ae"]
+[ext_resource type="Resource" uid="uid://dpe15eoelonv6" path="res://Fish the fishes/Assets/Biomes/WreckDeck/WreckDeck.tres" id="9_objf1"]
+[ext_resource type="PackedScene" uid="uid://8pxdejw8ptee" path="res://Fish the fishes/Assets/Trashes/Shoe.tscn" id="9_p1sro"]
+[ext_resource type="PackedScene" uid="uid://lvuam8fndp75" path="res://Fish the fishes/Assets/Trashes/Tire.tscn" id="10_mrplq"]
+
+[sub_resource type="Resource" id="Resource_koscy"]
+script = ExtResource("9_8g0ae")
+Item = ExtResource("1_0tu31")
+Weight = 100
+
+[sub_resource type="Resource" id="Resource_x23r3"]
+script = ExtResource("9_8g0ae")
+Item = ExtResource("3_hnmac")
+Weight = 100
+
+[sub_resource type="Resource" id="Resource_bwfbo"]
+script = ExtResource("9_8g0ae")
+Item = ExtResource("7_d0wgw")
+Weight = 100
+
+[sub_resource type="Resource" id="Resource_gv6go"]
+script = ExtResource("9_8g0ae")
+Item = ExtResource("5_dajse")
+Weight = 100
+
+[sub_resource type="Resource" id="Resource_pg0n7"]
+script = ExtResource("9_8g0ae")
+Item = ExtResource("1_vsmye")
+Weight = 100
+
+[sub_resource type="Resource" id="Resource_6k7u4"]
+script = ExtResource("9_8g0ae")
+Item = ExtResource("4_hkmgt")
+Weight = 100
+
+[sub_resource type="Resource" id="Resource_8rvq0"]
+script = ExtResource("9_8g0ae")
+Item = ExtResource("6_nwddn")
+Weight = 100
+
+[sub_resource type="Resource" id="Resource_y271a"]
+script = ExtResource("9_8g0ae")
+Item = ExtResource("2_wmfek")
+Weight = 100
+
+[sub_resource type="Resource" id="Resource_cxhli"]
+script = ExtResource("9_8g0ae")
+Item = ExtResource("9_p1sro")
+Weight = 100
+
+[sub_resource type="Resource" id="Resource_x7ne7"]
+script = ExtResource("9_8g0ae")
+Item = ExtResource("10_mrplq")
+Weight = 100
+
+[resource]
+script = ExtResource("3_h68yh")
+Background = ExtResource("1_lhq82")
+Fishes = Array[Object]([SubResource("Resource_koscy"), SubResource("Resource_x23r3"), SubResource("Resource_bwfbo"), SubResource("Resource_gv6go"), SubResource("Resource_pg0n7"), SubResource("Resource_6k7u4"), SubResource("Resource_8rvq0")])
+Trashes = Array[Object]([SubResource("Resource_y271a"), SubResource("Resource_cxhli"), SubResource("Resource_x7ne7")])
+FollowupBiomes = Array[Object]([ExtResource("9_objf1")])
