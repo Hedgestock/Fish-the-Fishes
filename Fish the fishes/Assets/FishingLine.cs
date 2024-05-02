@@ -276,6 +276,13 @@ public partial class FishingLine : CharacterBody2D, IFisher
     {
         int score = FishedThings.Any(thing => thing.GetType().Name == GameManager.Target) ? 1 : 0;
 
+        FishedThings.ForEach(thing => {
+            if (thing is Fish)
+                UserData.FishCompendium[thing.GetType().Name].Caught++;
+        });
+
+
+
         UserData.Statistics[Constants.MaxFishedFishes] = (uint)Math.Max(UserData.Statistics.GetValueOrDefault(Constants.MaxFishedFishes), FishedThings.Count);
         UserData.Statistics[Constants.TotalFishedFishes] = UserData.Statistics.GetValueOrDefault(Constants.TotalFishedFishes) + (uint)FishedThings.Count;
 
