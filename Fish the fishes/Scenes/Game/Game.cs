@@ -71,6 +71,14 @@ public partial class Game : Node
 
     private void ChangeTarget()
     {
-        GameManager.Target = GameManager.Biome.Fishes[(int)(GD.Randi() % GameManager.Biome.Fishes.Count)].Item.Instantiate<Fish>().GetType().Name;
+        // TO FIX
+        GameManager.Target = Biome.ChooseFrom(GameManager.Biome.Fishes).Instantiate<Fish>().GetType().Name;
+    }
+
+    private void ChangeBiome()
+    {
+        if (GameManager.Biome.FollowupBiomes.Count == 0) return;
+        GameManager.Biome = GameManager.Biome.FollowupBiomes[(int)(GD.Randi() % GameManager.Biome.FollowupBiomes.Count)];
+        Background.Texture = GameManager.Biome.Background;
     }
 }

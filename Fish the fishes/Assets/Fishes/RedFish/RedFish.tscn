@@ -26,7 +26,7 @@ scale = Vector2(7.65, 7.3)
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = ExtResource("3_wupup")
-animation = &"dead"
+animation = &"alive"
 
 [node name="HitBox" type="Area2D" parent="." index="2"]
 position = Vector2(6, -2)

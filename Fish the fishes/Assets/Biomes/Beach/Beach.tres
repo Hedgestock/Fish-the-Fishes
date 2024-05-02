@@ -15,59 +15,59 @@
 [ext_resource type="PackedScene" uid="uid://8pxdejw8ptee" path="res://Fish the fishes/Assets/Trashes/Shoe.tscn" id="9_p1sro"]
 [ext_resource type="PackedScene" uid="uid://lvuam8fndp75" path="res://Fish the fishes/Assets/Trashes/Tire.tscn" id="10_mrplq"]
 
-[sub_resource type="Resource" id="Resource_koscy"]
-script = ExtResource("9_8g0ae")
-Item = ExtResource("1_0tu31")
-Weight = 100
-
-[sub_resource type="Resource" id="Resource_x23r3"]
+[sub_resource type="Resource" id="Resource_xtd4t"]
 script = ExtResource("9_8g0ae")
 Item = ExtResource("3_hnmac")
 Weight = 100
 
-[sub_resource type="Resource" id="Resource_bwfbo"]
+[sub_resource type="Resource" id="Resource_twqr4"]
 script = ExtResource("9_8g0ae")
 Item = ExtResource("7_d0wgw")
 Weight = 100
 
-[sub_resource type="Resource" id="Resource_gv6go"]
+[sub_resource type="Resource" id="Resource_f5357"]
 script = ExtResource("9_8g0ae")
 Item = ExtResource("5_dajse")
-Weight = 100
+Weight = 20
 
-[sub_resource type="Resource" id="Resource_pg0n7"]
+[sub_resource type="Resource" id="Resource_vcoif"]
 script = ExtResource("9_8g0ae")
 Item = ExtResource("1_vsmye")
-Weight = 100
+Weight = 10
 
-[sub_resource type="Resource" id="Resource_6k7u4"]
-script = ExtResource("9_8g0ae")
-Item = ExtResource("4_hkmgt")
-Weight = 100
-
-[sub_resource type="Resource" id="Resource_8rvq0"]
+[sub_resource type="Resource" id="Resource_wl5ps"]
 script = ExtResource("9_8g0ae")
 Item = ExtResource("6_nwddn")
-Weight = 100
+Weight = 10
 
-[sub_resource type="Resource" id="Resource_y271a"]
+[sub_resource type="Resource" id="Resource_jsfla"]
+script = ExtResource("9_8g0ae")
+Item = ExtResource("4_hkmgt")
+Weight = 10
+
+[sub_resource type="Resource" id="Resource_3pvao"]
+script = ExtResource("9_8g0ae")
+Item = ExtResource("1_0tu31")
+Weight = 1
+
+[sub_resource type="Resource" id="Resource_2a2vb"]
 script = ExtResource("9_8g0ae")
 Item = ExtResource("2_wmfek")
 Weight = 100
 
-[sub_resource type="Resource" id="Resource_cxhli"]
+[sub_resource type="Resource" id="Resource_o5hry"]
 script = ExtResource("9_8g0ae")
 Item = ExtResource("9_p1sro")
 Weight = 100
 
-[sub_resource type="Resource" id="Resource_x7ne7"]
+[sub_resource type="Resource" id="Resource_87mgg"]
 script = ExtResource("9_8g0ae")
 Item = ExtResource("10_mrplq")
 Weight = 100
 
 [resource]
 script = ExtResource("3_h68yh")
-Background = ExtResource("1_lhq82")
-Fishes = Array[Object]([SubResource("Resource_koscy"), SubResource("Resource_x23r3"), SubResource("Resource_bwfbo"), SubResource("Resource_gv6go"), SubResource("Resource_pg0n7"), SubResource("Resource_6k7u4"), SubResource("Resource_8rvq0")])
-Trashes = Array[Object]([SubResource("Resource_y271a"), SubResource("Resource_cxhli"), SubResource("Resource_x7ne7")])
+Fishes = Array[Object]([SubResource("Resource_xtd4t"), SubResource("Resource_twqr4"), SubResource("Resource_f5357"), SubResource("Resource_vcoif"), SubResource("Resource_wl5ps"), SubResource("Resource_jsfla"), SubResource("Resource_3pvao")])
+Trashes = Array[Object]([SubResource("Resource_2a2vb"), SubResource("Resource_o5hry"), SubResource("Resource_87mgg")])
 FollowupBiomes = Array[Object]([ExtResource("9_objf1")])
+Background = ExtResource("1_lhq82")

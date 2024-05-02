@@ -22,59 +22,59 @@ gradient = SubResource("Gradient_hem5c")
 fill_from = Vector2(1, 0)
 fill_to = Vector2(1, 1)
 
-[sub_resource type="Resource" id="Resource_koscy"]
-script = ExtResource("2_jggsh")
-Item = ExtResource("1_gld6o")
-Weight = 100
-
-[sub_resource type="Resource" id="Resource_x23r3"]
-script = ExtResource("2_jggsh")
-Item = ExtResource("3_wue4j")
-Weight = 100
-
-[sub_resource type="Resource" id="Resource_bwfbo"]
-script = ExtResource("2_jggsh")
-Item = ExtResource("7_kicm0")
-Weight = 100
-
-[sub_resource type="Resource" id="Resource_gv6go"]
-script = ExtResource("2_jggsh")
-Item = ExtResource("5_cosus")
-Weight = 100
-
-[sub_resource type="Resource" id="Resource_pg0n7"]
+[sub_resource type="Resource" id="Resource_xexfc"]
 script = ExtResource("2_jggsh")
 Item = ExtResource("2_ujlcd")
 Weight = 100
 
-[sub_resource type="Resource" id="Resource_6k7u4"]
+[sub_resource type="Resource" id="Resource_6772y"]
 script = ExtResource("2_jggsh")
-Item = ExtResource("4_fhygs")
+Item = ExtResource("5_cosus")
 Weight = 100
 
-[sub_resource type="Resource" id="Resource_8rvq0"]
+[sub_resource type="Resource" id="Resource_nx36t"]
 script = ExtResource("2_jggsh")
 Item = ExtResource("6_830i3")
 Weight = 100
 
-[sub_resource type="Resource" id="Resource_y271a"]
+[sub_resource type="Resource" id="Resource_rat04"]
+script = ExtResource("2_jggsh")
+Item = ExtResource("3_wue4j")
+Weight = 50
+
+[sub_resource type="Resource" id="Resource_bx4cy"]
+script = ExtResource("2_jggsh")
+Item = ExtResource("7_kicm0")
+Weight = 50
+
+[sub_resource type="Resource" id="Resource_aucyb"]
+script = ExtResource("2_jggsh")
+Item = ExtResource("1_gld6o")
+Weight = 20
+
+[sub_resource type="Resource" id="Resource_714w8"]
+script = ExtResource("2_jggsh")
+Item = ExtResource("4_fhygs")
+Weight = 20
+
+[sub_resource type="Resource" id="Resource_40hio"]
 script = ExtResource("2_jggsh")
 Item = ExtResource("8_8r588")
 Weight = 100
 
-[sub_resource type="Resource" id="Resource_cxhli"]
+[sub_resource type="Resource" id="Resource_67sae"]
 script = ExtResource("2_jggsh")
 Item = ExtResource("9_827sl")
 Weight = 100
 
-[sub_resource type="Resource" id="Resource_x7ne7"]
+[sub_resource type="Resource" id="Resource_g57c7"]
 script = ExtResource("2_jggsh")
 Item = ExtResource("10_5wjwt")
 Weight = 100
 
 [resource]
 script = ExtResource("11_ytjb7")
-Background = SubResource("GradientTexture2D_cx4mk")
-Fishes = Array[Object]([SubResource("Resource_koscy"), SubResource("Resource_x23r3"), SubResource("Resource_bwfbo"), SubResource("Resource_gv6go"), SubResource("Resource_pg0n7"), SubResource("Resource_6k7u4"), SubResource("Resource_8rvq0")])
-Trashes = Array[Object]([SubResource("Resource_y271a"), SubResource("Resource_cxhli"), SubResource("Resource_x7ne7")])
+Fishes = Array[Object]([SubResource("Resource_xexfc"), SubResource("Resource_6772y"), SubResource("Resource_nx36t"), SubResource("Resource_rat04"), SubResource("Resource_bx4cy"), SubResource("Resource_aucyb"), SubResource("Resource_714w8")])
+Trashes = Array[Object]([SubResource("Resource_40hio"), SubResource("Resource_67sae"), SubResource("Resource_g57c7")])
 FollowupBiomes = Array[Object]([ExtResource("8_why1g")])
+Background = SubResource("GradientTexture2D_cx4mk")

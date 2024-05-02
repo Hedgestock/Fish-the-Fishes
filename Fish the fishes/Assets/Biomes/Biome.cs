@@ -6,9 +6,6 @@ using System;
 public partial class Biome : Resource
 {
     [Export]
-    public Texture2D Background;
-
-    [Export]
     public Array<WeightedItem> Fishes;
 
     [Export]
@@ -17,5 +14,28 @@ public partial class Biome : Resource
     [Export]
     public Array<Biome> FollowupBiomes;
 
+    [ExportGroup("Ambiance")]
+    [Export]
+    public Texture2D Background;
 
+    public static PackedScene ChooseFrom(Array<WeightedItem> list)
+    {
+        uint totalWeight = 0;
+        foreach (var item in list)
+        {
+            totalWeight += item.Weight;
+        }
+
+        uint index = GD.Randi() % totalWeight;
+
+        uint currentWeight = 0;
+
+        foreach (var item in list)
+        {
+            currentWeight += item.Weight;
+            if (currentWeight > index)
+                return item.Item;
+        }
+        return null;
+    }
 }

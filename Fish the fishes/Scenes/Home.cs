@@ -9,6 +9,8 @@ public partial class Home : CanvasLayer
     [Export]
     private Node GameContainer;
     [Export]
+    private TextureRect Background;
+    [Export]
     private Biome StartingBiome;
 
     // Called when the node enters the scene tree for the first time.
@@ -23,6 +25,7 @@ public partial class Home : CanvasLayer
         {
             Message.Text = "Last Score:\n" + GameManager.Score.ToString();
         }
+        Background.Texture = GameManager.Biome.Background;
     }
 
     private void Play(Game.Mode mode)
@@ -85,7 +88,7 @@ public partial class Home : CanvasLayer
 
     private void SpawnFish()
     {
-        PackedScene FishScene = GameManager.Biome.Fishes[(int)(GD.Randi() % GameManager.Biome.Fishes.Count)].Item;
+        PackedScene FishScene = Biome.ChooseFrom(GameManager.Biome.Fishes);
         Fish fish = FishScene.Instantiate<Fish>();
 
         GameContainer.AddChild(fish);

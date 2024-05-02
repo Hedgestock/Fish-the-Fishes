@@ -38,6 +38,7 @@
 - [ ] Phoque qui attire l'orque
 - [ ] Orque
 - [ ] Seiche (change de motif aléatoirement)
+- [ ] Poisson chonomêtre
 
 # Objets pêchables
 - [ ] Crabe d'appât
@@ -87,17 +88,18 @@
 - [x] Mettre à jour les records avec les nouveaux modes de jeu
 - [x] Donner la responsabilité au poisson de se placer sur l'écran
 - [x] Ajouter la sauvegarde des paramètres
+- [x] Ajouter une probabilité d'apparition
 - [ ] Support de différentes langues
     - [x] Anglais
     - [ ] Français
     - [ ] Allemand
     - [ ] Thai
-- [ ] Ajouter une probabilité d'apparition
 - [ ] Ajouter des morts différentes
 - [ ] Ajouter une vitesse de descente et de remontée différente pour la ligne
 - [ ] SLB dans le fond
 - [ ] Ajouter une animation pour signifier la casse de l'hameçon à la remontée
 - [ ] Afficher un biome aléatoire dans ceux visités pour le fond du menu
+- [ ] Mettre les chronomètres d'apparition des poissons et des déchêts sur les biomes
 
 # Corrections
 
@@ -116,3 +118,4 @@
 - [x] [**Solution autre**] Corriger le problème lorsqu'un espadon vole un poisson pêché
 - [ ] Corriger le problème des espadons fous
 - [ ] Corriger le problème du reparentage d'espadon
+- [ ] Corriger la présence de la cible au changement de biome
