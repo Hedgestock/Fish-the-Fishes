@@ -6,11 +6,13 @@ public partial class CompendiumEntry : PanelContainer
 {
 
     [Export]
-    private Label CompendiumName;
+    protected Label CompendiumName;
     [Export]
-    private Label CompendiumDescription;
+    protected Label CompendiumDescription;
 
     public string TypeString;
+
+    protected Type EntryType;
 
 
     // Called when the node enters the scene tree for the first time.
@@ -18,7 +20,7 @@ public partial class CompendiumEntry : PanelContainer
     {
         if (string.IsNullOrEmpty(TypeString)) return;
 
-        Type EntryType = Type.GetType(TypeString);
+        EntryType = Type.GetType(TypeString);
 
         CompendiumName.Text = (string)EntryType.GetField(nameof(CompendiumName)).GetValue(EntryType);
     }

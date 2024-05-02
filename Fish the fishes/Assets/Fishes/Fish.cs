@@ -1,9 +1,7 @@
 using Godot;
-using Godot.Collections;
 using Godot.Fish_the_fishes.Scripts;
 using System;
-using System.Linq;
-using System.Xml.Linq;
+
 
 
 public partial class Fish : CharacterBody2D, IFishable

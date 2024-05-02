@@ -2,13 +2,9 @@ using Godot;
 using Godot.Fish_the_fishes.Scripts;
 using System;
 
-public partial class FishCompendiumEntry : PanelContainer
+public partial class FishCompendiumEntry : CompendiumEntry
 {
 
-    [Export]
-    private Label CompendiumName;
-    [Export]
-    private Label CompendiumDescription;
     [Export]
     private Label NumberFished;
     [Export]
@@ -18,17 +14,12 @@ public partial class FishCompendiumEntry : PanelContainer
     [Export]
     private HBoxContainer AnimationButtons;
 
-    public string FishTypeString;
-
-
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        if (string.IsNullOrEmpty(FishTypeString)) return;
+        base._Ready();
 
-        Type FishType = Type.GetType(FishTypeString);
-
-        string resourcePath = $"res://Fish the fishes/Assets/Fishes/{FishTypeString}/{FishTypeString}Animation.tres";
+        string resourcePath = $"res://Fish the fishes/Assets/Fishes/{TypeString}/{TypeString}Animation.tres";
 
         Placeholder.SpriteFrames = GD.Load<SpriteFrames>(resourcePath);
 
@@ -37,7 +28,7 @@ public partial class FishCompendiumEntry : PanelContainer
             Placeholder.Animation = "alive";
             Placeholder.Play();
 
-            if (!UserData.FishCompendium.ContainsKey(FishTypeString))
+            if (!UserData.FishCompendium.ContainsKey(TypeString))
             {
                 Placeholder.Modulate = new Color(0, 0, 0);
                 return;
@@ -48,16 +39,12 @@ public partial class FishCompendiumEntry : PanelContainer
             GD.PrintErr("No animation resource found at path: ", resourcePath);
         }
 
+        NumberSeen.Text = UserData.FishCompendium[TypeString].Seen.ToString();
+        NumberFished.Text = UserData.FishCompendium[TypeString].Caught.ToString();
 
-        NumberSeen.Text = UserData.FishCompendium[FishTypeString].Seen.ToString();
-        NumberFished.Text = UserData.FishCompendium[FishTypeString].Caught.ToString();
-
-        CompendiumName.Text = (string)FishType.GetField(nameof(CompendiumName)).GetValue(FishType);
-
-
-        if (UserData.FishCompendium[FishTypeString].Caught > 0)
+        if (UserData.FishCompendium[TypeString].Caught > 0)
         {
-            CompendiumDescription.Text = (string)FishType.GetField(nameof(CompendiumDescription)).GetValue(FishType);
+            CompendiumDescription.Text = (string)EntryType.GetField(nameof(CompendiumDescription)).GetValue(EntryType);
             AnimationButtons.Show();
         }
     }

@@ -28,7 +28,6 @@ namespace Godot.Fish_the_fishes.Scripts
             _trashCompendium = new Dictionary<string, TrashCompendiumEntry>();
 
             _instance = this;
-            GD.Print(_instance._competitiveScores.ToArray());
         }
         #endregion
 

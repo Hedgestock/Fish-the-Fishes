@@ -179,7 +179,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
     }
 
     private int ComputeScore()
-    { 
+    {
         try
         {
             switch (GameManager.Mode)
@@ -276,18 +276,14 @@ public partial class FishingLine : CharacterBody2D, IFisher
     {
         int score = FishedThings.Any(thing => thing.GetType().Name == GameManager.Target) ? 1 : 0;
 
-        FishedThings.ForEach(thing => {
-            if (thing is Fish)
-                UserData.FishCompendium[thing.GetType().Name].Caught++;
-        });
-
-
-
         UserData.Statistics[Constants.MaxFishedFishes] = (uint)Math.Max(UserData.Statistics.GetValueOrDefault(Constants.MaxFishedFishes), FishedThings.Count);
         UserData.Statistics[Constants.TotalFishedFishes] = UserData.Statistics.GetValueOrDefault(Constants.TotalFishedFishes) + (uint)FishedThings.Count;
 
-
-        FishedThings.ForEach(thing => (thing as Node).QueueFree());
+        FishedThings.ForEach(thing =>
+        {
+            if (thing is Fish) UserData.FishCompendium[thing.GetType().Name].Caught++;
+            (thing as Node).QueueFree();
+        });
         FishedThings.Clear();
 
         UserData.Statistics[Constants.MaxPointScored] = (uint)Math.Max(UserData.Statistics.GetValueOrDefault(Constants.MaxPointScored), score);

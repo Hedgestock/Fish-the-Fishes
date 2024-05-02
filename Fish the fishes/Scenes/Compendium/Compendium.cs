@@ -49,7 +49,7 @@ public partial class Compendium : CanvasLayer
     private void AddFishEntry(string fishType)
     {
         FishCompendiumEntry newEntry = FishEntry.Instantiate<FishCompendiumEntry>();
-        newEntry.FishTypeString = fishType;
+        newEntry.TypeString = fishType;
         Fishes.AddChild(newEntry);
     }
 }

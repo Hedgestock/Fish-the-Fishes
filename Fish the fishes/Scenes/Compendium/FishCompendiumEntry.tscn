@@ -1,8 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://cnjmqrlebmhdu"]
+[gd_scene load_steps=11 format=3 uid="uid://ci8y7xan6mlp2"]
 
-[ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://FTF_theme.tres" id="1_0rl6u"]
+[ext_resource type="PackedScene" uid="uid://cu4qvea6vce5v" path="res://Fish the fishes/Scenes/Compendium/CompendiumEntry.tscn" id="1_jrfbe"]
 [ext_resource type="Script" path="res://Fish the fishes/Scenes/Compendium/FishCompendiumEntry.cs" id="2_o0dw6"]
-[ext_resource type="Theme" uid="uid://cmnrxxeo4xdgp" path="res://FTF_descriptions_theme.tres" id="2_vin7i"]
 [ext_resource type="PackedScene" uid="uid://di7207b71mnm8" path="res://Fish the fishes/UI/AnimatedSpriteForUI/AnimatedSpriteForUI.tscn" id="4_6of0o"]
 [ext_resource type="Texture2D" uid="uid://sf5nbt1ewklc" path="res://Fish the fishes/art/fish/arrow/arrow_left.png" id="4_uw2jc"]
 [ext_resource type="Texture2D" uid="uid://cdlcldgajtn4i" path="res://Fish the fishes/art/fish/arrow/arrow_alive_1.png" id="5_isxl6"]
@@ -12,93 +11,47 @@
 [ext_resource type="Texture2D" uid="uid://csxfp4n3h00us" path="res://Fish the fishes/art/fish/arrow/arrow_alive_3.png" id="9_fb2jn"]
 [ext_resource type="Texture2D" uid="uid://bcg3wdk8om5h4" path="res://Fish the fishes/art/fish/arrow/arrow_alive_2.png" id="10_2v0ay"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l1j6n"]
-
-[node name="PanelContainer" type="PanelContainer" node_paths=PackedStringArray("CompendiumName", "CompendiumDescription", "NumberFished", "NumberSeen", "Placeholder", "AnimationButtons")]
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 324.0
-grow_horizontal = 2
-size_flags_vertical = 0
-mouse_filter = 1
-theme = ExtResource("1_0rl6u")
-theme_override_styles/panel = SubResource("StyleBoxFlat_l1j6n")
+[node name="PanelContainer" node_paths=PackedStringArray("NumberFished", "NumberSeen", "Placeholder", "AnimationButtons") instance=ExtResource("1_jrfbe")]
 script = ExtResource("2_o0dw6")
-CompendiumName = NodePath("MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/CompendiumName")
-CompendiumDescription = NodePath("MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/CompendiumDescription")
-NumberFished = NodePath("MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/NumberOfTimesFished")
-NumberSeen = NodePath("MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/NumberOfTimesSeen")
-Placeholder = NodePath("MarginContainer/HBoxContainer/VBoxContainer2/Placeholder")
-AnimationButtons = NodePath("MarginContainer/HBoxContainer/VBoxContainer2/AnimationButtons")
+NumberFished = NodePath("MarginContainer/HBoxContainer/VBoxContainer/Stats/NumberOfTimesFished")
+NumberSeen = NodePath("MarginContainer/HBoxContainer/VBoxContainer/Stats/NumberOfTimesSeen")
+Placeholder = NodePath("MarginContainer/HBoxContainer/Graphic/Placeholder")
+AnimationButtons = NodePath("MarginContainer/HBoxContainer/Graphic/AnimationButtons")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="CompendiumName" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-text = "???"
-
-[node name="CompendiumDescription" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("2_vin7i")
-text = "???"
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("2_vin7i")
-
-[node name="Fished" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+[node name="Fished" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Stats" index="0"]
 layout_mode = 2
 size_flags_vertical = 8
 text = "Fished: "
 
-[node name="NumberOfTimesFished" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+[node name="NumberOfTimesFished" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Stats" index="1"]
 layout_mode = 2
 size_flags_vertical = 8
 text = "0
 "
 
-[node name="Seen" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+[node name="Seen" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Stats" index="2"]
 layout_mode = 2
 size_flags_vertical = 8
 text = "Seen: "
 
-[node name="NumberOfTimesSeen" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+[node name="NumberOfTimesSeen" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Stats" index="3"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
 text = "0
 "
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 8
-
-[node name="Placeholder" parent="MarginContainer/HBoxContainer/VBoxContainer2" instance=ExtResource("4_6of0o")]
+[node name="Placeholder" parent="MarginContainer/HBoxContainer/Graphic" index="0" instance=ExtResource("4_6of0o")]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="AnimationButtons" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+[node name="AnimationButtons" type="HBoxContainer" parent="MarginContainer/HBoxContainer/Graphic" index="1"]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 10
 
-[node name="PreviousAnimationButton" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer2/AnimationButtons"]
+[node name="PreviousAnimationButton" type="TextureButton" parent="MarginContainer/HBoxContainer/Graphic/AnimationButtons" index="0"]
 layout_mode = 2
 mouse_filter = 1
 texture_normal = ExtResource("4_uw2jc")
@@ -107,7 +60,7 @@ texture_hover = ExtResource("6_eyq3p")
 texture_disabled = ExtResource("7_axp1e")
 stretch_mode = 5
 
-[node name="NextAnimationButton" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer2/AnimationButtons"]
+[node name="NextAnimationButton" type="TextureButton" parent="MarginContainer/HBoxContainer/Graphic/AnimationButtons" index="1"]
 layout_mode = 2
 size_flags_vertical = 0
 mouse_filter = 1
@@ -116,6 +69,3 @@ texture_pressed = ExtResource("9_fb2jn")
 texture_hover = ExtResource("10_2v0ay")
 texture_disabled = ExtResource("7_axp1e")
 stretch_mode = 4
-
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer2/AnimationButtons/PreviousAnimationButton" to="." method="PreviousAnimation"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer2/AnimationButtons/NextAnimationButton" to="." method="NextAnimation"]

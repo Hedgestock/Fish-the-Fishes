@@ -17,20 +17,20 @@ gradient = SubResource("Gradient_hem5c")
 fill_from = Vector2(1, 0)
 fill_to = Vector2(1, 1)
 
+[sub_resource type="Resource" id="Resource_4s0ec"]
+script = ExtResource("2_jmvri")
+Item = ExtResource("2_hwpc2")
+Weight = 300
+
 [sub_resource type="Resource" id="Resource_3ima3"]
 script = ExtResource("2_jmvri")
 Item = ExtResource("5_yc61y")
 Weight = 100
 
-[sub_resource type="Resource" id="Resource_4s0ec"]
-script = ExtResource("2_jmvri")
-Item = ExtResource("2_hwpc2")
-Weight = 100
-
 [sub_resource type="Resource" id="Resource_hlij5"]
 script = ExtResource("2_jmvri")
 Item = ExtResource("7_l22si")
-Weight = 1
+Weight = 10
 
 [sub_resource type="Resource" id="Resource_b5n0b"]
 script = ExtResource("2_jmvri")
@@ -49,7 +49,7 @@ Weight = 100
 
 [resource]
 script = ExtResource("12_3mbs0")
-Fishes = Array[Object]([SubResource("Resource_3ima3"), SubResource("Resource_4s0ec"), SubResource("Resource_hlij5")])
+Fishes = Array[Object]([SubResource("Resource_4s0ec"), SubResource("Resource_3ima3"), SubResource("Resource_hlij5")])
 Trashes = Array[Object]([SubResource("Resource_b5n0b"), SubResource("Resource_svh0e"), SubResource("Resource_yokr7")])
 FollowupBiomes = null
 Background = SubResource("GradientTexture2D_cx4mk")
