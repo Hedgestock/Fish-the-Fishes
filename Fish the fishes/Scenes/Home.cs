@@ -10,8 +10,11 @@ public partial class Home : CanvasLayer
     private Node GameContainer;
     [Export]
     private TextureRect Background;
+
     [Export]
     private Biome StartingBiome;
+    [Export]
+    private Biome TestBiome;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -28,37 +31,36 @@ public partial class Home : CanvasLayer
         Background.Texture = GameManager.Biome.Background;
     }
 
-    private void Play(Game.Mode mode)
+    private void Play(Game.Mode mode, Biome biome)
     {
         GameManager.Mode = mode;
-        GameManager.Biome = StartingBiome;
+        GameManager.Biome = biome;
         GameManager.ChangeSceneToFile("res://Fish the fishes/Scenes/Game/Game.tscn");
     }
 
     private void PlayClassic()
     {
-        Play(Game.Mode.Classic);
+        Play(Game.Mode.Classic, StartingBiome);
     }
 
     private void PlayTimeAttack()
     {
-        Play(Game.Mode.TimeAttack);
+        Play(Game.Mode.TimeAttack, StartingBiome);
     }
 
     private void PlayGoGreen()
     {
-        Play(Game.Mode.GoGreen);
+        Play(Game.Mode.GoGreen, StartingBiome);
     }
 
     private void PlayTarget()
     {
-        Play(Game.Mode.Target);
+        Play(Game.Mode.Target, StartingBiome);
     }
 
     private void PlayTest()
     {
-        GameManager.Mode = Game.Mode.Classic;
-        GameManager.ChangeSceneToFile("res://Fish the fishes/Scenes/Game/GameTest.tscn");
+        Play(Game.Mode.Target, TestBiome);
     }
 
     private void GoToSettings()

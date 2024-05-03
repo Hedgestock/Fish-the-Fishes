@@ -1,7 +1,9 @@
 using Godot;
 using Godot.Collections;
 using Godot.Fish_the_fishes.Scripts;
+using Godot.NativeInterop;
 using System;
+using System.Linq;
 
 public partial class Game : Node
 {
@@ -80,5 +82,12 @@ public partial class Game : Node
         if (GameManager.Biome.FollowupBiomes.Count == 0) return;
         GameManager.Biome = Biome.ChooseFrom(GameManager.Biome.FollowupBiomes) as Biome;
         Background.Texture = GameManager.Biome.Background;
+
+        // That's a mouthfull, but we simply check the current biome to check if the target is still valid
+        // otherwise, we just wait a bit to avoid the issue of fishing one already on screen and set a new one.
+        if (GameManager.Mode == Game.Mode.Target && !GameManager.Biome.Fishes.Select(weighted => ((string[])(weighted.Item as PackedScene)._Bundled["names"])[0]).Contains(GameManager.Target))
+        {
+            GetTree().CreateTimer(10).Timeout += ChangeTarget;
+        };
     }
 }
