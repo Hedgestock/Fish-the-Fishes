@@ -78,6 +78,7 @@ Item = ExtResource("10_5wjwt")
 Weight = 100
 
 [resource]
+resource_name = "WreckDeck"
 script = ExtResource("11_ytjb7")
 Fishes = Array[Object]([SubResource("Resource_xexfc"), SubResource("Resource_6772y"), SubResource("Resource_nx36t"), SubResource("Resource_rat04"), SubResource("Resource_bx4cy"), SubResource("Resource_aucyb"), SubResource("Resource_714w8")])
 Trashes = Array[Object]([SubResource("Resource_40hio"), SubResource("Resource_67sae"), SubResource("Resource_g57c7")])

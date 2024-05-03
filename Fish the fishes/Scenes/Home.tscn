@@ -1,10 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://blkg0i7vjb6il"]
+[gd_scene load_steps=19 format=3 uid="uid://blkg0i7vjb6il"]
 
 [ext_resource type="Texture2D" uid="uid://4sfuxo2673qo" path="res://Fish the fishes/art/BG 2 FTF.png" id="1_4aplq"]
 [ext_resource type="Script" path="res://Fish the fishes/Scenes/Home.cs" id="1_ptl5f"]
 [ext_resource type="Resource" uid="uid://cablkxc4svteo" path="res://Fish the fishes/Assets/Biomes/Beach/Beach.tres" id="2_amqur"]
 [ext_resource type="AudioStream" uid="uid://cejn28367eqbj" path="res://Fish the fishes/sounds/ftf.ogg" id="2_itj28"]
 [ext_resource type="PackedScene" uid="uid://ifoga56i10w3" path="res://Fish the fishes/Assets/RandomTimer.tscn" id="2_op8l2"]
+[ext_resource type="Resource" uid="uid://nmu6wfnfu8ax" path="res://Fish the fishes/Assets/Biomes/_Test/_Test.tres" id="3_dunyt"]
 [ext_resource type="PackedScene" uid="uid://bnkmwtljf2o3p" path="res://Fish the fishes/Assets/FishingLine.tscn" id="4_pulgk"]
 [ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://FTF_theme.tres" id="5_mnxty"]
 [ext_resource type="PackedScene" uid="uid://cifa65xrf1ken" path="res://Fish the fishes/UI/FishableButton/FishableButton.tscn" id="5_o3gki"]
@@ -38,6 +39,7 @@ Message = NodePath("AspectRatioContainer/MarginContainer/VBoxContainer/Message")
 GameContainer = NodePath("GameContainer")
 Background = NodePath("Background")
 StartingBiome = ExtResource("2_amqur")
+TestBiome = ExtResource("3_dunyt")
 
 [node name="FishTimer" parent="." instance=ExtResource("2_op8l2")]
 autostart = true
