@@ -30,7 +30,7 @@ public partial class Trash : CharacterBody2D, IFishable, IDescriptible
 
     public IFishable GetCaughtBy(IFisher by)
     {
-        if (by.GetType() == typeof(FishingLine))
+        if (by is FishingLine)
         {
             if (GameManager.Mode == Game.Mode.GoGreen)
             {
@@ -44,6 +44,10 @@ public partial class Trash : CharacterBody2D, IFishable, IDescriptible
             }
             else
             {
+                if (by.FishedThings.Count == 0 || (by as FishingLine).IsInvincible) return this;
+
+                UserData.TrashCompendium[GetType().Name].Hit++;
+
                 (by as FishingLine).GetHit(FishingLine.DamageType.Trash);
             }
         }

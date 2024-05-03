@@ -37,7 +37,8 @@ public partial class FishingLine : CharacterBody2D, IFisher
     private Vector2 Destination;
     private Vector2 Start;
     private Action State;
-    private bool Invincible;
+    private bool _invincible;
+    public bool IsInvincible { get { return _invincible; } }
 
     private Vector2 BasePosition;
     private Area2D Area;
@@ -50,7 +51,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
         BasePosition = new Vector2(GameManager.ScreenSize.X / 2, 50);
         Position = BasePosition;
         State = Action.Stopped;
-        Invincible = false;
+        _invincible = false;
         Area = GetNode<Area2D>("Area2D");
         Hitbox = Area.GetNode<CollisionShape2D>("CollisionShape2D");
         Hitbox.Disabled = true;
@@ -102,16 +103,11 @@ public partial class FishingLine : CharacterBody2D, IFisher
     }
 
 
-    private void setInvicibility(bool invincibility)
-    {
-        Invincible = invincibility;
-    }
-
     private void MakeInvincible(Area2D area)
     {
         if (area == Area)
         {
-            setInvicibility(true);
+            _invincible = true;
         }
     }
 
@@ -119,7 +115,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
     {
         if (area == Area)
         {
-            setInvicibility(false);
+            _invincible = false;
         }
     }
 
@@ -151,7 +147,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
 
     public void GetHit(DamageType damageType = DamageType.Trash)
     {
-        if (FishedThings.Count == 0 || Invincible) return;
+        if (FishedThings.Count == 0 || _invincible) return;
         EmitSignal(SignalName.Hit, (int)damageType);
         Hitbox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
         GetNode<AudioStreamPlayer2D>("HitSound").Play();
@@ -266,6 +262,8 @@ public partial class FishingLine : CharacterBody2D, IFisher
 
         foreach (Node thing in FishedThings)
         {
+            if (thing is Trash) UserData.TrashCompendium[thing.GetType().Name].Cleaned++;
+
             thing.QueueFree();
         }
 
