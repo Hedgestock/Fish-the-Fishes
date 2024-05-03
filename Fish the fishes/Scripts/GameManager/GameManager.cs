@@ -7,19 +7,19 @@ public partial class GameManager : Node
     [Signal]
     public delegate void TargetChangedEventHandler();
 
-    static private GameManager _instance = null;
-    public static GameManager Instance {  get { return _instance; } }
+    [Export]
+    private Biome _startingBiome;
+    [Export]
+    private Biome _testBiome;
 
-    private string _target = "Fish";
-    static public string Target
-    {
-        get { return _instance._target; }
-        set
-        {
-            _instance._target = value;
-            _instance.EmitSignal(SignalName.TargetChanged);
-        }
-    }
+    public static Biome StartingBiome { get { return _instance._startingBiome; } }
+    public static Biome TestBiome { get { return _instance._testBiome; } }
+
+    static private GameManager _instance = null;
+    public static GameManager Instance { get { return _instance; } }
+
+    private static string _target = "Fish";
+    static public string Target { get { return _target; } }
 
     public static Game.Mode Mode = Game.Mode.Menu;
     public static Biome Biome;
@@ -49,6 +49,11 @@ public partial class GameManager : Node
         LoadData();
         ScreenSize = GetViewport().GetVisibleRect().Size;
         GetTree().Root.SizeChanged += OnScreenResize;
+    }
+
+    static public void ChangeTarget()
+    {
+        _target = (Biome.ChooseFrom(Biome.Fishes) as PackedScene).Instantiate<Fish>().GetType().Name;
     }
 
     static public void WriteHighScore()

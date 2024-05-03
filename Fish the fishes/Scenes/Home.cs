@@ -11,15 +11,10 @@ public partial class Home : CanvasLayer
     [Export]
     private TextureRect Background;
 
-    [Export]
-    private Biome StartingBiome;
-    [Export]
-    private Biome TestBiome;
-
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        if (GameManager.Biome == null) GameManager.Biome = StartingBiome;
+        if (GameManager.Biome == null) GameManager.Biome = GameManager.StartingBiome;
         if (GameManager.PrevScene == "res://SplashScreen.tscn")
         {
             GetNode<AudioStreamPlayer>("AudioStreamPlayer").Play();
@@ -40,27 +35,27 @@ public partial class Home : CanvasLayer
 
     private void PlayClassic()
     {
-        Play(Game.Mode.Classic, StartingBiome);
+        Play(Game.Mode.Classic, GameManager.StartingBiome);
     }
 
     private void PlayTimeAttack()
     {
-        Play(Game.Mode.TimeAttack, StartingBiome);
+        Play(Game.Mode.TimeAttack, GameManager.StartingBiome);
     }
 
     private void PlayGoGreen()
     {
-        Play(Game.Mode.GoGreen, StartingBiome);
+        Play(Game.Mode.GoGreen, GameManager.StartingBiome);
     }
 
     private void PlayTarget()
     {
-        Play(Game.Mode.Target, StartingBiome);
+        Play(Game.Mode.Target, GameManager.StartingBiome);
     }
 
     private void PlayTest()
     {
-        Play(Game.Mode.Target, TestBiome);
+        Play(Game.Mode.Target, GameManager.TestBiome);
     }
 
     private void GoToSettings()

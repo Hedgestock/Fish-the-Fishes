@@ -5,9 +5,6 @@ public partial class HUD : CanvasLayer
     [Signal]
     public delegate void EndGameEventHandler();
 
-    [Signal]
-    public delegate void TargetFishedEventHandler();
-
     [Export]
     private Label ScoreLabel;
     [Export]
@@ -38,7 +35,7 @@ public partial class HUD : CanvasLayer
                 GameTimer.Start();
                 break;
             case Game.Mode.Target:
-                GameManager.Instance.Connect(GameManager.SignalName.TargetChanged, Callable.From(ChangeTarget));
+                ChangeTarget();
                 Target.GetParent<Control>().Show();
                 break;
             case Game.Mode.Classic:
@@ -99,7 +96,7 @@ public partial class HUD : CanvasLayer
                 ScoreChangeLabel.AddThemeColorOverride("font_color", new Color(0.12f, 0.6f, 0));
                 if (GameManager.Mode == Game.Mode.Target)
                 {
-                    EmitSignal(SignalName.TargetFished);
+                    ChangeTarget();
                 }
             }
             else if (score < 0)
@@ -166,6 +163,8 @@ public partial class HUD : CanvasLayer
 
     private void ChangeTarget()
     {
+        GameManager.ChangeTarget();
+
         string resourcePath = $"res://Fish the fishes/Assets/Fishes/{GameManager.Target}/{GameManager.Target}Animation.tres";
         Target.SpriteFrames = GD.Load<SpriteFrames>(resourcePath);
 
