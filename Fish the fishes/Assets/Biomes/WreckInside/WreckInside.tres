@@ -1,16 +1,5 @@
-[gd_resource type="Resource" script_class="Biome" load_steps=25 format=3 uid="uid://c1b0bsuac41gk"]
+[gd_resource type="Resource" script_class="Biome" load_steps=4 format=3 uid="uid://c1b0bsuac41gk"]
 
-[ext_resource type="PackedScene" uid="uid://oxxpqubwwblb" path="res://Fish the fishes/Assets/Fishes/AnguilleFish/AnguilleFish.tscn" id="1_gc80u"]
-[ext_resource type="PackedScene" uid="uid://bkk5qxylrwsky" path="res://Fish the fishes/Assets/Fishes/ArrowFish/ArrowFish.tscn" id="2_duucs"]
-[ext_resource type="Script" path="res://Fish the fishes/Scripts/WeightedItem.cs" id="2_ikytd"]
-[ext_resource type="PackedScene" uid="uid://dsv67b7l0uq40" path="res://Fish the fishes/Assets/Fishes/GreenFish/GreenFish.tscn" id="3_vw17k"]
-[ext_resource type="PackedScene" uid="uid://ct3hvitsd17g5" path="res://Fish the fishes/Assets/Fishes/RedFish/RedFish.tscn" id="4_7vio4"]
-[ext_resource type="PackedScene" uid="uid://c0df7a2ej0abq" path="res://Fish the fishes/Assets/Fishes/SardineFish/SardineFish.tscn" id="5_qphby"]
-[ext_resource type="PackedScene" uid="uid://ysvrflpejd5u" path="res://Fish the fishes/Assets/Fishes/YellowFish/YellowFish.tscn" id="7_2wfsp"]
-[ext_resource type="Resource" uid="uid://cub1hi1q8poi" path="res://Fish the fishes/Assets/Biomes/Abyss/Abyss.tres" id="8_3qwe8"]
-[ext_resource type="PackedScene" uid="uid://co0xglrn1rvre" path="res://Fish the fishes/Assets/Trashes/Can/Can.tscn" id="8_gap2s"]
-[ext_resource type="PackedScene" uid="uid://8pxdejw8ptee" path="res://Fish the fishes/Assets/Trashes/Shoe/Shoe.tscn" id="9_b67rt"]
-[ext_resource type="PackedScene" uid="uid://lvuam8fndp75" path="res://Fish the fishes/Assets/Trashes/Tire/Tire.tscn" id="10_hwk5h"]
 [ext_resource type="Script" path="res://Fish the fishes/Assets/Biomes/Biome.cs" id="11_ncojd"]
 
 [sub_resource type="Gradient" id="Gradient_hem5c"]
@@ -22,60 +11,10 @@ gradient = SubResource("Gradient_hem5c")
 fill_from = Vector2(1, 0)
 fill_to = Vector2(1, 1)
 
-[sub_resource type="Resource" id="Resource_quc5o"]
-script = ExtResource("2_ikytd")
-Item = ExtResource("1_gc80u")
-Weight = 200
-
-[sub_resource type="Resource" id="Resource_jmxi3"]
-script = ExtResource("2_ikytd")
-Item = ExtResource("5_qphby")
-Weight = 100
-
-[sub_resource type="Resource" id="Resource_8jvfc"]
-script = ExtResource("2_ikytd")
-Item = ExtResource("4_7vio4")
-Weight = 50
-
-[sub_resource type="Resource" id="Resource_2ebwt"]
-script = ExtResource("2_ikytd")
-Item = ExtResource("7_2wfsp")
-Weight = 10
-
-[sub_resource type="Resource" id="Resource_cjdri"]
-script = ExtResource("2_ikytd")
-Item = ExtResource("3_vw17k")
-Weight = 10
-
-[sub_resource type="Resource" id="Resource_m3df2"]
-script = ExtResource("2_ikytd")
-Item = ExtResource("2_duucs")
-Weight = 10
-
-[sub_resource type="Resource" id="Resource_wlhqp"]
-script = ExtResource("2_ikytd")
-Item = ExtResource("8_3qwe8")
-Weight = 100
-
-[sub_resource type="Resource" id="Resource_5p71d"]
-script = ExtResource("2_ikytd")
-Item = ExtResource("10_hwk5h")
-Weight = 100
-
-[sub_resource type="Resource" id="Resource_va78s"]
-script = ExtResource("2_ikytd")
-Item = ExtResource("8_gap2s")
-Weight = 100
-
-[sub_resource type="Resource" id="Resource_jq1fn"]
-script = ExtResource("2_ikytd")
-Item = ExtResource("9_b67rt")
-Weight = 100
-
 [resource]
 resource_name = "WreckInside"
 script = ExtResource("11_ncojd")
-Fishes = Array[Object]([SubResource("Resource_quc5o"), SubResource("Resource_jmxi3"), SubResource("Resource_8jvfc"), SubResource("Resource_2ebwt"), SubResource("Resource_cjdri"), SubResource("Resource_m3df2")])
-Trashes = Array[Object]([SubResource("Resource_5p71d"), SubResource("Resource_va78s"), SubResource("Resource_jq1fn")])
-FollowupBiomes = Array[Object]([SubResource("Resource_wlhqp")])
+Fishes = null
+Trashes = null
+FollowupBiomes = null
 Background = SubResource("GradientTexture2D_cx4mk")

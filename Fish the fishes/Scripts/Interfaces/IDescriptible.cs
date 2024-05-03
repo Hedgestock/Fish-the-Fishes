@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Godot.Fish_the_fishes.Scripts.Interfaces
+namespace Godot.Fish_the_fishes.Scripts
 {
     internal interface IDescriptible
     {

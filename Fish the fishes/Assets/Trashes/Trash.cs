@@ -1,6 +1,5 @@
 using Godot;
 using Godot.Fish_the_fishes.Scripts;
-using Godot.Fish_the_fishes.Scripts.Interfaces;
 using System;
 
 public partial class Trash : CharacterBody2D, IFishable, IDescriptible

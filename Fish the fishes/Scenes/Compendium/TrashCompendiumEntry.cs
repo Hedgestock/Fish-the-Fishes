@@ -21,7 +21,7 @@ public partial class TrashCompendiumEntry : CompendiumEntry
     {
         base._Ready();
 
-        string resourcePath = $"res://Fish the fishes/Assets/Trashes/{TypeString}/{TypeString}Animation.tres";
+        string resourcePath = $"{Constants.TrashesFolder}{TypeString}/{TypeString}Animation.tres";
 
         Placeholder.SpriteFrames = GD.Load<SpriteFrames>(resourcePath);
 

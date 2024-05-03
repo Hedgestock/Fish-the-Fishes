@@ -1,6 +1,8 @@
 using Godot;
 using Godot.Fish_the_fishes.Scripts;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 
 public partial class GameManager : Node
 {
@@ -53,7 +55,7 @@ public partial class GameManager : Node
 
     static public void ChangeTarget()
     {
-        _target = (Biome.ChooseFrom(Biome.Fishes) as PackedScene).Instantiate<Fish>().GetType().Name;
+        _target = GD.Load<PackedScene>(Biome.GetRandomPathFrom(Biome.Fishes)).Instantiate<Fish>().GetType().Name;
     }
 
     static public void WriteHighScore()
@@ -164,5 +166,22 @@ public partial class GameManager : Node
     private void OnScreenResize()
     {
         ScreenSize = GetViewport().GetVisibleRect().Size;
+    }
+
+    private void Test()
+    {
+        List<string> list = new List<string>();
+        TestRec(list, StartingBiome);
+        list.ForEach(item => GD.Print("biome: ", item));
+    }
+    private void TestRec(List<string> list, Biome CurrentBiome)
+    {
+        if (list.Contains(CurrentBiome.ResourceName)) return;
+        list.Add(CurrentBiome.ResourceName);
+        foreach (var item in CurrentBiome.FollowupBiomes)
+        {
+            string BiomeType = item.Biome.ToString();
+            TestRec(list, GD.Load<Biome>($"{Constants.BiomesFolder}{BiomeType}/{BiomeType}.tres"));
+        }
     }
 }

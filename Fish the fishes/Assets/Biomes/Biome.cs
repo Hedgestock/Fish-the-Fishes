@@ -1,24 +1,44 @@
 using Godot;
 using Godot.Collections;
+using Godot.Fish_the_fishes.Scripts;
 using System;
+using System.Linq;
 
 [GlobalClass]
 public partial class Biome : Resource
 {
     [Export]
-    public Array<WeightedItem> Fishes;
+    public Array<WeightedFish> Fishes;
 
     [Export]
-    public Array<WeightedItem> Trashes;
+    public Array<WeightedTrash> Trashes;
 
     [Export]
-    public Array<WeightedItem> FollowupBiomes;
+    public Array<WeightedBiome> FollowupBiomes;
 
     [ExportGroup("Ambiance")]
     [Export]
     public Texture2D Background;
 
-    public static GodotObject ChooseFrom(Array<WeightedItem> list)
+    public static string GetRandomPathFrom(Array<WeightedFish> list)
+    {
+        string FishType = (ChooseFrom(list.ToArray()) as WeightedFish).Fish.ToString();
+        return $"{Constants.FishesFolder}{FishType}/{FishType}.tscn";
+    }
+
+    public static string GetRandomPathFrom(Array<WeightedTrash> list)
+    {
+        string TrashType = (ChooseFrom(list.ToArray()) as WeightedTrash).Trash.ToString();
+        return $"{Constants.TrashesFolder}{TrashType}/{TrashType}.tscn";
+    }
+
+    public static string GetRandomPathFrom(Array<WeightedBiome> list)
+    {
+        string BiomeType = (ChooseFrom(list.ToArray()) as WeightedBiome).Biome.ToString();
+        return $"{Constants.BiomesFolder}{BiomeType}/{BiomeType}.tres";
+    }
+
+    private static WeightedItem ChooseFrom(WeightedItem[] list)
     {
         uint totalWeight = 0;
         foreach (var item in list)
@@ -34,7 +54,7 @@ public partial class Biome : Resource
         {
             currentWeight += item.Weight;
             if (currentWeight > index)
-                return item.Item;
+                return item;
         }
         return null;
     }

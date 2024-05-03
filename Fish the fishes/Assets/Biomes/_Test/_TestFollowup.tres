@@ -1,10 +1,5 @@
-[gd_resource type="Resource" script_class="Biome" load_steps=13 format=3 uid="uid://bagye4kma6w0d"]
+[gd_resource type="Resource" script_class="Biome" load_steps=4 format=3 uid="uid://bagye4kma6w0d"]
 
-[ext_resource type="Script" path="res://Fish the fishes/Scripts/WeightedItem.cs" id="2_wnu0y"]
-[ext_resource type="PackedScene" uid="uid://bkk5qxylrwsky" path="res://Fish the fishes/Assets/Fishes/ArrowFish/ArrowFish.tscn" id="6_rouis"]
-[ext_resource type="PackedScene" uid="uid://co0xglrn1rvre" path="res://Fish the fishes/Assets/Trashes/Can/Can.tscn" id="9_p6ej3"]
-[ext_resource type="PackedScene" uid="uid://8pxdejw8ptee" path="res://Fish the fishes/Assets/Trashes/Shoe/Shoe.tscn" id="10_ame2t"]
-[ext_resource type="PackedScene" uid="uid://lvuam8fndp75" path="res://Fish the fishes/Assets/Trashes/Tire/Tire.tscn" id="11_d5hs1"]
 [ext_resource type="Script" path="res://Fish the fishes/Assets/Biomes/Biome.cs" id="12_plkei"]
 
 [sub_resource type="Gradient" id="Gradient_t0y5u"]
@@ -14,30 +9,10 @@ gradient = SubResource("Gradient_t0y5u")
 fill_from = Vector2(1, 0)
 fill_to = Vector2(1, 1)
 
-[sub_resource type="Resource" id="Resource_8rvq0"]
-script = ExtResource("2_wnu0y")
-Item = ExtResource("6_rouis")
-Weight = 100
-
-[sub_resource type="Resource" id="Resource_y271a"]
-script = ExtResource("2_wnu0y")
-Item = ExtResource("9_p6ej3")
-Weight = 100
-
-[sub_resource type="Resource" id="Resource_cxhli"]
-script = ExtResource("2_wnu0y")
-Item = ExtResource("10_ame2t")
-Weight = 100
-
-[sub_resource type="Resource" id="Resource_x7ne7"]
-script = ExtResource("2_wnu0y")
-Item = ExtResource("11_d5hs1")
-Weight = 100
-
 [resource]
 resource_name = "_TestFollowup"
 script = ExtResource("12_plkei")
-Fishes = Array[Object]([SubResource("Resource_8rvq0")])
-Trashes = Array[Object]([SubResource("Resource_y271a"), SubResource("Resource_cxhli"), SubResource("Resource_x7ne7")])
+Fishes = null
+Trashes = null
 FollowupBiomes = null
 Background = SubResource("GradientTexture2D_0fe70")

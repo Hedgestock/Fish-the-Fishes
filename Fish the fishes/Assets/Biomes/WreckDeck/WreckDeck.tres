@@ -1,17 +1,5 @@
-[gd_resource type="Resource" script_class="Biome" load_steps=27 format=3 uid="uid://dpe15eoelonv6"]
+[gd_resource type="Resource" script_class="Biome" load_steps=4 format=3 uid="uid://dpe15eoelonv6"]
 
-[ext_resource type="PackedScene" uid="uid://oxxpqubwwblb" path="res://Fish the fishes/Assets/Fishes/AnguilleFish/AnguilleFish.tscn" id="1_gld6o"]
-[ext_resource type="Script" path="res://Fish the fishes/Scripts/WeightedItem.cs" id="2_jggsh"]
-[ext_resource type="PackedScene" uid="uid://bkk5qxylrwsky" path="res://Fish the fishes/Assets/Fishes/ArrowFish/ArrowFish.tscn" id="2_ujlcd"]
-[ext_resource type="PackedScene" uid="uid://dsv67b7l0uq40" path="res://Fish the fishes/Assets/Fishes/GreenFish/GreenFish.tscn" id="3_wue4j"]
-[ext_resource type="PackedScene" uid="uid://ct3hvitsd17g5" path="res://Fish the fishes/Assets/Fishes/RedFish/RedFish.tscn" id="4_fhygs"]
-[ext_resource type="PackedScene" uid="uid://c0df7a2ej0abq" path="res://Fish the fishes/Assets/Fishes/SardineFish/SardineFish.tscn" id="5_cosus"]
-[ext_resource type="PackedScene" uid="uid://be1nxedcwhn2i" path="res://Fish the fishes/Assets/Fishes/SwordFish/SwordFish.tscn" id="6_830i3"]
-[ext_resource type="PackedScene" uid="uid://ysvrflpejd5u" path="res://Fish the fishes/Assets/Fishes/YellowFish/YellowFish.tscn" id="7_kicm0"]
-[ext_resource type="PackedScene" uid="uid://co0xglrn1rvre" path="res://Fish the fishes/Assets/Trashes/Can/Can.tscn" id="8_8r588"]
-[ext_resource type="Resource" uid="uid://c1b0bsuac41gk" path="res://Fish the fishes/Assets/Biomes/WreckInside/WreckInside.tres" id="8_why1g"]
-[ext_resource type="PackedScene" uid="uid://8pxdejw8ptee" path="res://Fish the fishes/Assets/Trashes/Shoe/Shoe.tscn" id="9_827sl"]
-[ext_resource type="PackedScene" uid="uid://lvuam8fndp75" path="res://Fish the fishes/Assets/Trashes/Tire/Tire.tscn" id="10_5wjwt"]
 [ext_resource type="Script" path="res://Fish the fishes/Assets/Biomes/Biome.cs" id="11_ytjb7"]
 
 [sub_resource type="Gradient" id="Gradient_hem5c"]
@@ -22,65 +10,10 @@ gradient = SubResource("Gradient_hem5c")
 fill_from = Vector2(1, 0)
 fill_to = Vector2(1, 1)
 
-[sub_resource type="Resource" id="Resource_xexfc"]
-script = ExtResource("2_jggsh")
-Item = ExtResource("2_ujlcd")
-Weight = 100
-
-[sub_resource type="Resource" id="Resource_6772y"]
-script = ExtResource("2_jggsh")
-Item = ExtResource("5_cosus")
-Weight = 100
-
-[sub_resource type="Resource" id="Resource_nx36t"]
-script = ExtResource("2_jggsh")
-Item = ExtResource("6_830i3")
-Weight = 100
-
-[sub_resource type="Resource" id="Resource_rat04"]
-script = ExtResource("2_jggsh")
-Item = ExtResource("3_wue4j")
-Weight = 50
-
-[sub_resource type="Resource" id="Resource_bx4cy"]
-script = ExtResource("2_jggsh")
-Item = ExtResource("7_kicm0")
-Weight = 50
-
-[sub_resource type="Resource" id="Resource_aucyb"]
-script = ExtResource("2_jggsh")
-Item = ExtResource("1_gld6o")
-Weight = 20
-
-[sub_resource type="Resource" id="Resource_714w8"]
-script = ExtResource("2_jggsh")
-Item = ExtResource("4_fhygs")
-Weight = 20
-
-[sub_resource type="Resource" id="Resource_hmh7w"]
-script = ExtResource("2_jggsh")
-Item = ExtResource("8_why1g")
-Weight = 100
-
-[sub_resource type="Resource" id="Resource_40hio"]
-script = ExtResource("2_jggsh")
-Item = ExtResource("8_8r588")
-Weight = 100
-
-[sub_resource type="Resource" id="Resource_67sae"]
-script = ExtResource("2_jggsh")
-Item = ExtResource("9_827sl")
-Weight = 100
-
-[sub_resource type="Resource" id="Resource_g57c7"]
-script = ExtResource("2_jggsh")
-Item = ExtResource("10_5wjwt")
-Weight = 100
-
 [resource]
 resource_name = "WreckDeck"
 script = ExtResource("11_ytjb7")
-Fishes = Array[Object]([SubResource("Resource_xexfc"), SubResource("Resource_6772y"), SubResource("Resource_nx36t"), SubResource("Resource_rat04"), SubResource("Resource_bx4cy"), SubResource("Resource_aucyb"), SubResource("Resource_714w8")])
-Trashes = Array[Object]([SubResource("Resource_40hio"), SubResource("Resource_67sae"), SubResource("Resource_g57c7")])
-FollowupBiomes = Array[Object]([SubResource("Resource_hmh7w")])
+Fishes = null
+Trashes = null
+FollowupBiomes = null
 Background = SubResource("GradientTexture2D_cx4mk")
