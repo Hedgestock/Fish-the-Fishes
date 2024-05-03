@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Fish the fishes/Scenes/Game/GameTest.cs" id="1_kjtri"]
 [ext_resource type="PackedScene" uid="uid://oxxpqubwwblb" path="res://Fish the fishes/Assets/Fishes/AnguilleFish/AnguilleFish.tscn" id="2_ajr40"]
 [ext_resource type="PackedScene" uid="uid://co0xglrn1rvre" path="res://Fish the fishes/Assets/Trashes/Can/Can.tscn" id="8_xxsm0"]
-[ext_resource type="Texture2D" uid="uid://dxslcf7yijvtu" path="res://Fish the fishes/Assets/Biomes/Beach/BeachBackground.png" id="11_orasy"]
+[ext_resource type="Texture2D" uid="uid://dxslcf7yijvtu" path="res://Fish the fishes/art/BeachBackground.png" id="11_orasy"]
 [ext_resource type="PackedScene" uid="uid://yi82g384vgwb" path="res://Fish the fishes/Scenes/Game/HUD.tscn" id="12_v3vvr"]
 [ext_resource type="PackedScene" uid="uid://ifoga56i10w3" path="res://Fish the fishes/Assets/RandomTimer.tscn" id="13_k8syo"]
 [ext_resource type="PackedScene" uid="uid://bnkmwtljf2o3p" path="res://Fish the fishes/Assets/FishingLine.tscn" id="14_tqbhr"]
