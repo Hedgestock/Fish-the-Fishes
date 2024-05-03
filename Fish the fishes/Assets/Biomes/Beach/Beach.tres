@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Biome" load_steps=26 format=3 uid="uid://cablkxc4svteo"]
 
 [ext_resource type="PackedScene" uid="uid://oxxpqubwwblb" path="res://Fish the fishes/Assets/Fishes/AnguilleFish/AnguilleFish.tscn" id="1_0tu31"]
-[ext_resource type="Texture2D" uid="uid://dxslcf7yijvtu" path="res://Fish the fishes/Assets/Biomes/Beach/BeachBackground.png" id="1_lhq82"]
+[ext_resource type="Texture2D" uid="uid://cyqlsyp6ppauk" path="res://Fish the fishes/Assets/Biomes/Beach/BeachBackground.png" id="1_e4qq5"]
 [ext_resource type="PackedScene" uid="uid://bkk5qxylrwsky" path="res://Fish the fishes/Assets/Fishes/ArrowFish/ArrowFish.tscn" id="1_vsmye"]
 [ext_resource type="Script" path="res://Fish the fishes/Assets/Biomes/Biome.cs" id="3_h68yh"]
 [ext_resource type="PackedScene" uid="uid://dsv67b7l0uq40" path="res://Fish the fishes/Assets/Fishes/GreenFish/GreenFish.tscn" id="3_hnmac"]
@@ -75,4 +75,4 @@ script = ExtResource("3_h68yh")
 Fishes = Array[Object]([SubResource("Resource_xtd4t"), SubResource("Resource_twqr4"), SubResource("Resource_f5357"), SubResource("Resource_vcoif"), SubResource("Resource_wl5ps"), SubResource("Resource_jsfla"), SubResource("Resource_3pvao")])
 Trashes = Array[Object]([SubResource("Resource_2a2vb"), SubResource("Resource_o5hry"), SubResource("Resource_87mgg")])
 FollowupBiomes = Array[Object]([SubResource("Resource_dxdm6")])
-Background = ExtResource("1_lhq82")
+Background = ExtResource("1_e4qq5")

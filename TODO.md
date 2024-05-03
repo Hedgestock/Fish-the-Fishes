@@ -112,6 +112,8 @@
 - [ ] Mettre les chronomètres d'apparition des poissons et des déchêts sur les biomes
 - [ ] Ajouter un moyen de trier/filtrer le compendium
 - [ ] Ajouter un outil pour voire les graphs de selection des biomes ainsi que les probabilités d'apparition des poissons
+- [ ] Mettre à jour le compendium avec les déchêts
+- [ ] Mettre à jour le compendium avec les biomes
 
 # Corrections
 
