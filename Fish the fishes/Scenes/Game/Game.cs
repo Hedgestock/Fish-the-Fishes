@@ -68,15 +68,7 @@ public partial class Game : Node
 
     private void ChangeBiome()
     {
-        if (GameManager.Biome.FollowupBiomes.Count == 0) return;
-        GameManager.Biome = GD.Load<Biome>(Biome.GetRandomPathFrom(GameManager.Biome.FollowupBiomes));
+        GameManager.ChangeBiome();
         Background.Texture = GameManager.Biome.Background;
-
-        // That's a mouthfull, but we simply check the current biome to check if the target is still valid
-        // otherwise, we just wait a bit to avoid the issue of fishing one already on screen and set a new one.
-        if (GameManager.Mode == Mode.Target && !GameManager.Biome.Fishes.Select(fish => fish.ToString()).Contains(GameManager.Target))
-        {
-            GetTree().CreateTimer(10).Timeout += GameManager.ChangeTarget;
-        };
     }
 }

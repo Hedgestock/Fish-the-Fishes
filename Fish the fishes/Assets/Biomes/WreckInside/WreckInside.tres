@@ -1,5 +1,8 @@
-[gd_resource type="Resource" script_class="Biome" load_steps=4 format=3 uid="uid://c1b0bsuac41gk"]
+[gd_resource type="Resource" script_class="Biome" load_steps=18 format=3 uid="uid://c1b0bsuac41gk"]
 
+[ext_resource type="Script" path="res://Fish the fishes/Scripts/Weighted/WeightedTrash.cs" id="1_qjkc5"]
+[ext_resource type="Script" path="res://Fish the fishes/Scripts/Weighted/WeightedFish.cs" id="1_s5ogd"]
+[ext_resource type="Script" path="res://Fish the fishes/Scripts/Weighted/WeightedBiome.cs" id="2_pjrry"]
 [ext_resource type="Script" path="res://Fish the fishes/Assets/Biomes/Biome.cs" id="11_ncojd"]
 
 [sub_resource type="Gradient" id="Gradient_hem5c"]
@@ -11,10 +14,65 @@ gradient = SubResource("Gradient_hem5c")
 fill_from = Vector2(1, 0)
 fill_to = Vector2(1, 1)
 
+[sub_resource type="Resource" id="Resource_lh1t3"]
+script = ExtResource("1_s5ogd")
+Fish = 0
+Weight = 100
+
+[sub_resource type="Resource" id="Resource_3m7ec"]
+script = ExtResource("1_s5ogd")
+Fish = 1
+Weight = 100
+
+[sub_resource type="Resource" id="Resource_e1vti"]
+script = ExtResource("1_s5ogd")
+Fish = 4
+Weight = 100
+
+[sub_resource type="Resource" id="Resource_igdd7"]
+script = ExtResource("1_s5ogd")
+Fish = 3
+Weight = 50
+
+[sub_resource type="Resource" id="Resource_bwx4x"]
+script = ExtResource("1_s5ogd")
+Fish = 6
+Weight = 20
+
+[sub_resource type="Resource" id="Resource_k1o2i"]
+script = ExtResource("1_s5ogd")
+Fish = 2
+Weight = 20
+
+[sub_resource type="Resource" id="Resource_lal7j"]
+script = ExtResource("1_s5ogd")
+Fish = 5
+Weight = 10
+
+[sub_resource type="Resource" id="Resource_q1u8b"]
+script = ExtResource("2_pjrry")
+Biome = 3
+Weight = 100
+
+[sub_resource type="Resource" id="Resource_1d7gb"]
+script = ExtResource("1_qjkc5")
+Trash = 0
+Weight = 100
+
+[sub_resource type="Resource" id="Resource_whwyb"]
+script = ExtResource("1_qjkc5")
+Trash = 1
+Weight = 100
+
+[sub_resource type="Resource" id="Resource_7dqit"]
+script = ExtResource("1_qjkc5")
+Trash = 2
+Weight = 100
+
 [resource]
 resource_name = "WreckInside"
 script = ExtResource("11_ncojd")
-Fishes = null
-Trashes = null
-FollowupBiomes = null
+Fishes = Array[Object]([SubResource("Resource_lh1t3"), SubResource("Resource_3m7ec"), SubResource("Resource_e1vti"), SubResource("Resource_igdd7"), SubResource("Resource_bwx4x"), SubResource("Resource_k1o2i"), SubResource("Resource_lal7j")])
+Trashes = Array[Object]([SubResource("Resource_1d7gb"), SubResource("Resource_whwyb"), SubResource("Resource_7dqit")])
+FollowupBiomes = Array[Object]([SubResource("Resource_q1u8b")])
 Background = SubResource("GradientTexture2D_cx4mk")

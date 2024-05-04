@@ -37,6 +37,8 @@ public partial class GameManager : Node
     private static string SettingsFileName = "settings.save";
     private static string SettingsFilePath = SaveDirectory + SettingsFileName;
 
+    private static SceneTreeTimer TargetSafeTimer;
+
     private GameManager()
     {
         if (_instance != null)
@@ -55,7 +57,27 @@ public partial class GameManager : Node
 
     static public void ChangeTarget()
     {
+        if (TargetSafeTimer != null)
+        {
+            TargetSafeTimer.Timeout -= ChangeTarget;
+            TargetSafeTimer = null;
+        }
         _target = GD.Load<PackedScene>(Biome.GetRandomPathFrom(Biome.Fishes)).Instantiate<Fish>().GetType().Name;
+        _instance.EmitSignal(SignalName.TargetChanged);
+    }
+
+    static public void ChangeBiome()
+    {
+        if (Biome.FollowupBiomes.Count == 0) return;
+        Biome = GD.Load<Biome>(Biome.GetRandomPathFrom(Biome.FollowupBiomes));
+
+        // That's a mouthfull, but we simply check the current biome to check if the target is still valid
+        // otherwise, we just wait a bit to avoid the issue of fishing one already on screen and set a new one.
+        if (Mode == Game.Mode.Target && !Biome.Fishes.Select(fish => fish.ToString()).Contains(Target))
+        {
+            TargetSafeTimer = _instance.GetTree().CreateTimer(10);
+            TargetSafeTimer.Timeout += ChangeTarget;
+        };
     }
 
     static public void WriteHighScore()

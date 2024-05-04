@@ -42,7 +42,9 @@ namespace Godot.Fish_the_fishes.Scripts
             Beach,
             WreckDeck,
             WreckInside,
-            Abyss
+            Abyss,
+            _Test,
+            _TestFollowup
         }
     }
 }

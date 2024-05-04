@@ -35,7 +35,8 @@ public partial class HUD : CanvasLayer
                 GameTimer.Start();
                 break;
             case Game.Mode.Target:
-                ChangeTarget();
+                GameManager.Instance.Connect(GameManager.SignalName.TargetChanged, Callable.From(OnTargetChanged));
+                GameManager.ChangeTarget();
                 Target.GetParent<Control>().Show();
                 break;
             case Game.Mode.Classic:
@@ -96,7 +97,7 @@ public partial class HUD : CanvasLayer
                 ScoreChangeLabel.AddThemeColorOverride("font_color", new Color(0.12f, 0.6f, 0));
                 if (GameManager.Mode == Game.Mode.Target)
                 {
-                    ChangeTarget();
+                    GameManager.ChangeTarget();
                 }
             }
             else if (score < 0)
@@ -161,10 +162,8 @@ public partial class HUD : CanvasLayer
         EmitSignal(SignalName.EndGame);
     }
 
-    private void ChangeTarget()
+    private void OnTargetChanged()
     {
-        GameManager.ChangeTarget();
-
         string resourcePath = $"res://Fish the fishes/Assets/Fishes/{GameManager.Target}/{GameManager.Target}Animation.tres";
         Target.SpriteFrames = GD.Load<SpriteFrames>(resourcePath);
 

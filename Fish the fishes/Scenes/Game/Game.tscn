@@ -40,8 +40,8 @@ Deviation = 0.5
 
 [node name="BiomeTimer" parent="." instance=ExtResource("13_7sxe6")]
 autostart = true
-WaitTimeAverage = 60.0
-Deviation = 7.0
+WaitTimeAverage = 10.0
+Deviation = 0.0
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
