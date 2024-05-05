@@ -33,4 +33,6 @@ script = ExtResource("12_3wj4f")
 Fishes = Array[Object]([SubResource("Resource_fq5j8")])
 Trashes = Array[Object]([SubResource("Resource_cigae")])
 FollowupBiomes = Array[Object]([SubResource("Resource_tdlqh")])
+CompendiumName = ""
+CompendiumDescription = ""
 Background = SubResource("GradientTexture2D_0fe70")

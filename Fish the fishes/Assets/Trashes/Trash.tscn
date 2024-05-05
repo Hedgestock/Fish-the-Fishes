@@ -6,7 +6,7 @@
 collision_mask = 0
 script = ExtResource("1_8ptuq")
 CompendiumName = "Trash"
-CompendiumDescription = "this is a trash"
+CompendiumDescription = "This is a trash"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 

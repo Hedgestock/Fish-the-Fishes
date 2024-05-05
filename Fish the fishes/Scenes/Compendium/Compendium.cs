@@ -20,6 +20,13 @@ public partial class Compendium : CanvasLayer
     [Export]
     VBoxContainer Biomes;
 
+    public enum EntryType
+    {
+        Biome,
+        Fish,
+        Trash
+    }
+
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
@@ -52,7 +59,8 @@ public partial class Compendium : CanvasLayer
     private void AddFishEntry(string fishType)
     {
         FishCompendiumEntry newEntry = FishEntry.Instantiate<FishCompendiumEntry>();
-        newEntry.TypeString = fishType;
+        newEntry.EntryKey = fishType;
+        newEntry.EntryType = EntryType.Fish;
         Fishes.AddChild(newEntry);
     }
 
@@ -76,7 +84,8 @@ public partial class Compendium : CanvasLayer
     private void AddTrashEntry(string trashType)
     {
         TrashCompendiumEntry newEntry = TrashEntry.Instantiate<TrashCompendiumEntry>();
-        newEntry.TypeString = trashType;
+        newEntry.EntryKey = trashType;
+        newEntry.EntryType = EntryType.Trash;
         Trashes.AddChild(newEntry);
     }
 }

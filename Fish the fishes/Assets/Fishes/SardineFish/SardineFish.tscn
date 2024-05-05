@@ -12,6 +12,8 @@ height = 86.0
 script = ExtResource("2_kltwx")
 shoalRadius = 40
 shoalSize = 6
+CompendiumName = "Sardine Fish"
+CompendiumDescription = "This is a sardine fish"
 Value = 0.5
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0"]

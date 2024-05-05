@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dsv67b7l0uq40"]
+[gd_scene load_steps=6 format=3 uid="uid://dsv67b7l0uq40"]
 
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Fish the fishes/Assets/Fishes/Fish.tscn" id="1_8tk53"]
 [ext_resource type="SpriteFrames" uid="uid://dxpxq818n4txw" path="res://Fish the fishes/Assets/Fishes/GreenFish/GreenFishAnimation.tres" id="2_50e46"]
+[ext_resource type="Script" path="res://Fish the fishes/Assets/Fishes/GreenFish/GreenFish.cs" id="2_v3fog"]
 [ext_resource type="AudioStream" uid="uid://8srndky25d7a" path="res://Fish the fishes/sounds/Fish titatituto.wav" id="4_isbou"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nhaen"]
@@ -9,6 +10,9 @@ radius = 34.0
 height = 100.0
 
 [node name="GreenFish" instance=ExtResource("1_8tk53")]
+script = ExtResource("2_v3fog")
+CompendiumName = "Green Fish"
+CompendiumDescription = "This is a green fish"
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0"]
 position = Vector2(-3.8147e-06, 1)

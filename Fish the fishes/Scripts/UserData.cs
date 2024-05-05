@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
 using System.Text.Json;
 
@@ -76,10 +75,15 @@ namespace Godot.Fish_the_fishes.Scripts
         }
 
         #region helper classes
-        public class FishCompendiumEntry
+
+        public abstract class CompendiumEntry
+        {
+            public uint Seen { get; set; }
+        }
+
+        public class FishCompendiumEntry : CompendiumEntry
         {
             public uint Caught { get; set; }
-            public uint Seen { get; set; }
             public FishCompendiumEntry()
             {
                 Caught = 0;
@@ -87,11 +91,10 @@ namespace Godot.Fish_the_fishes.Scripts
             }
         }
 
-        public class TrashCompendiumEntry
+        public class TrashCompendiumEntry : CompendiumEntry
         {
             public uint Hit { get; set; }
             public uint Cleaned { get; set; }
-            public uint Seen { get; set; }
             public TrashCompendiumEntry()
             {
                 Hit = 0;
@@ -100,9 +103,8 @@ namespace Godot.Fish_the_fishes.Scripts
             }
         }
 
-        public class BiomeCompendiumEntry
+        public class BiomeCompendiumEntry : CompendiumEntry
         {
-            public uint Seen { get; set; }
             public BiomeCompendiumEntry()
             {
                 Seen = 1;

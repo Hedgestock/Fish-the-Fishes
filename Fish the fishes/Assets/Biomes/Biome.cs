@@ -7,11 +7,6 @@ using System.Linq;
 [GlobalClass]
 public partial class Biome : Resource, IDescriptible
 {
-    [Export]
-    public string CompendiumName { get; set; }
-
-    [Export(PropertyHint.MultilineText)]
-    public string CompendiumDescription { get; set; }
 
     [Export]
     public Array<WeightedFish> Fishes;
@@ -21,6 +16,12 @@ public partial class Biome : Resource, IDescriptible
 
     [Export]
     public Array<WeightedBiome> FollowupBiomes;
+
+    [ExportGroup("Compendium")]
+    [Export]
+    public string CompendiumName { get; set; }
+    [Export(PropertyHint.MultilineText)]
+    public string CompendiumDescription { get; set; }
 
     [ExportGroup("Ambiance")]
     [Export]
@@ -44,7 +45,7 @@ public partial class Biome : Resource, IDescriptible
         return $"{Constants.BiomesFolder}{BiomeType}/{BiomeType}.tres";
     }
 
-    private static WeightedItem ChooseFrom(WeightedItem[] list)
+    public static WeightedItem ChooseFrom(WeightedItem[] list)
     {
         uint totalWeight = 0;
         foreach (var item in list)

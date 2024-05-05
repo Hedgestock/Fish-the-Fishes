@@ -3,9 +3,9 @@
 
 namespace Godot.Fish_the_fishes.Scripts
 {
-    internal interface IDescriptible
+    public interface IDescriptible
     {
-        string CompendiumName { get; set; }
-        string CompendiumDescription { get; set; }
+        public string CompendiumName { get; set; }
+        public string CompendiumDescription { get; set; }
     }
 }

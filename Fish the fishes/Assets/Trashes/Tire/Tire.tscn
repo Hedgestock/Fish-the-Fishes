@@ -1,12 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://lvuam8fndp75"]
+[gd_scene load_steps=5 format=3 uid="uid://lvuam8fndp75"]
 
 [ext_resource type="PackedScene" uid="uid://cnjq5le44dwec" path="res://Fish the fishes/Assets/Trashes/Trash.tscn" id="1_0vkjc"]
+[ext_resource type="Script" path="res://Fish the fishes/Assets/Trashes/Tire/Tire.cs" id="2_wqbsq"]
 [ext_resource type="SpriteFrames" uid="uid://bybglcna4kd5n" path="res://Fish the fishes/Assets/Trashes/Tire/TireAnimation.tres" id="3_t55un"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_men1j"]
 radius = 40.0
 
 [node name="Tire" instance=ExtResource("1_0vkjc")]
+script = ExtResource("2_wqbsq")
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 scale = Vector2(2, 2)

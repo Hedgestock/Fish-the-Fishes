@@ -2,74 +2,25 @@ using Godot;
 using Godot.Fish_the_fishes.Scripts;
 using System;
 
-public partial class FishCompendiumEntry : CompendiumEntry
+public partial class FishCompendiumEntry : AnimatedCompendiumEntry
 {
 
     [Export]
     private Label NumberFished;
-    [Export]
-    private AnimatedSpriteForUI Placeholder;
-    [Export]
-    private HBoxContainer AnimationButtons;
-
-    private Type EntryType;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        if (string.IsNullOrEmpty(TypeString)) return;
+        base._Ready();
 
-        string resourcePath = $"{Constants.FishesFolder}{TypeString}/{TypeString}Animation.tres";
+        if (Entry == null) return;
 
-        EntryType = Type.GetType(TypeString);
+        NumberFished.Text = (Entry as UserData.FishCompendiumEntry).Caught.ToString();
 
-        CompendiumName.Text = (string)EntryType.GetProperty(nameof(CompendiumName)).GetValue(EntryType);
-
-        Placeholder.SpriteFrames = GD.Load<SpriteFrames>(resourcePath);
-
-        if (Placeholder.SpriteFrames != null)
+        if (UserData.FishCompendium[EntryKey].Caught > 0)
         {
-            Placeholder.Animation = "alive";
-            Placeholder.Play();
-
-            if (!UserData.FishCompendium.ContainsKey(TypeString))
-            {
-                Placeholder.Modulate = new Color(0, 0, 0);
-                return;
-            }
+            CompendiumDescription.Text = Instance.CompendiumDescription;
+            ShowAnimationButtons();
         }
-        else
-        {
-            GD.PrintErr("No animation resource found at path: ", resourcePath);
-        }
-
-        NumberSeen.Text = UserData.FishCompendium[TypeString].Seen.ToString();
-        NumberFished.Text = UserData.FishCompendium[TypeString].Caught.ToString();
-
-        if (UserData.FishCompendium[TypeString].Caught > 0)
-        {
-            CompendiumDescription.Text = (string)EntryType.GetProperty(nameof(CompendiumDescription)).GetValue(EntryType);
-            if (Placeholder.SpriteFrames.GetAnimationNames().Length > 1)
-            {
-                AnimationButtons.Show();
-            }
-        }
-    }
-
-    private void PreviousAnimation()
-    {
-        ChangeAnimation(-1);
-    }
-
-    private void NextAnimation()
-    {
-        ChangeAnimation(1);
-    }
-
-    private void ChangeAnimation(int step)
-    {
-        string[] animationNames = Placeholder.SpriteFrames.GetAnimationNames();
-        int currentIndex = Array.FindIndex(animationNames, animation => animation == Placeholder.Animation);
-        Placeholder.Animation = animationNames[Mathf.PosMod(currentIndex + step, animationNames.Length)];
     }
 }

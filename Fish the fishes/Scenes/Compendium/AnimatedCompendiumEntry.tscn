@@ -1,0 +1,49 @@
+[gd_scene load_steps=11 format=3 uid="uid://bjjph3hx7hdwx"]
+
+[ext_resource type="PackedScene" uid="uid://cu4qvea6vce5v" path="res://Fish the fishes/Scenes/Compendium/CompendiumEntry.tscn" id="1_bl8jl"]
+[ext_resource type="Script" path="res://Fish the fishes/Scenes/Compendium/AnimatedCompendiumEntry.cs" id="2_pthwn"]
+[ext_resource type="PackedScene" uid="uid://di7207b71mnm8" path="res://Fish the fishes/UI/AnimatedSpriteForUI/AnimatedSpriteForUI.tscn" id="3_t7bor"]
+[ext_resource type="Texture2D" uid="uid://sf5nbt1ewklc" path="res://Fish the fishes/art/fish/arrow/arrow_left.png" id="4_rulu7"]
+[ext_resource type="Texture2D" uid="uid://b3ygkwfip0qaj" path="res://Fish the fishes/art/fish/arrow/arrow_left_3.png" id="5_iihax"]
+[ext_resource type="Texture2D" uid="uid://b6u50qvxp6of2" path="res://Fish the fishes/art/fish/arrow/arrow_left_2.png" id="6_dapob"]
+[ext_resource type="Texture2D" uid="uid://t6xoo5v6v31m" path="res://Fish the fishes/art/fish/arrow/arrow_dead.png" id="7_87h1m"]
+[ext_resource type="Texture2D" uid="uid://cdlcldgajtn4i" path="res://Fish the fishes/art/fish/arrow/arrow_alive_1.png" id="8_hmsam"]
+[ext_resource type="Texture2D" uid="uid://csxfp4n3h00us" path="res://Fish the fishes/art/fish/arrow/arrow_alive_3.png" id="9_87si8"]
+[ext_resource type="Texture2D" uid="uid://bcg3wdk8om5h4" path="res://Fish the fishes/art/fish/arrow/arrow_alive_2.png" id="10_ogtkt"]
+
+[node name="PanelContainer" node_paths=PackedStringArray("Placeholder", "AnimationButtons") instance=ExtResource("1_bl8jl")]
+script = ExtResource("2_pthwn")
+Placeholder = NodePath("MarginContainer/HBoxContainer/Graphic/Placeholder")
+AnimationButtons = NodePath("MarginContainer/HBoxContainer/Graphic/AnimationButtons")
+
+[node name="Placeholder" parent="MarginContainer/HBoxContainer/Graphic" index="0" instance=ExtResource("3_t7bor")]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="AnimationButtons" type="HBoxContainer" parent="MarginContainer/HBoxContainer/Graphic" index="1"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 10
+
+[node name="PreviousAnimationButton" type="TextureButton" parent="MarginContainer/HBoxContainer/Graphic/AnimationButtons" index="0"]
+layout_mode = 2
+mouse_filter = 1
+texture_normal = ExtResource("4_rulu7")
+texture_pressed = ExtResource("5_iihax")
+texture_hover = ExtResource("6_dapob")
+texture_disabled = ExtResource("7_87h1m")
+stretch_mode = 5
+
+[node name="NextAnimationButton" type="TextureButton" parent="MarginContainer/HBoxContainer/Graphic/AnimationButtons" index="1"]
+layout_mode = 2
+size_flags_vertical = 0
+mouse_filter = 1
+texture_normal = ExtResource("8_hmsam")
+texture_pressed = ExtResource("9_87si8")
+texture_hover = ExtResource("10_ogtkt")
+texture_disabled = ExtResource("7_87h1m")
+stretch_mode = 4
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Graphic/AnimationButtons/PreviousAnimationButton" to="." method="PreviousAnimation"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Graphic/AnimationButtons/NextAnimationButton" to="." method="NextAnimation"]

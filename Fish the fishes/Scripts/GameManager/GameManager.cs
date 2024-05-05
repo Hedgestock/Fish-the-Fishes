@@ -62,7 +62,7 @@ public partial class GameManager : Node
             TargetSafeTimer.Timeout -= ChangeTarget;
             TargetSafeTimer = null;
         }
-        _target = GD.Load<PackedScene>(Biome.GetRandomPathFrom(Biome.Fishes)).Instantiate<Fish>().GetType().Name;
+        _target = (Biome.ChooseFrom(Biome.Fishes.ToArray()) as WeightedFish).Fish.ToString();
         _instance.EmitSignal(SignalName.TargetChanged);
     }
 
