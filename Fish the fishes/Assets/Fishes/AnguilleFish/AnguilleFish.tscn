@@ -13,6 +13,8 @@ height = 262.0
 script = ExtResource("2_2x4bm")
 CompendiumName = "Anguille Fish"
 CompendiumDescription = "This is an anguille fish"
+MinSpeed = 200.0
+MaxSpeed = 300.0
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0"]
 position = Vector2(0.5, 0.999997)

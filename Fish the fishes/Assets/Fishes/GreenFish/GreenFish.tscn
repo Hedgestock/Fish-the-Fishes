@@ -13,6 +13,7 @@ height = 100.0
 script = ExtResource("2_v3fog")
 CompendiumName = "Green Fish"
 CompendiumDescription = "This is a green fish"
+MaxSpeed = 200.0
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0"]
 position = Vector2(-3.8147e-06, 1)
