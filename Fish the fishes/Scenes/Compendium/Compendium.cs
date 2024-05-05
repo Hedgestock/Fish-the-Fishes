@@ -39,10 +39,9 @@ public partial class Compendium : CanvasLayer
             AddFishEntry(entry.Key);
         }
 
-        var listOfExistingFishTypes = AppDomain.CurrentDomain.GetAssemblies()
-         .SelectMany(domainAssembly => domainAssembly.GetTypes())
-         .Where(type => type.IsSubclassOf(typeof(Fish))
-         ).Select(type => type.Name).Except(UserData.FishCompendium.Keys);
+        var listOfExistingFishTypes = Enum.GetValues(typeof(Constants.Fishes))
+            .Cast<Constants.Fishes>()
+            .Select(v => v.ToString()).Except(UserData.FishCompendium.Keys);
 
         foreach (var fishType in listOfExistingFishTypes)
         {
@@ -64,10 +63,9 @@ public partial class Compendium : CanvasLayer
             AddTrashEntry(entry.Key);
         }
 
-        var listOfExistingTrashTypes = AppDomain.CurrentDomain.GetAssemblies()
-         .SelectMany(domainAssembly => domainAssembly.GetTypes())
-         .Where(type => type.IsSubclassOf(typeof(Trash))
-         ).Select(type => type.Name).Except(UserData.TrashCompendium.Keys);
+        var listOfExistingTrashTypes = Enum.GetValues(typeof(Constants.Trashes))
+            .Cast<Constants.Trashes>()
+            .Select(v => v.ToString()).Except(UserData.TrashCompendium.Keys);
 
         foreach (var trashType in listOfExistingTrashTypes)
         {

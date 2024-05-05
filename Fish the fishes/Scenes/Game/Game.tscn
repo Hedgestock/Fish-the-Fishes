@@ -40,7 +40,7 @@ Deviation = 0.5
 
 [node name="BiomeTimer" parent="." instance=ExtResource("13_7sxe6")]
 autostart = true
-WaitTimeAverage = 60.0
+WaitTimeAverage = 10.0
 Deviation = 0.0
 
 [node name="Control" type="Control" parent="."]
@@ -60,7 +60,6 @@ shape = SubResource("CapsuleShape2D_ksc04")
 [node name="FishingLine" parent="." instance=ExtResource("3_kichm")]
 
 [connection signal="EndGame" from="HUD" to="." method="EndGame"]
-[connection signal="TargetFished" from="HUD" to="." method="ChangeTarget"]
 [connection signal="timeout" from="FishTimer" to="." method="SpawnFish"]
 [connection signal="timeout" from="TrashTimer" to="." method="SpawnTrash"]
 [connection signal="timeout" from="BiomeTimer" to="." method="ChangeBiome"]

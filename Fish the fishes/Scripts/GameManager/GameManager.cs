@@ -1,25 +1,27 @@
 using Godot;
 using Godot.Fish_the_fishes.Scripts;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 
 public partial class GameManager : Node
 {
     [Signal]
     public delegate void TargetChangedEventHandler();
 
-    static private GameManager _instance = null;
-    public static GameManager Instance {  get { return _instance; } }
+    [Export]
+    private Biome _startingBiome;
+    [Export]
+    private Biome _testBiome;
 
-    private string _target = "Fish";
-    static public string Target
-    {
-        get { return _instance._target; }
-        set
-        {
-            _instance._target = value;
-            _instance.EmitSignal(SignalName.TargetChanged);
-        }
-    }
+    public static Biome StartingBiome { get { return _instance._startingBiome; } }
+    public static Biome TestBiome { get { return _instance._testBiome; } }
+
+    static private GameManager _instance = null;
+    public static GameManager Instance { get { return _instance; } }
+
+    private static string _target = "Fish";
+    static public string Target { get { return _target; } }
 
     public static Game.Mode Mode = Game.Mode.Menu;
     public static Biome Biome;
@@ -35,6 +37,8 @@ public partial class GameManager : Node
     private static string SettingsFileName = "settings.save";
     private static string SettingsFilePath = SaveDirectory + SettingsFileName;
 
+    private static SceneTreeTimer TargetSafeTimer;
+
     private GameManager()
     {
         if (_instance != null)
@@ -49,6 +53,31 @@ public partial class GameManager : Node
         LoadData();
         ScreenSize = GetViewport().GetVisibleRect().Size;
         GetTree().Root.SizeChanged += OnScreenResize;
+    }
+
+    static public void ChangeTarget()
+    {
+        if (TargetSafeTimer != null)
+        {
+            TargetSafeTimer.Timeout -= ChangeTarget;
+            TargetSafeTimer = null;
+        }
+        _target = GD.Load<PackedScene>(Biome.GetRandomPathFrom(Biome.Fishes)).Instantiate<Fish>().GetType().Name;
+        _instance.EmitSignal(SignalName.TargetChanged);
+    }
+
+    static public void ChangeBiome()
+    {
+        if (Biome.FollowupBiomes.Count == 0) return;
+        Biome = GD.Load<Biome>(Biome.GetRandomPathFrom(Biome.FollowupBiomes));
+
+        // That's a mouthfull, but we simply check the current biome to check if the target is still valid
+        // otherwise, we just wait a bit to avoid the issue of fishing one already on screen and set a new one.
+        if (Mode == Game.Mode.Target && !Biome.Fishes.Select(fish => fish.ToString()).Contains(Target))
+        {
+            TargetSafeTimer = _instance.GetTree().CreateTimer(10);
+            TargetSafeTimer.Timeout += ChangeTarget;
+        };
     }
 
     static public void WriteHighScore()
@@ -159,5 +188,22 @@ public partial class GameManager : Node
     private void OnScreenResize()
     {
         ScreenSize = GetViewport().GetVisibleRect().Size;
+    }
+
+    private void Test()
+    {
+        List<string> list = new List<string>();
+        TestRec(list, StartingBiome);
+        list.ForEach(item => GD.Print("biome: ", item));
+    }
+    private void TestRec(List<string> list, Biome CurrentBiome)
+    {
+        if (list.Contains(CurrentBiome.ResourceName)) return;
+        list.Add(CurrentBiome.ResourceName);
+        foreach (var item in CurrentBiome.FollowupBiomes)
+        {
+            string BiomeType = item.Biome.ToString();
+            TestRec(list, GD.Load<Biome>($"{Constants.BiomesFolder}{BiomeType}/{BiomeType}.tres"));
+        }
     }
 }

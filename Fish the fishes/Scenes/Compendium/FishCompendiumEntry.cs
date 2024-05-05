@@ -19,7 +19,7 @@ public partial class FishCompendiumEntry : CompendiumEntry
     {
         base._Ready();
 
-        string resourcePath = $"res://Fish the fishes/Assets/Fishes/{TypeString}/{TypeString}Animation.tres";
+        string resourcePath = $"{Constants.FishesFolder}{TypeString}/{TypeString}Animation.tres";
 
         Placeholder.SpriteFrames = GD.Load<SpriteFrames>(resourcePath);
 

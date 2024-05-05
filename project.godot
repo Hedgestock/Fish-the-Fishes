@@ -24,7 +24,7 @@ buses/default_bus_layout="res://FTF_bus_layout.tres"
 
 [autoload]
 
-GameManager="*res://Fish the fishes/Scripts/GameManager.cs"
+GameManager="*res://Fish the fishes/Scripts/GameManager/GameManager.tscn"
 
 [display]
 

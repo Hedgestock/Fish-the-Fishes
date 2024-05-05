@@ -1,6 +1,5 @@
 using Godot;
 using Godot.Fish_the_fishes.Scripts;
-using Godot.Fish_the_fishes.Scripts.Interfaces;
 using System;
 
 
