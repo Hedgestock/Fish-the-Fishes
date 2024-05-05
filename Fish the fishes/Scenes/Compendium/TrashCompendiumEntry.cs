@@ -10,18 +10,23 @@ public partial class TrashCompendiumEntry : CompendiumEntry
     [Export]
     private Label NumberHit;
     [Export]
-    private Label NumberSeen;
-    [Export]
     private AnimatedSpriteForUI Placeholder;
     [Export]
     private HBoxContainer AnimationButtons;
 
+    private Type EntryType;
+
+
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        base._Ready();
+        if (string.IsNullOrEmpty(TypeString)) return;
 
         string resourcePath = $"{Constants.TrashesFolder}{TypeString}/{TypeString}Animation.tres";
+        
+        EntryType = Type.GetType(TypeString);
+
+        CompendiumName.Text = (string)EntryType.GetProperty(nameof(CompendiumName)).GetValue(EntryType);
 
         Placeholder.SpriteFrames = GD.Load<SpriteFrames>(resourcePath);
 

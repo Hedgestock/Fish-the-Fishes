@@ -2,11 +2,11 @@ using Godot;
 using Godot.Fish_the_fishes.Scripts;
 using System;
 
-public partial class Trash : CharacterBody2D, IFishable, IDescriptible
+public partial class Trash : CharacterBody2D, IFishable
 {
-    public static string CompendiumName { get { return "Trash"; } }
-    public static string CompendiumDescription { get { return "This is a trash"; } }
 
+    [Export]
+    public CompendiumInfo CompendiumInfo;
     [Export]
     private float GravityScale = 0.2f;
 

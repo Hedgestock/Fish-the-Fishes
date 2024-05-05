@@ -4,11 +4,10 @@ using System;
 
 
 
-public partial class Fish : CharacterBody2D, IFishable, IDescriptible
+public partial class Fish : CharacterBody2D, IFishable
 {
-    public static string CompendiumName { get { return "Fish"; } }
-    public static string CompendiumDescription { get { return "This is a fish"; } }
-
+    [Export]
+    CompendiumInfo CompendiumInfo;
     [Export]
     protected AnimatedSprite2D Sprite;
     [Export]
