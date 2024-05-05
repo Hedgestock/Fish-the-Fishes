@@ -1,6 +1,8 @@
-[gd_resource type="Resource" script_class="Biome" load_steps=8 format=3 uid="uid://cub1hi1q8poi"]
+[gd_resource type="Resource" script_class="Biome" load_steps=16 format=3 uid="uid://cub1hi1q8poi"]
 
 [ext_resource type="Script" path="res://Fish the fishes/Scripts/Weighted/WeightedFish.cs" id="1_l3bwr"]
+[ext_resource type="Script" path="res://Fish the fishes/Scripts/Weighted/WeightedBiome.cs" id="2_nsdd8"]
+[ext_resource type="Script" path="res://Fish the fishes/Scripts/Weighted/WeightedTrash.cs" id="3_r1s2o"]
 [ext_resource type="Script" path="res://Fish the fishes/Assets/Biomes/Biome.cs" id="12_3mbs0"]
 
 [sub_resource type="Gradient" id="Gradient_hem5c"]
@@ -26,12 +28,42 @@ script = ExtResource("1_l3bwr")
 Fish = 3
 Weight = 50
 
+[sub_resource type="Resource" id="Resource_e8lrw"]
+script = ExtResource("2_nsdd8")
+Biome = 5
+Weight = 10
+
+[sub_resource type="Resource" id="Resource_a21oa"]
+script = ExtResource("2_nsdd8")
+Biome = 6
+Weight = 10
+
+[sub_resource type="Resource" id="Resource_e6gle"]
+script = ExtResource("2_nsdd8")
+Biome = 3
+Weight = 100
+
+[sub_resource type="Resource" id="Resource_0d7d5"]
+script = ExtResource("3_r1s2o")
+Trash = 0
+Weight = 100
+
+[sub_resource type="Resource" id="Resource_ld3fx"]
+script = ExtResource("3_r1s2o")
+Trash = 1
+Weight = 100
+
+[sub_resource type="Resource" id="Resource_0f7p0"]
+script = ExtResource("3_r1s2o")
+Trash = 2
+Weight = 100
+
 [resource]
 resource_name = "Abyss"
 script = ExtResource("12_3mbs0")
 Fishes = Array[Object]([SubResource("Resource_e35ma"), SubResource("Resource_gpymn"), SubResource("Resource_h78nu")])
-Trashes = null
-FollowupBiomes = null
+Trashes = Array[Object]([SubResource("Resource_0d7d5"), SubResource("Resource_ld3fx"), SubResource("Resource_0f7p0")])
+FollowupBiomes = Array[Object]([SubResource("Resource_e8lrw"), SubResource("Resource_a21oa"), SubResource("Resource_e6gle")])
 CompendiumName = "Abyss"
 CompendiumDescription = "Those are the abysses"
 Background = SubResource("GradientTexture2D_cx4mk")

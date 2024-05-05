@@ -13,7 +13,7 @@ action = &"menu_go_back"
 [sub_resource type="Shortcut" id="Shortcut_y2krb"]
 events = [SubResource("InputEventAction_qkuki")]
 
-[node name="Stats" type="CanvasLayer"]
+[node name="Tutorial" type="CanvasLayer"]
 script = ExtResource("1_2td3o")
 
 [node name="TextureRect" type="TextureRect" parent="."]

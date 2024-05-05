@@ -43,6 +43,9 @@ namespace Godot.Fish_the_fishes.Scripts
             WreckDeck,
             WreckInside,
             Abyss,
+            CoralReef,
+            GreatBlue,
+            OceanCurrent,
             _Test,
             _TestFollowup
         }

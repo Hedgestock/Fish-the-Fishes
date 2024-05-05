@@ -62,10 +62,13 @@
 - [x] Epave (pont)
 - [x] Epave (intérieur)
 - [x] Abysses
+- [x] Récif de corail
+- [x] Grand bleu
+- [x] Courant marin
+- [ ] Rivière
+- [ ] Lac
+- [ ] Marre
 - [ ] Mangrove
-- [ ] Récif 
-- [ ] Grand bleu
-- [ ] Courant marin
 
 # Gameplay
 
