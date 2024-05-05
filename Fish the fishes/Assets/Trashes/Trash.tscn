@@ -5,6 +5,8 @@
 [node name="Trash" type="CharacterBody2D" groups=["Trashes"]]
 collision_mask = 0
 script = ExtResource("1_8ptuq")
+CompendiumName = "Trash"
+CompendiumDescription = "this is a trash"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 

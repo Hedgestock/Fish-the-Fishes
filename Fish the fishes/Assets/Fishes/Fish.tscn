@@ -11,6 +11,8 @@ floor_block_on_wall = false
 script = ExtResource("1_y6aq3")
 Sprite = NodePath("AnimatedSprite2D")
 Sound = NodePath("AudioStreamPlayer")
+CompendiumName = "Fish"
+CompendiumDescription = "This is a fish"
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 

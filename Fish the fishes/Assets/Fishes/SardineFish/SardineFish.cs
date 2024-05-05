@@ -3,9 +3,6 @@ using System;
 
 public partial class SardineFish : Fish
 {
-    public static new string CompendiumName { get { return "Sardine Fish"; } }
-    public static new string CompendiumDescription { get { return "This is a sardine fish"; } }
-
     [Export]
     public int shoalRadius = 20;
     [Export]

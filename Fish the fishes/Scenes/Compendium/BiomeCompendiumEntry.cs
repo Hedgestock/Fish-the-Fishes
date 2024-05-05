@@ -11,15 +11,13 @@ public partial class BiomeCompendiumEntry : CompendiumEntry
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
+        if (string.IsNullOrEmpty(TypeString)) return;
+
         NumberSeen.Text = UserData.TrashCompendium[TypeString].Seen.ToString();
 
-        if (UserData.BiomeCompendium[TypeString].Caught > 0)
+        if (UserData.BiomeCompendium[TypeString].Seen > 0)
         {
-            CompendiumDescription.Text = (string)EntryType.GetProperty(nameof(CompendiumDescription)).GetValue(EntryType);
-            if (Placeholder.SpriteFrames.GetAnimationNames().Length > 1)
-            {
-                AnimationButtons.Show();
-            }
+
         }
 
     }

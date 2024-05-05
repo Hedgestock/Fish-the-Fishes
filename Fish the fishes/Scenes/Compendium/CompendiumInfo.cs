@@ -6,6 +6,7 @@ public partial class CompendiumInfo : Resource
 {
     [Export]
     public string CompendiumName { get; set; }
-    [Export]
+
+    [Export(PropertyHint.MultilineText)]
     public string CompendiumDescription { get; set; }
 }

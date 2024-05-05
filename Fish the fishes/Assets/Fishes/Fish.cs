@@ -4,14 +4,18 @@ using System;
 
 
 
-public partial class Fish : CharacterBody2D, IFishable
+public partial class Fish : CharacterBody2D, IFishable, IDescriptible
 {
-    [Export]
-    CompendiumInfo CompendiumInfo;
     [Export]
     protected AnimatedSprite2D Sprite;
     [Export]
     protected AudioStreamPlayer2D Sound;
+
+    [ExportGroup("Compendium")]
+    [Export]
+    public string CompendiumName { get; set; }
+    [Export(PropertyHint.MultilineText)]
+    public string CompendiumDescription { get; set; }
 
     [ExportGroup("Scoring")]
     [Export]

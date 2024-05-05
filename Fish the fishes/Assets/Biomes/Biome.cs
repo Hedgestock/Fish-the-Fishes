@@ -5,8 +5,14 @@ using System;
 using System.Linq;
 
 [GlobalClass]
-public partial class Biome : Resource
+public partial class Biome : Resource, IDescriptible
 {
+    [Export]
+    public string CompendiumName { get; set; }
+
+    [Export(PropertyHint.MultilineText)]
+    public string CompendiumDescription { get; set; }
+
     [Export]
     public Array<WeightedFish> Fishes;
 

@@ -6,9 +6,6 @@ using static Godot.TextServer;
 
 public partial class SwordFish : Fish, IFisher
 {
-    public static new string CompendiumName { get { return "Sword Fish"; } }
-    public static new string CompendiumDescription { get { return "This is a sword fish"; } }
-
     private enum Action
     {
         Swimming,

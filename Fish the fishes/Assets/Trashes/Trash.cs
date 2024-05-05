@@ -2,13 +2,16 @@ using Godot;
 using Godot.Fish_the_fishes.Scripts;
 using System;
 
-public partial class Trash : CharacterBody2D, IFishable
+public partial class Trash : CharacterBody2D, IFishable, IDescriptible
 {
-
-    [Export]
-    public CompendiumInfo CompendiumInfo;
     [Export]
     private float GravityScale = 0.2f;
+
+    [ExportGroup("Compendium")]
+    [Export]
+    public string CompendiumName { get; set; }
+    [Export(PropertyHint.MultilineText)]
+    public string CompendiumDescription { get; set; }
 
     public bool IsCaught { get; set; }
 

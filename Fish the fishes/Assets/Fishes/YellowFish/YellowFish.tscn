@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://ysvrflpejd5u"]
+[gd_scene load_steps=5 format=3 uid="uid://ysvrflpejd5u"]
 
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Fish the fishes/Assets/Fishes/Fish.tscn" id="1_lk6on"]
-[ext_resource type="Script" path="res://Fish the fishes/Assets/Fishes/YellowFish/YellowFish.cs" id="2_6xyr6"]
 [ext_resource type="SpriteFrames" uid="uid://dib3yn73u4ctr" path="res://Fish the fishes/Assets/Fishes/YellowFish/YellowFishAnimation.tres" id="2_e3t31"]
 [ext_resource type="AudioStream" uid="uid://cv3hogwjako7s" path="res://Fish the fishes/sounds/Fish popapopapopapopa.wav" id="4_vki7v"]
 
@@ -10,7 +9,6 @@ radius = 22.0
 height = 78.0
 
 [node name="YellowFish" instance=ExtResource("1_lk6on")]
-script = ExtResource("2_6xyr6")
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0"]
 position = Vector2(-0.499997, -0.500001)
