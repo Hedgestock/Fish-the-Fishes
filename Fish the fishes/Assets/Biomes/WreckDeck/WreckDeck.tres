@@ -1,17 +1,10 @@
-[gd_resource type="Resource" script_class="Biome" load_steps=18 format=3 uid="uid://dpe15eoelonv6"]
+[gd_resource type="Resource" script_class="Biome" load_steps=17 format=3 uid="uid://dpe15eoelonv6"]
 
+[ext_resource type="Texture2D" uid="uid://ciran7nuh41ls" path="res://Fish the fishes/Assets/Biomes/WreckDeck/WreckDeck.png" id="1_04gfk"]
 [ext_resource type="Script" path="res://Fish the fishes/Scripts/Weighted/WeightedFish.cs" id="1_oj2i6"]
 [ext_resource type="Script" path="res://Fish the fishes/Scripts/Weighted/WeightedBiome.cs" id="2_d15sk"]
 [ext_resource type="Script" path="res://Fish the fishes/Scripts/Weighted/WeightedTrash.cs" id="3_pda3m"]
 [ext_resource type="Script" path="res://Fish the fishes/Assets/Biomes/Biome.cs" id="11_ytjb7"]
-
-[sub_resource type="Gradient" id="Gradient_hem5c"]
-colors = PackedColorArray(0.384314, 0, 0, 1, 0.277528, 0.277528, 0.277528, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_cx4mk"]
-gradient = SubResource("Gradient_hem5c")
-fill_from = Vector2(1, 0)
-fill_to = Vector2(1, 1)
 
 [sub_resource type="Resource" id="Resource_vsvl2"]
 script = ExtResource("1_oj2i6")
@@ -76,4 +69,4 @@ Trashes = Array[Object]([SubResource("Resource_f5yep"), SubResource("Resource_pm
 FollowupBiomes = Array[Object]([SubResource("Resource_vtufd")])
 CompendiumName = "Wreck Deck"
 CompendiumDescription = "This is the deck of a shipwreck"
-Background = SubResource("GradientTexture2D_cx4mk")
+Background = ExtResource("1_04gfk")
