@@ -35,15 +35,6 @@ public partial class AnimatedCompendiumEntry : CompendiumEntry
         {
             GD.PrintErr("No animation resource found at path: ", ResourcePath);
         }
-
-        if (Entry == null) return;
-
-        NumberSeen.Text = Entry.Seen.ToString();
-
-        if (Placeholder.SpriteFrames.GetAnimationNames().Length > 1)
-        {
-            AnimationButtons.Show();
-        }
     }
 
     protected void ShowAnimationButtons()

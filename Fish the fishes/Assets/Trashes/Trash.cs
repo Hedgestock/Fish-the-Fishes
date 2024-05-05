@@ -66,14 +66,8 @@ public partial class Trash : CharacterBody2D, IFishable, IDescriptible
     protected void NotifySpawn()
     {
         if (GameManager.Mode == Game.Mode.Menu) return;
-        if (UserData.TrashCompendium.TryGetValue(GetType().Name, out UserData.TrashCompendiumEntry entry))
-        {
-            entry.Seen++;
-        }
-        else
-        {
-            UserData.TrashCompendium[GetType().Name] = new UserData.TrashCompendiumEntry();
-        }
+        if (UserData.TrashCompendium.TryGetValue(GetType().Name, out UserData.TrashCompendiumEntry entry)) entry.Seen++;
+        else UserData.TrashCompendium[GetType().Name] = new UserData.TrashCompendiumEntry();
     }
 }
 

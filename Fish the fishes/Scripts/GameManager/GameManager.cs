@@ -23,8 +23,21 @@ public partial class GameManager : Node
     private static string _target = "Fish";
     static public string Target { get { return _target; } }
 
+
+    private static Biome _biome;
+    public static Biome Biome
+    {
+        get { return _biome; }
+        set {
+            _biome = value; 
+            if (Mode == Game.Mode.Menu) return;
+            if (UserData.BiomeCompendium.TryGetValue(value.ResourceName, out UserData.BiomeCompendiumEntry entry)) entry.Seen++;
+            else UserData.BiomeCompendium[Biome.ResourceName] = new UserData.BiomeCompendiumEntry();
+        }
+    }
+
+
     public static Game.Mode Mode = Game.Mode.Menu;
-    public static Biome Biome;
     public static uint Score = 0;
     public static uint Lives = 3;
 

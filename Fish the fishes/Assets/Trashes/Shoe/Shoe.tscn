@@ -9,6 +9,8 @@ size = Vector2(64, 64)
 
 [node name="Shoe" instance=ExtResource("1_pn0g6")]
 script = ExtResource("2_5d3ve")
+CompendiumName = "Shoe"
+CompendiumDescription = "This is a shoe"
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 scale = Vector2(2, 2)

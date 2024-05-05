@@ -20,6 +20,9 @@ public partial class Compendium : CanvasLayer
     [Export]
     VBoxContainer Biomes;
 
+    [Export]
+    PackedScene BiomeEntry;
+
     public enum EntryType
     {
         Biome,
@@ -32,6 +35,7 @@ public partial class Compendium : CanvasLayer
     {
         PopulateFishCompendium();
         PopulateTrashCompendium();
+        PopulateBiomeCompendium();
     }
 
     private void GoToHome()
@@ -87,5 +91,30 @@ public partial class Compendium : CanvasLayer
         newEntry.EntryKey = trashType;
         newEntry.EntryType = EntryType.Trash;
         Trashes.AddChild(newEntry);
+    }
+
+    private void PopulateBiomeCompendium()
+    {
+        foreach (var entry in UserData.BiomeCompendium)
+        {
+            AddBiomeEntry(entry.Key);
+        }
+
+        var listOfExistingBiomeTypes = Enum.GetValues(typeof(Constants.Biomes))
+            .Cast<Constants.Biomes>()
+            .Select(v => v.ToString()).Except(UserData.BiomeCompendium.Keys);
+
+        foreach (var biomeType in listOfExistingBiomeTypes)
+        {
+            AddBiomeEntry(biomeType);
+        }
+    }
+
+    private void AddBiomeEntry(string biomeType)
+    {
+        BiomeCompendiumEntry newEntry = BiomeEntry.Instantiate<BiomeCompendiumEntry>();
+        newEntry.EntryKey = biomeType;
+        newEntry.EntryType = EntryType.Biome;
+        Biomes.AddChild(newEntry);
     }
 }

@@ -10,6 +10,8 @@ height = 80.0
 
 [node name="Can" instance=ExtResource("1_yvvmi")]
 script = ExtResource("2_3mv8q")
+CompendiumName = "Can"
+CompendiumDescription = "This is a can"
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 scale = Vector2(2, 2)

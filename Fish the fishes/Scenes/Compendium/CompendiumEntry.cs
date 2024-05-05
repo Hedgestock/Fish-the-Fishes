@@ -44,6 +44,9 @@ public partial class CompendiumEntry : PanelContainer
             Entry = UserData.BiomeCompendium.GetValueOrDefault(EntryKey);
         }
 
+        if (Entry == null) return;
+
         CompendiumName.Text = Instance.CompendiumName;
+        NumberSeen.Text = Entry.Seen.ToString();
     }
 }

@@ -9,6 +9,8 @@ radius = 40.0
 
 [node name="Tire" instance=ExtResource("1_0vkjc")]
 script = ExtResource("2_wqbsq")
+CompendiumName = "Tire"
+CompendiumDescription = "This is a tire"
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 scale = Vector2(2, 2)

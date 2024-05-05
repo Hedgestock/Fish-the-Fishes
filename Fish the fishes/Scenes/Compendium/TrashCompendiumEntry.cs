@@ -17,8 +17,8 @@ public partial class TrashCompendiumEntry : AnimatedCompendiumEntry
 
         if (Entry == null) return;
 
-        NumberHit.Text = UserData.TrashCompendium[EntryKey].Hit.ToString();
-        NumberCleaned.Text = UserData.TrashCompendium[EntryKey].Cleaned.ToString();
+        NumberHit.Text = (Entry as UserData.TrashCompendiumEntry).Hit.ToString();
+        NumberCleaned.Text = (Entry as UserData.TrashCompendiumEntry).Cleaned.ToString();
         CompendiumDescription.Text = Instance.CompendiumDescription;
 
         ShowAnimationButtons();

@@ -32,4 +32,6 @@ script = ExtResource("12_3mbs0")
 Fishes = Array[Object]([SubResource("Resource_e35ma"), SubResource("Resource_gpymn"), SubResource("Resource_h78nu")])
 Trashes = null
 FollowupBiomes = null
+CompendiumName = "Abyss"
+CompendiumDescription = "Those are the abysses"
 Background = SubResource("GradientTexture2D_cx4mk")
