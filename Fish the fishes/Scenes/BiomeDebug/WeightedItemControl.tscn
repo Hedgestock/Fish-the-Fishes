@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://djbfl4t4uqipn"]
+
+[ext_resource type="Script" path="res://Fish the fishes/Scenes/BiomeDebug/WeightedItemControl.cs" id="1_ph3na"]
+
+[node name="WeightedItemControl" type="HBoxContainer" node_paths=PackedStringArray("ItemName", "WeighInput")]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 18.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+script = ExtResource("1_ph3na")
+ItemName = NodePath("ItemName")
+WeighInput = NodePath("WeightInput")
+
+[node name="ItemName" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 2
+text = "Item"
+
+[node name="WeightInput" type="LineEdit" parent="."]
+layout_mode = 2
+placeholder_text = "Weight"
+alignment = 2
+editable = false
+expand_to_text_length = true
+context_menu_enabled = false
+virtual_keyboard_type = 2
+shortcut_keys_enabled = false
+middle_mouse_paste_enabled = false
+flat = true
