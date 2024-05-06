@@ -11,7 +11,7 @@ public partial class BiomeDebug : CanvasLayer
     [Export]
     PackedScene BiomeNode;
 
-    private HashSet<string> VisitedBiomes = new HashSet<string>();
+    private Dictionary<string, BiomeGraphNode> VisitedBiomes = new Dictionary<string, BiomeGraphNode>();
 
     public override void _Ready()
     {
@@ -20,28 +20,40 @@ public partial class BiomeDebug : CanvasLayer
         TraverseBiomes(GameManager.StartingBiome.ResourceName);
     }
 
-    private void TraverseBiomes(string biomeName, BiomeGraphNode PreviousBiomeNode = null, int fromSlot = -1)
+    private void TraverseBiomes(string biomeName, BiomeGraphNode PreviousBiomeNode = null, int fromPort = -1)
     {
-        if (VisitedBiomes.Contains(biomeName)) return;
+        BiomeGraphNode thisBiomeNode;
 
-        VisitedBiomes.Add(biomeName);
+        if (VisitedBiomes.TryGetValue(biomeName, out thisBiomeNode))
+        {
+            Graph.ConnectNode(PreviousBiomeNode.Name, fromPort, thisBiomeNode.Name, 0);
+            return;
+        }
 
         Biome thisBiome = GD.Load<Biome>($"{Constants.BiomesFolder}/{biomeName}/{biomeName}.tres");
-        
-        BiomeGraphNode thisBiomeNode = CreateBiomeNode(thisBiome);
-        if (PreviousBiomeNode != null) {
-            thisBiomeNode.PositionOffset = PreviousBiomeNode.PositionOffset + new Vector2(500 ,0);
-        } else
+
+        thisBiomeNode = CreateBiomeNode(thisBiome);
+        Graph.AddChild(thisBiomeNode);
+        thisBiomeNode.SetSlotEnabledLeft(0, true);
+        if (PreviousBiomeNode != null)
+        {
+            thisBiomeNode.PositionOffset = PreviousBiomeNode.PositionOffset + new Vector2(500, 0);
+
+            Graph.ConnectNode(PreviousBiomeNode.Name, fromPort, thisBiomeNode.Name, 0);
+        }
+        else
         {
             thisBiomeNode.PositionOffset += new Vector2(0, 150);
         }
-        Graph.AddChild(thisBiomeNode);
+        VisitedBiomes.Add(biomeName, thisBiomeNode);
 
-        int slotNumber = 0;
+
+        int portNumber = 0;
         foreach (WeightedBiome weightedBiome in thisBiome.FollowupBiomes)
         {
-            TraverseBiomes(weightedBiome.Biome.ToString(), thisBiomeNode, slotNumber);
-            slotNumber++;
+            thisBiomeNode.SetSlotEnabledRight(portNumber, true);
+            TraverseBiomes(weightedBiome.Biome.ToString(), thisBiomeNode, portNumber);
+            //portNumber++;
         }
     }
 

@@ -19,8 +19,6 @@ public partial class BiomeGraphNode : GraphNode
     public override void _Ready()
     {
         base._Ready();
-
-        //SetSlot(0, true, 0, new Color(1, 1, 1), true, 0, new Color(0, 0, 0));
     }
 
     public void AddFish(WeightedFish fish)
