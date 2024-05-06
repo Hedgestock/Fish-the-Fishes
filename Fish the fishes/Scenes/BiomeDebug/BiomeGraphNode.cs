@@ -48,7 +48,7 @@ public partial class BiomeGraphNode : GraphNode
         Item.ItemName.Text = biome.Biome.ToString();
         Item.WeighInput.Text = biome.Weight.ToString();
 
-        Biomes.AddChild(Item);
+        AddChild(Item);
     }
 
 }

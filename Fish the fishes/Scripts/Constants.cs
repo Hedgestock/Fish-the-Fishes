@@ -47,7 +47,8 @@ namespace Godot.Fish_the_fishes.Scripts
             GreatBlue,
             OceanCurrent,
             _Test,
-            _TestFollowup
+            _TestFollowup,
+            _TestMultiple
         }
     }
 }

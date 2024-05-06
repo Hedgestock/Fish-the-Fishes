@@ -1,8 +1,8 @@
-[gd_resource type="Resource" script_class="Biome" load_steps=13 format=3 uid="uid://bagye4kma6w0d"]
+[gd_resource type="Resource" script_class="Biome" load_steps=13 format=3 uid="uid://cbpc61hl6nuva"]
 
-[ext_resource type="Script" path="res://Fish the fishes/Scripts/Weighted/WeightedFish.cs" id="1_kbmgr"]
-[ext_resource type="Script" path="res://Fish the fishes/Scripts/Weighted/WeightedTrash.cs" id="2_f0chp"]
-[ext_resource type="Script" path="res://Fish the fishes/Assets/Biomes/Biome.cs" id="2_qby85"]
+[ext_resource type="Script" path="res://Fish the fishes/Scripts/Weighted/WeightedFish.cs" id="1_yjv04"]
+[ext_resource type="Script" path="res://Fish the fishes/Scripts/Weighted/WeightedTrash.cs" id="2_o8u5f"]
+[ext_resource type="Script" path="res://Fish the fishes/Assets/Biomes/Biome.cs" id="3_8vae6"]
 
 [sub_resource type="Gradient" id="Gradient_t0y5u"]
 
@@ -12,43 +12,43 @@ fill_from = Vector2(1, 1)
 fill_to = Vector2(0.987179, 0)
 
 [sub_resource type="Resource" id="Resource_1fhfg"]
-script = ExtResource("1_kbmgr")
+script = ExtResource("1_yjv04")
 Fish = 1
 Weight = 100
 
 [sub_resource type="Resource" id="Resource_njx7y"]
-script = ExtResource("1_kbmgr")
+script = ExtResource("1_yjv04")
 Fish = 2
 Weight = 100
 
 [sub_resource type="Resource" id="Resource_66eef"]
-script = ExtResource("1_kbmgr")
+script = ExtResource("1_yjv04")
 Fish = 3
 Weight = 100
 
 [sub_resource type="Resource" id="Resource_xv7u1"]
-script = ExtResource("1_kbmgr")
+script = ExtResource("1_yjv04")
 Fish = 4
 Weight = 100
 
 [sub_resource type="Resource" id="Resource_mdni2"]
-script = ExtResource("1_kbmgr")
+script = ExtResource("1_yjv04")
 Fish = 5
 Weight = 100
 
 [sub_resource type="Resource" id="Resource_63bq0"]
-script = ExtResource("1_kbmgr")
+script = ExtResource("1_yjv04")
 Fish = 6
 Weight = 100
 
 [sub_resource type="Resource" id="Resource_7rcdn"]
-script = ExtResource("2_f0chp")
+script = ExtResource("2_o8u5f")
 Trash = 0
 Weight = 100
 
 [resource]
-resource_name = "_TestFollowup"
-script = ExtResource("2_qby85")
+resource_name = "_TestMultiple"
+script = ExtResource("3_8vae6")
 Fishes = Array[Object]([SubResource("Resource_1fhfg"), SubResource("Resource_njx7y"), SubResource("Resource_66eef"), SubResource("Resource_xv7u1"), SubResource("Resource_mdni2"), SubResource("Resource_63bq0")])
 Trashes = Array[Object]([SubResource("Resource_7rcdn")])
 FollowupBiomes = Array[Object]([])

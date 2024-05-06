@@ -20,13 +20,13 @@ public partial class BiomeDebug : CanvasLayer
         TraverseBiomes(GameManager.StartingBiome.ResourceName);
     }
 
-    private void TraverseBiomes(string biomeName, BiomeGraphNode PreviousBiomeNode = null, int fromPort = -1)
+    private void TraverseBiomes(string biomeName, BiomeGraphNode PreviousBiomeNode = null, int fromSlot = -1)
     {
         BiomeGraphNode thisBiomeNode;
 
         if (VisitedBiomes.TryGetValue(biomeName, out thisBiomeNode))
         {
-            Graph.ConnectNode(PreviousBiomeNode.Name, fromPort, thisBiomeNode.Name, 0);
+            Graph.ConnectNode(PreviousBiomeNode.Name, fromSlot, thisBiomeNode.Name, 0);
             return;
         }
 
@@ -35,11 +35,12 @@ public partial class BiomeDebug : CanvasLayer
         thisBiomeNode = CreateBiomeNode(thisBiome);
         Graph.AddChild(thisBiomeNode);
         thisBiomeNode.SetSlotEnabledLeft(0, true);
+        thisBiomeNode.SetSlotColorLeft(0, new Color("cyan"));
+
         if (PreviousBiomeNode != null)
         {
             thisBiomeNode.PositionOffset = PreviousBiomeNode.PositionOffset + new Vector2(500, 0);
-
-            Graph.ConnectNode(PreviousBiomeNode.Name, fromPort, thisBiomeNode.Name, 0);
+            Graph.ConnectNode(PreviousBiomeNode.Name, fromSlot, thisBiomeNode.Name, 0);
         }
         else
         {
@@ -48,12 +49,16 @@ public partial class BiomeDebug : CanvasLayer
         VisitedBiomes.Add(biomeName, thisBiomeNode);
 
 
-        int portNumber = 0;
+        int slotNumber = 1;
+        thisBiomeNode.SetSlotEnabledRight(slotNumber, true);
+
         foreach (WeightedBiome weightedBiome in thisBiome.FollowupBiomes)
         {
-            thisBiomeNode.SetSlotEnabledRight(portNumber, true);
-            TraverseBiomes(weightedBiome.Biome.ToString(), thisBiomeNode, portNumber);
-            //portNumber++;
+            thisBiomeNode.AddBiome(weightedBiome);
+            thisBiomeNode.SetSlotEnabledRight(slotNumber, true);
+            thisBiomeNode.SetSlotColorRight(slotNumber, new Color("purple"));
+            TraverseBiomes(weightedBiome.Biome.ToString(), thisBiomeNode, slotNumber - 1);
+            slotNumber++;
         }
     }
 
@@ -73,11 +78,17 @@ public partial class BiomeDebug : CanvasLayer
             node.AddTrash(weightedTrash);
         }
 
-        foreach (WeightedBiome weightedBiome in biome.FollowupBiomes)
-        {
-            node.AddBiome(weightedBiome);
-        }
+        //foreach (WeightedBiome weightedBiome in biome.FollowupBiomes)
+        //{
+        //    node.AddBiome(weightedBiome);
+        //}
 
         return node;
+    }
+
+    private Error Test(StringName from_node, int from_port, StringName to_node, int to_port)
+    {
+        GD.Print(from_node, " ", from_port, " ", to_node, " ", to_port);
+        return Error.Ok;
     }
 }
