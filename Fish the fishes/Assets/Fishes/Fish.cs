@@ -92,24 +92,15 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
 
     public virtual IFishable GetCaughtBy(IFisher by)
     {
+
         if (by == this)
         {
             GD.PrintErr(by, " is ", this);
             return this;
         }
 
-        if (by.FishedThings.Contains(this))
+        if (by.FishedThings.Contains(this) || (by as Node).GetChildren().Contains(this))
             return this; // This avoids multiple calls on reparenting
-
-        if ((by as Node).GetChildren().Contains(this))
-        {
-            GD.PrintErr(by, " is already a parent of ", this);
-            GD.PrintErr(new System.Diagnostics.StackTrace());
-            GD.Print(by.FishedThings.ToArray());
-            GD.Print(by); (by as Node).PrintTreePretty();
-
-            return this;
-        }
 
         Velocity = Vector2.Zero;
         GravityScale = 0;
@@ -121,6 +112,7 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
             // In case we are already caught by another fishable thing, we make that parent the target of the catching action
             if (parent is IFishable)
                 return (parent as IFishable).GetCaughtBy(by);
+
             // In case we are already caught by a non fishable thing, we make sure that we are removed from its list ("stolen")
             // TO FIX: the stolen fish usually gets instantly recaught, leading to the thief to be caught as well
             (parent as IFisher).FishedThings.Remove(this);

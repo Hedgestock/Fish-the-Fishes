@@ -131,7 +131,7 @@ public partial class SwordFish : Fish, IFisher
 
     private void OnFishSkewered(Node2D body)
     {
-        if (!(body is Fish) || FishedThings.Contains(body as Fish) || body == this) return;
+        if (!(body is Fish) || FishedThings.Contains(body as Fish) || body == this || !Actionable) return;
 
         Fish Skew = body as Fish;
 
