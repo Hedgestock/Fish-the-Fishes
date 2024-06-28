@@ -40,6 +40,9 @@
 - [ ] Seiche (change de motif aléatoirement)
 - [ ] Poisson chonomêtre
 - [ ] Araignée de mer
+- [ ] Grenouille
+- [ ] Saumon
+- [ ] Thon
 
 # Objets pêchables
 

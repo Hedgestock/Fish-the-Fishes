@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Fish the fishes/Scenes/Home.cs" id="1_ptl5f"]
 [ext_resource type="AudioStream" uid="uid://cejn28367eqbj" path="res://Fish the fishes/sounds/ftf.ogg" id="2_itj28"]
 [ext_resource type="PackedScene" uid="uid://ifoga56i10w3" path="res://Fish the fishes/Assets/RandomTimer.tscn" id="2_op8l2"]
-[ext_resource type="PackedScene" uid="uid://bnkmwtljf2o3p" path="res://Fish the fishes/Assets/FishingLine.tscn" id="4_pulgk"]
+[ext_resource type="PackedScene" uid="uid://bnkmwtljf2o3p" path="res://Fish the fishes/Assets/Player/FishingLine.tscn" id="4_pulgk"]
 [ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://FTF_theme.tres" id="5_mnxty"]
 [ext_resource type="PackedScene" uid="uid://cifa65xrf1ken" path="res://Fish the fishes/UI/FishableButton/FishableButton.tscn" id="5_o3gki"]
 

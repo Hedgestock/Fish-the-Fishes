@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qjdujjo8m4n"
-path="res://.godot/imported/Fish hook final.png-c63222ca4c729363717c58508146cd4c.ctex"
+uid="uid://dee8677kcqnft"
+path="res://.godot/imported/StandardHook_broken.png-130135ef2550a972244e3d14d597540d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fish the fishes/art/player/Fish hook final.png"
-dest_files=["res://.godot/imported/Fish hook final.png-c63222ca4c729363717c58508146cd4c.ctex"]
+source_file="res://Fish the fishes/art/player/StandardHook_broken.png"
+dest_files=["res://.godot/imported/StandardHook_broken.png-130135ef2550a972244e3d14d597540d.ctex"]
 
 [params]
 

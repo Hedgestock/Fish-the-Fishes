@@ -27,7 +27,7 @@ public partial class SwordFish : Fish, IFisher
     private Fish Target = null;
     private Action State = Action.Swimming;
     private float LaunchedSpeed;
-    private Tween SeekingTween;
+    private Tween RotationTween;
 
 
     // Called when the node enters the scene tree for the first time.
@@ -53,14 +53,14 @@ public partial class SwordFish : Fish, IFisher
     {
         State = Action.Swimming;
         HitBox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
-        if (SeekingTween != null) SeekingTween.Kill();
+        if (RotationTween != null) RotationTween.Kill();
         return base.GetCaughtBy(by);
     }
 
     public override void Kill()
     {
         HitBox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
-        if (SeekingTween != null) SeekingTween.Kill();
+        if (RotationTween != null) RotationTween.Kill();
         base.Kill();
     }
 
@@ -93,8 +93,8 @@ public partial class SwordFish : Fish, IFisher
         State = Action.Seeking;
 
 
-        SeekingTween = RotateAtConstantSpeed(GetDirectionTo(Target).Angle());
-        SeekingTween.TweenCallback(Callable.From(() => CallDeferred("Launch")));
+        RotationTween = RotateAtConstantSpeed(GetDirectionTo(Target).Angle());
+        RotationTween.TweenCallback(Callable.From(() => CallDeferred("Launch")));
 
     }
 
@@ -124,7 +124,7 @@ public partial class SwordFish : Fish, IFisher
         if (!Actionable) return;
         Velocity = new Vector2(ActualSpeed * (Flip ? -1 : 1), 0);
 
-        RotateAtConstantSpeed(Velocity.Angle());
+        RotationTween = RotateAtConstantSpeed(Velocity.Angle());
 
         State = Action.Leaving;
     }

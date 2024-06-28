@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://bnkmwtljf2o3p"]
 
-[ext_resource type="Script" path="res://Fish the fishes/Assets/FishingLine.cs" id="1_n5cos"]
-[ext_resource type="Texture2D" uid="uid://qjdujjo8m4n" path="res://Fish the fishes/art/player/Fish hook final.png" id="3_ck055"]
-[ext_resource type="SpriteFrames" uid="uid://bi72ueuctbdl3" path="res://Fish the fishes/Assets/LineAnimation.tres" id="4_l5pqx"]
+[ext_resource type="Script" path="res://Fish the fishes/Assets/Player/FishingLine.cs" id="1_n5cos"]
+[ext_resource type="PackedScene" uid="uid://ogoejx5sl264" path="res://Fish the fishes/Assets/Player/StandardHook/StandardHook.tscn" id="3_x8i5s"]
+[ext_resource type="SpriteFrames" uid="uid://bi72ueuctbdl3" path="res://Fish the fishes/Assets/Player/LineAnimation.tres" id="4_l5pqx"]
 [ext_resource type="AudioStream" uid="uid://c8x2gam58vw1l" path="res://Fish the fishes/sounds/Toyouying.wav" id="4_qchpe"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_tpqt2"]
@@ -12,6 +12,7 @@ radius = 35.0
 height = 114.0
 
 [node name="FishingLine" type="CharacterBody2D"]
+position = Vector2(2, 83)
 collision_mask = 0
 motion_mode = 1
 script = ExtResource("1_n5cos")
@@ -24,8 +25,8 @@ sprite_frames = ExtResource("4_l5pqx")
 animation = &"hit"
 frame_progress = 0.0482667
 
-[node name="Hook" type="Sprite2D" parent="."]
-texture = ExtResource("3_ck055")
+[node name="Hook" parent="." instance=ExtResource("3_x8i5s")]
+position = Vector2(-79, -114)
 
 [node name="Area2D" type="Area2D" parent="."]
 

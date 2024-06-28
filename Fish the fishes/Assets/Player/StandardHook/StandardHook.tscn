@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://ogoejx5sl264"]
+
+[ext_resource type="Texture2D" uid="uid://dee8677kcqnft" path="res://Fish the fishes/art/player/StandardHook_broken.png" id="1_4ssf1"]
+[ext_resource type="Texture2D" uid="uid://qjdujjo8m4n" path="res://Fish the fishes/art/player/StandardHook_default.png" id="2_y5flv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e7146"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4ssf1")
+}],
+"loop": true,
+"name": &"broken",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_y5flv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Hook" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_e7146")
+centered = false
