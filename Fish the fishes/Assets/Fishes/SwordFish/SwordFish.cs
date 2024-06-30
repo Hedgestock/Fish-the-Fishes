@@ -1,5 +1,6 @@
 using Godot;
 using Godot.Fish_the_fishes.Scripts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -53,19 +54,20 @@ public partial class SwordFish : Fish, IFisher
     public override IFishable GetCaughtBy(IFisher by)
     {
         State = Action.Swimming;
+        HitBox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
         CleanCurrentBehaviors();
         return base.GetCaughtBy(by);
     }
 
     public override void Kill()
     {
+        HitBox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
         CleanCurrentBehaviors();
         base.Kill();
     }
 
     private void CleanCurrentBehaviors()
     {
-        HitBox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
         if (RotationTween != null) RotationTween.Kill();
         Bubbles.Emitting = false;
     }
@@ -74,7 +76,7 @@ public partial class SwordFish : Fish, IFisher
     {
         if (!Actionable || State == Action.Seeking) return;
 
-        Bubbles.Emitting = false;
+        CleanCurrentBehaviors();
 
         if (Strikes <= 0)
         {
@@ -100,17 +102,15 @@ public partial class SwordFish : Fish, IFisher
 
         State = Action.Seeking;
 
-
         RotationTween = RotateAtConstantSpeed(GetDirectionTo(Target).Angle());
         RotationTween.TweenCallback(Callable.From(() => CallDeferred("Launch")));
-
     }
 
     private void Launch()
     {
         if (!Actionable) return;
 
-        if (!IsInstanceValid(Target))
+        if (!IsInstanceValid(Target)|| FishedThings.Contains(Target))
         {
             State = Action.Swimming;
             SeekTarget();
@@ -165,10 +165,17 @@ public partial class SwordFish : Fish, IFisher
     private float TrackTarget(bool atLaunch = false)
     {
 
-        if (!Actionable) return 0;
+        if (!Actionable)
+        {
+            GD.PrintErr($"{Name} trying to fish when it's not actionable");
+            return 0;
+        }
 
         if (!IsInstanceValid(Target) || FishedThings.Contains(Target))
         {
+            GD.PrintErr($"{Name} trying to fish invalid or contained target");
+            GD.PrintErr($"{!IsInstanceValid(Target)} {FishedThings.Contains(Target)}");
+
             State = Action.Swimming;
             SeekTarget();
             return 0;
@@ -185,7 +192,6 @@ public partial class SwordFish : Fish, IFisher
         {
             Velocity = Velocity.Normalized() * LaunchedSpeed;
         }
-
 
         Rotation = Velocity.Angle();
 
