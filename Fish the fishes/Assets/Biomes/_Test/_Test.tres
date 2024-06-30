@@ -7,7 +7,7 @@
 
 [sub_resource type="Resource" id="Resource_fq5j8"]
 script = ExtResource("1_bycrx")
-Fish = 1
+Fish = 4
 Weight = 200
 
 [sub_resource type="Resource" id="Resource_caarx"]

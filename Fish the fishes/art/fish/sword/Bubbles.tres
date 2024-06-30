@@ -1,0 +1,26 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://bgvar8int4sms"]
+
+[ext_resource type="Texture2D" uid="uid://dr7putqmudunu" path="res://Fish the fishes/art/fish/sword/bubble_1.png" id="1_t7poq"]
+[ext_resource type="Texture2D" uid="uid://7ka6xbt05i0p" path="res://Fish the fishes/art/fish/sword/bubble_2.png" id="2_ctx6m"]
+[ext_resource type="Texture2D" uid="uid://bopyw6aackg77" path="res://Fish the fishes/art/fish/sword/bubble_3.png" id="3_jjgvw"]
+[ext_resource type="Texture2D" uid="uid://jfikfrot7rew" path="res://Fish the fishes/art/fish/sword/bubble_4.png" id="4_2duet"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_t7poq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ctx6m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jjgvw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2duet")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
