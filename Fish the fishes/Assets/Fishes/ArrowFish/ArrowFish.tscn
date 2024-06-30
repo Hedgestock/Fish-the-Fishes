@@ -13,7 +13,7 @@ script = ExtResource("2_762bw")
 CompendiumName = "Arrow Fish"
 CompendiumDescription = "This is an arrow fish"
 MinSpeed = 300.0
-MaxSpeed = 350.0
+MaxSpeed = 2600.0
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0"]
 scale = Vector2(6.1, 5)

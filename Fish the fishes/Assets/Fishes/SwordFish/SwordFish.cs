@@ -2,7 +2,6 @@ using Godot;
 using Godot.Fish_the_fishes.Scripts;
 using System.Collections.Generic;
 using System.Linq;
-using static Godot.TextServer;
 
 public partial class SwordFish : Fish, IFisher
 {
@@ -18,6 +17,8 @@ public partial class SwordFish : Fish, IFisher
     private int MaxStrikes = 5;
     [Export]
     private int MinStrikes = 1;
+    [Export]
+    private GpuParticles2D Bubbles;
 
     public List<IFishable> FishedThings { get; } = new List<IFishable>();
 
@@ -52,21 +53,28 @@ public partial class SwordFish : Fish, IFisher
     public override IFishable GetCaughtBy(IFisher by)
     {
         State = Action.Swimming;
-        HitBox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
-        if (RotationTween != null) RotationTween.Kill();
+        CleanCurrentBehaviors();
         return base.GetCaughtBy(by);
     }
 
     public override void Kill()
     {
+        CleanCurrentBehaviors();
+        base.Kill();
+    }
+
+    private void CleanCurrentBehaviors()
+    {
         HitBox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
         if (RotationTween != null) RotationTween.Kill();
-        base.Kill();
+        Bubbles.Emitting = false;
     }
 
     private void SeekTarget()
     {
         if (!Actionable || State == Action.Seeking) return;
+
+        Bubbles.Emitting = false;
 
         if (Strikes <= 0)
         {
@@ -114,6 +122,8 @@ public partial class SwordFish : Fish, IFisher
         LaunchedSpeed = TrackTarget(true);
 
         Sprite.Animation = "dash";
+        Bubbles.Emitting = true;
+        Bubbles.Amount = (int)LaunchedSpeed/10;
 
         State = Action.Launched;
     }

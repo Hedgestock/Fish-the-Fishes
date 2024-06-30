@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://be1nxedcwhn2i"]
+[gd_scene load_steps=10 format=3 uid="uid://be1nxedcwhn2i"]
 
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Fish the fishes/Assets/Fishes/Fish.tscn" id="1_jmf7p"]
 [ext_resource type="Script" path="res://Fish the fishes/Assets/Fishes/SwordFish/SwordFish.cs" id="2_q8hjt"]
 [ext_resource type="SpriteFrames" uid="uid://cyv8fnlha8eri" path="res://Fish the fishes/Assets/Fishes/SwordFish/SwordFishAnimation.tres" id="3_rsy4g"]
+[ext_resource type="Texture2D" uid="uid://dlpm8pj5msetb" path="res://Fish the fishes/art/fish/sword/bubble.png" id="4_duvjg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l8r55"]
 radius = 36.2116
@@ -12,10 +13,29 @@ height = 413.57
 radius = 8.0
 height = 82.0
 
-[node name="SwordFish" instance=ExtResource("1_jmf7p")]
+[sub_resource type="Curve" id="Curve_i2pi2"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.5), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_4epmi"]
+curve = SubResource("Curve_i2pi2")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jy0uo"]
+lifetime_randomness = 0.3
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 50.0
+spread = 100.0
+gravity = Vector3(0, -300, 0)
+scale_curve = SubResource("CurveTexture_4epmi")
+turbulence_enabled = true
+turbulence_influence_min = 0.0
+
+[node name="SwordFish" node_paths=PackedStringArray("Bubbles") instance=ExtResource("1_jmf7p")]
 script = ExtResource("2_q8hjt")
 MaxStrikes = 6
 MinStrikes = 2
+Bubbles = NodePath("GPUParticles2D")
 CompendiumName = "Sword Fish"
 CompendiumDescription = "This is a sword fish"
 Value = 2.0
@@ -43,6 +63,16 @@ rotation = -1.5708
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" index="0"]
 shape = SubResource("CapsuleShape2D_rp7cb")
 debug_color = Color(1, 0, 0, 0.419608)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." index="5"]
+position = Vector2(-340, 0)
+emitting = false
+amount = 16
+process_material = SubResource("ParticleProcessMaterial_jy0uo")
+texture = ExtResource("4_duvjg")
+randomness = 0.5
+fixed_fps = 60
+visibility_rect = Rect2(-100, -75, 600, 150)
 
 [connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="SeekTarget"]
 [connection signal="body_entered" from="HitBox" to="." method="OnFishSkewered"]
