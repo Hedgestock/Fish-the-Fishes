@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7ka6xbt05i0p"
-path="res://.godot/imported/bubble_2.png-b5215e81e3befd6af84f9a6900f4ab33.ctex"
+uid="uid://dr7putqmudunu"
+path="res://.godot/imported/bubble_1.png-3a8fdb762e96ed3f1c6aee2ddb3f48a1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fish the fishes/art/fish/sword/bubble_2.png"
-dest_files=["res://.godot/imported/bubble_2.png-b5215e81e3befd6af84f9a6900f4ab33.ctex"]
+source_file="res://Fish the fishes/art/_shared/bubble_1.png"
+dest_files=["res://.godot/imported/bubble_1.png-3a8fdb762e96ed3f1c6aee2ddb3f48a1.ctex"]
 
 [params]
 

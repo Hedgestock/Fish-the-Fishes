@@ -18,6 +18,10 @@ public partial class SwordFish : Fish, IFisher
     private int MaxStrikes = 5;
     [Export]
     private int MinStrikes = 1;
+
+    [ExportGroup("Attributes")]
+    [Export]
+    private CollisionShape2D HitBox;
     [Export]
     private GpuParticles2D Bubbles;
 
@@ -25,7 +29,6 @@ public partial class SwordFish : Fish, IFisher
 
 
     private int Strikes = 3;
-    private CollisionShape2D HitBox;
     private Fish Target = null;
     private Action State = Action.Swimming;
     private float LaunchedSpeed;
@@ -36,7 +39,6 @@ public partial class SwordFish : Fish, IFisher
     public override void _Ready()
     {
         base._Ready();
-        HitBox = GetNode<CollisionShape2D>("HitBox/CollisionShape2D");
         Strikes = GD.RandRange(MinStrikes, MaxStrikes);
         LaunchedSpeed = ActualSpeed;
     }
@@ -123,7 +125,9 @@ public partial class SwordFish : Fish, IFisher
 
         Sprite.Animation = "dash";
         Bubbles.Emitting = true;
-        Bubbles.Amount = (int)LaunchedSpeed/10;
+        Bubbles.AmountRatio = Mathf.Min(LaunchedSpeed/2000, 1);
+
+        GD.Print($"{Bubbles.Amount} {Bubbles.AmountRatio}");
 
         State = Action.Launched;
     }
@@ -167,13 +171,13 @@ public partial class SwordFish : Fish, IFisher
 
         if (!Actionable)
         {
-            GD.PrintErr($"{Name} trying to fish when it's not actionable");
+            GD.PrintErr($"{Name}({GetType()}) trying to track a target when it's not actionable");
             return 0;
         }
 
         if (!IsInstanceValid(Target) || FishedThings.Contains(Target))
         {
-            GD.PrintErr($"{Name} trying to fish invalid or contained target");
+            GD.PrintErr($"{Name}({GetType()}) trying to track invalid or contained target");
             GD.PrintErr($"{!IsInstanceValid(Target)} {FishedThings.Contains(Target)}");
 
             State = Action.Swimming;

@@ -60,12 +60,14 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
 
         IsCaught = false;
 
+        // If the inherited class did not set the spawning Posision, we do it now
         if (Position == Vector2.Zero)
         {
             Flip = (GD.Randi() % 2) != 0;
             Position = new Vector2(Flip ? GameManager.ScreenSize.X + 200 : -200, (float)GD.RandRange(0, GameManager.ScreenSize.Y));
         }
 
+        // If the inherited class did not set the ActualSpeed, we do it now
         if (ActualSpeed == 0)
         {
             ActualSpeed = (float)GD.RandRange(MinSpeed, MaxSpeed);
