@@ -1,0 +1,23 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://6520w7uakc1q"]
+
+[ext_resource type="Texture2D" uid="uid://xb57duco82le" path="res://Fish the fishes/art/fish/shark/shark (1).png" id="1_83xyy"]
+[ext_resource type="Texture2D" uid="uid://dc4rsye67drgl" path="res://Fish the fishes/art/fish/shark/shark (3).png" id="2_av12k"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_83xyy")
+}],
+"loop": true,
+"name": &"alive",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_av12k")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}]

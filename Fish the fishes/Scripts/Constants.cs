@@ -13,8 +13,11 @@ namespace Godot.Fish_the_fishes.Scripts
         public static string TotalTrashesCleaned = nameof(TotalTrashesCleaned);
         public static string TotalEatenFishes = nameof(TotalEatenFishes);
 
+        // /!\ WARNING /!\ Add new fishes/trashes/biomes at the end of enums to avoid messing the underlying numbering
+        // /!\ WARNING /!\ Do NOT arrange them alpabetically because the '.tres' are only keeping track of the integer
 
         public static string FishesFolder = "res://Fish the fishes/Assets/Fishes/";
+
         public enum Fishes
         {
             AnguilleFish,
@@ -23,7 +26,8 @@ namespace Godot.Fish_the_fishes.Scripts
             RedFish,
             SardineFish,
             SwordFish,
-            YellowFish
+            YellowFish,
+            SharkFish,
         }
 
         public static string TrashesFolder = "res://Fish the fishes/Assets/Trashes/";
