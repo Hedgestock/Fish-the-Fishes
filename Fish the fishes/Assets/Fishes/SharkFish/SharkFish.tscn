@@ -28,7 +28,6 @@ curve = SubResource("Curve_v7o72")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ergen"]
 lifetime_randomness = 0.3
-particle_flag_disable_z = true
 emission_shape = 1
 emission_sphere_radius = 50.0
 spread = 100.0
@@ -74,7 +73,7 @@ debug_color = Color(1, 0, 0, 0.419608)
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." index="5"]
 material = SubResource("CanvasItemMaterial_7ir7g")
 position = Vector2(-200, 0)
-amount = 16
+amount = 32
 process_material = SubResource("ParticleProcessMaterial_ergen")
 texture = ExtResource("4_3i6w3")
 randomness = 0.5

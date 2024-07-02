@@ -13,7 +13,7 @@ public partial class SharkFish : Fish, IFisher
 
     public List<IFishable> FishedThings { get; } = new List<IFishable>();
 
-
+    private SceneTreeTimer LaunchTimer = null;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -22,19 +22,29 @@ public partial class SharkFish : Fish, IFisher
 
         // Here, we invert the Flip condition to get a point that's on the opposite side of the spawning Position
         Vector2 objective = new Vector2(!Flip ? GameManager.ScreenSize.X + 200 : -200, (float)GD.RandRange(0, GameManager.ScreenSize.Y));
-        //Velocity = (objective - Position).Normalized() * ActualSpeed;
+        Vector2 travelAxis = (objective - Position).Normalized();
         Velocity = Vector2.Zero;
 
         GpuParticles2D indicator = (GpuParticles2D)Bubbles.Duplicate();
-        indicator.Position = (objective - Position).Normalized() * 300;
-        
-
+        indicator.ProcessMaterial = (Material)Bubbles.ProcessMaterial.Duplicate();
+        indicator.Position = GlobalPosition + (travelAxis * 250);
+        (indicator.ProcessMaterial as ParticleProcessMaterial).Gravity = new Vector3(travelAxis.X, travelAxis.Y, 0) * 500;
         GetParent().AddChild(indicator);
 
-
-        Rotation = (float)(Velocity.Angle() - (Flip? Mathf.Pi: 0));
+        Rotation = (float)(travelAxis.Angle() - (Flip ? Mathf.Pi : 0));
 
         Bubbles.Amount = (int)ActualSpeed / 10;
+        Hide();
+
+        LaunchTimer = GetTree().CreateTimer(2);
+        LaunchTimer.Timeout += () =>
+        {
+            indicator.QueueFree();
+            if (!IsInstanceValid(this)) return;
+            Show();
+            if (!Actionable) return;
+            Velocity = travelAxis * ActualSpeed;
+        };
     }
 
     public override IFishable GetCaughtBy(IFisher by)
