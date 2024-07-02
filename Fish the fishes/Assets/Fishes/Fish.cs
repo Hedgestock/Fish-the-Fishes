@@ -16,6 +16,8 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
     public string CompendiumName { get; set; }
     [Export(PropertyHint.MultilineText)]
     public string CompendiumDescription { get; set; }
+    [Export]
+    public float Size = 100;
 
     [ExportGroup("Scoring")]
     [Export]
@@ -31,10 +33,13 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
     [Export]
     private float MaxSpeed = 250;
     [Export]
+    private float SizeDeviation = 0.1f;
+
     private float GravityScale = 0;
 
     public bool Flip = false;
     public float ActualSpeed = 0;
+    public float ActualSizeVariation = 0;
     public bool IsAlive = true;
     public bool IsCaught { get; set; }
 
@@ -79,6 +84,15 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
         {
             Scale = new Vector2(-1, 1);
         }
+
+
+        // If the inherited class did not set the ActualSizeVariation, we do it now
+        if (ActualSizeVariation == 0)
+        {
+            ActualSizeVariation = (float)GD.Randfn(1, SizeDeviation);
+        }
+
+        Scale *= ActualSizeVariation;
 
         Sprite.Animation = "alive";
         Sprite.Play();
