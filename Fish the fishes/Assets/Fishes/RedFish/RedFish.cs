@@ -1,8 +1,15 @@
 using Godot;
+using Godot.Collections;
+using Godot.Fish_the_fishes.Scripts;
 using System;
+
 
 public partial class RedFish : Fish
 {
+    [Export]
+    public Array<Constants.Fishes> ImmuneToRed = new Array<Constants.Fishes>();
+    
+    [ExportGroup("Behaviour")]
     [Export]
     public float WaveAmplitude = 1;
     [Export]
@@ -21,7 +28,7 @@ public partial class RedFish : Fish
         base._Ready();
         WaveActualPeriod = (float)GD.Randfn(WaveAmplitude, WaveAmplitudeDeviation);
         WaveActualInverseAmplitude = (float)GD.Randfn(WaveInversePeriod, WaveInversePeriodDeviation);
-
+        GD.Print($"{GetType()} {typeof(RedFish)} {Constants.Fishes.RedFish} {GetType() == typeof(RedFish)} {GetType().ToString() == Constants.Fishes.RedFish.ToString()}");
     }
 
     public override void _PhysicsProcess(double delta)
@@ -41,7 +48,7 @@ public partial class RedFish : Fish
 
     private void _on_body_entered(Node body)
     {
-        if (body is Fish && !(body is RedFish))
+        if (body is Fish && !CheckImmunity(ImmuneToRed, body.GetType()))
         {
             (body as Fish).Kill();
         }

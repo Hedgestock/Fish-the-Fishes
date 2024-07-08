@@ -1,6 +1,8 @@
 using Godot;
+using Godot.Collections;
 using Godot.Fish_the_fishes.Scripts;
 using System;
+using System.Linq;
 
 
 
@@ -182,6 +184,11 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
         if (GameManager.Mode == Game.Mode.Menu) return;
         if (UserData.FishCompendium.TryGetValue(GetType().Name, out UserData.FishCompendiumEntry entry)) entry.Seen++;
         else UserData.FishCompendium[GetType().Name] = new UserData.FishCompendiumEntry();
+    }
+
+    protected bool CheckImmunity(Array<Constants.Fishes> ImmunityList, Type FishType)
+    {
+        return ImmunityList.Select(i => i.ToString()).Contains(FishType.ToString());
     }
 }
 

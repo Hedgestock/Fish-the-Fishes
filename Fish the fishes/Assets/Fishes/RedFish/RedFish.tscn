@@ -12,6 +12,7 @@ radius = 51.0
 
 [node name="RedFish" instance=ExtResource("1_vcqog")]
 script = ExtResource("2_xfklb")
+ImmuneToRed = [7, 3]
 WaveAmplitude = 1.0
 WaveAmplitudeDeviation = 0.5
 WaveInversePeriod = 100.0

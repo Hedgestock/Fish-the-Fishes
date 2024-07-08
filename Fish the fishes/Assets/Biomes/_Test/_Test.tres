@@ -1,48 +1,23 @@
-[gd_resource type="Resource" script_class="Biome" load_steps=14 format=3 uid="uid://nmu6wfnfu8ax"]
+[gd_resource type="Resource" script_class="Biome" load_steps=9 format=3 uid="uid://nmu6wfnfu8ax"]
 
 [ext_resource type="Texture2D" uid="uid://dxslcf7yijvtu" path="res://Fish the fishes/art/BeachBackground.png" id="1_5ypud"]
 [ext_resource type="Script" path="res://Fish the fishes/Scripts/Weighted/WeightedFish.cs" id="1_bycrx"]
 [ext_resource type="Script" path="res://Fish the fishes/Scripts/Weighted/WeightedTrash.cs" id="3_xj8ii"]
 [ext_resource type="Script" path="res://Fish the fishes/Assets/Biomes/Biome.cs" id="12_3wj4f"]
 
-[sub_resource type="Resource" id="Resource_fq5j8"]
+[sub_resource type="Resource" id="Resource_qh50e"]
 script = ExtResource("1_bycrx")
-Fish = 1
+Fish = 3
 Weight = 100
 
-[sub_resource type="Resource" id="Resource_0ko4r"]
+[sub_resource type="Resource" id="Resource_yqh5o"]
 script = ExtResource("1_bycrx")
 Fish = 7
 Weight = 100
 
-[sub_resource type="Resource" id="Resource_cesof"]
+[sub_resource type="Resource" id="Resource_doigo"]
 script = ExtResource("1_bycrx")
 Fish = 0
-Weight = 100
-
-[sub_resource type="Resource" id="Resource_rr8uu"]
-script = ExtResource("1_bycrx")
-Fish = 2
-Weight = 100
-
-[sub_resource type="Resource" id="Resource_oja0i"]
-script = ExtResource("1_bycrx")
-Fish = 4
-Weight = 100
-
-[sub_resource type="Resource" id="Resource_8flb3"]
-script = ExtResource("1_bycrx")
-Fish = 5
-Weight = 100
-
-[sub_resource type="Resource" id="Resource_a17x2"]
-script = ExtResource("1_bycrx")
-Fish = 6
-Weight = 100
-
-[sub_resource type="Resource" id="Resource_qh50e"]
-script = ExtResource("1_bycrx")
-Fish = 3
 Weight = 100
 
 [sub_resource type="Resource" id="Resource_cigae"]
@@ -53,7 +28,7 @@ Weight = 100
 [resource]
 resource_name = "_Test"
 script = ExtResource("12_3wj4f")
-Fishes = Array[Object]([SubResource("Resource_fq5j8"), SubResource("Resource_0ko4r"), SubResource("Resource_cesof"), SubResource("Resource_rr8uu"), SubResource("Resource_oja0i"), SubResource("Resource_8flb3"), SubResource("Resource_a17x2"), SubResource("Resource_qh50e")])
+Fishes = Array[Object]([SubResource("Resource_qh50e"), SubResource("Resource_yqh5o"), SubResource("Resource_doigo")])
 Trashes = Array[Object]([SubResource("Resource_cigae")])
 FollowupBiomes = Array[Object]([])
 CompendiumName = ""
