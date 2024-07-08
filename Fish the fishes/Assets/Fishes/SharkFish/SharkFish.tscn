@@ -6,12 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://dr7putqmudunu" path="res://Fish the fishes/art/_shared/bubble_1.png" id="4_3i6w3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jdtfq"]
-radius = 56.0
-height = 390.0
+radius = 66.0
+height = 532.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n0n4s"]
 radius = 31.0
-height = 104.0
+height = 166.0
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7ir7g"]
 particles_animation = true
@@ -48,15 +48,15 @@ MinSpeed = 1500.0
 MaxSpeed = 2500.0
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0"]
-position = Vector2(-0.500008, 0)
-scale = Vector2(23.45, 14.6)
+position = Vector2(-15, 0)
+scale = Vector2(31, 13)
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = ExtResource("3_rhaxs")
 animation = &"alive"
-flip_h = true
 
 [node name="HurtBox" parent="." index="2"]
+position = Vector2(-18, 13)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_jdtfq")
 
@@ -64,20 +64,21 @@ shape = SubResource("CapsuleShape2D_jdtfq")
 visible = false
 
 [node name="HitBox" type="Area2D" parent="." index="4"]
+position = Vector2(213, 19)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" index="0"]
-position = Vector2(188, 0)
+rotation = 0.191986
 shape = SubResource("CapsuleShape2D_n0n4s")
 debug_color = Color(1, 0, 0, 0.419608)
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." index="5"]
 material = SubResource("CanvasItemMaterial_7ir7g")
-position = Vector2(-200, 0)
+position = Vector2(-242, 19)
 amount = 32
 process_material = SubResource("ParticleProcessMaterial_ergen")
 texture = ExtResource("4_3i6w3")
 randomness = 0.5
 fixed_fps = 60
-visibility_rect = Rect2(-100, -75, 600, 150)
+visibility_rect = Rect2(-75, -125, 600, 200)
 
 [connection signal="body_entered" from="HitBox" to="." method="OnFishEaten"]

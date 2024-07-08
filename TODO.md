@@ -14,7 +14,7 @@
 - [x] Ajouter une emphase visuelle sur les vies lors de la perte
 - [x] Faire clignoter le score pour la perte de points
 - [x] Couper le son des poissons dans les menus
-- [ ] Faire des boutons en poisson
+- [x] Faire des boutons en poisson
 - [ ] Ajouter des hauts faits
 - [ ] Ajourter un tutoriel
 - [ ] Utiliser des hameçons pour la vie
@@ -24,6 +24,7 @@
 - [x] Poisson rouge
 - [x] Banc de poisson (sardines)
 - [x] Espadon embrocheur
+- [x] Requin mange tout sur son passage
 - [ ] Poisson volant
 - [ ] Poisson doré
 - [ ] Poisson venimeux
@@ -34,7 +35,6 @@
 - [ ] Calamar encreur
 - [ ] Étoile de mer d'invincibilité
 - [ ] Raie manta répulsive
-- [ ] Requin mange tout sur son passage
 - [ ] Phoque qui attire l'orque
 - [ ] Orque
 - [ ] Seiche (change de motif aléatoirement)
@@ -77,7 +77,7 @@
 
 - [x] Régler le problème de frustration
 - [x] Ajouter des biomes et des niveaux de difficulté
-- [ ] Rendre la taille des poissons aléatoire
+- [x] Rendre la taille des poissons aléatoire
 - [ ] Ajouter des objets équipables
 - [ ] Ajouter des objets activables en jeu
     - [ ] Appât
@@ -109,6 +109,8 @@
 - [x] Donner la responsabilité au poisson de se placer sur l'écran
 - [x] Ajouter la sauvegarde des paramètres
 - [x] Ajouter une probabilité d'apparition
+- [x] Mettre à jour le compendium avec les déchêts
+- [x] Mettre à jour le compendium avec les biomes
 - [ ] Support de différentes langues
     - [x] Anglais
     - [ ] Français
@@ -122,8 +124,6 @@
 - [ ] Mettre les chronomètres d'apparition des poissons et des déchêts sur les biomes
 - [ ] Ajouter un moyen de trier/filtrer le compendium
 - [ ] Ajouter un outil pour voire les graphs de selection des biomes ainsi que les probabilités d'apparition des poissons
-- [ ] Mettre à jour le compendium avec les déchêts
-- [ ] Mettre à jour le compendium avec les biomes
 
 # Corrections
 
@@ -141,5 +141,11 @@
 - [x] Couper le son d'un poisson mort
 - [x] Corriger la présence de la cible au changement de biome
 - [x] [**Solution autre**] Corriger le problème lorsqu'un espadon vole un poisson pêché
-- [ ] Corriger le problème des espadons fous
-- [ ] Corriger le problème du reparentage d'espadon
+- [x] Corriger le problème des espadons fous
+- [x] Corriger le problème du reparentage d'espadon
+- [ ] Corriger l'espadon qui chasse même mort
+- [ ] Corriger les bulles des requins qui disparaissent
+- [ ] Corriger les requins en attented de lancement
+- [ ] Corriger les requins qui mangent des poissons déjà pêchés
+- [ ] Empêcher les requins de se faire tuer par les poissons rouges
+

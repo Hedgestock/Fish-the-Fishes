@@ -1,13 +1,13 @@
 [gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://6520w7uakc1q"]
 
-[ext_resource type="Texture2D" uid="uid://xb57duco82le" path="res://Fish the fishes/art/fish/shark/shark (1).png" id="1_83xyy"]
+[ext_resource type="Texture2D" uid="uid://cb56ch1fgm474" path="res://Fish the fishes/art/fish/shark/Requin.png" id="1_faq05"]
 [ext_resource type="Texture2D" uid="uid://dc4rsye67drgl" path="res://Fish the fishes/art/fish/shark/shark (3).png" id="2_av12k"]
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_83xyy")
+"texture": ExtResource("1_faq05")
 }],
 "loop": true,
 "name": &"alive",
