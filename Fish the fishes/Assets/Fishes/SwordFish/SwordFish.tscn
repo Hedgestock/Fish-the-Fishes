@@ -40,6 +40,8 @@ turbulence_influence_min = 0.0
 
 [node name="SwordFish" node_paths=PackedStringArray("HitBox", "Bubbles") instance=ExtResource("1_jmf7p")]
 script = ExtResource("2_q8hjt")
+ImmuneToTargeting = [5, 7]
+ImmuneToSkew = [7]
 MaxStrikes = 6
 MinStrikes = 2
 HitBox = NodePath("HitBox/CollisionShape2D")

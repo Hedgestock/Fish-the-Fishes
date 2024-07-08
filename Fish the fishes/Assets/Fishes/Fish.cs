@@ -47,7 +47,7 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
 
     public bool IsHuge
     {
-        get { return Size * SizeDeviation > 70; }
+        get { return Size * ActualSizeVariation > 70; }
     }
 
     public bool IsActionable

@@ -1,4 +1,5 @@
 using Godot;
+using Godot.Collections;
 using Godot.Fish_the_fishes.Scripts;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,13 @@ public partial class SwordFish : Fish, IFisher
         Leaving
     }
 
+    [Export]
+    public Array<Constants.Fishes> ImmuneToTargeting = new Array<Constants.Fishes>();
+
+    [Export]
+    public Array<Constants.Fishes> ImmuneToSkew = new Array<Constants.Fishes>();
+
+    [ExportGroup("Behaviour")]
     [Export]
     private int MaxStrikes = 5;
     [Export]
@@ -89,7 +97,7 @@ public partial class SwordFish : Fish, IFisher
         Sprite.Animation = "seek";
 
         Node[] fishes = GetTree().GetNodesInGroup("Fishes")
-            .Where(fish => (fish as Fish).IsAlive && (fish as Fish).IsOnScreen && !(fish is SwordFish) && !FishedThings.Contains(fish as Fish))
+            .Where(fish => (fish as Fish).IsAlive && (fish as Fish).IsOnScreen && !FishedThings.Contains(fish as Fish) && !CheckImmunity(ImmuneToTargeting, fish.GetType()))
             .ToArray();
 
         if (fishes.Length == 0)
@@ -143,7 +151,7 @@ public partial class SwordFish : Fish, IFisher
 
     private void OnFishSkewered(Node2D body)
     {
-        if (!(body is Fish) || FishedThings.Contains(body as Fish) || body == this || !IsActionable) return;
+        if (!(body is Fish) || FishedThings.Contains(body as Fish) || body == this || !IsActionable || CheckImmunity(ImmuneToSkew, body.GetType())) return;
 
         Fish Skew = body as Fish;
 

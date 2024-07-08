@@ -1,4 +1,5 @@
 using Godot;
+using Godot.Collections;
 using Godot.Fish_the_fishes.Scripts;
 using System;
 using System.Collections.Generic;
@@ -74,8 +75,7 @@ public partial class SharkFish : Fish, IFisher
 
         //Food = Food.GetCaughtBy(this) as Fish;
         //Food.Kill();
-
-        Food.QueueFree();
+        if (!Food.IsHuge)  Food.QueueFree();
     }
 
     #region helpers
