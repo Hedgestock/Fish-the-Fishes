@@ -13,6 +13,7 @@ height = 78.0
 script = ExtResource("2_7wvo0")
 CompendiumName = "Yellow Fish"
 CompendiumDescription = "This is a yellow fish"
+Size = 22.0
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0"]
 position = Vector2(-0.499997, -0.500001)
