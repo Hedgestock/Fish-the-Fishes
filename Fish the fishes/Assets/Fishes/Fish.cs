@@ -43,7 +43,12 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
     public bool IsAlive = true;
     public bool IsCaught { get; set; }
 
-    public bool Actionable
+    public bool IsHuge
+    {
+        get { return Size * SizeDeviation > 70; }
+    }
+
+    public bool IsActionable
     {
         get { return IsAlive && !IsCaught; }
     }
@@ -52,6 +57,7 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
     {
         get { return GetNode<VisibleOnScreenNotifier2D>("VisibleOnScreenNotifier2D").IsOnScreen(); }
     }
+
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()

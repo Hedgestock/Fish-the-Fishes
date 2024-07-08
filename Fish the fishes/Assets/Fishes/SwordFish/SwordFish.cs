@@ -76,7 +76,7 @@ public partial class SwordFish : Fish, IFisher
 
     private void SeekTarget()
     {
-        if (!Actionable || State == Action.Seeking) return;
+        if (!IsActionable || State == Action.Seeking) return;
 
         CleanCurrentBehaviors();
 
@@ -110,7 +110,7 @@ public partial class SwordFish : Fish, IFisher
 
     private void Launch()
     {
-        if (!Actionable) return;
+        if (!IsActionable) return;
 
         if (!IsInstanceValid(Target)|| FishedThings.Contains(Target))
         {
@@ -127,15 +127,13 @@ public partial class SwordFish : Fish, IFisher
         Bubbles.Emitting = true;
         Bubbles.AmountRatio = Mathf.Min(LaunchedSpeed/2000, 1);
 
-        GD.Print($"{Bubbles.Amount} {Bubbles.AmountRatio}");
-
         State = Action.Launched;
     }
 
     private void Leave()
     {
         Sprite.Animation = IsAlive ? "alive" : "dead";
-        if (!Actionable) return;
+        if (!IsActionable) return;
         Velocity = new Vector2(ActualSpeed * (Flip ? -1 : 1), 0);
 
         RotationTween = RotateAtConstantSpeed(Velocity.Angle());
@@ -145,7 +143,7 @@ public partial class SwordFish : Fish, IFisher
 
     private void OnFishSkewered(Node2D body)
     {
-        if (!(body is Fish) || FishedThings.Contains(body as Fish) || body == this || !Actionable) return;
+        if (!(body is Fish) || FishedThings.Contains(body as Fish) || body == this || !IsActionable) return;
 
         Fish Skew = body as Fish;
 
@@ -169,7 +167,7 @@ public partial class SwordFish : Fish, IFisher
     private float TrackTarget(bool atLaunch = false)
     {
 
-        if (!Actionable)
+        if (!IsActionable)
         {
             GD.PrintErr($"{Name}({GetType()}) trying to track a target when it's not actionable");
             return 0;

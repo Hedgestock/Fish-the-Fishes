@@ -42,7 +42,7 @@ public partial class SharkFish : Fish, IFisher
             indicator.QueueFree();
             if (!IsInstanceValid(this)) return;
             Show();
-            if (!Actionable) return;
+            if (!IsActionable) return;
             Velocity = travelAxis * ActualSpeed;
         };
     }
@@ -68,7 +68,7 @@ public partial class SharkFish : Fish, IFisher
 
     private void OnFishEaten(Node2D body)
     {
-        if (!(body is Fish) || FishedThings.Contains(body as Fish) || body == this || !Actionable) return;
+        if (!(body is Fish) || FishedThings.Contains(body as Fish) || body == this || !IsActionable) return;
 
         Fish Food = body as Fish;
 
