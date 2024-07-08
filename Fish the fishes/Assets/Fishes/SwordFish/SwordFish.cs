@@ -55,7 +55,6 @@ public partial class SwordFish : Fish, IFisher
 
     public override IFishable GetCaughtBy(IFisher by)
     {
-        State = Action.Swimming;
         HitBox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
         CleanCurrentBehaviors();
         return base.GetCaughtBy(by);
@@ -70,6 +69,7 @@ public partial class SwordFish : Fish, IFisher
 
     private void CleanCurrentBehaviors()
     {
+        State = Action.Swimming;
         if (RotationTween != null) RotationTween.Kill();
         Bubbles.Emitting = false;
     }

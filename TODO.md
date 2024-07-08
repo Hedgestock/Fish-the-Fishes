@@ -143,9 +143,9 @@
 - [x] [**Solution autre**] Corriger le problème lorsqu'un espadon vole un poisson pêché
 - [x] Corriger le problème des espadons fous
 - [x] Corriger le problème du reparentage d'espadon
-- [ ] Corriger l'espadon qui chasse même mort
+- [x] Corriger l'espadon qui chasse même mort
 - [ ] Corriger les bulles des requins qui disparaissent
-- [ ] Corriger les requins en attented de lancement
+- [ ] Corriger les requins en attente de lancement
 - [ ] Corriger les requins qui mangent des poissons déjà pêchés
 - [ ] Empêcher les requins de se faire tuer par les poissons rouges
 
