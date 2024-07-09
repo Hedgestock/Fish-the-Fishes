@@ -45,7 +45,7 @@ ImmuneToSkew = [7]
 MaxStrikes = 6
 MinStrikes = 2
 HitBox = NodePath("HitBox/CollisionShape2D")
-Bubbles = NodePath("GPUParticles2D")
+Bubbles = NodePath("bubbles")
 CompendiumName = "Sword Fish"
 CompendiumDescription = "This is a sword fish"
 Size = 145.0
@@ -75,7 +75,7 @@ rotation = -1.5708
 shape = SubResource("CapsuleShape2D_rp7cb")
 debug_color = Color(1, 0, 0, 0.419608)
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="." index="5"]
+[node name="bubbles" type="GPUParticles2D" parent="." index="5"]
 material = SubResource("CanvasItemMaterial_e1ind")
 position = Vector2(-340, 0)
 emitting = false
@@ -83,7 +83,7 @@ amount = 100
 process_material = SubResource("ParticleProcessMaterial_jy0uo")
 texture = ExtResource("4_7yl0y")
 randomness = 0.5
-fixed_fps = 60
+fixed_fps = 20
 visibility_rect = Rect2(-100, -75, 600, 150)
 
 [connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="SeekTarget"]

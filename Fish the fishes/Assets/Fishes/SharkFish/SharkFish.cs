@@ -8,6 +8,8 @@ public partial class SharkFish : Fish, IFisher
 {
     [ExportGroup("Attributes")]
     [Export]
+    private GpuParticles2D Blood;
+    [Export]
     private CollisionShape2D HitBox;
     [Export]
     private GpuParticles2D Bubbles;
@@ -75,7 +77,16 @@ public partial class SharkFish : Fish, IFisher
 
         //Food = Food.GetCaughtBy(this) as Fish;
         //Food.Kill();
-        if (!Food.IsHuge)  Food.QueueFree();
+        if (!Food.IsHuge)
+        {
+            GpuParticles2D bleeding = (GpuParticles2D) Blood.Duplicate();
+            bleeding.Emitting = true;
+            bleeding.Position = Food.Position;
+            GetParent().AddChild(bleeding);
+            GetTree().CreateTimer(bleeding.Lifetime).Timeout += bleeding.QueueFree;
+
+            Food.QueueFree();
+        }
     }
 
     #region helpers
