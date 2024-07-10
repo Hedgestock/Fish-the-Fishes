@@ -28,21 +28,21 @@ public partial class SharkFish : Fish, IFisher
         Vector2 travelAxis = (objective - Position).Normalized();
         Velocity = Vector2.Zero;
 
-        GpuParticles2D indicator = (GpuParticles2D)Bubbles.Duplicate();
-        indicator.ProcessMaterial = (Material)Bubbles.ProcessMaterial.Duplicate();
-        indicator.Position = GlobalPosition + (travelAxis * 250);
-        (indicator.ProcessMaterial as ParticleProcessMaterial).Gravity = new Vector3(travelAxis.X, travelAxis.Y, 0) * 500;
-        GetParent().AddChild(indicator);
+        //GpuParticles2D indicator = (GpuParticles2D)Bubbles.Duplicate();
+        //indicator.ProcessMaterial = (Material)Bubbles.ProcessMaterial.Duplicate();
+        //indicator.Position = GlobalPosition + (travelAxis * 250);
+        //(indicator.ProcessMaterial as ParticleProcessMaterial).Gravity = new Vector3(travelAxis.X, travelAxis.Y, 0) * 500;
+        //GetParent().AddChild(indicator);
 
         Rotation = (float)(travelAxis.Angle() - (Flip ? Mathf.Pi : 0));
 
-        Bubbles.Amount = (int)ActualSpeed / 10;
+        //Bubbles.Amount = (int)ActualSpeed / 10;
         Hide();
 
         LaunchTimer = GetTree().CreateTimer(2);
         LaunchTimer.Timeout += () =>
         {
-            indicator.QueueFree();
+            //indicator.QueueFree();
             if (!IsInstanceValid(this)) return;
             Show();
             if (!IsActionable) return;
@@ -79,11 +79,11 @@ public partial class SharkFish : Fish, IFisher
         //Food.Kill();
         if (!Food.IsHuge)
         {
-            GpuParticles2D bleeding = (GpuParticles2D) Blood.Duplicate();
-            bleeding.Emitting = true;
-            bleeding.Position = Food.Position;
-            GetParent().AddChild(bleeding);
-            GetTree().CreateTimer(bleeding.Lifetime).Timeout += bleeding.QueueFree;
+            //GpuParticles2D bleeding = (GpuParticles2D) Blood.Duplicate();
+            //bleeding.Emitting = true;
+            //bleeding.Position = Food.Position;
+            //GetParent().AddChild(bleeding);
+            //GetTree().CreateTimer(bleeding.Lifetime).Timeout += bleeding.QueueFree;
 
             Food.QueueFree();
         }

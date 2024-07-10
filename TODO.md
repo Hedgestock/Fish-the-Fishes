@@ -145,7 +145,7 @@
 - [x] Corriger le problème du reparentage d'espadon
 - [x] Corriger l'espadon qui chasse même mort
 - [x] Empêcher les requins de se faire tuer par les poissons rouges
-- [ ] Corriger les bulles des requins qui disparaissent
-- [ ] Corriger les requins en attente de lancement
+- [x] [**Actuellement Impossible**] Corriger les bulles des requins qui disparaissent
+- [x] [**Actuellement impossible**] Corriger les requins en attente de lancement
 - [ ] Corriger les requins qui mangent des poissons déjà pêchés
 
