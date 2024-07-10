@@ -3,9 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://bjjph3hx7hdwx" path="res://Fish the fishes/Scenes/Compendium/AnimatedCompendiumEntry.tscn" id="1_xdx3w"]
 [ext_resource type="Script" path="res://Fish the fishes/Scenes/Compendium/FishCompendiumEntry.cs" id="2_o0dw6"]
 
-[node name="PanelContainer" node_paths=PackedStringArray("NumberFished") instance=ExtResource("1_xdx3w")]
+[node name="PanelContainer" node_paths=PackedStringArray("NumberFished", "MaxSize", "MinSize") instance=ExtResource("1_xdx3w")]
 script = ExtResource("2_o0dw6")
 NumberFished = NodePath("MarginContainer/HBoxContainer/VBoxContainer/Stats/NumberOfTimesFished")
+MaxSize = NodePath("MarginContainer/HBoxContainer/VBoxContainer/Stats/MaxSize")
+MinSize = NodePath("MarginContainer/HBoxContainer/VBoxContainer/Stats/MinSize")
 
 [node name="Fished" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Stats" index="2"]
 layout_mode = 2
@@ -18,3 +20,14 @@ size_flags_horizontal = 3
 size_flags_vertical = 8
 text = "0
 "
+
+[node name="MaxSize" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Stats" index="4"]
+visible = false
+layout_mode = 2
+text = "0 cm"
+
+[node name="MinSize" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Stats" index="5"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.121569, 0, 1)
+text = "0 cm"

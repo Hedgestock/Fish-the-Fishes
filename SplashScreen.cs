@@ -3,7 +3,6 @@ using System;
 
 public partial class SplashScreen : CanvasLayer
 {
-	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		var background = GetNode<ColorRect>("ColorRect");
@@ -13,10 +12,5 @@ public partial class SplashScreen : CanvasLayer
 		tween.TweenProperty(background, "modulate", Colors.White, 1.0f);
 		tween.TweenProperty(background, "modulate", Colors.Black, 2.0f);
 		tween.TweenCallback(Callable.From(() => GameManager.ChangeSceneToFile("res://Fish the fishes/Scenes/Home.tscn")));
-	}
-
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
 	}
 }
