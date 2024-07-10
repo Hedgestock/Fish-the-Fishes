@@ -12,6 +12,7 @@ height = 124.0
 script = ExtResource("2_762bw")
 CompendiumName = "Arrow Fish"
 CompendiumDescription = "This is an arrow fish"
+Size = 29.0
 MinSpeed = 300.0
 MaxSpeed = 350.0
 

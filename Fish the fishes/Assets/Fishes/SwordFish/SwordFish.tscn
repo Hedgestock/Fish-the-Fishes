@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Fish the fishes/Assets/Fishes/Fish.tscn" id="1_jmf7p"]
 [ext_resource type="Script" path="res://Fish the fishes/Assets/Fishes/SwordFish/SwordFish.cs" id="2_q8hjt"]
 [ext_resource type="SpriteFrames" uid="uid://cyv8fnlha8eri" path="res://Fish the fishes/Assets/Fishes/SwordFish/SwordFishAnimation.tres" id="3_rsy4g"]
-[ext_resource type="Texture2D" uid="uid://nd6b8vlsewp8" path="res://Fish the fishes/art/_shared/bubbles.png" id="4_7yl0y"]
+[ext_resource type="Texture2D" uid="uid://bosadrqergwx2" path="res://Fish the fishes/art/_shared/bubbles.png" id="4_7yl0y"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l8r55"]
 radius = 36.2116
@@ -35,7 +35,6 @@ gravity = Vector3(0, -300, 0)
 attractor_interaction_enabled = false
 scale_curve = SubResource("CurveTexture_eqpdk")
 anim_offset_max = 1.0
-turbulence_enabled = true
 turbulence_influence_min = 0.0
 
 [node name="SwordFish" node_paths=PackedStringArray("HitBox", "Bubbles") instance=ExtResource("1_jmf7p")]
