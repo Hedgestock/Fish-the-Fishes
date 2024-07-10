@@ -4,7 +4,12 @@ using System;
 public partial class AnimatedSpriteForUI : BoxContainer
 {
     [Export]
+    Vector2 PlaceholderScale = new Vector2 (1, 1);
+
+    [Export]
     AnimatedSprite2D _sprite;
+
+    private Vector2 _spriteSize;
 
     public AnimatedSprite2D Sprite { get { return _sprite; } }
 
@@ -20,12 +25,14 @@ public partial class AnimatedSpriteForUI : BoxContainer
     private void TakeSpace()
     {
         if (Sprite.SpriteFrames == null) { return; }
-        CustomMinimumSize = Sprite.SpriteFrames.GetFrameTexture(Sprite.Animation, 0).GetSize();
+        _spriteSize = Sprite.SpriteFrames.GetFrameTexture(Sprite.Animation, 0).GetSize();
+        CustomMinimumSize = _spriteSize * PlaceholderScale;
     }
 
     private void AdaptPosition()
     {
-        Sprite.GlobalPosition = new Vector2(GlobalPosition.X + Size.X / 2, GlobalPosition.Y + Size.Y / 2);
+        // TODO: Generalize for all Size position flags
+        Sprite.GlobalPosition = GlobalPosition + _spriteSize / 2 - (_spriteSize * (Vector2.One - PlaceholderScale));
     }
 
     #region AnimatedSprite2D Forwarding

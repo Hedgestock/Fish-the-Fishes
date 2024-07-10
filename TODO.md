@@ -123,7 +123,7 @@
 - [ ] Afficher un biome aléatoire dans ceux visités pour le fond du menu
 - [ ] Mettre les chronomètres d'apparition des poissons et des déchêts sur les biomes
 - [ ] Ajouter un moyen de trier/filtrer le compendium
-- [ ] Ajouter un outil pour voire les graphs de selection des biomes ainsi que les probabilités d'apparition des poissons
+- [ ] Ajouter un outil pour voire les graphes de selection des biomes ainsi que les probabilités d'apparition des poissons
 
 # Corrections
 
