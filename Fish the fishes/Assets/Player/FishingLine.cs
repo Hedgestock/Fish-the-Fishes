@@ -220,7 +220,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
         foreach (Fish fish in FishedThings)
         {
             score += fish.Value;
-            UserData.FishCompendium[fish.GetType().Name].Caught++;
+            UpdateFishCompendium(fish);
         }
         score = ScoringFunction((int)Math.Ceiling(score));
         foreach (Fish fish in FishedThings)
@@ -280,7 +280,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
 
         FishedThings.ForEach(thing =>
         {
-            if (thing is Fish) UserData.FishCompendium[thing.GetType().Name].Caught++;
+            if (thing is Fish) UpdateFishCompendium(thing as Fish);
             (thing as Node).QueueFree();
         });
         FishedThings.Clear();
@@ -295,6 +295,25 @@ public partial class FishingLine : CharacterBody2D, IFisher
     {
         if (num <= 0) return 0;
         return (int)(num * MathF.Log(num, b) + 1);
+    }
+
+    private void UpdateFishCompendium(Fish fish)
+    {
+        string fishTypeName = fish.GetType().Name;
+        UserData.FishCompendium[fishTypeName].Caught++;
+        if (UserData.FishCompendium[fishTypeName].MaxSize < 0)
+        {
+            UserData.FishCompendium[fishTypeName].MaxSize = fish.ActualSize;
+            UserData.FishCompendium[fishTypeName].MinSize = fish.ActualSize;
+        }
+        else if (UserData.FishCompendium[fishTypeName].MaxSize < fish.ActualSize)
+        {
+            UserData.FishCompendium[fishTypeName].MaxSize = fish.ActualSize;
+        }
+        else if (UserData.FishCompendium[fishTypeName].MinSize > fish.ActualSize)
+        {
+            UserData.FishCompendium[fishTypeName].MinSize = fish.ActualSize;
+        }
     }
 
     private void OnScreenResize()

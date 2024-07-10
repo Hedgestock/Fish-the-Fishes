@@ -14,7 +14,7 @@ config/name="Fish the Fishes"
 config/version="2.0"
 run/main_scene="res://SplashScreen.tscn"
 config/use_custom_user_dir=true
-config/custom_user_dir_name="WaffleStock"
+config/custom_user_dir_name="WaffleStock/FishTheFishes"
 config/features=PackedStringArray("4.2", "C#", "GL Compatibility")
 config/icon="res://Fish the fishes/art/icon 512.png"
 

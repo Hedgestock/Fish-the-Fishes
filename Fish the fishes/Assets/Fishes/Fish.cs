@@ -19,7 +19,7 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
     [Export(PropertyHint.MultilineText)]
     public string CompendiumDescription { get; set; }
     [Export]
-    public float Size = 100;
+    public float AverageSize = 100;
 
     [ExportGroup("Scoring")]
     [Export]
@@ -45,9 +45,14 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
     public bool IsAlive = true;
     public bool IsCaught { get; set; }
 
+    public float ActualSize
+    {
+        get { return AverageSize * ActualSizeVariation; }
+    }
+
     public bool IsHuge
     {
-        get { return Size * ActualSizeVariation > 70; }
+        get { return ActualSize > 75; }
     }
 
     public bool IsActionable
@@ -97,7 +102,7 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
         // If the inherited class did not set the ActualSizeVariation, we do it now
         if (ActualSizeVariation == 0)
         {
-            ActualSizeVariation = (float)GD.Randfn(1, SizeDeviation);
+            ActualSizeVariation = (float)Mathf.Max(0.01, GD.Randfn(1, SizeDeviation));
         }
 
         Scale *= ActualSizeVariation;

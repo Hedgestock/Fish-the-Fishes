@@ -84,10 +84,14 @@ namespace Godot.Fish_the_fishes.Scripts
         public class FishCompendiumEntry : CompendiumEntry
         {
             public uint Caught { get; set; }
+            public float MaxSize { get; set; }
+            public float MinSize { get; set; }
             public FishCompendiumEntry()
             {
                 Caught = 0;
                 Seen = 1;
+                MinSize = -1;
+                MaxSize = -1;
             }
         }
 
