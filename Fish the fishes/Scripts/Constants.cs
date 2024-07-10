@@ -50,9 +50,7 @@ namespace Godot.Fish_the_fishes.Scripts
             CoralReef,
             GreatBlue,
             OceanCurrent,
-            _Test,
-            _TestFollowup,
-            _TestMultiple
+            Test,
         }
     }
 }

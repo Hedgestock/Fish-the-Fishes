@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Fish the fishes/Assets/Fishes/Fish.tscn" id="1_jmf7p"]
 [ext_resource type="Script" path="res://Fish the fishes/Assets/Fishes/SwordFish/SwordFish.cs" id="2_q8hjt"]
 [ext_resource type="SpriteFrames" uid="uid://cyv8fnlha8eri" path="res://Fish the fishes/Assets/Fishes/SwordFish/SwordFishAnimation.tres" id="3_rsy4g"]
-[ext_resource type="Texture2D" uid="uid://bosadrqergwx2" path="res://Fish the fishes/art/_shared/bubbles.png" id="4_7yl0y"]
+[ext_resource type="Texture2D" uid="uid://bosadrqergwx2" path="res://Fish the fishes/art/shared/bubbles.png" id="4_7yl0y"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l8r55"]
 radius = 36.2116
@@ -44,7 +44,7 @@ ImmuneToSkew = [7]
 MaxStrikes = 6
 MinStrikes = 2
 HitBox = NodePath("HitBox/CollisionShape2D")
-Bubbles = NodePath("bubbles")
+Bubbles = NodePath("Bubbles")
 CompendiumName = "Sword Fish"
 CompendiumDescription = "This is a sword fish"
 AverageSize = 145.0
@@ -74,7 +74,7 @@ rotation = -1.5708
 shape = SubResource("CapsuleShape2D_rp7cb")
 debug_color = Color(1, 0, 0, 0.419608)
 
-[node name="bubbles" type="GPUParticles2D" parent="." index="5"]
+[node name="Bubbles" type="GPUParticles2D" parent="." index="5"]
 material = SubResource("CanvasItemMaterial_e1ind")
 position = Vector2(-340, 0)
 emitting = false

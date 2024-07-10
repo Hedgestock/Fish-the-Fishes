@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://Fish the fishes/Scripts/GameManager/GameManager.cs" id="1_gfi28"]
 [ext_resource type="Resource" uid="uid://cablkxc4svteo" path="res://Fish the fishes/Assets/Biomes/Beach/Beach.tres" id="2_iiibe"]
-[ext_resource type="Resource" uid="uid://nmu6wfnfu8ax" path="res://Fish the fishes/Assets/Biomes/_Test/_Test.tres" id="3_q3cex"]
+[ext_resource type="Resource" uid="uid://nmu6wfnfu8ax" path="res://Fish the fishes/Assets/Biomes/Test/Test.tres" id="3_sp56m"]
 
 [node name="GameManager" type="Node"]
 script = ExtResource("1_gfi28")
 _startingBiome = ExtResource("2_iiibe")
-_testBiome = ExtResource("3_q3cex")
+_testBiome = ExtResource("3_sp56m")
