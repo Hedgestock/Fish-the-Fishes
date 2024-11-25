@@ -100,6 +100,8 @@ position = Vector2(102, 73)
 shape = SubResource("RectangleShape2D_ae2js")
 
 [node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTargetButton" index="2"]
+offset_right = 205.0
+offset_bottom = 146.0
 text = "Target
 "
 
@@ -115,6 +117,8 @@ position = Vector2(147.5, 73)
 shape = SubResource("RectangleShape2D_2s724")
 
 [node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayGoGreenButton" index="2"]
+offset_right = 294.0
+offset_bottom = 146.0
 text = "Go Green
 "
 
@@ -131,6 +135,8 @@ scale = Vector2(21, 7)
 shape = SubResource("RectangleShape2D_w8qh7")
 
 [node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayClassicButton" index="2"]
+offset_right = 227.0
+offset_bottom = 138.0
 text = "Classic"
 
 [node name="PlayTimeAttackButton" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu" instance=ExtResource("5_o3gki")]
@@ -147,6 +153,8 @@ shape = SubResource("RectangleShape2D_4qjnw")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
 [node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTimeAttackButton" index="2"]
+offset_right = 104.0
+offset_bottom = 138.0
 text = "60s"
 
 [node name="SettingsButton" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu" instance=ExtResource("5_o3gki")]
@@ -162,6 +170,8 @@ scale = Vector2(14, 7)
 shape = SubResource("RectangleShape2D_bhkeu")
 
 [node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/SettingsButton" index="2"]
+offset_right = 281.0
+offset_bottom = 146.0
 text = "Settings"
 
 [node name="CompendiumButton" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu" instance=ExtResource("5_o3gki")]
@@ -177,6 +187,8 @@ scale = Vector2(22, 7)
 shape = SubResource("RectangleShape2D_vvm64")
 
 [node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/CompendiumButton" index="2"]
+offset_right = 428.0
+offset_bottom = 138.0
 text = "Compendium"
 
 [node name="CreditsButton" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu" instance=ExtResource("5_o3gki")]
@@ -207,6 +219,8 @@ position = Vector2(83.5, 73)
 shape = SubResource("RectangleShape2D_y70tv")
 
 [node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/StatsButton" index="2"]
+offset_right = 166.0
+offset_bottom = 146.0
 text = "Stats
 "
 
