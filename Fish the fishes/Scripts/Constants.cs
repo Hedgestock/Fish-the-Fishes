@@ -12,6 +12,7 @@ namespace Godot.Fish_the_fishes.Scripts
         public static string MaxPointScored = nameof(MaxPointScored);
         public static string TotalTrashesCleaned = nameof(TotalTrashesCleaned);
         public static string TotalEatenFishes = nameof(TotalEatenFishes);
+        public static string TotalGamesPlayed = nameof(TotalGamesPlayed);
 
         // /!\ WARNING /!\ Add new fishes/trashes/biomes at the end of enums to avoid messing the underlying numbering
         // /!\ WARNING /!\ Do NOT arrange them alpabetically because the '.tres' are only keeping track of the integer

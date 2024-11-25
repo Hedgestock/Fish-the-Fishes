@@ -13,6 +13,7 @@ namespace Godot.Fish_the_fishes.Scripts
         public Dictionary<string, uint> _competitiveScores { get; set; }
         public Dictionary<string, uint> _casualScores { get; set; }
         public Dictionary<string, uint> _statistics { get; set; }
+        public Dictionary<string, DateTime> _achievements { get; set; }
         public Dictionary<string, FishCompendiumEntry> _fishCompendium { get; set; }
         public Dictionary<string, TrashCompendiumEntry> _trashCompendium { get; set; }
         public Dictionary<string, BiomeCompendiumEntry> _biomeCompendium { get; set; }
@@ -24,6 +25,7 @@ namespace Godot.Fish_the_fishes.Scripts
             _competitiveScores = new Dictionary<string, uint>();
             _casualScores = new Dictionary<string, uint>();
             _statistics = new Dictionary<string, uint>();
+            _achievements = new Dictionary<string, DateTime>();
             _fishCompendium = new Dictionary<string, FishCompendiumEntry>();
             _trashCompendium = new Dictionary<string, TrashCompendiumEntry>();
             _biomeCompendium = new Dictionary<string, BiomeCompendiumEntry>();
@@ -35,6 +37,7 @@ namespace Godot.Fish_the_fishes.Scripts
         public static Dictionary<string, uint> CompetitiveScores { get { return _instance._competitiveScores; } set { _instance._competitiveScores = value; } }
         public static Dictionary<string, uint> CasualScores { get { return _instance._casualScores; } set { _instance._casualScores = value; } }
         public static Dictionary<string, uint> Statistics { get { return _instance._statistics; } set { _instance._statistics = value; } }
+        public static Dictionary<string, DateTime> Achievements { get { return _instance._achievements; } set { _instance._achievements = value; } }
         public static Dictionary<string, FishCompendiumEntry> FishCompendium { get { return _instance._fishCompendium; } set { _instance._fishCompendium = value; } }
         public static Dictionary<string, TrashCompendiumEntry> TrashCompendium { get { return _instance._trashCompendium; } set { _instance._trashCompendium = value; } }
         public static Dictionary<string, BiomeCompendiumEntry> BiomeCompendium { get { return _instance._biomeCompendium; } set { _instance._biomeCompendium = value; } }

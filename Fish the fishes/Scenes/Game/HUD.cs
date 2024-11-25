@@ -66,9 +66,10 @@ public partial class HUD : CanvasLayer
         if (-score > GameManager.Score) GameManager.Score = 0;
         else GameManager.Score = (uint)((int)GameManager.Score + score);
 
-
         if (score != 0)
         {
+            AchievementsManager.OnPointsScored(score);
+
             // This is some dark magic to make the score animate
             Tween tweenScore = CreateTween();
             tweenScore.TweenMethod(Callable.From<uint>((s) => ScoreLabel.Text = s.ToString()),
@@ -126,11 +127,6 @@ public partial class HUD : CanvasLayer
             EndCurrentGame();
         }
 
-    }
-
-    private void Test(Label testLabel, Color color)
-    {
-        testLabel.AddThemeColorOverride("font_color", color);
     }
 
     private void LineHit(FishingLine.DamageType damageType)

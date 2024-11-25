@@ -1,6 +1,6 @@
 using Godot;
-using Godot.Collections;
-using System;
+using Godot.Fish_the_fishes.Scripts;
+using System.Collections.Generic;
 
 public partial class Home : CanvasLayer
 {
@@ -30,6 +30,11 @@ public partial class Home : CanvasLayer
     {
         GameManager.Mode = mode;
         GameManager.Biome = biome;
+
+        UserData.Statistics[Constants.TotalGamesPlayed] = UserData.Statistics.GetValueOrDefault(Constants.TotalGamesPlayed) + 1;
+
+        AchievementsManager.OnGameStart();
+
         GameManager.ChangeSceneToFile("res://Fish the fishes/Scenes/Game/Game.tscn");
     }
 

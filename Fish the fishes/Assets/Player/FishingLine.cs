@@ -151,6 +151,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
         EmitSignal(SignalName.Hit, (int)damageType);
         Hitbox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
         GetNode<AudioStreamPlayer2D>("HitSound").Play();
+        AchievementsManager.OnHit(damageType);
 
         if (damageType == DamageType.Trash)
         {
@@ -314,6 +315,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
         {
             UserData.FishCompendium[fishTypeName].MinSize = fish.ActualSize;
         }
+        AchievementsManager.OnFishFished();
     }
 
     private void OnScreenResize()

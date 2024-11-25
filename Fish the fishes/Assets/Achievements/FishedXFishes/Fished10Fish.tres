@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="FishedXFishes" load_steps=2 format=3 uid="uid://bxlak16y7msb4"]
+
+[ext_resource type="Script" path="res://Fish the fishes/Assets/Achievements/FishedXFishes/FishedXFishes.cs" id="1_88fh5"]
+
+[resource]
+resource_name = "Fished10Fishes"
+script = ExtResource("1_88fh5")
+FishesThreshold = 10
+CompendiumName = "Fished 10 Fishes"
+CompendiumDescription = "Yay ! 10 fishes"

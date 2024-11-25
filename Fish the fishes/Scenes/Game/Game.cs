@@ -1,9 +1,6 @@
 using Godot;
-using Godot.Collections;
 using Godot.Fish_the_fishes.Scripts;
-using Godot.NativeInterop;
-using System;
-using System.Linq;
+
 
 public partial class Game : Node
 {
@@ -35,6 +32,7 @@ public partial class Game : Node
     {
         GameManager.WriteHighScore();
         GameManager.SaveData();
+        AchievementsManager.OnGameEnd();
         GameManager.Mode = Mode.Menu;
         GameManager.ChangeSceneToFile("res://Fish the fishes/Scenes/Home.tscn");
     }

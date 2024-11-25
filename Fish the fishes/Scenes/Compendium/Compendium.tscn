@@ -76,9 +76,11 @@ size_flags_vertical = 3
 [node name="TabContainer" type="TabContainer" parent="VBoxContainer/MarginContainer"]
 layout_mode = 2
 tab_alignment = 1
+current_tab = 0
 
 [node name="Fishes" type="ScrollContainer" parent="VBoxContainer/MarginContainer/TabContainer"]
 layout_mode = 2
+metadata/_tab_index = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/TabContainer/Fishes"]
 layout_mode = 2
@@ -92,6 +94,7 @@ size_flags_horizontal = 3
 [node name="Trashes" type="ScrollContainer" parent="VBoxContainer/MarginContainer/TabContainer"]
 visible = false
 layout_mode = 2
+metadata/_tab_index = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/TabContainer/Trashes"]
 layout_mode = 2
@@ -106,6 +109,7 @@ size_flags_vertical = 3
 [node name="Biomes" type="ScrollContainer" parent="VBoxContainer/MarginContainer/TabContainer"]
 visible = false
 layout_mode = 2
+metadata/_tab_index = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/TabContainer/Biomes"]
 layout_mode = 2
@@ -120,6 +124,7 @@ size_flags_vertical = 3
 [node name="Achievements" type="ScrollContainer" parent="VBoxContainer/MarginContainer/TabContainer"]
 visible = false
 layout_mode = 2
+metadata/_tab_index = 3
 
 [node name="Label" type="Label" parent="VBoxContainer/MarginContainer/TabContainer/Achievements"]
 layout_mode = 2

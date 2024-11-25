@@ -80,9 +80,9 @@
 - [x] Rendre la taille des poissons aléatoire
 - [ ] Ajouter des objets équipables
 - [ ] Ajouter des objets activables en jeu
-    - [ ] Appât
-    - [ ] Filet
-    - [ ] Truc pour virer les déchêts
+	- [ ] Appât
+	- [ ] Filet
+	- [ ] Truc pour virer les déchêts
 
 # Modes de jeu
 
@@ -112,10 +112,10 @@
 - [x] Mettre à jour le compendium avec les déchêts
 - [x] Mettre à jour le compendium avec les biomes
 - [ ] Support de différentes langues
-    - [x] Anglais
-    - [ ] Français
-    - [ ] Allemand
-    - [ ] Thai
+	- [x] Anglais
+	- [ ] Français
+	- [ ] Allemand
+	- [ ] Thai
 - [ ] Ajouter des morts différentes
 - [ ] Ajouter une vitesse de descente et de remontée différente pour la ligne
 - [ ] SLB dans le fond
@@ -148,4 +148,3 @@
 - [x] [**Actuellement Impossible**] Corriger les bulles des requins qui disparaissent
 - [x] [**Actuellement impossible**] Corriger les requins en attente de lancement
 - [ ] Corriger les requins qui mangent des poissons déjà pêchés
-
