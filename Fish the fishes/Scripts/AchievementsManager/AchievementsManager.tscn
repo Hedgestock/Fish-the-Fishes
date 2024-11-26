@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://bcpl3uhih5gm8" path="res://Fish the fishes/Assets/Achievements/FishedXFishes/Fished2Fishes.tres" id="3_3asv0"]
 [ext_resource type="Resource" uid="uid://bxlak16y7msb4" path="res://Fish the fishes/Assets/Achievements/FishedXFishes/Fished10Fish.tres" id="3_sh3lt"]
 [ext_resource type="Resource" uid="uid://cubaglwwa6613" path="res://Fish the fishes/Assets/Achievements/FishedXFishes/Fished100Fishes.tres" id="4_pehmk"]
-[ext_resource type="Resource" uid="uid://jewrk281nj5n" path="res://Fish the fishes/Assets/Achievements/StartFishing.tres" id="5_o0qqq"]
+[ext_resource type="Resource" uid="uid://jewrk281nj5n" path="res://Fish the fishes/Assets/Achievements/PlayedXGames/Classic/Played1ClassicGame.tres" id="5_o0qqq"]
 [ext_resource type="PackedScene" uid="uid://b4hl7jdtefkae" path="res://Fish the fishes/Assets/Achievements/Notification/Notification.tscn" id="6_hnxwc"]
 
 [node name="AchievementsManager" type="Node"]

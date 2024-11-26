@@ -32,6 +32,7 @@ public partial class Home : CanvasLayer
         GameManager.Biome = biome;
 
         UserData.Statistics[Constants.TotalGamesPlayed] = UserData.Statistics.GetValueOrDefault(Constants.TotalGamesPlayed) + 1;
+        UserData.Statistics[mode.ToString()] = UserData.Statistics.GetValueOrDefault(mode.ToString()) + 1;
 
         AchievementsManager.OnGameStart();
 

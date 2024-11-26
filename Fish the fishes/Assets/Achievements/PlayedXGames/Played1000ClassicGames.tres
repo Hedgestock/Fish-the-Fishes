@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PlayedXGames" load_steps=2 format=3 uid="uid://bs03v07ert3vp"]
+
+[ext_resource type="Script" path="res://Fish the fishes/Assets/Achievements/PlayedXGames/PlayedXGames.cs" id="1_q3ql8"]
+
+[resource]
+resource_name = "Played1000Games"
+script = ExtResource("1_q3ql8")
+GamesThreshold = 1000
+Mode = 0
+CompendiumName = "Played 1000 Games"
+CompendiumDescription = "You played 1000 games !"

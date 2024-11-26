@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PlayedXGames" load_steps=2 format=3 uid="uid://w8th5g765ht8"]
+
+[ext_resource type="Script" path="res://Fish the fishes/Assets/Achievements/PlayedXGames/PlayedXGames.cs" id="1_hau4y"]
+
+[resource]
+resource_name = "Played100ClassicGames"
+script = ExtResource("1_hau4y")
+GamesThreshold = 100
+Mode = 1
+CompendiumName = "Played 100 Classic Games"
+CompendiumDescription = "You played Classic 100 times !"
