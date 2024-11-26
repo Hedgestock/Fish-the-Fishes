@@ -14,5 +14,5 @@ public partial class StartFishing : Achievement
     [Export(PropertyHint.MultilineText)]
     public override string CompendiumDescription { get; set; }
 
-    public override bool Predicate() { return UserData.Statistics.GetValueOrDefault(Constants.TotalGamesPlayed) != 0; }
+    public override bool Predicate() { return UserData.Statistics.GetValueOrDefault(Constants.TotalGamesPlayed) > 0; }
 }

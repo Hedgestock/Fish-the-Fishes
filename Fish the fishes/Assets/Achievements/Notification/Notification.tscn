@@ -34,7 +34,7 @@ layout_mode = 2
 [node name="AchievementName" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
-text = "Avement"
+text = "Achievement"
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0

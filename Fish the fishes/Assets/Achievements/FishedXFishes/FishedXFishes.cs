@@ -17,5 +17,5 @@ public partial class FishedXFishes : Achievement
     [Export(PropertyHint.MultilineText)]
     public override string CompendiumDescription { get; set; }
 
-    public override bool Predicate() { return UserData.Statistics.GetValueOrDefault(Constants.TotalFishedFishes) > FishesThreshold; }
+    public override bool Predicate() { return UserData.Statistics.GetValueOrDefault(Constants.TotalFishedFishes) >= FishesThreshold; }
 }

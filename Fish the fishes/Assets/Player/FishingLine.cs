@@ -221,7 +221,6 @@ public partial class FishingLine : CharacterBody2D, IFisher
         foreach (Fish fish in FishedThings)
         {
             score += fish.Value;
-            UpdateFishCompendium(fish);
         }
         score = ScoringFunction((int)Math.Ceiling(score));
         foreach (Fish fish in FishedThings)
@@ -238,6 +237,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
 
         foreach (Fish fish in FishedThings)
         {
+            UpdateFishCompendium(fish);
             score *= fish.Multiplier;
             fish.QueueFree();
         }
@@ -279,15 +279,15 @@ public partial class FishingLine : CharacterBody2D, IFisher
         UserData.Statistics[Constants.MaxFishedFishes] = (uint)Math.Max(UserData.Statistics.GetValueOrDefault(Constants.MaxFishedFishes), FishedThings.Count);
         UserData.Statistics[Constants.TotalFishedFishes] = UserData.Statistics.GetValueOrDefault(Constants.TotalFishedFishes) + (uint)FishedThings.Count;
 
-        FishedThings.ForEach(thing =>
-        {
-            if (thing is Fish) UpdateFishCompendium(thing as Fish);
-            (thing as Node).QueueFree();
-        });
-        FishedThings.Clear();
-
         UserData.Statistics[Constants.MaxPointScored] = (uint)Math.Max(UserData.Statistics.GetValueOrDefault(Constants.MaxPointScored), score);
         UserData.Statistics[Constants.TotalPointsScored] = (uint)Math.Max(0, UserData.Statistics.GetValueOrDefault(Constants.TotalPointsScored) + score);
+
+        foreach (Fish fish in FishedThings)
+        {
+            UpdateFishCompendium(fish);
+            fish.QueueFree();
+        }
+        FishedThings.Clear();
 
         return score;
     }

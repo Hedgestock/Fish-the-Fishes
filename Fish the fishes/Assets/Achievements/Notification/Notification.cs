@@ -13,5 +13,6 @@ public partial class Notification : PanelContainer
         Tween tweenOpacity = CreateTween();
         tweenOpacity.TweenProperty(this, "modulate:a", 0, 1);
         tweenOpacity.TweenCallback(Callable.From(QueueFree));
+        tweenOpacity.TweenCallback(Callable.From(AchievementsManager.DisplayNext));
     }
 }

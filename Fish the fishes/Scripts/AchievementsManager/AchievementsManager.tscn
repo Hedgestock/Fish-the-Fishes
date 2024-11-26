@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://5w7affso8r8d"]
+[gd_scene load_steps=8 format=3 uid="uid://5w7affso8r8d"]
 
 [ext_resource type="Script" path="res://Fish the fishes/Scripts/AchievementsManager/AchievementsManager.cs" id="1_pqju3"]
 [ext_resource type="Resource" uid="uid://csvfj4sdib8u5" path="res://Fish the fishes/Assets/Achievements/FishedXFishes/Fished1Fish.tres" id="2_0hwku"]
+[ext_resource type="Resource" uid="uid://bcpl3uhih5gm8" path="res://Fish the fishes/Assets/Achievements/FishedXFishes/Fished2Fishes.tres" id="3_3asv0"]
 [ext_resource type="Resource" uid="uid://bxlak16y7msb4" path="res://Fish the fishes/Assets/Achievements/FishedXFishes/Fished10Fish.tres" id="3_sh3lt"]
 [ext_resource type="Resource" uid="uid://cubaglwwa6613" path="res://Fish the fishes/Assets/Achievements/FishedXFishes/Fished100Fishes.tres" id="4_pehmk"]
 [ext_resource type="Resource" uid="uid://jewrk281nj5n" path="res://Fish the fishes/Assets/Achievements/StartFishing.tres" id="5_o0qqq"]
@@ -9,5 +10,5 @@
 
 [node name="AchievementsManager" type="Node"]
 script = ExtResource("1_pqju3")
-AchievementsList = [ExtResource("2_0hwku"), ExtResource("3_sh3lt"), ExtResource("4_pehmk"), ExtResource("5_o0qqq")]
+AchievementsList = [ExtResource("2_0hwku"), ExtResource("3_3asv0"), ExtResource("3_sh3lt"), ExtResource("4_pehmk"), ExtResource("5_o0qqq")]
 AchievementsNotificationScene = ExtResource("6_hnxwc")

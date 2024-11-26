@@ -4,6 +4,7 @@ using Godot.Collections;
 using Godot.Fish_the_fishes.Scripts;
 using System.Collections.Generic;
 using System.Linq;
+using System.Collections;
 
 public partial class AchievementsManager : Node
 {
@@ -16,6 +17,8 @@ public partial class AchievementsManager : Node
 
     static private AchievementsManager _instance = null;
     public static AchievementsManager Instance { get { return _instance; } }
+
+    private Queue<PanelContainer> _achievementsQueue = new Queue<PanelContainer>();
 
     private AchievementsManager()
     {
@@ -66,8 +69,22 @@ public partial class AchievementsManager : Node
 
                 AchievementNotification.GetNode<Label>("MarginContainer/HBoxContainer/VBoxContainer/AchievementName").Text = achievement.CompendiumName;
 
-                _instance.GetTree().Root.AddChild(AchievementNotification);
+                // We have to display something if the queue is not yet active
+                if (_instance._achievementsQueue.Count == 0)
+                    _instance.GetTree().Root.AddChild(AchievementNotification);
+                _instance._achievementsQueue.Enqueue(AchievementNotification);
             }
         }
+    }
+
+    public static void DisplayNext()
+    {
+        // We let the currently displayed achievement in until it fades to signal to other achievements that something is still happening
+        _instance.GetTree().Root.AddChild(_instance._achievementsQueue.Dequeue());
+
+        PanelContainer NextAchievementNotification;
+        if (!_instance._achievementsQueue.TryDequeue(out NextAchievementNotification)) return;
+
+        _instance.GetTree().Root.AddChild(NextAchievementNotification);
     }
 }
