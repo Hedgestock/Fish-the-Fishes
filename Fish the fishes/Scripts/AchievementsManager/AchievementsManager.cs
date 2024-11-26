@@ -80,10 +80,10 @@ public partial class AchievementsManager : Node
     public static void DisplayNext()
     {
         // We let the currently displayed achievement in until it fades to signal to other achievements that something is still happening
-        _instance.GetTree().Root.AddChild(_instance._achievementsQueue.Dequeue());
+        _instance._achievementsQueue.Dequeue();
 
         PanelContainer NextAchievementNotification;
-        if (!_instance._achievementsQueue.TryDequeue(out NextAchievementNotification)) return;
+        if (!_instance._achievementsQueue.TryPeek(out NextAchievementNotification)) return;
 
         _instance.GetTree().Root.AddChild(NextAchievementNotification);
     }
