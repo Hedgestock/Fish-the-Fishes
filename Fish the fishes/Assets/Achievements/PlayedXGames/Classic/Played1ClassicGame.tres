@@ -6,6 +6,6 @@
 resource_name = "Played1ClassicGame"
 script = ExtResource("1_xnivm")
 GamesThreshold = 1
-Mode = 1
+Mode = 2
 CompendiumName = "Started playing classic"
 CompendiumDescription = "You started playing classic !"

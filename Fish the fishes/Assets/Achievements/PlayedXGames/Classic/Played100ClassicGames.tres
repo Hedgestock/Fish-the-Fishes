@@ -6,6 +6,6 @@
 resource_name = "Played100ClassicGames"
 script = ExtResource("1_hau4y")
 GamesThreshold = 100
-Mode = 1
+Mode = 2
 CompendiumName = "Played 100 Classic Games"
 CompendiumDescription = "You played Classic 100 times !"

@@ -9,6 +9,7 @@ public partial class Game : Node
 
     public enum Mode
     {
+        AllModes,
         Menu,
         Classic,
         GoGreen,

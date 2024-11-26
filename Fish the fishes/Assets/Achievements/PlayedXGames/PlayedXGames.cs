@@ -21,7 +21,7 @@ public partial class PlayedXGames : Achievement
     public override string CompendiumDescription { get; set; }
 
     public override bool Predicate() {
-        if (Mode == Game.Mode.Menu)
+        if (Mode == Game.Mode.AllModes)
             return UserData.Statistics.GetValueOrDefault(Constants.TotalGamesPlayed) > GamesThreshold;
         return false;
     }
