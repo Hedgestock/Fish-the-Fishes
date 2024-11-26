@@ -24,7 +24,7 @@ public partial class PlayedXGames : DoneXTimes
     public override bool Predicate()
     {
         if (Mode == Game.Mode.AllModes)
-            return UserData.GetStatistic(Category, Mode, Constants.TotalGamesPlayed) > Threshold;
+            return UserData.GetStatistic(Category, Mode, Constants.TotalGamesPlayed) >= Threshold;
         return false;//TODO
     }
 }

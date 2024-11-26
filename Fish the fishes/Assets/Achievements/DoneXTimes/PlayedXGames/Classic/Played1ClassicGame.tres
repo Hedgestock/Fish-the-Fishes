@@ -1,11 +1,12 @@
 [gd_resource type="Resource" script_class="PlayedXGames" load_steps=2 format=3 uid="uid://jewrk281nj5n"]
 
-[ext_resource type="Script" path="res://Fish the fishes/Assets/Achievements/DoneXTimes/PlayedXGames/PlayedXGames.cs" id="1_xnivm"]
+[ext_resource type="Script" path="res://Fish the fishes/Assets/Achievements/DoneXTimes/PlayedXGames/PlayedXGames.cs" id="1_4wfuq"]
 
 [resource]
 resource_name = "Played1ClassicGame"
-script = ExtResource("1_xnivm")
-GamesThreshold = 1
+script = ExtResource("1_4wfuq")
+Threshold = 1
+Category = 0
 Mode = 2
 CompendiumName = "Started playing classic"
 CompendiumDescription = "You started playing classic !"

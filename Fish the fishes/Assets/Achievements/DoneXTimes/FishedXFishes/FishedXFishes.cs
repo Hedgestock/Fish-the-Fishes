@@ -20,5 +20,5 @@ public partial class FishedXFishes : DoneXTimes
     [Export(PropertyHint.MultilineText)]
     public override string CompendiumDescription { get; set; }
 
-    public override bool Predicate() { return UserData.GetStatistic(Category, Mode, Constants.TotalFishedFishes) > Threshold; }
+    public override bool Predicate() { return UserData.GetStatistic(Category, Mode, Constants.TotalFishedFishes) >= Threshold; }
 }

@@ -1,11 +1,12 @@
 [gd_resource type="Resource" script_class="PlayedXGames" load_steps=2 format=3 uid="uid://bs16jy7h8f184"]
 
-[ext_resource type="Script" path="res://Fish the fishes/Assets/Achievements/DoneXTimes/PlayedXGames/PlayedXGames.cs" id="1_blsex"]
+[ext_resource type="Script" path="res://Fish the fishes/Assets/Achievements/DoneXTimes/PlayedXGames/PlayedXGames.cs" id="1_555d3"]
 
 [resource]
 resource_name = "Played1000ClassicGames"
-script = ExtResource("1_blsex")
-GamesThreshold = 1000
+script = ExtResource("1_555d3")
+Threshold = 1000
+Category = 0
 Mode = 2
 CompendiumName = "Played 1000 Classic Games"
 CompendiumDescription = "You played Classic 1000 times !"

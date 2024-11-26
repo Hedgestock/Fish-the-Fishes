@@ -1,10 +1,12 @@
 [gd_resource type="Resource" script_class="FishedXFishes" load_steps=2 format=3 uid="uid://bcpl3uhih5gm8"]
 
-[ext_resource type="Script" path="res://Fish the fishes/Assets/Achievements/DoneXTimes/FishedXFishes/FishedXFishes.cs" id="1_7pdb7"]
+[ext_resource type="Script" path="res://Fish the fishes/Assets/Achievements/DoneXTimes/FishedXFishes/FishedXFishes.cs" id="1_ddmq6"]
 
 [resource]
 resource_name = "Fished2Fishes"
-script = ExtResource("1_7pdb7")
-FishesThreshold = 2
+script = ExtResource("1_ddmq6")
+Threshold = 2
+Category = 0
+Mode = 0
 CompendiumName = "Fished 2 Fishes"
 CompendiumDescription = "Yay ! 2 fishes"

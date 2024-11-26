@@ -15,10 +15,11 @@
 - [x] Faire clignoter le score pour la perte de points
 - [x] Couper le son des poissons dans les menus
 - [x] Faire des boutons en poisson
-- [x] Ajouter des hauts faits
 - [ ] Ajourter un tutoriel
 - [ ] Utiliser des hameçons pour la vie 
 - [ ] Séparer le mode compétitif du mode normal dans les statistiques
+- [ ] Faire les panneaux d'affichage
+- [ ] Ajouter une page pour visualiser les hauts faits
 
 # Poissons
 
@@ -112,6 +113,7 @@
 - [x] Ajouter une probabilité d'apparition
 - [x] Mettre à jour le compendium avec les déchêts
 - [x] Mettre à jour le compendium avec les biomes
+- [x] Ajouter des hauts faits
 - [ ] Support de différentes langues
 	- [x] Anglais
 	- [ ] Français
@@ -125,6 +127,18 @@
 - [ ] Mettre les chronomètres d'apparition des poissons et des déchêts sur les biomes
 - [ ] Ajouter un moyen de trier/filtrer le compendium
 - [ ] Ajouter un outil pour voire les graphes de selection des biomes ainsi que les probabilités d'apparition des poissons
+- [ ] Ajouter pleins de hauts faits différents
+	- [x] Jouer X parties
+		- [ ] Jouer X parties dans chaque mode
+	- [x] Pêcher X poissons
+		- [ ] Pêcher X poissons dans chaque mode
+	- [ ] Rencontrer <tel> biome
+	- [ ] Ramasser X déchêts
+	- [ ] Perdre X vies
+		- [ ] Perdre X vies de chaque manière
+	- [ ] Pêcher <tel> poisson
+	- [ ] Voir <tel> poisson
+	- [ ] Voir <tel> déchêt
 
 # Corrections
 
