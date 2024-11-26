@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="PlayedXGames" load_steps=2 format=3 uid="uid://bdfendkyg4f4o"]
 
-[ext_resource type="Script" path="res://Fish the fishes/Assets/Achievements/PlayedXGames/PlayedXGames.cs" id="1_oeki4"]
+[ext_resource type="Script" path="res://Fish the fishes/Assets/Achievements/DoneXTimes/PlayedXGames/PlayedXGames.cs" id="1_oeki4"]
 
 [resource]
 resource_name = "Played10Games"

@@ -4,6 +4,7 @@ namespace Godot.Fish_the_fishes.Scripts
 {
     public static class Constants
     {
+        public static string HighScore = nameof(HighScore);
         public static string TotalFishedFishes = nameof(TotalFishedFishes);
         public static string TotalPointsScored = nameof(TotalPointsScored);
         public static string TotalTrashesHit = nameof(TotalTrashesHit);

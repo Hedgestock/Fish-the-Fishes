@@ -94,22 +94,6 @@ public partial class GameManager : Node
         };
     }
 
-    static public void WriteHighScore()
-    {
-        Dictionary<string, uint> scores = UserSettings.CompetitiveMode ? UserData.CompetitiveScores : UserData.CasualScores;
-        if (!scores.ContainsKey(Mode.ToString()) || Score > scores[Mode.ToString()])
-        {
-            if (UserSettings.CompetitiveMode)
-            {
-                UserData.CompetitiveScores[Mode.ToString()] = Score;
-            }
-            else
-            {
-                UserData.CasualScores[Mode.ToString()] = Score;
-            }
-        }
-    }
-
     static public void SaveData()
     {
         using var gameSave = FileAccess.Open(SaveFilePath, FileAccess.ModeFlags.Write);

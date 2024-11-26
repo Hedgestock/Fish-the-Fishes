@@ -31,7 +31,7 @@ public partial class Game : Node
 
     public void EndGame()
     {
-        GameManager.WriteHighScore();
+        UserData.SetHighStat(Constants.HighScore, GameManager.Score);
         GameManager.SaveData();
         AchievementsManager.OnGameEnd();
         GameManager.Mode = Mode.Menu;

@@ -4,15 +4,16 @@ using System;
 using System.Collections.Generic;
 
 [GlobalClass]
-public partial class PlayedXGames : Achievement
+public partial class PlayedXGames : DoneXTimes
 {
     public override IAchievable.CheckTiming Timing { get { return IAchievable.CheckTiming.OnGameStart; } }
 
     [Export]
-    public uint GamesThreshold = 0;
-
+    public override uint Threshold { get; set; }
     [Export]
-    public Game.Mode Mode { get; set; }
+    public override UserData.StatCategory Category { get; set; }
+    [Export]
+    public override Game.Mode Mode { get; set; }
 
     [ExportGroup("Compendium")]
     [Export]
@@ -20,9 +21,10 @@ public partial class PlayedXGames : Achievement
     [Export(PropertyHint.MultilineText)]
     public override string CompendiumDescription { get; set; }
 
-    public override bool Predicate() {
+    public override bool Predicate()
+    {
         if (Mode == Game.Mode.AllModes)
-            return UserData.Statistics.GetValueOrDefault(Constants.TotalGamesPlayed) > GamesThreshold;
-        return false;
+            return UserData.GetStatistic(Category, Mode, Constants.TotalGamesPlayed) > Threshold;
+        return false;//TODO
     }
 }

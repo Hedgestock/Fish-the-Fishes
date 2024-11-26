@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="PlayedXGames" load_steps=2 format=3 uid="uid://jewrk281nj5n"]
 
-[ext_resource type="Script" path="res://Fish the fishes/Assets/Achievements/PlayedXGames/PlayedXGames.cs" id="1_xnivm"]
+[ext_resource type="Script" path="res://Fish the fishes/Assets/Achievements/DoneXTimes/PlayedXGames/PlayedXGames.cs" id="1_xnivm"]
 
 [resource]
 resource_name = "Played1ClassicGame"

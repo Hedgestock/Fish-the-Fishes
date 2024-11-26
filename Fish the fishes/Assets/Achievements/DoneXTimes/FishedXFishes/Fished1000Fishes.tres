@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="FishedXFishes" load_steps=2 format=3 uid="uid://cu6jrqe2cry0p"]
 
-[ext_resource type="Script" path="res://Fish the fishes/Assets/Achievements/FishedXFishes/FishedXFishes.cs" id="1_bphfj"]
+[ext_resource type="Script" path="res://Fish the fishes/Assets/Achievements/DoneXTimes/FishedXFishes/FishedXFishes.cs" id="1_bphfj"]
 
 [resource]
 resource_name = "Fished1000Fishes"

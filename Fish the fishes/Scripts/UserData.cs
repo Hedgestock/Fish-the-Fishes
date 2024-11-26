@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Reflection;
 using System.Text.Json;
+using static Godot.WebSocketPeer;
 
 namespace Godot.Fish_the_fishes.Scripts
 {
@@ -9,9 +10,6 @@ namespace Godot.Fish_the_fishes.Scripts
     {
         #region serializable instance
         private static UserData _instance = null;
-
-        public Dictionary<string, uint> _competitiveScores { get; set; }
-        public Dictionary<string, uint> _casualScores { get; set; }
         public Dictionary<string, uint> _statistics { get; set; }
         public Dictionary<string, DateTime> _achievements { get; set; }
         public Dictionary<string, FishCompendiumEntry> _fishCompendium { get; set; }
@@ -22,8 +20,6 @@ namespace Godot.Fish_the_fishes.Scripts
         {
             if (_instance != null)
                 return;
-            _competitiveScores = new Dictionary<string, uint>();
-            _casualScores = new Dictionary<string, uint>();
             _statistics = new Dictionary<string, uint>();
             _achievements = new Dictionary<string, DateTime>();
             _fishCompendium = new Dictionary<string, FishCompendiumEntry>();
@@ -34,9 +30,6 @@ namespace Godot.Fish_the_fishes.Scripts
         }
         #endregion
 
-        public static Dictionary<string, uint> CompetitiveScores { get { return _instance._competitiveScores; } set { _instance._competitiveScores = value; } }
-        public static Dictionary<string, uint> CasualScores { get { return _instance._casualScores; } set { _instance._casualScores = value; } }
-        public static Dictionary<string, uint> Statistics { get { return _instance._statistics; } set { _instance._statistics = value; } }
         public static Dictionary<string, DateTime> Achievements { get { return _instance._achievements; } set { _instance._achievements = value; } }
         public static Dictionary<string, FishCompendiumEntry> FishCompendium { get { return _instance._fishCompendium; } set { _instance._fishCompendium = value; } }
         public static Dictionary<string, TrashCompendiumEntry> TrashCompendium { get { return _instance._trashCompendium; } set { _instance._trashCompendium = value; } }
@@ -76,6 +69,51 @@ namespace Godot.Fish_the_fishes.Scripts
                 return false;
             }
         }
+
+        public enum StatCategory
+        {
+            Scratch,
+            Competitive,
+            Casual
+        }
+
+        #region helper methods
+        public static uint? GetStatistic(StatCategory category, Game.Mode mode, string statName)
+        {
+            return _instance._statistics.GetValueOrDefault($"{category}/{mode}/{statName}");
+        }
+
+        public static void SetHighStat(string statName, uint stat)
+        {
+            _setHighStat(StatCategory.Scratch, Game.Mode.AllModes, statName, stat);
+            _setHighStat(StatCategory.Scratch, GameManager.Mode, statName, stat);
+            _setHighStat(UserSettings.CompetitiveMode ? StatCategory.Competitive : StatCategory.Casual, Game.Mode.AllModes, statName, stat);
+            _setHighStat(UserSettings.CompetitiveMode ? StatCategory.Competitive : StatCategory.Casual, GameManager.Mode, statName, stat);
+        }
+
+        private static void _setHighStat(StatCategory category, Game.Mode mode, string statName, uint stat)
+        {
+            uint currentStat = _instance._statistics.GetValueOrDefault($"{category}/{mode}/{statName}");
+            if (currentStat >= stat) return;
+            _instance._statistics[$"{category}/{mode}/{statName}"] = stat;
+        }
+
+        public static void IncrementStatistic(string statName, uint incr = 1)
+        {
+            _incrementStatistic(StatCategory.Scratch, Game.Mode.AllModes, statName,incr);
+            _incrementStatistic(StatCategory.Scratch, GameManager.Mode, statName,incr);
+            _incrementStatistic(UserSettings.CompetitiveMode ? StatCategory.Competitive : StatCategory.Casual, Game.Mode.AllModes, statName,incr);
+            _incrementStatistic(UserSettings.CompetitiveMode ? StatCategory.Competitive : StatCategory.Casual, GameManager.Mode, statName,incr);
+        }
+
+
+        private static void _incrementStatistic(StatCategory category, Game.Mode mode, string statName, uint incr)
+        {
+            uint currentStat = _instance._statistics.GetValueOrDefault($"{category}/{mode}/{statName}");
+            _instance._statistics[$"{category}/{mode}/{statName}"] = currentStat + incr;
+        }
+
+        #endregion
 
         #region helper classes
 

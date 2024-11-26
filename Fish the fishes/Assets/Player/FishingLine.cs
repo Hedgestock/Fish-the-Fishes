@@ -155,7 +155,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
 
         if (damageType == DamageType.Trash)
         {
-            UserData.Statistics[Constants.TotalTrashesHit] = UserData.Statistics.GetValueOrDefault(Constants.TotalTrashesHit) + 1;
+            UserData.IncrementStatistic(Constants.TotalTrashesHit);
         }
 
         foreach (IFishable thing in FishedThings)
@@ -165,7 +165,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
             if (GameManager.Mode != Game.Mode.GoGreen && thing is Fish)
             {
                 (thing as Fish).Kill();
-                UserData.Statistics[Constants.TotalLostFishes] = UserData.Statistics.GetValueOrDefault(Constants.TotalLostFishes) + 1;
+                UserData.IncrementStatistic(Constants.TotalLostFishes);
             }
         }
 
@@ -232,8 +232,8 @@ public partial class FishingLine : CharacterBody2D, IFisher
             }
         }
 
-        UserData.Statistics[Constants.MaxFishedFishes] = (uint)Math.Max(UserData.Statistics.GetValueOrDefault(Constants.MaxFishedFishes), FishedThings.Count);
-        UserData.Statistics[Constants.TotalFishedFishes] = UserData.Statistics.GetValueOrDefault(Constants.TotalFishedFishes) + (uint)FishedThings.Count;
+        UserData.SetHighStat(Constants.MaxFishedFishes, (uint)FishedThings.Count);
+        UserData.IncrementStatistic(Constants.TotalFishedFishes, (uint)FishedThings.Count);
 
         foreach (Fish fish in FishedThings)
         {
@@ -242,8 +242,8 @@ public partial class FishingLine : CharacterBody2D, IFisher
             fish.QueueFree();
         }
 
-        UserData.Statistics[Constants.MaxPointScored] = (uint)Math.Max(UserData.Statistics.GetValueOrDefault(Constants.MaxPointScored), (int)score);
-        UserData.Statistics[Constants.TotalPointsScored] = (uint)Math.Max(0, UserData.Statistics.GetValueOrDefault(Constants.TotalPointsScored) + (int)score);
+        UserData.SetHighStat(Constants.MaxPointScored, (uint)score);
+        UserData.IncrementStatistic(Constants.TotalPointsScored, (uint)score);
 
         return (int)score;
 
@@ -255,11 +255,11 @@ public partial class FishingLine : CharacterBody2D, IFisher
 
         if (FishedThings.OfType<Fish>().Any())
         {
-            UserData.Statistics[Constants.TotalEatenFishes] = UserData.Statistics.GetValueOrDefault(Constants.TotalEatenFishes) + (uint)FishedThings.Where(thing => thing is Fish).Count();
+            UserData.IncrementStatistic(Constants.TotalEatenFishes, (uint)FishedThings.Where(thing => thing is Fish).Count());
             CallDeferred(MethodName.EmitSignal, SignalName.Hit, (int)DamageType.Default);
         }
 
-        UserData.Statistics[Constants.TotalTrashesCleaned] = UserData.Statistics.GetValueOrDefault(Constants.TotalTrashesCleaned) + (uint)FishedThings.Where(thing => thing is Trash).Count();
+        UserData.IncrementStatistic(Constants.TotalTrashesCleaned, (uint)FishedThings.Where(thing => thing is Trash).Count());
 
         foreach (Node thing in FishedThings)
         {
@@ -276,11 +276,11 @@ public partial class FishingLine : CharacterBody2D, IFisher
 
         int score = FishedThings.Any(thing => thing.GetType().Name == GameManager.Target) ? 1 : 0;
 
-        UserData.Statistics[Constants.MaxFishedFishes] = (uint)Math.Max(UserData.Statistics.GetValueOrDefault(Constants.MaxFishedFishes), FishedThings.Count);
-        UserData.Statistics[Constants.TotalFishedFishes] = UserData.Statistics.GetValueOrDefault(Constants.TotalFishedFishes) + (uint)FishedThings.Count;
+        UserData.SetHighStat(Constants.MaxFishedFishes, (uint)FishedThings.Count);
+        UserData.IncrementStatistic(Constants.TotalFishedFishes, (uint)FishedThings.Count);
 
-        UserData.Statistics[Constants.MaxPointScored] = (uint)Math.Max(UserData.Statistics.GetValueOrDefault(Constants.MaxPointScored), score);
-        UserData.Statistics[Constants.TotalPointsScored] = (uint)Math.Max(0, UserData.Statistics.GetValueOrDefault(Constants.TotalPointsScored) + score);
+        UserData.SetHighStat(Constants.MaxPointScored, (uint)score);
+        UserData.IncrementStatistic(Constants.TotalPointsScored, (uint)score);
 
         foreach (Fish fish in FishedThings)
         {

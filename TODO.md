@@ -149,3 +149,5 @@
 - [x] [**Actuellement Impossible**] Corriger les bulles des requins qui disparaissent
 - [x] [**Actuellement impossible**] Corriger les requins en attente de lancement
 - [ ] Corriger les requins qui mangent des poissons déjà pêchés
+- [ ] Passer à des listes de noms plutôt que des énumérations
+- [ ] Grouper les vérifications de hauts faits en un seul appel de fonction
