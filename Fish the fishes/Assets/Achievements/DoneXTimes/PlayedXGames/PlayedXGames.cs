@@ -21,10 +21,5 @@ public partial class PlayedXGames : DoneXTimes
     [Export(PropertyHint.MultilineText)]
     public override string CompendiumDescription { get; set; }
 
-    public override bool Predicate()
-    {
-        if (Mode == Game.Mode.AllModes)
-            return UserData.GetStatistic(Category, Mode, Constants.TotalGamesPlayed) >= Threshold;
-        return false;//TODO
-    }
+    public override bool Predicate() { return UserData.GetStatistic(Category, Mode, Constants.TotalGamesPlayed) >= Threshold; }
 }

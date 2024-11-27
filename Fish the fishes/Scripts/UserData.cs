@@ -78,7 +78,7 @@ namespace Godot.Fish_the_fishes.Scripts
         }
 
         #region helper methods
-        public static uint? GetStatistic(StatCategory category, Game.Mode mode, string statName)
+        public static uint GetStatistic(StatCategory category, Game.Mode mode, string statName)
         {
             return _instance._statistics.GetValueOrDefault($"{category}/{mode}/{statName}");
         }
