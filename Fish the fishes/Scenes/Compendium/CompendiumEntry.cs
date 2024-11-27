@@ -37,7 +37,7 @@ public partial class CompendiumEntry : PanelContainer
             Instance = GD.Load<PackedScene>($"{EntryFolder}{EntryKey}.tscn").Instantiate<Trash>();
             Entry = UserData.TrashCompendium.GetValueOrDefault(EntryKey);
         }
-        else
+        else if (EntryType == Compendium.EntryType.Biome)
         {
             EntryFolder = $"{Constants.BiomesFolder}{EntryKey}/";
             Instance = GD.Load<Biome>($"{EntryFolder}{EntryKey}.tres");

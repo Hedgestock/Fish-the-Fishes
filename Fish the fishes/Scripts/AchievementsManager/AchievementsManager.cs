@@ -62,9 +62,9 @@ public partial class AchievementsManager : Node
         List<Achievement> checkableAchievements = _instance.AchievementsList.Where((a) => a.Timing == timing).ToList();
         foreach (var achievement in checkableAchievements)
         {
-            if (!UserData.Achievements.ContainsKey(achievement.ResourceName) && achievement.Predicate())
+            if (!UserData.Achievements.ContainsKey(achievement.ResourcePath) && achievement.Predicate())
             {
-                UserData.Achievements.Add(achievement.ResourceName, DateTime.Now);
+                UserData.Achievements.Add(achievement.ResourcePath, DateTime.Now);
                 PanelContainer AchievementNotification = _instance.AchievementsNotificationScene.Instantiate<PanelContainer>();
 
                 AchievementNotification.GetNode<Label>("MarginContainer/HBoxContainer/VBoxContainer/AchievementName").Text = achievement.CompendiumName;

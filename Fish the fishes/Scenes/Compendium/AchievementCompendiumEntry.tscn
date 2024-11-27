@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://d4ecb71kma03k"]
+
+[ext_resource type="PackedScene" uid="uid://cu4qvea6vce5v" path="res://Fish the fishes/Scenes/Compendium/CompendiumEntry.tscn" id="1_bu23o"]
+[ext_resource type="Script" path="res://Fish the fishes/Scenes/Compendium/AchievementCompendiumEntry.cs" id="2_3v10s"]
+
+[node name="PanelContainer" instance=ExtResource("1_bu23o")]
+script = ExtResource("2_3v10s")
+
+[node name="Seen" parent="MarginContainer/HBoxContainer/VBoxContainer/Stats" index="0"]
+text = "Date: "
+
+[node name="NumberOfTimesSeen" parent="MarginContainer/HBoxContainer/VBoxContainer/Stats" index="1"]
+text = "
+"

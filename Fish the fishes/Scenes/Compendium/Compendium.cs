@@ -23,11 +23,18 @@ public partial class Compendium : CanvasLayer
     [Export]
     PackedScene BiomeEntry;
 
+    [Export]
+    VBoxContainer Achievements;
+
+    [Export]
+    PackedScene AchievementEntry;
+
     public enum EntryType
     {
         Biome,
         Fish,
-        Trash
+        Trash,
+        Achievement
     }
 
     // Called when the node enters the scene tree for the first time.
@@ -36,6 +43,7 @@ public partial class Compendium : CanvasLayer
         PopulateFishCompendium();
         PopulateTrashCompendium();
         PopulateBiomeCompendium();
+        PopulateAchievementCompendium();
     }
 
     private void GoToHome()
@@ -117,4 +125,31 @@ public partial class Compendium : CanvasLayer
         newEntry.EntryType = EntryType.Biome;
         Biomes.AddChild(newEntry);
     }
+
+    private void PopulateAchievementCompendium()
+    {
+        foreach (var entry in UserData.Achievements)
+        {
+            AddAchievementEntry(entry.Key);
+        }
+
+        //TODO
+        //var listOfExistingBiomeTypes = Enum.GetValues(typeof(Constants.Biomes))
+        //    .Cast<Constants.Biomes>()
+        //    .Select(v => v.ToString()).Except(UserData.BiomeCompendium.Keys);
+
+        //foreach (var biomeType in listOfExistingBiomeTypes)
+        //{
+        //    AddBiomeEntry(biomeType);
+        //}
+    }
+
+    private void AddAchievementEntry(string achievementPath)
+    {
+        AchievementCompendiumEntry newEntry = AchievementEntry.Instantiate<AchievementCompendiumEntry>();
+        newEntry.EntryKey = achievementPath;
+        newEntry.EntryType = EntryType.Achievement;
+        Achievements.AddChild(newEntry);
+    }
+
 }

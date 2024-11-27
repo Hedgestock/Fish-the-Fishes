@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b0nv1b3x0suu5"]
+[gd_scene load_steps=13 format=3 uid="uid://b0nv1b3x0suu5"]
 
 [ext_resource type="Script" path="res://Fish the fishes/Scenes/Compendium/Compendium.cs" id="1_lwdf7"]
 [ext_resource type="Texture2D" uid="uid://4sfuxo2673qo" path="res://Fish the fishes/art/BG 2 FTF.png" id="1_x6noe"]
@@ -9,6 +9,7 @@
 [ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://FTF_theme.tres" id="3_y1rnp"]
 [ext_resource type="Texture2D" uid="uid://bx8qk7jnypm0" path="res://Fish the fishes/art/UI/retour hover.png" id="4_5k6ur"]
 [ext_resource type="PackedScene" uid="uid://biyy1v6mq1cue" path="res://Fish the fishes/Scenes/Compendium/BiomeCompendiumEntry.tscn" id="4_gxmqj"]
+[ext_resource type="PackedScene" uid="uid://d4ecb71kma03k" path="res://Fish the fishes/Scenes/Compendium/AchievementCompendiumEntry.tscn" id="5_1s78k"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_qkuki"]
 action = &"menu_go_back"
@@ -16,7 +17,7 @@ action = &"menu_go_back"
 [sub_resource type="Shortcut" id="Shortcut_02116"]
 events = [SubResource("InputEventAction_qkuki")]
 
-[node name="Compendium" type="CanvasLayer" node_paths=PackedStringArray("Fishes", "Trashes", "Biomes")]
+[node name="Compendium" type="CanvasLayer" node_paths=PackedStringArray("Fishes", "Trashes", "Biomes", "Achievements")]
 script = ExtResource("1_lwdf7")
 Fishes = NodePath("VBoxContainer/MarginContainer/TabContainer/Fishes/MarginContainer/FishCompendiumEntriesContainer")
 FishEntry = ExtResource("2_8qvf3")
@@ -24,6 +25,8 @@ Trashes = NodePath("VBoxContainer/MarginContainer/TabContainer/Trashes/MarginCon
 TrashEntry = ExtResource("3_vf8dp")
 Biomes = NodePath("VBoxContainer/MarginContainer/TabContainer/Biomes/MarginContainer/BiomeCompendiumEntriesContainer")
 BiomeEntry = ExtResource("4_gxmqj")
+Achievements = NodePath("VBoxContainer/MarginContainer/TabContainer/Achievements/MarginContainer/AchievementsCompendiumEntriesContainer")
+AchievementEntry = ExtResource("5_1s78k")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -126,8 +129,14 @@ visible = false
 layout_mode = 2
 metadata/_tab_index = 3
 
-[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/TabContainer/Achievements"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/TabContainer/Achievements"]
 layout_mode = 2
-text = "Achievements"
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AchievementsCompendiumEntriesContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/TabContainer/Achievements/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [connection signal="pressed" from="VBoxContainer/Control/MarginContainer/BackButton" to="." method="GoToHome"]
