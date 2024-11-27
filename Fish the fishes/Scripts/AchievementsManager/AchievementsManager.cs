@@ -10,7 +10,7 @@ public partial class AchievementsManager : Node
 {
 
     [Export]
-    private Array<Achievement> AchievementsList;
+    public Array<Achievement> AchievementsList;
 
     [Export]
     private PackedScene AchievementsNotificationScene;

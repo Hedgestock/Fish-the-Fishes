@@ -133,15 +133,13 @@ public partial class Compendium : CanvasLayer
             AddAchievementEntry(entry.Key);
         }
 
-        //TODO
-        //var listOfExistingBiomeTypes = Enum.GetValues(typeof(Constants.Biomes))
-        //    .Cast<Constants.Biomes>()
-        //    .Select(v => v.ToString()).Except(UserData.BiomeCompendium.Keys);
+        var listOfExistingAchievements = AchievementsManager.Instance.AchievementsList.Select(a => a.ResourcePath).Except(UserData.Achievements.Keys);
+        GD.Print(listOfExistingAchievements);
 
-        //foreach (var biomeType in listOfExistingBiomeTypes)
-        //{
-        //    AddBiomeEntry(biomeType);
-        //}
+        foreach (var achievementPath in listOfExistingAchievements)
+        {
+            AddAchievementEntry(achievementPath);
+        }
     }
 
     private void AddAchievementEntry(string achievementPath)

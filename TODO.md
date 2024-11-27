@@ -15,11 +15,11 @@
 - [x] Faire clignoter le score pour la perte de points
 - [x] Couper le son des poissons dans les menus
 - [x] Faire des boutons en poisson
+- [x] Ajouter une page pour visualiser les hauts faits
 - [ ] Ajourter un tutoriel
 - [ ] Utiliser des hameçons pour la vie 
 - [ ] Séparer le mode compétitif du mode normal dans les statistiques
 - [ ] Faire les panneaux d'affichage
-- [ ] Ajouter une page pour visualiser les hauts faits
 
 # Poissons
 
