@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PlayedXGames" load_steps=2 format=3 uid="uid://bualku288fmqe"]
+
+[ext_resource type="Script" path="res://Fish the fishes/Assets/Achievements/DoneXTimes/PlayedXGames/PlayedXGames.cs" id="1_2qy25"]
+
+[resource]
+script = ExtResource("1_2qy25")
+Threshold = 1
+Category = 0
+Mode = 6
+CompendiumName = "Started playing TA"
+CompendiumDescription = "You started playing Time Attack !"

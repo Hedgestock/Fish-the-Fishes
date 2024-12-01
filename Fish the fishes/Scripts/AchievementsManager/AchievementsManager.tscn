@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://5w7affso8r8d"]
+[gd_scene load_steps=25 format=3 uid="uid://5w7affso8r8d"]
 
 [ext_resource type="Script" path="res://Fish the fishes/Scripts/AchievementsManager/AchievementsManager.cs" id="1_pqju3"]
 [ext_resource type="Resource" uid="uid://csvfj4sdib8u5" path="res://Fish the fishes/Assets/Achievements/DoneXTimes/FishedXFishes/Fished1Fish.tres" id="2_0hwku"]
@@ -16,8 +16,16 @@
 [ext_resource type="Resource" uid="uid://xto4a1w3o0as" path="res://Fish the fishes/Assets/Achievements/DoneXTimes/PlayedXGames/Classic/Played10ClassicGames.tres" id="13_rhile"]
 [ext_resource type="Resource" uid="uid://w8th5g765ht8" path="res://Fish the fishes/Assets/Achievements/DoneXTimes/PlayedXGames/Classic/Played100ClassicGames.tres" id="14_wh2bq"]
 [ext_resource type="Resource" uid="uid://bs16jy7h8f184" path="res://Fish the fishes/Assets/Achievements/DoneXTimes/PlayedXGames/Classic/Played1000ClassicGames.tres" id="15_72wdv"]
+[ext_resource type="Resource" uid="uid://dowedrmjs8jd8" path="res://Fish the fishes/Assets/Achievements/DoneXTimes/PlayedXGames/GoGreen/Played1GoGreenGame.tres" id="16_xjkkv"]
+[ext_resource type="Resource" uid="uid://btc42l5fshopg" path="res://Fish the fishes/Assets/Achievements/DoneXTimes/PlayedXGames/GoGreen/Played10GoGreenGames.tres" id="17_pb1dd"]
+[ext_resource type="Resource" uid="uid://qslywupch0we" path="res://Fish the fishes/Assets/Achievements/DoneXTimes/PlayedXGames/GoGreen/Played100GoGreenGames.tres" id="18_qgirl"]
+[ext_resource type="Resource" uid="uid://b8liipfox4btl" path="res://Fish the fishes/Assets/Achievements/DoneXTimes/PlayedXGames/GoGreen/Played1000GoGreenGames.tres" id="19_ecmly"]
+[ext_resource type="Resource" uid="uid://bualku288fmqe" path="res://Fish the fishes/Assets/Achievements/DoneXTimes/PlayedXGames/TimeAttack/Played1TAGame.tres" id="20_4is1k"]
+[ext_resource type="Resource" uid="uid://l6skikhh3gq3" path="res://Fish the fishes/Assets/Achievements/DoneXTimes/PlayedXGames/TimeAttack/Played10TAGames.tres" id="21_2gc8e"]
+[ext_resource type="Resource" uid="uid://deqfgphcw3x4y" path="res://Fish the fishes/Assets/Achievements/DoneXTimes/PlayedXGames/TimeAttack/Played100TAGames.tres" id="22_p544r"]
+[ext_resource type="Resource" uid="uid://dfeodafb5aca" path="res://Fish the fishes/Assets/Achievements/DoneXTimes/PlayedXGames/TimeAttack/Played1000TAGames.tres" id="23_tlp5x"]
 
 [node name="AchievementsManager" type="Node"]
 script = ExtResource("1_pqju3")
-AchievementsList = [ExtResource("2_0hwku"), ExtResource("3_3asv0"), ExtResource("3_sh3lt"), ExtResource("4_pehmk"), ExtResource("6_t7rkm"), ExtResource("7_0f58t"), ExtResource("8_s8y0e"), ExtResource("9_uuvbe"), ExtResource("10_p2rop"), ExtResource("11_r1ng8"), ExtResource("5_o0qqq"), ExtResource("13_rhile"), ExtResource("14_wh2bq"), ExtResource("15_72wdv")]
+AchievementsList = [ExtResource("2_0hwku"), ExtResource("3_3asv0"), ExtResource("3_sh3lt"), ExtResource("4_pehmk"), ExtResource("6_t7rkm"), ExtResource("7_0f58t"), ExtResource("8_s8y0e"), ExtResource("9_uuvbe"), ExtResource("10_p2rop"), ExtResource("11_r1ng8"), ExtResource("5_o0qqq"), ExtResource("13_rhile"), ExtResource("14_wh2bq"), ExtResource("15_72wdv"), ExtResource("16_xjkkv"), ExtResource("17_pb1dd"), ExtResource("18_qgirl"), ExtResource("19_ecmly"), ExtResource("20_4is1k"), ExtResource("21_2gc8e"), ExtResource("22_p544r"), ExtResource("23_tlp5x")]
 AchievementsNotificationScene = ExtResource("6_hnxwc")

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PlayedXGames" load_steps=2 format=3 uid="uid://l6skikhh3gq3"]
+
+[ext_resource type="Script" path="res://Fish the fishes/Assets/Achievements/DoneXTimes/PlayedXGames/PlayedXGames.cs" id="1_e3dag"]
+
+[resource]
+script = ExtResource("1_e3dag")
+Threshold = 10
+Category = 0
+Mode = 6
+CompendiumName = "Played 10 TA Games"
+CompendiumDescription = "You played Time Attack 10 times !"

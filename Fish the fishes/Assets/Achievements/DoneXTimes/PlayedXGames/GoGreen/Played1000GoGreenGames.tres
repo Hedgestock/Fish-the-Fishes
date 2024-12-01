@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PlayedXGames" load_steps=2 format=3 uid="uid://b8liipfox4btl"]
+
+[ext_resource type="Script" path="res://Fish the fishes/Assets/Achievements/DoneXTimes/PlayedXGames/PlayedXGames.cs" id="1_vhjk2"]
+
+[resource]
+script = ExtResource("1_vhjk2")
+Threshold = 1000
+Category = 0
+Mode = 3
+CompendiumName = "Played 1000 GG Games"
+CompendiumDescription = "You played Go Green 1000 times !"

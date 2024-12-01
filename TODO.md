@@ -139,6 +139,7 @@
 	- [ ] Pêcher <tel> poisson
 	- [ ] Voir <tel> poisson
 	- [ ] Voir <tel> déchêt
+- [ ] Ajouter des statistiques
 
 # Corrections
 
