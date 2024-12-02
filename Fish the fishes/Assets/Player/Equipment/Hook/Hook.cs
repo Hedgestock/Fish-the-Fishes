@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Hook : Node
+public partial class Hook : AnimatedSprite2D
 {
 
     public Area2D Area;

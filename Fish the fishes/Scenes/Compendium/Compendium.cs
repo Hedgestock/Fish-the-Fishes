@@ -134,7 +134,6 @@ public partial class Compendium : CanvasLayer
         }
 
         var listOfExistingAchievements = AchievementsManager.Instance.AchievementsList.Select(a => a.ResourcePath).Except(UserData.Achievements.Keys);
-        GD.Print(listOfExistingAchievements);
 
         foreach (var achievementPath in listOfExistingAchievements)
         {

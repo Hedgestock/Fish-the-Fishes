@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://bnkmwtljf2o3p"]
 
 [ext_resource type="Script" path="res://Fish the fishes/Assets/Player/FishingLine.cs" id="1_n5cos"]
-[ext_resource type="PackedScene" uid="uid://ogoejx5sl264" path="res://Fish the fishes/Assets/Player/HugeHook/HugeHook.tscn" id="3_se18j"]
-[ext_resource type="PackedScene" uid="uid://caai7o1q2a1n0" path="res://Fish the fishes/Assets/Player/StandardHook/StandardHook.tscn" id="3_x8i5s"]
+[ext_resource type="PackedScene" uid="uid://ogoejx5sl264" path="res://Fish the fishes/Assets/Player/Equipment/Hook/HugeHook/HugeHook.tscn" id="3_se18j"]
+[ext_resource type="PackedScene" uid="uid://caai7o1q2a1n0" path="res://Fish the fishes/Assets/Player/Equipment/Hook/StandardHook/StandardHook.tscn" id="3_x8i5s"]
 [ext_resource type="SpriteFrames" uid="uid://bi72ueuctbdl3" path="res://Fish the fishes/Assets/Player/LineAnimation.tres" id="4_l5pqx"]
 [ext_resource type="AudioStream" uid="uid://c8x2gam58vw1l" path="res://Fish the fishes/sounds/Toyouying.wav" id="4_qchpe"]
 

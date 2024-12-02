@@ -13,6 +13,12 @@ public partial class AnimatedSpriteForUI : BoxContainer
 
     public AnimatedSprite2D Sprite { get { return _sprite; } }
 
+    public AnimatedSpriteForUI()
+    {
+        _sprite = new AnimatedSprite2D();
+        AddChild(_sprite);
+    }
+
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {

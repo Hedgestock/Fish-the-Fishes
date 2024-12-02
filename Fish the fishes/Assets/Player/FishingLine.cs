@@ -33,9 +33,10 @@ public partial class FishingLine : CharacterBody2D, IFisher
     [Export]
     private uint Speed;
 
-
     [Export]
-    private Array<PackedScene> Hooks;
+    public Array<PackedScene> Hooks;
+
+
     private Hook Hook;
 
     public List<IFishable> FishedThings { get; } = new List<IFishable>();

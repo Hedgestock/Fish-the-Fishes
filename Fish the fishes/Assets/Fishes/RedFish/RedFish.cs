@@ -28,7 +28,6 @@ public partial class RedFish : Fish
         base._Ready();
         WaveActualPeriod = (float)GD.Randfn(WaveAmplitude, WaveAmplitudeDeviation);
         WaveActualInverseAmplitude = (float)GD.Randfn(WaveInversePeriod, WaveInversePeriodDeviation);
-        GD.Print($"{GetType()} {typeof(RedFish)} {Constants.Fishes.RedFish} {GetType() == typeof(RedFish)} {GetType().ToString() == Constants.Fishes.RedFish.ToString()}");
     }
 
     public override void _PhysicsProcess(double delta)

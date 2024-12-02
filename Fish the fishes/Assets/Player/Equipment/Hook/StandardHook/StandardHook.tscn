@@ -1,14 +1,14 @@
 [gd_scene load_steps=7 format=3 uid="uid://caai7o1q2a1n0"]
 
-[ext_resource type="Texture2D" uid="uid://dee8677kcqnft" path="res://Fish the fishes/art/player/StandardHook/StandardHook_broken.png" id="1_sg6rf"]
-[ext_resource type="Texture2D" uid="uid://qjdujjo8m4n" path="res://Fish the fishes/art/player/StandardHook/StandardHook_default.png" id="2_bkb2u"]
-[ext_resource type="Script" path="res://Fish the fishes/Assets/Player/Hook.cs" id="3_stjwe"]
+[ext_resource type="Texture2D" uid="uid://dee8677kcqnft" path="res://Fish the fishes/art/player/StandardHook/StandardHook_broken.png" id="1_hhlor"]
+[ext_resource type="Texture2D" uid="uid://qjdujjo8m4n" path="res://Fish the fishes/art/player/StandardHook/StandardHook_default.png" id="2_okh3i"]
+[ext_resource type="Script" path="res://Fish the fishes/Assets/Player/Equipment/Hook/Hook.cs" id="3_a136t"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_e7146"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_sg6rf")
+"texture": ExtResource("1_hhlor")
 }],
 "loop": true,
 "name": &"broken",
@@ -16,7 +16,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_bkb2u")
+"texture": ExtResource("2_okh3i")
 }],
 "loop": true,
 "name": &"default",
@@ -33,7 +33,7 @@ height = 114.0
 position = Vector2(-78, -120)
 sprite_frames = SubResource("SpriteFrames_e7146")
 centered = false
-script = ExtResource("3_stjwe")
+script = ExtResource("3_a136t")
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(82, 155)
