@@ -11,7 +11,10 @@ collision_mask = 0
 motion_mode = 1
 script = ExtResource("1_n5cos")
 Speed = 1600
-Hooks = Array[PackedScene]([ExtResource("3_x8i5s"), ExtResource("3_se18j")])
+Hooks = {
+"HugeHook": ExtResource("3_se18j"),
+"StandardHook": ExtResource("3_x8i5s")
+}
 
 [node name="Line" type="AnimatedSprite2D" parent="."]
 texture_repeat = 2

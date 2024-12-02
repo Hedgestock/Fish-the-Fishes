@@ -34,8 +34,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
     private uint Speed;
 
     [Export]
-    public Array<PackedScene> Hooks;
-
+    public Godot.Collections.Dictionary<string, PackedScene> Hooks;
 
     private Hook Hook;
 
@@ -58,15 +57,29 @@ public partial class FishingLine : CharacterBody2D, IFisher
         State = Action.Stopped;
         _invincible = false;
 
-        Hook = Hooks[1].Instantiate<Hook>();
-        AddChild(Hook);
-        Hook.Hitbox.Disabled = true;
-        Hook.Area.BodyEntered += OnHookAreaBodyEntered;
+        EquipStuff();
 
         Line = GetNode<AnimatedSprite2D>("Line");
         Line.Play();
 
         GetTree().Root.SizeChanged += OnScreenResize;
+    }
+
+    public void EquipStuff()
+    {
+
+        string hookKey = UserData.Equipments.Where(e => e.Value.Type == EquipmentPiece.Type.Hook).FirstOrDefault(e => e.Value.IsEquipped).Key;
+
+        if (hookKey == null)
+        {
+            hookKey = "StandardHook";
+            UserData.Equipments[hookKey] = new UserData.EquipmentStatus(EquipmentPiece.Type.Hook, true);
+        }
+        RemoveChild(Hook);
+        Hook = Hooks[hookKey].Instantiate<Hook>();
+        AddChild(Hook);
+        Hook.Hitbox.Disabled = true;
+        Hook.Area.BodyEntered += OnHookAreaBodyEntered;
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.

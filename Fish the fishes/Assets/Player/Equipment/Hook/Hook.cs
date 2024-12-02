@@ -1,9 +1,8 @@
 using Godot;
 using System;
 
-public partial class Hook : AnimatedSprite2D
+public partial class Hook : EquipmentPiece
 {
-
     public Area2D Area;
     public CollisionShape2D Hitbox;
 

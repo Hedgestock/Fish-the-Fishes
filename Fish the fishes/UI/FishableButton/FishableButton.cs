@@ -19,11 +19,6 @@ public partial class FishableButton : StaticBody2D, IFishable
         CollisionShape.Position = Button.Size / 2;
     }
 
-    // Called every frame. 'delta' is the elapsed time since the previous frame.
-    public override void _Process(double delta)
-    {
-    }
-
     public IFishable GetCaughtBy(IFisher by)
     {
         CallDeferred(Node.MethodName.Reparent, by as Node);

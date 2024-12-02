@@ -11,6 +11,8 @@ namespace Godot.Fish_the_fishes.Scripts
         #region serializable instance
         private static UserData _instance = null;
         public Dictionary<string, uint> _statistics { get; set; }
+        public Dictionary<string, EquipmentStatus> _equipments { get; set; }
+
         public Dictionary<string, DateTime> _achievements { get; set; }
         public Dictionary<string, FishCompendiumEntry> _fishCompendium { get; set; }
         public Dictionary<string, TrashCompendiumEntry> _trashCompendium { get; set; }
@@ -31,6 +33,7 @@ namespace Godot.Fish_the_fishes.Scripts
         #endregion
 
         public static Dictionary<string, DateTime> Achievements { get { return _instance._achievements; } set { _instance._achievements = value; } }
+        public static Dictionary<string, EquipmentStatus> Equipments { get { return _instance._equipments; } set { _instance._equipments = value; } }
         public static Dictionary<string, FishCompendiumEntry> FishCompendium { get { return _instance._fishCompendium; } set { _instance._fishCompendium = value; } }
         public static Dictionary<string, TrashCompendiumEntry> TrashCompendium { get { return _instance._trashCompendium; } set { _instance._trashCompendium = value; } }
         public static Dictionary<string, BiomeCompendiumEntry> BiomeCompendium { get { return _instance._biomeCompendium; } set { _instance._biomeCompendium = value; } }
@@ -116,6 +119,16 @@ namespace Godot.Fish_the_fishes.Scripts
         #endregion
 
         #region helper classes
+        public class EquipmentStatus 
+        {
+            public EquipmentPiece.Type Type { get; set; }
+            public bool IsEquipped { get; set; }
+            public EquipmentStatus(EquipmentPiece.Type type, bool isEquipped = false)
+            {
+                Type = type;
+                IsEquipped = isEquipped;
+            }
+        }
 
         public abstract class CompendiumEntry
         {

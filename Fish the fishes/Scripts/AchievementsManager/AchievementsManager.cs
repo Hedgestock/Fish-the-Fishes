@@ -87,4 +87,9 @@ public partial class AchievementsManager : Node
 
         _instance.GetTree().Root.AddChild(NextAchievementNotification);
     }
+
+    public static void UnlockEquipment(string equipmentName, EquipmentPiece.Type type)
+    {
+        UserData.Equipments[equipmentName] = new UserData.EquipmentStatus(type);
+    }
 }

@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://jdvp2d8dcy53"]
+[gd_scene load_steps=12 format=3 uid="uid://jdvp2d8dcy53"]
 
 [ext_resource type="Script" path="res://Fish the fishes/Scenes/Equipment/Equipment.cs" id="1_vd6ao"]
 [ext_resource type="PackedScene" uid="uid://ifoga56i10w3" path="res://Fish the fishes/Assets/RandomTimer.tscn" id="2_8vpwh"]
+[ext_resource type="PackedScene" uid="uid://by02c8ge1i57q" path="res://Fish the fishes/Scenes/Equipment/EquipmentUI.tscn" id="2_53287"]
 [ext_resource type="PackedScene" uid="uid://bnkmwtljf2o3p" path="res://Fish the fishes/Assets/Player/FishingLine.tscn" id="2_au0c2"]
 [ext_resource type="Texture2D" uid="uid://4sfuxo2673qo" path="res://Fish the fishes/art/BG 2 FTF.png" id="2_hxeyh"]
 [ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://FTF_theme.tres" id="3_fbsu6"]
@@ -19,7 +20,8 @@ events = [SubResource("InputEventAction_qkuki")]
 script = ExtResource("1_vd6ao")
 GameContainer = NodePath("GameContainer")
 FishingLine = NodePath("GameContainer/FishingLine")
-Menu = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer")
+Menu = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/HFlowContainer")
+EquipmentUITemplate = ExtResource("2_53287")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -90,13 +92,13 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer"]
+[node name="HFlowContainer" type="HFlowContainer" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="Button" type="Button" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/HFlowContainer"]
 layout_mode = 2
 text = "test"
 
 [connection signal="timeout" from="FishTimer" to="." method="SpawnFish"]
 [connection signal="pressed" from="VBoxContainer/Control/MarginContainer/BackButton" to="." method="GoToHome"]
-[connection signal="pressed" from="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Button" to="." method="Test"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/HFlowContainer/Button" to="." method="Test"]
