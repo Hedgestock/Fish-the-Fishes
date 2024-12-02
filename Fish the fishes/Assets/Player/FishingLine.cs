@@ -1,4 +1,5 @@
 using Godot;
+using Godot.Collections;
 using Godot.Fish_the_fishes.Scripts;
 using System;
 using System.Collections.Generic;
@@ -32,6 +33,11 @@ public partial class FishingLine : CharacterBody2D, IFisher
     [Export]
     private uint Speed;
 
+
+    [Export]
+    private Array<PackedScene> Hooks;
+    private Hook Hook;
+
     public List<IFishable> FishedThings { get; } = new List<IFishable>();
 
     private Vector2 Destination;
@@ -41,8 +47,6 @@ public partial class FishingLine : CharacterBody2D, IFisher
     public bool IsInvincible { get { return _invincible; } }
 
     private Vector2 BasePosition;
-    private Area2D Area;
-    private CollisionShape2D Hitbox;
     private AnimatedSprite2D Line;
 
     // Called when the node enters the scene tree for the first time.
@@ -52,9 +56,12 @@ public partial class FishingLine : CharacterBody2D, IFisher
         Position = BasePosition;
         State = Action.Stopped;
         _invincible = false;
-        Area = GetNode<Area2D>("Area2D");
-        Hitbox = Area.GetNode<CollisionShape2D>("CollisionShape2D");
-        Hitbox.Disabled = true;
+
+        Hook = Hooks[1].Instantiate<Hook>();
+        AddChild(Hook);
+        Hook.Hitbox.Disabled = true;
+        Hook.Area.BodyEntered += OnHookAreaBodyEntered;
+
         Line = GetNode<AnimatedSprite2D>("Line");
         Line.Play();
 
@@ -77,11 +84,11 @@ public partial class FishingLine : CharacterBody2D, IFisher
                 case Action.Moving:
                     State = Action.Fishing;
                     MoveTowards(new Vector2(GameManager.ScreenSize.X / 2, -150));
-                    Hitbox.SetDeferred(CollisionShape2D.PropertyName.Disabled, false);
+                    Hook.Hitbox.SetDeferred(CollisionShape2D.PropertyName.Disabled, false);
                     Line.Animation = "weighted";
                     break;
                 case Action.Fishing:
-                    Hitbox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
+                    Hook.Hitbox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
                     // This avoids loosing on target mode when we fish nothing
                     if (FishedThings.Count > 0)
                         EmitSignal(SignalName.Score, ComputeScore());
@@ -105,7 +112,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
 
     private void MakeInvincible(Area2D area)
     {
-        if (area == Area)
+        if (area == Hook.Area)
         {
             _invincible = true;
         }
@@ -113,7 +120,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
 
     private void MakeVincible(Area2D area)
     {
-        if (area == Area)
+        if (area == Hook.Area)
         {
             _invincible = false;
         }
@@ -137,7 +144,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
         Velocity = (position - Position).Normalized() * Speed;
     }
 
-    void _on_area_2d_body_entered(Node2D body)
+    void OnHookAreaBodyEntered(Node2D body)
     {
         if (body is IFishable)
         {
@@ -149,7 +156,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
     {
         if (FishedThings.Count == 0 || _invincible) return;
         EmitSignal(SignalName.Hit, (int)damageType);
-        Hitbox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
+        Hook.Hitbox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
         GetNode<AudioStreamPlayer2D>("HitSound").Play();
         AchievementsManager.OnHit(damageType);
 

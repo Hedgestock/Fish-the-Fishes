@@ -8,13 +8,13 @@ script = ExtResource("2_tjulj")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-disabled = true
-
 [node name="Button" type="Button" parent="."]
 offset_right = 558.0
 offset_bottom = 253.0
 theme = ExtResource("1_vttsl")
 text = "Button"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+disabled = true
 
 [connection signal="pressed" from="Button" to="." method="OnPressed"]

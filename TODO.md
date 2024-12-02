@@ -72,7 +72,7 @@
 - [x] Courant marin
 - [ ] Rivière
 - [ ] Lac
-- [ ] Marre
+- [ ] Mare
 - [ ] Mangrove
 
 # Gameplay
@@ -119,14 +119,6 @@
 	- [ ] Français
 	- [ ] Allemand
 	- [ ] Thai
-- [ ] Ajouter des morts différentes
-- [ ] Ajouter une vitesse de descente et de remontée différente pour la ligne
-- [ ] SLB dans le fond
-- [ ] Ajouter une animation pour signifier la casse de l'hameçon à la remontée
-- [ ] Afficher un biome aléatoire dans ceux visités pour le fond du menu
-- [ ] Mettre les chronomètres d'apparition des poissons et des déchêts sur les biomes
-- [ ] Ajouter un moyen de trier/filtrer le compendium
-- [ ] Ajouter un outil pour voire les graphes de selection des biomes ainsi que les probabilités d'apparition des poissons
 - [ ] Ajouter pleins de hauts faits différents
 	- [x] Jouer X parties
 		- [ ] Jouer X parties dans chaque mode
@@ -139,6 +131,14 @@
 	- [ ] Pêcher <tel> poisson
 	- [ ] Voir <tel> poisson
 	- [ ] Voir <tel> déchêt
+- [ ] Ajouter des morts différentes
+- [ ] Ajouter une vitesse de descente et de remontée différente pour la ligne
+- [ ] SLB dans le fond
+- [ ] Ajouter une animation pour signifier la casse de l'hameçon à la remontée
+- [ ] Afficher un biome aléatoire dans ceux visités pour le fond du menu
+- [ ] Mettre les chronomètres d'apparition des poissons et des déchêts sur les biomes
+- [ ] Ajouter un moyen de trier/filtrer le compendium
+- [ ] Ajouter un outil pour voire les graphes de selection des biomes ainsi que les probabilités d'apparition des poissons
 - [ ] Ajouter des statistiques
 
 # Corrections

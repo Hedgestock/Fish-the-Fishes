@@ -63,19 +63,9 @@ public partial class Home : CanvasLayer
         Play(Game.Mode.Target, GameManager.TestBiome);
     }
 
-    private void GoToSettings()
-    {
-        GameManager.ChangeSceneToFile("res://Fish the fishes/Scenes/Settings/Settings.tscn");
-    }
-
     private void GoToCompendium()
     {
         GameManager.ChangeSceneToFile("res://Fish the fishes/Scenes/Compendium/Compendium.tscn");
-    }
-
-    private void GoToCredits()
-    {
-        GameManager.ChangeSceneToFile("res://Fish the fishes/Scenes/Credits/Credits.tscn");
     }
 
     private void GoToStats()
@@ -83,11 +73,25 @@ public partial class Home : CanvasLayer
         GameManager.ChangeSceneToFile("res://Fish the fishes/Scenes/Stats/Stats.tscn");
     }
 
+    private void GoToEquipment()
+    {
+        GameManager.ChangeSceneToFile("res://Fish the fishes/Scenes/Equipment/Equipment.tscn");
+    }
+
+    private void GoToSettings()
+    {
+        GameManager.ChangeSceneToFile("res://Fish the fishes/Scenes/Settings/Settings.tscn");
+    }
+
     private void GoToTutorial()
     {
         GameManager.ChangeSceneToFile("res://Fish the fishes/Scenes/Tutorial/Tutorial.tscn");
     }
 
+    private void GoToCredits()
+    {
+        GameManager.ChangeSceneToFile("res://Fish the fishes/Scenes/Credits/Credits.tscn");
+    }
     private void SpawnFish()
     {
         PackedScene FishScene = GD.Load<PackedScene>(Biome.GetRandomPathFrom(GameManager.Biome.Fishes));

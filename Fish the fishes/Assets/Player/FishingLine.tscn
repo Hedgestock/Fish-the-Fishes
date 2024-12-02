@@ -1,43 +1,24 @@
-[gd_scene load_steps=7 format=3 uid="uid://bnkmwtljf2o3p"]
+[gd_scene load_steps=6 format=3 uid="uid://bnkmwtljf2o3p"]
 
 [ext_resource type="Script" path="res://Fish the fishes/Assets/Player/FishingLine.cs" id="1_n5cos"]
-[ext_resource type="PackedScene" uid="uid://ogoejx5sl264" path="res://Fish the fishes/Assets/Player/StandardHook/StandardHook.tscn" id="3_x8i5s"]
+[ext_resource type="PackedScene" uid="uid://ogoejx5sl264" path="res://Fish the fishes/Assets/Player/HugeHook/HugeHook.tscn" id="3_se18j"]
+[ext_resource type="PackedScene" uid="uid://caai7o1q2a1n0" path="res://Fish the fishes/Assets/Player/StandardHook/StandardHook.tscn" id="3_x8i5s"]
 [ext_resource type="SpriteFrames" uid="uid://bi72ueuctbdl3" path="res://Fish the fishes/Assets/Player/LineAnimation.tres" id="4_l5pqx"]
 [ext_resource type="AudioStream" uid="uid://c8x2gam58vw1l" path="res://Fish the fishes/sounds/Toyouying.wav" id="4_qchpe"]
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_tpqt2"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v6hva"]
-radius = 35.0
-height = 114.0
-
 [node name="FishingLine" type="CharacterBody2D"]
-position = Vector2(2, 83)
 collision_mask = 0
 motion_mode = 1
 script = ExtResource("1_n5cos")
 Speed = 1600
+Hooks = Array[PackedScene]([ExtResource("3_x8i5s"), ExtResource("3_se18j")])
 
 [node name="Line" type="AnimatedSprite2D" parent="."]
 texture_repeat = 2
-position = Vector2(-3, -1598)
+position = Vector2(0, -1600)
 sprite_frames = ExtResource("4_l5pqx")
-animation = &"hit"
-frame_progress = 0.0482667
-
-[node name="Hook" parent="." instance=ExtResource("3_x8i5s")]
-position = Vector2(-79, -114)
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-material = SubResource("CanvasItemMaterial_tpqt2")
-position = Vector2(0, 45)
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_v6hva")
+animation = &"loose"
 
 [node name="HitSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_qchpe")
 bus = &"SFX"
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

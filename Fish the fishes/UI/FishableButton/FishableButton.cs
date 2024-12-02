@@ -5,6 +5,7 @@ using System;
 public partial class FishableButton : StaticBody2D, IFishable
 {
     private CollisionShape2D CollisionShape;
+    private Button Button;
 
     public bool IsCaught { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
@@ -12,6 +13,10 @@ public partial class FishableButton : StaticBody2D, IFishable
     public override void _Ready()
     {
         CollisionShape = GetNode<CollisionShape2D>("CollisionShape2D");
+        Button = GetNode<Button>("Button");
+        CollisionShape.Shape = new RectangleShape2D();
+        ((RectangleShape2D)CollisionShape.Shape).Size = Button.Size;
+        CollisionShape.Position = Button.Size / 2;
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.

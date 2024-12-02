@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://blkg0i7vjb6il"]
+[gd_scene load_steps=8 format=3 uid="uid://blkg0i7vjb6il"]
 
 [ext_resource type="Texture2D" uid="uid://4sfuxo2673qo" path="res://Fish the fishes/art/BG 2 FTF.png" id="1_4aplq"]
 [ext_resource type="Script" path="res://Fish the fishes/Scenes/Home.cs" id="1_ptl5f"]
@@ -7,29 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://bnkmwtljf2o3p" path="res://Fish the fishes/Assets/Player/FishingLine.tscn" id="4_pulgk"]
 [ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://FTF_theme.tres" id="5_mnxty"]
 [ext_resource type="PackedScene" uid="uid://cifa65xrf1ken" path="res://Fish the fishes/UI/FishableButton/FishableButton.tscn" id="5_o3gki"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ae2js"]
-size = Vector2(203.5, 143.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2s724"]
-size = Vector2(293, 145)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w8qh7"]
-size = Vector2(11.1667, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4qjnw"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bhkeu"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vvm64"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7x4ha"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_y70tv"]
-size = Vector2(167, 146)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_stq48"]
-size = Vector2(281, 145)
 
 [node name="Home" type="CanvasLayer" node_paths=PackedStringArray("Message", "GameContainer", "Background")]
 script = ExtResource("1_ptl5f")
@@ -89,154 +66,133 @@ size_flags_vertical = 3
 theme = ExtResource("5_mnxty")
 
 [node name="PlayTargetButton" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu" instance=ExtResource("5_o3gki")]
-position = Vector2(573, -109)
+position = Vector2(782, -117)
 
 [node name="VisibleOnScreenNotifier2D" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTargetButton" index="0"]
 position = Vector2(102.5, 0)
 scale = Vector2(10, 1)
 
-[node name="CollisionShape2D" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTargetButton" index="1"]
-position = Vector2(102, 73)
-shape = SubResource("RectangleShape2D_ae2js")
-
-[node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTargetButton" index="2"]
+[node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTargetButton" index="1"]
 offset_right = 205.0
 offset_bottom = 146.0
 text = "Target
 "
 
+[node name="CollisionShape2D" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTargetButton" index="2"]
+position = Vector2(102, 73)
+
 [node name="PlayGoGreenButton" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu" instance=ExtResource("5_o3gki")]
-position = Vector2(169, -129)
+position = Vector2(71, -112)
 
 [node name="VisibleOnScreenNotifier2D" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayGoGreenButton" index="0"]
 position = Vector2(147.5, 0)
 scale = Vector2(14.5, 1)
 
-[node name="CollisionShape2D" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayGoGreenButton" index="1"]
-position = Vector2(147.5, 73)
-shape = SubResource("RectangleShape2D_2s724")
-
-[node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayGoGreenButton" index="2"]
+[node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayGoGreenButton" index="1"]
 offset_right = 294.0
 offset_bottom = 146.0
 text = "Go Green
 "
 
 [node name="PlayClassicButton" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu" instance=ExtResource("5_o3gki")]
-position = Vector2(441, 133)
+position = Vector2(446, -156)
 
 [node name="VisibleOnScreenNotifier2D" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayClassicButton" index="0"]
 position = Vector2(118, 0)
 scale = Vector2(11.5, 1)
 
-[node name="CollisionShape2D" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayClassicButton" index="1"]
-position = Vector2(118, 73)
-scale = Vector2(21, 7)
-shape = SubResource("RectangleShape2D_w8qh7")
-
-[node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayClassicButton" index="2"]
+[node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayClassicButton" index="1"]
 offset_right = 227.0
 offset_bottom = 138.0
 text = "Classic"
 
 [node name="PlayTimeAttackButton" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu" instance=ExtResource("5_o3gki")]
-position = Vector2(821, 241)
+position = Vector2(526, 92)
 
 [node name="VisibleOnScreenNotifier2D" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTimeAttackButton" index="0"]
 position = Vector2(56.5, 0)
 scale = Vector2(5.5, 1)
 
-[node name="CollisionShape2D" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTimeAttackButton" index="1"]
-position = Vector2(56.5, 73.5)
-scale = Vector2(5.5, 7)
-shape = SubResource("RectangleShape2D_4qjnw")
+[node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTimeAttackButton" index="1"]
+offset_right = 381.0
+offset_bottom = 138.0
+text = "Time Attack"
+
+[node name="CollisionShape2D" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTimeAttackButton" index="2"]
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
-[node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTimeAttackButton" index="2"]
-offset_right = 104.0
-offset_bottom = 138.0
-text = "60s"
+[node name="EquipmentButton" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu" instance=ExtResource("5_o3gki")]
+position = Vector2(42, 204)
 
-[node name="SettingsButton" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu" instance=ExtResource("5_o3gki")]
-position = Vector2(39, 240)
-
-[node name="VisibleOnScreenNotifier2D" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/SettingsButton" index="0"]
-position = Vector2(141, 0)
+[node name="VisibleOnScreenNotifier2D" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/EquipmentButton" index="0"]
+position = Vector2(141.5, 0)
 scale = Vector2(14, 1)
 
-[node name="CollisionShape2D" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/SettingsButton" index="1"]
-position = Vector2(141, 73)
-scale = Vector2(14, 7)
-shape = SubResource("RectangleShape2D_bhkeu")
-
-[node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/SettingsButton" index="2"]
-offset_right = 281.0
-offset_bottom = 146.0
-text = "Settings"
+[node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/EquipmentButton" index="1"]
+offset_right = 273.0
+offset_bottom = 138.0
+text = "Equipment
+"
 
 [node name="CompendiumButton" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu" instance=ExtResource("5_o3gki")]
-position = Vector2(425, 479)
+position = Vector2(365, 409)
 
 [node name="VisibleOnScreenNotifier2D" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/CompendiumButton" index="0"]
 position = Vector2(217, 0)
 scale = Vector2(22, 1)
 
-[node name="CollisionShape2D" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/CompendiumButton" index="1"]
-position = Vector2(217, 72)
-scale = Vector2(22, 7)
-shape = SubResource("RectangleShape2D_vvm64")
-
-[node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/CompendiumButton" index="2"]
+[node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/CompendiumButton" index="1"]
 offset_right = 428.0
 offset_bottom = 138.0
 text = "Compendium"
 
-[node name="CreditsButton" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu" instance=ExtResource("5_o3gki")]
-visible = false
-position = Vector2(774, 758)
-
-[node name="VisibleOnScreenNotifier2D" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/CreditsButton" index="0"]
-position = Vector2(119, 0)
-scale = Vector2(12, 1)
-
-[node name="CollisionShape2D" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/CreditsButton" index="1"]
-position = Vector2(119, 74)
-scale = Vector2(11.9798, 7)
-shape = SubResource("RectangleShape2D_7x4ha")
-
-[node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/CreditsButton" index="2"]
-text = "Credits"
-
 [node name="StatsButton" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu" instance=ExtResource("5_o3gki")]
-position = Vector2(100, 554)
+position = Vector2(77, 424)
 
 [node name="VisibleOnScreenNotifier2D" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/StatsButton" index="0"]
 position = Vector2(83.5, 0)
 scale = Vector2(8, 1)
 
-[node name="CollisionShape2D" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/StatsButton" index="1"]
-position = Vector2(83.5, 73)
-shape = SubResource("RectangleShape2D_y70tv")
-
-[node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/StatsButton" index="2"]
+[node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/StatsButton" index="1"]
 offset_right = 166.0
 offset_bottom = 146.0
 text = "Stats
 "
 
+[node name="CreditsButton" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu" instance=ExtResource("5_o3gki")]
+position = Vector2(794, 772)
+
+[node name="VisibleOnScreenNotifier2D" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/CreditsButton" index="0"]
+position = Vector2(119, 0)
+scale = Vector2(12, 1)
+
+[node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/CreditsButton" index="1"]
+offset_right = 228.0
+offset_bottom = 138.0
+text = "Credits"
+
+[node name="SettingsButton" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu" instance=ExtResource("5_o3gki")]
+position = Vector2(59, 749)
+
+[node name="VisibleOnScreenNotifier2D" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/SettingsButton" index="0"]
+position = Vector2(141, 0)
+scale = Vector2(14, 1)
+
+[node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/SettingsButton" index="1"]
+offset_right = 281.0
+offset_bottom = 146.0
+text = "Settings"
+
 [node name="TutorialButton" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu" instance=ExtResource("5_o3gki")]
-visible = false
-position = Vector2(318, 768)
+position = Vector2(423, 765)
 
 [node name="VisibleOnScreenNotifier2D" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/TutorialButton" index="0"]
 position = Vector2(141.5, 0)
 scale = Vector2(14, 1)
 
-[node name="CollisionShape2D" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/TutorialButton" index="1"]
-position = Vector2(141.5, 72.5)
-shape = SubResource("RectangleShape2D_stq48")
-
-[node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/TutorialButton" index="2"]
+[node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/TutorialButton" index="1"]
+offset_right = 273.0
+offset_bottom = 138.0
 text = "Tutorial"
 
 [node name="Test" type="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu"]
@@ -251,10 +207,11 @@ text = "TEST"
 [connection signal="screen_exited" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayGoGreenButton/VisibleOnScreenNotifier2D" to="." method="PlayGoGreen"]
 [connection signal="screen_exited" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayClassicButton/VisibleOnScreenNotifier2D" to="." method="PlayClassic"]
 [connection signal="screen_exited" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTimeAttackButton/VisibleOnScreenNotifier2D" to="." method="PlayTimeAttack"]
-[connection signal="screen_exited" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/SettingsButton/VisibleOnScreenNotifier2D" to="." method="GoToSettings"]
+[connection signal="screen_exited" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/EquipmentButton/VisibleOnScreenNotifier2D" to="." method="GoToEquipment"]
 [connection signal="screen_exited" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/CompendiumButton/VisibleOnScreenNotifier2D" to="." method="GoToCompendium"]
-[connection signal="screen_exited" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/CreditsButton/VisibleOnScreenNotifier2D" to="." method="GoToCredits"]
 [connection signal="screen_exited" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/StatsButton/VisibleOnScreenNotifier2D" to="." method="GoToStats"]
+[connection signal="screen_exited" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/CreditsButton/VisibleOnScreenNotifier2D" to="." method="GoToCredits"]
+[connection signal="screen_exited" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/SettingsButton/VisibleOnScreenNotifier2D" to="." method="GoToSettings"]
 [connection signal="screen_exited" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/TutorialButton/VisibleOnScreenNotifier2D" to="." method="GoToTutorial"]
 [connection signal="pressed" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/Test" to="." method="PlayTest"]
 
@@ -262,8 +219,9 @@ text = "TEST"
 [editable path="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayGoGreenButton"]
 [editable path="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayClassicButton"]
 [editable path="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTimeAttackButton"]
-[editable path="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/SettingsButton"]
+[editable path="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/EquipmentButton"]
 [editable path="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/CompendiumButton"]
-[editable path="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/CreditsButton"]
 [editable path="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/StatsButton"]
+[editable path="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/CreditsButton"]
+[editable path="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/SettingsButton"]
 [editable path="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/TutorialButton"]
