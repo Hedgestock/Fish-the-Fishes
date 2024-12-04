@@ -114,6 +114,7 @@ resource_name = "FTF"
 default_font = ExtResource("1_fkn7n")
 default_font_size = 128
 Button/styles/normal = SubResource("StyleBoxTexture_aoaji")
+HFlowContainer/constants/h_separation = 10
 HSeparator/constants/separation = 20
 HSeparator/styles/separator = SubResource("StyleBoxLine_q8gnl")
 HSlider/icons/grabber = SubResource("AnimatedTexture_ake8j")

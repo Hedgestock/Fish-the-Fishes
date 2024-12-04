@@ -22,7 +22,8 @@ public partial class Equipment : CanvasLayer
         PopulateHooks();
     }
 
-    public void Test() {
+    public void Test()
+    {
         AchievementsManager.UnlockEquipment("HugeHook", EquipmentPiece.Type.Hook);
         UserData.Equipments["StandardHook"].IsEquipped = false;
         UserData.Equipments["HugeHook"].IsEquipped = true;
@@ -35,7 +36,7 @@ public partial class Equipment : CanvasLayer
         {
             var button = EquipmentUITemplate.Instantiate<EquipmentUi>();
             var sprite = hook.Value.Instantiate<AnimatedSprite2D>();
-            button.Placeholder.SpriteFrames = sprite.SpriteFrames;
+            button.SetUI(hook.Key, EquipmentPiece.Type.Hook, sprite.SpriteFrames, FishingLine.EquipStuff);
             Menu.AddChild(button);
         }
     }
