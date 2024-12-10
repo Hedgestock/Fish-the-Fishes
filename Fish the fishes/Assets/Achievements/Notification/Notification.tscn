@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b4hl7jdtefkae"]
 
-[ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://FTF_theme.tres" id="1_ihgqf"]
+[ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://Fish the fishes/Themes/FTF_theme.tres" id="1_ihgqf"]
 [ext_resource type="Script" path="res://Fish the fishes/Assets/Achievements/Notification/Notification.cs" id="2_a6lx2"]
 
 [node name="Notification" type="PanelContainer"]

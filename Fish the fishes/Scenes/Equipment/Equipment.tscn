@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://by02c8ge1i57q" path="res://Fish the fishes/Scenes/Equipment/EquipmentUI.tscn" id="2_53287"]
 [ext_resource type="PackedScene" uid="uid://bnkmwtljf2o3p" path="res://Fish the fishes/Assets/Player/FishingLine.tscn" id="2_au0c2"]
 [ext_resource type="Texture2D" uid="uid://4sfuxo2673qo" path="res://Fish the fishes/art/BG 2 FTF.png" id="2_hxeyh"]
-[ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://FTF_theme.tres" id="3_fbsu6"]
+[ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://Fish the fishes/Themes/FTF_theme.tres" id="3_fbsu6"]
 [ext_resource type="Texture2D" uid="uid://dvkg44r1oulcs" path="res://Fish the fishes/art/UI/retour.png" id="4_pl8em"]
 [ext_resource type="Texture2D" uid="uid://bjbotgfwig38a" path="res://Fish the fishes/art/UI/retour click.png" id="5_nkfqv"]
 [ext_resource type="Texture2D" uid="uid://bx8qk7jnypm0" path="res://Fish the fishes/art/UI/retour hover.png" id="6_kg20x"]
@@ -95,10 +95,5 @@ size_flags_vertical = 3
 [node name="HFlowContainer" type="HFlowContainer" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/HFlowContainer"]
-layout_mode = 2
-text = "test"
-
 [connection signal="timeout" from="FishTimer" to="." method="SpawnFish"]
 [connection signal="pressed" from="VBoxContainer/Control/MarginContainer/BackButton" to="." method="GoToHome"]
-[connection signal="pressed" from="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/HFlowContainer/Button" to="." method="Test"]

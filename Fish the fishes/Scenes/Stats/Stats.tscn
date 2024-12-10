@@ -1,11 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://r1tsllld4k82"]
+[gd_scene load_steps=10 format=3 uid="uid://r1tsllld4k82"]
 
 [ext_resource type="Script" path="res://Fish the fishes/Scenes/Stats/Stats.cs" id="1_yiwnl"]
 [ext_resource type="Texture2D" uid="uid://4sfuxo2673qo" path="res://Fish the fishes/art/BG 2 FTF.png" id="2_1e2tm"]
 [ext_resource type="Texture2D" uid="uid://dvkg44r1oulcs" path="res://Fish the fishes/art/UI/retour.png" id="3_qefni"]
 [ext_resource type="Texture2D" uid="uid://bjbotgfwig38a" path="res://Fish the fishes/art/UI/retour click.png" id="4_kf377"]
 [ext_resource type="Texture2D" uid="uid://bx8qk7jnypm0" path="res://Fish the fishes/art/UI/retour hover.png" id="5_th8d4"]
-[ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://FTF_theme.tres" id="7_sdtto"]
+[ext_resource type="PackedScene" uid="uid://dq66jd7bayssh" path="res://Fish the fishes/Scenes/Stats/StatLine.tscn" id="7_7s432"]
+[ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://Fish the fishes/Themes/FTF_theme.tres" id="7_sdtto"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_qkuki"]
 action = &"menu_go_back"
@@ -13,24 +14,19 @@ action = &"menu_go_back"
 [sub_resource type="Shortcut" id="Shortcut_y2krb"]
 events = [SubResource("InputEventAction_qkuki")]
 
-[node name="Stats" type="CanvasLayer" node_paths=PackedStringArray("TotalFishedFishes", "TotalPointsScored", "TotalTrashesHit", "TotalLostFishes", "MaxFishedFishes", "MaxPointScored", "TotalTrashesCleaned", "TotalEatenFishes", "CasualClassicHighScore", "CasualTimeAttackHighScore", "CasualTargetHighScore", "CasualGoGreenHighScore", "CompetitiveClassicHighScore", "CompetitiveTimeAttackHighScore", "CompetitiveTargetHighScore", "CompetitiveGoGreenHighScore")]
+[node name="Stats" type="CanvasLayer" node_paths=PackedStringArray("Category", "Mode", "HighScore", "TotalFishedFishes", "TotalPointsScored", "TotalTrashesHit", "TotalLostFishes", "MaxFishedFishes", "MaxPointScored", "TotalTrashesCleaned", "TotalEatenFishes")]
 script = ExtResource("1_yiwnl")
-TotalFishedFishes = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Statistics/TotalFishedFishesNumber")
-TotalPointsScored = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Statistics/TotalPointsScoredNumber")
-TotalTrashesHit = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Statistics/TotalTrashesHitNumber")
-TotalLostFishes = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Statistics/TotalLostFishesNumber")
-MaxFishedFishes = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Statistics/MaxFishedFishesNumber")
-MaxPointScored = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Statistics/MaxPointsScoredNumber")
-TotalTrashesCleaned = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/GoGreenStatistics/TotalTrashesCleanedNumber")
-TotalEatenFishes = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/GoGreenStatistics/TotalEatenFishesNumber")
-CasualClassicHighScore = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Casual/ClassicHighScoreValue")
-CasualTimeAttackHighScore = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Casual/TimeAttackHighScoreValue")
-CasualTargetHighScore = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Casual/TargetHighScoreValue")
-CasualGoGreenHighScore = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Casual/GoGreenHighScoreValue")
-CompetitiveClassicHighScore = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Competitive/ClassicHighScoreValue")
-CompetitiveTimeAttackHighScore = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Competitive/TimeAttackHighScoreValue")
-CompetitiveTargetHighScore = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Competitive/TargetHighScoreValue")
-CompetitiveGoGreenHighScore = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Competitive/GoGreenHighScoreValue")
+Category = NodePath("VBoxContainer/MarginContainer/VBoxContainer/HFlowContainer/CompetitiveOptionButton")
+Mode = NodePath("VBoxContainer/MarginContainer/VBoxContainer/HFlowContainer/ModeOptionButton")
+HighScore = NodePath("VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/HighScore")
+TotalFishedFishes = NodePath("VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/TotalFishedFishes")
+TotalPointsScored = NodePath("VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/TotalPointsScored")
+TotalTrashesHit = NodePath("VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/TotalTrashesHit")
+TotalLostFishes = NodePath("VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/TotalLostFishes")
+MaxFishedFishes = NodePath("VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/MaxFishedFishes")
+MaxPointScored = NodePath("VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/MaxPointsScored")
+TotalTrashesCleaned = NodePath("VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/TotalTrashesCleaned")
+TotalEatenFishes = NodePath("VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/TotalEatenFishes")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -82,257 +78,112 @@ text = "Statistics"
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Panel" type="PanelContainer" parent="VBoxContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer/Panel"]
+[node name="HFlowContainer" type="HFlowContainer" parent="VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="CompetitiveOptionButton" type="OptionButton" parent="VBoxContainer/MarginContainer/VBoxContainer/HFlowContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+selected = 0
+fit_to_longest_item = false
+item_count = 3
+popup/item_0/text = "Mixed"
+popup/item_1/text = "Competitive"
+popup/item_1/id = 1
+popup/item_2/text = "Casual"
+popup/item_2/id = 2
+
+[node name="ModeOptionButton" type="OptionButton" parent="VBoxContainer/MarginContainer/VBoxContainer/HFlowContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="TabContainer" type="TabContainer" parent="VBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+current_tab = 0
+tabs_visible = false
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+metadata/_tab_index = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Statistics" type="GridContainer" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="HighScore" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_7s432")]
 layout_mode = 2
-columns = 2
 
-[node name="TotalFishedFishesLabel" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Statistics"]
+[node name="StatLabel" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/HighScore" index="0"]
+text = "High score"
+
+[node name="TotalFishedFishes" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_7s432")]
 layout_mode = 2
-size_flags_horizontal = 3
+
+[node name="StatLabel" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/TotalFishedFishes" index="0"]
 text = "Total fishes fished"
-autowrap_mode = 3
 
-[node name="TotalFishedFishesNumber" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Statistics"]
+[node name="TotalPointsScored" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_7s432")]
 layout_mode = 2
-size_flags_horizontal = 8
-text = "0"
-horizontal_alignment = 2
 
-[node name="TotalPointsScoredLabel" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Statistics"]
-layout_mode = 2
-size_flags_horizontal = 3
+[node name="StatLabel" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/TotalPointsScored" index="0"]
 text = "Total points scored"
-autowrap_mode = 3
 
-[node name="TotalPointsScoredNumber" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Statistics"]
+[node name="TotalTrashesHit" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_7s432")]
 layout_mode = 2
-size_flags_horizontal = 8
-text = "0"
-horizontal_alignment = 2
 
-[node name="TotalTrashesHitLabel" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Statistics"]
-layout_mode = 2
-size_flags_horizontal = 3
+[node name="StatLabel" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/TotalTrashesHit" index="0"]
 text = "Total trashes hit"
-autowrap_mode = 3
 
-[node name="TotalTrashesHitNumber" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Statistics"]
+[node name="TotalLostFishes" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_7s432")]
 layout_mode = 2
-size_flags_horizontal = 8
-text = "0"
-horizontal_alignment = 2
 
-[node name="TotalLostFishesLabel" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Statistics"]
-layout_mode = 2
-size_flags_horizontal = 3
+[node name="StatLabel" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/TotalLostFishes" index="0"]
 text = "Total fishes lost"
-autowrap_mode = 3
 
-[node name="TotalLostFishesNumber" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Statistics"]
+[node name="MaxFishedFishes" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_7s432")]
 layout_mode = 2
-size_flags_horizontal = 8
-text = "0"
-horizontal_alignment = 2
 
-[node name="MaxFishedFishesLabel" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Statistics"]
-layout_mode = 2
-size_flags_horizontal = 3
+[node name="StatLabel" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/MaxFishedFishes" index="0"]
 text = "Maximum fishes in one catch"
-autowrap_mode = 3
 
-[node name="MaxFishedFishesNumber" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Statistics"]
+[node name="MaxPointsScored" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_7s432")]
 layout_mode = 2
-size_flags_horizontal = 8
-text = "0"
-horizontal_alignment = 2
 
-[node name="MaxPointsScoredLabel" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Statistics"]
-layout_mode = 2
-size_flags_horizontal = 3
+[node name="StatLabel" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/MaxPointsScored" index="0"]
 text = "Maximum points in one catch"
-autowrap_mode = 3
 
-[node name="MaxPointsScoredNumber" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Statistics"]
-layout_mode = 2
-size_flags_horizontal = 8
-text = "0"
-horizontal_alignment = 2
-
-[node name="HSeparator" type="HSeparator" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 40
-
-[node name="GoGreenLabel" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 1
-text = "Go Green"
-
-[node name="GoGreenStatistics" type="GridContainer" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-columns = 2
-
-[node name="TotalTrashesCleanedLabel" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/GoGreenStatistics"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Total trashes cleaned"
-autowrap_mode = 3
-
-[node name="TotalTrashesCleanedNumber" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/GoGreenStatistics"]
-layout_mode = 2
-size_flags_horizontal = 8
-text = "0"
-horizontal_alignment = 2
-
-[node name="TotalEatenFishesLabel" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/GoGreenStatistics"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Total accident catches"
-autowrap_mode = 3
-
-[node name="TotalEatenFishesNumber" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/GoGreenStatistics"]
-layout_mode = 2
-size_flags_horizontal = 8
-text = "0"
-horizontal_alignment = 2
-
-[node name="HSeparator2" type="HSeparator" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="TotalTrashesCleaned" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_7s432")]
 layout_mode = 2
 
-[node name="CasualHighScoresLabel" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 1
-text = "Casual HighScores"
+[node name="StatLabel" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/TotalTrashesCleaned" index="0"]
+text = "Total Trashes Cleaned"
 
-[node name="Casual" type="GridContainer" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="TotalEatenFishes" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_7s432")]
 layout_mode = 2
-columns = 2
 
-[node name="ClassicHighScoreLabel" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Casual"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Classic"
-autowrap_mode = 3
-
-[node name="ClassicHighScoreValue" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Casual"]
-layout_mode = 2
-size_flags_horizontal = 8
-text = "0"
-horizontal_alignment = 2
-
-[node name="TimeAttackHighScoreLabel" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Casual"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Time Attack"
-autowrap_mode = 3
-
-[node name="TimeAttackHighScoreValue" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Casual"]
-layout_mode = 2
-size_flags_horizontal = 8
-text = "0"
-horizontal_alignment = 2
-
-[node name="TargetHighScoreLabel" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Casual"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Target"
-autowrap_mode = 3
-
-[node name="TargetHighScoreValue" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Casual"]
-layout_mode = 2
-size_flags_horizontal = 8
-text = "0"
-horizontal_alignment = 2
-
-[node name="GoGreenHighScoreLabel" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Casual"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Go Green"
-autowrap_mode = 3
-
-[node name="GoGreenHighScoreValue" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Casual"]
-layout_mode = 2
-size_flags_horizontal = 8
-text = "0"
-horizontal_alignment = 2
-
-[node name="HSeparator3" type="HSeparator" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 40
-
-[node name="CompetitiveHighScoresLabel" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 1
-text = "Competitive HighScores"
-
-[node name="Competitive" type="GridContainer" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-columns = 2
-
-[node name="ClassicHighScoreLabel" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Competitive"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Classic"
-autowrap_mode = 3
-
-[node name="ClassicHighScoreValue" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Competitive"]
-layout_mode = 2
-size_flags_horizontal = 8
-text = "0"
-horizontal_alignment = 2
-
-[node name="TimeAttackHighScoreLabel" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Competitive"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Time Attack"
-autowrap_mode = 3
-
-[node name="TimeAttackHighScoreValue" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Competitive"]
-layout_mode = 2
-size_flags_horizontal = 8
-text = "0"
-horizontal_alignment = 2
-
-[node name="TargetHighScoreLabel" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Competitive"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Target"
-autowrap_mode = 3
-
-[node name="TargetHighScoreValue" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Competitive"]
-layout_mode = 2
-size_flags_horizontal = 8
-text = "0"
-horizontal_alignment = 2
-
-[node name="GoGreenHighScoreLabel" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Competitive"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Go Green"
-autowrap_mode = 3
-
-[node name="GoGreenHighScoreValue" type="Label" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Competitive"]
-layout_mode = 2
-size_flags_horizontal = 8
-text = "0"
-horizontal_alignment = 2
+[node name="StatLabel" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/TotalEatenFishes" index="0"]
+text = "Total Accident Catches"
 
 [connection signal="pressed" from="VBoxContainer/Control/MarginContainer/BackButton" to="." method="GoToHome"]
+[connection signal="item_selected" from="VBoxContainer/MarginContainer/VBoxContainer/HFlowContainer/CompetitiveOptionButton" to="." method="DisplayStats"]
+[connection signal="item_selected" from="VBoxContainer/MarginContainer/VBoxContainer/HFlowContainer/ModeOptionButton" to="." method="DisplayStats"]
+
+[editable path="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/HighScore"]
+[editable path="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/TotalFishedFishes"]
+[editable path="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/TotalPointsScored"]
+[editable path="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/TotalTrashesHit"]
+[editable path="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/TotalLostFishes"]
+[editable path="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/MaxFishedFishes"]
+[editable path="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/MaxPointsScored"]
+[editable path="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/TotalTrashesCleaned"]
+[editable path="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/TotalEatenFishes"]

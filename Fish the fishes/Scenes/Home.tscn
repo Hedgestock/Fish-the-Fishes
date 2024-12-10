@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://cejn28367eqbj" path="res://Fish the fishes/sounds/ftf.ogg" id="2_itj28"]
 [ext_resource type="PackedScene" uid="uid://ifoga56i10w3" path="res://Fish the fishes/Assets/RandomTimer.tscn" id="2_op8l2"]
 [ext_resource type="PackedScene" uid="uid://bnkmwtljf2o3p" path="res://Fish the fishes/Assets/Player/FishingLine.tscn" id="4_pulgk"]
-[ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://FTF_theme.tres" id="5_mnxty"]
+[ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://Fish the fishes/Themes/FTF_theme.tres" id="5_mnxty"]
 [ext_resource type="PackedScene" uid="uid://cifa65xrf1ken" path="res://Fish the fishes/UI/FishableButton/FishableButton.tscn" id="5_o3gki"]
 
 [node name="Home" type="CanvasLayer" node_paths=PackedStringArray("Message", "GameContainer", "Background")]
@@ -73,8 +73,8 @@ position = Vector2(102.5, 0)
 scale = Vector2(10, 1)
 
 [node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTargetButton" index="1"]
-offset_right = 205.0
-offset_bottom = 146.0
+offset_right = 237.0
+offset_bottom = 178.0
 text = "Target
 "
 
@@ -89,8 +89,8 @@ position = Vector2(147.5, 0)
 scale = Vector2(14.5, 1)
 
 [node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayGoGreenButton" index="1"]
-offset_right = 294.0
-offset_bottom = 146.0
+offset_right = 326.0
+offset_bottom = 178.0
 text = "Go Green
 "
 
@@ -102,8 +102,8 @@ position = Vector2(118, 0)
 scale = Vector2(11.5, 1)
 
 [node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayClassicButton" index="1"]
-offset_right = 227.0
-offset_bottom = 138.0
+offset_right = 267.0
+offset_bottom = 178.0
 text = "Classic"
 
 [node name="PlayTimeAttackButton" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu" instance=ExtResource("5_o3gki")]
@@ -114,8 +114,8 @@ position = Vector2(56.5, 0)
 scale = Vector2(5.5, 1)
 
 [node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTimeAttackButton" index="1"]
-offset_right = 381.0
-offset_bottom = 138.0
+offset_right = 421.0
+offset_bottom = 178.0
 text = "Time Attack"
 
 [node name="CollisionShape2D" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTimeAttackButton" index="2"]
@@ -129,8 +129,8 @@ position = Vector2(141.5, 0)
 scale = Vector2(14, 1)
 
 [node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/EquipmentButton" index="1"]
-offset_right = 273.0
-offset_bottom = 138.0
+offset_right = 385.0
+offset_bottom = 178.0
 text = "Equipment
 "
 
@@ -142,8 +142,8 @@ position = Vector2(217, 0)
 scale = Vector2(22, 1)
 
 [node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/CompendiumButton" index="1"]
-offset_right = 428.0
-offset_bottom = 138.0
+offset_right = 468.0
+offset_bottom = 178.0
 text = "Compendium"
 
 [node name="StatsButton" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu" instance=ExtResource("5_o3gki")]
@@ -154,8 +154,8 @@ position = Vector2(83.5, 0)
 scale = Vector2(8, 1)
 
 [node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/StatsButton" index="1"]
-offset_right = 166.0
-offset_bottom = 146.0
+offset_right = 198.0
+offset_bottom = 178.0
 text = "Stats
 "
 

@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://dvkg44r1oulcs" path="res://Fish the fishes/art/UI/retour.png" id="3_d41ef"]
 [ext_resource type="Texture2D" uid="uid://bjbotgfwig38a" path="res://Fish the fishes/art/UI/retour click.png" id="4_6vns6"]
 [ext_resource type="Texture2D" uid="uid://bx8qk7jnypm0" path="res://Fish the fishes/art/UI/retour hover.png" id="5_rejhq"]
-[ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://FTF_theme.tres" id="6_pkcc8"]
-[ext_resource type="Theme" uid="uid://cmnrxxeo4xdgp" path="res://FTF_descriptions_theme.tres" id="7_wo58i"]
+[ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://Fish the fishes/Themes/FTF_theme.tres" id="6_pkcc8"]
+[ext_resource type="Theme" uid="uid://cmnrxxeo4xdgp" path="res://Fish the fishes/Themes/FTF_descriptions_theme.tres" id="7_wo58i"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_qkuki"]
 action = &"menu_go_back"
@@ -100,6 +100,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 0
 text = "Competitive Mode"
+flat = true
 expand_icon = true
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer"]
@@ -108,6 +109,7 @@ layout_mode = 2
 [node name="MuteMasterCheckBox" type="CheckBox" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Master Volume"
+flat = true
 
 [node name="MasterVolume" type="HSlider" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2

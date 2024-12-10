@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://di7207b71mnm8" path="res://Fish the fishes/UI/AnimatedSpriteForUI/AnimatedSpriteForUI.tscn" id="4_38r4v"]
 [ext_resource type="Texture2D" uid="uid://c05mhtfd1por7" path="res://Fish the fishes/art/UI/Vie 3.png" id="4_jt1fa"]
 [ext_resource type="Texture2D" uid="uid://r8hgxewljrec" path="res://Fish the fishes/art/UI/Mort.png" id="5_pfixn"]
-[ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://FTF_theme.tres" id="6_7rq80"]
+[ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://Fish the fishes/Themes/FTF_theme.tres" id="6_7rq80"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xewer"]
 animations = [{

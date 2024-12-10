@@ -7,82 +7,81 @@ using System.Collections.Generic;
 public partial class Stats : CanvasLayer
 {
     [Export]
-    Label TotalFishedFishes;
+    OptionButton Category;
     [Export]
-    Label TotalPointsScored;
+    OptionButton Mode;
     [Export]
-    Label TotalTrashesHit;
-    [Export]
-    Label TotalLostFishes;
-    [Export]
-    Label MaxFishedFishes;
-    [Export]
-    Label MaxPointScored;
-    [Export]
-    Label TotalTrashesCleaned;
-    [Export]
-    Label TotalEatenFishes;
+    StatLine HighScore;
 
-    [ExportGroup("CasualHighScores")]
+    [ExportGroup("Classic")]
     [Export]
-    Label CasualClassicHighScore;
+    StatLine TotalFishedFishes;
     [Export]
-    Label CasualTimeAttackHighScore;
+    StatLine TotalPointsScored;
     [Export]
-    Label CasualTargetHighScore;
+    StatLine TotalTrashesHit;
     [Export]
-    Label CasualGoGreenHighScore;
-    [ExportGroup("CompetitiveHighScores")]
+    StatLine TotalLostFishes;
     [Export]
-    Label CompetitiveClassicHighScore;
+    StatLine MaxFishedFishes;
     [Export]
-    Label CompetitiveTimeAttackHighScore;
+    StatLine MaxPointScored;
+
+    [ExportGroup("Go Green")]
     [Export]
-    Label CompetitiveTargetHighScore;
+    StatLine TotalTrashesCleaned;
     [Export]
-    Label CompetitiveGoGreenHighScore;
+    StatLine TotalEatenFishes;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        // Casual High Scores
-        CasualClassicHighScore.Text = UserData.GetStatistic(Casual, Game.Mode.Classic, Constants.HighScore).ToString() ?? "0";
-        CasualTimeAttackHighScore.Text = UserData.GetStatistic(Casual, Game.Mode.TimeAttack, Constants.HighScore).ToString() ?? "0";
-        CasualTargetHighScore.Text = UserData.GetStatistic(Casual, Game.Mode.Target, Constants.HighScore).ToString() ?? "0";
-        CasualGoGreenHighScore.Text = UserData.GetStatistic(Casual, Game.Mode.GoGreen, Constants.HighScore).ToString() ?? "0";
+        // Adding those by code prevents mismatching IDs in case of human error or change of the Mode enum
+        Mode.AddItem("All Modes", (int)Game.Mode.AllModes);
+        Mode.AddItem("Classic", (int)Game.Mode.Classic);
+        Mode.AddItem("Time Attack", (int)Game.Mode.TimeAttack);
+        Mode.AddItem("Target", (int)Game.Mode.Target);
+        Mode.AddItem("GoGreen", (int)Game.Mode.GoGreen);
 
-        // Competitive High Scores
-        CompetitiveClassicHighScore.Text = UserData.GetStatistic(Competitive, Game.Mode.Classic, Constants.HighScore).ToString() ?? "0";
-        CompetitiveTimeAttackHighScore.Text = UserData.GetStatistic(Competitive, Game.Mode.Classic, Constants.HighScore).ToString() ?? "0";
-        CompetitiveTargetHighScore.Text = UserData.GetStatistic(Competitive, Game.Mode.Classic, Constants.HighScore).ToString() ?? "0";
-        CompetitiveGoGreenHighScore.Text = UserData.GetStatistic(Competitive, Game.Mode.Classic, Constants.HighScore).ToString() ?? "0";
-        
-        //Stats
-        TotalFishedFishes.Text = UserData.GetStatistic(Scratch, Game.Mode.AllModes, Constants.TotalFishedFishes).ToString() ?? "0";
-        TotalPointsScored.Text = UserData.GetStatistic(Scratch, Game.Mode.AllModes, Constants.TotalPointsScored).ToString() ?? "0";
-        TotalTrashesHit.Text = UserData.GetStatistic(Scratch, Game.Mode.AllModes, Constants.TotalTrashesHit).ToString() ?? "0";
-        TotalLostFishes.Text = UserData.GetStatistic(Scratch, Game.Mode.AllModes, Constants.TotalLostFishes).ToString() ?? "0";
-        MaxFishedFishes.Text = UserData.GetStatistic(Scratch, Game.Mode.AllModes, Constants.MaxFishedFishes).ToString() ?? "0";
-        MaxPointScored.Text = UserData.GetStatistic(Scratch, Game.Mode.AllModes, Constants.MaxPointScored).ToString() ?? "0";
-
-        // Go Green Stats
-        TotalTrashesCleaned.Text = UserData.GetStatistic(Scratch, Game.Mode.GoGreen, Constants.TotalTrashesCleaned).ToString() ?? "0";
-        TotalEatenFishes.Text = UserData.GetStatistic(Scratch, Game.Mode.GoGreen, Constants.TotalEatenFishes).ToString() ?? "0";
+        DisplayStats(0);
     }
 
+    private void DisplayStats(int index)
+    {
+        UserData.StatCategory category = (UserData.StatCategory)Category.GetSelectedId();
+        Game.Mode mode = (Game.Mode)Mode.GetSelectedId();
+
+        HighScore.Score = UserData.GetStatistic(category, mode, Constants.HighScore);
+
+        if (mode == Game.Mode.GoGreen)
+        {
+            TotalTrashesCleaned.Score = UserData.GetStatistic(Scratch, Game.Mode.GoGreen, Constants.TotalTrashesCleaned);
+            TotalEatenFishes.Score = UserData.GetStatistic(Scratch, Game.Mode.GoGreen, Constants.TotalEatenFishes);
+        }
+        else
+        {
+            TotalFishedFishes.Score = UserData.GetStatistic(category, mode, Constants.TotalFishedFishes);
+            TotalPointsScored.Score = UserData.GetStatistic(category, mode, Constants.TotalPointsScored);
+            TotalTrashesHit.Score = UserData.GetStatistic(category, mode, Constants.TotalTrashesHit);
+            TotalLostFishes.Score = UserData.GetStatistic(category, mode, Constants.TotalLostFishes);
+            MaxFishedFishes.Score = UserData.GetStatistic(category, mode, Constants.MaxFishedFishes);
+            MaxPointScored.Score = UserData.GetStatistic(category, mode, Constants.MaxPointScored);
+        }
+
+        TotalFishedFishes.Visible = mode != Game.Mode.GoGreen;
+        TotalPointsScored.Visible = mode != Game.Mode.GoGreen;
+        TotalTrashesHit.Visible = mode != Game.Mode.GoGreen;
+        TotalLostFishes.Visible = mode != Game.Mode.GoGreen;
+        MaxFishedFishes.Visible = mode != Game.Mode.GoGreen;
+        MaxPointScored.Visible = mode != Game.Mode.GoGreen;
+
+        TotalTrashesCleaned.Visible = mode == Game.Mode.GoGreen;
+        TotalEatenFishes.Visible = mode == Game.Mode.GoGreen;
+
+    }
 
     private void GoToHome()
     {
         GameManager.ChangeSceneToFile("res://Fish the fishes/Scenes/Home.tscn");
-    }
-
-    private string TryGetValue<T>(Dictionary<string, T> dic, string key)
-    {
-        T tmp;
-        if (dic.TryGetValue(key, out tmp))
-        {
-            return tmp?.ToString();
-        }
-        return null;
     }
 }

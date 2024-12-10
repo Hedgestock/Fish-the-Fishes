@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Fish the fishes/Scenes/BiomeDebug/BiomeGraphNode.cs" id="1_v44y7"]
 [ext_resource type="PackedScene" uid="uid://djbfl4t4uqipn" path="res://Fish the fishes/Scenes/BiomeDebug/WeightedItemControl.tscn" id="2_wclbs"]
-[ext_resource type="Theme" uid="uid://cmnrxxeo4xdgp" path="res://FTF_descriptions_theme.tres" id="3_ala2m"]
+[ext_resource type="Theme" uid="uid://cmnrxxeo4xdgp" path="res://Fish the fishes/Themes/FTF_descriptions_theme.tres" id="3_ala2m"]
 
 [node name="BiomeGraphNode" type="GraphNode" node_paths=PackedStringArray("Fishes", "Trashes", "Biomes")]
 offset_right = 102.0

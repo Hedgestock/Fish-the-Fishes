@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dvkg44r1oulcs" path="res://Fish the fishes/art/UI/retour.png" id="2_mhjxi"]
 [ext_resource type="PackedScene" uid="uid://b3musubb85kyk" path="res://Fish the fishes/Scenes/Compendium/TrashCompendiumEntry.tscn" id="3_vf8dp"]
 [ext_resource type="Texture2D" uid="uid://bjbotgfwig38a" path="res://Fish the fishes/art/UI/retour click.png" id="3_xgqri"]
-[ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://FTF_theme.tres" id="3_y1rnp"]
+[ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://Fish the fishes/Themes/FTF_theme.tres" id="3_y1rnp"]
 [ext_resource type="Texture2D" uid="uid://bx8qk7jnypm0" path="res://Fish the fishes/art/UI/retour hover.png" id="4_5k6ur"]
 [ext_resource type="PackedScene" uid="uid://biyy1v6mq1cue" path="res://Fish the fishes/Scenes/Compendium/BiomeCompendiumEntry.tscn" id="4_gxmqj"]
 [ext_resource type="PackedScene" uid="uid://d4ecb71kma03k" path="res://Fish the fishes/Scenes/Compendium/AchievementCompendiumEntry.tscn" id="5_1s78k"]

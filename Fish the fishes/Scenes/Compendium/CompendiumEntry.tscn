@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://cu4qvea6vce5v"]
 
-[ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://FTF_theme.tres" id="1_ay4f4"]
+[ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://Fish the fishes/Themes/FTF_theme.tres" id="1_ay4f4"]
 [ext_resource type="Script" path="res://Fish the fishes/Scenes/Compendium/CompendiumEntry.cs" id="2_hdjfk"]
-[ext_resource type="Theme" uid="uid://cmnrxxeo4xdgp" path="res://FTF_descriptions_theme.tres" id="3_jy4hv"]
+[ext_resource type="Theme" uid="uid://cmnrxxeo4xdgp" path="res://Fish the fishes/Themes/FTF_descriptions_theme.tres" id="3_jy4hv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l1j6n"]
 
