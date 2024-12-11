@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cu4qvea6vce5v"]
+[gd_scene load_steps=4 format=3 uid="uid://cu4qvea6vce5v"]
 
 [ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://Fish the fishes/Themes/FTF_theme.tres" id="1_ay4f4"]
 [ext_resource type="Script" path="res://Fish the fishes/Scenes/Compendium/CompendiumEntry.cs" id="2_hdjfk"]
-[ext_resource type="Theme" uid="uid://cmnrxxeo4xdgp" path="res://Fish the fishes/Themes/FTF_descriptions_theme.tres" id="3_jy4hv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l1j6n"]
 
@@ -36,21 +35,22 @@ text = "???"
 
 [node name="CompendiumDescription" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("3_jy4hv")
+theme_type_variation = &"DescriptionLabel"
 text = "???"
 
 [node name="Stats" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("3_jy4hv")
 
 [node name="Seen" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Stats"]
 layout_mode = 2
 size_flags_vertical = 8
+theme_type_variation = &"DescriptionLabel"
 text = "Seen: "
 
 [node name="NumberOfTimesSeen" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Stats"]
 layout_mode = 2
 size_flags_vertical = 8
+theme_type_variation = &"DescriptionLabel"
 text = "0
 "
 
