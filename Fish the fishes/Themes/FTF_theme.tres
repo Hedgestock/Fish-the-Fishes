@@ -1,32 +1,16 @@
 [gd_resource type="Theme" load_steps=21 format=3 uid="uid://dqud8bhj4fopd"]
 
-[ext_resource type="Texture2D" uid="uid://5s4c78qgq84w" path="res://Fish the fishes/art/UI/Button.png" id="1_vnkgm"]
+[ext_resource type="StyleBox" uid="uid://cis4bdbay2jpn" path="res://Fish the fishes/Themes/ButtonTextureHover.tres" id="1_mcx8r"]
 [ext_resource type="Texture2D" uid="uid://dsnbmphv0scr7" path="res://Fish the fishes/art/fish/sardine/sardine_alive_1.png" id="2_5da5q"]
+[ext_resource type="StyleBox" uid="uid://fj8sndej8q55" path="res://Fish the fishes/Themes/ButtonTexture.tres" id="2_k2wvy"]
+[ext_resource type="StyleBox" uid="uid://dikcbdrw0gio5" path="res://Fish the fishes/Themes/ButtonTexturePressed.tres" id="3_4eyv1"]
 [ext_resource type="Texture2D" uid="uid://vkh1e4p832lp" path="res://Fish the fishes/art/fish/sardine/sardine_alive_2.png" id="3_b3wp6"]
 [ext_resource type="Texture2D" uid="uid://sf5nbt1ewklc" path="res://Fish the fishes/art/fish/arrow/arrow_left.png" id="4_f26mx"]
 [ext_resource type="Texture2D" uid="uid://b3ygkwfip0qaj" path="res://Fish the fishes/art/fish/arrow/arrow_left_3.png" id="5_cttsl"]
 [ext_resource type="Texture2D" uid="uid://cdlcldgajtn4i" path="res://Fish the fishes/art/fish/arrow/arrow_alive_1.png" id="6_23sy7"]
 [ext_resource type="Texture2D" uid="uid://csxfp4n3h00us" path="res://Fish the fishes/art/fish/arrow/arrow_alive_3.png" id="7_srjgg"]
 [ext_resource type="FontFile" uid="uid://bfbfdje68lt7w" path="res://fonts/Amatic-Bold.ttf" id="8_cmcft"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5qv0r"]
-texture = ExtResource("1_vnkgm")
-texture_margin_left = 20.0
-texture_margin_top = 20.0
-texture_margin_right = 20.0
-texture_margin_bottom = 20.0
-axis_stretch_horizontal = 2
-axis_stretch_vertical = 2
-modulate_color = Color(0.5, 0.5, 0.5, 1)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e1cxx"]
-texture = ExtResource("1_vnkgm")
-texture_margin_left = 20.0
-texture_margin_top = 20.0
-texture_margin_right = 20.0
-texture_margin_bottom = 20.0
-axis_stretch_horizontal = 2
-axis_stretch_vertical = 2
+[ext_resource type="StyleBox" uid="uid://iftmxcpwxot8" path="res://Fish the fishes/Themes/PanelTexture.tres" id="10_q6ye7"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_q8gnl"]
 content_margin_left = 4.0
@@ -49,15 +33,6 @@ speed_scale = 5.0
 frame_0/texture = ExtResource("2_5da5q")
 frame_1/texture = ExtResource("3_b3wp6")
 frame_1/duration = 1.0
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hs2tw"]
-texture = ExtResource("1_vnkgm")
-texture_margin_left = 20.0
-texture_margin_top = 20.0
-texture_margin_right = 20.0
-texture_margin_bottom = 20.0
-axis_stretch_horizontal = 2
-axis_stretch_vertical = 2
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yqf4q"]
 
@@ -134,8 +109,9 @@ expand_margin_bottom = 2.0
 resource_name = "FTF"
 default_font = ExtResource("8_cmcft")
 default_font_size = 128
-Button/styles/hover = SubResource("StyleBoxTexture_5qv0r")
-Button/styles/normal = SubResource("StyleBoxTexture_e1cxx")
+Button/styles/hover = ExtResource("1_mcx8r")
+Button/styles/normal = ExtResource("2_k2wvy")
+Button/styles/pressed = ExtResource("3_4eyv1")
 HFlowContainer/constants/h_separation = 10
 HSeparator/constants/separation = 20
 HSeparator/styles/separator = SubResource("StyleBoxLine_q8gnl")
@@ -145,7 +121,7 @@ MarginContainer/constants/margin_bottom = 20
 MarginContainer/constants/margin_left = 20
 MarginContainer/constants/margin_right = 20
 MarginContainer/constants/margin_top = 20
-Panel/styles/panel = SubResource("StyleBoxTexture_hs2tw")
+Panel/styles/panel = ExtResource("10_q6ye7")
 ScrollContainer/styles/panel = SubResource("StyleBoxEmpty_yqf4q")
 TabContainer/icons/decrement = ExtResource("4_f26mx")
 TabContainer/icons/decrement_highlight = ExtResource("5_cttsl")
@@ -154,6 +130,7 @@ TabContainer/icons/increment = ExtResource("6_23sy7")
 TabContainer/icons/increment_highlight = ExtResource("7_srjgg")
 TabContainer/icons/menu = null
 TabContainer/icons/menu_highlight = null
+TabContainer/styles/panel = ExtResource("10_q6ye7")
 VScrollBar/styles/grabber = SubResource("StyleBoxFlat_e005x")
 VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_euiel")
 VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_q6cfm")

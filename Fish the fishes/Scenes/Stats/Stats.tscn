@@ -109,6 +109,7 @@ tabs_visible = false
 [node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+horizontal_scroll_mode = 0
 metadata/_tab_index = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer"]
@@ -173,6 +174,11 @@ layout_mode = 2
 
 [node name="StatLabel" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/TotalEatenFishes" index="0"]
 text = "Total Accident Catches"
+
+[node name="Panel" type="Panel" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
 
 [connection signal="pressed" from="VBoxContainer/Control/MarginContainer/BackButton" to="." method="GoToHome"]
 [connection signal="item_selected" from="VBoxContainer/MarginContainer/VBoxContainer/HFlowContainer/CompetitiveOptionButton" to="." method="DisplayStats"]

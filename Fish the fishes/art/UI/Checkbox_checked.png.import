@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cglpf0akb1031"
-path="res://.godot/imported/Button.png-36c17365e16424e147b82b26450533cc.ctex"
+uid="uid://bhvn4jlu88k8a"
+path="res://.godot/imported/Checkbox_checked.png-699d0b2a19f9072cbbce6b5f8460b47a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fish the fishes/art/UI/Button.png"
-dest_files=["res://.godot/imported/Button.png-36c17365e16424e147b82b26450533cc.ctex"]
+source_file="res://Fish the fishes/art/UI/Checkbox_checked.png"
+dest_files=["res://.godot/imported/Checkbox_checked.png-699d0b2a19f9072cbbce6b5f8460b47a.ctex"]
 
 [params]
 

@@ -73,8 +73,8 @@ position = Vector2(102.5, 0)
 scale = Vector2(10, 1)
 
 [node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTargetButton" index="1"]
-offset_right = 237.0
-offset_bottom = 178.0
+offset_right = 217.0
+offset_bottom = 158.0
 text = "Target
 "
 
@@ -89,8 +89,8 @@ position = Vector2(147.5, 0)
 scale = Vector2(14.5, 1)
 
 [node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayGoGreenButton" index="1"]
-offset_right = 326.0
-offset_bottom = 178.0
+offset_right = 306.0
+offset_bottom = 158.0
 text = "Go Green
 "
 
@@ -102,8 +102,8 @@ position = Vector2(118, 0)
 scale = Vector2(11.5, 1)
 
 [node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayClassicButton" index="1"]
-offset_right = 267.0
-offset_bottom = 178.0
+offset_right = 247.0
+offset_bottom = 158.0
 text = "Classic"
 
 [node name="PlayTimeAttackButton" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu" instance=ExtResource("5_o3gki")]
@@ -114,8 +114,8 @@ position = Vector2(56.5, 0)
 scale = Vector2(5.5, 1)
 
 [node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTimeAttackButton" index="1"]
-offset_right = 421.0
-offset_bottom = 178.0
+offset_right = 401.0
+offset_bottom = 158.0
 text = "Time Attack"
 
 [node name="CollisionShape2D" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTimeAttackButton" index="2"]
@@ -129,8 +129,8 @@ position = Vector2(141.5, 0)
 scale = Vector2(14, 1)
 
 [node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/EquipmentButton" index="1"]
-offset_right = 385.0
-offset_bottom = 178.0
+offset_right = 365.0
+offset_bottom = 158.0
 text = "Equipment
 "
 
@@ -142,8 +142,8 @@ position = Vector2(217, 0)
 scale = Vector2(22, 1)
 
 [node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/CompendiumButton" index="1"]
-offset_right = 468.0
-offset_bottom = 178.0
+offset_right = 448.0
+offset_bottom = 158.0
 text = "Compendium"
 
 [node name="StatsButton" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu" instance=ExtResource("5_o3gki")]
@@ -154,8 +154,8 @@ position = Vector2(83.5, 0)
 scale = Vector2(8, 1)
 
 [node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/StatsButton" index="1"]
-offset_right = 198.0
-offset_bottom = 178.0
+offset_right = 178.0
+offset_bottom = 158.0
 text = "Stats
 "
 
@@ -167,8 +167,8 @@ position = Vector2(119, 0)
 scale = Vector2(12, 1)
 
 [node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/CreditsButton" index="1"]
-offset_right = 228.0
-offset_bottom = 138.0
+offset_right = 248.0
+offset_bottom = 158.0
 text = "Credits"
 
 [node name="SettingsButton" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu" instance=ExtResource("5_o3gki")]
@@ -179,8 +179,8 @@ position = Vector2(141, 0)
 scale = Vector2(14, 1)
 
 [node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/SettingsButton" index="1"]
-offset_right = 281.0
-offset_bottom = 146.0
+offset_right = 293.0
+offset_bottom = 158.0
 text = "Settings"
 
 [node name="TutorialButton" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu" instance=ExtResource("5_o3gki")]
@@ -191,8 +191,8 @@ position = Vector2(141.5, 0)
 scale = Vector2(14, 1)
 
 [node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/TutorialButton" index="1"]
-offset_right = 273.0
-offset_bottom = 138.0
+offset_right = 293.0
+offset_bottom = 158.0
 text = "Tutorial"
 
 [node name="Test" type="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dwv4cu7q6wlf6"]
+[gd_scene load_steps=14 format=3 uid="uid://dwv4cu7q6wlf6"]
 
 [ext_resource type="Script" path="res://Fish the fishes/Scenes/Settings/Settings.cs" id="1_pgx6s"]
 [ext_resource type="Texture2D" uid="uid://4sfuxo2673qo" path="res://Fish the fishes/art/BG 2 FTF.png" id="2_okyw8"]
@@ -6,7 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://bjbotgfwig38a" path="res://Fish the fishes/art/UI/retour click.png" id="4_6vns6"]
 [ext_resource type="Texture2D" uid="uid://bx8qk7jnypm0" path="res://Fish the fishes/art/UI/retour hover.png" id="5_rejhq"]
 [ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://Fish the fishes/Themes/FTF_theme.tres" id="6_pkcc8"]
+[ext_resource type="PackedScene" uid="uid://d1xuincg5ibnm" path="res://Fish the fishes/UI/CustomCheckBox/CustomCheckBox.tscn" id="7_lhwuh"]
 [ext_resource type="Theme" uid="uid://cmnrxxeo4xdgp" path="res://Fish the fishes/Themes/FTF_descriptions_theme.tres" id="7_wo58i"]
+[ext_resource type="Texture2D" uid="uid://jn2jx0ou2gff" path="res://Fish the fishes/art/UI/Checkbox.png" id="8_gpekn"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_qkuki"]
 action = &"menu_go_back"
@@ -96,20 +98,18 @@ size_flags_vertical = 3
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="CompetitiveModeCheckBox" type="CheckBox" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="CompetitiveModeCheckBox" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_lhwuh")]
 layout_mode = 2
-size_flags_horizontal = 0
 text = "Competitive Mode"
-flat = true
-expand_icon = true
+Unchecked = ExtResource("8_gpekn")
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="MuteMasterCheckBox" type="CheckBox" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="MuteMasterCheckBox" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_lhwuh")]
 layout_mode = 2
 text = "Master Volume"
-flat = true
+Unchecked = ExtResource("8_gpekn")
 
 [node name="MasterVolume" type="HSlider" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -118,9 +118,10 @@ step = 0.01
 value = 1.0
 scrollable = false
 
-[node name="MuteMusicCheckBox" type="CheckBox" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="MuteMusicCheckBox" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_lhwuh")]
 layout_mode = 2
 text = "Music Volume"
+Unchecked = ExtResource("8_gpekn")
 
 [node name="MusicVolume" type="HSlider" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -129,9 +130,10 @@ step = 0.01
 value = 1.0
 scrollable = false
 
-[node name="MuteSFXCheckBox" type="CheckBox" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="MuteSFXCheckBox" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_lhwuh")]
 layout_mode = 2
 text = "SFX Volume"
+Unchecked = ExtResource("8_gpekn")
 
 [node name="SFXVolume" type="HSlider" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -140,9 +142,10 @@ step = 0.01
 value = 1.0
 scrollable = false
 
-[node name="MuteFishesCheckBox" type="CheckBox" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="MuteFishesCheckBox" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_lhwuh")]
 layout_mode = 2
-text = "Fishes Volume"
+text = "SFX Volume"
+Unchecked = ExtResource("8_gpekn")
 
 [node name="FishesVolume" type="HSlider" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2

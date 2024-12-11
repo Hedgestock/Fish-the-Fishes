@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cglpf0akb1031"
-path="res://.godot/imported/Button.png-36c17365e16424e147b82b26450533cc.ctex"
+uid="uid://3maic626mln0"
+path="res://.godot/imported/Panel_bg2.png-e3e6ed3fc1dabaa5d14b351bac0ef990.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fish the fishes/art/UI/Button.png"
-dest_files=["res://.godot/imported/Button.png-36c17365e16424e147b82b26450533cc.ctex"]
+source_file="res://Fish the fishes/art/UI/Panel_bg2.png"
+dest_files=["res://.godot/imported/Panel_bg2.png-e3e6ed3fc1dabaa5d14b351bac0ef990.ctex"]
 
 [params]
 

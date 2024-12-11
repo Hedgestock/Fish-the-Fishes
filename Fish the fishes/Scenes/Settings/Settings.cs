@@ -8,25 +8,25 @@ public partial class Settings : CanvasLayer
     private Container DeleteDataPopup;
 
     [Export]
-    private CheckBox CompetitiveMode;
+    private CustomCheckBox CompetitiveMode;
 
     [Export]
-    private CheckBox MuteMaster;
+    private CustomCheckBox MuteMaster;
     [Export]
     private Slider MasterVolume;
 
     [Export]
-    private CheckBox MuteMusic;
+    private CustomCheckBox MuteMusic;
     [Export]
     private Slider MusicVolume;
 
     [Export]
-    private CheckBox MuteSFX;
+    private CustomCheckBox MuteSFX;
     [Export]
     private Slider SFXVolume;
 
     [Export]
-    private CheckBox MuteFishes;
+    private CustomCheckBox MuteFishes;
     [Export]
     private Slider FishesVolume;
 
@@ -36,10 +36,10 @@ public partial class Settings : CanvasLayer
     {
         CompetitiveMode.ButtonPressed = UserSettings.CompetitiveMode;
 
-        MuteMaster.ButtonPressed = UserSettings.MuteMaster;
-        MuteMusic.ButtonPressed = UserSettings.MuteMusic;
-        MuteSFX.ButtonPressed = UserSettings.MuteSFX;
-        MuteFishes.ButtonPressed = UserSettings.MuteFishes;
+        MuteMaster.ButtonPressed = !UserSettings.MuteMaster;
+        MuteMusic.ButtonPressed = !UserSettings.MuteMusic;
+        MuteSFX.ButtonPressed = !UserSettings.MuteSFX;
+        MuteFishes.ButtonPressed = !UserSettings.MuteFishes;
 
         MasterVolume.Value = UserSettings.MasterVolume;
         MusicVolume.Value = UserSettings.MusicVolume;
@@ -58,36 +58,36 @@ public partial class Settings : CanvasLayer
         UserSettings.CompetitiveMode = competition;
     }
 
-    private void MuteMasterVolume(bool mute)
+    private void MuteMasterVolume(bool on)
     {
-        UserSettings.MuteMaster = mute;
+        UserSettings.MuteMaster = !on;
     }
     private void MasterVolumeChanged(float volume)
     {
         UserSettings.MasterVolume = volume;
     }
 
-    private void MuteMusicVolume(bool mute)
+    private void MuteMusicVolume(bool on)
     {
-        UserSettings.MuteMusic = mute;
+        UserSettings.MuteMusic = !on;
     }
     private void MusicVolumeChanged(float volume)
     {
         UserSettings.MusicVolume = volume;
     }
 
-    private void MuteSFXVolume(bool mute)
+    private void MuteSFXVolume(bool on)
     {
-        UserSettings.MuteSFX = mute;
+        UserSettings.MuteSFX = !on;
     }
     private void SFXVolumeChanged(float volume)
     {
         UserSettings.SFXVolume = volume;
     }
 
-    private void MuteFishesVolume(bool mute)
+    private void MuteFishesVolume(bool on)
     {
-        UserSettings.MuteFishes = mute;
+        UserSettings.MuteFishes = !on;
     }
     private void FishesVolumeChanged(float volume)
     {
