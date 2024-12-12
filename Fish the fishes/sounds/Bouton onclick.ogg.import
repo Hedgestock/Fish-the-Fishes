@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ct34equinh0xs"
+path="res://.godot/imported/Bouton onclick.ogg-00679af55ac17026593dcb30d5bb39d6.oggvorbisstr"
+
+[deps]
+
+source_file="res://Fish the fishes/sounds/Bouton onclick.ogg"
+dest_files=["res://.godot/imported/Bouton onclick.ogg-00679af55ac17026593dcb30d5bb39d6.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

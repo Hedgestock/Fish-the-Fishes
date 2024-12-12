@@ -3,14 +3,14 @@
 [ext_resource type="Script" path="res://Fish the fishes/Scenes/Credits/Credits.cs" id="1_okroq"]
 [ext_resource type="Texture2D" uid="uid://4sfuxo2673qo" path="res://Fish the fishes/art/BG 2 FTF.png" id="2_0shy0"]
 [ext_resource type="Texture2D" uid="uid://dvkg44r1oulcs" path="res://Fish the fishes/art/UI/retour.png" id="3_6g4x1"]
+[ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://Fish the fishes/Themes/FTF_theme.tres" id="3_t0ob4"]
 [ext_resource type="Texture2D" uid="uid://bjbotgfwig38a" path="res://Fish the fishes/art/UI/retour click.png" id="4_bgxfl"]
 [ext_resource type="Texture2D" uid="uid://bx8qk7jnypm0" path="res://Fish the fishes/art/UI/retour hover.png" id="5_fd448"]
-[ext_resource type="FontFile" uid="uid://bfbfdje68lt7w" path="res://fonts/Amatic-Bold.ttf" id="6_fb7ql"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_qkuki"]
 action = &"menu_go_back"
 
-[sub_resource type="Shortcut" id="Shortcut_y2krb"]
+[sub_resource type="Shortcut" id="Shortcut_funm3"]
 events = [SubResource("InputEventAction_qkuki")]
 
 [node name="Credits" type="CanvasLayer"]
@@ -25,25 +25,63 @@ grow_vertical = 2
 texture = ExtResource("2_0shy0")
 stretch_mode = 6
 
-[node name="BackButton" type="TextureButton" parent="."]
-offset_left = 11.0
-offset_top = 13.0
-offset_right = 211.0
-offset_bottom = 213.0
-scale = Vector2(0.5, 0.5)
-shortcut = SubResource("Shortcut_y2krb")
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("3_t0ob4")
+
+[node name="Control" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Control"]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 100.0
+
+[node name="BackButton" type="TextureButton" parent="VBoxContainer/Control/MarginContainer"]
+layout_mode = 2
+shortcut = SubResource("Shortcut_funm3")
 texture_normal = ExtResource("3_6g4x1")
 texture_pressed = ExtResource("4_bgxfl")
 texture_hover = ExtResource("5_fd448")
 stretch_mode = 0
 
-[node name="Label" type="Label" parent="."]
-offset_left = 285.0
-offset_top = 454.0
-offset_right = 779.0
-offset_bottom = 629.0
-theme_override_fonts/font = ExtResource("6_fb7ql")
-theme_override_font_sizes/font_size = 128
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
 text = "Credits"
 
-[connection signal="pressed" from="BackButton" to="." method="GoToHome"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[center]
+[img]res://Fish the fishes/art/fish/anguille/anguille_alive_1.png[/img]
+Developper: Hedgestock
+[img]res://Fish the fishes/art/fish/green/green_alive_1.png[/img]
+Graphic Designer: Beewaffle
+[img]res://Fish the fishes/art/fish/yellow/yellow_alive_1.png[/img]
+Sound Designer: Odun
+[img]res://Fish the fishes/art/fish/arrow/arrow_alive_1.png[/img]
+
+Game developped with the Godot game engine and using C#
+[img=200]res://icon.svg[/img]    [img=200]res://Logo_C_sharp.svg[/img]
+[/center]"
+
+[connection signal="pressed" from="VBoxContainer/Control/MarginContainer/BackButton" to="." method="GoToHome"]
