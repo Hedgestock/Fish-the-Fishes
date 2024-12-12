@@ -17,9 +17,10 @@
 - [x] Faire des boutons en poisson
 - [x] Ajouter une page pour visualiser les hauts faits
 - [x] Séparer le mode compétitif du mode normal dans les statistiques
-- [ ] Ajourter un tutoriel
-- [ ] Utiliser des hameçons pour la vie 
-- [ ] Faire les panneaux d'affichage
+- [x] Faire les panneaux d'affichage
+- [ ] Ajouter un tutoriel
+- [ ] Utiliser des hameçons pour la vie
+- [ ] Ajouter la possibilité de voir les biomes depuis le compendium
 
 # Poissons
 

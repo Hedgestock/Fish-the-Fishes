@@ -1,17 +1,10 @@
-[gd_resource type="Resource" script_class="Biome" load_steps=19 format=3 uid="uid://cm3ec1bh0wjj6"]
+[gd_resource type="Resource" script_class="Biome" load_steps=18 format=3 uid="uid://cm3ec1bh0wjj6"]
 
+[ext_resource type="Texture2D" uid="uid://dqua3c734qylv" path="res://Fish the fishes/Assets/Biomes/CoralReef/CoralReefBackground.png" id="1_bgh5j"]
 [ext_resource type="Script" path="res://Fish the fishes/Scripts/Weighted/WeightedFish.cs" id="2_17j4d"]
 [ext_resource type="Script" path="res://Fish the fishes/Scripts/Weighted/WeightedBiome.cs" id="3_tt0m1"]
 [ext_resource type="Script" path="res://Fish the fishes/Scripts/Weighted/WeightedTrash.cs" id="4_75g0y"]
 [ext_resource type="Script" path="res://Fish the fishes/Assets/Biomes/Biome.cs" id="5_byup3"]
-
-[sub_resource type="Gradient" id="Gradient_bejiu"]
-offsets = PackedFloat32Array(0.424615, 1)
-colors = PackedColorArray(0.811765, 0.458824, 0.6, 1, 0.299968, 0.511606, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_s6oon"]
-gradient = SubResource("Gradient_bejiu")
-fill_from = Vector2(1, 1)
 
 [sub_resource type="Resource" id="Resource_f4pan"]
 script = ExtResource("2_17j4d")
@@ -81,4 +74,4 @@ Trashes = Array[Object]([SubResource("Resource_jbhkk"), SubResource("Resource_8v
 FollowupBiomes = Array[Object]([SubResource("Resource_l62ly"), SubResource("Resource_3cux3")])
 CompendiumName = "Coral Reef"
 CompendiumDescription = "This is a coral reef full of life"
-Background = SubResource("GradientTexture2D_s6oon")
+Background = ExtResource("1_bgh5j")

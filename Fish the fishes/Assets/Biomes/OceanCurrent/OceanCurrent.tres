@@ -1,16 +1,10 @@
-[gd_resource type="Resource" script_class="Biome" load_steps=19 format=3 uid="uid://cdgwvohk2wes5"]
+[gd_resource type="Resource" script_class="Biome" load_steps=18 format=3 uid="uid://cdgwvohk2wes5"]
 
 [ext_resource type="Script" path="res://Fish the fishes/Scripts/Weighted/WeightedFish.cs" id="1_khfau"]
+[ext_resource type="Texture2D" uid="uid://2hdbni0jr2uv" path="res://Fish the fishes/Assets/Biomes/OceanCurrent/OceanCurrentBackground.png" id="1_sxxsc"]
 [ext_resource type="Script" path="res://Fish the fishes/Scripts/Weighted/WeightedBiome.cs" id="2_3yslt"]
 [ext_resource type="Script" path="res://Fish the fishes/Scripts/Weighted/WeightedTrash.cs" id="3_v3qbn"]
 [ext_resource type="Script" path="res://Fish the fishes/Assets/Biomes/Biome.cs" id="4_k2kbw"]
-
-[sub_resource type="Gradient" id="Gradient_bejiu"]
-colors = PackedColorArray(0.298039, 0.509804, 1, 1, 0.298039, 0.509804, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_s6oon"]
-gradient = SubResource("Gradient_bejiu")
-fill_from = Vector2(1, 1)
 
 [sub_resource type="Resource" id="Resource_f4pan"]
 script = ExtResource("1_khfau")
@@ -80,4 +74,4 @@ Trashes = Array[Object]([SubResource("Resource_jbhkk"), SubResource("Resource_8v
 FollowupBiomes = Array[Object]([SubResource("Resource_l62ly"), SubResource("Resource_o0ehq")])
 CompendiumName = "Great Blue"
 CompendiumDescription = "This is very, very blue"
-Background = SubResource("GradientTexture2D_s6oon")
+Background = ExtResource("1_sxxsc")

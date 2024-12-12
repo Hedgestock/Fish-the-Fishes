@@ -77,4 +77,6 @@ script = ExtResource("11_ncojd")
 Fishes = Array[Object]([SubResource("Resource_lh1t3"), SubResource("Resource_3m7ec"), SubResource("Resource_e1vti"), SubResource("Resource_igdd7"), SubResource("Resource_bwx4x"), SubResource("Resource_k1o2i"), SubResource("Resource_lal7j")])
 Trashes = Array[Object]([SubResource("Resource_1d7gb"), SubResource("Resource_whwyb"), SubResource("Resource_7dqit")])
 FollowupBiomes = Array[Object]([SubResource("Resource_q1u8b"), SubResource("Resource_1tna7"), SubResource("Resource_eh8is")])
+CompendiumName = ""
+CompendiumDescription = ""
 Background = ExtResource("1_i523y")

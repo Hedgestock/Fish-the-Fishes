@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Fish the fishes/Assets/Fishes/SharkFish/SharkFish.cs" id="2_3d5gd"]
 [ext_resource type="SpriteFrames" uid="uid://6520w7uakc1q" path="res://Fish the fishes/Assets/Fishes/SharkFish/SharkFishAnimation.tres" id="3_rhaxs"]
 [ext_resource type="Texture2D" uid="uid://bosadrqergwx2" path="res://Fish the fishes/art/shared/bubbles.png" id="4_qplui"]
-[ext_resource type="Texture2D" uid="uid://6xu544aj1jlv" path="res://Fish the fishes/art/fish/shark/Ball.png" id="5_107ug"]
+[ext_resource type="Texture2D" uid="uid://6xu544aj1jlv" path="res://Fish the fishes/art/fish/shark/Ball.png" id="5_dgknc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jdtfq"]
 radius = 66.0
@@ -76,6 +76,7 @@ scale = Vector2(31, 13)
 [node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = ExtResource("3_rhaxs")
 animation = &"alive"
+frame_progress = 0.542304
 
 [node name="HurtBox" parent="." index="2"]
 position = Vector2(-18, 13)
@@ -107,7 +108,7 @@ position = Vector2(213, 19)
 emitting = false
 amount = 1
 process_material = SubResource("ParticleProcessMaterial_56kht")
-texture = ExtResource("5_107ug")
+texture = ExtResource("5_dgknc")
 lifetime = 15.0
 one_shot = true
 preprocess = 2.0
