@@ -22,14 +22,6 @@ public partial class Equipment : CanvasLayer
         PopulateHooks();
     }
 
-    public void Test()
-    {
-        AchievementsManager.UnlockEquipment("HugeHook", EquipmentPiece.Type.Hook);
-        UserData.Equipments["StandardHook"].IsEquipped = false;
-        UserData.Equipments["HugeHook"].IsEquipped = true;
-        FishingLine.EquipStuff();
-    }
-
     private void PopulateHooks()
     {
         foreach (var hook in FishingLine.Hooks)

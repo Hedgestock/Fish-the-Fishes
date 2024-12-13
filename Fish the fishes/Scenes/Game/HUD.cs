@@ -18,6 +18,14 @@ public partial class HUD : CanvasLayer
     [Export]
     private AnimatedSpriteForUI Target;
 
+    [ExportGroup("Sounds")]
+    [Export]
+    private AudioStream ScoreUp;
+    [Export]
+    private AudioStream ScoreDown;
+    [Export]
+    private AudioStream LoseGame;
+
     private Tween tween;
     private uint LocalScore { get; set; }
 
@@ -96,6 +104,7 @@ public partial class HUD : CanvasLayer
             if (score > 0)
             {
                 ScoreChangeLabel.AddThemeColorOverride("font_color", new Color(0.12f, 0.6f, 0));
+                AudioManager.UIPlay(ScoreUp);
                 if (GameManager.Mode == Game.Mode.Target)
                 {
                     GameManager.ChangeTarget();
@@ -103,6 +112,7 @@ public partial class HUD : CanvasLayer
             }
             else if (score < 0)
             {
+                AudioManager.UIPlay(ScoreDown);
                 ScoreChangeLabel.AddThemeColorOverride("font_color", new Color(0.6f, 0.12f, 0));
             }
 

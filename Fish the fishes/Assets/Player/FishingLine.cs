@@ -67,15 +67,10 @@ public partial class FishingLine : CharacterBody2D, IFisher
 
     public void EquipStuff()
     {
-
+        //This should never be false
         string hookKey = UserData.Equipments.Where(e => e.Value.Type == EquipmentPiece.Type.Hook).FirstOrDefault(e => e.Value.IsEquipped).Key;
 
-        if (hookKey == null)
-        {
-            hookKey = "StandardHook";
-            UserData.Equipments[hookKey] = new UserData.EquipmentStatus(EquipmentPiece.Type.Hook, true);
-        }
-        RemoveChild(Hook);
+        if (Hook != null) { Hook.QueueFree(); }
         Hook = Hooks[hookKey].Instantiate<Hook>();
         AddChild(Hook);
         Hook.Hitbox.Disabled = true;

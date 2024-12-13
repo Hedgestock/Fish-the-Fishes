@@ -46,6 +46,8 @@ public partial class Compendium : CanvasLayer
         PopulateAchievementCompendium();
     }
 
+    public void test(int test) { GD.Print("test"); }
+
     private void GoToHome()
     {
         GameManager.ChangeSceneToFile("res://Fish the fishes/Scenes/Home.tscn");

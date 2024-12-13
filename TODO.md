@@ -56,11 +56,12 @@
 
 # Objets équipables
 
+- [ ] Hameçon plus grand (augmente la taille de la zone de pêche)
 - [ ] Poids (augmente la vitesse de descente, réduit la vitesse de remonté)
 - [ ] Flotteur (réduit la vitesse de descente, augmente la vitesse de remonté)
-- [ ] Hameçon plus grand (augmente la taille de la zone de pêche)
 - [ ] Leurre (attire les poissons)
 - [ ] Aimant (attire les déchêts)
+- [ ] Inventaire de lignes de pêche
 
 # Biomes
 
@@ -141,6 +142,8 @@
 - [ ] Ajouter un moyen de trier/filtrer le compendium
 - [ ] Ajouter un outil pour voire les graphes de selection des biomes ainsi que les probabilités d'apparition des poissons
 - [ ] Ajouter des statistiques
+- [ ] Cône de poissons qui fuient le requin
+- [ ] Rendre l'axe de trajet générique à tous les poissons
 
 # Corrections
 
@@ -148,7 +151,7 @@
 - [x] Corriger le retournement des poissons (`CollisionShape2D`)
 - [X] Corriger la vélocité non constante des poissons
 - [x] Corriger la gravité en pêche de poisson mort
-- [x] Corriger la disparition des poissions hors écran
+- [x] Corriger la disparition des poissons hors écran
 - [x] Attention le poisson ne sait s'il est mort et pêché en même temps
 - [x] Corriger le comportement de l'espadon quand il est pêché
 - [x] Changer la diparition par chronomêtre pour une disparition par zone

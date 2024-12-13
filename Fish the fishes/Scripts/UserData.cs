@@ -24,6 +24,7 @@ namespace Godot.Fish_the_fishes.Scripts
                 return;
             _statistics = new Dictionary<string, uint>();
             _achievements = new Dictionary<string, DateTime>();
+            _equipments = new Dictionary<string, EquipmentStatus>();
             _fishCompendium = new Dictionary<string, FishCompendiumEntry>();
             _trashCompendium = new Dictionary<string, TrashCompendiumEntry>();
             _biomeCompendium = new Dictionary<string, BiomeCompendiumEntry>();
@@ -123,7 +124,7 @@ namespace Godot.Fish_the_fishes.Scripts
         {
             public EquipmentPiece.Type Type { get; set; }
             public bool IsEquipped { get; set; }
-            public EquipmentStatus(EquipmentPiece.Type type, bool isEquipped = false)
+            public EquipmentStatus(EquipmentPiece.Type type, bool isEquipped = true)
             {
                 Type = type;
                 IsEquipped = isEquipped;
