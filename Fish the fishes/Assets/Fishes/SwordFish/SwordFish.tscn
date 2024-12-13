@@ -75,11 +75,10 @@ shape = SubResource("CapsuleShape2D_rp7cb")
 debug_color = Color(1, 0, 0, 0.419608)
 
 [node name="Bubbles" type="GPUParticles2D" parent="." index="5"]
-visible = false
 material = SubResource("CanvasItemMaterial_e1ind")
 position = Vector2(-340, 0)
 emitting = false
-amount = 100
+amount = 50
 process_material = SubResource("ParticleProcessMaterial_jy0uo")
 texture = ExtResource("4_7yl0y")
 randomness = 0.5
