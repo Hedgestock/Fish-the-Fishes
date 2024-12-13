@@ -29,7 +29,7 @@ public partial class GameManager : Node
     {
         get { return _biome; }
         set {
-            _biome = value; 
+            _biome = value;
             if (Mode == Game.Mode.Menu) return;
             if (UserData.BiomeCompendium.TryGetValue(value.ResourceName, out UserData.BiomeCompendiumEntry entry)) entry.Seen++;
             else UserData.BiomeCompendium[Biome.ResourceName] = new UserData.BiomeCompendiumEntry();

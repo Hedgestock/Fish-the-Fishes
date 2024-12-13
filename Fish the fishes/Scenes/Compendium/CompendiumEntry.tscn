@@ -34,6 +34,7 @@ text = "???"
 layout_mode = 2
 theme_type_variation = &"DescriptionLabel"
 text = "???"
+autowrap_mode = 3
 
 [node name="Stats" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -53,4 +54,4 @@ text = "0
 
 [node name="Graphic" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 8
+size_flags_horizontal = 10

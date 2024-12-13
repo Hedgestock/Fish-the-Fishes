@@ -33,3 +33,6 @@ size_flags_vertical = 8
 theme_type_variation = &"DescriptionLabel"
 text = "0
 "
+
+[node name="Graphic" parent="MarginContainer/HBoxContainer" index="1"]
+size_flags_horizontal = 8

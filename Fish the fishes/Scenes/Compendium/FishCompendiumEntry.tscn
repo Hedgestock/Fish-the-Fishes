@@ -9,9 +9,6 @@ NumberFished = NodePath("MarginContainer/HBoxContainer/VBoxContainer/Stats/Numbe
 MaxSize = NodePath("MarginContainer/HBoxContainer/VBoxContainer/Stats/MaxSize")
 MinSize = NodePath("MarginContainer/HBoxContainer/VBoxContainer/Stats/MinSize")
 
-[node name="CompendiumDescription" parent="MarginContainer/HBoxContainer/VBoxContainer" index="1"]
-size_flags_vertical = 2
-
 [node name="Fished" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Stats" index="2"]
 layout_mode = 2
 size_flags_vertical = 8
@@ -29,11 +26,13 @@ text = "0
 [node name="MaxSize" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Stats" index="4"]
 visible = false
 layout_mode = 2
+theme_type_variation = &"DescriptionLabel"
 text = "0 cm"
 
 [node name="MinSize" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Stats" index="5"]
 visible = false
 layout_mode = 2
+theme_type_variation = &"DescriptionLabel"
 theme_override_colors/font_color = Color(0.6, 0.121569, 0, 1)
 text = "0 cm"
 

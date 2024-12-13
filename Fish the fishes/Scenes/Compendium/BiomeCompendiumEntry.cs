@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using static Godot.Fish_the_fishes.Scripts.Constants;
 
 public partial class BiomeCompendiumEntry : CompendiumEntry
 {
@@ -8,7 +9,10 @@ public partial class BiomeCompendiumEntry : CompendiumEntry
     private TextureRect Background;
 
     [Export]
-    public TextureButton Icon;
+    public TextureRect Icon;
+
+    [Export]
+    public TextureButton Button;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -19,10 +23,21 @@ public partial class BiomeCompendiumEntry : CompendiumEntry
 
         if (Entry == null) return;
 
-        Icon.TextureNormal = (Instance as Biome).Background;
-        Icon.TexturePressed = Icon.TextureNormal;
-        Icon.TextureHover = Icon.TextureNormal;
-        Icon.TextureDisabled = Icon.TextureNormal;
+        Icon.Texture = (Instance as Biome).Background;
+
+        Button.TextureNormal = Icon.Texture;
+        Button.TexturePressed = Button.TextureNormal;
+        Button.TextureHover = Button.TextureNormal;
+        Button.TextureDisabled = Button.TextureNormal;
+
+        Button.Pressed += LaunchAquarium;
+
         CompendiumDescription.Text = Instance.CompendiumDescription;
+    }
+
+    private void LaunchAquarium()
+    {
+        GameManager.Biome = Instance as Biome;
+        GameManager.ChangeSceneToFile("res://Fish the fishes/Scenes/Aquarium/Aquarium.tscn");
     }
 }

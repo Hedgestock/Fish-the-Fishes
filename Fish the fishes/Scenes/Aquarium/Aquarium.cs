@@ -7,11 +7,15 @@ public partial class Aquarium : Node
     [Export]
     private TextureRect Background;
 
- 
+    [Export]
+    private TextureButton BackButton;
+
+
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
         Background.Texture = GameManager.Biome.Background;
+        BackButton.Pressed += GameManager.GoToPreviousScene;
     }
 
 
@@ -40,5 +44,10 @@ public partial class Aquarium : Node
 
         // Spawn the trash by adding it to the Main scene.
         AddChild(trash);
+    }
+
+    private void Back()
+    {
+        GameManager.GoToPreviousScene();
     }
 }
