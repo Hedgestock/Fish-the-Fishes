@@ -165,6 +165,7 @@ public partial class HUD : CanvasLayer
 
     private void EndCurrentGame()
     {
+        AudioManager.UIPlay(LoseGame);
         EmitSignal(SignalName.EndGame);
     }
 

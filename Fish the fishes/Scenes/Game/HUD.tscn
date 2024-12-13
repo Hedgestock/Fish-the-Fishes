@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://yi82g384vgwb"]
+[gd_scene load_steps=12 format=3 uid="uid://yi82g384vgwb"]
 
 [ext_resource type="Script" path="res://Fish the fishes/Scenes/Game/HUD.cs" id="1_6mcuw"]
 [ext_resource type="FontFile" uid="uid://bfbfdje68lt7w" path="res://fonts/Amatic-Bold.ttf" id="1_tvh2u"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bi3pts224egt6" path="res://Fish the fishes/art/UI/Vie 1.png" id="3_o5krk"]
 [ext_resource type="AudioStream" uid="uid://cvbwt4wdd5htw" path="res://Fish the fishes/sounds/ScoreMinus.ogg" id="3_ta1pc"]
 [ext_resource type="PackedScene" uid="uid://di7207b71mnm8" path="res://Fish the fishes/UI/AnimatedSpriteForUI/AnimatedSpriteForUI.tscn" id="4_38r4v"]
+[ext_resource type="AudioStream" uid="uid://cpcouodm444js" path="res://Fish the fishes/sounds/JingleLose.ogg" id="4_ae21k"]
 [ext_resource type="Texture2D" uid="uid://c05mhtfd1por7" path="res://Fish the fishes/art/UI/Vie 3.png" id="4_jt1fa"]
 [ext_resource type="Texture2D" uid="uid://r8hgxewljrec" path="res://Fish the fishes/art/UI/Mort.png" id="5_pfixn"]
 [ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://Fish the fishes/Themes/FTF_theme.tres" id="6_7rq80"]
@@ -42,6 +43,7 @@ LivesContainer = NodePath("MarginContainer/HBoxContainer/Lives")
 Target = NodePath("MarginContainer/HBoxContainer/Control/Target")
 ScoreUp = ExtResource("2_6lsm5")
 ScoreDown = ExtResource("3_ta1pc")
+LoseGame = ExtResource("4_ae21k")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
