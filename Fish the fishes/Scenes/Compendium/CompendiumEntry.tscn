@@ -1,9 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cu4qvea6vce5v"]
+[gd_scene load_steps=3 format=3 uid="uid://cu4qvea6vce5v"]
 
 [ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://Fish the fishes/Themes/FTF_theme.tres" id="1_ay4f4"]
 [ext_resource type="Script" path="res://Fish the fishes/Scenes/Compendium/CompendiumEntry.cs" id="2_hdjfk"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l1j6n"]
 
 [node name="PanelContainer" type="PanelContainer" node_paths=PackedStringArray("CompendiumName", "CompendiumDescription", "NumberSeen")]
 anchors_preset = 10
@@ -13,7 +11,6 @@ grow_horizontal = 2
 size_flags_vertical = 0
 mouse_filter = 1
 theme = ExtResource("1_ay4f4")
-theme_override_styles/panel = SubResource("StyleBoxFlat_l1j6n")
 script = ExtResource("2_hdjfk")
 CompendiumName = NodePath("MarginContainer/HBoxContainer/VBoxContainer/CompendiumName")
 CompendiumDescription = NodePath("MarginContainer/HBoxContainer/VBoxContainer/CompendiumDescription")

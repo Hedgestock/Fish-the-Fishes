@@ -7,18 +7,17 @@
 top_level = true
 z_index = 100
 z_as_relative = false
-anchors_preset = 3
+anchors_preset = -1
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1070.0
-offset_top = -1910.0
-offset_right = -618.0
-offset_bottom = -1732.0
+offset_right = -20.0
+offset_bottom = -20.0
 grow_horizontal = 0
 grow_vertical = 0
 size_flags_horizontal = 8
+size_flags_vertical = 8
 theme = ExtResource("1_ihgqf")
 script = ExtResource("2_a6lx2")
 

@@ -124,6 +124,7 @@ MarginContainer/constants/margin_left = 20
 MarginContainer/constants/margin_right = 20
 MarginContainer/constants/margin_top = 20
 Panel/styles/panel = ExtResource("10_q6ye7")
+PanelContainer/styles/panel = ExtResource("10_q6ye7")
 ScrollContainer/styles/panel = SubResource("StyleBoxEmpty_yqf4q")
 TabContainer/icons/decrement = ExtResource("4_f26mx")
 TabContainer/icons/decrement_highlight = ExtResource("5_cttsl")
