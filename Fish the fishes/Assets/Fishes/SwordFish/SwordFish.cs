@@ -30,8 +30,8 @@ public partial class SwordFish : Fish, IFisher
     [ExportGroup("Attributes")]
     [Export]
     private CollisionShape2D HitBox;
-    [Export]
-    private GpuParticles2D Bubbles;
+    //[Export]
+    //private GpuParticles2D Bubbles;
 
     public List<IFishable> FishedThings { get; } = new List<IFishable>();
 
@@ -79,7 +79,7 @@ public partial class SwordFish : Fish, IFisher
     {
         State = Action.Swimming;
         if (RotationTween != null) RotationTween.Kill();
-        Bubbles.Emitting = false;
+        //Bubbles.Emitting = false;
     }
 
     private void SeekTarget()
@@ -132,8 +132,8 @@ public partial class SwordFish : Fish, IFisher
         LaunchedSpeed = TrackTarget(true);
 
         Sprite.Animation = "dash";
-        Bubbles.Emitting = true;
-        Bubbles.AmountRatio = Mathf.Min(LaunchedSpeed/2000, 1);
+        //Bubbles.Emitting = true;
+        //Bubbles.AmountRatio = Mathf.Min(LaunchedSpeed/2000, 1);
 
         State = Action.Launched;
     }

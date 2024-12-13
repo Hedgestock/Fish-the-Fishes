@@ -11,8 +11,8 @@ public partial class SharkFish : Fish, IFisher
     //private GpuParticles2D Blood;
     [Export]
     private CollisionShape2D HitBox;
-    [Export]
-    private GpuParticles2D Bubbles;
+    //[Export]
+    //private CpuParticles2D Bubbles;
 
     public List<IFishable> FishedThings { get; } = new List<IFishable>();
 
@@ -28,15 +28,16 @@ public partial class SharkFish : Fish, IFisher
         Vector2 travelAxis = (objective - Position).Normalized();
         Velocity = Vector2.Zero;
 
-        //GpuParticles2D indicator = (GpuParticles2D)Bubbles.Duplicate();
+        //CpuParticles2D indicator = (CpuParticles2D)Bubbles.Duplicate();
         //indicator.ProcessMaterial = (Material)Bubbles.ProcessMaterial.Duplicate();
         //indicator.Position = GlobalPosition + (travelAxis * 250);
         //(indicator.ProcessMaterial as ParticleProcessMaterial).Gravity = new Vector3(travelAxis.X, travelAxis.Y, 0) * 500;
+        //indicator.Gravity = new Vector2(travelAxis.X, travelAxis.Y) * 500;
         //GetParent().AddChild(indicator);
 
         Rotation = (float)(travelAxis.Angle() - (Flip ? Mathf.Pi : 0));
 
-        Bubbles.Amount = (int)ActualSpeed / 10;
+        //Bubbles.Amount = (int)ActualSpeed / 10;
         Hide();
 
         LaunchTimer = GetTree().CreateTimer(2);
@@ -66,7 +67,7 @@ public partial class SharkFish : Fish, IFisher
 
     private void CleanCurrentBehaviors()
     {
-        Bubbles.Emitting = false;
+        //Bubbles.Emitting = false;
     }
 
     private void OnFishEaten(Node2D body)
