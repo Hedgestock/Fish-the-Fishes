@@ -15,8 +15,7 @@ size_flags_vertical = 3
 expand_mode = 3
 stretch_mode = 6
 
-[node name="Icon" type="TextureRect" parent="MarginContainer/HBoxContainer/Graphic" index="0"]
+[node name="Icon" type="TextureButton" parent="MarginContainer/HBoxContainer/Graphic" index="0"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-expand_mode = 3

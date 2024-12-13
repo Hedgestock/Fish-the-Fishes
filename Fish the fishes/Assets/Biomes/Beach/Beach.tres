@@ -68,5 +68,5 @@ Fishes = Array[Object]([SubResource("Resource_f4pan"), SubResource("Resource_xyg
 Trashes = Array[Object]([SubResource("Resource_jbhkk"), SubResource("Resource_8v5i1"), SubResource("Resource_bqsre")])
 FollowupBiomes = Array[Object]([SubResource("Resource_l62ly"), SubResource("Resource_qu4fq")])
 CompendiumName = "Beach"
-CompendiumDescription = "This is a beach"
+CompendiumDescription = "A nice and peaceful beach where the shallow water hosts a lot of common fishes, althous you might occasionally see some predators looking for easy food."
 Background = ExtResource("1_e4qq5")

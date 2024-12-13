@@ -73,5 +73,5 @@ Fishes = Array[Object]([SubResource("Resource_f4pan"), SubResource("Resource_xyg
 Trashes = Array[Object]([SubResource("Resource_jbhkk"), SubResource("Resource_8v5i1"), SubResource("Resource_bqsre")])
 FollowupBiomes = Array[Object]([SubResource("Resource_l62ly"), SubResource("Resource_3cux3")])
 CompendiumName = "Coral Reef"
-CompendiumDescription = "This is a coral reef full of life"
+CompendiumDescription = "A gorgeous coral reel full of colorful life and slippery fishes."
 Background = ExtResource("1_bgh5j")

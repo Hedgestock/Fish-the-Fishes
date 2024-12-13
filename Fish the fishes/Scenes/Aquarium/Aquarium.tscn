@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://bn4j1dckgh88u"]
+
+[ext_resource type="Script" path="res://Fish the fishes/Scenes/Game/Game.cs" id="1_giv8m"]
+[ext_resource type="Texture2D" uid="uid://4sfuxo2673qo" path="res://Fish the fishes/art/BG 2 FTF.png" id="2_32dsp"]
+[ext_resource type="PackedScene" uid="uid://ifoga56i10w3" path="res://Fish the fishes/Assets/RandomTimer.tscn" id="4_qf73r"]
+[ext_resource type="PackedScene" uid="uid://bnkmwtljf2o3p" path="res://Fish the fishes/Assets/Player/FishingLine.tscn" id="5_fhcl3"]
+
+[node name="Game" type="Node" node_paths=PackedStringArray("Background")]
+script = ExtResource("1_giv8m")
+Background = NodePath("Background")
+
+[node name="Background" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+texture = ExtResource("2_32dsp")
+stretch_mode = 6
+
+[node name="FishTimer" parent="." instance=ExtResource("4_qf73r")]
+autostart = true
+
+[node name="TrashTimer" parent="." instance=ExtResource("4_qf73r")]
+autostart = true
+WaitTimeAverage = 3.0
+Deviation = 0.5
+
+[node name="FishingLine" parent="." instance=ExtResource("5_fhcl3")]
+visible = false
+
+[connection signal="timeout" from="FishTimer" to="." method="SpawnFish"]
+[connection signal="timeout" from="TrashTimer" to="." method="SpawnTrash"]

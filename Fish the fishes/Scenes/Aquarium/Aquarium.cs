@@ -2,41 +2,18 @@ using Godot;
 using Godot.Fish_the_fishes.Scripts;
 
 
-public partial class Game : Node
+public partial class Aquarium : Node
 {
     [Export]
     private TextureRect Background;
 
-    public enum Mode
-    {
-        AllModes,
-        Menu,
-        Classic,
-        GoGreen,
-        Target,
-        Training,
-        TimeAttack,
-        Zen,
-    }
-
-
+ 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        GameManager.Score = 0;
-        GameManager.Lives = 3;
-
         Background.Texture = GameManager.Biome.Background;
     }
 
-    public void EndGame()
-    {
-        UserData.SetHighStat(Constants.HighScore, GameManager.Score);
-        GameManager.SaveData();
-        AchievementsManager.OnGameEnd();
-        GameManager.Mode = Mode.Menu;
-        GameManager.ChangeSceneToFile("res://Fish the fishes/Scenes/Home.tscn");
-    }
 
     private void SpawnFish()
     {
@@ -45,6 +22,12 @@ public partial class Game : Node
 
         // Spawn the fish by adding it to the main scene.
         AddChild(fish);
+    }
+
+    private void Despawn(Node2D body)
+    {
+        if (body is IFishable && (body as IFishable).IsCaught) return;
+        body.QueueFree();
     }
 
     private void SpawnTrash()
@@ -57,11 +40,5 @@ public partial class Game : Node
 
         // Spawn the trash by adding it to the Main scene.
         AddChild(trash);
-    }
-
-    private void ChangeBiome()
-    {
-        GameManager.ChangeBiome();
-        Background.Texture = GameManager.Biome.Background;
     }
 }

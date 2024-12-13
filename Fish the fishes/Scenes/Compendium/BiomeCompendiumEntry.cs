@@ -8,7 +8,7 @@ public partial class BiomeCompendiumEntry : CompendiumEntry
     private TextureRect Background;
 
     [Export]
-    private TextureRect Icon;
+    public TextureButton Icon;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -19,7 +19,10 @@ public partial class BiomeCompendiumEntry : CompendiumEntry
 
         if (Entry == null) return;
 
-        Icon.Texture = (Instance as Biome).Background;
+        Icon.TextureNormal = (Instance as Biome).Background;
+        Icon.TexturePressed = Icon.TextureNormal;
+        Icon.TextureHover = Icon.TextureNormal;
+        Icon.TextureDisabled = Icon.TextureNormal;
         CompendiumDescription.Text = Instance.CompendiumDescription;
     }
 }

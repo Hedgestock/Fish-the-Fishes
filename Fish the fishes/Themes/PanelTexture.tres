@@ -1,6 +1,6 @@
 [gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://iftmxcpwxot8"]
 
-[ext_resource type="Texture2D" uid="uid://oewwdp268cvr" path="res://Fish the fishes/art/UI/Panel_bg1.png" id="1_owbby"]
+[ext_resource type="Texture2D" uid="uid://oewwdp268cvr" path="res://Fish the fishes/art/UI/Panel_bg.png" id="1_owbby"]
 
 [resource]
 content_margin_left = 0.0
