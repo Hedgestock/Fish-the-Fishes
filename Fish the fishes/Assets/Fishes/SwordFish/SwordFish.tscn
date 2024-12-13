@@ -12,14 +12,13 @@ height = 413.57
 radius = 8.0
 height = 82.0
 
-[node name="SwordFish" node_paths=PackedStringArray("HitBox", "Bubbles") instance=ExtResource("1_jmf7p")]
+[node name="SwordFish" node_paths=PackedStringArray("HitBox") instance=ExtResource("1_jmf7p")]
 script = ExtResource("2_q8hjt")
 ImmuneToTargeting = [5, 7]
 ImmuneToSkew = [7]
 MaxStrikes = 6
 MinStrikes = 2
 HitBox = NodePath("HitBox/CollisionShape2D")
-Bubbles = NodePath("")
 CompendiumName = "Sword Fish"
 CompendiumDescription = "This is a sword fish"
 AverageSize = 145.0

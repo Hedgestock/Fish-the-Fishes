@@ -21,6 +21,7 @@
 - [ ] Ajouter un tutoriel
 - [ ] Utiliser des hameçons pour la vie
 - [ ] Ajouter la possibilité de voir les biomes depuis le compendium
+- [ ] Ajouter un bouton de pause
 
 # Poissons
 
