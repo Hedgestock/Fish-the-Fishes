@@ -15,7 +15,12 @@ public partial class EquipmentPiece : AnimatedSprite2D
 
     [Export]
     public string EquipmentName { get; set; }
-    [Export]
+    [Export(PropertyHint.MultilineText)]
     public string EquipmentDescription { get; set; }
-    public bool Locked = true;
+
+    [ExportCategory("Stats")]
+    [Export]
+    public float SpeedMultiplier = 1;
+    [Export]
+    public int FlatSpeedModifier = 0;
 }

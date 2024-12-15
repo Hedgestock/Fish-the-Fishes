@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://cghnipcqvmc3k"]
+
+[ext_resource type="Texture2D" uid="uid://dee8677kcqnft" path="res://Fish the fishes/art/player/StandardHook/StandardHook_broken.png" id="1_t0n1m"]
+[ext_resource type="Texture2D" uid="uid://qjdujjo8m4n" path="res://Fish the fishes/art/player/StandardHook/StandardHook_default.png" id="2_8wl5y"]
+[ext_resource type="Script" path="res://Fish the fishes/Assets/Player/Equipment/Hook/Hook.cs" id="3_1y31i"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e7146"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_t0n1m")
+}],
+"loop": true,
+"name": &"broken",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8wl5y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_p8im8"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_61v6c"]
+radius = 35.0
+height = 114.0
+
+[node name="Hook" type="AnimatedSprite2D"]
+position = Vector2(-78, -120)
+sprite_frames = SubResource("SpriteFrames_e7146")
+centered = false
+script = ExtResource("3_1y31i")
+TotalMoves = 2
+EquipmentName = "Control Hook"
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(82, 155)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+material = SubResource("CanvasItemMaterial_p8im8")
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_61v6c")

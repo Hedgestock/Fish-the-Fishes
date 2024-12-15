@@ -8,7 +8,7 @@ using System.Linq;
 
 public partial class FishingLine : CharacterBody2D, IFisher
 {
-    enum Action
+    public enum Action
     {
         Stopped,
         Moving,
@@ -49,7 +49,6 @@ public partial class FishingLine : CharacterBody2D, IFisher
     private Vector2 BasePosition;
     private AnimatedSprite2D Line;
 
-    // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
         BasePosition = new Vector2(GameManager.ScreenSize.X / 2, 50);
@@ -80,19 +79,17 @@ public partial class FishingLine : CharacterBody2D, IFisher
     // Called every frame. 'delta' is the elapsed time since the previous frame.
     public override void _Process(double delta)
     {
-
         if (State == Action.Stopped) return;
 
         MoveAndSlide();
 
-
-        if (Start.DistanceTo(Position) > Start.DistanceTo(Destination))
+        if (Start.DistanceTo(Position) >= Start.DistanceTo(Destination))
         {
             switch (State)
             {
                 case Action.Moving:
                     State = Action.Fishing;
-                    MoveTowards(new Vector2(GameManager.ScreenSize.X / 2, -150));
+                    MoveTowardsCustom(new Vector2(BasePosition.X, -150));
                     Hook.Hitbox.SetDeferred(CollisionShape2D.PropertyName.Disabled, false);
                     Line.Animation = "weighted";
                     break;
@@ -105,9 +102,10 @@ public partial class FishingLine : CharacterBody2D, IFisher
                     goto case Action.Hit;
                 case Action.Hit:
                     State = Action.Resetting;
-                    MoveTowards(BasePosition);
+                    MoveTowardsCustom(BasePosition);
                     break;
                 case Action.Resetting:
+                    Hook.Reset();
                     State = Action.Stopped;
                     Velocity = new Vector2(0, 0);
                     break;
@@ -137,16 +135,16 @@ public partial class FishingLine : CharacterBody2D, IFisher
 
     public override void _Input(InputEvent @event)
     {
-        if (State != Action.Stopped || Visible == false) return;
+        if (Visible == false) return;
         // Mouse in viewport coordinates.
-        if (@event is InputEventMouseButton eventMouseButton && @event.IsActionPressed("screen_tap"))
+        if (@event is InputEventMouseButton eventMouseButton && @event.IsActionPressed("screen_tap") && Hook.CanMove(State))
         {
             State = Action.Moving;
-            MoveTowards(eventMouseButton.Position);
+            MoveTowardsCustom(eventMouseButton.Position);
         }
     }
 
-    private void MoveTowards(Vector2 position)
+    public void MoveTowardsCustom(Vector2 position)
     {
         Destination = position;
         Start = Position;
@@ -188,7 +186,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
         Velocity = new Vector2(0, 0);
         Line.Animation = "hit";
 
-        GetTree().CreateTimer(1).Timeout += () => { MoveTowards(Destination); Line.Animation = "loose"; FishedThings.Clear(); };
+        GetTree().CreateTimer(1).Timeout += () => { MoveTowardsCustom(Destination); Line.Animation = "loose"; FishedThings.Clear(); };
     }
 
     private int ComputeScore()
