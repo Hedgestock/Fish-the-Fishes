@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Fish the fishes/Assets/Fishes/Fish.tscn" id="1_lk6on"]
 [ext_resource type="Script" path="res://Fish the fishes/Assets/Fishes/YellowFish/YellowFish.cs" id="2_7wvo0"]
-[ext_resource type="SpriteFrames" uid="uid://dib3yn73u4ctr" path="res://Fish the fishes/Assets/Fishes/YellowFish/YellowFishAnimation.tres" id="2_e3t31"]
+[ext_resource type="SpriteFrames" uid="uid://dib3yn73u4ctr" path="res://Fish the fishes/Assets/Fishes/YellowFish/Animation/YellowFishAnimation.tres" id="2_e3t31"]
 [ext_resource type="AudioStream" uid="uid://cv3hogwjako7s" path="res://Fish the fishes/sounds/Fish popapopapopapopa.wav" id="4_vki7v"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dfnsu"]

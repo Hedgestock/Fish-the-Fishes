@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://caai7o1q2a1n0"]
 
-[ext_resource type="Texture2D" uid="uid://dee8677kcqnft" path="res://Fish the fishes/art/player/StandardHook/StandardHook_broken.png" id="1_hhlor"]
-[ext_resource type="Texture2D" uid="uid://qjdujjo8m4n" path="res://Fish the fishes/art/player/StandardHook/StandardHook_default.png" id="2_okh3i"]
+[ext_resource type="Texture2D" uid="uid://dee8677kcqnft" path="res://Fish the fishes/Assets/Player/Equipment/Hook/StandardHook/StandardHook_broken.png" id="1_hhlor"]
+[ext_resource type="Texture2D" uid="uid://qjdujjo8m4n" path="res://Fish the fishes/Assets/Player/Equipment/Hook/StandardHook/StandardHook_default.png" id="2_okh3i"]
 [ext_resource type="Script" path="res://Fish the fishes/Assets/Player/Equipment/Hook/Hook.cs" id="3_a136t"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_e7146"]

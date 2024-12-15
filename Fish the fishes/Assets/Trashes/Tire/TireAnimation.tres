@@ -1,8 +1,8 @@
 [gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://bybglcna4kd5n"]
 
-[ext_resource type="Texture2D" uid="uid://cjpox8q0xlsf7" path="res://Fish the fishes/art/trash/pneu/pneu 1.png" id="1_pf4x5"]
-[ext_resource type="Texture2D" uid="uid://cc5egvf70e6rr" path="res://Fish the fishes/art/trash/pneu/pneu 2.png" id="2_rv6l3"]
-[ext_resource type="Texture2D" uid="uid://j044bdj0c8ly" path="res://Fish the fishes/art/trash/pneu/pneu 3.png" id="3_a3n4j"]
+[ext_resource type="Texture2D" uid="uid://cjpox8q0xlsf7" path="res://Fish the fishes/Assets/Trashes/Tire/tire_1.png" id="1_pf4x5"]
+[ext_resource type="Texture2D" uid="uid://cc5egvf70e6rr" path="res://Fish the fishes/Assets/Trashes/Tire/tire_2.png" id="2_rv6l3"]
+[ext_resource type="Texture2D" uid="uid://j044bdj0c8ly" path="res://Fish the fishes/Assets/Trashes/Tire/tire_3.png" id="3_a3n4j"]
 
 [resource]
 animations = [{

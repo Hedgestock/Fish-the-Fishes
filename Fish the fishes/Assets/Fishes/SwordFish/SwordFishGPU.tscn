@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Fish the fishes/Assets/Fishes/Fish.tscn" id="1_uvwmi"]
 [ext_resource type="Script" path="res://Fish the fishes/Assets/Fishes/SwordFish/SwordFish.cs" id="2_dawsy"]
-[ext_resource type="SpriteFrames" uid="uid://cyv8fnlha8eri" path="res://Fish the fishes/Assets/Fishes/SwordFish/SwordFishAnimation.tres" id="3_p6qrq"]
-[ext_resource type="Material" uid="uid://bvt1xao725px5" path="res://Fish the fishes/Assets/Fishes/Shared/BubbleParticleMaterial.tres" id="4_4p40o"]
-[ext_resource type="Texture2D" uid="uid://bosadrqergwx2" path="res://Fish the fishes/art/shared/bubbles.png" id="5_yty28"]
+[ext_resource type="SpriteFrames" uid="uid://cyv8fnlha8eri" path="res://Fish the fishes/Assets/Fishes/SwordFish/Animation/SwordFishAnimation.tres" id="3_p6qrq"]
+[ext_resource type="Material" uid="uid://bvt1xao725px5" path="res://Fish the fishes/Assets/Fishes/shared/BubbleParticleMaterial.tres" id="4_4p40o"]
+[ext_resource type="Texture2D" uid="uid://bosadrqergwx2" path="res://Fish the fishes/Assets/Fishes/shared/bubbles.png" id="5_yty28"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l8r55"]
 radius = 36.2116

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Fish the fishes/Assets/Fishes/Fish.tscn" id="1_wxgi5"]
 [ext_resource type="Script" path="res://Fish the fishes/Assets/Fishes/SardineFish/SardineFish.cs" id="2_kltwx"]
-[ext_resource type="SpriteFrames" uid="uid://dytgg6dbrwhc7" path="res://Fish the fishes/Assets/Fishes/SardineFish/SardineFishAnimation.tres" id="3_kidlv"]
+[ext_resource type="SpriteFrames" uid="uid://dytgg6dbrwhc7" path="res://Fish the fishes/Assets/Fishes/SardineFish/Animation/SardineFishAnimation.tres" id="3_kidlv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8sec2"]
 radius = 11.0

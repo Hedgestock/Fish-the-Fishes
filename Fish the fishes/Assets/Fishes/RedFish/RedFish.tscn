@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Fish the fishes/Assets/Fishes/Fish.tscn" id="1_vcqog"]
 [ext_resource type="Script" path="res://Fish the fishes/Assets/Fishes/RedFish/RedFish.cs" id="2_xfklb"]
-[ext_resource type="SpriteFrames" uid="uid://bp5itcp0b03xn" path="res://Fish the fishes/Assets/Fishes/RedFish/RedFishAnimation.tres" id="3_wupup"]
+[ext_resource type="SpriteFrames" uid="uid://bp5itcp0b03xn" path="res://Fish the fishes/Assets/Fishes/RedFish/Animation/RedFishAnimation.tres" id="3_wupup"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_t08b6"]
 radius = 73.0274

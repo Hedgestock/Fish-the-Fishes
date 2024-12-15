@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://c5ryj8kmlyjqu"]
 
-[ext_resource type="Texture2D" uid="uid://bosadrqergwx2" path="res://Fish the fishes/art/shared/bubbles.png" id="1_i7pl2"]
+[ext_resource type="Texture2D" uid="uid://bosadrqergwx2" path="res://Fish the fishes/Assets/Fishes/shared/bubbles.png" id="1_i7pl2"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_e1ind"]
 particles_animation = true

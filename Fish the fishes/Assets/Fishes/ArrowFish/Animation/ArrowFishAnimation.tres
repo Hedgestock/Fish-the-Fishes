@@ -1,0 +1,34 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://b3if7btqlo4am"]
+
+[ext_resource type="Texture2D" uid="uid://cdlcldgajtn4i" path="res://Fish the fishes/Assets/Fishes/ArrowFish/Animation/arrow_alive_1.png" id="1_jfpe7"]
+[ext_resource type="Texture2D" uid="uid://bcg3wdk8om5h4" path="res://Fish the fishes/Assets/Fishes/ArrowFish/Animation/arrow_alive_2.png" id="2_bofgc"]
+[ext_resource type="Texture2D" uid="uid://csxfp4n3h00us" path="res://Fish the fishes/Assets/Fishes/ArrowFish/Animation/arrow_alive_3.png" id="3_wmijj"]
+[ext_resource type="Texture2D" uid="uid://t6xoo5v6v31m" path="res://Fish the fishes/Assets/Fishes/ArrowFish/Animation/arrow_dead.png" id="4_rvrfj"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jfpe7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_bofgc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_jfpe7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_wmijj")
+}],
+"loop": true,
+"name": &"alive",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_rvrfj")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}]

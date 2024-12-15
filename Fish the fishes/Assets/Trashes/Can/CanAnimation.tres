@@ -1,6 +1,6 @@
 [gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://cbfedbxtshtp5"]
 
-[ext_resource type="Texture2D" uid="uid://baku04tyxkn56" path="res://Fish the fishes/art/trash/can/can.png" id="1_akvwi"]
+[ext_resource type="Texture2D" uid="uid://baku04tyxkn56" path="res://Fish the fishes/Assets/Trashes/Can/can.png" id="1_akvwi"]
 
 [resource]
 animations = [{
