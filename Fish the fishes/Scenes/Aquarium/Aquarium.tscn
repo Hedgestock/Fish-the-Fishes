@@ -14,8 +14,10 @@ action = &"menu_go_back"
 [sub_resource type="Shortcut" id="Shortcut_lwwkp"]
 events = [SubResource("InputEventAction_qkuki")]
 
-[node name="Aquarium" type="Node"]
+[node name="Aquarium" type="Node" node_paths=PackedStringArray("Background", "BackButton")]
 script = ExtResource("1_e2m0m")
+Background = NodePath("Background")
+BackButton = NodePath("MarginContainer/BackButton")
 
 [node name="Background" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -53,6 +55,5 @@ Deviation = 0.5
 [node name="FishingLine" parent="." instance=ExtResource("5_fhcl3")]
 visible = false
 
-[connection signal="pressed" from="MarginContainer/BackButton" to="." method="Back"]
 [connection signal="timeout" from="FishTimer" to="." method="SpawnFish"]
 [connection signal="timeout" from="TrashTimer" to="." method="SpawnTrash"]

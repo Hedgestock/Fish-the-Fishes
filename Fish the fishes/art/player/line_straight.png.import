@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bm8si1gdsldf2"
-path="res://.godot/imported/hook 2.png-aba560c61ad524b270302fd02c00eabd.ctex"
+uid="uid://bomtf706jn6xi"
+path="res://.godot/imported/line_straight.png-08c491c94899bd90110291e142006ed7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fish the fishes/art/player/hook 2.png"
-dest_files=["res://.godot/imported/hook 2.png-aba560c61ad524b270302fd02c00eabd.ctex"]
+source_file="res://Fish the fishes/art/player/line_straight.png"
+dest_files=["res://.godot/imported/line_straight.png-08c491c94899bd90110291e142006ed7.ctex"]
 
 [params]
 

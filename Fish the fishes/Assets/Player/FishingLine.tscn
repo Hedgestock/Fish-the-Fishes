@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bnkmwtljf2o3p"]
+[gd_scene load_steps=7 format=3 uid="uid://bnkmwtljf2o3p"]
 
 [ext_resource type="Script" path="res://Fish the fishes/Assets/Player/FishingLine.cs" id="1_n5cos"]
 [ext_resource type="PackedScene" uid="uid://ogoejx5sl264" path="res://Fish the fishes/Assets/Player/Equipment/Hook/HugeHook/HugeHook.tscn" id="3_se18j"]
 [ext_resource type="PackedScene" uid="uid://caai7o1q2a1n0" path="res://Fish the fishes/Assets/Player/Equipment/Hook/StandardHook/StandardHook.tscn" id="3_x8i5s"]
+[ext_resource type="PackedScene" uid="uid://dy1dv6tfxqajl" path="res://Fish the fishes/Assets/Player/Equipment/Hook/FastHook/FastHook.tscn" id="4_141u0"]
 [ext_resource type="SpriteFrames" uid="uid://bi72ueuctbdl3" path="res://Fish the fishes/Assets/Player/LineAnimation.tres" id="4_l5pqx"]
 [ext_resource type="AudioStream" uid="uid://c8x2gam58vw1l" path="res://Fish the fishes/sounds/Toyouying.wav" id="4_qchpe"]
 
@@ -12,6 +13,7 @@ motion_mode = 1
 script = ExtResource("1_n5cos")
 Speed = 1600
 Hooks = {
+"FastHook": ExtResource("4_141u0"),
 "HugeHook": ExtResource("3_se18j"),
 "StandardHook": ExtResource("3_x8i5s")
 }

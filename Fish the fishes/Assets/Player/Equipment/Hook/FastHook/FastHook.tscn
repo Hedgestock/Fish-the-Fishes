@@ -1,14 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://ogoejx5sl264"]
+[gd_scene load_steps=7 format=3 uid="uid://dy1dv6tfxqajl"]
 
-[ext_resource type="Texture2D" uid="uid://b8kmjahmfjduy" path="res://Fish the fishes/art/player/HugeHook/HugeHook_broken.png" id="1_8kf4b"]
-[ext_resource type="Texture2D" uid="uid://1ujes1dcgf8g" path="res://Fish the fishes/art/player/HugeHook/HugeHook_default.png" id="2_3bkgf"]
-[ext_resource type="Script" path="res://Fish the fishes/Assets/Player/Equipment/Hook/Hook.cs" id="3_7q0k2"]
+[ext_resource type="Texture2D" uid="uid://dl7dxg3u7muqk" path="res://Fish the fishes/art/player/FastHook/FastHook_broken.png" id="1_haf7i"]
+[ext_resource type="Texture2D" uid="uid://bm8si1gdsldf2" path="res://Fish the fishes/art/player/FastHook/FastHook_default.png" id="2_yydt1"]
+[ext_resource type="Script" path="res://Fish the fishes/Assets/Player/Equipment/Hook/Hook.cs" id="3_auuoe"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_e7146"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_8kf4b")
+"texture": ExtResource("1_haf7i")
 }],
 "loop": true,
 "name": &"broken",
@@ -16,7 +16,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_3bkgf")
+"texture": ExtResource("2_yydt1")
 }],
 "loop": true,
 "name": &"default",
@@ -26,20 +26,20 @@ animations = [{
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_p8im8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_61v6c"]
-radius = 35.0
-height = 114.0
+radius = 33.0
+height = 66.0
 
 [node name="Hook" type="AnimatedSprite2D"]
-position = Vector2(-80, -110)
-scale = Vector2(2, 2)
+position = Vector2(-38, -118)
 sprite_frames = SubResource("SpriteFrames_e7146")
 centered = false
-script = ExtResource("3_7q0k2")
-EquipmentName = "Huge Hook"
+script = ExtResource("3_auuoe")
+EquipmentName = "Standard Hook"
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2(40, 57)
+position = Vector2(42, 67)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 material = SubResource("CanvasItemMaterial_p8im8")
+rotation = 1.5708
 shape = SubResource("CapsuleShape2D_61v6c")

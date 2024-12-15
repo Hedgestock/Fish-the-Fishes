@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://reinm7r7t34w"
-path="res://.godot/imported/line 2.png-a31d6a00afe1939dfc685fd2398b0c66.ctex"
+uid="uid://bm8si1gdsldf2"
+path="res://.godot/imported/FastHook_default.png-c1e8211967e0304d5da020bccaff5ada.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fish the fishes/art/player/line 2.png"
-dest_files=["res://.godot/imported/line 2.png-a31d6a00afe1939dfc685fd2398b0c66.ctex"]
+source_file="res://Fish the fishes/art/player/FastHook/FastHook_default.png"
+dest_files=["res://.godot/imported/FastHook_default.png-c1e8211967e0304d5da020bccaff5ada.ctex"]
 
 [params]
 

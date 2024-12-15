@@ -45,9 +45,4 @@ public partial class Aquarium : Node
         // Spawn the trash by adding it to the Main scene.
         AddChild(trash);
     }
-
-    private void Back()
-    {
-        GameManager.GoToPreviousScene();
-    }
 }

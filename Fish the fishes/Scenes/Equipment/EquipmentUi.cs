@@ -14,6 +14,11 @@ public partial class EquipmentUi : TextureButton
         Key = key;
         Type = type;
         TextureNormal = spriteFrames.GetFrameTexture("default", 0);
+        if (!UserData.Equipments.ContainsKey(key))
+        {
+            Disabled = true;
+            Modulate = new Color("Black");
+        }
         EquipStuff = equipStuff;
     }
 
