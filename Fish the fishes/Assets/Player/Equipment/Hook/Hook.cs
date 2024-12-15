@@ -1,11 +1,11 @@
 using Godot;
 using System;
+using System.Linq;
 using static Godot.WebSocketPeer;
 
 public partial class Hook : EquipmentPiece
 {
     public Area2D Area;
-    public CollisionShape2D Hitbox;
 
     [Export]
     private uint TotalMoves = 1;
@@ -13,8 +13,15 @@ public partial class Hook : EquipmentPiece
     public override void _Ready()
     {
         Area = GetNode<Area2D>("Area2D");
-        Hitbox = Area.GetNode<CollisionShape2D>("CollisionShape2D");
         Reset();
+    }
+
+    public void DisableHitbox(bool disabled)
+    {
+        foreach (CollisionShape2D hitbox in Area.GetChildren().Where(c => c is CollisionShape2D))
+        {
+            hitbox.SetDeferred(CollisionShape2D.PropertyName.Disabled, disabled);
+        }
     }
 
     public bool CanMove(FishingLine.Action state)

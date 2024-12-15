@@ -72,7 +72,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
         if (Hook != null) { Hook.QueueFree(); }
         Hook = Hooks[hookKey].Instantiate<Hook>();
         AddChild(Hook);
-        Hook.Hitbox.Disabled = true;
+        Hook.DisableHitbox(true);
         Hook.Area.BodyEntered += OnHookAreaBodyEntered;
     }
 
@@ -90,11 +90,11 @@ public partial class FishingLine : CharacterBody2D, IFisher
                 case Action.Moving:
                     State = Action.Fishing;
                     MoveTowardsCustom(new Vector2(BasePosition.X, -150));
-                    Hook.Hitbox.SetDeferred(CollisionShape2D.PropertyName.Disabled, false);
+                    Hook.DisableHitbox(false);
                     Line.Animation = "weighted";
                     break;
                 case Action.Fishing:
-                    Hook.Hitbox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
+                    Hook.DisableHitbox(true);
                     // This avoids loosing on target mode when we fish nothing
                     if (FishedThings.Count > 0)
                         EmitSignal(SignalName.Score, ComputeScore());
@@ -163,7 +163,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
     {
         if (FishedThings.Count == 0 || _invincible) return;
         EmitSignal(SignalName.Hit, (int)damageType);
-        Hook.Hitbox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
+        Hook.DisableHitbox(true);
         GetNode<AudioStreamPlayer2D>("HitSound").Play();
         AchievementsManager.OnHit(damageType);
 
