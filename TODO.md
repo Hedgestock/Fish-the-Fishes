@@ -3,7 +3,7 @@
 - [x] Plus de points pour plus de poissons pêchés en un coup [x(log_3(x))+1]
 - [x] [**Solution autre**] Plus de points pour les poissons plus loin sur l'écran
 - [x] [**Solution autre**] Multiplicateur pour les combos
-- [ ] Multiplicateur en fonction de la difficulté
+- [ ] Multiplicateur en fonction du biome
 
 # Menus et Interfaces
 
@@ -18,9 +18,9 @@
 - [x] Ajouter une page pour visualiser les hauts faits
 - [x] Séparer le mode compétitif du mode normal dans les statistiques
 - [x] Faire les panneaux d'affichage
+- [x] Utiliser des hameçons pour la vie
+- [x] Ajouter la possibilité de voir les biomes depuis le compendium
 - [ ] Ajouter un tutoriel
-- [ ] Utiliser des hameçons pour la vie
-- [ ] Ajouter la possibilité de voir les biomes depuis le compendium
 - [ ] Ajouter un bouton de pause
 
 # Poissons
@@ -57,7 +57,9 @@
 
 # Objets équipables
 
-- [ ] Hameçon plus grand (augmente la taille de la zone de pêche)
+- [x] Hameçon plus grand (augmente la taille de la zone de pêche)
+- [x] Hameçon contrôlable
+- [ ] Harpon (rapide)
 - [ ] Poids (augmente la vitesse de descente, réduit la vitesse de remonté)
 - [ ] Flotteur (réduit la vitesse de descente, augmente la vitesse de remonté)
 - [ ] Leurre (attire les poissons)
@@ -83,7 +85,7 @@
 - [x] Régler le problème de frustration
 - [x] Ajouter des biomes et des niveaux de difficulté
 - [x] Rendre la taille des poissons aléatoire
-- [ ] Ajouter des objets équipables
+- [x] Ajouter des objets équipables
 - [ ] Ajouter des objets activables en jeu
 	- [ ] Appât
 	- [ ] Filet

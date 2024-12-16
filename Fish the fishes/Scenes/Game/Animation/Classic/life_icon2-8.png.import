@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://r8hgxewljrec"
-path="res://.godot/imported/Mort.png-c5545d8be1f245e096c39ceee2f7e064.ctex"
+uid="uid://ckylo4ftmyekq"
+path="res://.godot/imported/life_icon2-8.png-4ac5f7bf60544970c301ae9bcffe00e5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fish the fishes/art/UI/Mort.png"
-dest_files=["res://.godot/imported/Mort.png-c5545d8be1f245e096c39ceee2f7e064.ctex"]
+source_file="res://Fish the fishes/Scenes/Game/Animation/Classic/life_icon2-8.png"
+dest_files=["res://.godot/imported/life_icon2-8.png-4ac5f7bf60544970c301ae9bcffe00e5.ctex"]
 
 [params]
 

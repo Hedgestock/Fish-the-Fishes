@@ -47,8 +47,13 @@ public partial class HUD : CanvasLayer
                 GameManager.ChangeTarget();
                 Target.GetParent<Control>().Show();
                 break;
-            case Game.Mode.Classic:
             case Game.Mode.GoGreen:
+                string resourcePath = $"res://Fish the fishes/Scenes/Game/Animation/GoGreen/GoGreenLifeAnimation.tres";
+                LivesContainer.GetNode<AnimatedSpriteForUI>("Life1").SpriteFrames = GD.Load<SpriteFrames>(resourcePath);
+                LivesContainer.GetNode<AnimatedSpriteForUI>("Life2").SpriteFrames = GD.Load<SpriteFrames>(resourcePath);
+                LivesContainer.GetNode<AnimatedSpriteForUI>("Life3").SpriteFrames = GD.Load<SpriteFrames>(resourcePath);
+                goto default;
+            case Game.Mode.Classic:
             case Game.Mode.Zen:
             case Game.Mode.Training:
             default:

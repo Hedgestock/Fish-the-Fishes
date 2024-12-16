@@ -1,37 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://yi82g384vgwb"]
+[gd_scene load_steps=9 format=3 uid="uid://yi82g384vgwb"]
 
 [ext_resource type="Script" path="res://Fish the fishes/Scenes/Game/HUD.cs" id="1_6mcuw"]
 [ext_resource type="FontFile" uid="uid://bfbfdje68lt7w" path="res://fonts/Amatic-Bold.ttf" id="1_tvh2u"]
 [ext_resource type="AudioStream" uid="uid://bta071uim1523" path="res://Fish the fishes/sounds/ScorePlus.ogg" id="2_6lsm5"]
-[ext_resource type="Texture2D" uid="uid://bi3pts224egt6" path="res://Fish the fishes/art/UI/Vie 1.png" id="3_o5krk"]
 [ext_resource type="AudioStream" uid="uid://cvbwt4wdd5htw" path="res://Fish the fishes/sounds/ScoreMinus.ogg" id="3_ta1pc"]
 [ext_resource type="PackedScene" uid="uid://di7207b71mnm8" path="res://Fish the fishes/UI/AnimatedSpriteForUI/AnimatedSpriteForUI.tscn" id="4_38r4v"]
 [ext_resource type="AudioStream" uid="uid://cpcouodm444js" path="res://Fish the fishes/sounds/JingleLose.ogg" id="4_ae21k"]
-[ext_resource type="Texture2D" uid="uid://c05mhtfd1por7" path="res://Fish the fishes/art/UI/Vie 3.png" id="4_jt1fa"]
-[ext_resource type="Texture2D" uid="uid://r8hgxewljrec" path="res://Fish the fishes/art/UI/Mort.png" id="5_pfixn"]
 [ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://Fish the fishes/Themes/FTF_theme.tres" id="6_7rq80"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_xewer"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_pfixn")
-}],
-"loop": true,
-"name": &"death",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_o5krk")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_jt1fa")
-}],
-"loop": true,
-"name": &"life",
-"speed": 5.0
-}]
+[ext_resource type="SpriteFrames" uid="uid://dtab4ysdktcpe" path="res://Fish the fishes/Scenes/Game/Animation/Classic/ClassicLifeAnimation.tres" id="8_ixkn7"]
 
 [node name="HUD" type="CanvasLayer" node_paths=PackedStringArray("ScoreLabel", "ScoreChangeLabel", "TimeLabel", "GameTimer", "LivesContainer", "Target")]
 script = ExtResource("1_6mcuw")
@@ -94,7 +70,7 @@ size_flags_vertical = 4
 alignment = 1
 
 [node name="AnimatedSprite2D" parent="MarginContainer/HBoxContainer/Lives/Life1" index="0"]
-sprite_frames = SubResource("SpriteFrames_xewer")
+sprite_frames = ExtResource("8_ixkn7")
 animation = &"life"
 
 [node name="Life2" parent="MarginContainer/HBoxContainer/Lives" instance=ExtResource("4_38r4v")]
@@ -103,7 +79,7 @@ size_flags_horizontal = 8
 size_flags_vertical = 4
 
 [node name="AnimatedSprite2D" parent="MarginContainer/HBoxContainer/Lives/Life2" index="0"]
-sprite_frames = SubResource("SpriteFrames_xewer")
+sprite_frames = ExtResource("8_ixkn7")
 animation = &"life"
 
 [node name="Life3" parent="MarginContainer/HBoxContainer/Lives" instance=ExtResource("4_38r4v")]
@@ -113,7 +89,7 @@ size_flags_vertical = 4
 alignment = 1
 
 [node name="AnimatedSprite2D" parent="MarginContainer/HBoxContainer/Lives/Life3" index="0"]
-sprite_frames = SubResource("SpriteFrames_xewer")
+sprite_frames = ExtResource("8_ixkn7")
 animation = &"life"
 
 [node name="Control" type="Control" parent="MarginContainer/HBoxContainer"]

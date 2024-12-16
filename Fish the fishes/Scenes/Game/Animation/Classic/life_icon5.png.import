@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://be5i1d24vek86"
-path="res://.godot/imported/Vie 2_old.png-70f73604be24873a868ba6ee3f0f3436.ctex"
+uid="uid://c4ypxw1mvv72d"
+path="res://.godot/imported/life_icon5.png-b5be0194a474af2e646223c483cb8efc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fish the fishes/art/UI/Vie 2_old.png"
-dest_files=["res://.godot/imported/Vie 2_old.png-70f73604be24873a868ba6ee3f0f3436.ctex"]
+source_file="res://Fish the fishes/Scenes/Game/Animation/Classic/life_icon5.png"
+dest_files=["res://.godot/imported/life_icon5.png-b5be0194a474af2e646223c483cb8efc.ctex"]
 
 [params]
 
