@@ -12,9 +12,9 @@ height = 100.0
 [node name="GreenFish" instance=ExtResource("1_8tk53")]
 script = ExtResource("2_v3fog")
 CompendiumName = "Green Fish"
-CompendiumDescription = "This is a green fish"
-AverageSize = 32.0
+CompendiumDescription = "Pretty common species of fish found seemingly everywhere."
 MaxSpeed = 200.0
+AverageSize = 32.0
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0"]
 position = Vector2(-3.8147e-06, 1)

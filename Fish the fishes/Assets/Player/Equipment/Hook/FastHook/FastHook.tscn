@@ -35,6 +35,8 @@ sprite_frames = SubResource("SpriteFrames_e7146")
 centered = false
 script = ExtResource("3_auuoe")
 EquipmentName = "Standard Hook"
+SpeedMultiplierDown = 1.2
+SpeedMultiplierUp = 2.0
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(42, 67)

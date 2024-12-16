@@ -20,7 +20,11 @@ public partial class EquipmentPiece : AnimatedSprite2D
 
     [ExportCategory("Stats")]
     [Export]
-    public float SpeedMultiplier = 1;
+    public float SpeedMultiplierDown = 1;
     [Export]
-    public int FlatSpeedModifier = 0;
+    public float SpeedMultiplierUp = 1;
+    [Export]
+    public int FlatSpeedModifierDown = 0;
+    [Export]
+    public int FlatSpeedModifierUp = 0;
 }

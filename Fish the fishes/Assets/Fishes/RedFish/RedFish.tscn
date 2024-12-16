@@ -18,11 +18,11 @@ WaveAmplitudeDeviation = 0.5
 WaveInversePeriod = 100.0
 WaveInversePeriodDeviation = 20.0
 CompendiumName = "Red Fish"
-CompendiumDescription = "This is a red fish"
-AverageSize = 36.0
+CompendiumDescription = "That is unable to swim fast, and thus developed a strong toxin that it injects via its spikes to any other animal that has the misfortune of swimming to close. Fishing such a specimen can spoil a whole batch of fishes."
 IsNegative = true
 MinSpeed = 50.0
 MaxSpeed = 100.0
+AverageSize = 36.0
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0"]
 position = Vector2(3.5, -2)

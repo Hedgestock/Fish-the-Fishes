@@ -19,12 +19,12 @@ ImmuneToSkew = [7]
 MaxStrikes = 6
 MinStrikes = 2
 HitBox = NodePath("HitBox/CollisionShape2D")
-CompendiumName = "Sword Fish"
-CompendiumDescription = "This is a sword fish"
-AverageSize = 145.0
+CompendiumName = "Swordfish"
+CompendiumDescription = "Moving at speeds that few other fishes can match this fast swimmer uses its bill to skewer its prey before they can even react."
 Value = 2.0
 MinSpeed = 500.0
 MaxSpeed = 700.0
+AverageSize = 145.0
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0"]
 position = Vector2(-210.5, -10)

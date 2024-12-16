@@ -24,12 +24,12 @@ particles_anim_loop = false
 script = ExtResource("2_3d5gd")
 HitBox = NodePath("HitBox/CollisionShape2D")
 CompendiumName = "Shark"
-CompendiumDescription = ""
-AverageSize = 155.0
+CompendiumDescription = "A fierce predator almost unstoppable. It will eat anything in its path as long as it fits in its mouth."
 Value = 10.0
 Multiplier = 2
 MinSpeed = 1500.0
 MaxSpeed = 2500.0
+AverageSize = 155.0
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0"]
 position = Vector2(-15, 0)

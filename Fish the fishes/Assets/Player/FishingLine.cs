@@ -11,8 +11,8 @@ public partial class FishingLine : CharacterBody2D, IFisher
     public enum Action
     {
         Stopped,
-        Moving,
-        Fishing,
+        MovingDown,
+        MovingUp,
         Hit,
         Resetting
     }
@@ -87,13 +87,13 @@ public partial class FishingLine : CharacterBody2D, IFisher
         {
             switch (State)
             {
-                case Action.Moving:
-                    State = Action.Fishing;
+                case Action.MovingDown:
+                    State = Action.MovingUp;
                     MoveTowardsCustom(new Vector2(BasePosition.X, -150));
                     Hook.DisableHitbox(false);
                     Line.Animation = "weighted";
                     break;
-                case Action.Fishing:
+                case Action.MovingUp:
                     Hook.DisableHitbox(true);
                     // This avoids loosing on target mode when we fish nothing
                     if (FishedThings.Count > 0)
@@ -139,7 +139,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
         // Mouse in viewport coordinates.
         if (@event is InputEventMouseButton eventMouseButton && @event.IsActionPressed("screen_tap") && Hook.CanMove(State))
         {
-            State = Action.Moving;
+            State = Action.MovingDown;
             MoveTowardsCustom(eventMouseButton.Position);
         }
     }
@@ -148,7 +148,29 @@ public partial class FishingLine : CharacterBody2D, IFisher
     {
         Destination = position;
         Start = Position;
-        Velocity = (position - Position).Normalized() * Speed;
+
+        float computedSpeed = Speed;
+
+        switch (State)
+        {
+            case Action.MovingDown:
+                computedSpeed = Speed * Hook.SpeedMultiplierDown + Hook.FlatSpeedModifierDown;
+                break;
+            case Action.MovingUp:
+                computedSpeed = Speed * Hook.SpeedMultiplierUp + Hook.FlatSpeedModifierUp;
+                break;
+            case Action.Stopped:
+                computedSpeed = 0;
+                break;
+            case Action.Hit:
+            case Action.Resetting:
+            default:
+                break;
+        }
+
+        computedSpeed = Math.Max(computedSpeed, Speed / 4);
+
+        Velocity = (position - Position).Normalized() * computedSpeed;
     }
 
     void OnHookAreaBodyEntered(Node2D body)

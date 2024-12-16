@@ -26,7 +26,7 @@ public partial class Hook : EquipmentPiece
 
     public bool CanMove(FishingLine.Action state)
     {
-        return (state == FishingLine.Action.Stopped || state == FishingLine.Action.Moving) && MovesLeft-- > 0;
+        return (state == FishingLine.Action.Stopped || state == FishingLine.Action.MovingDown) && MovesLeft-- > 0;
     }
 
     public void Reset() { MovesLeft = (int)TotalMoves; }

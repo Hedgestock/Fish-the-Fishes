@@ -11,10 +11,10 @@ height = 124.0
 [node name="ArrowFish" instance=ExtResource("1_7swat")]
 script = ExtResource("2_762bw")
 CompendiumName = "Arrow Fish"
-CompendiumDescription = "This is an arrow fish"
-AverageSize = 29.0
+CompendiumDescription = "This strangely shaped fish is pretty common, so common in fact that you could swear having already seen it somewhere else..."
 MinSpeed = 300.0
 MaxSpeed = 350.0
+AverageSize = 29.0
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0"]
 scale = Vector2(6.1, 5)

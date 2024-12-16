@@ -12,7 +12,7 @@ height = 78.0
 [node name="YellowFish" instance=ExtResource("1_lk6on")]
 script = ExtResource("2_7wvo0")
 CompendiumName = "Yellow Fish"
-CompendiumDescription = "This is a yellow fish"
+CompendiumDescription = "The Yellow Fish is often found in the same environment as the Green Fish and share a lot of similarities with it, although it is on average noticeably smaller."
 AverageSize = 22.0
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0"]

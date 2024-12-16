@@ -18,8 +18,6 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
     public string CompendiumName { get; set; }
     [Export(PropertyHint.MultilineText)]
     public string CompendiumDescription { get; set; }
-    [Export]
-    public float AverageSize = 100;
 
     [ExportGroup("Scoring")]
     [Export]
@@ -34,6 +32,8 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
     private float MinSpeed = 150;
     [Export]
     private float MaxSpeed = 250;
+    [Export]
+    public float AverageSize = 100;
     [Export]
     private float SizeDeviation = 0.1f;
 

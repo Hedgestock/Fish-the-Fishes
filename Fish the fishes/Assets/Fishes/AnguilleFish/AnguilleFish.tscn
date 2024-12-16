@@ -11,11 +11,11 @@ height = 262.0
 
 [node name="AnguilleFish" instance=ExtResource("1_d3b32")]
 script = ExtResource("2_2x4bm")
-CompendiumName = "Anguille Fish"
-CompendiumDescription = "This is an anguille fish"
-AverageSize = 66.0
+CompendiumName = "Eel"
+CompendiumDescription = "This slippery fish loves lurking under rocks and mostly inhabits dark biomes."
 MinSpeed = 200.0
 MaxSpeed = 300.0
+AverageSize = 66.0
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0"]
 position = Vector2(0.5, 0.999997)
