@@ -29,31 +29,26 @@ public partial class AchievementsManager : Node
 
     public static void OnGameStart()
     {
-        GD.Print("game started");
         CheckPredicate(IAchievable.CheckTiming.OnGameStart);
     }
 
     public static void OnGameEnd()
     {
-        GD.Print("game ended");
         CheckPredicate(IAchievable.CheckTiming.OnGameEnd);
     }
 
     public static void OnFishFished()
     {
-        GD.Print("fish fished");
         CheckPredicate(IAchievable.CheckTiming.OnFishFished);
     }
 
     public static void OnPointsScored(int score)
     {
-        GD.Print("point scored");
         CheckPredicate(IAchievable.CheckTiming.OnPointScored);
     }
 
     public static void OnHit(FishingLine.DamageType damageType)
     {
-        GD.Print("hit");
         CheckPredicate(IAchievable.CheckTiming.OnHit);
     }
 

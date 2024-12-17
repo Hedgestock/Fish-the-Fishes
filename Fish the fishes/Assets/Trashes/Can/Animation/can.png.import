@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://baku04tyxkn56"
-path="res://.godot/imported/can.png-a2208b58cbf9beb594845ca19c755837.ctex"
+path="res://.godot/imported/can.png-87d86cfb2a468ed5cadd5d77b3be7811.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fish the fishes/Assets/Trashes/Can/can.png"
-dest_files=["res://.godot/imported/can.png-a2208b58cbf9beb594845ca19c755837.ctex"]
+source_file="res://Fish the fishes/Assets/Trashes/Can/Animation/can.png"
+dest_files=["res://.godot/imported/can.png-87d86cfb2a468ed5cadd5d77b3be7811.ctex"]
 
 [params]
 

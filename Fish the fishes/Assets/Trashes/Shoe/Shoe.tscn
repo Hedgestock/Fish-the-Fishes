@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cnjq5le44dwec" path="res://Fish the fishes/Assets/Trashes/Trash.tscn" id="1_pn0g6"]
 [ext_resource type="Script" path="res://Fish the fishes/Assets/Trashes/Shoe/Shoe.cs" id="2_5d3ve"]
-[ext_resource type="SpriteFrames" uid="uid://b1j2kn2ex1p1e" path="res://Fish the fishes/Assets/Trashes/Shoe/ShoeAnimation.tres" id="3_q1qr1"]
+[ext_resource type="SpriteFrames" uid="uid://b1j2kn2ex1p1e" path="res://Fish the fishes/Assets/Trashes/Shoe/Animation/ShoeAnimation.tres" id="3_q1qr1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yx7oq"]
 size = Vector2(64, 64)

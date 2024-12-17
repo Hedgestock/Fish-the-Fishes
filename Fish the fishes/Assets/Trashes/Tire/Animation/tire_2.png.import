@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csin3qoh6ulue"
-path="res://.godot/imported/shoe.png-cddd0374fcef9b72c9f128516e8a9c5c.ctex"
+uid="uid://cc5egvf70e6rr"
+path="res://.godot/imported/tire_2.png-d723e3566a87b5ae6fbd4d10c91e1f68.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fish the fishes/Assets/Trashes/Shoe/shoe.png"
-dest_files=["res://.godot/imported/shoe.png-cddd0374fcef9b72c9f128516e8a9c5c.ctex"]
+source_file="res://Fish the fishes/Assets/Trashes/Tire/Animation/tire_2.png"
+dest_files=["res://.godot/imported/tire_2.png-d723e3566a87b5ae6fbd4d10c91e1f68.ctex"]
 
 [params]
 

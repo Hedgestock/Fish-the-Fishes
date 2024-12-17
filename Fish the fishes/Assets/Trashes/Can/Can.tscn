@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cnjq5le44dwec" path="res://Fish the fishes/Assets/Trashes/Trash.tscn" id="1_yvvmi"]
 [ext_resource type="Script" path="res://Fish the fishes/Assets/Trashes/Can/Can.cs" id="2_3mv8q"]
-[ext_resource type="SpriteFrames" uid="uid://cbfedbxtshtp5" path="res://Fish the fishes/Assets/Trashes/Can/CanAnimation.tres" id="3_76qll"]
+[ext_resource type="SpriteFrames" uid="uid://cbfedbxtshtp5" path="res://Fish the fishes/Assets/Trashes/Can/Animation/CanAnimation.tres" id="3_76qll"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r4b5q"]
 radius = 24.0

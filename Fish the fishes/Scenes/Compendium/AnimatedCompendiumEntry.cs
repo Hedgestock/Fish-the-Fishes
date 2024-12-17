@@ -16,7 +16,7 @@ public partial class AnimatedCompendiumEntry : CompendiumEntry
     {
         base._Ready();
 
-        ResourcePath = $"{EntryFolder}{EntryKey}Animation.tres";
+        ResourcePath = $"{EntryFolder}Animation/{EntryKey}Animation.tres";
 
         Placeholder.SpriteFrames = GD.Load<SpriteFrames>(ResourcePath);
 
