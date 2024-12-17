@@ -8,5 +8,5 @@ script = ExtResource("1_ashnn")
 Threshold = 100
 Category = 0
 Mode = 2
-CompendiumName = "Played 100 Classic Games"
-CompendiumDescription = "You played Classic 100 times !"
+CompendiumName = "A hundred!"
+CompendiumDescription = "Nice job!"

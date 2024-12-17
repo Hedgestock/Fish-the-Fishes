@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PlayedXGames" load_steps=2 format=3 uid="uid://drsji8jtn58of"]
+
+[ext_resource type="Script" path="res://Fish the fishes/Assets/Achievements/DoneXTimes/PlayedXGames/PlayedXGames.cs" id="1_ysc64"]
+
+[resource]
+script = ExtResource("1_ysc64")
+Threshold = 10
+Category = 0
+Mode = 4
+CompendiumName = "Looking for it"
+CompendiumDescription = "Sometimes, a little bit of patience is a good thing."

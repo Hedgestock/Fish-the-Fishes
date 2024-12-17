@@ -20,6 +20,7 @@
 - [x] Faire les panneaux d'affichage
 - [x] Utiliser des hameçons pour la vie
 - [x] Ajouter la possibilité de voir les biomes depuis le compendium
+- [ ] Ajouter un jingle pour les meilleurs scores
 - [ ] Ajouter un tutoriel
 - [ ] Ajouter un bouton de pause
 

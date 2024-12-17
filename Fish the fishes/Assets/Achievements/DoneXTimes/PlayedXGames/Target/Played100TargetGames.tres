@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PlayedXGames" load_steps=2 format=3 uid="uid://capxc0r6ifr1j"]
+
+[ext_resource type="Script" path="res://Fish the fishes/Assets/Achievements/DoneXTimes/PlayedXGames/PlayedXGames.cs" id="1_7pxfo"]
+
+[resource]
+script = ExtResource("1_7pxfo")
+Threshold = 100
+Category = 0
+Mode = 4
+CompendiumName = "I know them"
+CompendiumDescription = "Getting to know your catch!"

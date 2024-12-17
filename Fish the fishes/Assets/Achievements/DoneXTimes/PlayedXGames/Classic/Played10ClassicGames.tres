@@ -8,5 +8,5 @@ script = ExtResource("1_0xgx2")
 Threshold = 10
 Category = 0
 Mode = 2
-CompendiumName = "Played 10 Classic Games"
-CompendiumDescription = "You played Classic 10 times !"
+CompendiumName = "10 Classics"
+CompendiumDescription = "Classic games are a nice passtime!"

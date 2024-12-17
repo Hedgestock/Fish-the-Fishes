@@ -7,5 +7,5 @@ script = ExtResource("1_s3dm7")
 Threshold = 100
 Category = 0
 Mode = 3
-CompendiumName = "Played 100 GG Games"
-CompendiumDescription = "You played Go Green 100 times !"
+CompendiumName = "Environmental Activist"
+CompendiumDescription = "You're commited to the cause!"
