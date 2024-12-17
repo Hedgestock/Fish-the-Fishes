@@ -1,5 +1,3 @@
-# Dodge the Creeps 2D assets
+# Fish the Fishes
 
-Used by the "Your first 2D game" tutorial:
-
-https://docs.godotengine.org/en/latest/getting_started/first_2d_game/index.html
+**Fish the Fishes** is a mobile video game developed as a challenge in a week, that then served as a tech demo to learn how to use the Godot game engine.
