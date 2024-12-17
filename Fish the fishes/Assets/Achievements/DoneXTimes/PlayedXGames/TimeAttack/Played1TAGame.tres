@@ -7,5 +7,5 @@ script = ExtResource("1_2qy25")
 Threshold = 1
 Category = 0
 Mode = 6
-CompendiumName = "Started playing TA"
-CompendiumDescription = "You started playing Time Attack !"
+CompendiumName = "Attacked the time"
+CompendiumDescription = "Everything is better with a deadline."

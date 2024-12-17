@@ -4,12 +4,13 @@ using System;
 using System.Collections.Generic;
 
 [GlobalClass]
-public abstract partial class Achievement : Resource, IAchievable
+public partial class Achievement : Resource, IAchievable
 {
-    public abstract IAchievable.CheckTiming Timing { get; }
+    public virtual IAchievable.CheckTiming Timing { get; }
+    [Export]
+    public virtual string CompendiumName { get; set; }
+    [Export(PropertyHint.MultilineText)]
+    public virtual string CompendiumDescription { get; set; }
 
-    public abstract string CompendiumName { get; set; }
-    public abstract string CompendiumDescription { get; set; }
-
-    public abstract bool Predicate();
+    public virtual bool Predicate() { return false; }
 }

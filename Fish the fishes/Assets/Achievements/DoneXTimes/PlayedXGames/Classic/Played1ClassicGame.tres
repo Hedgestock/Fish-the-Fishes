@@ -5,8 +5,8 @@
 [resource]
 resource_name = "Played1ClassicGame"
 script = ExtResource("1_4wfuq")
-Threshold = 1
+Threshold = 0
 Category = 0
-Mode = 2
+Mode = 0
 CompendiumName = "Started playing Classic"
 CompendiumDescription = "Nothing better than a good classic game."

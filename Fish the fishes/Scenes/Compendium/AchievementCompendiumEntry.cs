@@ -1,6 +1,5 @@
 using Godot;
 using Godot.Fish_the_fishes.Scripts;
-using System;
 using System.Collections.Generic;
 
 public partial class AchievementCompendiumEntry : CompendiumEntry
@@ -9,14 +8,27 @@ public partial class AchievementCompendiumEntry : CompendiumEntry
     [Export]
     private TextureRect Icon;
 
+
+    [Export]
+    private TextureProgressBar ProgressBar;
+
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
         NumberSeen.Text = "???";
 
-        if (!UserData.Achievements.ContainsKey(EntryKey)) return;
-
         Instance = GD.Load<Achievement>(EntryKey);
+
+        if (Instance is DoneXTimes)
+        {
+            DoneXTimes tmpInstance = (DoneXTimes)Instance;
+            ProgressBar.Show();
+            ProgressBar.CustomMinimumSize = new Vector2(20, 20);
+            ProgressBar.MaxValue = (Instance as DoneXTimes).Threshold;
+            ProgressBar.Value = UserData.GetStatistic(tmpInstance.Category, tmpInstance.Mode, tmpInstance.Stat);
+        }
+
+        if (!UserData.Achievements.ContainsKey(EntryKey)) return;
 
         CompendiumName.Text = Instance.CompendiumName;
         //Icon.Texture = (Instance as Achievement).Background;

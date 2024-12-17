@@ -7,5 +7,5 @@ script = ExtResource("1_e3dag")
 Threshold = 10
 Category = 0
 Mode = 6
-CompendiumName = "Played 10 TA Games"
-CompendiumDescription = "You played Time Attack 10 times !"
+CompendiumName = "Handling the stress"
+CompendiumDescription = "You're performing under pressure!"

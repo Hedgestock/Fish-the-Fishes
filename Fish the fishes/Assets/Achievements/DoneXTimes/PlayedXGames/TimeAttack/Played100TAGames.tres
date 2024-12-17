@@ -7,5 +7,5 @@ script = ExtResource("1_b6uid")
 Threshold = 100
 Category = 0
 Mode = 6
-CompendiumName = "Played 100 TA Games"
-CompendiumDescription = "You played Time Attack 100 times !"
+CompendiumName = "Fast and..."
+CompendiumDescription = "Fan of some hedgehog?"

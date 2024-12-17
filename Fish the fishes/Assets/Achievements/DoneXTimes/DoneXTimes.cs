@@ -2,9 +2,17 @@ using Godot;
 using Godot.Fish_the_fishes.Scripts;
 using System;
 
-public abstract partial class DoneXTimes : Achievement
+public partial class DoneXTimes : Achievement
 {
-    public abstract uint Threshold { get; set; }
-    public abstract UserData.StatCategory Category { get; set; }
-    public abstract Game.Mode Mode { get; set; }
+    public virtual string Stat { get; }
+
+    [Export]
+    public virtual uint Threshold { get; set; }
+    [Export]
+    public virtual UserData.StatCategory Category { get; set; }
+    [Export]
+    public virtual Game.Mode Mode { get; set; }
+
+    public override bool Predicate() { return UserData.GetStatistic(Category, Mode, Stat) >= Threshold; }
+
 }
