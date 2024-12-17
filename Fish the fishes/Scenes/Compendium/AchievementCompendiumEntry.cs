@@ -28,9 +28,9 @@ public partial class AchievementCompendiumEntry : CompendiumEntry
             ProgressBar.Value = UserData.GetStatistic(tmpInstance.Category, tmpInstance.Mode, tmpInstance.Stat);
         }
 
+        CompendiumName.Text = Instance.CompendiumName;
         if (!UserData.Achievements.ContainsKey(EntryKey)) return;
 
-        CompendiumName.Text = Instance.CompendiumName;
         //Icon.Texture = (Instance as Achievement).Background;
         CompendiumDescription.Text = Instance.CompendiumDescription;
 
