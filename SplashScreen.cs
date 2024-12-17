@@ -1,5 +1,6 @@
 using Godot;
 using Godot.Collections;
+using Godot.Fish_the_fishes.Scripts;
 using System;
 
 public partial class SplashScreen : CanvasLayer
@@ -18,7 +19,6 @@ public partial class SplashScreen : CanvasLayer
             GameManager.ChangeSceneToFile("res://Fish the fishes/Scenes/Home.tscn");
         }));
 
-        AchievementsManager.UnlockEquipment("StandardHook", EquipmentPiece.Type.Hook);
-
+        UserData.Equipments["StandardHook"] = new UserData.EquipmentStatus(EquipmentPiece.Type.Hook, true);
     }
 }

@@ -34,6 +34,16 @@ public partial class AchievementsManager : Node
         OnFishFished();
         //OnPointsScored();
         //OnHit();
+
+        // That is for unlocking potentially new equipment where the requirements are already met.
+        foreach (var entry in UserData.Achievements)
+        {
+            Achievement achievement = GD.Load<Achievement>(entry.Key);
+            if (!string.IsNullOrEmpty(achievement.UnlockableName) && !UserData.Equipments.ContainsKey(achievement.UnlockableName))
+            {
+                UserData.Equipments[achievement.UnlockableName] = new UserData.EquipmentStatus(achievement.UnlockableType);
+            }
+        }
     }
 
     public static void OnGameStart()
@@ -69,6 +79,12 @@ public partial class AchievementsManager : Node
             if (!UserData.Achievements.ContainsKey(achievement.ResourcePath) && achievement.Predicate())
             {
                 UserData.Achievements.Add(achievement.ResourcePath, DateTime.Now);
+
+                if (!string.IsNullOrEmpty(achievement.UnlockableName) && !UserData.Equipments.ContainsKey(achievement.UnlockableName))
+                {
+                    UserData.Equipments[achievement.UnlockableName] = new UserData.EquipmentStatus(achievement.UnlockableType);
+                }
+
                 PanelContainer AchievementNotification = _instance.AchievementsNotificationScene.Instantiate<PanelContainer>();
 
                 AchievementNotification.GetNode<Label>("MarginContainer/HBoxContainer/VBoxContainer/AchievementName").Text = achievement.CompendiumName;

@@ -124,7 +124,7 @@ namespace Godot.Fish_the_fishes.Scripts
         {
             public EquipmentPiece.Type Type { get; set; }
             public bool IsEquipped { get; set; }
-            public EquipmentStatus(EquipmentPiece.Type type, bool isEquipped = true)
+            public EquipmentStatus(EquipmentPiece.Type type, bool isEquipped = false)
             {
                 Type = type;
                 IsEquipped = isEquipped;

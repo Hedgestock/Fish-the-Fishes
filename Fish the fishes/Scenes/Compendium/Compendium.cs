@@ -133,9 +133,9 @@ public partial class Compendium : CanvasLayer
             AddAchievementEntry(entry.Key);
         }
 
-        var listOfExistingAchievements = AchievementsManager.Instance.AchievementsList.Select(a => a.ResourcePath).Except(UserData.Achievements.Keys);
+        var listOfLockedAchievements = AchievementsManager.Instance.AchievementsList.Select(a => a.ResourcePath).Except(UserData.Achievements.Keys);
 
-        foreach (var achievementPath in listOfExistingAchievements)
+        foreach (var achievementPath in listOfLockedAchievements)
         {
             AddAchievementEntry(achievementPath);
         }
