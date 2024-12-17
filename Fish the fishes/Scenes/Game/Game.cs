@@ -1,11 +1,14 @@
 using Godot;
 using Godot.Fish_the_fishes.Scripts;
+using System;
 
 
 public partial class Game : Node
 {
     [Export]
     private TextureRect Background;
+
+    private DateTime StartTime;
 
     public enum Mode
     {
@@ -27,10 +30,14 @@ public partial class Game : Node
         GameManager.Lives = 3;
 
         Background.Texture = GameManager.Biome.Background;
+        StartTime = DateTime.Now;
     }
 
     public void EndGame()
     {
+        uint playtime = (uint)Math.Ceiling((DateTime.Now - StartTime).TotalSeconds);
+        UserData.SetHighStat(Constants.LongestSession, playtime);
+        UserData.IncrementStatistic(Constants.TotalTimePlayed, playtime);
         UserData.SetHighStat(Constants.HighScore, GameManager.Score);
         GameManager.SaveData();
         AchievementsManager.OnGameEnd();

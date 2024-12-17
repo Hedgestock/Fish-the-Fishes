@@ -14,11 +14,13 @@ action = &"menu_go_back"
 [sub_resource type="Shortcut" id="Shortcut_y2krb"]
 events = [SubResource("InputEventAction_qkuki")]
 
-[node name="Stats" type="CanvasLayer" node_paths=PackedStringArray("Category", "Mode", "HighScore", "TotalFishedFishes", "TotalPointsScored", "TotalTrashesHit", "TotalLostFishes", "MaxFishedFishes", "MaxPointScored", "TotalTrashesCleaned", "TotalEatenFishes")]
+[node name="Stats" type="CanvasLayer" node_paths=PackedStringArray("Category", "Mode", "HighScore", "LongestSession", "TotalTimePlayed", "TotalFishedFishes", "TotalPointsScored", "TotalTrashesHit", "TotalLostFishes", "MaxFishedFishes", "MaxPointScored", "TotalTrashesCleaned", "TotalEatenFishes")]
 script = ExtResource("1_yiwnl")
 Category = NodePath("VBoxContainer/MarginContainer/VBoxContainer/HFlowContainer/CompetitiveOptionButton")
 Mode = NodePath("VBoxContainer/MarginContainer/VBoxContainer/HFlowContainer/ModeOptionButton")
 HighScore = NodePath("VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/HighScore")
+LongestSession = NodePath("VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/LongestSession")
+TotalTimePlayed = NodePath("VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/TotalTimePlayed")
 TotalFishedFishes = NodePath("VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/TotalFishedFishes")
 TotalPointsScored = NodePath("VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/TotalPointsScored")
 TotalTrashesHit = NodePath("VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/TotalTrashesHit")
@@ -127,6 +129,18 @@ layout_mode = 2
 [node name="StatLabel" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/HighScore" index="0"]
 text = "High score"
 
+[node name="LongestSession" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_7s432")]
+layout_mode = 2
+
+[node name="StatLabel" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/LongestSession" index="0"]
+text = "Longest session"
+
+[node name="TotalTimePlayed" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_7s432")]
+layout_mode = 2
+
+[node name="StatLabel" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/TotalTimePlayed" index="0"]
+text = "Total time played"
+
 [node name="TotalFishedFishes" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_7s432")]
 layout_mode = 2
 
@@ -185,6 +199,8 @@ metadata/_tab_index = 1
 [connection signal="item_selected" from="VBoxContainer/MarginContainer/VBoxContainer/HFlowContainer/ModeOptionButton" to="." method="DisplayStats"]
 
 [editable path="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/HighScore"]
+[editable path="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/LongestSession"]
+[editable path="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/TotalTimePlayed"]
 [editable path="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/TotalFishedFishes"]
 [editable path="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/TotalPointsScored"]
 [editable path="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/TotalTrashesHit"]

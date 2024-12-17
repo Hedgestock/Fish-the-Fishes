@@ -12,6 +12,10 @@ public partial class Stats : CanvasLayer
     OptionButton Mode;
     [Export]
     StatLine HighScore;
+    [Export]
+    StatLine LongestSession;
+    [Export]
+    StatLine TotalTimePlayed;
 
     [ExportGroup("Classic")]
     [Export]
@@ -52,6 +56,8 @@ public partial class Stats : CanvasLayer
         Game.Mode mode = (Game.Mode)Mode.GetSelectedId();
 
         HighScore.Score = UserData.GetStatistic(category, mode, Constants.HighScore);
+        LongestSession.ScoreLabel.Text = SecondsToTime(UserData.GetStatistic(category, mode, Constants.LongestSession));
+        TotalTimePlayed.ScoreLabel.Text = SecondsToTime(UserData.GetStatistic(category, mode, Constants.TotalTimePlayed));
 
         if (mode == Game.Mode.GoGreen)
         {
@@ -80,6 +86,14 @@ public partial class Stats : CanvasLayer
 
     }
 
+    private string SecondsToTime(uint seconds)
+    {
+        TimeSpan t = TimeSpan.FromSeconds(seconds);
+        return string.Format("{0}h {1:D2}m {2:D2}s",
+                        (int)t.TotalHours,
+                        t.Minutes,
+                        t.Seconds);
+    }
     private void GoToHome()
     {
         GameManager.ChangeSceneToFile("res://Fish the fishes/Scenes/Home.tscn");

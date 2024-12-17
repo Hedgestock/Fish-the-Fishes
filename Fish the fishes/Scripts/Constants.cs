@@ -14,6 +14,9 @@ namespace Godot.Fish_the_fishes.Scripts
         public static string TotalTrashesCleaned = nameof(TotalTrashesCleaned);
         public static string TotalEatenFishes = nameof(TotalEatenFishes);
         public static string TotalGamesPlayed = nameof(TotalGamesPlayed);
+        public static string LongestSession = nameof(LongestSession);
+        public static string TotalTimePlayed = nameof(TotalTimePlayed);
+
 
         public static string AchievementsFolder = "res://Fish the fishes/Assets/Achievements/";
 
