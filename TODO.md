@@ -120,6 +120,8 @@
 - [x] Mettre à jour le compendium avec les déchêts
 - [x] Mettre à jour le compendium avec les biomes
 - [x] Ajouter des hauts faits
+- [x] Ajouter une vitesse de descente et de remontée différente pour la ligne
+- [x] Ajouter des statistiques
 - [ ] Support de différentes langues
 	- [x] Anglais
 	- [ ] Français
@@ -138,14 +140,12 @@
 	- [ ] Voir <tel> poisson
 	- [ ] Voir <tel> déchêt
 - [ ] Ajouter des morts différentes
-- [ ] Ajouter une vitesse de descente et de remontée différente pour la ligne
 - [ ] SLB dans le fond
 - [ ] Ajouter une animation pour signifier la casse de l'hameçon à la remontée
 - [ ] Afficher un biome aléatoire dans ceux visités pour le fond du menu
 - [ ] Mettre les chronomètres d'apparition des poissons et des déchêts sur les biomes
 - [ ] Ajouter un moyen de trier/filtrer le compendium
 - [ ] Ajouter un outil pour voire les graphes de selection des biomes ainsi que les probabilités d'apparition des poissons
-- [ ] Ajouter des statistiques
 - [ ] Cône de poissons qui fuient le requin
 - [ ] Rendre l'axe de trajet générique à tous les poissons
 

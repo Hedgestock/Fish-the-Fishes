@@ -27,6 +27,15 @@ public partial class AchievementsManager : Node
         _instance = this;
     }
 
+    public static void CheckAll()
+    {
+        OnGameStart();
+        OnGameEnd();
+        OnFishFished();
+        //OnPointsScored();
+        //OnHit();
+    }
+
     public static void OnGameStart()
     {
         CheckPredicate(IAchievable.CheckTiming.OnGameStart);
