@@ -7,5 +7,7 @@ script = ExtResource("1_b1hp0")
 Threshold = 1000
 Category = 0
 Mode = 6
+UnlockableName = ""
+UnlockableType = 0
 CompendiumName = "...definitely furious"
 CompendiumDescription = "You played for family."

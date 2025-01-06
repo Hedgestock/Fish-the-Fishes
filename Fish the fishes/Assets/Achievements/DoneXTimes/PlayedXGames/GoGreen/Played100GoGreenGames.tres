@@ -7,5 +7,7 @@ script = ExtResource("1_s3dm7")
 Threshold = 100
 Category = 0
 Mode = 3
+UnlockableName = ""
+UnlockableType = 0
 CompendiumName = "Environmental Activist"
 CompendiumDescription = "You're commited to the cause!"

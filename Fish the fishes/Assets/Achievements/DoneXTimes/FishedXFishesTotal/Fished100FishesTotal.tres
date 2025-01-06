@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="FishedXFishesTotal" load_steps=2 format=3 uid="uid://cubaglwwa6613"]
+
+[ext_resource type="Script" path="res://Fish the fishes/Assets/Achievements/DoneXTimes/FishedXFishesTotal/FishedXFishesTotal.cs" id="1_ojtyt"]
+
+[resource]
+resource_name = "Fished100Fishes"
+script = ExtResource("1_ojtyt")
+Threshold = 100
+Category = 0
+Mode = 0
+UnlockableName = ""
+UnlockableType = 0
+CompendiumName = "Fished 100 Fishes"
+CompendiumDescription = "Okay, now you get it!"

@@ -7,5 +7,7 @@ script = ExtResource("1_fr0ak")
 Threshold = 10
 Category = 0
 Mode = 3
+UnlockableName = ""
+UnlockableType = 0
 CompendiumName = "Environmental Protector "
 CompendiumDescription = "Small actions help tremendously when done regularly."

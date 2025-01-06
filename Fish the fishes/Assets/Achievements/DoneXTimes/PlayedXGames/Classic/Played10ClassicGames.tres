@@ -8,5 +8,7 @@ script = ExtResource("1_0xgx2")
 Threshold = 10
 Category = 0
 Mode = 2
+UnlockableName = ""
+UnlockableType = 0
 CompendiumName = "10 Classics"
 CompendiumDescription = "Classic games are a nice passtime!"

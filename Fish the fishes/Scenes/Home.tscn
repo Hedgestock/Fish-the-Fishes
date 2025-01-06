@@ -184,6 +184,7 @@ offset_bottom = 158.0
 text = "Settings"
 
 [node name="TutorialButton" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu" instance=ExtResource("5_o3gki")]
+visible = false
 position = Vector2(423, 765)
 
 [node name="VisibleOnScreenNotifier2D" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/TutorialButton" index="0"]
@@ -196,6 +197,7 @@ offset_bottom = 158.0
 text = "Tutorial"
 
 [node name="Test" type="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu"]
+visible = false
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0

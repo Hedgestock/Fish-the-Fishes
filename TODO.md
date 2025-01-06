@@ -129,10 +129,8 @@
 	- [ ] Thai
 - [ ] Ajouter pleins de hauts faits différents
 	- [x] Jouer X parties
-		- [ ] Jouer X parties dans chaque mode
+		- [x] Jouer X parties dans chaque mode
 	- [x] Pêcher X poissons
-		- [ ] Pêcher X poissons dans chaque mode
-	- [ ] Rencontrer <tel> biome
 	- [ ] Ramasser X déchêts
 	- [ ] Perdre X vies
 		- [ ] Perdre X vies de chaque manière
@@ -174,3 +172,4 @@
 - [ ] Corriger les requins qui mangent des poissons déjà pêchés
 - [ ] Passer à des listes de noms plutôt que des énumérations
 - [ ] Grouper les vérifications de hauts faits en un seul appel de fonction
+- [ ] Corriger les poissons qui restent sur la ligne après une remontée

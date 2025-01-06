@@ -8,5 +8,7 @@ script = ExtResource("1_555d3")
 Threshold = 1000
 Category = 0
 Mode = 2
+UnlockableName = ""
+UnlockableType = 0
 CompendiumName = "Addicted"
 CompendiumDescription = "Standard Basic Classic"

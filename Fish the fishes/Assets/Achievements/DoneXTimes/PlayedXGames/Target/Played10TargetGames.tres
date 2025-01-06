@@ -7,5 +7,7 @@ script = ExtResource("1_ysc64")
 Threshold = 10
 Category = 0
 Mode = 4
+UnlockableName = ""
+UnlockableType = 0
 CompendiumName = "Looking for it"
 CompendiumDescription = "Sometimes, a little bit of patience is a good thing."

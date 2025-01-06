@@ -7,5 +7,7 @@ script = ExtResource("1_4d5i8")
 Threshold = 1
 Category = 0
 Mode = 3
+UnlockableName = ""
+UnlockableType = 0
 CompendiumName = "Played Go Green"
 CompendiumDescription = "Cleaning the ocean starts here!"

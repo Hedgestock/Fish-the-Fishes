@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 
 [GlobalClass]
-public partial class FishedXFishes : DoneXTimes
+public partial class FishedXFishesTotal : DoneXTimes
 {
     public override IAchievable.CheckTiming Timing { get { return IAchievable.CheckTiming.OnFishFished; } }
 

@@ -7,5 +7,7 @@ script = ExtResource("1_e3dag")
 Threshold = 10
 Category = 0
 Mode = 6
+UnlockableName = ""
+UnlockableType = 0
 CompendiumName = "Handling the stress"
 CompendiumDescription = "You're performing under pressure!"

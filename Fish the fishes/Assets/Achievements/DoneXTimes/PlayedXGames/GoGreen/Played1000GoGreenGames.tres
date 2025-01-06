@@ -7,5 +7,7 @@ script = ExtResource("1_vhjk2")
 Threshold = 1000
 Category = 0
 Mode = 3
+UnlockableName = ""
+UnlockableType = 0
 CompendiumName = "Cleaner Master"
 CompendiumDescription = "Cleaning the waters is now officially YOUR thing! "

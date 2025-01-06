@@ -8,5 +8,7 @@ script = ExtResource("1_05lhh")
 Threshold = 100
 Category = 0
 Mode = 0
+UnlockableName = ""
+UnlockableType = 0
 CompendiumName = "Played 100 Games"
 CompendiumDescription = "A 100 games under your belt!"

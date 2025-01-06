@@ -14,7 +14,6 @@ CompendiumName = "Can"
 CompendiumDescription = "This is a can"
 
 [node name="AnimatedSprite2D" parent="." index="0"]
-scale = Vector2(2, 2)
 sprite_frames = ExtResource("3_76qll")
 
 [node name="CollisionShape2D" parent="." index="1"]

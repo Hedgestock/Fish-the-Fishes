@@ -7,5 +7,7 @@ script = ExtResource("1_mpoer")
 Threshold = 1
 Category = 0
 Mode = 4
+UnlockableName = ""
+UnlockableType = 0
 CompendiumName = "Sport Fishing"
 CompendiumDescription = "Did you get the fish you expected?"

@@ -41,6 +41,11 @@ window/ios/hide_status_bar=false
 
 project/assembly_name="Godot"
 
+[global_group]
+
+Fishes=""
+Trashes=""
+
 [gui]
 
 theme/custom_font="res://fonts/Amatic-Bold.ttf"

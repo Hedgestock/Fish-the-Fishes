@@ -5,7 +5,7 @@
 [ext_resource type="SpriteFrames" uid="uid://bybglcna4kd5n" path="res://Fish the fishes/Assets/Trashes/Tire/Animation/TireAnimation.tres" id="3_t55un"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_men1j"]
-radius = 40.0
+radius = 80.0
 
 [node name="Tire" instance=ExtResource("1_0vkjc")]
 script = ExtResource("2_wqbsq")
@@ -13,12 +13,11 @@ CompendiumName = "Tire"
 CompendiumDescription = "This is a tire"
 
 [node name="AnimatedSprite2D" parent="." index="0"]
-scale = Vector2(2, 2)
+scale = Vector2(0.5, 0.5)
 sprite_frames = ExtResource("3_t55un")
-frame_progress = 0.0387266
+frame_progress = 0.542382
 
 [node name="CollisionShape2D" parent="." index="1"]
-scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_men1j")
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="2"]

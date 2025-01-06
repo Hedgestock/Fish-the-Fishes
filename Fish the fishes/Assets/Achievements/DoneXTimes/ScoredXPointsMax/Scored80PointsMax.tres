@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ScoredXPointsMax" load_steps=2 format=3 uid="uid://dtese11bdc0ib"]
+
+[ext_resource type="Script" path="res://Fish the fishes/Assets/Achievements/DoneXTimes/ScoredXPointsMax/ScoredXPointsMax.cs" id="1_pro8p"]
+
+[resource]
+script = ExtResource("1_pro8p")
+Threshold = 40
+Category = 0
+Mode = 0
+UnlockableName = ""
+UnlockableType = 0
+CompendiumName = "40 in 1"
+CompendiumDescription = "You unlocked a \"little\" something!"
