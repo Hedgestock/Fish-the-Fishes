@@ -66,8 +66,14 @@ public partial class FishingLine : CharacterBody2D, IFisher
 
     public void EquipStuff()
     {
-        //This should never be false
+        // If this is the first launch of the game or if a now unavailable hook is equipped, this will be null
         string hookKey = UserData.Equipments.Where(e => e.Value.Type == EquipmentPiece.Type.Hook).FirstOrDefault(e => e.Value.IsEquipped).Key;
+
+        if (hookKey == null) {
+            // In the case of an invalid equippped item we default to standard
+            hookKey = "StandardHook";
+            UserData.Equipments[hookKey] = new UserData.EquipmentStatus(EquipmentPiece.Type.Hook, true);
+        }
 
         if (Hook != null) { Hook.QueueFree(); }
         Hook = Hooks[hookKey].Instantiate<Hook>();

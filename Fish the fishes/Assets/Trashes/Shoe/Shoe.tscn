@@ -10,7 +10,7 @@ size = Vector2(150, 150)
 [node name="Shoe" instance=ExtResource("1_pn0g6")]
 script = ExtResource("2_5d3ve")
 CompendiumName = "Shoe"
-CompendiumDescription = "This is a shoe"
+CompendiumDescription = "Just how do you lose your shoe here?!"
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = ExtResource("3_q1qr1")

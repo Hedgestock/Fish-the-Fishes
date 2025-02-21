@@ -1,14 +1,14 @@
-[gd_resource type="Resource" script_class="FishedXFishes" load_steps=2 format=3 uid="uid://csvfj4sdib8u5"]
+[gd_resource type="Resource" script_class="FishedXFishesTotal" load_steps=2 format=3 uid="uid://csvfj4sdib8u5"]
 
-[ext_resource type="Script" path="res://Fish the fishes/Assets/Achievements/DoneXTimes/FishedXFishes/FishedXFishes.cs" id="1_fifma"]
+[ext_resource type="Script" path="res://Fish the fishes/Assets/Achievements/DoneXTimes/FishedXFishesTotal/FishedXFishesTotal.cs" id="1_764t2"]
 
 [resource]
 resource_name = "Fished1Fish"
-script = ExtResource("1_fifma")
-Threshold = 1
+script = ExtResource("1_764t2")
+Threshold = 0
 Category = 0
 Mode = 0
 UnlockableName = ""
 UnlockableType = 0
-CompendiumName = "Fished 1 Fish"
-CompendiumDescription = "Yay ! Your first fish!"
+CompendiumName = ""
+CompendiumDescription = ""

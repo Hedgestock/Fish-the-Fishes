@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="FishedXFishesMax" load_steps=2 format=3 uid="uid://dveem7vjeb3q4"]
+
+[ext_resource type="Script" path="res://Fish the fishes/Assets/Achievements/DoneXTimes/FishedXFishesMax/FishedXFishesMax.cs" id="1_u5u4c"]
+
+[resource]
+script = ExtResource("1_u5u4c")
+Threshold = 25
+Category = 0
+Mode = 0
+UnlockableName = "ControlHook"
+UnlockableType = 0
+CompendiumName = "That's a shoal"
+CompendiumDescription = "You probably fished sardines."

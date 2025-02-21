@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="FishedXFishesMax" load_steps=2 format=3 uid="uid://e18fb255ych1"]
+
+[ext_resource type="Script" path="res://Fish the fishes/Assets/Achievements/DoneXTimes/FishedXFishesMax/FishedXFishesMax.cs" id="1_251g4"]
+
+[resource]
+script = ExtResource("1_251g4")
+Threshold = 50
+Category = 0
+Mode = 0
+UnlockableName = ""
+UnlockableType = 0
+CompendiumName = "UNBELIEVABLE"
+CompendiumDescription = "What a catch!"

@@ -11,7 +11,7 @@ height = 80.0
 [node name="Can" instance=ExtResource("1_yvvmi")]
 script = ExtResource("2_3mv8q")
 CompendiumName = "Can"
-CompendiumDescription = "This is a can"
+CompendiumDescription = "Please do not throw that in the water..."
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = ExtResource("3_76qll")

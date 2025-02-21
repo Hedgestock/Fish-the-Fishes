@@ -39,7 +39,13 @@ public partial class AchievementsManager : Node
         foreach (var entry in UserData.Achievements)
         {
             Achievement achievement = GD.Load<Achievement>(entry.Key);
-            if (!string.IsNullOrEmpty(achievement.UnlockableName) && !UserData.Equipments.ContainsKey(achievement.UnlockableName))
+
+            // Here we remove outdated achievements
+            if (achievement == null)
+            {
+                UserData.Achievements.Remove(entry.Key);
+            }
+            else if (!string.IsNullOrEmpty(achievement.UnlockableName) && !UserData.Equipments.ContainsKey(achievement.UnlockableName))
             {
                 UserData.Equipments[achievement.UnlockableName] = new UserData.EquipmentStatus(achievement.UnlockableType);
             }

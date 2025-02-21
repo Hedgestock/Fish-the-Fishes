@@ -18,7 +18,5 @@ public partial class SplashScreen : CanvasLayer
             AchievementsManager.CheckAll();
             GameManager.ChangeSceneToFile("res://Fish the fishes/Scenes/Home.tscn");
         }));
-
-        UserData.Equipments["StandardHook"] = new UserData.EquipmentStatus(EquipmentPiece.Type.Hook, true);
     }
 }

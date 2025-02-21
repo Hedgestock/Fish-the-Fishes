@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bnkmwtljf2o3p"]
+[gd_scene load_steps=9 format=3 uid="uid://bnkmwtljf2o3p"]
 
 [ext_resource type="Script" path="res://Fish the fishes/Assets/Player/FishingLine.cs" id="1_n5cos"]
 [ext_resource type="PackedScene" uid="uid://ogoejx5sl264" path="res://Fish the fishes/Assets/Player/Equipment/Hook/HugeHook/HugeHook.tscn" id="3_se18j"]
@@ -7,6 +7,7 @@
 [ext_resource type="SpriteFrames" uid="uid://bi72ueuctbdl3" path="res://Fish the fishes/Assets/Player/LineAnimation.tres" id="4_l5pqx"]
 [ext_resource type="AudioStream" uid="uid://c8x2gam58vw1l" path="res://Fish the fishes/sounds/Toyouying.wav" id="4_qchpe"]
 [ext_resource type="PackedScene" uid="uid://cghnipcqvmc3k" path="res://Fish the fishes/Assets/Player/Equipment/Hook/ControlHook/ControlHook.tscn" id="5_yr3uc"]
+[ext_resource type="PackedScene" uid="uid://bv5hyshljxn2u" path="res://Fish the fishes/Assets/Player/Equipment/Hook/HarpoonHook/HarpoonHook.tscn" id="6_nkp0g"]
 
 [node name="FishingLine" type="CharacterBody2D"]
 collision_mask = 0
@@ -16,6 +17,7 @@ Speed = 1600
 Hooks = {
 "ControlHook": ExtResource("5_yr3uc"),
 "FastHook": ExtResource("4_141u0"),
+"HarpoonHook": ExtResource("6_nkp0g"),
 "HugeHook": ExtResource("3_se18j"),
 "StandardHook": ExtResource("3_x8i5s")
 }

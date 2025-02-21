@@ -24,13 +24,14 @@ public partial class EquipmentUi : TextureButton
 
     private void OnClick()
     {
-        if (UserData.Equipments[Key].IsEquipped) return;
+        // We're not doing that anymore to recover from potential multiequiped stuff
+        // (which shouldn't happen in theory)
+        //if (UserData.Equipments[Key].IsEquipped) return;
         foreach (var equipment in UserData.Equipments.Values.Where(e => e.Type == Type))
         {
             equipment.IsEquipped = false;
         }
         UserData.Equipments[Key].IsEquipped = true;
         EquipStuff?.Invoke();
-
     }
 }

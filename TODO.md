@@ -20,6 +20,7 @@
 - [x] Faire les panneaux d'affichage
 - [x] Utiliser des hameçons pour la vie
 - [x] Ajouter la possibilité de voir les biomes depuis le compendium
+- [ ] Ajouter un écran de notes de mises à jour
 - [ ] Ajouter un jingle pour les meilleurs scores
 - [ ] Ajouter un tutoriel
 - [ ] Ajouter un bouton de pause
@@ -173,3 +174,4 @@
 - [ ] Passer à des listes de noms plutôt que des énumérations
 - [ ] Grouper les vérifications de hauts faits en un seul appel de fonction
 - [ ] Corriger les poissons qui restent sur la ligne après une remontée
+- [ ] Corriger l'affichage des credits

@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://bv5hyshljxn2u"]
+
+[ext_resource type="Texture2D" uid="uid://1grh4c4hsl7m" path="res://Fish the fishes/Assets/Player/Equipment/Hook/HarpoonHook/HarpoonHook_broken.png" id="1_ntyyr"]
+[ext_resource type="Texture2D" uid="uid://cvhexrbytj6y2" path="res://Fish the fishes/Assets/Player/Equipment/Hook/HarpoonHook/HarpoonHook_default.png" id="2_c4i3i"]
+[ext_resource type="Script" path="res://Fish the fishes/Assets/Player/Equipment/Hook/Hook.cs" id="3_4ea2e"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rehxi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ntyyr")
+}],
+"loop": true,
+"name": &"broken",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_c4i3i")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_p8im8"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_61v6c"]
+height = 180.0
+
+[node name="Hook" type="AnimatedSprite2D"]
+position = Vector2(-25, -116)
+sprite_frames = SubResource("SpriteFrames_rehxi")
+animation = &"broken"
+centered = false
+script = ExtResource("3_4ea2e")
+TotalMoves = 2
+EquipmentName = "Control Hook"
+FlatSpeedModifierDown = -100
+FlatSpeedModifierUp = 200
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(25, 133)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+material = SubResource("CanvasItemMaterial_p8im8")
+shape = SubResource("CapsuleShape2D_61v6c")
