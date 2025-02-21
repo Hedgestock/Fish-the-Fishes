@@ -4,10 +4,10 @@
 
 [resource]
 script = ExtResource("1_we7l8")
-Threshold = 80
+Threshold = 40
 Category = 0
 Mode = 0
-UnlockableName = "HugeHook"
+UnlockableName = "HarpoonHook"
 UnlockableType = 0
-CompendiumName = "80 in 1"
-CompendiumDescription = "The fisherman strikes back!"
+CompendiumName = "40 in 1"
+CompendiumDescription = "So many points, you're now allowed to use professional gear!"

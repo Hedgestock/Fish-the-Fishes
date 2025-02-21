@@ -3,12 +3,11 @@
 [ext_resource type="Script" path="res://Fish the fishes/Assets/Achievements/DoneXTimes/FishedXFishesTotal/FishedXFishesTotal.cs" id="1_764t2"]
 
 [resource]
-resource_name = "Fished1Fish"
 script = ExtResource("1_764t2")
 Threshold = 0
 Category = 0
 Mode = 0
 UnlockableName = ""
 UnlockableType = 0
-CompendiumName = ""
-CompendiumDescription = ""
+CompendiumName = "First catch!"
+CompendiumDescription = "Yeah, you understood the game!"

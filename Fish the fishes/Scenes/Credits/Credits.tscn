@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://cpc2lk8mjeebi"]
+[gd_scene load_steps=8 format=3 uid="uid://cpc2lk8mjeebi"]
 
 [ext_resource type="Script" path="res://Fish the fishes/Scenes/Credits/Credits.cs" id="1_okroq"]
 [ext_resource type="Texture2D" uid="uid://4sfuxo2673qo" path="res://Fish the fishes/art/BG 2 FTF.png" id="2_0shy0"]
 [ext_resource type="Texture2D" uid="uid://dvkg44r1oulcs" path="res://Fish the fishes/art/UI/retour.png" id="3_6g4x1"]
-[ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://Fish the fishes/Themes/FTF_theme.tres" id="3_t0ob4"]
 [ext_resource type="Texture2D" uid="uid://bjbotgfwig38a" path="res://Fish the fishes/art/UI/retour click.png" id="4_bgxfl"]
 [ext_resource type="Texture2D" uid="uid://bx8qk7jnypm0" path="res://Fish the fishes/art/UI/retour hover.png" id="5_fd448"]
 
@@ -33,7 +32,6 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource("3_t0ob4")
 
 [node name="Control" type="Control" parent="VBoxContainer"]
 layout_mode = 2
@@ -60,28 +58,41 @@ text = "Credits"
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Panel" type="Panel" parent="VBoxContainer/MarginContainer"]
+[node name="Panel" type="TabContainer" parent="VBoxContainer/MarginContainer"]
 layout_mode = 2
+current_tab = 0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/MarginContainer/Panel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Credits" type="RichTextLabel" parent="VBoxContainer/MarginContainer/Panel"]
+layout_mode = 2
 bbcode_enabled = true
 text = "[center]
-[img]res://Fish the fishes/art/fish/anguille/anguille_alive_1.png[/img]
+[img]res://Fish the fishes/Assets/Fishes/AnguilleFish/Animation/anguille_alive_1.png[/img]
 Developper: Hedgestock
-[img]res://Fish the fishes/art/fish/green/green_alive_1.png[/img]
+[img]res://Fish the fishes/Assets/Fishes/GreenFish/Animation/green_alive_1.png[/img]
 Graphic Designer: Beewaffle
-[img]res://Fish the fishes/art/fish/yellow/yellow_alive_1.png[/img]
+[img]res://Fish the fishes/Assets/Fishes/YellowFish/Animation/yellow_alive_1.png[/img]
 Sound Designer: Odun
-[img]res://Fish the fishes/art/fish/arrow/arrow_alive_1.png[/img]
+[img]res://Fish the fishes/Assets/Fishes/ArrowFish/Animation/arrow_alive_1.png[/img]
 
 Game developped with the Godot game engine and using C#
 [img=200]res://icon.svg[/img]    [img=200]res://Logo_C_sharp.svg[/img]
 [/center]"
+metadata/_tab_index = 0
+
+[node name="Patch Notes" type="MarginContainer" parent="VBoxContainer/MarginContainer/Panel"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/MarginContainer/Panel/Patch Notes"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][font_size=200]Patch 2.1[/font_size][/center]
+[font_size=100]
+[ul]
+Added Patch Notes page
+Added a new hook: the Harpoon [img=top]res://Fish the fishes/Assets/Player/Equipment/Hook/HarpoonHook/HarpoonHook_default.png[/img]
+Added achievements to unlock hidden hooks [img=top]res://Fish the fishes/Assets/Player/Equipment/Hook/ControlHook/ControlHook_default.png[/img][img=top]res://Fish the fishes/Assets/Player/Equipment/Hook/HugeHook/HugeHook_default.png[/img][img=top]res://Fish the fishes/Assets/Player/Equipment/Hook/HarpoonHook/HarpoonHook_default.png[/img]
+[/ul]"
 
 [connection signal="pressed" from="VBoxContainer/Control/MarginContainer/BackButton" to="." method="GoToHome"]

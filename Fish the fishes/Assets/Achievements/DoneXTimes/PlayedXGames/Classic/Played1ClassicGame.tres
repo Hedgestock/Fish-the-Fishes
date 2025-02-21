@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://Fish the fishes/Assets/Achievements/DoneXTimes/PlayedXGames/PlayedXGames.cs" id="1_4wfuq"]
 
 [resource]
-resource_name = "Played1ClassicGame"
 script = ExtResource("1_4wfuq")
 Threshold = 0
 Category = 0

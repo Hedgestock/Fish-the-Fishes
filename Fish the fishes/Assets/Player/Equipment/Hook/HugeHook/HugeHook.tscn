@@ -47,8 +47,10 @@ position = Vector2(100, 125)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 material = SubResource("CanvasItemMaterial_p8im8")
 shape = SubResource("CapsuleShape2D_61v6c")
+disabled = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 69)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_t0hp8")
+disabled = true

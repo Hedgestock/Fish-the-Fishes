@@ -48,7 +48,7 @@ Trashes=""
 
 [gui]
 
-theme/custom_font="res://fonts/Amatic-Bold.ttf"
+theme/custom="res://Fish the fishes/Themes/FTF_theme.tres"
 
 [input]
 

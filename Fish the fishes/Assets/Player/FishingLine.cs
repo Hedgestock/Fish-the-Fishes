@@ -1,21 +1,13 @@
 using Godot;
-using Godot.Collections;
 using Godot.Fish_the_fishes.Scripts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using static Hook.Action;
 
 
 public partial class FishingLine : CharacterBody2D, IFisher
 {
-    public enum Action
-    {
-        Stopped,
-        MovingDown,
-        MovingUp,
-        Hit,
-        Resetting
-    }
 
     public enum DamageType
     {
@@ -42,20 +34,14 @@ public partial class FishingLine : CharacterBody2D, IFisher
 
     private Vector2 Destination;
     private Vector2 Start;
-    private Action State;
+
     private bool _invincible;
     public bool IsInvincible { get { return _invincible; } }
 
-    private Vector2 BasePosition;
     private AnimatedSprite2D Line;
 
     public override void _Ready()
     {
-        BasePosition = new Vector2(GameManager.ScreenSize.X / 2, 50);
-        Position = BasePosition;
-        State = Action.Stopped;
-        _invincible = false;
-
         EquipStuff();
 
         Line = GetNode<AnimatedSprite2D>("Line");
@@ -78,44 +64,45 @@ public partial class FishingLine : CharacterBody2D, IFisher
         if (Hook != null) { Hook.QueueFree(); }
         Hook = Hooks[hookKey].Instantiate<Hook>();
         AddChild(Hook);
-        Hook.DisableHitbox(true);
         Hook.Area.BodyEntered += OnHookAreaBodyEntered;
+        Position = Hook.BasePosition;
+        _invincible = false;
+
+        ComputeScore();
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
     public override void _Process(double delta)
     {
-        if (State == Action.Stopped) return;
+        if (Hook.State == Stopped) return;
 
         MoveAndSlide();
 
         if (Start.DistanceTo(Position) >= Start.DistanceTo(Destination))
         {
-            switch (State)
+            switch (Hook.State)
             {
-                case Action.MovingDown:
-                    State = Action.MovingUp;
-                    MoveTowardsCustom(new Vector2(BasePosition.X, -150));
-                    Hook.DisableHitbox(false);
+                case MovingDown:
+                    Hook.State = MovingUp;
+                    MoveTowardsCustom(new Vector2(Hook.BasePosition.X, -150));
                     Line.Animation = "weighted";
                     break;
-                case Action.MovingUp:
-                    Hook.DisableHitbox(true);
+                case MovingUp:
                     // This avoids loosing on target mode when we fish nothing
                     if (FishedThings.Count > 0)
                         EmitSignal(SignalName.Score, ComputeScore());
                     Line.Animation = "loose";
-                    goto case Action.Hit;
-                case Action.Hit:
-                    State = Action.Resetting;
-                    MoveTowardsCustom(BasePosition);
+                    goto case GettingHit;
+                case GettingHit:
+                    Hook.State = Resetting;
+                    MoveTowardsCustom(Hook.BasePosition);
                     break;
-                case Action.Resetting:
+                case Resetting:
                     Hook.Reset();
-                    State = Action.Stopped;
+                    Hook.State = Stopped;
                     Velocity = new Vector2(0, 0);
                     break;
-                case Action.Stopped:
+                case Stopped:
                 default:
                     return;
             }
@@ -143,9 +130,9 @@ public partial class FishingLine : CharacterBody2D, IFisher
     {
         if (Visible == false) return;
         // Mouse in viewport coordinates.
-        if (@event is InputEventMouseButton eventMouseButton && @event.IsActionPressed("screen_tap") && Hook.CanMove(State))
+        if (@event is InputEventMouseButton eventMouseButton && @event.IsActionPressed("screen_tap") && Hook.CanMove(Hook.State))
         {
-            State = Action.MovingDown;
+            Hook.State = MovingDown;
             MoveTowardsCustom(eventMouseButton.Position);
         }
     }
@@ -157,19 +144,19 @@ public partial class FishingLine : CharacterBody2D, IFisher
 
         float computedSpeed = Speed;
 
-        switch (State)
+        switch (Hook.State)
         {
-            case Action.MovingDown:
+            case MovingDown:
                 computedSpeed = Speed * Hook.SpeedMultiplierDown + Hook.FlatSpeedModifierDown;
                 break;
-            case Action.MovingUp:
+            case MovingUp:
                 computedSpeed = Speed * Hook.SpeedMultiplierUp + Hook.FlatSpeedModifierUp;
                 break;
-            case Action.Stopped:
+            case Stopped:
                 computedSpeed = 0;
                 break;
-            case Action.Hit:
-            case Action.Resetting:
+            case GettingHit:
+            case Resetting:
             default:
                 break;
         }
@@ -191,7 +178,6 @@ public partial class FishingLine : CharacterBody2D, IFisher
     {
         if (FishedThings.Count == 0 || _invincible) return;
         EmitSignal(SignalName.Hit, (int)damageType);
-        Hook.DisableHitbox(true);
         GetNode<AudioStreamPlayer2D>("HitSound").Play();
         AchievementsManager.OnHit(damageType);
 
@@ -362,6 +348,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
 
     private void OnScreenResize()
     {
-        BasePosition = new Vector2(GameManager.ScreenSize.X / 2, 50);
+        if (Hook.State == Stopped)
+            Position = Hook.BasePosition;
     }
 }

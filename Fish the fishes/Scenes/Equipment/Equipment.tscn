@@ -1,11 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://jdvp2d8dcy53"]
+[gd_scene load_steps=11 format=3 uid="uid://jdvp2d8dcy53"]
 
 [ext_resource type="Script" path="res://Fish the fishes/Scenes/Equipment/Equipment.cs" id="1_vd6ao"]
 [ext_resource type="PackedScene" uid="uid://ifoga56i10w3" path="res://Fish the fishes/Assets/RandomTimer.tscn" id="2_8vpwh"]
 [ext_resource type="PackedScene" uid="uid://by02c8ge1i57q" path="res://Fish the fishes/Scenes/Equipment/EquipmentUI.tscn" id="2_53287"]
 [ext_resource type="PackedScene" uid="uid://bnkmwtljf2o3p" path="res://Fish the fishes/Assets/Player/FishingLine.tscn" id="2_au0c2"]
 [ext_resource type="Texture2D" uid="uid://4sfuxo2673qo" path="res://Fish the fishes/art/BG 2 FTF.png" id="2_hxeyh"]
-[ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://Fish the fishes/Themes/FTF_theme.tres" id="3_fbsu6"]
 [ext_resource type="Texture2D" uid="uid://dvkg44r1oulcs" path="res://Fish the fishes/art/UI/retour.png" id="4_pl8em"]
 [ext_resource type="Texture2D" uid="uid://bjbotgfwig38a" path="res://Fish the fishes/art/UI/retour click.png" id="5_nkfqv"]
 [ext_resource type="Texture2D" uid="uid://bx8qk7jnypm0" path="res://Fish the fishes/art/UI/retour hover.png" id="6_kg20x"]
@@ -47,7 +46,6 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource("3_fbsu6")
 
 [node name="Control" type="Control" parent="VBoxContainer"]
 layout_mode = 2

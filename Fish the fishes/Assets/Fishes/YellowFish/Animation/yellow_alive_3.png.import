@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bs6psgplrpsp7"
-path="res://.godot/imported/yellow_alive_1.png-7261823c2395fe09dce795b5d1991ffe.ctex"
+uid="uid://bavhal4ovf1ic"
+path="res://.godot/imported/yellow_alive_3.png-a608a63226acc8d3c1116f546672b0ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fish the fishes/Assets/Fishes/SwordFish/Animation/yellow_alive_1.png"
-dest_files=["res://.godot/imported/yellow_alive_1.png-7261823c2395fe09dce795b5d1991ffe.ctex"]
+source_file="res://Fish the fishes/Assets/Fishes/YellowFish/Animation/yellow_alive_3.png"
+dest_files=["res://.godot/imported/yellow_alive_3.png-a608a63226acc8d3c1116f546672b0ae.ctex"]
 
 [params]
 

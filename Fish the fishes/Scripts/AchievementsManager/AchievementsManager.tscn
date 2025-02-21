@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://5w7affso8r8d"]
+[gd_scene load_steps=41 format=3 uid="uid://5w7affso8r8d"]
 
 [ext_resource type="Script" path="res://Fish the fishes/Scripts/AchievementsManager/AchievementsManager.cs" id="1_pqju3"]
 [ext_resource type="Resource" uid="uid://csvfj4sdib8u5" path="res://Fish the fishes/Assets/Achievements/DoneXTimes/FishedXFishesTotal/Fished1FishTotal.tres" id="2_0hwku"]
@@ -36,8 +36,12 @@
 [ext_resource type="Resource" uid="uid://de6uu0i08lh3j" path="res://Fish the fishes/Assets/Achievements/DoneXTimes/ScoredXPointsMax/Scored40PointsMax.tres" id="33_p4pnj"]
 [ext_resource type="Resource" uid="uid://dtese11bdc0ib" path="res://Fish the fishes/Assets/Achievements/DoneXTimes/ScoredXPointsMax/Scored80PointsMax.tres" id="34_rylw0"]
 [ext_resource type="Resource" uid="uid://djagxk8osbrlo" path="res://Fish the fishes/Assets/Achievements/DoneXTimes/ScoredXPointsMax/Scored100PointsMax.tres" id="35_l0t18"]
+[ext_resource type="Resource" uid="uid://gkgsht6h7e3i" path="res://Fish the fishes/Assets/Achievements/DoneXTimes/FishedXFishesMax/Fished3FishesMax.tres" id="36_tpmqa"]
+[ext_resource type="Resource" uid="uid://btejlgdkl0wjl" path="res://Fish the fishes/Assets/Achievements/DoneXTimes/FishedXFishesMax/Fished7FishesMax.tres" id="37_uygj3"]
+[ext_resource type="Resource" uid="uid://dveem7vjeb3q4" path="res://Fish the fishes/Assets/Achievements/DoneXTimes/FishedXFishesMax/Fished25FishesMax.tres" id="38_0h6vp"]
+[ext_resource type="Resource" uid="uid://e18fb255ych1" path="res://Fish the fishes/Assets/Achievements/DoneXTimes/FishedXFishesMax/Fished50FishesMax.tres" id="39_lse1s"]
 
 [node name="AchievementsManager" type="Node"]
 script = ExtResource("1_pqju3")
-AchievementsList = Array[Object]([ExtResource("8_s8y0e"), ExtResource("9_uuvbe"), ExtResource("10_p2rop"), ExtResource("11_r1ng8"), ExtResource("5_o0qqq"), ExtResource("13_rhile"), ExtResource("14_wh2bq"), ExtResource("15_72wdv"), ExtResource("20_4is1k"), ExtResource("21_2gc8e"), ExtResource("22_p544r"), ExtResource("23_tlp5x"), ExtResource("14_ifw0t"), ExtResource("15_ua7em"), ExtResource("16_2gnmk"), ExtResource("17_q2e53"), ExtResource("16_xjkkv"), ExtResource("17_pb1dd"), ExtResource("18_qgirl"), ExtResource("19_ecmly"), ExtResource("22_ow0ot"), ExtResource("23_h172o"), ExtResource("24_xy2gh"), ExtResource("25_ftq62"), ExtResource("2_0hwku"), ExtResource("3_sh3lt"), ExtResource("4_pehmk"), ExtResource("6_t7rkm"), ExtResource("7_0f58t"), ExtResource("31_3hcmt"), ExtResource("32_s1qcn"), ExtResource("33_p4pnj"), ExtResource("34_rylw0"), ExtResource("35_l0t18")])
+AchievementsList = Array[Object]([ExtResource("8_s8y0e"), ExtResource("9_uuvbe"), ExtResource("10_p2rop"), ExtResource("11_r1ng8"), ExtResource("5_o0qqq"), ExtResource("13_rhile"), ExtResource("14_wh2bq"), ExtResource("15_72wdv"), ExtResource("20_4is1k"), ExtResource("21_2gc8e"), ExtResource("22_p544r"), ExtResource("23_tlp5x"), ExtResource("14_ifw0t"), ExtResource("15_ua7em"), ExtResource("16_2gnmk"), ExtResource("17_q2e53"), ExtResource("16_xjkkv"), ExtResource("17_pb1dd"), ExtResource("18_qgirl"), ExtResource("19_ecmly"), ExtResource("22_ow0ot"), ExtResource("23_h172o"), ExtResource("24_xy2gh"), ExtResource("25_ftq62"), ExtResource("2_0hwku"), ExtResource("3_sh3lt"), ExtResource("4_pehmk"), ExtResource("6_t7rkm"), ExtResource("7_0f58t"), ExtResource("31_3hcmt"), ExtResource("32_s1qcn"), ExtResource("33_p4pnj"), ExtResource("34_rylw0"), ExtResource("35_l0t18"), ExtResource("36_tpmqa"), ExtResource("37_uygj3"), ExtResource("38_0h6vp"), ExtResource("39_lse1s")])
 AchievementsNotificationScene = ExtResource("6_hnxwc")

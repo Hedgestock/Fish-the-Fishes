@@ -3,12 +3,11 @@
 [ext_resource type="Script" path="res://Fish the fishes/Assets/Achievements/DoneXTimes/FishedXFishesTotal/FishedXFishesTotal.cs" id="1_tbnpk"]
 
 [resource]
-resource_name = "Fished1000Fishes"
 script = ExtResource("1_tbnpk")
 Threshold = 1000
 Category = 0
 Mode = 0
 UnlockableName = ""
 UnlockableType = 0
-CompendiumName = "Fished 1000 Fishes"
+CompendiumName = "One Kilo Please"
 CompendiumDescription = "A 1000 of them! Hopefully you like seafood!"

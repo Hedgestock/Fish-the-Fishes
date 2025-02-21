@@ -1,10 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bv5ebnrlqpwku"]
+[gd_scene load_steps=9 format=3 uid="uid://bv5ebnrlqpwku"]
 
 [ext_resource type="Script" path="res://Fish the fishes/Scenes/BiomeDebug/BiomeDebug.cs" id="1_uv1fo"]
 [ext_resource type="PackedScene" uid="uid://dfvcoq3nvotbv" path="res://Fish the fishes/Scenes/BiomeDebug/BiomeGraphNode.tscn" id="2_0fie2"]
 [ext_resource type="Texture2D" uid="uid://4sfuxo2673qo" path="res://Fish the fishes/art/BG 2 FTF.png" id="2_rvib5"]
 [ext_resource type="Texture2D" uid="uid://dvkg44r1oulcs" path="res://Fish the fishes/art/UI/retour.png" id="3_1wlxq"]
-[ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://Fish the fishes/Themes/FTF_theme.tres" id="3_asg7f"]
 [ext_resource type="Texture2D" uid="uid://bjbotgfwig38a" path="res://Fish the fishes/art/UI/retour click.png" id="4_tagra"]
 [ext_resource type="Texture2D" uid="uid://bx8qk7jnypm0" path="res://Fish the fishes/art/UI/retour hover.png" id="5_75s4x"]
 
@@ -36,7 +35,6 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme = ExtResource("3_asg7f")
 
 [node name="BackButton" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2

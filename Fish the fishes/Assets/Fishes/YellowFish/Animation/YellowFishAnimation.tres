@@ -1,9 +1,9 @@
 [gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://dib3yn73u4ctr"]
 
-[ext_resource type="Texture2D" uid="uid://bs6psgplrpsp7" path="res://Fish the fishes/Assets/Fishes/SwordFish/Animation/yellow_alive_1.png" id="1_lyems"]
-[ext_resource type="Texture2D" uid="uid://cbqtdehdboo8y" path="res://Fish the fishes/Assets/Fishes/SwordFish/Animation/yellow_dead.png" id="2_bbmi7"]
-[ext_resource type="Texture2D" uid="uid://bi5803mwbf4d1" path="res://Fish the fishes/Assets/Fishes/SwordFish/Animation/yellow_alive_2.png" id="2_plura"]
-[ext_resource type="Texture2D" uid="uid://bavhal4ovf1ic" path="res://Fish the fishes/Assets/Fishes/SwordFish/Animation/yellow_alive_3.png" id="3_tbegp"]
+[ext_resource type="Texture2D" uid="uid://bs6psgplrpsp7" path="res://Fish the fishes/Assets/Fishes/YellowFish/Animation/yellow_alive_1.png" id="1_lyems"]
+[ext_resource type="Texture2D" uid="uid://cbqtdehdboo8y" path="res://Fish the fishes/Assets/Fishes/YellowFish/Animation/yellow_dead.png" id="2_bbmi7"]
+[ext_resource type="Texture2D" uid="uid://bi5803mwbf4d1" path="res://Fish the fishes/Assets/Fishes/YellowFish/Animation/yellow_alive_2.png" id="2_plura"]
+[ext_resource type="Texture2D" uid="uid://bavhal4ovf1ic" path="res://Fish the fishes/Assets/Fishes/YellowFish/Animation/yellow_alive_3.png" id="3_tbegp"]
 
 [resource]
 animations = [{

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://r1tsllld4k82"]
+[gd_scene load_steps=9 format=3 uid="uid://r1tsllld4k82"]
 
 [ext_resource type="Script" path="res://Fish the fishes/Scenes/Stats/Stats.cs" id="1_yiwnl"]
 [ext_resource type="Texture2D" uid="uid://4sfuxo2673qo" path="res://Fish the fishes/art/BG 2 FTF.png" id="2_1e2tm"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://bjbotgfwig38a" path="res://Fish the fishes/art/UI/retour click.png" id="4_kf377"]
 [ext_resource type="Texture2D" uid="uid://bx8qk7jnypm0" path="res://Fish the fishes/art/UI/retour hover.png" id="5_th8d4"]
 [ext_resource type="PackedScene" uid="uid://dq66jd7bayssh" path="res://Fish the fishes/Scenes/Stats/StatLine.tscn" id="7_7s432"]
-[ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://Fish the fishes/Themes/FTF_theme.tres" id="7_sdtto"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_qkuki"]
 action = &"menu_go_back"
@@ -47,7 +46,6 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 2
-theme = ExtResource("7_sdtto")
 
 [node name="Control" type="Control" parent="VBoxContainer"]
 layout_mode = 2

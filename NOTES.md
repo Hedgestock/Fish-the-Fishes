@@ -1,0 +1,2 @@
+ControlHook Fished25FishesMax
+HarpoonHook Scored40PointsMax
