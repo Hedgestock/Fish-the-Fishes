@@ -88,7 +88,18 @@ metadata/_tab_index = 1
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/MarginContainer/Panel/Patch Notes"]
 layout_mode = 2
 bbcode_enabled = true
-text = "[center][font_size=200]23/02/2025[/font_size][/center]
+text = "[center][font_size=200]XX/02/2025[/font_size][/center]
+[font_size=100]
+[ul]
+Changed spawn position and trajectory of fishes
+Added achievements to unlock hidden hook:
+[ol]
+Control Hook[img=top]res://Fish the fishes/Assets/Player/Equipment/Hook/ControlHook/ControlHook_default.png[/img]
+[/ol]
+Fixed a lot of achievements conditions and display in the compendium
+[/ul]
+[/font_size]
+[center][font_size=200]23/02/2025[/font_size][/center]
 [font_size=100]
 [ul]
 Added Patch Notes page
@@ -98,6 +109,7 @@ Added achievements to unlock hidden hooks:
 Huge Hook[img=top]res://Fish the fishes/Assets/Player/Equipment/Hook/HugeHook/HugeHook_default.png[/img]
 Harpoon[img=top]res://Fish the fishes/Assets/Player/Equipment/Hook/HarpoonHook/HarpoonHook_default.png[/img]
 [/ol]
-[/ul]"
+[/ul]
+[/font_size]"
 
 [connection signal="pressed" from="VBoxContainer/Control/MarginContainer/BackButton" to="." method="GoToHome"]

@@ -8,15 +8,14 @@ using System.Collections;
 
 public partial class AchievementsManager : Node
 {
-
-    [Export]
-    public Array<Achievement> AchievementsList;
-
     [Export]
     private PackedScene AchievementsNotificationScene;
 
     static private AchievementsManager _instance = null;
     public static AchievementsManager Instance { get { return _instance; } }
+
+    private string AchievementsBasePath = "res://Fish the fishes/Assets/Achievements/";
+    public List<Achievement> AchievementsList = new();
 
     private Queue<PanelContainer> _achievementsQueue = new Queue<PanelContainer>();
 
@@ -25,6 +24,37 @@ public partial class AchievementsManager : Node
         if (_instance != null)
             return;
         _instance = this;
+    }
+
+    public override void _Ready()
+    {
+        base._Ready();
+        foreach (string path in GetAchievements(AchievementsBasePath))
+        {
+            AchievementsList.Add(GD.Load<Achievement>(path));
+        }
+    }
+
+    private List<string> GetAchievements(string dirPath)
+    {
+
+        List<string> result = new();
+        var dir = DirAccess.Open(dirPath);
+        if (DirAccess.GetOpenError() == Error.Ok)
+        {
+            dir.ListDirBegin();
+
+            var fileName = dir.GetNext();
+            while (!string.IsNullOrWhiteSpace(fileName))
+            {
+                if (dir.CurrentIsDir())
+                    result = result.Concat(GetAchievements(dir.GetCurrentDir() + "/" + fileName)).ToList();
+                else if (fileName.GetExtension() == "tres")
+                    result.Add(dir.GetCurrentDir() + "/" + fileName);
+                fileName = dir.GetNext();
+            }
+        }
+        return result;
     }
 
     public static void CheckAll()

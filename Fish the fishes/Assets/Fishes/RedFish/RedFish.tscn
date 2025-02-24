@@ -22,6 +22,8 @@ CompendiumDescription = "That is unable to swim fast, and thus developed a stron
 IsNegative = true
 MinSpeed = 50.0
 MaxSpeed = 100.0
+TajectoryDeviation = 0.0
+SpawnRange = Vector2(0, 0.5)
 AverageSize = 36.0
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0"]

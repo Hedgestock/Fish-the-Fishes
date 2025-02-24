@@ -14,8 +14,8 @@ shoalRadius = 40
 shoalSize = 6
 CompendiumName = "Sardine"
 CompendiumDescription = "This species usually form shoals that are a godsend for any fisherman lucky enough to cast a line there."
-AverageSize = 21.0
 Value = 0.5
+AverageSize = 21.0
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0"]
 position = Vector2(-1.43051e-06, -0.5)

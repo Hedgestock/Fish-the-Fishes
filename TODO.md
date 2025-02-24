@@ -174,6 +174,7 @@
 - [x] [**Actuellement impossible**] Corriger les requins en attente de lancement
 - [x] Corriger l'affichage des credits
 - [ ] Corriger les requins qui mangent des poissons déjà pêchés
+- [ ] Corriger les bulles des requins qui disparaissent trop tôt
 - [ ] Passer à des listes de noms plutôt que des énumérations
 - [ ] Grouper les vérifications de hauts faits en un seul appel de fonction
 - [ ] Corriger les poissons qui restent sur la ligne après une remontée
