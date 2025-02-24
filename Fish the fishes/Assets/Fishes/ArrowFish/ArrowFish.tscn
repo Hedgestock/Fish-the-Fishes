@@ -14,6 +14,7 @@ CompendiumName = "Arrow Fish"
 CompendiumDescription = "This strangely shaped fish is pretty common, so common in fact that you could swear having already seen it somewhere else..."
 MinSpeed = 300.0
 MaxSpeed = 350.0
+TajectoryDeviation = 0.0
 AverageSize = 29.0
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0"]

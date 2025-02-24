@@ -23,9 +23,6 @@ public partial class SharkFish : Fish, IFisher
     {
         base._Ready();
 
-        // Here, we invert the Flip condition to get a point that's on the opposite side of the spawning Position
-        Vector2 objective = new Vector2(!Flip ? GameManager.ScreenSize.X + 200 : -200, (float)GD.RandRange(0, GameManager.ScreenSize.Y));
-        Vector2 travelAxis = (objective - Position).Normalized();
         Velocity = Vector2.Zero;
 
         //CpuParticles2D indicator = (CpuParticles2D)Bubbles.Duplicate();
@@ -34,8 +31,6 @@ public partial class SharkFish : Fish, IFisher
         //(indicator.ProcessMaterial as ParticleProcessMaterial).Gravity = new Vector3(travelAxis.X, travelAxis.Y, 0) * 500;
         //indicator.Gravity = new Vector2(travelAxis.X, travelAxis.Y) * 500;
         //GetParent().AddChild(indicator);
-
-        Rotation = (float)(travelAxis.Angle() - (Flip ? Mathf.Pi : 0));
 
         //Bubbles.Amount = (int)ActualSpeed / 10;
         Hide();
@@ -47,7 +42,7 @@ public partial class SharkFish : Fish, IFisher
             if (!IsInstanceValid(this)) return;
             Show();
             if (!IsActionable) return;
-            Velocity = travelAxis * ActualSpeed;
+            Velocity = TravelAxis * ActualSpeed;
         };
     }
 
@@ -89,11 +84,4 @@ public partial class SharkFish : Fish, IFisher
             Food.QueueFree();
         }
     }
-
-    #region helpers
-    private Vector2 GetDirectionTo(Fish target)
-    {
-        return target.GlobalPosition - GlobalPosition;
-    }
-    #endregion helpers
 }

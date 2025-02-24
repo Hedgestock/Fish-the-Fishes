@@ -1,21 +1,16 @@
-[gd_resource type="Resource" script_class="Biome" load_steps=9 format=3 uid="uid://nmu6wfnfu8ax"]
+[gd_resource type="Resource" script_class="Biome" load_steps=8 format=3 uid="uid://nmu6wfnfu8ax"]
 
 [ext_resource type="Texture2D" uid="uid://dxslcf7yijvtu" path="res://Fish the fishes/art/BeachBackground.png" id="1_5ypud"]
 [ext_resource type="Script" path="res://Fish the fishes/Scripts/Weighted/WeightedFish.cs" id="1_bycrx"]
 [ext_resource type="Script" path="res://Fish the fishes/Scripts/Weighted/WeightedTrash.cs" id="3_xj8ii"]
 [ext_resource type="Script" path="res://Fish the fishes/Assets/Biomes/Biome.cs" id="12_3wj4f"]
 
-[sub_resource type="Resource" id="Resource_jncx8"]
+[sub_resource type="Resource" id="Resource_stpvf"]
 script = ExtResource("1_bycrx")
-Fish = 4
-Weight = 200
-
-[sub_resource type="Resource" id="Resource_mk80w"]
-script = ExtResource("1_bycrx")
-Fish = 5
+Fish = 6
 Weight = 100
 
-[sub_resource type="Resource" id="Resource_nylbm"]
+[sub_resource type="Resource" id="Resource_muj2i"]
 script = ExtResource("1_bycrx")
 Fish = 7
 Weight = 100
@@ -28,7 +23,7 @@ Weight = 100
 [resource]
 resource_name = "Test"
 script = ExtResource("12_3wj4f")
-Fishes = Array[Object]([SubResource("Resource_jncx8"), SubResource("Resource_mk80w"), SubResource("Resource_nylbm")])
+Fishes = Array[Object]([SubResource("Resource_stpvf"), SubResource("Resource_muj2i")])
 Trashes = Array[Object]([SubResource("Resource_cigae")])
 FollowupBiomes = Array[Object]([])
 CompendiumName = "Test"

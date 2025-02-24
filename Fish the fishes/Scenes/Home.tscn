@@ -197,7 +197,6 @@ offset_bottom = 158.0
 text = "Tutorial"
 
 [node name="Test" type="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu"]
-visible = false
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0

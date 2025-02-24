@@ -60,6 +60,7 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 shortcut = SubResource("Shortcut_02116")
+shortcut_in_tooltip = false
 texture_normal = ExtResource("2_mhjxi")
 texture_pressed = ExtResource("3_xgqri")
 texture_hover = ExtResource("4_5k6ur")

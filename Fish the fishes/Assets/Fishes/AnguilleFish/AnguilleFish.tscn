@@ -15,6 +15,7 @@ CompendiumName = "Eel"
 CompendiumDescription = "This slippery fish loves lurking under rocks and mostly inhabits dark biomes."
 MinSpeed = 200.0
 MaxSpeed = 300.0
+SpawnRange = Vector2(0.5, 1)
 AverageSize = 66.0
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0"]

@@ -39,6 +39,7 @@ theme_override_constants/margin_top = 20
 [node name="BackButton" type="TextureButton" parent="MarginContainer"]
 layout_mode = 2
 shortcut = SubResource("Shortcut_lwwkp")
+shortcut_in_tooltip = false
 texture_normal = ExtResource("3_keuqg")
 texture_pressed = ExtResource("4_c0ucd")
 texture_hover = ExtResource("5_8cqhi")

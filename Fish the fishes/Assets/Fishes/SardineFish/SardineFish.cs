@@ -32,10 +32,12 @@ public partial class SardineFish : Fish
 
         Vector2 fishSpawnLocation = new Vector2(newPosX, newPosY);
 
+        // That ensures the shoal behaves in coordination.
         fish.Position = fishSpawnLocation;
         fish.ActualSpeed = ActualSpeed;
+        fish.TravelAxis = TravelAxis;
         fish.Flip = Flip;
-        // spawn the mob by adding it to the game node.
+        // Spawn the mob by adding it to the game node.
         GetParent().AddChild(fish);
     }
 }

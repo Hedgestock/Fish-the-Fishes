@@ -58,6 +58,7 @@ offset_bottom = 100.0
 [node name="BackButton" type="TextureButton" parent="VBoxContainer/Control/MarginContainer"]
 layout_mode = 2
 shortcut = SubResource("Shortcut_nrmag")
+shortcut_in_tooltip = false
 texture_normal = ExtResource("4_pl8em")
 texture_pressed = ExtResource("5_nkfqv")
 texture_hover = ExtResource("6_kg20x")

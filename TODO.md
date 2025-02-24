@@ -20,7 +20,7 @@
 - [x] Faire les panneaux d'affichage
 - [x] Utiliser des hameçons pour la vie
 - [x] Ajouter la possibilité de voir les biomes depuis le compendium
-- [ ] Ajouter un écran de notes de mises à jour
+- [x] Ajouter un écran de notes de mises à jour
 - [ ] Ajouter un jingle pour les meilleurs scores
 - [ ] Ajouter un tutoriel
 - [ ] Ajouter un bouton de pause
@@ -61,7 +61,8 @@
 
 - [x] Hameçon plus grand (augmente la taille de la zone de pêche)
 - [x] Hameçon contrôlable
-- [ ] Harpon (rapide)
+- [x] Harpon (pêche à la descente)
+- [ ] Hameçon rapide
 - [ ] Poids (augmente la vitesse de descente, réduit la vitesse de remonté)
 - [ ] Flotteur (réduit la vitesse de descente, augmente la vitesse de remonté)
 - [ ] Leurre (attire les poissons)
@@ -123,6 +124,7 @@
 - [x] Ajouter des hauts faits
 - [x] Ajouter une vitesse de descente et de remontée différente pour la ligne
 - [x] Ajouter des statistiques
+- [x] Rendre l'axe de trajet générique à tous les poissons
 - [ ] Support de différentes langues
 	- [x] Anglais
 	- [ ] Français
@@ -146,7 +148,7 @@
 - [ ] Ajouter un moyen de trier/filtrer le compendium
 - [ ] Ajouter un outil pour voire les graphes de selection des biomes ainsi que les probabilités d'apparition des poissons
 - [ ] Cône de poissons qui fuient le requin
-- [ ] Rendre l'axe de trajet générique à tous les poissons
+- [ ] Ajouter un moyen d'exporter/importer une sauvegarde
 
 # Corrections
 
@@ -170,8 +172,8 @@
 - [x] Empêcher les requins de se faire tuer par les poissons rouges
 - [x] [**Actuellement Impossible**] Corriger les bulles des requins qui disparaissent
 - [x] [**Actuellement impossible**] Corriger les requins en attente de lancement
+- [x] Corriger l'affichage des credits
 - [ ] Corriger les requins qui mangent des poissons déjà pêchés
 - [ ] Passer à des listes de noms plutôt que des énumérations
 - [ ] Grouper les vérifications de hauts faits en un seul appel de fonction
 - [ ] Corriger les poissons qui restent sur la ligne après une remontée
-- [ ] Corriger l'affichage des credits

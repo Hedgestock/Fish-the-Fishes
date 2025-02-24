@@ -14,6 +14,7 @@ script = ExtResource("2_v3fog")
 CompendiumName = "Green Fish"
 CompendiumDescription = "Pretty common species of fish found seemingly everywhere."
 MaxSpeed = 200.0
+SpawnRange = Vector2(0.2, 0.8)
 AverageSize = 32.0
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0"]

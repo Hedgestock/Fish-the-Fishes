@@ -63,6 +63,7 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 shortcut = SubResource("Shortcut_y2krb")
+shortcut_in_tooltip = false
 texture_normal = ExtResource("3_qefni")
 texture_pressed = ExtResource("4_kf377")
 texture_hover = ExtResource("5_th8d4")
@@ -87,6 +88,7 @@ layout_mode = 2
 [node name="CompetitiveOptionButton" type="OptionButton" parent="VBoxContainer/MarginContainer/VBoxContainer/HFlowContainer"]
 layout_mode = 2
 size_flags_vertical = 0
+shortcut_in_tooltip = false
 selected = 0
 fit_to_longest_item = false
 item_count = 3
@@ -99,6 +101,7 @@ popup/item_2/id = 2
 [node name="ModeOptionButton" type="OptionButton" parent="VBoxContainer/MarginContainer/VBoxContainer/HFlowContainer"]
 layout_mode = 2
 size_flags_vertical = 0
+shortcut_in_tooltip = false
 
 [node name="TabContainer" type="TabContainer" parent="VBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2

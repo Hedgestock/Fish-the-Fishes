@@ -29,6 +29,7 @@ Value = 10.0
 Multiplier = 2
 MinSpeed = 1500.0
 MaxSpeed = 2500.0
+TajectoryDeviation = 1.0
 AverageSize = 155.0
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0"]
