@@ -10,7 +10,7 @@ namespace Godot.Fish_the_fishes.Scripts
     {
         #region serializable instance
         private static UserData _instance = null;
-        public Dictionary<string, uint> _statistics { get; set; }
+        public Dictionary<string, long> _statistics { get; set; }
         public Dictionary<string, EquipmentStatus> _equipments { get; set; }
 
         public Dictionary<string, DateTime> _achievements { get; set; }
@@ -22,7 +22,7 @@ namespace Godot.Fish_the_fishes.Scripts
         {
             if (_instance != null)
                 return;
-            _statistics = new Dictionary<string, uint>();
+            _statistics = new Dictionary<string, long>();
             _achievements = new Dictionary<string, DateTime>();
             _equipments = new Dictionary<string, EquipmentStatus>();
             _fishCompendium = new Dictionary<string, FishCompendiumEntry>();
@@ -82,12 +82,12 @@ namespace Godot.Fish_the_fishes.Scripts
         }
 
         #region helper methods
-        public static uint GetStatistic(StatCategory category, Game.Mode mode, string statName)
+        public static long GetStatistic(StatCategory category, Game.Mode mode, string statName)
         {
             return _instance._statistics.GetValueOrDefault($"{category}/{mode}/{statName}");
         }
 
-        public static void SetHighStat(string statName, uint stat)
+        public static void SetHighStat(string statName, long stat)
         {
             _setHighStat(StatCategory.Scratch, Game.Mode.AllModes, statName, stat);
             _setHighStat(StatCategory.Scratch, GameManager.Mode, statName, stat);
@@ -95,14 +95,14 @@ namespace Godot.Fish_the_fishes.Scripts
             _setHighStat(UserSettings.CompetitiveMode ? StatCategory.Competitive : StatCategory.Casual, GameManager.Mode, statName, stat);
         }
 
-        private static void _setHighStat(StatCategory category, Game.Mode mode, string statName, uint stat)
+        private static void _setHighStat(StatCategory category, Game.Mode mode, string statName, long stat)
         {
-            uint currentStat = _instance._statistics.GetValueOrDefault($"{category}/{mode}/{statName}");
+            long currentStat = _instance._statistics.GetValueOrDefault($"{category}/{mode}/{statName}");
             if (currentStat >= stat) return;
             _instance._statistics[$"{category}/{mode}/{statName}"] = stat;
         }
 
-        public static void IncrementStatistic(string statName, uint incr = 1)
+        public static void IncrementStatistic(string statName, long incr = 1)
         {
             _incrementStatistic(StatCategory.Scratch, Game.Mode.AllModes, statName,incr);
             _incrementStatistic(StatCategory.Scratch, GameManager.Mode, statName,incr);
@@ -111,9 +111,9 @@ namespace Godot.Fish_the_fishes.Scripts
         }
 
 
-        private static void _incrementStatistic(StatCategory category, Game.Mode mode, string statName, uint incr)
+        private static void _incrementStatistic(StatCategory category, Game.Mode mode, string statName, long incr)
         {
-            uint currentStat = _instance._statistics.GetValueOrDefault($"{category}/{mode}/{statName}");
+            long currentStat = _instance._statistics.GetValueOrDefault($"{category}/{mode}/{statName}");
             _instance._statistics[$"{category}/{mode}/{statName}"] = currentStat + incr;
         }
 
@@ -133,12 +133,12 @@ namespace Godot.Fish_the_fishes.Scripts
 
         public abstract class CompendiumEntry
         {
-            public uint Seen { get; set; }
+            public long Seen { get; set; }
         }
 
         public class FishCompendiumEntry : CompendiumEntry
         {
-            public uint Caught { get; set; }
+            public long Caught { get; set; }
             public float MaxSize { get; set; }
             public float MinSize { get; set; }
             public FishCompendiumEntry()
@@ -152,8 +152,8 @@ namespace Godot.Fish_the_fishes.Scripts
 
         public class TrashCompendiumEntry : CompendiumEntry
         {
-            public uint Hit { get; set; }
-            public uint Cleaned { get; set; }
+            public long Hit { get; set; }
+            public long Cleaned { get; set; }
             public TrashCompendiumEntry()
             {
                 Hit = 0;

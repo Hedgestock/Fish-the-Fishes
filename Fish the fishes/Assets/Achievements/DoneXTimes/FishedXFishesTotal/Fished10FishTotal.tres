@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_634ck")
-Threshold = 0
+Threshold = 10
 Category = 0
 Mode = 0
 UnlockableName = ""

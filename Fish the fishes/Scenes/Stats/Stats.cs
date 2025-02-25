@@ -86,7 +86,7 @@ public partial class Stats : CanvasLayer
 
     }
 
-    private string SecondsToTime(uint seconds)
+    private string SecondsToTime(long seconds)
     {
         TimeSpan t = TimeSpan.FromSeconds(seconds);
         return string.Format("{0}h {1:D2}m {2:D2}s",

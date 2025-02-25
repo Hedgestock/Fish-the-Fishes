@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Fish the fishes/Assets/Fishes/Fish.tscn" id="1_32uni"]
 [ext_resource type="Script" path="res://Fish the fishes/Assets/Fishes/SerpentFish/SerpentFish.cs" id="2_ujnj7"]
-[ext_resource type="SpriteFrames" path="res://Fish the fishes/Assets/Fishes/SerpentFish/Animation/SerpentFishAnimation.tres" id="3_8ph1q"]
+[ext_resource type="SpriteFrames" uid="uid://bwqrctr8bgiyo" path="res://Fish the fishes/Assets/Fishes/SerpentFish/Animation/SerpentFishAnimation.tres" id="3_1g1s3"]
 
 [sub_resource type="Curve" id="Curve_xo0c7"]
 _data = [Vector2(0, 0.418074), 0.0, 0.0, 0, 0, Vector2(0.643498, 0.967061), 0.0, 0.0, 0, 0, Vector2(1, 0), -1.11295, 0.0, 0, 0]
@@ -30,7 +30,7 @@ position = Vector2(-41.5, -9.5)
 scale = Vector2(17.55, 4.95)
 
 [node name="AnimatedSprite2D" parent="." index="1"]
-sprite_frames = ExtResource("3_8ph1q")
+sprite_frames = ExtResource("3_1g1s3")
 animation = &"alive"
 
 [node name="HurtBox" parent="." index="2"]

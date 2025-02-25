@@ -285,8 +285,8 @@ public partial class FishingLine : CharacterBody2D, IFisher
             fish.QueueFree();
         }
 
-        UserData.SetHighStat(Constants.MaxPointScored, (uint)score);
-        UserData.IncrementStatistic(Constants.TotalPointsScored, (uint)score);
+        UserData.SetHighStat(Constants.MaxPointScored, (long)score);
+        UserData.IncrementStatistic(Constants.TotalPointsScored, (long)score);
 
         return (int)score;
 

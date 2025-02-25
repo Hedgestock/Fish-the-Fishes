@@ -62,6 +62,7 @@
 - [x] Hameçon plus grand (augmente la taille de la zone de pêche)
 - [x] Hameçon contrôlable
 - [x] Harpon (pêche à la descente)
+- [ ] Hameçon téléguidé
 - [ ] Hameçon rapide
 - [ ] Poids (augmente la vitesse de descente, réduit la vitesse de remonté)
 - [ ] Flotteur (réduit la vitesse de descente, augmente la vitesse de remonté)
@@ -126,6 +127,7 @@
 - [x] Ajouter des statistiques
 - [x] Rendre l'axe de trajet générique à tous les poissons
 - [x] Mettre les chronomètres d'apparition des poissons et des déchêts sur les biomes
+- [x] Ajouter un outil pour voire les graphes de selection des biomes ainsi que les probabilités d'apparition des poissons
 - [ ] Support de différentes langues
 	- [x] Anglais
 	- [ ] Français
@@ -146,7 +148,6 @@
 - [ ] Ajouter une animation pour signifier la casse de l'hameçon à la remontée
 - [ ] Afficher un biome aléatoire dans ceux visités pour le fond du menu
 - [ ] Ajouter un moyen de trier/filtrer le compendium
-- [ ] Ajouter un outil pour voire les graphes de selection des biomes ainsi que les probabilités d'apparition des poissons
 - [ ] Cône de poissons qui fuient le requin
 - [ ] Ajouter un moyen d'exporter/importer une sauvegarde
 
