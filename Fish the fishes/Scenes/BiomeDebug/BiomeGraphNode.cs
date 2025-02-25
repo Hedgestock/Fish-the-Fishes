@@ -1,21 +1,16 @@
 using Godot;
+using Godot.Fish_the_fishes.Scripts;
 using System;
-using System.Text.RegularExpressions;
-using static Godot.Fish_the_fishes.Scripts.Constants;
+using System.Linq;
+using System.Xml.Linq;
 
 public partial class BiomeGraphNode : GraphNode
 {
     [Export]
-    VBoxContainer Fishes;
-    
-    [Export]
-    VBoxContainer Trashes;
-    
-    [Export]
-    VBoxContainer Biomes;
+    GridContainer Fishes;
 
     [Export]
-    PackedScene WeightedItemControl;
+    GridContainer Trashes;
 
     public Biome Biome;
 
@@ -23,53 +18,72 @@ public partial class BiomeGraphNode : GraphNode
     {
         base._Ready();
 
-        Title = Biome.ResourceName;
+
+            Title = Biome.ResourceName;
+        if (!UserData.BiomeCompendium.ContainsKey(Title))
+            Title = "???";
+
+        StyleBoxTexture test = new();
+        test.Texture = Biome.Background;
+        AddThemeStyleboxOverride("panel", test);
+        AddThemeStyleboxOverride("panel_selected", test);
 
         foreach (WeightedFish weightedFish in Biome.Fishes)
         {
-            AddFish(weightedFish);
+            AddItem(weightedFish, WeightedItem.GetTotalWeight(Biome.Fishes.ToArray()));
         }
 
         foreach (WeightedTrash weightedTrash in Biome.Trashes)
         {
-            AddTrash(weightedTrash);
+            AddItem(weightedTrash, WeightedItem.GetTotalWeight(Biome.Trashes.ToArray())); ;
+        }
+    }
+
+    public void AddItem(WeightedItem item, uint maxWeight)
+    {
+        Label name = new();
+        ProgressBar weight = new();
+
+        name.SizeFlagsHorizontal = SizeFlags.ExpandFill;
+
+        weight.Value = item.Weight;
+        weight.MaxValue = maxWeight;
+        weight.CustomMinimumSize = new Vector2(200, 0);
+        weight.MouseFilter = MouseFilterEnum.Ignore;
+        if (item is WeightedFish fish)
+        {
+            name.Text = fish.Fish.ToString();
+            if (!UserData.BiomeCompendium.ContainsKey(Biome.ResourceName) || !UserData.FishCompendium.ContainsKey(name.Text))
+                name.Text = "???";
+            Fishes.AddChild(name);
+            Fishes.AddChild(weight);
+        }
+        else if (item is WeightedTrash trash)
+        {
+            name.Text = trash.Trash.ToString();
+            if (!UserData.BiomeCompendium.ContainsKey(Biome.ResourceName) || !UserData.TrashCompendium.ContainsKey(name.Text))
+                name.Text = "???";
+            Trashes.AddChild(name);
+            Trashes.AddChild(weight);
+        }
+        else if (item is WeightedBiome biome)
+        {
+
+            name.Text = biome.Biome.ToString();
+            if (!UserData.BiomeCompendium.ContainsKey(name.Text))
+                name.Text = "???";
+
+            HBoxContainer container = new HBoxContainer();
+            container.AddChild(name);
+            container.AddChild(weight);
+            AddChild(container);
         }
 
-        StyleBoxTexture test = new();
-        test.Texture = Biome.Background;
-        AddThemeStyleboxOverride("panel",test);
-        AddThemeStyleboxOverride("panel_selected",test);
-
     }
 
-    public void AddFish(WeightedFish fish)
+    private void LaunchAquarium()
     {
-        WeightedItemControl Item = WeightedItemControl.Instantiate<WeightedItemControl>();
-
-        Item.ItemName.Text = fish.Fish.ToString();
-        Item.Weight.Text = fish.Weight.ToString();
-
-        Fishes.AddChild(Item);
+        GameManager.Biome = Biome;
+        GameManager.ChangeSceneToFile("res://Fish the fishes/Scenes/Aquarium/Aquarium.tscn");
     }
-
-    public void AddTrash(WeightedTrash trash)
-    {
-        WeightedItemControl Item = WeightedItemControl.Instantiate<WeightedItemControl>();
-
-        Item.ItemName.Text = trash.Trash.ToString();
-        Item.Weight.Text = trash.Weight.ToString();
-
-        Trashes.AddChild(Item);
-    }
-
-    public void AddBiome(WeightedBiome biome)
-    {
-        WeightedItemControl Item = WeightedItemControl.Instantiate<WeightedItemControl>();
-
-        Item.ItemName.Text = biome.Biome.ToString();
-        Item.Weight.Text = biome.Weight.ToString();
-
-        AddChild(Item);
-    }
-
 }

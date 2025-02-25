@@ -178,3 +178,4 @@
 - [ ] Passer à des listes de noms plutôt que des énumérations
 - [ ] Grouper les vérifications de hauts faits en un seul appel de fonction
 - [ ] Corriger les poissons qui restent sur la ligne après une remontée
+- [ ] Régler les problèmes d'affichage de la taille dans le compendium

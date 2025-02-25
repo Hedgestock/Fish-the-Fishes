@@ -3,12 +3,10 @@ using Godot.Fish_the_fishes.Scripts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
-public partial class BiomeDebug : CanvasLayer
+public partial class BiomeGraph : GraphEdit
 {
-    [Export]
-    GraphEdit Graph;
-
     [Export]
     PackedScene BiomeNode;
 
@@ -20,8 +18,35 @@ public partial class BiomeDebug : CanvasLayer
 
         TraverseBiomes(GameManager.StartingBiome.ResourceName);
 
-        Graph.ArrangeNodes();
+        VisibilityChanged += async () =>
+        {
+            await Task.Delay(TimeSpan.FromSeconds(.02));
+            ArrangeNodes();
+        };
     }
+
+    //private Vector2? clickPosition = null;
+
+    //public override void _UnhandledInput(InputEvent @event)
+    //{
+    //    base._UnhandledInput(@event);
+    //    if (@event is InputEventMouseButton eventMouseButton)
+    //    {
+    //        if (eventMouseButton.IsActionPressed("screen_hold"))
+    //        {
+    //            clickPosition = eventMouseButton.Position;
+    //        }
+    //        else if (eventMouseButton.IsActionReleased("screen_hold"))
+    //        {
+    //            clickPosition = null;
+    //        }
+    //    }
+    //    else if (clickPosition != null && @event is InputEventMouseMotion eventMouseMotion)
+    //    {
+    //        Position += (Vector2)clickPosition - eventMouseMotion.Position;
+    //    }
+    //}
+
 
     private void TraverseBiomes(string biomeName, BiomeGraphNode PreviousBiomeNode = null, int fromSlot = -1)
     {
@@ -29,7 +54,7 @@ public partial class BiomeDebug : CanvasLayer
 
         if (VisitedBiomes.TryGetValue(biomeName, out thisBiomeNode))
         {
-            Graph.ConnectNode(PreviousBiomeNode.Name, fromSlot, thisBiomeNode.Name, 0);
+            ConnectNode(PreviousBiomeNode.Name, fromSlot, thisBiomeNode.Name, 0);
             return;
         }
 
@@ -37,14 +62,14 @@ public partial class BiomeDebug : CanvasLayer
 
         thisBiomeNode = BiomeNode.Instantiate<BiomeGraphNode>();
         thisBiomeNode.Biome = thisBiome;
-        Graph.AddChild(thisBiomeNode);
+        AddChild(thisBiomeNode);
         thisBiomeNode.SetSlotEnabledLeft(0, true);
         //thisBiomeNode.SetSlotColorLeft(0, new Color("cyan"));
 
         if (PreviousBiomeNode != null)
         {
             thisBiomeNode.PositionOffset = PreviousBiomeNode.PositionOffset + new Vector2(500, 0);
-            Graph.ConnectNode(PreviousBiomeNode.Name, fromSlot, thisBiomeNode.Name, 0);
+            ConnectNode(PreviousBiomeNode.Name, fromSlot, thisBiomeNode.Name, 0);
         }
 
         VisitedBiomes.Add(biomeName, thisBiomeNode);
@@ -59,11 +84,5 @@ public partial class BiomeDebug : CanvasLayer
             TraverseBiomes(weightedBiome.Biome.ToString(), thisBiomeNode, slotNumber - 1);
             slotNumber++;
         }
-    }
-
-    private Error Test(StringName from_node, int from_port, StringName to_node, int to_port)
-    {
-        GD.Print(from_node, " ", from_port, " ", to_node, " ", to_port);
-        return Error.Ok;
     }
 }

@@ -1,16 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://dfvcoq3nvotbv"]
+[gd_scene load_steps=3 format=3 uid="uid://dfvcoq3nvotbv"]
 
 [ext_resource type="Script" path="res://Fish the fishes/Scenes/BiomeDebug/BiomeGraphNode.cs" id="1_v44y7"]
-[ext_resource type="PackedScene" uid="uid://djbfl4t4uqipn" path="res://Fish the fishes/Scenes/BiomeDebug/WeightedItemControl.tscn" id="2_wclbs"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u23pd"]
 bg_color = Color(0, 0, 0, 0.490196)
 
-[node name="BiomeGraphNode" type="GraphNode" node_paths=PackedStringArray("Fishes", "Trashes", "Biomes")]
+[node name="BiomeGraphNode" type="GraphNode" node_paths=PackedStringArray("Fishes", "Trashes")]
 offset_right = 102.0
 offset_bottom = 124.0
 size_flags_horizontal = 0
-selectable = false
 title = "Biome"
 slot/0/left_enabled = false
 slot/0/left_type = 0
@@ -21,61 +19,62 @@ slot/0/right_type = 0
 slot/0/right_color = Color(1, 1, 1, 1)
 slot/0/right_icon = null
 slot/0/draw_stylebox = true
-slot/1/left_enabled = false
-slot/1/left_type = 0
-slot/1/left_color = Color(1, 1, 1, 1)
-slot/1/left_icon = null
-slot/1/right_enabled = false
-slot/1/right_type = 0
-slot/1/right_color = Color(1, 1, 1, 1)
-slot/1/right_icon = null
-slot/1/draw_stylebox = true
 script = ExtResource("1_v44y7")
-Fishes = NodePath("VBoxContainer/PanelContainer/MarginContainer/FishesContainer")
-Trashes = NodePath("VBoxContainer/PanelContainer2/MarginContainer/TrashesContainer")
-Biomes = NodePath("VBoxContainer/BiomesContainer")
-WeightedItemControl = ExtResource("2_wclbs")
+Fishes = NodePath("VBoxContainer/GridContainer/PanelContainer/MarginContainer/VBoxContainer/FishesContainer")
+Trashes = NodePath("VBoxContainer/GridContainer/PanelContainer2/MarginContainer/VBoxContainer/TrashesContainer")
 
-[node name="VBoxContainer" type="GridContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Aquarium" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Open Aquarium"
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_constants/h_separation = 10
 columns = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/GridContainer"]
 layout_mode = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_u23pd")
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/GridContainer/PanelContainer"]
 layout_mode = 2
 
-[node name="FishesContainer" type="VBoxContainer" parent="VBoxContainer/PanelContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/GridContainer/PanelContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="Fishes" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer/FishesContainer"]
+[node name="Fishes" type="Label" parent="VBoxContainer/GridContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Fishes"
 
-[node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer"]
+[node name="FishesContainer" type="GridContainer" parent="VBoxContainer/GridContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer/GridContainer"]
 layout_mode = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_u23pd")
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer2"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/GridContainer/PanelContainer2"]
 layout_mode = 2
 
-[node name="TrashesContainer" type="VBoxContainer" parent="VBoxContainer/PanelContainer2/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/GridContainer/PanelContainer2/MarginContainer"]
 layout_mode = 2
 
-[node name="Trashes" type="Label" parent="VBoxContainer/PanelContainer2/MarginContainer/TrashesContainer"]
+[node name="Trashes" type="Label" parent="VBoxContainer/GridContainer/PanelContainer2/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Trashes"
 
-[node name="BiomesContainer" type="VBoxContainer" parent="VBoxContainer"]
-visible = false
+[node name="TrashesContainer" type="GridContainer" parent="VBoxContainer/GridContainer/PanelContainer2/MarginContainer/VBoxContainer"]
 layout_mode = 2
+columns = 2
 
-[node name="FollowupBiomes" type="Label" parent="."]
-visible = false
+[node name="FollowupBiomes" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 text = "Followup Biomes"
+
+[connection signal="pressed" from="VBoxContainer/Aquarium" to="." method="LaunchAquarium"]

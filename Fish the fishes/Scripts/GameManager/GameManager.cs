@@ -75,7 +75,7 @@ public partial class GameManager : Node
             TargetSafeTimer.Timeout -= ChangeTarget;
             TargetSafeTimer = null;
         }
-        _target = (Biome.ChooseFrom(Biome.Fishes.ToArray()) as WeightedFish).Fish.ToString();
+        _target = (WeightedItem.ChooseFrom(Biome.Fishes.ToArray()) as WeightedFish).Fish.ToString();
         _instance.EmitSignal(SignalName.TargetChanged);
     }
 
