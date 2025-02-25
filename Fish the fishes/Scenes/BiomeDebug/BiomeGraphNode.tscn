@@ -5,7 +5,7 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u23pd"]
 bg_color = Color(0, 0, 0, 0.490196)
 
-[node name="BiomeGraphNode" type="GraphNode" node_paths=PackedStringArray("Fishes", "Trashes")]
+[node name="BiomeGraphNode" type="GraphNode" node_paths=PackedStringArray("Fishes", "Trashes", "FishDensity", "TrashDensity")]
 offset_right = 102.0
 offset_bottom = 124.0
 size_flags_horizontal = 0
@@ -22,6 +22,8 @@ slot/0/draw_stylebox = true
 script = ExtResource("1_v44y7")
 Fishes = NodePath("VBoxContainer/GridContainer/PanelContainer/MarginContainer/VBoxContainer/FishesContainer")
 Trashes = NodePath("VBoxContainer/GridContainer/PanelContainer2/MarginContainer/VBoxContainer/TrashesContainer")
+FishDensity = NodePath("VBoxContainer/FishDensity")
+TrashDensity = NodePath("VBoxContainer/TrashDensity")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
@@ -72,6 +74,14 @@ text = "Trashes"
 [node name="TrashesContainer" type="GridContainer" parent="VBoxContainer/GridContainer/PanelContainer2/MarginContainer/VBoxContainer"]
 layout_mode = 2
 columns = 2
+
+[node name="FishDensity" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Fish Density: "
+
+[node name="TrashDensity" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Trash Density: "
 
 [node name="FollowupBiomes" type="Label" parent="VBoxContainer"]
 layout_mode = 2

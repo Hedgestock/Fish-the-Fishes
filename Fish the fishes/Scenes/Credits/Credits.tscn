@@ -91,7 +91,7 @@ bbcode_enabled = true
 text = "[center][font_size=200]XX/02/2025[/font_size][/center]
 [font_size=100]
 [ul]
-Changed biome compendium to graph of biomes with spawn rates
+Added graph of biomes with spawn rates
 Changed spawn position and trajectory of fishes
 Added achievements to unlock hidden hook:
 [ol]

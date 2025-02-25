@@ -8,9 +8,13 @@ public partial class BiomeGraphNode : GraphNode
 {
     [Export]
     GridContainer Fishes;
-
     [Export]
     GridContainer Trashes;
+
+    [Export]
+    Label FishDensity;
+    [Export]
+    Label TrashDensity;
 
     public Biome Biome;
 
@@ -19,7 +23,7 @@ public partial class BiomeGraphNode : GraphNode
         base._Ready();
 
 
-            Title = Biome.ResourceName;
+        Title = Biome.CompendiumName;
         if (!UserData.BiomeCompendium.ContainsKey(Title))
             Title = "???";
 
@@ -37,6 +41,9 @@ public partial class BiomeGraphNode : GraphNode
         {
             AddItem(weightedTrash, WeightedItem.GetTotalWeight(Biome.Trashes.ToArray())); ;
         }
+
+        FishDensity.Text += $"{Biome.TimeToSpawnFish}({Biome.TimeToSpawnFishDeviation})";
+        TrashDensity.Text += $"{Biome.TimeToSpawnTrash}({Biome.TimeToSpawnTrashDeviation})";
     }
 
     public void AddItem(WeightedItem item, uint maxWeight)

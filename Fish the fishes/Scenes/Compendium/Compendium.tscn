@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b0nv1b3x0suu5"]
+[gd_scene load_steps=16 format=3 uid="uid://b0nv1b3x0suu5"]
 
 [ext_resource type="Script" path="res://Fish the fishes/Scenes/Compendium/Compendium.cs" id="1_lwdf7"]
 [ext_resource type="Texture2D" uid="uid://4sfuxo2673qo" path="res://Fish the fishes/art/BG 2 FTF.png" id="1_x6noe"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bjbotgfwig38a" path="res://Fish the fishes/art/UI/retour click.png" id="3_xgqri"]
 [ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://Fish the fishes/Themes/FTF_theme.tres" id="3_y1rnp"]
 [ext_resource type="Texture2D" uid="uid://bx8qk7jnypm0" path="res://Fish the fishes/art/UI/retour hover.png" id="4_5k6ur"]
+[ext_resource type="PackedScene" path="res://Fish the fishes/Scenes/Compendium/BiomeCompendiumEntry.tscn" id="4_c2qa6"]
 [ext_resource type="PackedScene" uid="uid://d4ecb71kma03k" path="res://Fish the fishes/Scenes/Compendium/AchievementCompendiumEntry.tscn" id="5_1s78k"]
 [ext_resource type="PackedScene" uid="uid://do433bt3fxs1k" path="res://Fish the fishes/Scenes/BiomeDebug/BiomeGraph.tscn" id="11_fh7wn"]
 
@@ -21,12 +22,14 @@ events = [SubResource("InputEventAction_qkuki")]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mv8gi"]
 
-[node name="Compendium" type="CanvasLayer" node_paths=PackedStringArray("Fishes", "Trashes", "Achievements")]
+[node name="Compendium" type="CanvasLayer" node_paths=PackedStringArray("Fishes", "Trashes", "Biomes", "Achievements")]
 script = ExtResource("1_lwdf7")
 Fishes = NodePath("VBoxContainer/MarginContainer/TabContainer/Fishes/MarginContainer/FishCompendiumEntriesContainer")
 FishEntry = ExtResource("2_8qvf3")
 Trashes = NodePath("VBoxContainer/MarginContainer/TabContainer/Trashes/MarginContainer/TrashCompendiumEntriesContainer")
 TrashEntry = ExtResource("3_vf8dp")
+Biomes = NodePath("VBoxContainer/MarginContainer/TabContainer/Biomes/MarginContainer/BiomesCompendiumEntriesContainer")
+BiomeEntry = ExtResource("4_c2qa6")
 Achievements = NodePath("VBoxContainer/MarginContainer/TabContainer/Achievements/MarginContainer/AchievementsCompendiumEntriesContainer")
 AchievementEntry = ExtResource("5_1s78k")
 
@@ -116,12 +119,15 @@ visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
-[node name="BiomeGraph" parent="VBoxContainer/MarginContainer/TabContainer/Biomes" instance=ExtResource("11_fh7wn")]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/TabContainer/Biomes"]
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/menu_panel = SubResource("StyleBoxEmpty_owad1")
-theme_override_styles/panel = SubResource("StyleBoxEmpty_mv8gi")
-scroll_offset = Vector2(0, 0)
+
+[node name="BiomesCompendiumEntriesContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/TabContainer/Biomes/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="Achievements" type="ScrollContainer" parent="VBoxContainer/MarginContainer/TabContainer"]
 visible = false
@@ -138,5 +144,13 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
+[node name="Biomes Graph" parent="VBoxContainer/MarginContainer/TabContainer" instance=ExtResource("11_fh7wn")]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/menu_panel = SubResource("StyleBoxEmpty_owad1")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_mv8gi")
+scroll_offset = Vector2(-40, -186)
+metadata/_tab_index = 4
+
 [connection signal="pressed" from="VBoxContainer/Control/MarginContainer/BackButton" to="." method="GoToHome"]
-[connection signal="tab_changed" from="VBoxContainer/MarginContainer/TabContainer" to="VBoxContainer/MarginContainer/TabContainer/Biomes/BiomeGraph" method="test"]
