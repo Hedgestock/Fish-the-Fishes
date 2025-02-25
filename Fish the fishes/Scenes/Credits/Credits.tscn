@@ -98,6 +98,9 @@ Added achievements to unlock hidden hook:
 Control Hook[img=top]res://Fish the fishes/Assets/Player/Equipment/Hook/ControlHook/ControlHook_default.png[/img]
 [/ol]
 Fixed a lot of achievements conditions and display in the compendium
+Fixed Harpoon [img=top]res://Fish the fishes/Assets/Player/Equipment/Hook/HarpoonHook/HarpoonHook_default.png[/img] being invicible while going up
+Separated fishbox and hitbox for all hooks
+Added biome specific trash and fish density
 [/ul]
 [/font_size]
 [center][font_size=200]23/02/2025[/font_size][/center]

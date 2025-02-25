@@ -10,7 +10,8 @@ public partial class HarpoonHook : Hook
         set
         {
             _state = value;
-            DisableHitbox(_state != Action.MovingDown);
+            DisableHitbox(_state != Action.MovingUp);
+            DisableFishBox(_state != Action.MovingDown);
         }
     }
 }

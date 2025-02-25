@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://bcvq4yujb5igf"]
+
+[ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Fish the fishes/Assets/Fishes/Fish.tscn" id="1_32uni"]
+[ext_resource type="Script" path="res://Fish the fishes/Assets/Fishes/SerpentFish/SerpentFish.cs" id="2_ujnj7"]
+[ext_resource type="SpriteFrames" path="res://Fish the fishes/Assets/Fishes/SerpentFish/Animation/SerpentFishAnimation.tres" id="3_8ph1q"]
+
+[sub_resource type="Curve" id="Curve_xo0c7"]
+_data = [Vector2(0, 0.418074), 0.0, 0.0, 0, 0, Vector2(0.643498, 0.967061), 0.0, 0.0, 0, 0, Vector2(1, 0), -1.11295, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nvgxe"]
+radius = 40.0
+height = 438.0
+
+[sub_resource type="Curve" id="Curve_btsbg"]
+_data = [Vector2(0.0156951, 0.302787), 0.0, 1.87717, 0, 0, Vector2(0.943946, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.780405), 0.0, 0.445178, 0, 0]
+point_count = 3
+
+[node name="SerpentFish" node_paths=PackedStringArray("Body") instance=ExtResource("1_32uni")]
+script = ExtResource("2_ujnj7")
+Body = NodePath("Line2D")
+Length = 50
+SegmentLength = 10
+AmplitudeCurve = SubResource("Curve_xo0c7")
+CompendiumName = ""
+CompendiumDescription = ""
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="0"]
+position = Vector2(-41.5, -9.5)
+scale = Vector2(17.55, 4.95)
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = ExtResource("3_8ph1q")
+animation = &"alive"
+
+[node name="HurtBox" parent="." index="2"]
+position = Vector2(-81, -3)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_nvgxe")
+
+[node name="Line2D" type="Line2D" parent="." index="4"]
+points = PackedVector2Array(-267, -8, -226.876, -5.27313, -196.908, -3.23645, -164, -1, -140, 0, -101, 1, -76.8944, 1, -53, 1, -11.7888, 3.99869, 18, 5)
+width = 60.0
+width_curve = SubResource("Curve_btsbg")
+default_color = Color(0, 0.31, 0.062, 1)
+texture_mode = 2
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2

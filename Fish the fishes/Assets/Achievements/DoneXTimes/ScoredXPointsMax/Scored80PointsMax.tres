@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_pro8p")
-Threshold = 40
+Threshold = 80
 Category = 0
 Mode = 0
 UnlockableName = ""

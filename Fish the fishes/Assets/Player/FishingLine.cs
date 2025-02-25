@@ -32,6 +32,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
 
     public List<IFishable> FishedThings { get; } = new List<IFishable>();
 
+    private Vector2 BasePosition;
     private Vector2 Destination;
     private Vector2 Start;
 
@@ -64,8 +65,10 @@ public partial class FishingLine : CharacterBody2D, IFisher
         if (Hook != null) { Hook.QueueFree(); }
         Hook = Hooks[hookKey].Instantiate<Hook>();
         AddChild(Hook);
-        Hook.Area.BodyEntered += OnHookAreaBodyEntered;
-        Position = Hook.BasePosition;
+        Hook.FishBox.BodyEntered += OnFishBoxBodyEntered;
+        Hook.HitBox.BodyEntered += OnHitBoxBodyEntered;
+        BasePosition = BasePosition = new Vector2(GameManager.ScreenSize.X / 2, 100 - Hook.AimOffset);
+        Position = BasePosition;
         _invincible = false;
 
         ComputeScore();
@@ -84,7 +87,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
             {
                 case MovingDown:
                     Hook.State = MovingUp;
-                    MoveTowardsCustom(new Vector2(Hook.BasePosition.X, -150));
+                    MoveTowardsCustom(new Vector2(BasePosition.X, -150 - Hook.AimOffset));
                     Line.Animation = "weighted";
                     break;
                 case MovingUp:
@@ -95,7 +98,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
                     goto case GettingHit;
                 case GettingHit:
                     Hook.State = Resetting;
-                    MoveTowardsCustom(Hook.BasePosition);
+                    MoveTowardsCustom(BasePosition);
                     break;
                 case Resetting:
                     Hook.Reset();
@@ -112,7 +115,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
 
     private void MakeInvincible(Area2D area)
     {
-        if (area == Hook.Area)
+        if (area == Hook.HitBox)
         {
             _invincible = true;
         }
@@ -120,7 +123,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
 
     private void MakeVincible(Area2D area)
     {
-        if (area == Hook.Area)
+        if (area == Hook.HitBox)
         {
             _invincible = false;
         }
@@ -133,7 +136,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
         if (@event is InputEventMouseButton eventMouseButton && @event.IsActionPressed("screen_tap") && Hook.CanMove(Hook.State))
         {
             Hook.State = MovingDown;
-            MoveTowardsCustom(eventMouseButton.Position);
+            MoveTowardsCustom(new Vector2(eventMouseButton.Position.X, eventMouseButton.Position.Y - Hook.AimOffset));
         }
     }
 
@@ -166,11 +169,23 @@ public partial class FishingLine : CharacterBody2D, IFisher
         Velocity = (position - Position).Normalized() * computedSpeed;
     }
 
-    void OnHookAreaBodyEntered(Node2D body)
+    void OnFishBoxBodyEntered(Node2D body)
     {
         if (body is IFishable)
         {
             (body as IFishable).GetCaughtBy(this);
+        }
+    }
+
+    void OnHitBoxBodyEntered(Node2D body)
+    {
+        if (body is Trash)
+        {
+            if (FishedThings.Count == 0 || IsInvincible) return;
+
+            UserData.TrashCompendium[body.GetType().Name].Hit++;
+
+            GetHit(DamageType.Trash);
         }
     }
 
@@ -349,6 +364,9 @@ public partial class FishingLine : CharacterBody2D, IFisher
     private void OnScreenResize()
     {
         if (Hook.State == Stopped)
-            Position = Hook.BasePosition;
+        {
+            BasePosition = new Vector2(GameManager.ScreenSize.X / 2, 100 - Hook.AimOffset);
+            Position = BasePosition;
+        }
     }
 }

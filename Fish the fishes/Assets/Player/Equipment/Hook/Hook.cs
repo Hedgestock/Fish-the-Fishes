@@ -13,13 +13,17 @@ public partial class Hook : EquipmentPiece
         Resetting
     }
 
-    public Area2D Area;
+    public Area2D FishBox;
+    public Area2D HitBox;
+
+
+    [Export]
+    public int AimOffset = 50;
+
 
     [Export]
     private uint TotalMoves = 1;
     private int MovesLeft;
-
-    public Vector2 BasePosition;
 
     protected Action _state = Action.Stopped;
     public virtual Action State
@@ -29,21 +33,28 @@ public partial class Hook : EquipmentPiece
         {
             _state = value;
             DisableHitbox(_state != Action.MovingUp);
+            DisableFishBox(_state != Action.MovingUp);
         }
     }
 
     public override void _Ready()
     {
-        Area = GetNode<Area2D>("Area2D");
-        BasePosition = new Vector2(GameManager.ScreenSize.X / 2, 50);
+        FishBox = GetNode<Area2D>("FishBox");
+        HitBox = GetNode<Area2D>("HitBox");
         Reset();
-
-        GetTree().Root.SizeChanged += OnScreenResize;
     }
 
     protected void DisableHitbox(bool disabled)
     {
-        foreach (CollisionShape2D hitbox in Area.GetChildren().Where(c => c is CollisionShape2D))
+        foreach (CollisionShape2D hitbox in HitBox.GetChildren().Where(c => c is CollisionShape2D))
+        {
+            hitbox.SetDeferred(CollisionShape2D.PropertyName.Disabled, disabled);
+        }
+    }
+
+    protected void DisableFishBox(bool disabled)
+    {
+        foreach (CollisionShape2D hitbox in FishBox.GetChildren().Where(c => c is CollisionShape2D))
         {
             hitbox.SetDeferred(CollisionShape2D.PropertyName.Disabled, disabled);
         }
@@ -55,9 +66,4 @@ public partial class Hook : EquipmentPiece
     }
 
     public void Reset() { MovesLeft = (int)TotalMoves; }
-
-    private void OnScreenResize()
-    {
-        BasePosition = new Vector2(GameManager.ScreenSize.X / 2, 50);
-    }
 }

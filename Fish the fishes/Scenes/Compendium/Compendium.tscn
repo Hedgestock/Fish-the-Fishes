@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bjbotgfwig38a" path="res://Fish the fishes/art/UI/retour click.png" id="3_xgqri"]
 [ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://Fish the fishes/Themes/FTF_theme.tres" id="3_y1rnp"]
 [ext_resource type="Texture2D" uid="uid://bx8qk7jnypm0" path="res://Fish the fishes/art/UI/retour hover.png" id="4_5k6ur"]
-[ext_resource type="PackedScene" path="res://Fish the fishes/Scenes/Compendium/BiomeCompendiumEntry.tscn" id="4_c2qa6"]
+[ext_resource type="PackedScene" uid="uid://biyy1v6mq1cue" path="res://Fish the fishes/Scenes/Compendium/BiomeCompendiumEntry.tscn" id="4_c2qa6"]
 [ext_resource type="PackedScene" uid="uid://d4ecb71kma03k" path="res://Fish the fishes/Scenes/Compendium/AchievementCompendiumEntry.tscn" id="5_1s78k"]
 [ext_resource type="PackedScene" uid="uid://do433bt3fxs1k" path="res://Fish the fishes/Scenes/BiomeDebug/BiomeGraph.tscn" id="11_fh7wn"]
 
@@ -150,7 +150,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/menu_panel = SubResource("StyleBoxEmpty_owad1")
 theme_override_styles/panel = SubResource("StyleBoxEmpty_mv8gi")
-scroll_offset = Vector2(-40, -186)
+scroll_offset = Vector2(0, -31)
 metadata/_tab_index = 4
 
 [connection signal="pressed" from="VBoxContainer/Control/MarginContainer/BackButton" to="." method="GoToHome"]

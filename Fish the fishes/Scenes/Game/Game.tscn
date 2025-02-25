@@ -30,10 +30,8 @@ stretch_mode = 6
 [node name="HUD" parent="." instance=ExtResource("3_0ebou")]
 
 [node name="FishTimer" parent="." instance=ExtResource("13_7sxe6")]
-autostart = true
 
 [node name="TrashTimer" parent="." instance=ExtResource("13_7sxe6")]
-autostart = true
 WaitTimeAverage = 3.0
 Deviation = 0.5
 

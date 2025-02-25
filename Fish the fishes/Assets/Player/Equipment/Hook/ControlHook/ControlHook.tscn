@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://cghnipcqvmc3k"]
 
-[ext_resource type="Texture2D" uid="uid://csia2ff0x00yy" path="res://Fish the fishes/Assets/Player/Equipment/Hook/ControlHook/ControlHook_broken.png" id="1_pc67o"]
+[ext_resource type="PackedScene" uid="uid://caai7o1q2a1n0" path="res://Fish the fishes/Assets/Player/Equipment/Hook/StandardHook/StandardHook.tscn" id="1_b3v4a"]
+[ext_resource type="Texture2D" uid="uid://b35566bewxhw3" path="res://Fish the fishes/Assets/Player/Equipment/Hook/ControlHook/ControlHook_broken.png" id="1_pc67o"]
 [ext_resource type="Texture2D" uid="uid://wl1uy5nm1a8g" path="res://Fish the fishes/Assets/Player/Equipment/Hook/ControlHook/ControlHook_default.png" id="2_rhcf7"]
-[ext_resource type="Script" path="res://Fish the fishes/Assets/Player/Equipment/Hook/Hook.cs" id="3_1y31i"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_jupuw"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_37ege"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -23,27 +23,31 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_p8im8"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dfxao"]
+radius = 40.0
+height = 100.0
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_61v6c"]
-radius = 42.9
-height = 85.8
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ic25v"]
+radius = 35.0
+height = 90.0
 
-[node name="Hook" type="AnimatedSprite2D"]
-position = Vector2(-50, -116)
-sprite_frames = SubResource("SpriteFrames_jupuw")
-centered = false
-script = ExtResource("3_1y31i")
+[node name="ControlHook" instance=ExtResource("1_b3v4a")]
+position = Vector2(-50, -15)
+sprite_frames = SubResource("SpriteFrames_37ege")
+AimOffset = 80
 TotalMoves = 2
-EquipmentName = "Control Hook"
-FlatSpeedModifierDown = -100
-FlatSpeedModifierUp = 200
+SpeedMultiplierDown = 0.7
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(50, 79)
+[node name="FishBox" parent="." index="0"]
+position = Vector2(50, 80)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-material = SubResource("CanvasItemMaterial_p8im8")
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_61v6c")
-disabled = true
+[node name="CollisionShape2D" parent="FishBox" index="0"]
+rotation = 0.0
+shape = SubResource("CapsuleShape2D_dfxao")
+
+[node name="HitBox" parent="." index="1"]
+position = Vector2(50, 80)
+
+[node name="CollisionShape2D" parent="HitBox" index="0"]
+rotation = 0.0
+shape = SubResource("CapsuleShape2D_ic25v")

@@ -24,7 +24,7 @@ Hooks = {
 
 [node name="Line" type="AnimatedSprite2D" parent="."]
 texture_repeat = 2
-position = Vector2(0, -1600)
+position = Vector2(0, -1500)
 sprite_frames = ExtResource("4_l5pqx")
 animation = &"loose"
 

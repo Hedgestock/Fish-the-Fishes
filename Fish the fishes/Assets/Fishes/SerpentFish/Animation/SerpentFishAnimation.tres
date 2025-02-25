@@ -1,0 +1,23 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://cs3ktbfy5vpvu"]
+
+[ext_resource type="Texture2D" uid="uid://ccwjhm1rcm3l6" path="res://Fish the fishes/Assets/Fishes/SerpentFish/Animation/anguille_alive_1.png" id="1_pkqoo"]
+[ext_resource type="Texture2D" uid="uid://dtufdcfl4q20" path="res://Fish the fishes/Assets/Fishes/SerpentFish/Animation/anguille_dead.png" id="2_jauo0"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pkqoo")
+}],
+"loop": true,
+"name": &"alive",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jauo0")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}]

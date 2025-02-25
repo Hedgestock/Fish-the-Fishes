@@ -1,10 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://ogoejx5sl264"]
+[gd_scene load_steps=11 format=3 uid="uid://ogoejx5sl264"]
 
 [ext_resource type="Texture2D" uid="uid://b8kmjahmfjduy" path="res://Fish the fishes/Assets/Player/Equipment/Hook/HugeHook/HugeHook_broken.png" id="1_8kf4b"]
+[ext_resource type="PackedScene" uid="uid://caai7o1q2a1n0" path="res://Fish the fishes/Assets/Player/Equipment/Hook/StandardHook/StandardHook.tscn" id="1_h6te0"]
 [ext_resource type="Texture2D" uid="uid://c7wxexbw1ulrt" path="res://Fish the fishes/Assets/Player/Equipment/Hook/HugeHook/HugeHook_default.png" id="2_3bkgf"]
-[ext_resource type="Script" path="res://Fish the fishes/Assets/Player/Equipment/Hook/Hook.cs" id="3_7q0k2"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_e7146"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_4ji8s"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -23,34 +23,63 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n2inp"]
+radius = 49.0
+height = 190.0
+
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_p8im8"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_61v6c"]
-radius = 61.0
-height = 184.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dm274"]
+radius = 26.0
+height = 130.0
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t0hp8"]
-radius = 54.0
-height = 198.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mqhnu"]
+radius = 22.0
+height = 86.0
 
-[node name="Hook" type="AnimatedSprite2D"]
-position = Vector2(-100, -155)
-sprite_frames = SubResource("SpriteFrames_e7146")
-centered = false
-script = ExtResource("3_7q0k2")
-EquipmentName = "Huge Hook"
-SpeedMultiplierUp = 0.8
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ijvd3"]
+radius = 45.0
+height = 186.0
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(100, 125)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6ba41"]
+radius = 53.0
+height = 194.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="HugeHook" instance=ExtResource("1_h6te0")]
+position = Vector2(-100, -13)
+sprite_frames = SubResource("SpriteFrames_4ji8s")
+AimOffset = 190
+SpeedMultiplierUp = 0.7
+
+[node name="FishBox" parent="." index="0"]
+position = Vector2(100, 155)
+
+[node name="CollisionShape2D" parent="FishBox" index="0"]
+position = Vector2(0, 34)
+shape = SubResource("CapsuleShape2D_n2inp")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="FishBox" index="1"]
 material = SubResource("CanvasItemMaterial_p8im8")
-shape = SubResource("CapsuleShape2D_61v6c")
+position = Vector2(0, -29)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_dm274")
 disabled = true
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 69)
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="FishBox" index="2"]
+material = SubResource("CanvasItemMaterial_p8im8")
+position = Vector2(0, -80)
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_t0hp8")
+shape = SubResource("CapsuleShape2D_mqhnu")
+disabled = true
+
+[node name="HitBox" parent="." index="1"]
+position = Vector2(100, 142)
+
+[node name="CollisionShape2D" parent="HitBox" index="0"]
+position = Vector2(0, 47)
+shape = SubResource("CapsuleShape2D_ijvd3")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="HitBox" index="1"]
+material = SubResource("CanvasItemMaterial_p8im8")
+shape = SubResource("CapsuleShape2D_6ba41")
 disabled = true

@@ -67,7 +67,7 @@ public partial class Home : CanvasLayer
 
     private void PlayTest()
     {
-        Play(Game.Mode.Target, GameManager.TestBiome);
+        Play(Game.Mode.Classic, GameManager.TestBiome);
     }
 
     private void GoToCompendium()

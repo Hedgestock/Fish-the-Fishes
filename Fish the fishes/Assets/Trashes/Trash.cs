@@ -32,29 +32,19 @@ public partial class Trash : CharacterBody2D, IFishable, IDescriptible
 
     public IFishable GetCaughtBy(IFisher by)
     {
-        if (by is FishingLine)
+        if (GameManager.Mode == Game.Mode.GoGreen && by is FishingLine)
         {
-            if (GameManager.Mode == Game.Mode.GoGreen)
-            {
-                if (by.FishedThings.Contains(this))
-                    return this; // This avoids multiple calls on reparenting
-                IsCaught = true;
-                by.FishedThings.Add(this);
-                CallDeferred(Node.MethodName.Reparent, by as Node);
-                Velocity = Vector2.Zero;
-                GravityScale = 0;
-            }
-            else
-            {
-                if (by.FishedThings.Count == 0 || (by as FishingLine).IsInvincible) return this;
-
-                UserData.TrashCompendium[GetType().Name].Hit++;
-
-                (by as FishingLine).GetHit(FishingLine.DamageType.Trash);
-            }
+            if (by.FishedThings.Contains(this))
+                return this; // This avoids multiple calls on reparenting
+            IsCaught = true;
+            by.FishedThings.Add(this);
+            CallDeferred(Node.MethodName.Reparent, by as Node);
+            Velocity = Vector2.Zero;
+            GravityScale = 0;
         }
         return this;
     }
+
     protected void Despawn()
     {
         if (!IsCaught)
