@@ -18,6 +18,8 @@ public partial class BiomeDebug : CanvasLayer
         base._Ready();
 
         TraverseBiomes(GameManager.StartingBiome.ResourceName);
+
+        Graph.ArrangeNodes();
     }
 
     private void TraverseBiomes(string biomeName, BiomeGraphNode PreviousBiomeNode = null, int fromSlot = -1)
@@ -32,10 +34,11 @@ public partial class BiomeDebug : CanvasLayer
 
         Biome thisBiome = GD.Load<Biome>($"{Constants.BiomesFolder}/{biomeName}/{biomeName}.tres");
 
-        thisBiomeNode = CreateBiomeNode(thisBiome);
+        thisBiomeNode = BiomeNode.Instantiate<BiomeGraphNode>();
+        thisBiomeNode.Biome = thisBiome;
         Graph.AddChild(thisBiomeNode);
         thisBiomeNode.SetSlotEnabledLeft(0, true);
-        thisBiomeNode.SetSlotColorLeft(0, new Color("cyan"));
+        //thisBiomeNode.SetSlotColorLeft(0, new Color("cyan"));
 
         if (PreviousBiomeNode != null)
         {
@@ -56,7 +59,7 @@ public partial class BiomeDebug : CanvasLayer
         {
             thisBiomeNode.AddBiome(weightedBiome);
             thisBiomeNode.SetSlotEnabledRight(slotNumber, true);
-            thisBiomeNode.SetSlotColorRight(slotNumber, new Color("purple"));
+            //thisBiomeNode.SetSlotColorRight(slotNumber, new Color("purple"));
             TraverseBiomes(weightedBiome.Biome.ToString(), thisBiomeNode, slotNumber - 1);
             slotNumber++;
         }
@@ -65,18 +68,6 @@ public partial class BiomeDebug : CanvasLayer
     private BiomeGraphNode CreateBiomeNode(Biome biome)
     {
         BiomeGraphNode node = BiomeNode.Instantiate<BiomeGraphNode>();
-
-        node.Title = biome.ResourceName;
-
-        foreach (WeightedFish weightedFish in biome.Fishes)
-        {
-            node.AddFish(weightedFish);
-        }
-
-        foreach (WeightedTrash weightedTrash in biome.Trashes)
-        {
-            node.AddTrash(weightedTrash);
-        }
 
         //foreach (WeightedBiome weightedBiome in biome.FollowupBiomes)
         //{

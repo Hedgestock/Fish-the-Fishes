@@ -6,5 +6,5 @@ public partial class WeightedItemControl : HBoxContainer
     [Export]
     public Label ItemName;
     [Export]
-    public LineEdit WeighInput;
+    public Label Weight;
 }

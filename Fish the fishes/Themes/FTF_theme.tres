@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=21 format=3 uid="uid://dqud8bhj4fopd"]
+[gd_resource type="Theme" load_steps=20 format=3 uid="uid://dqud8bhj4fopd"]
 
 [ext_resource type="StyleBox" uid="uid://cis4bdbay2jpn" path="res://Fish the fishes/Themes/ButtonTextureHover.tres" id="1_mcx8r"]
 [ext_resource type="Texture2D" uid="uid://dsnbmphv0scr7" path="res://Fish the fishes/Assets/Fishes/SardineFish/Animation/sardine_alive_1.png" id="2_5da5q"]
@@ -33,8 +33,6 @@ speed_scale = 5.0
 frame_0/texture = ExtResource("2_5da5q")
 frame_1/texture = ExtResource("3_b3wp6")
 frame_1/duration = 1.0
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yqf4q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e005x"]
 content_margin_left = 4.0
@@ -125,7 +123,6 @@ MarginContainer/constants/margin_right = 20
 MarginContainer/constants/margin_top = 20
 Panel/styles/panel = ExtResource("10_q6ye7")
 PanelContainer/styles/panel = ExtResource("10_q6ye7")
-ScrollContainer/styles/panel = SubResource("StyleBoxEmpty_yqf4q")
 TabContainer/icons/decrement = ExtResource("4_f26mx")
 TabContainer/icons/decrement_highlight = ExtResource("5_cttsl")
 TabContainer/icons/drop_mark = null

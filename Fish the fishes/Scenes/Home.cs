@@ -11,9 +11,13 @@ public partial class Home : CanvasLayer
     [Export]
     private TextureRect Background;
 
+    [Export]
+    private Button TestButton;
+
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
+        if (OS.IsDebugBuild()) TestButton.Show();
         if (GameManager.Biome == null) GameManager.Biome = GameManager.StartingBiome;
         if (GameManager.PrevScene == "res://SplashScreen.tscn")
         {

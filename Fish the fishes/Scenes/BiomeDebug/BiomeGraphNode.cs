@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using System.Text.RegularExpressions;
+using static Godot.Fish_the_fishes.Scripts.Constants;
 
 public partial class BiomeGraphNode : GraphNode
 {
@@ -16,9 +17,29 @@ public partial class BiomeGraphNode : GraphNode
     [Export]
     PackedScene WeightedItemControl;
 
+    public Biome Biome;
+
     public override void _Ready()
     {
         base._Ready();
+
+        Title = Biome.ResourceName;
+
+        foreach (WeightedFish weightedFish in Biome.Fishes)
+        {
+            AddFish(weightedFish);
+        }
+
+        foreach (WeightedTrash weightedTrash in Biome.Trashes)
+        {
+            AddTrash(weightedTrash);
+        }
+
+        StyleBoxTexture test = new();
+        test.Texture = Biome.Background;
+        AddThemeStyleboxOverride("panel",test);
+        AddThemeStyleboxOverride("panel_selected",test);
+
     }
 
     public void AddFish(WeightedFish fish)
@@ -26,7 +47,7 @@ public partial class BiomeGraphNode : GraphNode
         WeightedItemControl Item = WeightedItemControl.Instantiate<WeightedItemControl>();
 
         Item.ItemName.Text = fish.Fish.ToString();
-        Item.WeighInput.Text = fish.Weight.ToString();
+        Item.Weight.Text = fish.Weight.ToString();
 
         Fishes.AddChild(Item);
     }
@@ -36,7 +57,7 @@ public partial class BiomeGraphNode : GraphNode
         WeightedItemControl Item = WeightedItemControl.Instantiate<WeightedItemControl>();
 
         Item.ItemName.Text = trash.Trash.ToString();
-        Item.WeighInput.Text = trash.Weight.ToString();
+        Item.Weight.Text = trash.Weight.ToString();
 
         Trashes.AddChild(Item);
     }
@@ -46,7 +67,7 @@ public partial class BiomeGraphNode : GraphNode
         WeightedItemControl Item = WeightedItemControl.Instantiate<WeightedItemControl>();
 
         Item.ItemName.Text = biome.Biome.ToString();
-        Item.WeighInput.Text = biome.Weight.ToString();
+        Item.Weight.Text = biome.Weight.ToString();
 
         AddChild(Item);
     }

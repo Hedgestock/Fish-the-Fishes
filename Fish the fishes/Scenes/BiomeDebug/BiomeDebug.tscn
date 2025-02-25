@@ -49,8 +49,15 @@ stretch_mode = 0
 
 [node name="GraphEdit" type="GraphEdit" parent="VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
 size_flags_vertical = 3
+show_grid = false
+grid_pattern = 1
+snapping_enabled = false
+connection_lines_curvature = 0.2
+connection_lines_thickness = 10.0
+zoom = 0.233
+show_zoom_buttons = false
+show_grid_buttons = false
 
 [connection signal="pressed" from="VBoxContainer/BackButton" to="." method="GoToHome"]
 [connection signal="connection_request" from="VBoxContainer/GraphEdit" to="." method="Test"]
