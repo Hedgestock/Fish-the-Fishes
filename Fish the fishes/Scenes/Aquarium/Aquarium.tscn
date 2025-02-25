@@ -14,8 +14,10 @@ action = &"menu_go_back"
 [sub_resource type="Shortcut" id="Shortcut_lwwkp"]
 events = [SubResource("InputEventAction_qkuki")]
 
-[node name="Aquarium" type="Node" node_paths=PackedStringArray("Background", "BackButton")]
+[node name="Aquarium" type="Node" node_paths=PackedStringArray("FishTimer", "TrashTimer", "Background", "BackButton")]
 script = ExtResource("1_e2m0m")
+FishTimer = NodePath("FishTimer")
+TrashTimer = NodePath("TrashTimer")
 Background = NodePath("Background")
 BackButton = NodePath("MarginContainer/BackButton")
 

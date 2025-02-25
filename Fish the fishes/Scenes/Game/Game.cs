@@ -7,8 +7,14 @@ public partial class Game : Node
 {
     [Export]
     private TextureRect Background;
+    [Export]
+    private RandomTimer FishTimer;
+    [Export]
+    private RandomTimer TrashTimer;
 
     private DateTime StartTime;
+
+    private int CurrentBiomeCatches = 0;
 
     public enum Mode
     {
@@ -29,7 +35,7 @@ public partial class Game : Node
         GameManager.Score = 0;
         GameManager.Lives = 3;
 
-        Background.Texture = GameManager.Biome.Background;
+        SetupBiome();
         StartTime = DateTime.Now;
     }
 
@@ -66,9 +72,16 @@ public partial class Game : Node
         AddChild(trash);
     }
 
+    private void SetupBiome()
+    {
+        Background.Texture = GameManager.Biome.Background;
+        CurrentBiomeCatches = 0;
+        FishTimer.Start(GameManager.Biome.TimeToSpawnFish, GameManager.Biome.TimeToSpawnFishDeviation);
+        TrashTimer.Start(GameManager.Biome.TimeToSpawnTrash, GameManager.Biome.TimeToSpawnTrashDeviation);
+    }
+
     private void ChangeBiome()
     {
         GameManager.ChangeBiome();
-        Background.Texture = GameManager.Biome.Background;
     }
 }

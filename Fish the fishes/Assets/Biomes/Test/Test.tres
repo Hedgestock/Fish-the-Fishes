@@ -23,6 +23,11 @@ Weight = 100
 [resource]
 resource_name = "Test"
 script = ExtResource("12_3wj4f")
+TimeToSpawnFish = 3.0
+TimeToSpawnFishDeviation = 0.5
+TimeToSpawnTrash = 1.0
+TimeToSpawnTrashDeviation = 0.2
+ChangeBiomThreshold = 20
 Fishes = Array[Object]([SubResource("Resource_stpvf"), SubResource("Resource_muj2i")])
 Trashes = Array[Object]([SubResource("Resource_cigae")])
 FollowupBiomes = Array[Object]([])

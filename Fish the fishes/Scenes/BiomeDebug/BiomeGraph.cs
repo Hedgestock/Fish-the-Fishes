@@ -25,29 +25,6 @@ public partial class BiomeGraph : GraphEdit
         };
     }
 
-    //private Vector2? clickPosition = null;
-
-    //public override void _UnhandledInput(InputEvent @event)
-    //{
-    //    base._UnhandledInput(@event);
-    //    if (@event is InputEventMouseButton eventMouseButton)
-    //    {
-    //        if (eventMouseButton.IsActionPressed("screen_hold"))
-    //        {
-    //            clickPosition = eventMouseButton.Position;
-    //        }
-    //        else if (eventMouseButton.IsActionReleased("screen_hold"))
-    //        {
-    //            clickPosition = null;
-    //        }
-    //    }
-    //    else if (clickPosition != null && @event is InputEventMouseMotion eventMouseMotion)
-    //    {
-    //        Position += (Vector2)clickPosition - eventMouseMotion.Position;
-    //    }
-    //}
-
-
     private void TraverseBiomes(string biomeName, BiomeGraphNode PreviousBiomeNode = null, int fromSlot = -1)
     {
         BiomeGraphNode thisBiomeNode;

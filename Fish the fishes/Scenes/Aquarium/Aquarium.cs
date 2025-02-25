@@ -5,6 +5,10 @@ using Godot.Fish_the_fishes.Scripts;
 public partial class Aquarium : Node
 {
     [Export]
+    private RandomTimer FishTimer;
+    [Export]
+    private RandomTimer TrashTimer;
+    [Export]
     private TextureRect Background;
 
     [Export]
@@ -15,6 +19,8 @@ public partial class Aquarium : Node
     public override void _Ready()
     {
         Background.Texture = GameManager.Biome.Background;
+        FishTimer.Start(GameManager.Biome.TimeToSpawnFish, GameManager.Biome.TimeToSpawnFishDeviation);
+        TrashTimer.Start(GameManager.Biome.TimeToSpawnTrash, GameManager.Biome.TimeToSpawnTrashDeviation);
         BackButton.Pressed += GameManager.GoToPreviousScene;
     }
 

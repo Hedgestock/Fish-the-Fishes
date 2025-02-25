@@ -74,6 +74,11 @@ Weight = 100
 [resource]
 resource_name = "GreatBlue"
 script = ExtResource("4_g4nce")
+TimeToSpawnFish = 3.0
+TimeToSpawnFishDeviation = 0.5
+TimeToSpawnTrash = 1.0
+TimeToSpawnTrashDeviation = 0.2
+ChangeBiomThreshold = 20
 Fishes = Array[Object]([SubResource("Resource_f4pan"), SubResource("Resource_xyg2j"), SubResource("Resource_7w1j6"), SubResource("Resource_3ginu"), SubResource("Resource_1c6ge"), SubResource("Resource_cn611"), SubResource("Resource_okm2r"), SubResource("Resource_qul34")])
 Trashes = Array[Object]([SubResource("Resource_jbhkk"), SubResource("Resource_8v5i1"), SubResource("Resource_bqsre")])
 FollowupBiomes = Array[Object]([SubResource("Resource_l62ly"), SubResource("Resource_o0ehq")])

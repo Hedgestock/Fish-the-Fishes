@@ -8,8 +8,9 @@
 [ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://Fish the fishes/Themes/FTF_theme.tres" id="5_mnxty"]
 [ext_resource type="PackedScene" uid="uid://cifa65xrf1ken" path="res://Fish the fishes/UI/FishableButton/FishableButton.tscn" id="5_o3gki"]
 
-[node name="Home" type="CanvasLayer" node_paths=PackedStringArray("Message", "GameContainer", "Background", "TestButton")]
+[node name="Home" type="CanvasLayer" node_paths=PackedStringArray("FishTimer", "Message", "GameContainer", "Background", "TestButton")]
 script = ExtResource("1_ptl5f")
+FishTimer = NodePath("FishTimer")
 Message = NodePath("AspectRatioContainer/MarginContainer/VBoxContainer/Message")
 GameContainer = NodePath("GameContainer")
 Background = NodePath("Background")

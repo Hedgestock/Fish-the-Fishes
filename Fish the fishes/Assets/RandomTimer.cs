@@ -22,11 +22,15 @@ public partial class RandomTimer : Timer
         ));
     }
 
-    public new void Start(double timeSec = -1.0)
+    public void Start(double timeSec = -1, double deviation = -1)
     {
         if (timeSec > 0)
         {
             WaitTimeAverage = timeSec;
+        }
+        if (deviation > 0)
+        {
+            Deviation = deviation;
         }
 
         WaitTime = MathF.Max(0.1f, (float)GD.Randfn(WaitTimeAverage, Deviation));

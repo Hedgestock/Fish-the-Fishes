@@ -7,6 +7,18 @@ using System.Linq;
 [GlobalClass]
 public partial class Biome : Resource, IDescriptible
 {
+    [Export]
+    public float TimeToSpawnFish = 3;
+    [Export]
+    public float TimeToSpawnFishDeviation = 0.5f;
+
+    [Export]
+    public float TimeToSpawnTrash = 1;
+    [Export]
+    public float TimeToSpawnTrashDeviation = 0.2f;
+
+    [Export]
+    public int ChangeBiomThreshold = 20;
 
     [Export]
     public Array<WeightedFish> Fishes;

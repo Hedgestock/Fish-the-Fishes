@@ -10,9 +10,11 @@
 radius = 69.0
 height = 812.0
 
-[node name="Game" type="Node" node_paths=PackedStringArray("Background")]
+[node name="Game" type="Node" node_paths=PackedStringArray("Background", "FishTimer", "TrashTimer")]
 script = ExtResource("1_et1ja")
 Background = NodePath("Background")
+FishTimer = NodePath("FishTimer")
+TrashTimer = NodePath("TrashTimer")
 
 [node name="Background" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -36,7 +38,6 @@ WaitTimeAverage = 3.0
 Deviation = 0.5
 
 [node name="BiomeTimer" parent="." instance=ExtResource("13_7sxe6")]
-autostart = true
 WaitTimeAverage = 70.0
 Deviation = 7.0
 

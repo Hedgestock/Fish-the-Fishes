@@ -61,10 +61,9 @@ size_flags_vertical = 3
 
 [node name="Panel" type="TabContainer" parent="VBoxContainer/MarginContainer"]
 layout_mode = 2
-current_tab = 1
+current_tab = 0
 
 [node name="Credits" type="RichTextLabel" parent="VBoxContainer/MarginContainer/Panel"]
-visible = false
 layout_mode = 2
 bbcode_enabled = true
 text = "[center]
@@ -82,6 +81,7 @@ Game developped with the Godot game engine and using C#
 metadata/_tab_index = 0
 
 [node name="Patch Notes" type="MarginContainer" parent="VBoxContainer/MarginContainer/Panel"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
@@ -91,6 +91,7 @@ bbcode_enabled = true
 text = "[center][font_size=200]XX/02/2025[/font_size][/center]
 [font_size=100]
 [ul]
+Changed biome compendium to graph of biomes with spawn rates
 Changed spawn position and trajectory of fishes
 Added achievements to unlock hidden hook:
 [ol]
