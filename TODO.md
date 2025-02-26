@@ -128,6 +128,7 @@
 - [x] Rendre l'axe de trajet générique à tous les poissons
 - [x] Mettre les chronomètres d'apparition des poissons et des déchêts sur les biomes
 - [x] Ajouter un outil pour voire les graphes de selection des biomes ainsi que les probabilités d'apparition des poissons
+- [x] Cône de poissons qui fuient le requin
 - [ ] Support de différentes langues
 	- [x] Anglais
 	- [ ] Français
@@ -148,7 +149,6 @@
 - [ ] Ajouter une animation pour signifier la casse de l'hameçon à la remontée
 - [ ] Afficher un biome aléatoire dans ceux visités pour le fond du menu
 - [ ] Ajouter un moyen de trier/filtrer le compendium
-- [ ] Cône de poissons qui fuient le requin
 - [ ] Ajouter un moyen d'exporter/importer une sauvegarde
 
 # Corrections

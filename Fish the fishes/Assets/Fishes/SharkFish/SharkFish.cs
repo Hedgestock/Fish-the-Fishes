@@ -6,13 +6,12 @@ using System.Collections.Generic;
 
 public partial class SharkFish : Fish, IFisher
 {
-    [ExportGroup("Attributes")]
     //[Export]
     //private GpuParticles2D Blood;
     [Export]
     private CollisionShape2D HitBox;
     //[Export]
-    //private CpuParticles2D Bubbles;
+    //private GpuParticles2D Bubbles;
 
     public List<IFishable> FishedThings { get; } = new List<IFishable>();
 
@@ -25,14 +24,16 @@ public partial class SharkFish : Fish, IFisher
 
         Velocity = Vector2.Zero;
 
-        //CpuParticles2D indicator = (CpuParticles2D)Bubbles.Duplicate();
+        //GpuParticles2D indicator = (GpuParticles2D)Bubbles.Duplicate();
         //indicator.ProcessMaterial = (Material)Bubbles.ProcessMaterial.Duplicate();
-        //indicator.Position = GlobalPosition + (travelAxis * 250);
-        //(indicator.ProcessMaterial as ParticleProcessMaterial).Gravity = new Vector3(travelAxis.X, travelAxis.Y, 0) * 500;
-        //indicator.Gravity = new Vector2(travelAxis.X, travelAxis.Y) * 500;
+        //indicator.Position = GlobalPosition + (TravelAxis * 250);
+        //(indicator.ProcessMaterial as ParticleProcessMaterial).Gravity = new Vector3(TravelAxis.X, TravelAxis.Y, 0) * 500;
         //GetParent().AddChild(indicator);
 
-        //Bubbles.Amount = (int)ActualSpeed / 10;
+        //Bubbles.Amount = (int)ActualSpeed/3;
+
+        FrightenFishes();
+
         Hide();
 
         LaunchTimer = GetTree().CreateTimer(2);
@@ -41,6 +42,8 @@ public partial class SharkFish : Fish, IFisher
             //indicator.QueueFree();
             if (!IsInstanceValid(this)) return;
             Show();
+            HitBox.SetDeferred(CollisionShape2D.PropertyName.Disabled, false);
+
             if (!IsActionable) return;
             Velocity = TravelAxis * ActualSpeed;
         };
@@ -72,7 +75,7 @@ public partial class SharkFish : Fish, IFisher
         Fish Food = body as Fish;
 
         //Food = Food.GetCaughtBy(this) as Fish;
-        //Food.Kill();
+        Food.Kill();
         if (!Food.IsHuge)
         {
             //GpuParticles2D bleeding = (GpuParticles2D)Blood.Duplicate();
@@ -82,6 +85,24 @@ public partial class SharkFish : Fish, IFisher
             //GetTree().CreateTimer(bleeding.Lifetime).Timeout += bleeding.QueueFree;
 
             Food.QueueFree();
+        }
+    }
+
+    private void FrightenFishes()
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            PackedScene FishScene = GD.Load<PackedScene>(Biome.GetRandomPathFrom(GameManager.Biome.Fishes));
+            Fish fish = FishScene.Instantiate<Fish>();
+            if (fish is SharkFish) continue;
+            fish.Position = Position;
+            fish.Flip = Flip;
+            fish.ActualSpeed = fish.MaxSpeed * 1.5f;
+
+            fish.TravelAxis = TravelAxis.Rotated((float)GD.RandRange(-.5, .5));
+
+            // Spawn the fish by adding it to the main scene.
+            GetParent().AddChild(fish);
         }
     }
 }

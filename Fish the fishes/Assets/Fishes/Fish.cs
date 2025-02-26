@@ -31,7 +31,7 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
     [Export]
     private float MinSpeed = 150;
     [Export]
-    private float MaxSpeed = 250;
+    public float MaxSpeed = 250;
     [Export(PropertyHint.Range, "0,1")]
     private float TajectoryDeviation = 0.1f;
     [Export]

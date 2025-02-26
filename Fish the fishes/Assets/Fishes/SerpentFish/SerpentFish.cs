@@ -1,4 +1,5 @@
 using Godot;
+using Godot.Fish_the_fishes.Scripts;
 using System;
 using System.Collections.Generic;
 
@@ -18,9 +19,6 @@ public partial class SerpentFish : Fish
     int WaveSpeed = 10;
 
     private Dictionary<int, CollisionShape2D> HurtBoxes = new();
-
-    private Vector2[] LastPositions;
-    private Vector2 LastPosition;
 
     private DateTime InstanciationTime = DateTime.Now;
 
@@ -56,24 +54,25 @@ public partial class SerpentFish : Fish
         Vector2[] tmp = new Vector2[Length];
 
         tmp[0] = Vector2.Zero;
-        if (!IsActionable)
-        {
 
-        }
-        else
+        for (int i = 1; i < Length; i++)
         {
-            for (int i = 1; i < Length; i++)
+            if (IsActionable)
             {
                 tmp[i] = new Vector2(-SegmentLength * i,
                     (float)Math.Sin((((DateTime.Now - InstanciationTime).TotalMilliseconds / 1000f) - (SegmentLength * (Length - i))) * WaveSpeed) * (WaveAmplitude * AmplitudeCurve.Sample((float)i / Length)));
+                Body.Points = tmp;
                 if (HurtBoxes.ContainsKey(i))
                 {
                     HurtBoxes[i].Position = tmp[i];
                 }
             }
         }
-        Body.Points = tmp;
-        LastPositions = Body.Points;
-        LastPosition = GlobalPosition;
+    }
+
+    public override IFishable GetCaughtBy(IFisher by)
+    {
+
+        return base.GetCaughtBy(by);
     }
 }

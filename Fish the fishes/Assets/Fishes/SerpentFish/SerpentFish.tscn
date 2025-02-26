@@ -16,7 +16,6 @@ _data = [Vector2(0, 0.797541), 0.0, 1.87717, 0, 0, Vector2(0.134529, 0.994672), 
 point_count = 3
 
 [node name="SerpentFish" node_paths=PackedStringArray("Body") instance=ExtResource("1_32uni")]
-position = Vector2(730, 402)
 script = ExtResource("2_ujnj7")
 Body = NodePath("Line2D")
 Length = 50
@@ -26,6 +25,7 @@ WaveAmplitude = 60
 WaveSpeed = 5
 CompendiumName = ""
 CompendiumDescription = ""
+Value = 2.0
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = ExtResource("3_1g1s3")

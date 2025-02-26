@@ -20,17 +20,16 @@ particles_anim_h_frames = 4
 particles_anim_v_frames = 1
 particles_anim_loop = false
 
-[node name="SharkFish" node_paths=PackedStringArray("HitBox", "Bubbles") instance=ExtResource("1_p0acp")]
+[node name="SharkFish" node_paths=PackedStringArray("HitBox") instance=ExtResource("1_p0acp")]
 script = ExtResource("2_eu3rx")
 HitBox = NodePath("HitBox/CollisionShape2D")
-Bubbles = NodePath("Bubbles")
 CompendiumName = "Shark"
 CompendiumDescription = ""
-AverageSize = 155.0
 Value = 10.0
 Multiplier = 2
 MinSpeed = 1500.0
 MaxSpeed = 2500.0
+AverageSize = 155.0
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0"]
 position = Vector2(-15, 0)
