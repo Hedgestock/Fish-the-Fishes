@@ -23,7 +23,7 @@ SegmentLength = 10
 AmplitudeCurve = SubResource("Curve_xo0c7")
 WaveAmplitude = 60
 WaveSpeed = 5
-CompendiumName = ""
+CompendiumName = "Sea Snake"
 CompendiumDescription = ""
 Value = 2.0
 

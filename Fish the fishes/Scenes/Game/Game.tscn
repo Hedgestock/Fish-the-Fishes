@@ -35,10 +35,6 @@ stretch_mode = 6
 WaitTimeAverage = 3.0
 Deviation = 0.5
 
-[node name="BiomeTimer" parent="." instance=ExtResource("13_7sxe6")]
-WaitTimeAverage = 10.0
-Deviation = 0.0
-
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 5
@@ -58,7 +54,6 @@ shape = SubResource("CapsuleShape2D_ksc04")
 [connection signal="EndGame" from="HUD" to="." method="EndGame"]
 [connection signal="timeout" from="FishTimer" to="." method="SpawnFish"]
 [connection signal="timeout" from="TrashTimer" to="." method="SpawnTrash"]
-[connection signal="timeout" from="BiomeTimer" to="." method="ChangeBiome"]
 [connection signal="area_entered" from="Control/FrustrationFix" to="FishingLine" method="MakeInvincible"]
 [connection signal="area_exited" from="Control/FrustrationFix" to="FishingLine" method="MakeVincible"]
 [connection signal="Hit" from="FishingLine" to="HUD" method="LineHit"]

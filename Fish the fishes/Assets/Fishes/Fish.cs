@@ -35,13 +35,13 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
     [Export(PropertyHint.Range, "0,1")]
     private float TajectoryDeviation = 0.1f;
     [Export]
-    private Vector2 SpawnRange = new(0, 1);
+    protected Vector2 SpawnRange = new(0, 1);
     [Export]
     public float AverageSize = 100;
     [Export]
     private float SizeDeviation = 0.1f;
 
-    private float GravityScale = 0;
+    protected float GravityScale = 0;
 
 
     public bool Flip = false;
@@ -84,7 +84,7 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
 
         IsCaught = false;
 
-        // If the inherited class did not set the spawning Posision, we do it now.
+        // If the inheriting class did not set the spawning Posision, we do it now.
         if (Position == Vector2.Zero)
         {
             Flip = (GD.Randi() % 2) != 0;
@@ -94,19 +94,19 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
             );
         }
 
-        // If the inherited class did not set the ActualSpeed, we do it now.
+        // If the inheriting class did not set the ActualSpeed, we do it now.
         if (ActualSpeed == 0)
         {
             ActualSpeed = (float)GD.RandRange(MinSpeed, MaxSpeed);
         }
 
-        // If the inherited class did not set the TravelAxis, we do it now.
+        // If the inheriting class did not set the TravelAxis, we do it now.
         if (TravelAxis == Vector2.Zero)
         {
             // Here, we invert the Flip condition to get a point that's on the opposite side of the spawning Position
             float trajectoryVariation = GameManager.ScreenSize.Y * TajectoryDeviation;
             Vector2 objective = new Vector2(
-                !Flip ? GameManager.ScreenSize.X + 200 : -200,
+                !Flip ? GameManager.ScreenSize.X : 0,
                 (float)GD.RandRange(
                     MathF.Max(0, Position.Y - trajectoryVariation),
                     MathF.Min(Position.Y + trajectoryVariation, GameManager.ScreenSize.Y)
@@ -124,7 +124,7 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
         }
 
 
-        // If the inherited class did not set the ActualSizeVariation, we do it now.
+        // If the inheriting class did not set the ActualSizeVariation, we do it now.
         if (ActualSizeVariation == 0)
         {
             ActualSizeVariation = (float)Mathf.Max(0.01, GD.Randfn(1, SizeDeviation));

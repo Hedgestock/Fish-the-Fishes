@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Biome" load_steps=11 format=3 uid="uid://nmu6wfnfu8ax"]
+[gd_resource type="Resource" script_class="Biome" load_steps=8 format=3 uid="uid://nmu6wfnfu8ax"]
 
 [ext_resource type="Texture2D" uid="uid://dxslcf7yijvtu" path="res://Fish the fishes/art/BeachBackground.png" id="1_5ypud"]
 [ext_resource type="Script" path="res://Fish the fishes/Scripts/Weighted/WeightedFish.cs" id="1_bycrx"]
@@ -10,24 +10,9 @@ script = ExtResource("1_bycrx")
 Fish = 8
 Weight = 10
 
-[sub_resource type="Resource" id="Resource_k1lpj"]
-script = ExtResource("1_bycrx")
-Fish = 7
-Weight = 100
-
-[sub_resource type="Resource" id="Resource_qwipq"]
-script = ExtResource("1_bycrx")
-Fish = 0
-Weight = 100
-
-[sub_resource type="Resource" id="Resource_u18jo"]
-script = ExtResource("1_bycrx")
-Fish = 2
-Weight = 200
-
 [sub_resource type="Resource" id="Resource_e4amh"]
 script = ExtResource("1_bycrx")
-Fish = 4
+Fish = 9
 Weight = 100
 
 [sub_resource type="Resource" id="Resource_cigae"]
@@ -42,8 +27,9 @@ TimeToSpawnFish = 1.0
 TimeToSpawnFishDeviation = 0.2
 TimeToSpawnTrash = 100.0
 TimeToSpawnTrashDeviation = 0.2
-ChangeBiomThreshold = 20
-Fishes = Array[Object]([SubResource("Resource_0y5cy"), SubResource("Resource_k1lpj"), SubResource("Resource_qwipq"), SubResource("Resource_u18jo"), SubResource("Resource_e4amh")])
+ChangeBiomeThreshold = 50
+ChangeBiomeThresholdDeviation = 5
+Fishes = Array[Object]([SubResource("Resource_0y5cy"), SubResource("Resource_e4amh")])
 Trashes = Array[Object]([SubResource("Resource_cigae")])
 FollowupBiomes = Array[Object]([])
 CompendiumName = "Test"

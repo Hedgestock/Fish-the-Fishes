@@ -24,6 +24,8 @@
 - [ ] Ajouter un jingle pour les meilleurs scores
 - [ ] Ajouter un tutoriel
 - [ ] Ajouter un bouton de pause
+- [ ] Changer le mode d'affichage des poissons dans le compendium
+
 
 # Poissons
 
@@ -49,6 +51,7 @@
 - [ ] Grenouille
 - [ ] Saumon
 - [ ] Thon
+- [ ] Serpent de mer
 
 # Objets pêchables
 
@@ -175,8 +178,9 @@
 - [x] [**Actuellement impossible**] Corriger les requins en attente de lancement
 - [x] Corriger l'affichage des credits
 - [ ] Corriger les requins qui mangent des poissons déjà pêchés
-- [ ] Corriger les bulles des requins qui disparaissent trop tôt
+- [ ] [**Plus de bulles pour l'instant**]Corriger les bulles des requins qui disparaissent trop tôt
 - [ ] Passer à des listes de noms plutôt que des énumérations
 - [ ] Grouper les vérifications de hauts faits en un seul appel de fonction
 - [ ] Corriger les poissons qui restent sur la ligne après une remontée
 - [ ] Régler les problèmes d'affichage de la taille dans le compendium
+- [ ] Ajouter un tag pour les poissons à point d'apparition particulier (Et empêcher ces derniers de fuir les requins)

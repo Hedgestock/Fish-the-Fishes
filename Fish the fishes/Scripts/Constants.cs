@@ -36,6 +36,7 @@ namespace Godot.Fish_the_fishes.Scripts
             YellowFish,
             SharkFish,
             SerpentFish,
+            JellyFish,
         }
 
         public static string TrashesFolder = "res://Fish the fishes/Assets/Trashes/";
