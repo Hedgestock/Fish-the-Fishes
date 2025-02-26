@@ -27,7 +27,7 @@ public partial class HUD : CanvasLayer
     private AudioStream LoseGame;
 
     private Tween tween;
-    private uint LocalScore { get; set; }
+    private long LocalScore { get; set; }
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()

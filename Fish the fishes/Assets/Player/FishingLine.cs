@@ -275,8 +275,10 @@ public partial class FishingLine : CharacterBody2D, IFisher
             }
         }
 
-        UserData.SetHighStat(Constants.MaxFishedFishes, (uint)FishedThings.Count);
-        UserData.IncrementStatistic(Constants.TotalFishedFishes, (uint)FishedThings.Count);
+        UserData.SetHighStat(Constants.MaxFishedFishes, FishedThings.Count);
+        UserData.IncrementStatistic(Constants.TotalFishedFishes, FishedThings.Count);
+
+        GameManager.CurrentBiomeCatches += FishedThings.Count;
 
         foreach (Fish fish in FishedThings)
         {

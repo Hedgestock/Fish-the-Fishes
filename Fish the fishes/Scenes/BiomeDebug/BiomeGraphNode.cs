@@ -15,6 +15,8 @@ public partial class BiomeGraphNode : GraphNode
     Label FishDensity;
     [Export]
     Label TrashDensity;
+    [Export]
+    Label NextBiomeThreshold;
 
     public Biome Biome;
 
@@ -44,6 +46,7 @@ public partial class BiomeGraphNode : GraphNode
 
         FishDensity.Text += $"{Biome.TimeToSpawnFish}({Biome.TimeToSpawnFishDeviation})";
         TrashDensity.Text += $"{Biome.TimeToSpawnTrash}({Biome.TimeToSpawnTrashDeviation})";
+        NextBiomeThreshold.Text += $"{Biome.ChangeBiomeThreshold}({Biome.ChangeBiomeThresholdDeviation})";
     }
 
     public void AddItem(WeightedItem item, uint maxWeight)

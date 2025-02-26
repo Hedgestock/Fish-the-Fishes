@@ -18,7 +18,10 @@ public partial class Biome : Resource, IDescriptible
     public float TimeToSpawnTrashDeviation = 0.5f;
 
     [Export]
-    public int ChangeBiomThreshold = 20;
+    public int ChangeBiomeThreshold = 50;
+
+    [Export]
+    public int ChangeBiomeThresholdDeviation = 5;
 
     [Export]
     public Array<WeightedFish> Fishes;

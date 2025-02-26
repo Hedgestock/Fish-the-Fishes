@@ -9,6 +9,9 @@ public partial class GameManager : Node
     [Signal]
     public delegate void TargetChangedEventHandler();
 
+    [Signal]
+    public delegate void BiomeChangedEventHandler();
+
     [Export]
     private Biome _startingBiome;
     [Export]
@@ -28,8 +31,20 @@ public partial class GameManager : Node
     public static Biome Biome
     {
         get { return _biome; }
-        set {
+        set
+        {
             _biome = value;
+
+            _currentBiomeCatches = 0;
+            CalculatedBiomeThreshold = (int)GD.Randfn(value.ChangeBiomeThreshold, value.ChangeBiomeThresholdDeviation);
+
+            for (int i = 0; i < 20; i++)
+            {
+                GD.Print((int)GD.Randfn(value.ChangeBiomeThreshold, value.ChangeBiomeThresholdDeviation));
+            }
+
+            Instance.EmitSignal(SignalName.BiomeChanged);
+
             if (Mode == Game.Mode.Menu) return;
             if (UserData.BiomeCompendium.TryGetValue(value.ResourceName, out UserData.BiomeCompendiumEntry entry)) entry.Seen++;
             else UserData.BiomeCompendium[Biome.ResourceName] = new UserData.BiomeCompendiumEntry();
@@ -38,8 +53,26 @@ public partial class GameManager : Node
 
 
     public static Game.Mode Mode = Game.Mode.Menu;
-    public static uint Score = 0;
+    public static long Score = 0;
     public static uint Lives = 3;
+    private static int _currentBiomeCatches = 0;
+    public static int CurrentBiomeCatches
+    {
+        get { return _currentBiomeCatches; }
+        set
+        {
+            GD.Print(value);
+            if (value > CalculatedBiomeThreshold)
+            {
+                ChangeBiome();
+            }
+            else
+            {
+                _currentBiomeCatches = value;
+            }
+        }
+    }
+    public static int CalculatedBiomeThreshold = 0;
 
     public static string PrevScene = "";
     public static Vector2 ScreenSize;

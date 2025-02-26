@@ -14,8 +14,6 @@ public partial class Game : Node
 
     private DateTime StartTime;
 
-    private int CurrentBiomeCatches = 0;
-
     public enum Mode
     {
         AllModes,
@@ -36,6 +34,7 @@ public partial class Game : Node
         GameManager.Lives = 3;
 
         SetupBiome();
+        GameManager.Instance.BiomeChanged += SetupBiome;
         StartTime = DateTime.Now;
     }
 
@@ -75,13 +74,8 @@ public partial class Game : Node
     private void SetupBiome()
     {
         Background.Texture = GameManager.Biome.Background;
-        CurrentBiomeCatches = 0;
+        GD.Print($"Biome threshold = {GameManager.CalculatedBiomeThreshold}");
         FishTimer.Start(GameManager.Biome.TimeToSpawnFish, GameManager.Biome.TimeToSpawnFishDeviation);
         TrashTimer.Start(GameManager.Biome.TimeToSpawnTrash, GameManager.Biome.TimeToSpawnTrashDeviation);
-    }
-
-    private void ChangeBiome()
-    {
-        GameManager.ChangeBiome();
     }
 }
