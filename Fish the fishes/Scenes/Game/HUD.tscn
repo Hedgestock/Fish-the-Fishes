@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://cvbwt4wdd5htw" path="res://Fish the fishes/sounds/ScoreMinus.ogg" id="3_ta1pc"]
 [ext_resource type="PackedScene" uid="uid://di7207b71mnm8" path="res://Fish the fishes/UI/AnimatedSpriteForUI/AnimatedSpriteForUI.tscn" id="4_38r4v"]
 [ext_resource type="AudioStream" uid="uid://cpcouodm444js" path="res://Fish the fishes/sounds/JingleLose.ogg" id="4_ae21k"]
-[ext_resource type="SpriteFrames" uid="uid://dtab4ysdktcpe" path="res://Fish the fishes/Scenes/Game/Animation/Classic/ClassicLifeAnimation.tres" id="8_ixkn7"]
+[ext_resource type="SpriteFrames" uid="uid://dtab4ysdktcpe" path="res://Fish the fishes/Scenes/Game/Animation/ClassicLifeAnimation.tres" id="8_ixkn7"]
 
 [node name="HUD" type="CanvasLayer" node_paths=PackedStringArray("ScoreLabel", "ScoreChangeLabel", "TimeLabel", "GameTimer", "LivesContainer", "Target")]
 script = ExtResource("1_6mcuw")

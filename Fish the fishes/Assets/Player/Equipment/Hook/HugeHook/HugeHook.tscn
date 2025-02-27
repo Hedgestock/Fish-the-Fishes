@@ -49,6 +49,7 @@ height = 194.0
 position = Vector2(-100, -13)
 sprite_frames = SubResource("SpriteFrames_4ji8s")
 AimOffset = 190
+EquipmentName = "Huge Hook"
 SpeedMultiplierUp = 0.7
 
 [node name="FishBox" parent="." index="0"]

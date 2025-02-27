@@ -153,6 +153,7 @@
 - [ ] Afficher un biome aléatoire dans ceux visités pour le fond du menu
 - [ ] Ajouter un moyen de trier/filtrer le compendium
 - [ ] Ajouter un moyen d'exporter/importer une sauvegarde
+- [ ] Utiliser une vraie pour la ligne de pêche.
 
 # Corrections
 
@@ -177,10 +178,12 @@
 - [x] [**Actuellement Impossible**] Corriger les bulles des requins qui disparaissent
 - [x] [**Actuellement impossible**] Corriger les requins en attente de lancement
 - [x] Corriger l'affichage des credits
-- [ ] Corriger les requins qui mangent des poissons déjà pêchés
 - [ ] [**Plus de bulles pour l'instant**]Corriger les bulles des requins qui disparaissent trop tôt
 - [ ] Passer à des listes de noms plutôt que des énumérations
 - [ ] Grouper les vérifications de hauts faits en un seul appel de fonction
 - [ ] Corriger les poissons qui restent sur la ligne après une remontée
 - [ ] Régler les problèmes d'affichage de la taille dans le compendium
 - [ ] Ajouter un tag pour les poissons à point d'apparition particulier (Et empêcher ces derniers de fuir les requins)
+- [ ] Réparer le mode Go Green (Toucher un déchêt ne devrait pas agir comme en classique)
+- [ ] Corriger les requins qui mangent des poissons déjà pêchés
+- [ ] Corriger les espadons qui pêchent des poissons déjà pêchés

@@ -34,12 +34,6 @@ public partial class Aquarium : Node
         AddChild(fish);
     }
 
-    private void Despawn(Node2D body)
-    {
-        if (body is IFishable && (body as IFishable).IsCaught) return;
-        body.QueueFree();
-    }
-
     private void SpawnTrash()
     {
         PackedScene TrashScene = GD.Load<PackedScene>(Biome.GetRandomPathFrom(GameManager.Biome.Trashes));

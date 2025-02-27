@@ -1,7 +1,8 @@
 using Godot;
+using Godot.Fish_the_fishes.Scripts;
 using System;
 
-public partial class JellyFish : Fish
+public partial class JellyFish : Fish, IPowerup
 {
     public override void _Ready()
     {
@@ -32,8 +33,16 @@ public partial class JellyFish : Fish
         base._PhysicsProcess(delta);
     }
 
+    public void Activate()
+    {
+        GameManager.Instance.EmitSignal(GameManager.SignalName.LifeUp);
+    }
+
     private void Push()
     {
-        Velocity = TravelAxis * ActualSpeed;
+        if (IsActionable)
+        {
+            Velocity = TravelAxis * ActualSpeed;
+        }
     }
 }

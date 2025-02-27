@@ -1,13 +1,22 @@
-[gd_resource type="SpriteFrames" format=3 uid="uid://dfq5oyqiu8wpr"]
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://dfq5oyqiu8wpr"]
+
+[ext_resource type="Texture2D" uid="uid://165l2gumtvkr" path="res://Fish the fishes/Assets/Fishes/RedFish/Animation/red_alive_1.png" id="1_8j3u3"]
+[ext_resource type="Texture2D" uid="uid://b2rofas27gvrw" path="res://Fish the fishes/Assets/Fishes/RedFish/Animation/red_dead.png" id="2_3h8yj"]
 
 [resource]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8j3u3")
+}],
 "loop": true,
 "name": &"alive",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3h8yj")
+}],
 "loop": true,
 "name": &"dead",
 "speed": 5.0

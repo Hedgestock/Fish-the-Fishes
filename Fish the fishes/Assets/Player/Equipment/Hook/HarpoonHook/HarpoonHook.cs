@@ -11,7 +11,14 @@ public partial class HarpoonHook : Hook
         {
             _state = value;
             DisableHitbox(_state != Action.MovingUp);
-            DisableFishBox(_state != Action.MovingDown);
+            if (value == Action.MovingDown)
+            {
+                DisableFishBox(false);
+            }
+            else
+            {
+                GetTree().CreateTimer(.1).Timeout += () => DisableFishBox(true);
+            }
         }
     }
 }

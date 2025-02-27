@@ -56,7 +56,8 @@ public partial class FishingLine : CharacterBody2D, IFisher
         // If this is the first launch of the game or if a now unavailable hook is equipped, this will be null
         string hookKey = UserData.Equipments.Where(e => e.Value.Type == EquipmentPiece.Type.Hook).FirstOrDefault(e => e.Value.IsEquipped).Key;
 
-        if (hookKey == null) {
+        if (hookKey == null)
+        {
             // In the case of an invalid equippped item we default to standard
             hookKey = "StandardHook";
             UserData.Equipments[hookKey] = new UserData.EquipmentStatus(EquipmentPiece.Type.Hook, true);
@@ -284,6 +285,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
         {
             UpdateFishCompendium(fish);
             score *= fish.Multiplier;
+            if (fish is IPowerup powerup) powerup.Activate();
             fish.QueueFree();
         }
 
@@ -291,7 +293,6 @@ public partial class FishingLine : CharacterBody2D, IFisher
         UserData.IncrementStatistic(Constants.TotalPointsScored, (long)score);
 
         return (int)score;
-
     }
 
     private int GoGreenScore()
@@ -309,7 +310,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
         foreach (Node thing in FishedThings)
         {
             if (thing is Trash) UserData.TrashCompendium[thing.GetType().Name].Cleaned++;
-
+            if (thing is IPowerup powerup) powerup.Activate();
             thing.QueueFree();
         }
 
@@ -330,6 +331,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
         foreach (Fish fish in FishedThings)
         {
             UpdateFishCompendium(fish);
+            if (fish is IPowerup powerup) powerup.Activate();
             fish.QueueFree();
         }
         FishedThings.Clear();

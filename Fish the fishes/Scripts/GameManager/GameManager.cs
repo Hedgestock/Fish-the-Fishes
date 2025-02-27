@@ -12,6 +12,9 @@ public partial class GameManager : Node
     [Signal]
     public delegate void BiomeChangedEventHandler();
 
+    [Signal]
+    public delegate void LifeUpEventHandler();
+
     [Export]
     private Biome _startingBiome;
     [Export]

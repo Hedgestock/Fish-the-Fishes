@@ -48,10 +48,9 @@ public partial class HUD : CanvasLayer
                 Target.GetParent<Control>().Show();
                 break;
             case Game.Mode.GoGreen:
-                string resourcePath = $"res://Fish the fishes/Scenes/Game/Animation/GoGreen/GoGreenLifeAnimation.tres";
-                LivesContainer.GetNode<AnimatedSpriteForUI>("Life1").SpriteFrames = GD.Load<SpriteFrames>(resourcePath);
-                LivesContainer.GetNode<AnimatedSpriteForUI>("Life2").SpriteFrames = GD.Load<SpriteFrames>(resourcePath);
-                LivesContainer.GetNode<AnimatedSpriteForUI>("Life3").SpriteFrames = GD.Load<SpriteFrames>(resourcePath);
+                LivesContainer.GetNode<AnimatedSpriteForUI>("Life1").Animation = "life_go_green";
+                LivesContainer.GetNode<AnimatedSpriteForUI>("Life2").Animation = "life_go_green";
+                LivesContainer.GetNode<AnimatedSpriteForUI>("Life3").Animation = "life_go_green";
                 goto default;
             case Game.Mode.Classic:
             case Game.Mode.Zen:
@@ -61,6 +60,7 @@ public partial class HUD : CanvasLayer
                 LivesContainer.GetNode<AnimatedSpriteForUI>("Life1").Play();
                 LivesContainer.GetNode<AnimatedSpriteForUI>("Life2").Play();
                 LivesContainer.GetNode<AnimatedSpriteForUI>("Life3").Play();
+                GameManager.Instance.LifeUp += LifeUp;
                 break;
         }
     }
@@ -152,20 +152,36 @@ public partial class HUD : CanvasLayer
         AnimatedSprite2D Life = LivesContainer.GetNode<AnimatedSpriteForUI>("Life" + (3 - GameManager.Lives)).Sprite;
         Life.Animation = "death";
 
-        Life.Scale = Vector2.One * 2;
-        Vector2 originalPosition = Life.Position;
-        Life.Position = new Vector2(Life.Position.X, Life.Position.Y + 20);
-
-        Tween tween = CreateTween();
-        tween.SetParallel(true);
-        tween.TweenProperty(Life, "scale", Vector2.One, 1).SetTrans(Tween.TransitionType.Elastic);
-        tween.TweenProperty(Life, "position", originalPosition, 1).SetTrans(Tween.TransitionType.Elastic);
+        UpdateLifeSprite(Life);
 
         if (GameManager.Lives <= 0)
         {
             if (GameManager.Mode == Game.Mode.GoGreen) EndCurrentGame();
             else GetTree().CreateTimer(1).Timeout += EndCurrentGame;
         }
+    }
+
+    private void LifeUp()
+    {
+        if (GameManager.Lives >= 3) return;
+        AnimatedSprite2D Life = LivesContainer.GetNode<AnimatedSpriteForUI>("Life" + (3 - GameManager.Lives)).Sprite;
+        GameManager.Lives++;
+
+        Life.Animation = GameManager.Mode == Game.Mode.GoGreen ? "life_go_green" : "life";
+
+        UpdateLifeSprite(Life);
+    }
+
+    private void UpdateLifeSprite(AnimatedSprite2D sprite)
+    {
+        sprite.Scale = Vector2.One * 2;
+        Vector2 originalPosition = sprite.Position;
+        sprite.Position = new Vector2(sprite.Position.X, sprite.Position.Y + 20);
+
+        Tween tween = CreateTween();
+        tween.SetParallel(true);
+        tween.TweenProperty(sprite, "scale", Vector2.One, 1).SetTrans(Tween.TransitionType.Elastic);
+        tween.TweenProperty(sprite, "position", originalPosition, 1).SetTrans(Tween.TransitionType.Elastic);
     }
 
     private void EndCurrentGame()

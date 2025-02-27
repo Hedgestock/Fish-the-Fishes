@@ -38,7 +38,10 @@ sprite_frames = SubResource("SpriteFrames_hyelc")
 animation = &"broken"
 script = ExtResource("3_jupia")
 AimOffset = 175
-EquipmentName = ""
+EquipmentName = "Harpoon"
+SpeedMultiplierDown = 1.5
+SpeedMultiplierUp = 0.5
+FlatSpeedModifierDown = 400
 
 [node name="FishBox" parent="." index="0"]
 position = Vector2(25, 155)

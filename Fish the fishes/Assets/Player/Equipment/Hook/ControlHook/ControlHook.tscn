@@ -36,6 +36,7 @@ position = Vector2(-50, -15)
 sprite_frames = SubResource("SpriteFrames_37ege")
 AimOffset = 80
 TotalMoves = 2
+EquipmentName = "Control Hook"
 SpeedMultiplierDown = 0.7
 
 [node name="FishBox" parent="." index="0"]

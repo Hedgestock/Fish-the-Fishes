@@ -84,6 +84,7 @@ text = "Target
 position = Vector2(102, 73)
 
 [node name="PlayGoGreenButton" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu" instance=ExtResource("5_o3gki")]
+visible = false
 position = Vector2(71, -112)
 
 [node name="VisibleOnScreenNotifier2D" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayGoGreenButton" index="0"]

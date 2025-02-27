@@ -168,7 +168,6 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
                 return (parent as IFishable).GetCaughtBy(by);
 
             // In case we are already caught by a non fishable thing, we make sure that we are removed from its list ("stolen")
-            // TO FIX: the stolen fish usually gets instantly recaught, leading to the thief to be caught as well
             (parent as IFisher).FishedThings.Remove(this);
         };
 
@@ -201,7 +200,7 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
         Sound.Stop();
     }
 
-    protected void Despawn()
+    private void Despawn()
     {
         if (!IsCaught)
         {
