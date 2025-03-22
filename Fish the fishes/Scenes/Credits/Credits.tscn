@@ -91,9 +91,10 @@ metadata/_tab_index = 1
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/MarginContainer/Panel/Patch Notes"]
 layout_mode = 2
 bbcode_enabled = true
-text = "[center][font_size=200]22/02/2025[/font_size][/center]
+text = "[center][font_size=200]22/03/2025[/font_size][/center]
 [font_size=100]
 [ul]
+Added reeling sound and ambiance
 Added graph of biomes with spawn rates
 Changed spawn position and trajectory of fishes
 Added achievements to unlock hidden hook:
@@ -102,6 +103,7 @@ Control Hook[img=top]res://Fish the fishes/Assets/Player/Equipment/Hook/ControlH
 [/ol]
 Fixed a lot of achievements conditions and display in the compendium
 Fixed Harpoon [img=top]res://Fish the fishes/Assets/Player/Equipment/Hook/HarpoonHook/HarpoonHook_default.png[/img] being invicible while going up and adjusted its speed
+Fixed a bug on hooks still fishing after getting hit, and sometime while getting hit, leading to \"undead\" fishes on the line for the rest of the game
 Separated fishbox and hitbox for all hooks
 Added biome specific trash and fish density
 Biome change now occurs after a number of fished fishes rather than on a timer

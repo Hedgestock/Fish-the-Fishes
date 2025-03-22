@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://c8x2gam58vw1l"
-path="res://.godot/imported/Toyouying.wav-62ee0d4845cf6f60867d7cd71712cf73.sample"
+path="res://.godot/imported/Toyouying.wav-45d6ec4a5a0c9bab62c415a98014db38.sample"
 
 [deps]
 
-source_file="res://Fish the fishes/sounds/SFX/Toyouying.wav"
-dest_files=["res://.godot/imported/Toyouying.wav-62ee0d4845cf6f60867d7cd71712cf73.sample"]
+source_file="res://Fish the fishes/Assets/Player/Toyouying.wav"
+dest_files=["res://.godot/imported/Toyouying.wav-45d6ec4a5a0c9bab62c415a98014db38.sample"]
 
 [params]
 

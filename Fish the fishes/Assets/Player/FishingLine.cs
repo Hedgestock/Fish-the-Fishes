@@ -17,10 +17,13 @@ public partial class FishingLine : CharacterBody2D, IFisher
     }
 
     [Signal]
-    public delegate void ScoreEventHandler();
+    public delegate void ScoreEventHandler(int score);
 
     [Signal]
-    public delegate void HitEventHandler();
+    public delegate void HitEventHandler(int damageType);
+
+    [Export]
+    private AudioStreamPlayer2D ReelingSound;
 
     [Export]
     private uint Speed;
@@ -90,12 +93,14 @@ public partial class FishingLine : CharacterBody2D, IFisher
                     Hook.State = MovingUp;
                     MoveTowardsCustom(new Vector2(BasePosition.X, -150 - Hook.AimOffset));
                     Line.Animation = "weighted";
+                    ReelingSound.Play();
                     break;
                 case MovingUp:
                     // This avoids loosing on target mode when we fish nothing
                     if (FishedThings.Count > 0)
                         EmitSignal(SignalName.Score, ComputeScore());
                     Line.Animation = "loose";
+                    ReelingSound.Stop();
                     goto case GettingHit;
                 case GettingHit:
                     Hook.State = Resetting;
@@ -194,7 +199,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
     {
         if (FishedThings.Count == 0 || _invincible) return;
         EmitSignal(SignalName.Hit, (int)damageType);
-        GetNode<AudioStreamPlayer2D>("HitSound").Play();
+        Hook.State = GettingHit;
         AchievementsManager.OnHit(damageType);
 
         if (damageType == DamageType.Trash)
