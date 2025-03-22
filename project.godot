@@ -12,12 +12,12 @@ config_version=5
 
 config/name="Fish the Fishes"
 config/version="2.0"
-run/main_scene="res://SplashScreen.tscn"
+run/main_scene="uid://blkg0i7vjb6il"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="WaffleStock/FishTheFishes"
 config/features=PackedStringArray("4.4", "C#", "GL Compatibility")
-boot_splash/fullsize=false
-boot_splash/image="uid://dnfny2w0wi7ss"
+boot_splash/bg_color=Color(0.0980392, 0.27451, 0.407843, 1)
+boot_splash/image="uid://ds2atggfh18jt"
 config/icon="res://Fish the fishes/art/icon 512.png"
 
 [audio]
@@ -51,6 +51,7 @@ Trashes=""
 [gui]
 
 theme/custom="res://Fish the fishes/Themes/FTF_theme.tres"
+theme/custom_font="uid://dpapfoajdrcwy"
 
 [input]
 

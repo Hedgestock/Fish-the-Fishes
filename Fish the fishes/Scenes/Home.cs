@@ -22,7 +22,7 @@ public partial class Home : CanvasLayer
         if (OS.IsDebugBuild()) TestButton.Show();
         if (GameManager.Biome == null) GameManager.Biome = GameManager.StartingBiome;
         FishTimer.Start(GameManager.Biome.TimeToSpawnFish, GameManager.Biome.TimeToSpawnFishDeviation);
-        if (GameManager.PrevScene == "res://SplashScreen.tscn")
+        if (GameManager.PrevScene == "")
         {
             GetNode<AudioStreamPlayer>("AudioStreamPlayer").Play();
         }

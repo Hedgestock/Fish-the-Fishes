@@ -153,7 +153,8 @@
 - [ ] Afficher un biome aléatoire dans ceux visités pour le fond du menu
 - [ ] Ajouter un moyen de trier/filtrer le compendium
 - [ ] Ajouter un moyen d'exporter/importer une sauvegarde
-- [ ] Utiliser une vraie pour la ligne de pêche.
+- [ ] Utiliser une vraie ligne pour la ligne de pêche.
+- [ ] Passer au manager de scène, de sauvegarde etc... Standards de wafflestock
 
 # Corrections
 

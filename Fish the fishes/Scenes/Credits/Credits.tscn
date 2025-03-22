@@ -77,6 +77,9 @@ Sound Designer: Odun
 
 Game developped with the Godot game engine and using C#
 [img=200]res://icon.svg[/img]    [img=200]res://Logo_C_sharp.svg[/img]
+
+Wafflestock
+[img=400]res://Wafflestock/logo_Wafflestock.png[/img] 
 [/center]"
 metadata/_tab_index = 0
 
@@ -88,7 +91,7 @@ metadata/_tab_index = 1
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/MarginContainer/Panel/Patch Notes"]
 layout_mode = 2
 bbcode_enabled = true
-text = "[center][font_size=200]XX/02/2025[/font_size][/center]
+text = "[center][font_size=200]22/02/2025[/font_size][/center]
 [font_size=100]
 [ul]
 Added graph of biomes with spawn rates
