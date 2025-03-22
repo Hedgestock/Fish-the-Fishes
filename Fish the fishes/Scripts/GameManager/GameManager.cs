@@ -38,11 +38,6 @@ public partial class GameManager : Node
             _currentBiomeCatches = 0;
             CalculatedBiomeThreshold = (int)GD.Randfn(value.ChangeBiomeThreshold, value.ChangeBiomeThresholdDeviation);
 
-            for (int i = 0; i < 20; i++)
-            {
-                GD.Print((int)GD.Randfn(value.ChangeBiomeThreshold, value.ChangeBiomeThresholdDeviation));
-            }
-
             Instance.EmitSignal(SignalName.BiomeChanged);
 
             if (Mode == Game.Mode.Menu) return;
@@ -61,7 +56,7 @@ public partial class GameManager : Node
         get { return _currentBiomeCatches; }
         set
         {
-            GD.Print(value);
+            GD.Print($"Biome catches set to {value}");
             if (value > CalculatedBiomeThreshold)
             {
                 ChangeBiome();

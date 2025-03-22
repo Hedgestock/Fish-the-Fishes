@@ -6,9 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://4sfuxo2673qo" path="res://Fish the fishes/art/BG 2 FTF.png" id="3_pinul"]
 [ext_resource type="PackedScene" uid="uid://ifoga56i10w3" path="res://Fish the fishes/Assets/RandomTimer.tscn" id="13_7sxe6"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ksc04"]
-radius = 69.0
-height = 812.0
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ag258"]
+distance = 50.0
 
 [node name="Game" type="Node" node_paths=PackedStringArray("Background", "FishTimer", "TrashTimer")]
 script = ExtResource("1_et1ja")
@@ -46,8 +45,8 @@ size_flags_horizontal = 4
 [node name="FrustrationFix" type="Area2D" parent="Control"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Control/FrustrationFix"]
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_ksc04")
+rotation = 3.14159
+shape = SubResource("WorldBoundaryShape2D_ag258")
 
 [node name="FishingLine" parent="." instance=ExtResource("3_kichm")]
 

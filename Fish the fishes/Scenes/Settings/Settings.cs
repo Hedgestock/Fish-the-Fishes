@@ -26,6 +26,11 @@ public partial class Settings : CanvasLayer
     private Slider SFXVolume;
 
     [Export]
+    private CustomCheckBox MuteAmbiance;
+    [Export]
+    private Slider AmbianceVolume;
+
+    [Export]
     private CustomCheckBox MuteFishes;
     [Export]
     private Slider FishesVolume;
@@ -39,11 +44,13 @@ public partial class Settings : CanvasLayer
         MuteMaster.ButtonPressed = !UserSettings.MuteMaster;
         MuteMusic.ButtonPressed = !UserSettings.MuteMusic;
         MuteSFX.ButtonPressed = !UserSettings.MuteSFX;
+        MuteAmbiance.ButtonPressed = !UserSettings.MuteAmbiance;
         MuteFishes.ButtonPressed = !UserSettings.MuteFishes;
 
         MasterVolume.Value = UserSettings.MasterVolume;
         MusicVolume.Value = UserSettings.MusicVolume;
         SFXVolume.Value = UserSettings.SFXVolume;
+        AmbianceVolume.Value = UserSettings.AmbianceVolume;
         FishesVolume.Value = UserSettings.FishesVolume;
     }
 
@@ -83,6 +90,15 @@ public partial class Settings : CanvasLayer
     private void SFXVolumeChanged(float volume)
     {
         UserSettings.SFXVolume = volume;
+    }
+
+    private void MuteAmbianceVolume(bool on)
+    {
+        UserSettings.MuteAmbiance = !on;
+    }
+    private void AmbianceVolumeChanged(float volume)
+    {
+        UserSettings.AmbianceVolume = volume;
     }
 
     private void MuteFishesVolume(bool on)

@@ -79,6 +79,28 @@ namespace Godot.Fish_the_fishes.Scripts
                 _sfxVolume = value;
             }
         }
+
+        private bool _muteAmbiance = false;
+        public bool muteAmbiance
+        {
+            get { return _muteAmbiance; }
+            set
+            {
+                AudioServer.SetBusMute(AudioServer.GetBusIndex("Ambiance"), value);
+                _muteAmbiance = value;
+            }
+        }
+        private float _ambianceVolume = .1f;
+        public float ambianceVolume
+        {
+            get { return _ambianceVolume; }
+            set
+            {
+                AudioServer.SetBusVolumeDb(AudioServer.GetBusIndex("Ambiance"), Mathf.LinearToDb(value));
+                _ambianceVolume = value;
+            }
+        }
+
         private bool _muteFishes = false;
         public bool muteFishes
         {
@@ -144,6 +166,16 @@ namespace Godot.Fish_the_fishes.Scripts
         {
             get { return _instance.sfxVolume; }
             set { _instance.sfxVolume = value; }
+        }
+        public static bool MuteAmbiance
+        {
+            get { return _instance.muteAmbiance; }
+            set { _instance.muteAmbiance = value; }
+        }
+        public static float AmbianceVolume
+        {
+            get { return _instance.ambianceVolume; }
+            set { _instance.ambianceVolume = value; }
         }
         public static bool MuteFishes
         {

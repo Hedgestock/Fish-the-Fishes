@@ -132,6 +132,7 @@
 - [x] Mettre les chronomètres d'apparition des poissons et des déchêts sur les biomes
 - [x] Ajouter un outil pour voire les graphes de selection des biomes ainsi que les probabilités d'apparition des poissons
 - [x] Cône de poissons qui fuient le requin
+- [x] Ajouter l'écran de chargement Wafflestock standard
 - [ ] Support de différentes langues
 	- [x] Anglais
 	- [ ] Français
@@ -154,7 +155,8 @@
 - [ ] Ajouter un moyen de trier/filtrer le compendium
 - [ ] Ajouter un moyen d'exporter/importer une sauvegarde
 - [ ] Utiliser une vraie ligne pour la ligne de pêche.
-- [ ] Passer au manager de scène, de sauvegarde etc... Standards de wafflestock
+- [ ] Passer au gestionnaire de scène, de sauvegarde etc... Standards de wafflestock
+- [ ] Ajouter un filtre audio pour chaque biome
 
 # Corrections
 
@@ -188,3 +190,4 @@
 - [ ] Réparer le mode Go Green (Toucher un déchêt ne devrait pas agir comme en classique)
 - [ ] Corriger les requins qui mangent des poissons déjà pêchés
 - [ ] Corriger les espadons qui pêchent des poissons déjà pêchés
+- [ ] Les paramètres audios doivent lire les bus et le gestionnaire audio doit mettre les bus à jour en fonction du fichier de sauvegarde

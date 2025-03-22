@@ -1,6 +1,5 @@
 using Godot;
 using Godot.Fish_the_fishes.Scripts;
-using System.Collections.Generic;
 
 public partial class Home : CanvasLayer
 {
