@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://c41vxnkhc7q6y"]
 
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Fish the fishes/Assets/Fishes/Fish.tscn" id="1_v1625"]
-[ext_resource type="Script" path="res://Fish the fishes/Assets/Fishes/JellyFish/JellyFish.cs" id="2_7552x"]
+[ext_resource type="Script" uid="uid://do052ec684mam" path="res://Fish the fishes/Assets/Fishes/JellyFish/JellyFish.cs" id="2_7552x"]
 [ext_resource type="SpriteFrames" uid="uid://dfq5oyqiu8wpr" path="res://Fish the fishes/Assets/Fishes/JellyFish/Animation/JellyFishAnimation.tres" id="3_8r5tt"]
 [ext_resource type="PackedScene" uid="uid://ifoga56i10w3" path="res://Fish the fishes/Assets/RandomTimer.tscn" id="4_5j62k"]
 

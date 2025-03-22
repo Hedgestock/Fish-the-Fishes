@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://di7207b71mnm8"]
 
-[ext_resource type="Script" path="res://Fish the fishes/UI/AnimatedSpriteForUI/AnimatedSpriteForUI.cs" id="1_rskyt"]
+[ext_resource type="Script" uid="uid://owwp53cay08o" path="res://Fish the fishes/UI/AnimatedSpriteForUI/AnimatedSpriteForUI.cs" id="1_rskyt"]
 
 [node name="Placeholder" type="BoxContainer" node_paths=PackedStringArray("_sprite")]
 anchors_preset = 8

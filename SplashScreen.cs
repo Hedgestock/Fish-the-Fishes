@@ -7,7 +7,7 @@ public partial class SplashScreen : CanvasLayer
 {
     public override void _Ready()
     {
-        ; var background = GetNode<ColorRect>("ColorRect");
+        var background = GetNode<ColorRect>("ColorRect");
         background.Modulate = Colors.Black;
         Tween tween = GetTree().CreateTween();
         tween.TweenProperty(background, "modulate", Colors.White, 2.0f);

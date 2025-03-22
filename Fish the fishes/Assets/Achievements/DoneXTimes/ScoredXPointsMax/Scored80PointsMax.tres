@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ScoredXPointsMax" load_steps=2 format=3 uid="uid://dtese11bdc0ib"]
 
-[ext_resource type="Script" path="res://Fish the fishes/Assets/Achievements/DoneXTimes/ScoredXPointsMax/ScoredXPointsMax.cs" id="1_pro8p"]
+[ext_resource type="Script" uid="uid://0p2li3x0h74g" path="res://Fish the fishes/Assets/Achievements/DoneXTimes/ScoredXPointsMax/ScoredXPointsMax.cs" id="1_pro8p"]
 
 [resource]
 script = ExtResource("1_pro8p")

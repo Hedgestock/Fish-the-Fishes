@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://blkg0i7vjb6il"]
 
 [ext_resource type="Texture2D" uid="uid://4sfuxo2673qo" path="res://Fish the fishes/art/BG 2 FTF.png" id="1_4aplq"]
-[ext_resource type="Script" path="res://Fish the fishes/Scenes/Home.cs" id="1_ptl5f"]
+[ext_resource type="Script" uid="uid://ril112dwv2k8" path="res://Fish the fishes/Scenes/Home.cs" id="1_ptl5f"]
 [ext_resource type="AudioStream" uid="uid://cejn28367eqbj" path="res://Fish the fishes/sounds/ftf.ogg" id="2_itj28"]
 [ext_resource type="PackedScene" uid="uid://ifoga56i10w3" path="res://Fish the fishes/Assets/RandomTimer.tscn" id="2_op8l2"]
 [ext_resource type="PackedScene" uid="uid://bnkmwtljf2o3p" path="res://Fish the fishes/Assets/Player/FishingLine.tscn" id="4_pulgk"]

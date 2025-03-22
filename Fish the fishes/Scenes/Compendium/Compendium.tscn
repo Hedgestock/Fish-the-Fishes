@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://b0nv1b3x0suu5"]
 
-[ext_resource type="Script" path="res://Fish the fishes/Scenes/Compendium/Compendium.cs" id="1_lwdf7"]
+[ext_resource type="Script" uid="uid://b1fbk8flphipc" path="res://Fish the fishes/Scenes/Compendium/Compendium.cs" id="1_lwdf7"]
 [ext_resource type="Texture2D" uid="uid://4sfuxo2673qo" path="res://Fish the fishes/art/BG 2 FTF.png" id="1_x6noe"]
 [ext_resource type="PackedScene" uid="uid://blsj53n3v0fo7" path="res://Fish the fishes/Scenes/Compendium/FishCompendiumEntry.tscn" id="2_8qvf3"]
 [ext_resource type="Texture2D" uid="uid://dvkg44r1oulcs" path="res://Fish the fishes/art/UI/retour.png" id="2_mhjxi"]

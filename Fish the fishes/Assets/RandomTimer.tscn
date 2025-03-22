@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ifoga56i10w3"]
 
-[ext_resource type="Script" path="res://Fish the fishes/Assets/RandomTimer.cs" id="1_ogqc2"]
+[ext_resource type="Script" uid="uid://wt14in5nk5s1" path="res://Fish the fishes/Assets/RandomTimer.cs" id="1_ogqc2"]
 
 [node name="RandomTimer" type="Timer"]
 script = ExtResource("1_ogqc2")

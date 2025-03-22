@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://bjjph3hx7hdwx"]
 
 [ext_resource type="PackedScene" uid="uid://cu4qvea6vce5v" path="res://Fish the fishes/Scenes/Compendium/CompendiumEntry.tscn" id="1_bl8jl"]
-[ext_resource type="Script" path="res://Fish the fishes/Scenes/Compendium/AnimatedCompendiumEntry.cs" id="2_pthwn"]
+[ext_resource type="Script" uid="uid://dmx8usr2glmbj" path="res://Fish the fishes/Scenes/Compendium/AnimatedCompendiumEntry.cs" id="2_pthwn"]
 [ext_resource type="PackedScene" uid="uid://di7207b71mnm8" path="res://Fish the fishes/UI/AnimatedSpriteForUI/AnimatedSpriteForUI.tscn" id="3_t7bor"]
 [ext_resource type="Texture2D" uid="uid://sf5nbt1ewklc" path="res://Fish the fishes/Assets/Fishes/ArrowFish/Animation/arrow_left.png" id="4_rulu7"]
 [ext_resource type="Texture2D" uid="uid://b3ygkwfip0qaj" path="res://Fish the fishes/Assets/Fishes/ArrowFish/Animation/arrow_left_3.png" id="5_iihax"]

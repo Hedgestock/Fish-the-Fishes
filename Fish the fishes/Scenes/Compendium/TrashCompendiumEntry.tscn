@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b3musubb85kyk"]
 
 [ext_resource type="PackedScene" uid="uid://bjjph3hx7hdwx" path="res://Fish the fishes/Scenes/Compendium/AnimatedCompendiumEntry.tscn" id="1_hm5on"]
-[ext_resource type="Script" path="res://Fish the fishes/Scenes/Compendium/TrashCompendiumEntry.cs" id="2_ssflb"]
+[ext_resource type="Script" uid="uid://darynntdwqxy3" path="res://Fish the fishes/Scenes/Compendium/TrashCompendiumEntry.cs" id="2_ssflb"]
 
 [node name="PanelContainer" node_paths=PackedStringArray("NumberCleaned", "NumberHit") instance=ExtResource("1_hm5on")]
 script = ExtResource("2_ssflb")

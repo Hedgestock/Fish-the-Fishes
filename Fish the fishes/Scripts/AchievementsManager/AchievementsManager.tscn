@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cq86kgxcrcrov"]
 
-[ext_resource type="Script" path="res://Fish the fishes/Scripts/AchievementsManager/AchievementsManager.cs" id="1_pqju3"]
+[ext_resource type="Script" uid="uid://chxqgy1wusagc" path="res://Fish the fishes/Scripts/AchievementsManager/AchievementsManager.cs" id="1_pqju3"]
 [ext_resource type="PackedScene" uid="uid://b4hl7jdtefkae" path="res://Fish the fishes/Assets/Achievements/Notification/Notification.tscn" id="6_hnxwc"]
 
 [node name="AchievementsManager" type="Node"]

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="FishedXFishesTotal" load_steps=2 format=3 uid="uid://bgwi8yrehoxtd"]
 
-[ext_resource type="Script" path="res://Fish the fishes/Assets/Achievements/DoneXTimes/FishedXFishesTotal/FishedXFishesTotal.cs" id="1_hfqf2"]
+[ext_resource type="Script" uid="uid://bl3q1427if8fq" path="res://Fish the fishes/Assets/Achievements/DoneXTimes/FishedXFishesTotal/FishedXFishesTotal.cs" id="1_hfqf2"]
 
 [resource]
 script = ExtResource("1_hfqf2")

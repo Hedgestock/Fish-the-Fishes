@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://caai7o1q2a1n0" path="res://Fish the fishes/Assets/Player/Equipment/Hook/StandardHook/StandardHook.tscn" id="1_h6oal"]
 [ext_resource type="Texture2D" uid="uid://1grh4c4hsl7m" path="res://Fish the fishes/Assets/Player/Equipment/Hook/HarpoonHook/HarpoonHook_broken.png" id="1_ntyyr"]
 [ext_resource type="Texture2D" uid="uid://cvhexrbytj6y2" path="res://Fish the fishes/Assets/Player/Equipment/Hook/HarpoonHook/HarpoonHook_default.png" id="2_c4i3i"]
-[ext_resource type="Script" path="res://Fish the fishes/Assets/Player/Equipment/Hook/HarpoonHook/HarpoonHook.cs" id="3_jupia"]
+[ext_resource type="Script" uid="uid://cwa4h68foaonn" path="res://Fish the fishes/Assets/Player/Equipment/Hook/HarpoonHook/HarpoonHook.cs" id="3_jupia"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hyelc"]
 animations = [{

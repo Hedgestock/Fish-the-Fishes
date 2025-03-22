@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cnjq5le44dwec"]
 
-[ext_resource type="Script" path="res://Fish the fishes/Assets/Trashes/Trash.cs" id="1_8ptuq"]
+[ext_resource type="Script" uid="uid://gjsua5evpnc7" path="res://Fish the fishes/Assets/Trashes/Trash.cs" id="1_8ptuq"]
 
 [node name="Trash" type="CharacterBody2D" groups=["Trashes"]]
 collision_mask = 0

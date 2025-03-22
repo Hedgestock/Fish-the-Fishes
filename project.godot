@@ -15,7 +15,9 @@ config/version="2.0"
 run/main_scene="res://SplashScreen.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="WaffleStock/FishTheFishes"
-config/features=PackedStringArray("4.3", "C#", "GL Compatibility")
+config/features=PackedStringArray("4.4", "C#", "GL Compatibility")
+boot_splash/fullsize=false
+boot_splash/image="uid://dnfny2w0wi7ss"
 config/icon="res://Fish the fishes/art/icon 512.png"
 
 [audio]

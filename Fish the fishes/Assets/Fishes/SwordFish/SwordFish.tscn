@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://be1nxedcwhn2i"]
 
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Fish the fishes/Assets/Fishes/Fish.tscn" id="1_jmf7p"]
-[ext_resource type="Script" path="res://Fish the fishes/Assets/Fishes/SwordFish/SwordFish.cs" id="2_q8hjt"]
+[ext_resource type="Script" uid="uid://c1mkn0uov1i0b" path="res://Fish the fishes/Assets/Fishes/SwordFish/SwordFish.cs" id="2_q8hjt"]
 [ext_resource type="SpriteFrames" uid="uid://cyv8fnlha8eri" path="res://Fish the fishes/Assets/Fishes/SwordFish/Animation/SwordFishAnimation.tres" id="3_rsy4g"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l8r55"]

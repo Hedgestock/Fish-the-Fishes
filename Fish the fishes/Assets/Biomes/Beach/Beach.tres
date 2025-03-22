@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="Biome" load_steps=17 format=3 uid="uid://cablkxc4svteo"]
 
 [ext_resource type="Texture2D" uid="uid://cyqlsyp6ppauk" path="res://Fish the fishes/Assets/Biomes/Beach/BeachBackground.png" id="1_e4qq5"]
-[ext_resource type="Script" path="res://Fish the fishes/Scripts/Weighted/WeightedFish.cs" id="2_6h1jc"]
-[ext_resource type="Script" path="res://Fish the fishes/Scripts/Weighted/WeightedTrash.cs" id="3_brc6y"]
-[ext_resource type="Script" path="res://Fish the fishes/Assets/Biomes/Biome.cs" id="3_h68yh"]
-[ext_resource type="Script" path="res://Fish the fishes/Scripts/Weighted/WeightedBiome.cs" id="3_xwyyq"]
+[ext_resource type="Script" uid="uid://bprtko2ut7gy0" path="res://Fish the fishes/Scripts/Weighted/WeightedFish.cs" id="2_6h1jc"]
+[ext_resource type="Script" uid="uid://du5t70kmo5wl6" path="res://Fish the fishes/Scripts/Weighted/WeightedTrash.cs" id="3_brc6y"]
+[ext_resource type="Script" uid="uid://62lfoitacli2" path="res://Fish the fishes/Assets/Biomes/Biome.cs" id="3_h68yh"]
+[ext_resource type="Script" uid="uid://bysvm4vph3aiq" path="res://Fish the fishes/Scripts/Weighted/WeightedBiome.cs" id="3_xwyyq"]
 
 [sub_resource type="Resource" id="Resource_f4pan"]
 script = ExtResource("2_6h1jc")

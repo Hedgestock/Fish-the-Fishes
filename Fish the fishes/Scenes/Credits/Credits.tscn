@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://cpc2lk8mjeebi"]
 
-[ext_resource type="Script" path="res://Fish the fishes/Scenes/Credits/Credits.cs" id="1_okroq"]
+[ext_resource type="Script" uid="uid://ddb5usq1uqexh" path="res://Fish the fishes/Scenes/Credits/Credits.cs" id="1_okroq"]
 [ext_resource type="Texture2D" uid="uid://4sfuxo2673qo" path="res://Fish the fishes/art/BG 2 FTF.png" id="2_0shy0"]
 [ext_resource type="Texture2D" uid="uid://dvkg44r1oulcs" path="res://Fish the fishes/art/UI/retour.png" id="3_6g4x1"]
 [ext_resource type="Texture2D" uid="uid://bjbotgfwig38a" path="res://Fish the fishes/art/UI/retour click.png" id="4_bgxfl"]

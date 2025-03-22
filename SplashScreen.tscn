@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://chjs8hsqifkuk"]
 
-[ext_resource type="Script" path="res://SplashScreen.cs" id="1_alnnm"]
+[ext_resource type="Script" uid="uid://cktwlq38w4b27" path="res://SplashScreen.cs" id="1_alnnm"]
 [ext_resource type="Texture2D" uid="uid://dnfny2w0wi7ss" path="res://logo_Wafflestock.png" id="1_g1giu"]
 [ext_resource type="FontFile" uid="uid://bplhe2sos3pyh" path="res://fonts/CourierPrime-Bold.ttf" id="2_8c8aj"]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://o3sakxk7d0t4"]
 
-[ext_resource type="Script" path="res://Fish the fishes/Scripts/GameManager/GameManager.cs" id="1_gfi28"]
+[ext_resource type="Script" uid="uid://c6uwlpoiksfks" path="res://Fish the fishes/Scripts/GameManager/GameManager.cs" id="1_gfi28"]
 [ext_resource type="Resource" uid="uid://cablkxc4svteo" path="res://Fish the fishes/Assets/Biomes/Beach/Beach.tres" id="2_iiibe"]
 [ext_resource type="Resource" uid="uid://nmu6wfnfu8ax" path="res://Fish the fishes/Assets/Biomes/Test/Test.tres" id="3_sp56m"]
 

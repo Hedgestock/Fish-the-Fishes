@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://mpb5fpciv02u"]
 
-[ext_resource type="Script" path="res://Fish the fishes/Assets/Fishes/Fish.cs" id="1_y6aq3"]
+[ext_resource type="Script" uid="uid://ky7k8nk7np7f" path="res://Fish the fishes/Assets/Fishes/Fish.cs" id="1_y6aq3"]
 
 [node name="Fish" type="CharacterBody2D" node_paths=PackedStringArray("Sprite", "Sound") groups=["Fishes"]]
 collision_mask = 0

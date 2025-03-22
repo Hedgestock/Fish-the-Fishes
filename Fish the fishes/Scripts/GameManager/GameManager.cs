@@ -23,9 +23,6 @@ public partial class GameManager : Node
     public static Biome StartingBiome { get { return _instance._startingBiome; } }
     public static Biome TestBiome { get { return _instance._testBiome; } }
 
-    static private GameManager _instance = null;
-    public static GameManager Instance { get { return _instance; } }
-
     private static string _target = "Fish";
     static public string Target { get { return _target; } }
 
@@ -87,6 +84,9 @@ public partial class GameManager : Node
     private static string SettingsFilePath = SaveDirectory + SettingsFileName;
 
     private static SceneTreeTimer TargetSafeTimer;
+
+    static private GameManager _instance = null;
+    public static GameManager Instance { get { return _instance; } }
 
     private GameManager()
     {

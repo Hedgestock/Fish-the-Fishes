@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://biyy1v6mq1cue"]
 
 [ext_resource type="PackedScene" uid="uid://cu4qvea6vce5v" path="res://Fish the fishes/Scenes/Compendium/CompendiumEntry.tscn" id="1_tqd83"]
-[ext_resource type="Script" path="res://Fish the fishes/Scenes/Compendium/BiomeCompendiumEntry.cs" id="2_m1jhr"]
+[ext_resource type="Script" uid="uid://8oslgbgn76w1" path="res://Fish the fishes/Scenes/Compendium/BiomeCompendiumEntry.cs" id="2_m1jhr"]
 
 [node name="PanelContainer" node_paths=PackedStringArray("Background", "Icon", "Button") instance=ExtResource("1_tqd83")]
 script = ExtResource("2_m1jhr")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://yi82g384vgwb"]
 
-[ext_resource type="Script" path="res://Fish the fishes/Scenes/Game/HUD.cs" id="1_6mcuw"]
+[ext_resource type="Script" uid="uid://dsu5w3o51mu13" path="res://Fish the fishes/Scenes/Game/HUD.cs" id="1_6mcuw"]
 [ext_resource type="FontFile" uid="uid://bfbfdje68lt7w" path="res://fonts/Amatic-Bold.ttf" id="1_tvh2u"]
 [ext_resource type="AudioStream" uid="uid://bta071uim1523" path="res://Fish the fishes/sounds/ScorePlus.ogg" id="2_6lsm5"]
 [ext_resource type="AudioStream" uid="uid://cvbwt4wdd5htw" path="res://Fish the fishes/sounds/ScoreMinus.ogg" id="3_ta1pc"]

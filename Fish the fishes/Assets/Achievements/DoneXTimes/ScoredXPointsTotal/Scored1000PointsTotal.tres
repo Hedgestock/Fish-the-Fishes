@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="ScoredXPoints" load_steps=2 format=3 uid="uid://cpscuk8iygsic"]
+[gd_resource type="Resource" script_class="ScoredXPointsTotal" load_steps=2 format=3 uid="uid://cpscuk8iygsic"]
 
-[ext_resource type="Script" path="res://Fish the fishes/Assets/Achievements/DoneXTimes/ScoredXPointsTotal/ScoredXPointsTotal.cs" id="1_1wsbh"]
+[ext_resource type="Script" uid="uid://dmmsdmc2hc0is" path="res://Fish the fishes/Assets/Achievements/DoneXTimes/ScoredXPointsTotal/ScoredXPointsTotal.cs" id="1_1wsbh"]
 
 [resource]
 script = ExtResource("1_1wsbh")
 Threshold = 1000
 Category = 0
 Mode = 0
+UnlockableName = ""
+UnlockableType = 0
 CompendiumName = "1000 Points"
 CompendiumDescription = "That's 10 times more than 100!"

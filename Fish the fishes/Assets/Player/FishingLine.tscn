@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://bnkmwtljf2o3p"]
 
-[ext_resource type="Script" path="res://Fish the fishes/Assets/Player/FishingLine.cs" id="1_n5cos"]
+[ext_resource type="Script" uid="uid://bjl5ls0osnndw" path="res://Fish the fishes/Assets/Player/FishingLine.cs" id="1_n5cos"]
 [ext_resource type="PackedScene" uid="uid://ogoejx5sl264" path="res://Fish the fishes/Assets/Player/Equipment/Hook/HugeHook/HugeHook.tscn" id="3_se18j"]
 [ext_resource type="PackedScene" uid="uid://caai7o1q2a1n0" path="res://Fish the fishes/Assets/Player/Equipment/Hook/StandardHook/StandardHook.tscn" id="3_x8i5s"]
 [ext_resource type="PackedScene" uid="uid://dy1dv6tfxqajl" path="res://Fish the fishes/Assets/Player/Equipment/Hook/FastHook/FastHook.tscn" id="4_141u0"]

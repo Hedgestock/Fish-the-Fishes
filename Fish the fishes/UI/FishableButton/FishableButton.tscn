@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cifa65xrf1ken"]
 
 [ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://Fish the fishes/Themes/FTF_theme.tres" id="1_vttsl"]
-[ext_resource type="Script" path="res://Fish the fishes/UI/FishableButton/FishableButton.cs" id="2_tjulj"]
+[ext_resource type="Script" uid="uid://bb7og3t4c4pgl" path="res://Fish the fishes/UI/FishableButton/FishableButton.cs" id="2_tjulj"]
 
 [node name="FishableButton" type="StaticBody2D"]
 script = ExtResource("2_tjulj")

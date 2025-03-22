@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://jdvp2d8dcy53"]
 
-[ext_resource type="Script" path="res://Fish the fishes/Scenes/Equipment/Equipment.cs" id="1_vd6ao"]
+[ext_resource type="Script" uid="uid://djsaaoxieoacr" path="res://Fish the fishes/Scenes/Equipment/Equipment.cs" id="1_vd6ao"]
 [ext_resource type="PackedScene" uid="uid://ifoga56i10w3" path="res://Fish the fishes/Assets/RandomTimer.tscn" id="2_8vpwh"]
 [ext_resource type="PackedScene" uid="uid://by02c8ge1i57q" path="res://Fish the fishes/Scenes/Equipment/EquipmentUI.tscn" id="2_53287"]
 [ext_resource type="PackedScene" uid="uid://bnkmwtljf2o3p" path="res://Fish the fishes/Assets/Player/FishingLine.tscn" id="2_au0c2"]
