@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4d3slikaeoc5"
-path="res://.godot/imported/life icon 432.png-34ccf91ce4a72414851a96ad430172a8.ctex"
+uid="uid://ixcsrwywv1ck"
+path="res://.godot/imported/icon 512.png-80be7ea94c26e66f669426f801b7b31d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fish the fishes/art/life icon 432.png"
-dest_files=["res://.godot/imported/life icon 432.png-34ccf91ce4a72414851a96ad430172a8.ctex"]
+source_file="res://Fish the fishes/art/WindowsIcon/icon 512.png"
+dest_files=["res://.godot/imported/icon 512.png-80be7ea94c26e66f669426f801b7b31d.ctex"]
 
 [params]
 

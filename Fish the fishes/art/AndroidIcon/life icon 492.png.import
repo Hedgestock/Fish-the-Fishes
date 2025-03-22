@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b7ho2veb7fsat"
-path="res://.godot/imported/life icon 492.png-189c905cb9dc092e49b99398c78b7d9e.ctex"
+path="res://.godot/imported/life icon 492.png-71cb4d0c2bf6be893f1da3808e5298aa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fish the fishes/art/life icon 492.png"
-dest_files=["res://.godot/imported/life icon 492.png-189c905cb9dc092e49b99398c78b7d9e.ctex"]
+source_file="res://Fish the fishes/art/AndroidIcon/life icon 492.png"
+dest_files=["res://.godot/imported/life icon 492.png-71cb4d0c2bf6be893f1da3808e5298aa.ctex"]
 
 [params]
 

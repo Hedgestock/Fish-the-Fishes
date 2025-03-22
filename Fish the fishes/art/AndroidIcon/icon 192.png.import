@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dw34x054s358u"
-path="res://.godot/imported/adaptative background 432.png-0c9738d2c113a16a06ea2055dd81ffe9.ctex"
+uid="uid://4u3qbhj5syxq"
+path="res://.godot/imported/icon 192.png-e79bb85d4bb5c6f2613c24b65807226c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fish the fishes/art/adaptative background 432.png"
-dest_files=["res://.godot/imported/adaptative background 432.png-0c9738d2c113a16a06ea2055dd81ffe9.ctex"]
+source_file="res://Fish the fishes/art/AndroidIcon/icon 192.png"
+dest_files=["res://.godot/imported/icon 192.png-e79bb85d4bb5c6f2613c24b65807226c.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ixcsrwywv1ck"
-path="res://.godot/imported/icon 512.png-d03896711cc3f02bb20ef0c25dc93844.ctex"
+uid="uid://c32gg6fdt0lqa"
+path="res://.godot/imported/life icon 432 grey scale.png-98513823942ef30869a10691c3e72fcd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fish the fishes/art/icon 512.png"
-dest_files=["res://.godot/imported/icon 512.png-d03896711cc3f02bb20ef0c25dc93844.ctex"]
+source_file="res://Fish the fishes/art/AndroidIcon/life icon 432 grey scale.png"
+dest_files=["res://.godot/imported/life icon 432 grey scale.png-98513823942ef30869a10691c3e72fcd.ctex"]
 
 [params]
 

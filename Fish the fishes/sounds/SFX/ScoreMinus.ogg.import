@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cvbwt4wdd5htw"
+path="res://.godot/imported/ScoreMinus.ogg-641dff5475cb4d8e3aa86a75c9b94de2.oggvorbisstr"
+
+[deps]
+
+source_file="res://Fish the fishes/sounds/SFX/ScoreMinus.ogg"
+dest_files=["res://.godot/imported/ScoreMinus.ogg-641dff5475cb4d8e3aa86a75c9b94de2.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

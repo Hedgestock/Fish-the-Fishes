@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bta071uim1523"
+path="res://.godot/imported/ScorePlus.ogg-d37a1b25749cae7e26656a8240388ede.oggvorbisstr"
+
+[deps]
+
+source_file="res://Fish the fishes/sounds/SFX/ScorePlus.ogg"
+dest_files=["res://.godot/imported/ScorePlus.ogg-d37a1b25749cae7e26656a8240388ede.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

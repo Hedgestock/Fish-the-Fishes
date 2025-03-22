@@ -9,3 +9,6 @@ UISounds = NodePath("UISounds")
 [node name="UISounds" type="AudioStreamPlayer" parent="."]
 max_polyphony = 16
 bus = &"SFX"
+
+[node name="Ambiance" type="AudioStreamPlayer" parent="."]
+bus = &"Ambiance"

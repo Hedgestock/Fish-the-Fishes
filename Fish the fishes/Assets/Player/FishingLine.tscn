@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://caai7o1q2a1n0" path="res://Fish the fishes/Assets/Player/Equipment/Hook/StandardHook/StandardHook.tscn" id="3_x8i5s"]
 [ext_resource type="PackedScene" uid="uid://dy1dv6tfxqajl" path="res://Fish the fishes/Assets/Player/Equipment/Hook/FastHook/FastHook.tscn" id="4_141u0"]
 [ext_resource type="SpriteFrames" uid="uid://bi72ueuctbdl3" path="res://Fish the fishes/Assets/Player/LineAnimation.tres" id="4_l5pqx"]
-[ext_resource type="AudioStream" uid="uid://c8x2gam58vw1l" path="res://Fish the fishes/sounds/Toyouying.wav" id="4_qchpe"]
+[ext_resource type="AudioStream" uid="uid://c8x2gam58vw1l" path="res://Fish the fishes/sounds/SFX/Toyouying.wav" id="4_qchpe"]
 [ext_resource type="PackedScene" uid="uid://cghnipcqvmc3k" path="res://Fish the fishes/Assets/Player/Equipment/Hook/ControlHook/ControlHook.tscn" id="5_yr3uc"]
 [ext_resource type="PackedScene" uid="uid://bv5hyshljxn2u" path="res://Fish the fishes/Assets/Player/Equipment/Hook/HarpoonHook/HarpoonHook.tscn" id="6_nkp0g"]
 
