@@ -25,6 +25,8 @@
 - [ ] Ajouter un tutoriel
 - [ ] Ajouter un bouton de pause
 - [ ] Changer le mode d'affichage des poissons dans le compendium
+- [ ] Ajouter de la physique aux boutons du menu principal
+- [ ] Ajouter de la physique aux poissons pêchés
 
 
 # Poissons
@@ -102,8 +104,8 @@
 
 - [x] Classique
 - [x] Contre la montre
-- [x] Go green
 - [X] Poissons ciblés
+- [ ] Go green
 - [ ] Zen
 - [ ] Training mode
 
@@ -157,6 +159,9 @@
 - [ ] Utiliser une vraie ligne pour la ligne de pêche.
 - [ ] Passer au gestionnaire de scène, de sauvegarde etc... Standards de wafflestock
 - [ ] Ajouter un filtre audio pour chaque biome
+- [ ] Équilibrer les taux d'apparition (Courant marin est très dur)
+- [ ] Optimiser la création de nouveaux poissons
+- [ ] Ajouter plus de composition
 
 # Corrections
 

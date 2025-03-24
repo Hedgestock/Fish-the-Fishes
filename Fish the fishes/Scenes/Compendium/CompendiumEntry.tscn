@@ -48,8 +48,7 @@ text = "Seen: "
 layout_mode = 2
 size_flags_vertical = 8
 theme_type_variation = &"DescriptionLabel"
-text = "0
-"
+text = "0"
 
 [node name="Graphic" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
