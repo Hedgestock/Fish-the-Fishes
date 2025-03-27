@@ -78,8 +78,10 @@ Sound Designer: Odun
 Game developped with the Godot game engine and using C#
 [img=200]res://icon.svg[/img]    [img=200]res://Logo_C_sharp.svg[/img]
 
+Copyritght © 2023
 Wafflestock
 [img=400]res://Wafflestock/logo_Wafflestock.png[/img] 
+All rights reserved.
 [/center]"
 metadata/_tab_index = 0
 
@@ -91,7 +93,14 @@ metadata/_tab_index = 1
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/MarginContainer/Panel/Patch Notes"]
 layout_mode = 2
 bbcode_enabled = true
-text = "[center][font_size=200]22/03/2025[/font_size][/center]
+text = "[center][font_size=200]27/03/2025[/font_size][/center]
+[font_size=100]
+[ul]
+Fixed achievements not being loaded on android
+Fixed Compendium font size for descriptions
+[/ul]
+[/font_size]
+[center][font_size=200]22/03/2025[/font_size][/center]
 [font_size=100]
 [ul]
 Added reeling sound and ambiance

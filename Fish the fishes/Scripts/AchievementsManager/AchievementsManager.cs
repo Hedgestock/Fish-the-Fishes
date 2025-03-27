@@ -1,10 +1,8 @@
 using Godot;
 using System;
-using Godot.Collections;
 using Godot.Fish_the_fishes.Scripts;
 using System.Collections.Generic;
 using System.Linq;
-using System.Collections;
 
 public partial class AchievementsManager : Node
 {
@@ -37,24 +35,17 @@ public partial class AchievementsManager : Node
 
     private List<string> GetAchievements(string dirPath)
     {
+        List<string> achievementsPaths = new();
 
-        List<string> result = new();
-        var dir = DirAccess.Open(dirPath);
-        if (DirAccess.GetOpenError() == Error.Ok)
+        foreach (string fileName in ResourceLoader.ListDirectory(dirPath))
         {
-            dir.ListDirBegin();
-
-            var fileName = dir.GetNext();
-            while (!string.IsNullOrWhiteSpace(fileName))
-            {
-                if (dir.CurrentIsDir())
-                    result = result.Concat(GetAchievements(dir.GetCurrentDir() + "/" + fileName)).ToList();
+                if (fileName.EndsWith("/"))
+                    achievementsPaths = achievementsPaths.Concat(GetAchievements(dirPath + fileName)).ToList();
                 else if (fileName.GetExtension() == "tres")
-                    result.Add(dir.GetCurrentDir() + "/" + fileName);
-                fileName = dir.GetNext();
-            }
+                    achievementsPaths.Add(dirPath + fileName);
         }
-        return result;
+
+        return achievementsPaths;
     }
 
     public static void CheckAll()

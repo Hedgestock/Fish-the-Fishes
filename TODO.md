@@ -186,6 +186,7 @@
 - [x] [**Actuellement Impossible**] Corriger les bulles des requins qui disparaissent
 - [x] [**Actuellement impossible**] Corriger les requins en attente de lancement
 - [x] Corriger l'affichage des credits
+- [x] Corriger le chargement dynamique de ressource (haut faits)
 - [ ] [**Plus de bulles pour l'instant**]Corriger les bulles des requins qui disparaissent trop tôt
 - [ ] Passer à des listes de noms plutôt que des énumérations
 - [ ] Grouper les vérifications de hauts faits en un seul appel de fonction
