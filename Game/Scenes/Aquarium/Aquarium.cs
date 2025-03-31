@@ -1,5 +1,5 @@
 using Godot;
-using Godot.FishTheFishes;
+using Wafflestock;
 
 
 public partial class Aquarium : Node

@@ -1,8 +1,8 @@
 using Godot;
-using Godot.FishTheFishes;
+using Wafflestock;
 using System;
 using System.Linq;
-using static Godot.FishTheFishes.Constants;
+using static Wafflestock.Constants;
 
 public partial class Compendium : CanvasLayer
 {

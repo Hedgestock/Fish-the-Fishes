@@ -1,8 +1,7 @@
 using Godot;
-using Godot.FishTheFishes;
-using static Godot.FishTheFishes.UserData.StatCategory;
+using Wafflestock;
+using static Wafflestock.UserData.StatCategory;
 using System;
-using System.Collections.Generic;
 
 public partial class Stats : CanvasLayer
 {

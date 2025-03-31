@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Godot.FishTheFishes
+namespace Wafflestock
 {
     public interface IFishable
     {

@@ -1,6 +1,6 @@
 using Godot;
 using System;
-using Godot.FishTheFishes;
+using Wafflestock;
 using System.Collections.Generic;
 using System.Linq;
 

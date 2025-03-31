@@ -1,7 +1,5 @@
 using Godot;
-using Godot.Collections;
-using Godot.FishTheFishes;
-using System;
+using Wafflestock;
 
 public partial class Settings : CanvasLayer
 {

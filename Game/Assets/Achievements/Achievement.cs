@@ -1,7 +1,5 @@
 using Godot;
-using Godot.FishTheFishes;
-using System;
-using System.Collections.Generic;
+using Wafflestock;
 
 [GlobalClass]
 public partial class Achievement : Resource, IAchievable

@@ -1,10 +1,10 @@
-﻿using System;
+﻿using Godot;
+using System;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Text.Json;
-using static Godot.WebSocketPeer;
 
-namespace Godot.FishTheFishes
+namespace Wafflestock
 {
     public class UserData
     {

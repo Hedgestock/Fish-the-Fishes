@@ -1,5 +1,5 @@
 using Godot;
-using Godot.FishTheFishes;
+using Wafflestock;
 using System.Collections.Generic;
 
 public partial class AchievementCompendiumEntry : CompendiumEntry

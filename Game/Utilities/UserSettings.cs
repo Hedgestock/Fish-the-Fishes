@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text.Json;
+﻿using Godot;
 
-namespace Godot.FishTheFishes
+namespace Wafflestock
 {
     public class UserSettings
     {

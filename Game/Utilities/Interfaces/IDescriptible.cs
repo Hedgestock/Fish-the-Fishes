@@ -1,7 +1,7 @@
 ﻿using System;
 
 
-namespace Godot.FishTheFishes
+namespace Wafflestock
 {
     public interface IDescriptible
     {

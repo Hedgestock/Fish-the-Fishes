@@ -1,5 +1,5 @@
 using Godot;
-using Godot.FishTheFishes;
+using Wafflestock;
 using System;
 
 public partial class DoneXTimes : Achievement

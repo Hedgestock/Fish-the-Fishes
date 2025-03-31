@@ -1,5 +1,5 @@
 using Godot;
-using Godot.FishTheFishes;
+using Wafflestock;
 
 [GlobalClass]
 public partial class FishedXFishesTotal : DoneXTimes
