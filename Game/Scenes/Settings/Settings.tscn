@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dwv4cu7q6wlf6"]
+[gd_scene load_steps=13 format=3 uid="uid://dwv4cu7q6wlf6"]
 
 [ext_resource type="Script" uid="uid://dc58akmbevtcf" path="res://Game/Scenes/Settings/Settings.cs" id="1_pgx6s"]
 [ext_resource type="Texture2D" uid="uid://4sfuxo2673qo" path="res://Game/Graphics/BG 2 FTF.png" id="2_okyw8"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bx8qk7jnypm0" path="res://Game/Graphics/UI/retour hover.png" id="5_rejhq"]
 [ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://Game/Themes/FTF_theme.tres" id="6_pkcc8"]
 [ext_resource type="PackedScene" uid="uid://d1xuincg5ibnm" path="res://Game/UI/CustomCheckBox/CustomCheckBox.tscn" id="7_lhwuh"]
+[ext_resource type="PackedScene" uid="uid://ck4c7k26wfpv6" path="res://Game/Scenes/Settings/VolumeControl.tscn" id="7_suojw"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_qkuki"]
 action = &"menu_go_back"
@@ -19,20 +20,10 @@ bg_color = Color(0.392157, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vkyyb"]
 
-[node name="Settings" type="CanvasLayer" node_paths=PackedStringArray("DeleteDataPopup", "CompetitiveMode", "MuteMaster", "MasterVolume", "MuteMusic", "MusicVolume", "MuteSFX", "SFXVolume", "MuteAmbiance", "AmbianceVolume", "MuteFishes", "FishesVolume")]
+[node name="Settings" type="CanvasLayer" node_paths=PackedStringArray("DeleteDataPopup", "CompetitiveMode")]
 script = ExtResource("1_pgx6s")
 DeleteDataPopup = NodePath("ResetDataPopup")
 CompetitiveMode = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/CompetitiveModeCheckBox")
-MuteMaster = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/MuteMasterCheckBox")
-MasterVolume = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/MasterVolume")
-MuteMusic = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/MuteMusicCheckBox")
-MusicVolume = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/MusicVolume")
-MuteSFX = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/MuteSFXCheckBox")
-SFXVolume = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/SFXVolume")
-MuteAmbiance = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/MuteAmbianceCheckBox")
-AmbianceVolume = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/AmbianceVolume")
-MuteFishes = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/MuteFishesCheckBox")
-FishesVolume = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/FishesVolume")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -105,60 +96,24 @@ text = "Competitive Mode"
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="MuteMasterCheckBox" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_lhwuh")]
+[node name="Master" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_suojw")]
 layout_mode = 2
-text = "Master Volume"
 
-[node name="MasterVolume" type="HSlider" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="Music" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_suojw")]
 layout_mode = 2
-max_value = 1.0
-step = 0.01
-value = 1.0
-scrollable = false
+Bus = 1
 
-[node name="MuteMusicCheckBox" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_lhwuh")]
+[node name="SFX" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_suojw")]
 layout_mode = 2
-text = "Music Volume"
+Bus = 3
 
-[node name="MusicVolume" type="HSlider" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="Ambiance" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_suojw")]
 layout_mode = 2
-max_value = 1.0
-step = 0.01
-value = 1.0
-scrollable = false
+Bus = 2
 
-[node name="MuteSFXCheckBox" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_lhwuh")]
+[node name="Fishes" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_suojw")]
 layout_mode = 2
-text = "SFX Volume"
-
-[node name="SFXVolume" type="HSlider" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-max_value = 1.0
-step = 0.01
-value = 1.0
-scrollable = false
-
-[node name="MuteAmbianceCheckBox" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_lhwuh")]
-layout_mode = 2
-text = "Ambiance Volume"
-
-[node name="AmbianceVolume" type="HSlider" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-max_value = 1.0
-step = 0.01
-value = 1.0
-scrollable = false
-
-[node name="MuteFishesCheckBox" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_lhwuh")]
-layout_mode = 2
-text = "Fishes Volume"
-
-[node name="FishesVolume" type="HSlider" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-max_value = 1.0
-step = 0.01
-value = 1.0
-scrollable = false
+Bus = 4
 
 [node name="HSeparator2" type="HSeparator" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -223,16 +178,6 @@ text = "Proceed"
 
 [connection signal="pressed" from="VBoxContainer/Control/MarginContainer/BackButton" to="." method="GoToHome"]
 [connection signal="toggled" from="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/CompetitiveModeCheckBox" to="." method="SetCompetitiveMode"]
-[connection signal="toggled" from="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/MuteMasterCheckBox" to="." method="MuteMasterVolume"]
-[connection signal="value_changed" from="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/MasterVolume" to="." method="MasterVolumeChanged"]
-[connection signal="toggled" from="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/MuteMusicCheckBox" to="." method="MuteMusicVolume"]
-[connection signal="value_changed" from="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/MusicVolume" to="." method="MusicVolumeChanged"]
-[connection signal="toggled" from="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/MuteSFXCheckBox" to="." method="MuteSFXVolume"]
-[connection signal="value_changed" from="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/SFXVolume" to="." method="SFXVolumeChanged"]
-[connection signal="toggled" from="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/MuteAmbianceCheckBox" to="." method="MuteAmbianceVolume"]
-[connection signal="value_changed" from="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/AmbianceVolume" to="." method="AmbianceVolumeChanged"]
-[connection signal="toggled" from="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/MuteFishesCheckBox" to="." method="MuteFishesVolume"]
-[connection signal="value_changed" from="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/FishesVolume" to="." method="FishesVolumeChanged"]
 [connection signal="pressed" from="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/ResetButton" to="." method="DisplayDeleteDataPopup"]
 [connection signal="pressed" from="ResetDataPopup/PanelContainer/VBoxContainer/MarginContainer2/HBoxContainer/CancelButton" to="." method="HideDeleteDataPopup"]
 [connection signal="pressed" from="ResetDataPopup/PanelContainer/VBoxContainer/MarginContainer2/HBoxContainer/ProceedButton" to="." method="DeleteData"]

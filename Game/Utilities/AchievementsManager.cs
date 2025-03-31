@@ -6,13 +6,12 @@ using System.Linq;
 
 public partial class AchievementsManager : Node
 {
-    [Export]
-    private PackedScene AchievementsNotificationScene;
+    private PackedScene AchievementsNotificationScene = GD.Load<PackedScene>("uid://b4hl7jdtefkae");
 
     static private AchievementsManager _instance = null;
     public static AchievementsManager Instance { get { return _instance; } }
 
-    private string AchievementsBasePath = "res://Fish the fishes/Assets/Achievements/";
+    private string AchievementsBasePath = "res://Game/Assets/Achievements/";
     public List<Achievement> AchievementsList = new();
 
     private Queue<PanelContainer> _achievementsQueue = new Queue<PanelContainer>();

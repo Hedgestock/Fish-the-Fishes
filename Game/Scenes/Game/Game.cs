@@ -47,7 +47,7 @@ public partial class Game : Node
         GameManager.SaveData();
         AchievementsManager.OnGameEnd();
         GameManager.Mode = Mode.Menu;
-        GameManager.ChangeSceneToFile("res://Fish the fishes/Scenes/Home.tscn");
+        GameManager.ChangeSceneToFile("res://Game/Scenes/Home.tscn");
     }
 
     private void SpawnFish()

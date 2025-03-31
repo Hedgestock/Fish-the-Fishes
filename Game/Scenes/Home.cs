@@ -41,7 +41,7 @@ public partial class Home : CanvasLayer
 
         AchievementsManager.OnGameStart();
 
-        GameManager.ChangeSceneToFile("res://Fish the fishes/Scenes/Game/Game.tscn");
+        GameManager.ChangeSceneToFile("res://Game/Scenes/Game/Game.tscn");
     }
 
     private void PlayClassic()
@@ -71,32 +71,32 @@ public partial class Home : CanvasLayer
 
     private void GoToCompendium()
     {
-        GameManager.ChangeSceneToFile("res://Fish the fishes/Scenes/Compendium/Compendium.tscn");
+        GameManager.ChangeSceneToFile("res://Game/Scenes/Compendium/Compendium.tscn");
     }
 
     private void GoToStats()
     {
-        GameManager.ChangeSceneToFile("res://Fish the fishes/Scenes/Stats/Stats.tscn");
+        GameManager.ChangeSceneToFile("res://Game/Scenes/Stats/Stats.tscn");
     }
 
     private void GoToEquipment()
     {
-        GameManager.ChangeSceneToFile("res://Fish the fishes/Scenes/Equipment/Equipment.tscn");
+        GameManager.ChangeSceneToFile("res://Game/Scenes/Equipment/Equipment.tscn");
     }
 
     private void GoToSettings()
     {
-        GameManager.ChangeSceneToFile("res://Fish the fishes/Scenes/Settings/Settings.tscn");
+        GameManager.ChangeSceneToFile("res://Game/Scenes/Settings/Settings.tscn");
     }
 
     private void GoToTutorial()
     {
-        GameManager.ChangeSceneToFile("res://Fish the fishes/Scenes/Tutorial/Tutorial.tscn");
+        GameManager.ChangeSceneToFile("res://Game/Scenes/Tutorial/Tutorial.tscn");
     }
 
     private void GoToCredits()
     {
-        GameManager.ChangeSceneToFile("res://Fish the fishes/Scenes/Credits/Credits.tscn");
+        GameManager.ChangeSceneToFile("res://Game/Scenes/Credits/Credits.tscn");
     }
     private void SpawnFish()
     {

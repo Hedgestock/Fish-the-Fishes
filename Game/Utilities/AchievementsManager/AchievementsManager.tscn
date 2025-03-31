@@ -1,8 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://cq86kgxcrcrov"]
-
-[ext_resource type="Script" uid="uid://chxqgy1wusagc" path="res://Game/Utilities/AchievementsManager/AchievementsManager.cs" id="1_pqju3"]
-[ext_resource type="PackedScene" uid="uid://b4hl7jdtefkae" path="res://Game/Assets/Achievements/Notification/Notification.tscn" id="6_hnxwc"]
-
-[node name="AchievementsManager" type="Node"]
-script = ExtResource("1_pqju3")
-AchievementsNotificationScene = ExtResource("6_hnxwc")

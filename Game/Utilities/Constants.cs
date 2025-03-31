@@ -18,12 +18,12 @@ namespace Godot.Fish_the_fishes.Scripts
         public static string TotalTimePlayed = nameof(TotalTimePlayed);
 
 
-        public static string AchievementsFolder = "res://Fish the fishes/Assets/Achievements/";
+        public static string AchievementsFolder = "res://Game/Assets/Achievements/";
 
         // /!\ WARNING /!\ Add new fishes/trashes/biomes at the end of enums to avoid messing the underlying numbering
         // /!\ WARNING /!\ Do NOT arrange them alpabetically because the '.tres' are only keeping track of the integer
 
-        public static string FishesFolder = "res://Fish the fishes/Assets/Fishes/";
+        public static string FishesFolder = "res://Game/Assets/Fishes/";
 
         public enum Fishes
         {
@@ -39,7 +39,7 @@ namespace Godot.Fish_the_fishes.Scripts
             //JellyFish,
         }
 
-        public static string TrashesFolder = "res://Fish the fishes/Assets/Trashes/";
+        public static string TrashesFolder = "res://Game/Assets/Trashes/";
 
         public enum Trashes
         {
@@ -48,7 +48,7 @@ namespace Godot.Fish_the_fishes.Scripts
             Tire
         }
 
-        public static string BiomesFolder = "res://Fish the fishes/Assets/Biomes/";
+        public static string BiomesFolder = "res://Game/Assets/Biomes/";
 
         public enum Biomes
         {

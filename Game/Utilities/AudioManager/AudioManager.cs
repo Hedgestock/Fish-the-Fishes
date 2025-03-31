@@ -16,6 +16,12 @@ public partial class AudioManager : Node
         _instance = this;
     }
 
+    public override void _Ready()
+    {
+        base._Ready();
+
+    }
+
     public static void UIPlay(AudioStream sound)
     {
         _instance.UISounds.Stream = sound;

@@ -94,6 +94,6 @@ public partial class BiomeGraphNode : GraphNode
     private void LaunchAquarium()
     {
         GameManager.Biome = Biome;
-        GameManager.ChangeSceneToFile("res://Fish the fishes/Scenes/Aquarium/Aquarium.tscn");
+        GameManager.ChangeSceneToFile("res://Game/Scenes/Aquarium/Aquarium.tscn");
     }
 }

@@ -22,12 +22,12 @@ namespace Godot.Fish_the_fishes.Scripts
         {
             if (_instance != null)
                 return;
-            _statistics = new Dictionary<string, long>();
-            _achievements = new Dictionary<string, DateTime>();
-            _equipments = new Dictionary<string, EquipmentStatus>();
-            _fishCompendium = new Dictionary<string, FishCompendiumEntry>();
-            _trashCompendium = new Dictionary<string, TrashCompendiumEntry>();
-            _biomeCompendium = new Dictionary<string, BiomeCompendiumEntry>();
+            _statistics = new();
+            _achievements = new();
+            _equipments = new();
+            _fishCompendium = new();
+            _trashCompendium = new();
+            _biomeCompendium = new();
 
             _instance = this;
         }
@@ -104,10 +104,10 @@ namespace Godot.Fish_the_fishes.Scripts
 
         public static void IncrementStatistic(string statName, long incr = 1)
         {
-            _incrementStatistic(StatCategory.Scratch, Game.Mode.AllModes, statName,incr);
-            _incrementStatistic(StatCategory.Scratch, GameManager.Mode, statName,incr);
-            _incrementStatistic(UserSettings.CompetitiveMode ? StatCategory.Competitive : StatCategory.Casual, Game.Mode.AllModes, statName,incr);
-            _incrementStatistic(UserSettings.CompetitiveMode ? StatCategory.Competitive : StatCategory.Casual, GameManager.Mode, statName,incr);
+            _incrementStatistic(StatCategory.Scratch, Game.Mode.AllModes, statName, incr);
+            _incrementStatistic(StatCategory.Scratch, GameManager.Mode, statName, incr);
+            _incrementStatistic(UserSettings.CompetitiveMode ? StatCategory.Competitive : StatCategory.Casual, Game.Mode.AllModes, statName, incr);
+            _incrementStatistic(UserSettings.CompetitiveMode ? StatCategory.Competitive : StatCategory.Casual, GameManager.Mode, statName, incr);
         }
 
 
@@ -120,7 +120,7 @@ namespace Godot.Fish_the_fishes.Scripts
         #endregion
 
         #region helper classes
-        public class EquipmentStatus 
+        public class EquipmentStatus
         {
             public EquipmentPiece.Type Type { get; set; }
             public bool IsEquipped { get; set; }
