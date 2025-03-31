@@ -1,0 +1,83 @@
+[gd_resource type="Resource" script_class="Biome" load_steps=18 format=3 uid="uid://cdgwvohk2wes5"]
+
+[ext_resource type="Script" uid="uid://bprtko2ut7gy0" path="res://Game/Utilities/Weighted/WeightedFish.cs" id="1_khfau"]
+[ext_resource type="Texture2D" uid="uid://2hdbni0jr2uv" path="res://Game/Assets/Biomes/OceanCurrent/OceanCurrentBackground.png" id="1_sxxsc"]
+[ext_resource type="Script" uid="uid://bysvm4vph3aiq" path="res://Game/Utilities/Weighted/WeightedBiome.cs" id="2_3yslt"]
+[ext_resource type="Script" uid="uid://du5t70kmo5wl6" path="res://Game/Utilities/Weighted/WeightedTrash.cs" id="3_v3qbn"]
+[ext_resource type="Script" uid="uid://62lfoitacli2" path="res://Game/Assets/Biomes/Biome.cs" id="4_k2kbw"]
+
+[sub_resource type="Resource" id="Resource_f4pan"]
+script = ExtResource("1_khfau")
+Fish = 2
+Weight = 100
+
+[sub_resource type="Resource" id="Resource_xyg2j"]
+script = ExtResource("1_khfau")
+Fish = 6
+Weight = 100
+
+[sub_resource type="Resource" id="Resource_7w1j6"]
+script = ExtResource("1_khfau")
+Fish = 0
+Weight = 100
+
+[sub_resource type="Resource" id="Resource_3ginu"]
+script = ExtResource("1_khfau")
+Fish = 1
+Weight = 100
+
+[sub_resource type="Resource" id="Resource_1c6ge"]
+script = ExtResource("1_khfau")
+Fish = 5
+Weight = 50
+
+[sub_resource type="Resource" id="Resource_cn611"]
+script = ExtResource("1_khfau")
+Fish = 4
+Weight = 30
+
+[sub_resource type="Resource" id="Resource_okm2r"]
+script = ExtResource("1_khfau")
+Fish = 3
+Weight = 30
+
+[sub_resource type="Resource" id="Resource_l62ly"]
+script = ExtResource("2_3yslt")
+Biome = 5
+Weight = 100
+
+[sub_resource type="Resource" id="Resource_o0ehq"]
+script = ExtResource("2_3yslt")
+Biome = 3
+Weight = 100
+
+[sub_resource type="Resource" id="Resource_jbhkk"]
+script = ExtResource("3_v3qbn")
+Trash = 0
+Weight = 100
+
+[sub_resource type="Resource" id="Resource_8v5i1"]
+script = ExtResource("3_v3qbn")
+Trash = 1
+Weight = 100
+
+[sub_resource type="Resource" id="Resource_bqsre"]
+script = ExtResource("3_v3qbn")
+Trash = 2
+Weight = 100
+
+[resource]
+resource_name = "OceanCurrent"
+script = ExtResource("4_k2kbw")
+TimeToSpawnFish = 2.0
+TimeToSpawnFishDeviation = 0.2
+TimeToSpawnTrash = 3.0
+TimeToSpawnTrashDeviation = 1.0
+ChangeBiomeThreshold = 70
+ChangeBiomeThresholdDeviation = 10
+Fishes = Array[Object]([SubResource("Resource_f4pan"), SubResource("Resource_xyg2j"), SubResource("Resource_7w1j6"), SubResource("Resource_3ginu"), SubResource("Resource_1c6ge"), SubResource("Resource_cn611"), SubResource("Resource_okm2r")])
+Trashes = Array[Object]([SubResource("Resource_jbhkk"), SubResource("Resource_8v5i1"), SubResource("Resource_bqsre")])
+FollowupBiomes = Array[Object]([SubResource("Resource_l62ly"), SubResource("Resource_o0ehq")])
+CompendiumName = "Ocean Current"
+CompendiumDescription = "Similar to the Great Blue, this place is vast and mostly empty, however the strong currents promote the development of stronger fishes, able to swim against the stream of water."
+Background = ExtResource("1_sxxsc")

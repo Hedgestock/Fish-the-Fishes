@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://dy1dv6tfxqajl"]
+
+[ext_resource type="Texture2D" uid="uid://dl7dxg3u7muqk" path="res://Game/Assets/Player/Equipment/Hook/FastHook/FastHook_broken.png" id="1_haf7i"]
+[ext_resource type="Texture2D" uid="uid://bm8si1gdsldf2" path="res://Game/Assets/Player/Equipment/Hook/FastHook/FastHook_default.png" id="2_yydt1"]
+[ext_resource type="Script" uid="uid://c0alauqc2ml7" path="res://Game/Assets/Player/Equipment/Hook/Hook.cs" id="3_auuoe"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e7146"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_haf7i")
+}],
+"loop": true,
+"name": &"broken",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_yydt1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_p8im8"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_61v6c"]
+radius = 33.0
+height = 66.0
+
+[node name="Hook" type="AnimatedSprite2D"]
+position = Vector2(-38, -118)
+sprite_frames = SubResource("SpriteFrames_e7146")
+centered = false
+script = ExtResource("3_auuoe")
+EquipmentName = "Standard Hook"
+SpeedMultiplierDown = 1.2
+SpeedMultiplierUp = 2.0
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(42, 67)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+material = SubResource("CanvasItemMaterial_p8im8")
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_61v6c")
+disabled = true

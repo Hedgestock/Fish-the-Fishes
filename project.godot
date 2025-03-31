@@ -18,17 +18,17 @@ config/custom_user_dir_name="WaffleStock/FishTheFishes"
 config/features=PackedStringArray("4.4", "C#", "GL Compatibility")
 boot_splash/bg_color=Color(0.0980392, 0.27451, 0.407843, 1)
 boot_splash/image="uid://ds2atggfh18jt"
-config/icon="res://Fish the fishes/art/WindowsIcon/icon 512.png"
+config/icon="res://Game/Graphics/WindowsIcon/icon 512.png"
 
 [audio]
 
-buses/default_bus_layout="res://Fish the fishes/sounds/FTF_bus_layout.tres"
+buses/default_bus_layout="res://Game/Audio/FTF_bus_layout.tres"
 
 [autoload]
 
-GameManager="*res://Fish the fishes/Scripts/GameManager/GameManager.tscn"
-AchievementsManager="*res://Fish the fishes/Scripts/AchievementsManager/AchievementsManager.tscn"
-AudioManager="*res://Fish the fishes/Scripts/AudioManager/AudioManager.tscn"
+GameManager="*res://Game/Utilities/GameManager/GameManager.tscn"
+AchievementsManager="*res://Game/Utilities/AchievementsManager/AchievementsManager.tscn"
+AudioManager="*res://Game/Utilities/AudioManager/AudioManager.tscn"
 
 [display]
 
@@ -50,7 +50,7 @@ Trashes=""
 
 [gui]
 
-theme/custom="res://Fish the fishes/Themes/FTF_theme.tres"
+theme/custom="res://Game/Themes/FTF_theme.tres"
 theme/custom_font="uid://bfbfdje68lt7w"
 
 [input]

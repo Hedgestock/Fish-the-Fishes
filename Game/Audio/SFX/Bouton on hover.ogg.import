@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c1l60h7ggjnrs"
+path="res://.godot/imported/Bouton on hover.ogg-7c38fbbdde3c1810867f3dc03e38b816.oggvorbisstr"
+
+[deps]
+
+source_file="res://Game/Audio/SFX/Bouton on hover.ogg"
+dest_files=["res://.godot/imported/Bouton on hover.ogg-7c38fbbdde3c1810867f3dc03e38b816.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

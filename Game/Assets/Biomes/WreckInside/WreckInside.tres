@@ -1,0 +1,83 @@
+[gd_resource type="Resource" script_class="Biome" load_steps=18 format=3 uid="uid://c1b0bsuac41gk"]
+
+[ext_resource type="Texture2D" uid="uid://ddyw4r010lfyk" path="res://Game/Assets/Biomes/WreckInside/WreckInsideBackground.png" id="1_i523y"]
+[ext_resource type="Script" uid="uid://du5t70kmo5wl6" path="res://Game/Utilities/Weighted/WeightedTrash.cs" id="1_qjkc5"]
+[ext_resource type="Script" uid="uid://bprtko2ut7gy0" path="res://Game/Utilities/Weighted/WeightedFish.cs" id="1_s5ogd"]
+[ext_resource type="Script" uid="uid://bysvm4vph3aiq" path="res://Game/Utilities/Weighted/WeightedBiome.cs" id="2_pjrry"]
+[ext_resource type="Script" uid="uid://62lfoitacli2" path="res://Game/Assets/Biomes/Biome.cs" id="11_ncojd"]
+
+[sub_resource type="Resource" id="Resource_lh1t3"]
+script = ExtResource("1_s5ogd")
+Fish = 0
+Weight = 150
+
+[sub_resource type="Resource" id="Resource_3m7ec"]
+script = ExtResource("1_s5ogd")
+Fish = 1
+Weight = 100
+
+[sub_resource type="Resource" id="Resource_e1vti"]
+script = ExtResource("1_s5ogd")
+Fish = 4
+Weight = 100
+
+[sub_resource type="Resource" id="Resource_igdd7"]
+script = ExtResource("1_s5ogd")
+Fish = 3
+Weight = 50
+
+[sub_resource type="Resource" id="Resource_bwx4x"]
+script = ExtResource("1_s5ogd")
+Fish = 6
+Weight = 20
+
+[sub_resource type="Resource" id="Resource_k1o2i"]
+script = ExtResource("1_s5ogd")
+Fish = 2
+Weight = 20
+
+[sub_resource type="Resource" id="Resource_q1u8b"]
+script = ExtResource("2_pjrry")
+Biome = 4
+Weight = 100
+
+[sub_resource type="Resource" id="Resource_1tna7"]
+script = ExtResource("2_pjrry")
+Biome = 5
+Weight = 100
+
+[sub_resource type="Resource" id="Resource_eh8is"]
+script = ExtResource("2_pjrry")
+Biome = 6
+Weight = 100
+
+[sub_resource type="Resource" id="Resource_1d7gb"]
+script = ExtResource("1_qjkc5")
+Trash = 0
+Weight = 100
+
+[sub_resource type="Resource" id="Resource_whwyb"]
+script = ExtResource("1_qjkc5")
+Trash = 1
+Weight = 100
+
+[sub_resource type="Resource" id="Resource_7dqit"]
+script = ExtResource("1_qjkc5")
+Trash = 2
+Weight = 100
+
+[resource]
+resource_name = "WreckInside"
+script = ExtResource("11_ncojd")
+TimeToSpawnFish = 1.0
+TimeToSpawnFishDeviation = 0.2
+TimeToSpawnTrash = 3.0
+TimeToSpawnTrashDeviation = 0.5
+ChangeBiomeThreshold = 70
+ChangeBiomeThresholdDeviation = 5
+Fishes = Array[Object]([SubResource("Resource_lh1t3"), SubResource("Resource_3m7ec"), SubResource("Resource_e1vti"), SubResource("Resource_igdd7"), SubResource("Resource_bwx4x"), SubResource("Resource_k1o2i")])
+Trashes = Array[Object]([SubResource("Resource_1d7gb"), SubResource("Resource_whwyb"), SubResource("Resource_7dqit")])
+FollowupBiomes = Array[Object]([SubResource("Resource_q1u8b"), SubResource("Resource_1tna7"), SubResource("Resource_eh8is")])
+CompendiumName = "Wreck Inside"
+CompendiumDescription = "The interior of this ship emulates almost perfectly a coral reef environment, although the lack of luminosity is better suited for species more adapted to the dark."
+Background = ExtResource("1_i523y")

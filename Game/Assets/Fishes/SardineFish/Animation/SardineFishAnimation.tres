@@ -1,0 +1,27 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://dytgg6dbrwhc7"]
+
+[ext_resource type="Texture2D" uid="uid://dsnbmphv0scr7" path="res://Game/Assets/Fishes/SardineFish/Animation/sardine_alive_1.png" id="1_ee22k"]
+[ext_resource type="Texture2D" uid="uid://vkh1e4p832lp" path="res://Game/Assets/Fishes/SardineFish/Animation/sardine_alive_2.png" id="2_fcj04"]
+[ext_resource type="Texture2D" uid="uid://bwcdofp5spd74" path="res://Game/Assets/Fishes/SardineFish/Animation/sardine_dead.png" id="2_rugpi"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ee22k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_fcj04")
+}],
+"loop": true,
+"name": &"alive",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rugpi")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}]

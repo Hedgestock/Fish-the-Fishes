@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ScoredXPointsMax" load_steps=2 format=3 uid="uid://djagxk8osbrlo"]
+
+[ext_resource type="Script" uid="uid://0p2li3x0h74g" path="res://Game/Assets/Achievements/DoneXTimes/ScoredXPointsMax/ScoredXPointsMax.cs" id="1_y8iag"]
+
+[resource]
+script = ExtResource("1_y8iag")
+Threshold = 100
+Category = 0
+Mode = 0
+UnlockableName = ""
+UnlockableType = 0
+CompendiumName = "100 in 1"
+CompendiumDescription = "How is that even possible!!!"

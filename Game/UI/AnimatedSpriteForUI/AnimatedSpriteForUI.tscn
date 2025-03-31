@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://di7207b71mnm8"]
+
+[ext_resource type="Script" uid="uid://owwp53cay08o" path="res://Game/UI/AnimatedSpriteForUI/AnimatedSpriteForUI.cs" id="1_rskyt"]
+
+[node name="Placeholder" type="BoxContainer" node_paths=PackedStringArray("_sprite")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+script = ExtResource("1_rskyt")
+_sprite = NodePath("AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

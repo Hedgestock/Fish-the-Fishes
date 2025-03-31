@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://bv5ebnrlqpwku"]
+
+[ext_resource type="Script" uid="uid://c18jkvuxjfkht" path="res://Game/Scenes/BiomeDebug/BiomeDebug.cs" id="1_uv1fo"]
+[ext_resource type="PackedScene" uid="uid://dfvcoq3nvotbv" path="res://Game/Scenes/BiomeDebug/BiomeGraphNode.tscn" id="2_0fie2"]
+[ext_resource type="Texture2D" uid="uid://4sfuxo2673qo" path="res://Game/Graphics/BG 2 FTF.png" id="2_rvib5"]
+[ext_resource type="Texture2D" uid="uid://dvkg44r1oulcs" path="res://Game/Graphics/UI/retour.png" id="3_1wlxq"]
+[ext_resource type="Texture2D" uid="uid://bjbotgfwig38a" path="res://Game/Graphics/UI/retour click.png" id="4_tagra"]
+[ext_resource type="Texture2D" uid="uid://bx8qk7jnypm0" path="res://Game/Graphics/UI/retour hover.png" id="5_75s4x"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_qkuki"]
+action = &"menu_go_back"
+
+[sub_resource type="Shortcut" id="Shortcut_y2krb"]
+events = [SubResource("InputEventAction_qkuki")]
+
+[node name="BiomeDebug" type="CanvasLayer" node_paths=PackedStringArray("Graph")]
+script = ExtResource("1_uv1fo")
+Graph = NodePath("VBoxContainer/GraphEdit")
+BiomeNode = ExtResource("2_0fie2")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_rvib5")
+stretch_mode = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="BackButton" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+shortcut = SubResource("Shortcut_y2krb")
+shortcut_in_tooltip = false
+texture_normal = ExtResource("3_1wlxq")
+texture_pressed = ExtResource("4_tagra")
+texture_hover = ExtResource("5_75s4x")
+stretch_mode = 0
+
+[node name="GraphEdit" type="GraphEdit" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+show_grid = false
+grid_pattern = 1
+snapping_enabled = false
+connection_lines_thickness = 10.0
+zoom = 0.233
+show_zoom_buttons = false
+show_grid_buttons = false

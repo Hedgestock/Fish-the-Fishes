@@ -198,3 +198,5 @@
 - [ ] Corriger les espadons qui pêchent des poissons déjà pêchés
 - [ ] Les paramètres audios doivent lire les bus et le gestionnaire audio doit mettre les bus à jour en fonction du fichier de sauvegarde
 - [ ] Essayer de faire des poules pour les bulles
+- [ ] Utiliser un simple script pour le gestionnaire de haut faits
+- [ ] Créer un gestionnaire de sauvegardes et de paramètres hors du gestionnaire de partie

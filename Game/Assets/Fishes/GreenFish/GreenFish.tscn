@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://dsv67b7l0uq40"]
+
+[ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_8tk53"]
+[ext_resource type="SpriteFrames" uid="uid://dxpxq818n4txw" path="res://Game/Assets/Fishes/GreenFish/Animation/GreenFishAnimation.tres" id="2_50e46"]
+[ext_resource type="Script" uid="uid://cem4twvhw2c8e" path="res://Game/Assets/Fishes/GreenFish/GreenFish.cs" id="2_v3fog"]
+[ext_resource type="AudioStream" uid="uid://8srndky25d7a" path="res://Game/Audio/Fish titatituto.wav" id="4_isbou"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nhaen"]
+radius = 34.0
+height = 100.0
+
+[node name="GreenFish" instance=ExtResource("1_8tk53")]
+script = ExtResource("2_v3fog")
+CompendiumName = "Green Fish"
+CompendiumDescription = "Pretty common species of fish found seemingly everywhere."
+MaxSpeed = 200.0
+SpawnRange = Vector2(0.2, 0.8)
+AverageSize = 32.0
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="0"]
+position = Vector2(-3.8147e-06, 1)
+scale = Vector2(6.4, 4.8)
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = ExtResource("2_50e46")
+animation = &"alive"
+frame_progress = 0.735181
+
+[node name="HurtBox" parent="." index="2"]
+position = Vector2(-5, 0)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_nhaen")
+
+[node name="AudioStreamPlayer" parent="." index="3"]
+stream = ExtResource("4_isbou")

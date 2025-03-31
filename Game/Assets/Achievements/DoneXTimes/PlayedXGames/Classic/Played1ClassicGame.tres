@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PlayedXGames" load_steps=2 format=3 uid="uid://jewrk281nj5n"]
+
+[ext_resource type="Script" uid="uid://bln4fmjg4mamo" path="res://Game/Assets/Achievements/DoneXTimes/PlayedXGames/PlayedXGames.cs" id="1_4wfuq"]
+
+[resource]
+script = ExtResource("1_4wfuq")
+Threshold = 1
+Category = 0
+Mode = 0
+UnlockableName = ""
+UnlockableType = 0
+CompendiumName = "Started playing Classic"
+CompendiumDescription = "Nothing better than a good classic game."

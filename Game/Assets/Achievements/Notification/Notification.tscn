@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4hl7jdtefkae"]
+
+[ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://Game/Themes/FTF_theme.tres" id="1_ihgqf"]
+[ext_resource type="Script" uid="uid://b0anax53pteif" path="res://Game/Assets/Achievements/Notification/Notification.cs" id="2_a6lx2"]
+
+[node name="Notification" type="PanelContainer"]
+top_level = true
+z_index = 100
+z_as_relative = false
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme = ExtResource("1_ihgqf")
+script = ExtResource("2_a6lx2")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="AchievementName" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Achievement"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="FadeAway"]

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ScoredXPointsMax" load_steps=2 format=3 uid="uid://de6uu0i08lh3j"]
+
+[ext_resource type="Script" uid="uid://0p2li3x0h74g" path="res://Game/Assets/Achievements/DoneXTimes/ScoredXPointsMax/ScoredXPointsMax.cs" id="1_we7l8"]
+
+[resource]
+script = ExtResource("1_we7l8")
+Threshold = 40
+Category = 0
+Mode = 0
+UnlockableName = "HarpoonHook"
+UnlockableType = 0
+CompendiumName = "40 in 1"
+CompendiumDescription = "So many points, you're now allowed to use professional gear!"

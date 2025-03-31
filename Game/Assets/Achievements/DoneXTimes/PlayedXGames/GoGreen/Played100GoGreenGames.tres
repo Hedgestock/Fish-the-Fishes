@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PlayedXGames" load_steps=2 format=3 uid="uid://qslywupch0we"]
+
+[ext_resource type="Script" uid="uid://bln4fmjg4mamo" path="res://Game/Assets/Achievements/DoneXTimes/PlayedXGames/PlayedXGames.cs" id="1_s3dm7"]
+
+[resource]
+script = ExtResource("1_s3dm7")
+Threshold = 100
+Category = 0
+Mode = 3
+UnlockableName = ""
+UnlockableType = 0
+CompendiumName = "Environmental Activist"
+CompendiumDescription = "You're commited to the cause!"

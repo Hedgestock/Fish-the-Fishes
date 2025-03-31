@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://biyy1v6mq1cue"]
+
+[ext_resource type="PackedScene" uid="uid://cu4qvea6vce5v" path="res://Game/Scenes/Compendium/CompendiumEntry.tscn" id="1_tqd83"]
+[ext_resource type="Script" uid="uid://8oslgbgn76w1" path="res://Game/Scenes/Compendium/BiomeCompendiumEntry.cs" id="2_m1jhr"]
+
+[node name="PanelContainer" node_paths=PackedStringArray("Background", "Icon", "Button") instance=ExtResource("1_tqd83")]
+script = ExtResource("2_m1jhr")
+Background = NodePath("Background")
+Icon = NodePath("MarginContainer/HBoxContainer/Graphic/TextureRect")
+Button = NodePath("MarginContainer/HBoxContainer/Graphic/TextureRect/Icon")
+
+[node name="Background" type="TextureRect" parent="." index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+expand_mode = 3
+stretch_mode = 6
+
+[node name="Graphic" parent="MarginContainer/HBoxContainer" index="1"]
+size_flags_horizontal = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Graphic" index="0"]
+layout_mode = 2
+size_flags_vertical = 3
+expand_mode = 3
+
+[node name="Icon" type="TextureButton" parent="MarginContainer/HBoxContainer/Graphic/TextureRect" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+ignore_texture_size = true
+stretch_mode = 0

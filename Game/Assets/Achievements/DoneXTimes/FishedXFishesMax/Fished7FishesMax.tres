@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="FishedXFishesMax" load_steps=2 format=3 uid="uid://btejlgdkl0wjl"]
+
+[ext_resource type="Script" uid="uid://brwf3sapfpb6a" path="res://Game/Assets/Achievements/DoneXTimes/FishedXFishesMax/FishedXFishesMax.cs" id="1_12fb8"]
+
+[resource]
+script = ExtResource("1_12fb8")
+Threshold = 7
+Category = 0
+Mode = 0
+UnlockableName = ""
+UnlockableType = 0
+CompendiumName = "7 at once"
+CompendiumDescription = "You got seven at once, much like some tailor."

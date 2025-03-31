@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://co0xglrn1rvre"]
+
+[ext_resource type="PackedScene" uid="uid://cnjq5le44dwec" path="res://Game/Assets/Trashes/Trash.tscn" id="1_yvvmi"]
+[ext_resource type="Script" uid="uid://ca23fc83otqy6" path="res://Game/Assets/Trashes/Can/Can.cs" id="2_3mv8q"]
+[ext_resource type="SpriteFrames" uid="uid://cbfedbxtshtp5" path="res://Game/Assets/Trashes/Can/Animation/CanAnimation.tres" id="3_76qll"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r4b5q"]
+radius = 24.0
+height = 80.0
+
+[node name="Can" instance=ExtResource("1_yvvmi")]
+script = ExtResource("2_3mv8q")
+CompendiumName = "Can"
+CompendiumDescription = "Please do not throw that in the water..."
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = ExtResource("3_76qll")
+
+[node name="CollisionShape2D" parent="." index="1"]
+scale = Vector2(2, 2)
+shape = SubResource("CapsuleShape2D_r4b5q")
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="2"]
+scale = Vector2(5, 8)

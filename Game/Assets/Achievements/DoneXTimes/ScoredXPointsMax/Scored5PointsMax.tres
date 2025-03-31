@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ScoredXPointsMax" load_steps=2 format=3 uid="uid://ceui8ocyi0di0"]
+
+[ext_resource type="Script" uid="uid://0p2li3x0h74g" path="res://Game/Assets/Achievements/DoneXTimes/ScoredXPointsMax/ScoredXPointsMax.cs" id="1_7mutb"]
+
+[resource]
+script = ExtResource("1_7mutb")
+Threshold = 5
+Category = 0
+Mode = 0
+UnlockableName = ""
+UnlockableType = 0
+CompendiumName = "5 in 1"
+CompendiumDescription = "You scored 5 points in a single line throw!"

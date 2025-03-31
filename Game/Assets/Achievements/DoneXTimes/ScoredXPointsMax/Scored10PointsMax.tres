@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ScoredXPointsMax" load_steps=2 format=3 uid="uid://llisgsj1f4i2"]
+
+[ext_resource type="Script" uid="uid://0p2li3x0h74g" path="res://Game/Assets/Achievements/DoneXTimes/ScoredXPointsMax/ScoredXPointsMax.cs" id="1_8cb4w"]
+
+[resource]
+script = ExtResource("1_8cb4w")
+Threshold = 10
+Category = 0
+Mode = 0
+UnlockableName = ""
+UnlockableType = 0
+CompendiumName = "10 in 1"
+CompendiumDescription = "You deserve a tenner!"

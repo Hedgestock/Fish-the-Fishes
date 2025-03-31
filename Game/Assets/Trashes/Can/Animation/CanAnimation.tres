@@ -1,0 +1,14 @@
+[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://cbfedbxtshtp5"]
+
+[ext_resource type="Texture2D" uid="uid://baku04tyxkn56" path="res://Game/Assets/Trashes/Can/Animation/can.png" id="1_akvwi"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_akvwi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

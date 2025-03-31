@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dolcghep0mxf3"]
+
+[ext_resource type="Script" uid="uid://bju77ragxiv5" path="res://Game/Utilities/AudioManager/AudioManager.cs" id="1_enk5s"]
+[ext_resource type="AudioStream" uid="uid://b84474ttmp1x6" path="res://Game/Audio/Ambiance/Ambiance.ogg" id="2_uir8q"]
+
+[node name="AudioManager" type="Node" node_paths=PackedStringArray("UISounds")]
+script = ExtResource("1_enk5s")
+UISounds = NodePath("UISounds")
+
+[node name="UISounds" type="AudioStreamPlayer" parent="."]
+max_polyphony = 16
+bus = &"SFX"
+
+[node name="Ambiance" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_uir8q")
+autoplay = true
+bus = &"Ambiance"

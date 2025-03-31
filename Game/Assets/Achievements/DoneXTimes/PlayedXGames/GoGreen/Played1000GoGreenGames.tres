@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PlayedXGames" load_steps=2 format=3 uid="uid://b8liipfox4btl"]
+
+[ext_resource type="Script" uid="uid://bln4fmjg4mamo" path="res://Game/Assets/Achievements/DoneXTimes/PlayedXGames/PlayedXGames.cs" id="1_vhjk2"]
+
+[resource]
+script = ExtResource("1_vhjk2")
+Threshold = 1000
+Category = 0
+Mode = 3
+UnlockableName = ""
+UnlockableType = 0
+CompendiumName = "Cleaner Master"
+CompendiumDescription = "Cleaning the waters is now officially YOUR thing! "

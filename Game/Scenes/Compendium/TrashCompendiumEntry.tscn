@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3musubb85kyk"]
+
+[ext_resource type="PackedScene" uid="uid://bjjph3hx7hdwx" path="res://Game/Scenes/Compendium/AnimatedCompendiumEntry.tscn" id="1_hm5on"]
+[ext_resource type="Script" uid="uid://darynntdwqxy3" path="res://Game/Scenes/Compendium/TrashCompendiumEntry.cs" id="2_ssflb"]
+
+[node name="PanelContainer" node_paths=PackedStringArray("NumberCleaned", "NumberHit") instance=ExtResource("1_hm5on")]
+script = ExtResource("2_ssflb")
+NumberCleaned = NodePath("MarginContainer/HBoxContainer/VBoxContainer/Stats/NumberOfTimesCleaned")
+NumberHit = NodePath("MarginContainer/HBoxContainer/VBoxContainer/Stats/NumberOfTimesHit")
+
+[node name="Hit" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Stats" index="2"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_type_variation = &"DescriptionLabel"
+text = " Hit: "
+
+[node name="NumberOfTimesHit" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Stats" index="3"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_type_variation = &"DescriptionLabel"
+text = "0
+"
+
+[node name="Cleaned" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Stats" index="4"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_type_variation = &"DescriptionLabel"
+text = " Cleaned: "
+
+[node name="NumberOfTimesCleaned" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Stats" index="5"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_type_variation = &"DescriptionLabel"
+text = "0
+"
+
+[node name="Graphic" parent="MarginContainer/HBoxContainer" index="1"]
+size_flags_horizontal = 8

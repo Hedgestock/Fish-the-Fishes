@@ -1,0 +1,16 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://iftmxcpwxot8"]
+
+[ext_resource type="Texture2D" uid="uid://c0n1lrhpwu0my" path="res://Game/Graphics/UI/Panel_bg.png" id="1_owbby"]
+
+[resource]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+texture = ExtResource("1_owbby")
+texture_margin_left = 40.0
+texture_margin_top = 40.0
+texture_margin_right = 40.0
+texture_margin_bottom = 40.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
