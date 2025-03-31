@@ -1,5 +1,5 @@
 using Godot;
-using Godot.Fish_the_fishes.Scripts;
+using Godot.FishTheFishes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -72,12 +72,6 @@ public partial class GameManager : Node
     public static string PrevScene = "";
     public static Vector2 ScreenSize;
 
-    private static string SaveDirectory = "user://";
-    private static string SaveFileName = "data.save";
-    private static string SaveFilePath = SaveDirectory + SaveFileName;
-    private static string SettingsFileName = "settings.save";
-    private static string SettingsFilePath = SaveDirectory + SettingsFileName;
-
     private static SceneTreeTimer TargetSafeTimer;
 
     static private GameManager _instance = null;
@@ -93,8 +87,6 @@ public partial class GameManager : Node
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        LoadSettings();
-        LoadData();
         ScreenSize = GetViewport().GetVisibleRect().Size;
         GetTree().Root.SizeChanged += OnScreenResize;
     }
@@ -122,76 +114,6 @@ public partial class GameManager : Node
             TargetSafeTimer = _instance.GetTree().CreateTimer(10);
             TargetSafeTimer.Timeout += ChangeTarget;
         };
-    }
-
-    static public void SaveData()
-    {
-        using var gameSave = FileAccess.Open(SaveFilePath, FileAccess.ModeFlags.Write);
-
-        gameSave.StoreString(UserData.Serialize());
-    }
-
-    static private void LoadData()
-    {
-        if (!FileAccess.FileExists(SaveFilePath))
-        {
-            GD.PrintErr("No save file to load");
-            new UserData();
-            return;
-        }
-
-        using var saveGame = FileAccess.Open(SaveFilePath, FileAccess.ModeFlags.Read);
-
-        string jsonString = saveGame.GetAsText();
-
-        if (!UserData.Deserialize(jsonString))
-        {
-            GD.PrintErr("Failed to deserialize save file");
-            new UserData();
-        }
-    }
-
-    static public void EraseData()
-    {
-
-        UserData.Reset();
-
-        if (!FileAccess.FileExists(SaveFilePath))
-        {
-            GD.PrintErr("No save file to erase");
-            return;
-        }
-
-        DirAccess dir = DirAccess.Open(SaveDirectory);
-
-        dir.Remove(SaveFileName);
-    }
-
-    static public void SaveSettings()
-    {
-        using var settings = FileAccess.Open(SettingsFilePath, FileAccess.ModeFlags.Write);
-
-        settings.StoreString(UserSettings.Serialize());
-    }
-
-    static private void LoadSettings()
-    {
-        if (!FileAccess.FileExists(SettingsFilePath))
-        {
-            GD.PrintErr("No settings file to load");
-            new UserSettings();
-            return;
-        }
-
-        using var settings = FileAccess.Open(SettingsFilePath, FileAccess.ModeFlags.Read);
-
-        string jsonString = settings.GetAsText();
-
-        if (!UserSettings.Deserialize(jsonString))
-        {
-            GD.PrintErr("Failed to deserialize settings file");
-            new UserSettings();
-        }
     }
 
     static public void ChangeSceneToFile(string file)

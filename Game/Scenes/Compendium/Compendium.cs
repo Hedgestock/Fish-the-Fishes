@@ -1,8 +1,8 @@
 using Godot;
-using Godot.Fish_the_fishes.Scripts;
+using Godot.FishTheFishes;
 using System;
 using System.Linq;
-using static Godot.Fish_the_fishes.Scripts.Constants;
+using static Godot.FishTheFishes.Constants;
 
 public partial class Compendium : CanvasLayer
 {

@@ -1,5 +1,5 @@
 using Godot;
-using Godot.Fish_the_fishes.Scripts;
+using Godot.FishTheFishes;
 using System;
 
 
@@ -44,7 +44,7 @@ public partial class Game : Node
         UserData.SetHighStat(Constants.LongestSession, playtime);
         UserData.IncrementStatistic(Constants.TotalTimePlayed, playtime);
         UserData.SetHighStat(Constants.HighScore, GameManager.Score);
-        GameManager.SaveData();
+        SaveManager.SaveData();
         AchievementsManager.OnGameEnd();
         GameManager.Mode = Mode.Menu;
         GameManager.ChangeSceneToFile("res://Game/Scenes/Home.tscn");

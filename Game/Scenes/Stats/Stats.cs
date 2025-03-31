@@ -1,6 +1,6 @@
 using Godot;
-using Godot.Fish_the_fishes.Scripts;
-using static Godot.Fish_the_fishes.Scripts.UserData.StatCategory;
+using Godot.FishTheFishes;
+using static Godot.FishTheFishes.UserData.StatCategory;
 using System;
 using System.Collections.Generic;
 

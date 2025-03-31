@@ -19,14 +19,12 @@ public partial class VolumeControl : VBoxContainer
         base._ValidateProperty(property);
         if (property["name"].AsStringName() == PropertyName.Bus)
         {
-            int busNumber = AudioServer.BusCount;
             property["hint_string"] = "";
-            for (int i = 0; i < busNumber; i++)
+            for (int i = 0; i < AudioServer.BusCount; i++)
             {
                 if (i > 0)
                     property["hint_string"] += ",";
-                var busName = AudioServer.GetBusName(i);
-                property["hint_string"] += busName;
+                property["hint_string"] += AudioServer.GetBusName(i);
             }
         }
     }

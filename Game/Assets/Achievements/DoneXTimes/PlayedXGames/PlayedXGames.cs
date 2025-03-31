@@ -1,5 +1,5 @@
 using Godot;
-using Godot.Fish_the_fishes.Scripts;
+using Godot.FishTheFishes;
 
 [GlobalClass]
 public partial class PlayedXGames : DoneXTimes

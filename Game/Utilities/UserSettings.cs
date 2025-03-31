@@ -2,14 +2,11 @@
 using System.Collections.Generic;
 using System.Text.Json;
 
-namespace Godot.Fish_the_fishes.Scripts
+namespace Godot.FishTheFishes
 {
     public class UserSettings
     {
-        #region serializable instance
-        private static UserSettings _instance = null;
-
-        public bool competitiveMode
+        public static bool CompetitiveMode
         {
             get
             {
@@ -17,60 +14,42 @@ namespace Godot.Fish_the_fishes.Scripts
             }
             set
             {
-                GD.Print("setting competitive mode");
                 GameManager.Instance.GetTree().Root.ContentScaleAspect = value ? Window.ContentScaleAspectEnum.Keep : Window.ContentScaleAspectEnum.Expand;
             }
         }
 
-        private Dictionary<string, (bool isMuted, float volume)> _audioSettings;
+        public static void Save(string path)
+        {
+            ConfigFile config = new();
 
-        public UserSettings()
-        {
-            if (_instance != null)
-                return;
-            _audioSettings = new();
-            _instance = this;
-        }
-        #endregion
+            config.SetValue(null, nameof(CompetitiveMode), CompetitiveMode);
 
-        public static bool CompetitiveMode
-        {
-            get { return _instance.competitiveMode; }
-            set { _instance.competitiveMode = value; }
-        }
-
-        public static void Reset()
-        {
-            _instance = null;
-            new UserSettings();
-        }
-        public static string Serialize()
-        {
-            return JsonSerializer.Serialize(_instance);
-        }
-        public static bool Deserialize(string json)
-        {
-            try
+            for (int bus = 0; bus < AudioServer.BusCount; bus++)
             {
-                _instance = JsonSerializer.Deserialize<UserSettings>(json);
-                //PropertyInfo[] properties = typeof(UserSettings).GetProperties();
+                config.SetValue("Audio", AudioServer.GetBusName(bus) + "IsMuted", AudioServer.IsBusMute(bus));
+                config.SetValue("Audio", AudioServer.GetBusName(bus) + "Volume", AudioServer.GetBusVolumeLinear(bus));
+            }
 
-                //// This makes sure that we recover from corrupted data where any property is set to `null`
-                //// by replacing it with a new empty object.
-                //foreach (PropertyInfo property in properties)
-                //{
-                //    if (typeof(UserData).GetProperty(property.Name).GetValue(_instance) == null)
-                //    {
-                //        typeof(UserData).GetProperty(property.Name).SetValue(_instance, property.PropertyType.GetConstructor(new Type[] { }).Invoke(new object[] { }));
-                //    }
-                //}
-                return true;
-            }
-            catch (Exception e)
+            config.Save(path);
+        }
+
+        public static bool Load(string path)
+        {
+            ConfigFile config = new();
+
+            Error err = config.Load(path);
+
+            if (err != Error.Ok) return false;
+
+            CompetitiveMode = (bool)config.GetValue(null, nameof(CompetitiveMode), false);
+
+            for (int bus = 0; bus < AudioServer.BusCount; bus++)
             {
-                GD.PrintErr(e);
-                return false;
+                AudioServer.SetBusMute(bus, (bool)config.GetValue("Audio", AudioServer.GetBusName(bus) + "IsMuted", false));
+                AudioServer.SetBusVolumeLinear(bus, (float)config.GetValue("Audio", AudioServer.GetBusName(bus) + "Volume", 1));
             }
+
+            return true;
         }
     }
 }

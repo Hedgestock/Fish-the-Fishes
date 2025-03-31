@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Godot.Fish_the_fishes.Scripts
+namespace Godot.FishTheFishes
 {
     public interface IFisher
     {

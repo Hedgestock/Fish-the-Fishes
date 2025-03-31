@@ -1,6 +1,6 @@
 using Godot;
 using Godot.Collections;
-using Godot.Fish_the_fishes.Scripts;
+using Godot.FishTheFishes;
 using System;
 
 public partial class Settings : CanvasLayer
@@ -19,7 +19,7 @@ public partial class Settings : CanvasLayer
 
     private void GoToHome()
     {
-        GameManager.SaveSettings();
+        SaveManager.SaveSettings();
         GameManager.ChangeSceneToFile("res://Game/Scenes/Home.tscn");
     }
 
@@ -40,7 +40,7 @@ public partial class Settings : CanvasLayer
 
     private void DeleteData()
     {
-        GameManager.EraseData();
+        SaveManager.EraseData();
         HideDeleteDataPopup();
     }
 }

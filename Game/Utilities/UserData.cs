@@ -4,7 +4,7 @@ using System.Reflection;
 using System.Text.Json;
 using static Godot.WebSocketPeer;
 
-namespace Godot.Fish_the_fishes.Scripts
+namespace Godot.FishTheFishes
 {
     public class UserData
     {
