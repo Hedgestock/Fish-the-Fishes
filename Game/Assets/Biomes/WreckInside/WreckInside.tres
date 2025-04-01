@@ -69,7 +69,7 @@ Weight = 100
 [resource]
 resource_name = "WreckInside"
 script = ExtResource("11_ncojd")
-TimeToSpawnFish = 1.0
+TimeToSpawnFish = 0.8
 TimeToSpawnFishDeviation = 0.2
 TimeToSpawnTrash = 3.0
 TimeToSpawnTrashDeviation = 0.5

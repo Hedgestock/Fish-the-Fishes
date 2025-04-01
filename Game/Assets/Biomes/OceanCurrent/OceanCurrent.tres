@@ -69,7 +69,7 @@ Weight = 100
 [resource]
 resource_name = "OceanCurrent"
 script = ExtResource("4_k2kbw")
-TimeToSpawnFish = 2.0
+TimeToSpawnFish = 1.5
 TimeToSpawnFishDeviation = 0.2
 TimeToSpawnTrash = 3.0
 TimeToSpawnTrashDeviation = 1.0

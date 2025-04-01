@@ -54,11 +54,11 @@ Weight = 100
 [resource]
 resource_name = "Abyss"
 script = ExtResource("12_3mbs0")
-TimeToSpawnFish = 5.0
+TimeToSpawnFish = 2.5
 TimeToSpawnFishDeviation = 0.5
-TimeToSpawnTrash = 1.0
+TimeToSpawnTrash = 2.0
 TimeToSpawnTrashDeviation = 0.2
-ChangeBiomeThreshold = 50
+ChangeBiomeThreshold = 30
 ChangeBiomeThresholdDeviation = 5
 Fishes = Array[Object]([SubResource("Resource_e35ma"), SubResource("Resource_gpymn"), SubResource("Resource_h78nu")])
 Trashes = Array[Object]([SubResource("Resource_0d7d5"), SubResource("Resource_ld3fx"), SubResource("Resource_0f7p0")])

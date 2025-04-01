@@ -64,7 +64,7 @@ Weight = 100
 [resource]
 resource_name = "WreckDeck"
 script = ExtResource("11_ytjb7")
-TimeToSpawnFish = 1.5
+TimeToSpawnFish = 1.0
 TimeToSpawnFishDeviation = 0.2
 TimeToSpawnTrash = 2.0
 TimeToSpawnTrashDeviation = 0.5
