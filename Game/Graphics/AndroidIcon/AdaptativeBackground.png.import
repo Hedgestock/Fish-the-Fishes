@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4d3slikaeoc5"
-path="res://.godot/imported/life icon 432.png-14583c94aafbe058e3ead24a7fb77388.ctex"
+uid="uid://mgwr2q3crvgh"
+path="res://.godot/imported/AdaptativeBackground.png-d3d26fbdf04cc21ffda412e4faf64327.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/Graphics/AndroidIcon/life icon 432.png"
-dest_files=["res://.godot/imported/life icon 432.png-14583c94aafbe058e3ead24a7fb77388.ctex"]
+source_file="res://Game/Graphics/AndroidIcon/AdaptativeBackground.png"
+dest_files=["res://.godot/imported/AdaptativeBackground.png-d3d26fbdf04cc21ffda412e4faf64327.ctex"]
 
 [params]
 

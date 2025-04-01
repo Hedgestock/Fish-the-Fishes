@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c32gg6fdt0lqa"
-path="res://.godot/imported/life icon 432 grey scale.png-8746e88625b615177a8a9f3214dadc94.ctex"
+uid="uid://c0vm26s8h0d51"
+path="res://.godot/imported/Logo_FTF.png-4f398b703a6a23666f2f9dab4ac67297.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/Graphics/AndroidIcon/life icon 432 grey scale.png"
-dest_files=["res://.godot/imported/life icon 432 grey scale.png-8746e88625b615177a8a9f3214dadc94.ctex"]
+source_file="res://Game/Graphics/AndroidIcon/Logo_FTF.png"
+dest_files=["res://.godot/imported/Logo_FTF.png-4f398b703a6a23666f2f9dab4ac67297.ctex"]
 
 [params]
 

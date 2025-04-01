@@ -162,6 +162,7 @@
 - [ ] Équilibrer les taux d'apparition (Courant marin est très dur)
 - [ ] Optimiser la création de nouveaux poissons
 - [ ] Ajouter plus de composition
+- [ ] Ajouter la sauvegarde en pleine partie
 
 # Corrections
 

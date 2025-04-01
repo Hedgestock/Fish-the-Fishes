@@ -37,9 +37,8 @@ size_flags_vertical = 3
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Control"]
-layout_mode = 0
-offset_right = 100.0
-offset_bottom = 100.0
+offset_right = 140.0
+offset_bottom = 140.0
 
 [node name="BackButton" type="TextureButton" parent="VBoxContainer/Control/MarginContainer"]
 layout_mode = 2
@@ -61,9 +60,10 @@ size_flags_vertical = 3
 
 [node name="Panel" type="TabContainer" parent="VBoxContainer/MarginContainer"]
 layout_mode = 2
-current_tab = 0
+current_tab = 1
 
 [node name="Credits" type="RichTextLabel" parent="VBoxContainer/MarginContainer/Panel"]
+visible = false
 layout_mode = 2
 bbcode_enabled = true
 text = "[center]
@@ -80,13 +80,13 @@ Game developped with the Godot game engine and using the C# programming language
 
 Copyritght © 2023
 Wafflestock
-[img=400]res://Wafflestock/Logo_Wafflestock.png[/img] 
+[img=400]res://Wafflestock/Logo_Wafflestock.png[/img][img=400]res://Game/Graphics/AndroidIcon/Logo_FTF.png[/img]
 All rights reserved.
-[/center]"
+[/center]
+"
 metadata/_tab_index = 0
 
 [node name="Patch Notes" type="MarginContainer" parent="VBoxContainer/MarginContainer/Panel"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
@@ -108,10 +108,10 @@ Added graph of biomes with spawn rates
 Changed spawn position and trajectory of fishes
 Added achievements to unlock hidden hook:
 [ol]
-Control Hook[img=top]res://Fish the fishes/Assets/Player/Equipment/Hook/ControlHook/ControlHook_default.png[/img]
+Control Hook[img=top]res://Game/Assets/Player/Equipment/Hook/ControlHook/ControlHook_default.png[/img]
 [/ol]
 Fixed a lot of achievements conditions and display in the compendium
-Fixed Harpoon [img=top]res://Fish the fishes/Assets/Player/Equipment/Hook/HarpoonHook/HarpoonHook_default.png[/img] being invicible while going up and adjusted its speed
+Fixed Harpoon [img=top]res://Game/Assets/Player/Equipment/Hook/HarpoonHook/HarpoonHook_default.png[/img] being invicible while going up and adjusted its speed
 Fixed a bug on hooks still fishing after getting hit, and sometime while getting hit, leading to \"undead\" fishes on the line for the rest of the game
 Separated fishbox and hitbox for all hooks
 Added biome specific trash and fish density
@@ -123,13 +123,14 @@ Shark are now indicated by fleeing fishes
 [font_size=100]
 [ul]
 Added Patch Notes page
-Added a new hook: the Harpoon [img=top]res://Fish the fishes/Assets/Player/Equipment/Hook/HarpoonHook/HarpoonHook_default.png[/img]
+Added a new hook: the Harpoon [img=top]res://Game/Assets/Player/Equipment/Hook/HarpoonHook/HarpoonHook_default.png[/img]
 Added achievements to unlock hidden hooks: 
 [ol]
-Huge Hook[img=top]res://Fish the fishes/Assets/Player/Equipment/Hook/HugeHook/HugeHook_default.png[/img]
-Harpoon[img=top]res://Fish the fishes/Assets/Player/Equipment/Hook/HarpoonHook/HarpoonHook_default.png[/img]
+Huge Hook[img=top]res://Game/Assets/Player/Equipment/Hook/HugeHook/HugeHook_default.png[/img]
+Harpoon[img=top]res://Game/Assets/Player/Equipment/Hook/HarpoonHook/HarpoonHook_default.png[/img]
 [/ol]
 [/ul]
-[/font_size]"
+[/font_size]
+"
 
 [connection signal="pressed" from="VBoxContainer/Control/MarginContainer/BackButton" to="." method="GoToHome"]
