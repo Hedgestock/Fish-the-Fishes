@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ck4c7k26wfpv6"]
 
-[ext_resource type="Script" uid="uid://bexbntpjwpx0k" path="res://Game/Scenes/Settings/VolumeControl.cs" id="1_01bnc"]
+[ext_resource type="Script" uid="uid://bexbntpjwpx0k" path="res://Game/UI/VolumeControl/VolumeControl.cs" id="1_01bnc"]
 [ext_resource type="PackedScene" uid="uid://d1xuincg5ibnm" path="res://Game/UI/CustomCheckBox/CustomCheckBox.tscn" id="1_l1v7e"]
 
 [node name="VolumeControl" type="VBoxContainer" node_paths=PackedStringArray("MuteCheckBox", "VolumeSlider")]
