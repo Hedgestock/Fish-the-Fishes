@@ -11,24 +11,19 @@ public partial class Biome : Resource, IDescriptible
     public float TimeToSpawnFish = 1;
     [Export]
     public float TimeToSpawnFishDeviation = 0.2f;
-
     [Export]
     public float TimeToSpawnTrash = 3;
     [Export]
     public float TimeToSpawnTrashDeviation = 0.5f;
-
     [Export]
     public int ChangeBiomeThreshold = 50;
-
     [Export]
     public int ChangeBiomeThresholdDeviation = 5;
 
     [Export]
     public Array<WeightedFish> Fishes;
-
     [Export]
     public Array<WeightedTrash> Trashes;
-
     [Export]
     public Array<WeightedBiome> FollowupBiomes;
 
@@ -41,6 +36,8 @@ public partial class Biome : Resource, IDescriptible
     [ExportGroup("Ambiance")]
     [Export]
     public Texture2D Background;
+    [Export]
+    public AudioStream Music;
 
     public static string GetRandomPathFrom(Array<WeightedFish> list)
     {

@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=3 uid="uid://dclhmxwm7kpgn"]
+
+[ext_resource type="Script" uid="uid://dihoq85y44x4p" path="res://Game/Scenes/Game/Game.cs" id="1_nadkq"]
+[ext_resource type="Texture2D" uid="uid://4sfuxo2673qo" path="res://Game/Graphics/BG 2 FTF.png" id="2_y5bw1"]
+[ext_resource type="PackedScene" uid="uid://yi82g384vgwb" path="res://Game/Scenes/Game/HUD.tscn" id="3_fwryc"]
+[ext_resource type="PackedScene" uid="uid://ifoga56i10w3" path="res://Game/Assets/RandomTimer.tscn" id="4_7uts6"]
+[ext_resource type="PackedScene" uid="uid://bnkmwtljf2o3p" path="res://Game/Assets/Player/FishingLine.tscn" id="5_ruo1f"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ag258"]
+distance = 50.0
+
+[node name="Game" type="Node" node_paths=PackedStringArray("Background", "FishTimer", "TrashTimer")]
+script = ExtResource("1_nadkq")
+Background = NodePath("Background")
+FishTimer = NodePath("FishTimer")
+TrashTimer = NodePath("TrashTimer")
+
+[node name="Background" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+texture = ExtResource("2_y5bw1")
+stretch_mode = 6
+
+[node name="HUD" parent="." instance=ExtResource("3_fwryc")]
+
+[node name="FishTimer" parent="." instance=ExtResource("4_7uts6")]
+
+[node name="TrashTimer" parent="." instance=ExtResource("4_7uts6")]
+WaitTimeAverage = 3.0
+Deviation = 0.5
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+size_flags_horizontal = 4
+
+[node name="FrustrationFix" type="Area2D" parent="Control"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Control/FrustrationFix"]
+rotation = 3.14159
+shape = SubResource("WorldBoundaryShape2D_ag258")
+
+[node name="FishingLine" parent="." instance=ExtResource("5_ruo1f")]
+
+[connection signal="EndGame" from="HUD" to="." method="EndGame"]
+[connection signal="timeout" from="FishTimer" to="." method="SpawnFish"]
+[connection signal="timeout" from="TrashTimer" to="." method="SpawnTrash"]
+[connection signal="area_entered" from="Control/FrustrationFix" to="FishingLine" method="MakeInvincible"]
+[connection signal="area_exited" from="Control/FrustrationFix" to="FishingLine" method="MakeVincible"]
+[connection signal="Hit" from="FishingLine" to="HUD" method="LineHit"]
+[connection signal="Score" from="FishingLine" to="HUD" method="LineScore"]

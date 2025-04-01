@@ -40,6 +40,7 @@ public partial class Game : Node
 
     public void EndGame()
     {
+        AudioManager.StopMusic();
         uint playtime = (uint)Math.Ceiling((DateTime.Now - StartTime).TotalSeconds);
         UserData.SetHighStat(Constants.LongestSession, playtime);
         UserData.IncrementStatistic(Constants.TotalTimePlayed, playtime);
@@ -74,6 +75,7 @@ public partial class Game : Node
     private void SetupBiome()
     {
         Background.Texture = GameManager.Biome.Background;
+        AudioManager.PlayMusic(GameManager.Biome.Music);
         GD.Print($"Biome threshold = {GameManager.CalculatedBiomeThreshold}");
         FishTimer.Start(GameManager.Biome.TimeToSpawnFish, GameManager.Biome.TimeToSpawnFishDeviation);
         TrashTimer.Start(GameManager.Biome.TimeToSpawnTrash, GameManager.Biome.TimeToSpawnTrashDeviation);
