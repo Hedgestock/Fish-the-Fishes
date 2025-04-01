@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ixcsrwywv1ck"
-path="res://.godot/imported/icon 512.png-6e0f0393e295387b752c07735ac9cdc0.ctex"
+uid="uid://i306hfmxvk3r"
+path="res://.godot/imported/Logo_FTF_Windows.png-f6aeb804d723c2fb00b9eb7aa3795a3c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/Graphics/WindowsIcon/icon 512.png"
-dest_files=["res://.godot/imported/icon 512.png-6e0f0393e295387b752c07735ac9cdc0.ctex"]
+source_file="res://Game/Graphics/WindowsIcon/Logo_FTF_Windows.png"
+dest_files=["res://.godot/imported/Logo_FTF_Windows.png-f6aeb804d723c2fb00b9eb7aa3795a3c.ctex"]
 
 [params]
 

@@ -18,7 +18,7 @@ config/custom_user_dir_name="Wafflestock/FishTheFishes"
 config/features=PackedStringArray("4.4", "C#", "GL Compatibility")
 boot_splash/bg_color=Color(0.0980392, 0.27451, 0.407843, 1)
 boot_splash/image="uid://ds2atggfh18jt"
-config/icon="res://Game/Graphics/WindowsIcon/icon 512.png"
+config/icon="uid://i306hfmxvk3r"
 
 [audio]
 
