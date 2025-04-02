@@ -42,7 +42,7 @@ window/ios/hide_status_bar=false
 
 [dotnet]
 
-project/assembly_name="Godot"
+project/assembly_name="FTF"
 
 [global_group]
 
