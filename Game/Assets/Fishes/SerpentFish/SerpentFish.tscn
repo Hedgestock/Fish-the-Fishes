@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bcvq4yujb5igf"]
+[gd_scene load_steps=8 format=3 uid="uid://bcvq4yujb5igf"]
 
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_32uni"]
 [ext_resource type="Script" uid="uid://xcsesbulx310" path="res://Game/Assets/Fishes/SerpentFish/SerpentFish.cs" id="2_ujnj7"]
 [ext_resource type="SpriteFrames" uid="uid://bwqrctr8bgiyo" path="res://Game/Assets/Fishes/SerpentFish/Animation/SerpentFishAnimation.tres" id="3_1g1s3"]
+[ext_resource type="Texture2D" uid="uid://bmgfceejcd48n" path="res://Game/Assets/Fishes/SerpentFish/Animation/serpent_marin.png" id="4_1k2ac"]
 
 [sub_resource type="Curve" id="Curve_xo0c7"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.244395, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.1875), -1.11295, 0.0, 0, 0]
@@ -39,7 +40,7 @@ shape = SubResource("CircleShape2D_8auy8")
 points = PackedVector2Array(0, 0, -44.5026, -2.09918, -74, -4, -109, -2, -139, -1, -174, -4, -212, 0, -231.878, 0.389771, -263, 1, -282, -2, -305, -2)
 width = 60.0
 width_curve = SubResource("Curve_btsbg")
-default_color = Color(0, 0.31, 0.062, 1)
+texture = ExtResource("4_1k2ac")
 texture_mode = 2
 joint_mode = 2
 begin_cap_mode = 2

@@ -164,6 +164,7 @@
 - [ ] Optimiser la création de nouveaux poissons
 - [ ] Ajouter plus de composition
 - [ ] Ajouter la sauvegarde en pleine partie
+- [ ] Retirer le chronomètre de sécurité pour le mode ciblé
 
 # Corrections
 
@@ -192,6 +193,7 @@
 - [x] Les paramètres audios doivent lire les bus et le gestionnaire audio doit mettre les bus à jour en fonction du fichier de sauvegarde
 - [x] Utiliser un simple script pour le gestionnaire de haut faits
 - [x] Créer un gestionnaire de sauvegardes et de paramètres hors du gestionnaire de partie
+- [x] Corriger le changement de biome à la seconde partie
 - [ ] [**Plus de bulles pour l'instant**]Corriger les bulles des requins qui disparaissent trop tôt
 - [ ] Passer à des listes de noms plutôt que des énumérations
 - [ ] Grouper les vérifications de hauts faits en un seul appel de fonction
@@ -202,4 +204,3 @@
 - [ ] Corriger les requins qui mangent des poissons déjà pêchés
 - [ ] Corriger les espadons qui pêchent des poissons déjà pêchés
 - [ ] Essayer de faire des poules pour les bulles
-- [ ] Corriger le changement de biome à la seconde partie
