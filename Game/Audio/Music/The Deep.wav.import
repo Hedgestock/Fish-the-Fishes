@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://blel5o2xvimla"
+path="res://.godot/imported/The Deep.wav-b1a4731430d9db9590ffb77e7014759e.sample"
+
+[deps]
+
+source_file="res://Game/Audio/Music/The Deep.wav"
+dest_files=["res://.godot/imported/The Deep.wav-b1a4731430d9db9590ffb77e7014759e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://du5t70kmo5wl6" path="res://Game/Utilities/Weighted/WeightedTrash.cs" id="3_brc6y"]
 [ext_resource type="Script" uid="uid://62lfoitacli2" path="res://Game/Assets/Biomes/Biome.cs" id="3_h68yh"]
 [ext_resource type="Script" uid="uid://bysvm4vph3aiq" path="res://Game/Utilities/Weighted/WeightedBiome.cs" id="3_xwyyq"]
-[ext_resource type="AudioStream" uid="uid://dsk3fvsqdlluj" path="res://Game/Assets/Biomes/Beach/Sea Shaman.wav" id="4_74w15"]
+[ext_resource type="AudioStream" uid="uid://drgj4iqemkwil" path="res://Game/Assets/Biomes/Beach/Fish In A Bucket.wav" id="4_74w15"]
 
 [sub_resource type="Resource" id="Resource_f4pan"]
 script = ExtResource("2_6h1jc")

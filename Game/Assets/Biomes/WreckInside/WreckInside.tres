@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="Biome" load_steps=18 format=3 uid="uid://c1b0bsuac41gk"]
+[gd_resource type="Resource" script_class="Biome" load_steps=19 format=3 uid="uid://c1b0bsuac41gk"]
 
 [ext_resource type="Texture2D" uid="uid://ddyw4r010lfyk" path="res://Game/Assets/Biomes/WreckInside/WreckInsideBackground.png" id="1_i523y"]
 [ext_resource type="Script" uid="uid://du5t70kmo5wl6" path="res://Game/Utilities/Weighted/WeightedTrash.cs" id="1_qjkc5"]
 [ext_resource type="Script" uid="uid://bprtko2ut7gy0" path="res://Game/Utilities/Weighted/WeightedFish.cs" id="1_s5ogd"]
 [ext_resource type="Script" uid="uid://bysvm4vph3aiq" path="res://Game/Utilities/Weighted/WeightedBiome.cs" id="2_pjrry"]
+[ext_resource type="AudioStream" uid="uid://b5so8808es1fj" path="res://Game/Assets/Biomes/WreckDeck/Submerged.wav" id="4_yfq0p"]
 [ext_resource type="Script" uid="uid://62lfoitacli2" path="res://Game/Assets/Biomes/Biome.cs" id="11_ncojd"]
 
 [sub_resource type="Resource" id="Resource_lh1t3"]
@@ -81,3 +82,4 @@ FollowupBiomes = Array[Object]([SubResource("Resource_q1u8b"), SubResource("Reso
 CompendiumName = "Wreck Inside"
 CompendiumDescription = "The interior of this ship emulates almost perfectly a coral reef environment, although the lack of luminosity is better suited for species more adapted to the dark."
 Background = ExtResource("1_i523y")
+Music = ExtResource("4_yfq0p")

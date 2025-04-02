@@ -135,6 +135,7 @@
 - [x] Ajouter un outil pour voire les graphes de selection des biomes ainsi que les probabilités d'apparition des poissons
 - [x] Cône de poissons qui fuient le requin
 - [x] Ajouter l'écran de chargement Wafflestock standard
+- [x] Équilibrer les taux d'apparition (Courant marin est très dur)
 - [ ] Support de différentes langues
 	- [x] Anglais
 	- [ ] Français
@@ -159,7 +160,7 @@
 - [ ] Utiliser une vraie ligne pour la ligne de pêche.
 - [ ] Passer au gestionnaire de scène, de sauvegarde etc... Standards de wafflestock
 - [ ] Ajouter un filtre audio pour chaque biome
-- [ ] Équilibrer les taux d'apparition (Courant marin est très dur)
+- [ ] Ajuster les taux d'apparition des poubelles en fonction de la largeur de l'écran
 - [ ] Optimiser la création de nouveaux poissons
 - [ ] Ajouter plus de composition
 - [ ] Ajouter la sauvegarde en pleine partie
@@ -188,6 +189,9 @@
 - [x] [**Actuellement impossible**] Corriger les requins en attente de lancement
 - [x] Corriger l'affichage des credits
 - [x] Corriger le chargement dynamique de ressource (haut faits)
+- [x] Les paramètres audios doivent lire les bus et le gestionnaire audio doit mettre les bus à jour en fonction du fichier de sauvegarde
+- [x] Utiliser un simple script pour le gestionnaire de haut faits
+- [x] Créer un gestionnaire de sauvegardes et de paramètres hors du gestionnaire de partie
 - [ ] [**Plus de bulles pour l'instant**]Corriger les bulles des requins qui disparaissent trop tôt
 - [ ] Passer à des listes de noms plutôt que des énumérations
 - [ ] Grouper les vérifications de hauts faits en un seul appel de fonction
@@ -197,7 +201,5 @@
 - [ ] Réparer le mode Go Green (Toucher un déchêt ne devrait pas agir comme en classique)
 - [ ] Corriger les requins qui mangent des poissons déjà pêchés
 - [ ] Corriger les espadons qui pêchent des poissons déjà pêchés
-- [ ] Les paramètres audios doivent lire les bus et le gestionnaire audio doit mettre les bus à jour en fonction du fichier de sauvegarde
 - [ ] Essayer de faire des poules pour les bulles
-- [ ] Utiliser un simple script pour le gestionnaire de haut faits
-- [ ] Créer un gestionnaire de sauvegardes et de paramètres hors du gestionnaire de partie
+- [ ] Corriger le changement de biome à la seconde partie

@@ -34,12 +34,28 @@ public partial class AudioManager : Node
 
     public static void PlayMusic(AudioStream music)
     {
-        _instance.Music.Stream = music;
-        _instance.Music.Play();
+        if (music == _instance.Music.Stream) return;
+        Tween tween = _instance.CreateTween();
+        if (_instance.Music.Stream != null)
+            tween.TweenProperty(_instance.Music, "volume_linear", 0, .5f);
+        tween.TweenCallback(
+            Callable.From(() =>
+            {
+                _instance.Music.Stream = music;
+                _instance.Music.Play();
+            }));
+        tween.TweenProperty(_instance.Music, "volume_linear", 1, .5f);
     }
 
     public static void StopMusic()
     {
-        _instance.Music.Stop();
+        Tween tween = _instance.CreateTween();
+        tween.TweenProperty(_instance.Music, "volume_linear", 0, .5f);
+        tween.TweenCallback(
+            Callable.From(() =>
+            {
+                _instance.Music.Stop();
+                _instance.Music.Stream = null;
+            }));
     }
 }

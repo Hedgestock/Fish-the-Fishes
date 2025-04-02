@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="Biome" load_steps=15 format=3 uid="uid://cub1hi1q8poi"]
+[gd_resource type="Resource" script_class="Biome" load_steps=16 format=3 uid="uid://cub1hi1q8poi"]
 
 [ext_resource type="Texture2D" uid="uid://horqethlbwnb" path="res://Game/Assets/Biomes/Abyss/AbyssBackground.png" id="1_6jhds"]
 [ext_resource type="Script" uid="uid://bprtko2ut7gy0" path="res://Game/Utilities/Weighted/WeightedFish.cs" id="1_l3bwr"]
 [ext_resource type="Script" uid="uid://bysvm4vph3aiq" path="res://Game/Utilities/Weighted/WeightedBiome.cs" id="2_nsdd8"]
 [ext_resource type="Script" uid="uid://du5t70kmo5wl6" path="res://Game/Utilities/Weighted/WeightedTrash.cs" id="3_r1s2o"]
+[ext_resource type="AudioStream" uid="uid://d6h3atlgwxc8" path="res://Game/Assets/Biomes/Abyss/Whispers of the Tide.wav" id="4_dqesl"]
 [ext_resource type="Script" uid="uid://62lfoitacli2" path="res://Game/Assets/Biomes/Biome.cs" id="12_3mbs0"]
 
 [sub_resource type="Resource" id="Resource_e35ma"]
@@ -66,3 +67,4 @@ FollowupBiomes = Array[Object]([SubResource("Resource_e8lrw"), SubResource("Reso
 CompendiumName = "Abyss"
 CompendiumDescription = "Those are the abysses"
 Background = ExtResource("1_6jhds")
+Music = ExtResource("4_dqesl")
