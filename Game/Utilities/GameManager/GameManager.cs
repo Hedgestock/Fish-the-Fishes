@@ -88,7 +88,7 @@ public partial class GameManager : Node
     public override void _Ready()
     {
         ScreenSize = GetViewport().GetVisibleRect().Size;
-        GetTree().Root.SizeChanged += OnScreenResize;
+        GetTree().Root.Connect(Viewport.SignalName.SizeChanged, Callable.From(OnScreenResize));
     }
 
     static public void ChangeTarget()

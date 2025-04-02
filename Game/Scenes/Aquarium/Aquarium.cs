@@ -21,7 +21,8 @@ public partial class Aquarium : Node
         Background.Texture = GameManager.Biome.Background;
         FishTimer.Start(GameManager.Biome.TimeToSpawnFish, GameManager.Biome.TimeToSpawnFishDeviation);
         TrashTimer.Start(GameManager.Biome.TimeToSpawnTrash, GameManager.Biome.TimeToSpawnTrashDeviation);
-        BackButton.Pressed += GameManager.GoToPreviousScene;
+
+        BackButton.Connect(BaseButton.SignalName.Pressed, Callable.From(GameManager.GoToPreviousScene));
     }
 
 

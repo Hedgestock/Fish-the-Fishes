@@ -34,7 +34,8 @@ public partial class Game : Node
         GameManager.Lives = 3;
 
         SetupBiome();
-        GameManager.Instance.BiomeChanged += SetupBiome;
+        GameManager.Instance.Connect(GameManager.SignalName.BiomeChanged, new Callable(this, MethodName.SetupBiome));
+
         StartTime = DateTime.Now;
     }
 

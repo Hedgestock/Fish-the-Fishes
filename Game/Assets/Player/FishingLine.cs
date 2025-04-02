@@ -51,7 +51,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
         Line = GetNode<AnimatedSprite2D>("Line");
         Line.Play();
 
-        GetTree().Root.SizeChanged += OnScreenResize;
+        GetTree().Root.Connect(Viewport.SignalName.SizeChanged, Callable.From(OnScreenResize));
     }
 
     public void EquipStuff()

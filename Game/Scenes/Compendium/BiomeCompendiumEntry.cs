@@ -28,7 +28,7 @@ public partial class BiomeCompendiumEntry : CompendiumEntry
         Button.TextureHover = Button.TextureNormal;
         Button.TextureDisabled = Button.TextureNormal;
 
-        Button.Pressed += LaunchAquarium;
+        Button.Connect(BaseButton.SignalName.Pressed, new Callable(this, MethodName.LaunchAquarium));
 
         CompendiumDescription.Text = Instance.CompendiumDescription;
     }

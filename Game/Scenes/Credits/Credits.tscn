@@ -76,6 +76,8 @@ Developper: Hedgestock
 Graphic Designer: Beewaffle
 [img]res://Game/Assets/Fishes/YellowFish/Animation/yellow_alive_1.png[/img]
 Sound Designer: Odun
+[img]res://Game/Assets/Fishes/BlueFish/Blue.png[/img]
+[url=https://flowerheadmusic.itch.io/somewhat-good-underwater]Music by flowerhead[/url]
 [img]res://Game/Assets/Fishes/ArrowFish/Animation/arrow_alive_1.png[/img]
 
 Game developped with the Godot game engine and using the C# programming language.
@@ -96,7 +98,15 @@ metadata/_tab_index = 1
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/MarginContainer/Panel/Patch Notes"]
 layout_mode = 2
 bbcode_enabled = true
-text = "[center][font_size=200]27/03/2025[/font_size][/center]
+text = "[center][font_size=200]??/04/2025[/font_size][/center]
+[font_size=100]
+[ul]
+Added music and some more sound design
+Fixed biomes not changing when doing multiple games in the same session
+
+[/ul]
+[/font_size]
+[center][font_size=200]27/03/2025[/font_size][/center]
 [font_size=100]
 [ul]
 Fixed achievements not being loaded on android

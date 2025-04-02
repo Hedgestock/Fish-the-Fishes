@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ifoga56i10w3" path="res://Game/Assets/RandomTimer.tscn" id="4_5j62k"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dh8h5"]
-radius = 57.0351
+radius = 40.0
 
 [node name="JellyFish" instance=ExtResource("1_v1625")]
 script = ExtResource("2_7552x")
