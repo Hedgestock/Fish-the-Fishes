@@ -135,7 +135,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
         }
     }
 
-    public override void _Input(InputEvent @event)
+    public override void _UnhandledInput(InputEvent @event)
     {
         if (Visible == false) return;
         // Mouse in viewport coordinates.

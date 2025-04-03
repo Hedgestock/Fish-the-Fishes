@@ -201,6 +201,7 @@
 - [x] Corriger le changement de biome à la seconde partie
 - [x] Régler les problèmes d'affichage de la taille dans le compendium
 - [x] Grouper les vérifications de hauts faits en un seul appel de fonction
+- [x] Empêcher la ligne de bouger en même temps que les intéractions avec l'interface utilisateur
 - [ ] [**Plus de bulles pour l'instant**]Corriger les bulles des requins qui disparaissent trop tôt
 - [ ] Passer à des listes de noms plutôt que des énumérations
 - [ ] Corriger les poissons qui restent sur la ligne après une remontée
@@ -209,4 +210,3 @@
 - [ ] Corriger les requins qui mangent des poissons déjà pêchés
 - [ ] Corriger les espadons qui pêchent des poissons déjà pêchés
 - [ ] Essayer de faire des poules pour les bulles
-- [ ] Empêcher la ligne de bouger en même temps que les intéractions avec l'interface utilisateur

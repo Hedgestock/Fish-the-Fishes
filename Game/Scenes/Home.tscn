@@ -68,6 +68,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Menu" type="Control" parent="AspectRatioContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+mouse_filter = 2
 theme = ExtResource("5_mnxty")
 
 [node name="PlayTargetButton" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu" instance=ExtResource("5_o3gki")]

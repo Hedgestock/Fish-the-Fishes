@@ -43,7 +43,6 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
 
     protected float GravityScale = 0;
 
-
     public bool Flip = false;
     public float ActualSpeed = 0;
     public Vector2 TravelAxis = Vector2.Zero;
