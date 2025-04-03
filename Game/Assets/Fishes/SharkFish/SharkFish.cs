@@ -1,6 +1,6 @@
 using Godot;
 using Godot.Collections;
-using Wafflestock;
+using WaffleStock;
 using System;
 using System.Collections.Generic;
 

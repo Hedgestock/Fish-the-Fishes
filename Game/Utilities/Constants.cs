@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Wafflestock
+namespace WaffleStock
 {
     public static class Constants
     {
@@ -35,8 +35,8 @@ namespace Wafflestock
             SwordFish,
             YellowFish,
             SharkFish,
-            //SerpentFish,
-            //JellyFish,
+            SerpentFish,
+            JellyFish,
         }
 
         public static string TrashesFolder = "res://Game/Assets/Trashes/";

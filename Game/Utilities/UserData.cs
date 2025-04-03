@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Text.Json;
 
-namespace Wafflestock
+namespace WaffleStock
 {
     public class UserData
     {

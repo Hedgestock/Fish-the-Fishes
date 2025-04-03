@@ -37,7 +37,7 @@ rotation = 1.5708
 shape = SubResource("CircleShape2D_8auy8")
 
 [node name="Line2D" type="Line2D" parent="." index="4"]
-points = PackedVector2Array(0, 0, -44.5026, -2.09918, -74, -4, -109, -2, -139, -1, -174, -4, -212, 0, -231.878, 0.389771, -263, 1, -282, -2, -305, -2)
+points = PackedVector2Array(0, 0, -40, 0, -56, 0, -112, 0, -139, -1, -176, 0, -212, 0, -231.878, 0.389771, -264, 0, -280, 0, -304, 0)
 width = 60.0
 width_curve = SubResource("Curve_btsbg")
 texture = ExtResource("4_1k2ac")

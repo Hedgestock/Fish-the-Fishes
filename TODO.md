@@ -88,6 +88,9 @@
 - [ ] Lac
 - [ ] Mare
 - [ ] Mangrove
+- [ ] Arctique
+- [ ] Cité engloutie
+- [ ] Barrage
 
 # Gameplay
 
@@ -165,6 +168,8 @@
 - [ ] Ajouter plus de composition
 - [ ] Ajouter la sauvegarde en pleine partie
 - [ ] Retirer le chronomètre de sécurité pour le mode ciblé
+- [ ] Parallaxe
+- [ ] Ombre et shaders sur les biomes
 
 # Corrections
 

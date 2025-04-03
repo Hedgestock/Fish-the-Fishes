@@ -1,7 +1,7 @@
 ﻿using System;
 
 
-namespace Wafflestock
+namespace WaffleStock
 {
     public interface IAchievable : IDescriptible
     {

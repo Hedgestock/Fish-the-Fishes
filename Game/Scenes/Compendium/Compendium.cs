@@ -1,8 +1,8 @@
 using Godot;
-using Wafflestock;
+using WaffleStock;
 using System;
 using System.Linq;
-using static Wafflestock.Constants;
+using static WaffleStock.Constants;
 
 public partial class Compendium : CanvasLayer
 {

@@ -1,5 +1,5 @@
 using Godot;
-using Wafflestock;
+using WaffleStock;
 using System.Collections.Generic;
 
 public partial class AchievementCompendiumEntry : CompendiumEntry

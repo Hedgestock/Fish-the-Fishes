@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Wafflestock
+namespace WaffleStock
 {
     public interface IFisher
     {

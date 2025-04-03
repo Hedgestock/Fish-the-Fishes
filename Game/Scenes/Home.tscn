@@ -256,7 +256,7 @@ offset_right = 213.0
 offset_bottom = 264.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Wafflestock"
+text = "WaffleStock"
 horizontal_alignment = 1
 
 [connection signal="timeout" from="FishTimer" to="." method="SpawnFish"]

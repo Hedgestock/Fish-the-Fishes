@@ -1,5 +1,5 @@
 using Godot;
-using Wafflestock;
+using WaffleStock;
 
 public partial class Settings : CanvasLayer
 {

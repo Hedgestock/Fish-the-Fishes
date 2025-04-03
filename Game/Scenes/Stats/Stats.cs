@@ -1,6 +1,6 @@
 using Godot;
-using Wafflestock;
-using static Wafflestock.UserData.StatCategory;
+using WaffleStock;
+using static WaffleStock.UserData.StatCategory;
 using System;
 
 public partial class Stats : CanvasLayer

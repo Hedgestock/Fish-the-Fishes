@@ -1,5 +1,5 @@
 using Godot;
-using Wafflestock;
+using WaffleStock;
 using System;
 
 public partial class FishCompendiumEntry : AnimatedCompendiumEntry

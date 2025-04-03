@@ -1,5 +1,5 @@
 using Godot;
-using Wafflestock;
+using WaffleStock;
 
 [GlobalClass]
 public partial class Achievement : Resource, IAchievable
