@@ -72,7 +72,7 @@ mouse_filter = 2
 theme = ExtResource("5_mnxty")
 
 [node name="PlayTargetButton" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu" instance=ExtResource("5_o3gki")]
-position = Vector2(782, -117)
+position = Vector2(788, 140)
 
 [node name="VisibleOnScreenNotifier2D" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTargetButton" index="0"]
 position = Vector2(102.5, 0)
@@ -89,7 +89,7 @@ position = Vector2(102, 73)
 
 [node name="PlayGoGreenButton" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu" instance=ExtResource("5_o3gki")]
 visible = false
-position = Vector2(71, -112)
+position = Vector2(51, 93)
 
 [node name="VisibleOnScreenNotifier2D" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayGoGreenButton" index="0"]
 position = Vector2(147.5, 0)
@@ -102,7 +102,7 @@ text = "Go Green
 "
 
 [node name="PlayClassicButton" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu" instance=ExtResource("5_o3gki")]
-position = Vector2(446, -156)
+position = Vector2(458, 90)
 
 [node name="VisibleOnScreenNotifier2D" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayClassicButton" index="0"]
 position = Vector2(118, 0)
@@ -114,7 +114,7 @@ offset_bottom = 158.0
 text = "Classic"
 
 [node name="PlayTimeAttackButton" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu" instance=ExtResource("5_o3gki")]
-position = Vector2(526, 92)
+position = Vector2(147, 295)
 
 [node name="VisibleOnScreenNotifier2D" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTimeAttackButton" index="0"]
 position = Vector2(56.5, 0)
@@ -129,7 +129,7 @@ text = "Time Attack"
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
 [node name="EquipmentButton" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu" instance=ExtResource("5_o3gki")]
-position = Vector2(42, 204)
+position = Vector2(627, 364)
 
 [node name="VisibleOnScreenNotifier2D" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/EquipmentButton" index="0"]
 position = Vector2(141.5, 0)
@@ -142,7 +142,7 @@ text = "Equipment
 "
 
 [node name="CompendiumButton" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu" instance=ExtResource("5_o3gki")]
-position = Vector2(365, 409)
+position = Vector2(360, 558)
 
 [node name="VisibleOnScreenNotifier2D" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/CompendiumButton" index="0"]
 position = Vector2(217, 0)
@@ -154,7 +154,7 @@ offset_bottom = 158.0
 text = "Compendium"
 
 [node name="StatsButton" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu" instance=ExtResource("5_o3gki")]
-position = Vector2(77, 424)
+position = Vector2(91, 478)
 
 [node name="VisibleOnScreenNotifier2D" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/StatsButton" index="0"]
 position = Vector2(83.5, 0)
@@ -211,6 +211,7 @@ offset_bottom = 8.0
 text = "TEST"
 
 [node name="ColorRect" type="ColorRect" parent="." node_paths=PackedStringArray("WaffleStock", "Logo", "LastFrame")]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

@@ -139,6 +139,7 @@
 - [x] Cône de poissons qui fuient le requin
 - [x] Ajouter l'écran de chargement Wafflestock standard
 - [x] Équilibrer les taux d'apparition (Courant marin est très dur)
+- [x] Retirer le chronomètre de sécurité pour le mode ciblé
 - [ ] Support de différentes langues
 	- [x] Anglais
 	- [ ] Français
@@ -167,7 +168,6 @@
 - [ ] Optimiser la création de nouveaux poissons
 - [ ] Ajouter plus de composition
 - [ ] Ajouter la sauvegarde en pleine partie
-- [ ] Retirer le chronomètre de sécurité pour le mode ciblé
 - [ ] Parallaxe
 - [ ] Ombre et shaders sur les biomes
 

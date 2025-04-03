@@ -72,8 +72,6 @@ public partial class GameManager : Node
     public static string PrevScene = "";
     public static Vector2 ScreenSize;
 
-    private static SceneTreeTimer TargetSafeTimer;
-
     static private GameManager _instance = null;
     public static GameManager Instance { get { return _instance; } }
 
@@ -93,11 +91,6 @@ public partial class GameManager : Node
 
     static public void ChangeTarget()
     {
-        if (TargetSafeTimer != null)
-        {
-            TargetSafeTimer.Timeout -= ChangeTarget;
-            TargetSafeTimer = null;
-        }
         _target = (WeightedItem.ChooseFrom(Biome.Fishes.ToArray()) as WeightedFish).Fish.ToString();
         _instance.EmitSignal(SignalName.TargetChanged);
     }
@@ -108,12 +101,9 @@ public partial class GameManager : Node
         Biome = GD.Load<Biome>(Biome.GetRandomPathFrom(Biome.FollowupBiomes));
 
         // That's a mouthfull, but we simply check the current biome to check if the target is still valid
-        // otherwise, we just wait a bit to avoid the issue of fishing one already on screen and set a new one.
+        // otherwise, we just set a new one.
         if (Mode == Game.Mode.Target && !Biome.Fishes.Select(fish => fish.ToString()).Contains(Target))
-        {
-            TargetSafeTimer = _instance.GetTree().CreateTimer(10);
-            TargetSafeTimer.Timeout += ChangeTarget;
-        };
+             ChangeTarget();
     }
 
     static public void ChangeSceneToFile(string file)
