@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ds2atggfh18jt"
-path="res://.godot/imported/wafflestock_anime_frame_1.png-fa5092d729ebee058ab36c73bdb9a870.ctex"
+path="res://.godot/imported/wafflestock_anime_frame_1.png-397da1348685e33a2c9b3b03d4904b96.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Wafflestock/wafflestock_anime_frame_1.png"
-dest_files=["res://.godot/imported/wafflestock_anime_frame_1.png-fa5092d729ebee058ab36c73bdb9a870.ctex"]
+source_file="res://WaffleStock/wafflestock_anime_frame_1.png"
+dest_files=["res://.godot/imported/wafflestock_anime_frame_1.png-397da1348685e33a2c9b3b03d4904b96.ctex"]
 
 [params]
 

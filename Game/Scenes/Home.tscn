@@ -8,8 +8,8 @@
 [ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://Game/Themes/FTF_theme.tres" id="5_mnxty"]
 [ext_resource type="PackedScene" uid="uid://cifa65xrf1ken" path="res://Game/UI/FishableButton/FishableButton.tscn" id="5_o3gki"]
 [ext_resource type="Script" uid="uid://cktwlq38w4b27" path="res://Game/Scenes/SplashScreen.cs" id="8_kgnoq"]
-[ext_resource type="Texture2D" uid="uid://bkwhancs5j6o5" path="res://Wafflestock/Logo_anime_last_frame.png" id="9_2pmwa"]
-[ext_resource type="VideoStream" uid="uid://desns6vcfplb0" path="res://Wafflestock/wafflestock animé.ogv" id="9_kgnoq"]
+[ext_resource type="Texture2D" uid="uid://bkwhancs5j6o5" path="res://WaffleStock/Logo_anime_last_frame.png" id="9_2pmwa"]
+[ext_resource type="VideoStream" uid="uid://desns6vcfplb0" path="res://WaffleStock/wafflestock animé.ogv" id="9_kgnoq"]
 
 [node name="Home" type="CanvasLayer" node_paths=PackedStringArray("FishTimer", "Message", "GameContainer", "Background", "TestButton")]
 script = ExtResource("1_ptl5f")
@@ -209,7 +209,7 @@ offset_right = 8.0
 offset_bottom = 8.0
 text = "TEST"
 
-[node name="ColorRect" type="ColorRect" parent="." node_paths=PackedStringArray("Wafflestock", "Logo", "LastFrame")]
+[node name="ColorRect" type="ColorRect" parent="." node_paths=PackedStringArray("WaffleStock", "Logo", "LastFrame")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -219,7 +219,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 color = Color(0.0980392, 0.27451, 0.407843, 1)
 script = ExtResource("8_kgnoq")
-Wafflestock = NodePath("Label")
+WaffleStock = NodePath("Label")
 Logo = NodePath("AspectRatioContainer/VideoStreamPlayer")
 LastFrame = NodePath("AspectRatioContainer/LastFrame")
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bkwhancs5j6o5"
-path="res://.godot/imported/Logo_anime_last_frame.png-472e59e133491d0c14d7199e071f646d.ctex"
+path="res://.godot/imported/Logo_anime_last_frame.png-2b2f96b6238289870de7640c43791264.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Wafflestock/Logo_anime_last_frame.png"
-dest_files=["res://.godot/imported/Logo_anime_last_frame.png-472e59e133491d0c14d7199e071f646d.ctex"]
+source_file="res://WaffleStock/Logo_anime_last_frame.png"
+dest_files=["res://.godot/imported/Logo_anime_last_frame.png-2b2f96b6238289870de7640c43791264.ctex"]
 
 [params]
 
