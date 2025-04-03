@@ -236,8 +236,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
                     {
                         node.QueueFree();
                     }
-                    FishedThings.Clear();
-                    return 0;
+                    break;
                 case Game.Mode.GoGreen:
                     return GoGreenScore();
                 case Game.Mode.Target:
@@ -293,6 +292,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
             if (fish is IPowerup powerup) powerup.Activate();
             fish.QueueFree();
         }
+        AchievementsManager.OnFishFished();
 
         UserData.SetHighStat(Constants.MaxPointScored, (long)score);
         UserData.IncrementStatistic(Constants.TotalPointsScored, (long)score);
@@ -339,7 +339,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
             if (fish is IPowerup powerup) powerup.Activate();
             fish.QueueFree();
         }
-        FishedThings.Clear();
+        AchievementsManager.OnFishFished();
 
         return score;
     }
@@ -367,7 +367,6 @@ public partial class FishingLine : CharacterBody2D, IFisher
         {
             UserData.FishCompendium[fishTypeName].MinSize = fish.ActualSize;
         }
-        AchievementsManager.OnFishFished();
     }
 
     private void OnScreenResize()

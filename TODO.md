@@ -199,13 +199,14 @@
 - [x] Utiliser un simple script pour le gestionnaire de haut faits
 - [x] Créer un gestionnaire de sauvegardes et de paramètres hors du gestionnaire de partie
 - [x] Corriger le changement de biome à la seconde partie
+- [x] Régler les problèmes d'affichage de la taille dans le compendium
+- [x] Grouper les vérifications de hauts faits en un seul appel de fonction
 - [ ] [**Plus de bulles pour l'instant**]Corriger les bulles des requins qui disparaissent trop tôt
 - [ ] Passer à des listes de noms plutôt que des énumérations
-- [ ] Grouper les vérifications de hauts faits en un seul appel de fonction
 - [ ] Corriger les poissons qui restent sur la ligne après une remontée
-- [ ] Régler les problèmes d'affichage de la taille dans le compendium
 - [ ] Ajouter un tag pour les poissons à point d'apparition particulier (Et empêcher ces derniers de fuir les requins)
 - [ ] Réparer le mode Go Green (Toucher un déchêt ne devrait pas agir comme en classique)
 - [ ] Corriger les requins qui mangent des poissons déjà pêchés
 - [ ] Corriger les espadons qui pêchent des poissons déjà pêchés
 - [ ] Essayer de faire des poules pour les bulles
+- [ ] Empêcher la ligne de bouger en même temps que les intéractions avec l'interface utilisateur
