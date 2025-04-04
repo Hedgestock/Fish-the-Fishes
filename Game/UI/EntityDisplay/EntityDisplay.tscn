@@ -2,13 +2,14 @@
 
 [ext_resource type="Script" uid="uid://h6iqp76k4n5f" path="res://Game/UI/EntityDisplay/EntityDisplay.cs" id="1_lkb7s"]
 
-[node name="EntityDisplay" type="SubViewportContainer"]
+[node name="EntityDisplay" type="SubViewportContainer" node_paths=PackedStringArray("Viewport")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lkb7s")
+Viewport = NodePath("SubViewport")
 
 [node name="SubViewport" type="SubViewport" parent="."]
 handle_input_locally = false

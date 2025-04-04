@@ -32,7 +32,7 @@ public partial class SaveManager : Node
     {
         if (!FileAccess.FileExists(DataFilePath))
         {
-            GD.PrintErr("No save file to load");
+            GD.PrintErr("No data file to load");
             new UserData();
             return;
         }
@@ -43,7 +43,7 @@ public partial class SaveManager : Node
 
         if (!UserData.Deserialize(jsonString))
         {
-            GD.PrintErr("Failed to deserialize save file");
+            GD.PrintErr("Failed to deserialize data file");
             new UserData();
         }
     }
@@ -55,7 +55,7 @@ public partial class SaveManager : Node
 
         if (!FileAccess.FileExists(DataFilePath))
         {
-            GD.PrintErr("No save file to erase");
+            GD.PrintErr("No data file to erase");
             return;
         }
 
@@ -106,8 +106,24 @@ public partial class SaveManager : Node
         catch (Exception e)
         {
             GD.PrintErr(e);
+            GD.PrintErr("Failed to deserialize game file");
             return false;
         }
+    }
+
+    static public void EraseGame()
+    {
+        GameManager.GameSave = null;
+
+        if (!FileAccess.FileExists(GameFilePath))
+        {
+            GD.PrintErr("No game file to erase");
+            return;
+        }
+
+        DirAccess dir = DirAccess.Open(SaveDirectory);
+
+        dir.Remove(GameFilePath);
     }
 
 

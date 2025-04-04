@@ -33,6 +33,7 @@ public partial class HUD : CanvasLayer
     public override void _Ready()
     {
         LocalScore = GameManager.Score;
+        ScoreLabel.Text = GameManager.Score.ToString();
 
         switch (GameManager.Mode)
         {
@@ -63,6 +64,9 @@ public partial class HUD : CanvasLayer
                 GameManager.Instance.LifeUp += LifeUp;
                 break;
         }
+
+        for(int i = 1; i <= 3 - GameManager.Lives; i++)
+            LivesContainer.GetNode<AnimatedSpriteForUI>("Life" + i).Sprite.Animation = "death";
     }
 
     public override void _Process(double delta)

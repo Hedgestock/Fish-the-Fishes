@@ -46,7 +46,7 @@ public partial class Game : Node
         SaveManager.SaveData();
         AchievementsManager.OnGameEnd();
         GameManager.Mode = Mode.Menu;
-        GameManager.GameSave = null;
+        SaveManager.EraseGame();
         GameManager.ChangeSceneToFile("res://Game/Scenes/Home.tscn");
     }
 
@@ -78,5 +78,6 @@ public partial class Game : Node
         GD.Print($"Biome threshold = {GameManager.CalculatedBiomeThreshold}");
         FishTimer.Start(GameManager.Biome.TimeToSpawnFish, GameManager.Biome.TimeToSpawnFishDeviation);
         TrashTimer.Start(GameManager.Biome.TimeToSpawnTrash, GameManager.Biome.TimeToSpawnTrashDeviation);
+        SaveManager.SaveGame();
     }
 }

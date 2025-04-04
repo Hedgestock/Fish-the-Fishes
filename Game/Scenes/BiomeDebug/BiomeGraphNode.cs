@@ -44,9 +44,9 @@ public partial class BiomeGraphNode : GraphNode
             AddItem(weightedTrash, WeightedItem.GetTotalWeight(Biome.Trashes.ToArray())); ;
         }
 
-        FishDensity.Text += $"{Biome.TimeToSpawnFish}({Biome.TimeToSpawnFishDeviation})";
-        TrashDensity.Text += $"{Biome.TimeToSpawnTrash}({Biome.TimeToSpawnTrashDeviation})";
-        NextBiomeThreshold.Text += $"{Biome.ChangeBiomeThreshold}({Biome.ChangeBiomeThresholdDeviation})";
+        //FishDensity.Text += $"{Biome.TimeToSpawnFish}({Biome.TimeToSpawnFishDeviation})";
+        //TrashDensity.Text += $"{Biome.TimeToSpawnTrash}({Biome.TimeToSpawnTrashDeviation})";
+        //NextBiomeThreshold.Text += $"{Biome.ChangeBiomeThreshold}({Biome.ChangeBiomeThresholdDeviation})";
     }
 
     public void AddItem(WeightedItem item, uint maxWeight)

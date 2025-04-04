@@ -98,7 +98,13 @@ metadata/_tab_index = 1
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/MarginContainer/Panel/Patch Notes"]
 layout_mode = 2
 bbcode_enabled = true
-text = "[center][font_size=200]02/04/2025[/font_size][/center]
+text = "[center][font_size=200]??/04/2025[/font_size][/center]
+[font_size=100]
+[ul]
+Added mid game save
+[/ul]
+[/font_size]
+[center][font_size=200]02/04/2025[/font_size][/center]
 [font_size=100]
 [ul]
 Added music and some more sound design

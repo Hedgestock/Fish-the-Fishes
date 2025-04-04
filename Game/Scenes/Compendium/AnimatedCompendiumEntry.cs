@@ -6,8 +6,8 @@ public partial class AnimatedCompendiumEntry : CompendiumEntry
 {
     [Export]
     private AnimatedSpriteForUI Placeholder;
-    [Export]
-    private EntityDisplay EntityDisplay;
+    //[Export]
+    //private EntityDisplay EntityDisplay;
     [Export]
     private HBoxContainer AnimationButtons;
 
@@ -18,7 +18,7 @@ public partial class AnimatedCompendiumEntry : CompendiumEntry
     {
         base._Ready();
 
-        /*ResourcePath = $"{EntryFolder}Animation/{EntryKey}Animation.tres";
+        ResourcePath = $"{EntryFolder}Animation/{EntryKey}Animation.tres";
 
         Placeholder.SpriteFrames = GD.Load<SpriteFrames>(ResourcePath);
 
@@ -36,7 +36,7 @@ public partial class AnimatedCompendiumEntry : CompendiumEntry
         else
         {
             GD.PrintErr("No animation resource found at path: ", ResourcePath);
-        }*/
+        }
     }
 
     protected void ShowAnimationButtons()

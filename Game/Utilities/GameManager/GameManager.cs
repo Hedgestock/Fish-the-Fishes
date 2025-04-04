@@ -45,8 +45,6 @@ public partial class GameManager : Node
             if (Mode == Game.Mode.Menu) return;
             if (UserData.BiomeCompendium.TryGetValue(value.ResourceName, out UserData.BiomeCompendiumEntry entry)) entry.Seen++;
             else UserData.BiomeCompendium[Biome.ResourceName] = new UserData.BiomeCompendiumEntry();
-            
-            SaveManager.SaveGame();
         }
     }
 
@@ -107,7 +105,7 @@ public partial class GameManager : Node
         // That's a mouthfull, but we simply check the current biome to check if the target is still valid
         // otherwise, we just set a new one.
         if (Mode == Game.Mode.Target && !Biome.Fishes.Select(fish => fish.ToString()).Contains(Target))
-             ChangeTarget();
+            ChangeTarget();
     }
 
     static public void ChangeSceneToFile(string file)
