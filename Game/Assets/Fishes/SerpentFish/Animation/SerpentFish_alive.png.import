@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1wdwprafwoxh"
-path="res://.godot/imported/Checkbox_cross.png-75e37853e69bf7a68fefb7e30dbd0569.ctex"
+uid="uid://1id8jy54mn46"
+path="res://.godot/imported/SerpentFish_alive.png-62b5eed7de197a980308d51af816ea10.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/Graphics/UI/Checkbox_cross.png"
-dest_files=["res://.godot/imported/Checkbox_cross.png-75e37853e69bf7a68fefb7e30dbd0569.ctex"]
+source_file="res://Game/Assets/Fishes/SerpentFish/Animation/SerpentFish_alive.png"
+dest_files=["res://.godot/imported/SerpentFish_alive.png-62b5eed7de197a980308d51af816ea10.ctex"]
 
 [params]
 

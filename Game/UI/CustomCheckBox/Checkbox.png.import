@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhvn4jlu88k8a"
-path="res://.godot/imported/Checkbox_crossed.png-bdf41900eac2bd5956b175da10525517.ctex"
+uid="uid://jn2jx0ou2gff"
+path="res://.godot/imported/Checkbox.png-605795a53f9d617c5ec0f434cf286509.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/Graphics/UI/Checkbox_crossed.png"
-dest_files=["res://.godot/imported/Checkbox_crossed.png-bdf41900eac2bd5956b175da10525517.ctex"]
+source_file="res://Game/UI/CustomCheckBox/Checkbox.png"
+dest_files=["res://.godot/imported/Checkbox.png-605795a53f9d617c5ec0f434cf286509.ctex"]
 
 [params]
 

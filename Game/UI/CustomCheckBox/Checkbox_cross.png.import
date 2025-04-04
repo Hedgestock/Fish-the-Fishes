@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmgfceejcd48n"
-path="res://.godot/imported/serpent_marin.png-c6ac69819bc94ecbdf4cc79f8d41fdd4.ctex"
+uid="uid://b1wdwprafwoxh"
+path="res://.godot/imported/Checkbox_cross.png-396b385c40609b4c027998935ef0eacd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/Assets/Fishes/SerpentFish/Animation/serpent_marin.png"
-dest_files=["res://.godot/imported/serpent_marin.png-c6ac69819bc94ecbdf4cc79f8d41fdd4.ctex"]
+source_file="res://Game/UI/CustomCheckBox/Checkbox_cross.png"
+dest_files=["res://.godot/imported/Checkbox_cross.png-396b385c40609b4c027998935ef0eacd.ctex"]
 
 [params]
 

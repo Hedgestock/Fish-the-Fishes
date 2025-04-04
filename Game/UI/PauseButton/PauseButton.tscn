@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://ceyknq2cha026"]
+
+[ext_resource type="Texture2D" uid="uid://bqfldv7yo2y02" path="res://Game/UI/PauseButton/Pause.png" id="1_8c1x7"]
+[ext_resource type="Script" uid="uid://bnwcn2jyif221" path="res://Game/UI/PauseButton/PauseButton.cs" id="2_fli7m"]
+
+[node name="PauseButton" type="TextureButton"]
+process_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -400.0
+offset_right = 300.0
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture_normal = ExtResource("1_8c1x7")
+texture_pressed = ExtResource("1_8c1x7")
+texture_hover = ExtResource("1_8c1x7")
+texture_focused = ExtResource("1_8c1x7")
+script = ExtResource("2_fli7m")
+
+[connection signal="pressed" from="." to="." method="OnPressed"]

@@ -1,14 +1,13 @@
 [gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://bwqrctr8bgiyo"]
 
-[ext_resource type="Texture2D" uid="uid://1id8jy54mn46" path="res://Game/Assets/Fishes/SerpentFish/Animation/serpent_marin_tete.png" id="1_3087n"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_p8t60"]
+[ext_resource type="Texture2D" uid="uid://1id8jy54mn46" path="res://Game/Assets/Fishes/SerpentFish/Animation/SerpentFish_alive.png" id="1_saq1d"]
+[ext_resource type="Texture2D" uid="uid://c33e7fbsfhrmt" path="res://Game/Assets/Fishes/SerpentFish/Animation/SerpentFish_dead.png" id="2_q8xjx"]
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_3087n")
+"texture": ExtResource("1_saq1d")
 }],
 "loop": true,
 "name": &"alive",
@@ -16,7 +15,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("CompressedTexture2D_p8t60")
+"texture": ExtResource("2_q8xjx")
 }],
 "loop": true,
 "name": &"dead",

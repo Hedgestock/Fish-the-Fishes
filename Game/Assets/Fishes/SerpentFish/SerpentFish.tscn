@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_32uni"]
 [ext_resource type="Script" uid="uid://xcsesbulx310" path="res://Game/Assets/Fishes/SerpentFish/SerpentFish.cs" id="2_ujnj7"]
 [ext_resource type="SpriteFrames" uid="uid://bwqrctr8bgiyo" path="res://Game/Assets/Fishes/SerpentFish/Animation/SerpentFishAnimation.tres" id="3_1g1s3"]
-[ext_resource type="Texture2D" uid="uid://bmgfceejcd48n" path="res://Game/Assets/Fishes/SerpentFish/Animation/serpent_marin.png" id="4_1k2ac"]
+[ext_resource type="Texture2D" uid="uid://bmgfceejcd48n" path="res://Game/Assets/Fishes/SerpentFish/Animation/SerpentFish_tail.png" id="4_1k2ac"]
 
 [sub_resource type="Curve" id="Curve_xo0c7"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.244395, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.1875), -1.11295, 0.0, 0, 0]

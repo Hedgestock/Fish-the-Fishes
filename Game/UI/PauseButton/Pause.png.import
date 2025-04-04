@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1id8jy54mn46"
-path="res://.godot/imported/serpent_marin_tete.png-f5a0ac28ba5df19eab0cb80639cc5bac.ctex"
+uid="uid://bqfldv7yo2y02"
+path="res://.godot/imported/Pause.png-d5bf383c35c9c8eae848c7b371723563.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/Assets/Fishes/SerpentFish/Animation/serpent_marin_tete.png"
-dest_files=["res://.godot/imported/serpent_marin_tete.png-f5a0ac28ba5df19eab0cb80639cc5bac.ctex"]
+source_file="res://Game/UI/PauseButton/Pause.png"
+dest_files=["res://.godot/imported/Pause.png-d5bf383c35c9c8eae848c7b371723563.ctex"]
 
 [params]
 

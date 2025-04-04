@@ -21,9 +21,9 @@
 - [x] Utiliser des hameçons pour la vie
 - [x] Ajouter la possibilité de voir les biomes depuis le compendium
 - [x] Ajouter un écran de notes de mises à jour
+- [x] Ajouter un bouton de pause
 - [ ] Ajouter un jingle pour les meilleurs scores
 - [ ] Ajouter un tutoriel
-- [ ] Ajouter un bouton de pause
 - [ ] Changer le mode d'affichage des poissons dans le compendium
 - [ ] Ajouter de la physique aux boutons du menu principal
 - [ ] Ajouter de la physique aux poissons pêchés
