@@ -1,38 +1,43 @@
 using Godot;
+using System;
+using System.Text.Json;
 using WaffleStock;
 
 public partial class SaveManager : Node
 {
     const string SaveDirectory = "user://";
-    const string SaveFileName = "data.json";
-    const string SaveFilePath = SaveDirectory + SaveFileName;
+    const string DataFileName = "data.json";
+    const string DataFilePath = SaveDirectory + DataFileName;
     const string SettingsFileName = "settings.cfg";
     const string SettingsFilePath = SaveDirectory + SettingsFileName;
+    const string GameFileName = "game.json";
+    const string GameFilePath = SaveDirectory + GameFileName;
 
     public override void _Ready()
     {
         base._Ready();
         UserSettings.Load(SettingsFilePath);
         LoadData();
+        LoadGame();
     }
 
     static public void SaveData()
     {
-        using var gameSave = FileAccess.Open(SaveFilePath, FileAccess.ModeFlags.Write);
+        using var gameSave = FileAccess.Open(DataFilePath, FileAccess.ModeFlags.Write);
 
         gameSave.StoreString(UserData.Serialize());
     }
 
     static private void LoadData()
     {
-        if (!FileAccess.FileExists(SaveFilePath))
+        if (!FileAccess.FileExists(DataFilePath))
         {
             GD.PrintErr("No save file to load");
             new UserData();
             return;
         }
 
-        using var saveGame = FileAccess.Open(SaveFilePath, FileAccess.ModeFlags.Read);
+        using var saveGame = FileAccess.Open(DataFilePath, FileAccess.ModeFlags.Read);
 
         string jsonString = saveGame.GetAsText();
 
@@ -48,7 +53,7 @@ public partial class SaveManager : Node
 
         UserData.Reset();
 
-        if (!FileAccess.FileExists(SaveFilePath))
+        if (!FileAccess.FileExists(DataFilePath))
         {
             GD.PrintErr("No save file to erase");
             return;
@@ -56,11 +61,63 @@ public partial class SaveManager : Node
 
         DirAccess dir = DirAccess.Open(SaveDirectory);
 
-        dir.Remove(SaveFileName);
+        dir.Remove(DataFileName);
     }
 
     static public void SaveSettings()
     {
         UserSettings.Save(SettingsFilePath);
+    }
+
+    static public void SaveGame()
+    {
+        GameManager.GameSave = new()
+        {
+            Mode = GameManager.Mode,
+            BiomePath = GameManager.Biome.ResourcePath,
+            Score = GameManager.Score,
+            Lives = GameManager.Lives,
+            CurrentBiomeCatches = GameManager.CurrentBiomeCatches,
+            CalculatedBiomeThreshold = GameManager.CalculatedBiomeThreshold
+        };
+
+        using var gameSave = FileAccess.Open(GameFilePath, FileAccess.ModeFlags.Write);
+
+        gameSave.StoreString(JsonSerializer.Serialize(GameManager.GameSave));
+    }
+
+    static public bool LoadGame()
+    {
+        if (!FileAccess.FileExists(GameFilePath))
+        {
+            GD.PrintErr("No game file to load");
+            return false;
+        }
+
+        using var saveGame = FileAccess.Open(GameFilePath, FileAccess.ModeFlags.Read);
+
+        string jsonString = saveGame.GetAsText();
+
+        try
+        {
+            GameManager.GameSave = JsonSerializer.Deserialize<GameSave>(jsonString);
+            return true;
+        }
+        catch (Exception e)
+        {
+            GD.PrintErr(e);
+            return false;
+        }
+    }
+
+
+    public struct GameSave
+    {
+        public Game.Mode Mode { get; set; }
+        public string BiomePath { get; set; }
+        public long Score { get; set; }
+        public uint Lives { get; set; }
+        public int CurrentBiomeCatches { get; set; }
+        public int CalculatedBiomeThreshold { get; set; }
     }
 }

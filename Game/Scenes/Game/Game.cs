@@ -30,9 +30,6 @@ public partial class Game : Node
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        GameManager.Score = 0;
-        GameManager.Lives = 3;
-
         SetupBiome();
         GameManager.Instance.Connect(GameManager.SignalName.BiomeChanged, new Callable(this, MethodName.SetupBiome));
 
@@ -49,6 +46,7 @@ public partial class Game : Node
         SaveManager.SaveData();
         AchievementsManager.OnGameEnd();
         GameManager.Mode = Mode.Menu;
+        GameManager.GameSave = null;
         GameManager.ChangeSceneToFile("res://Game/Scenes/Home.tscn");
     }
 

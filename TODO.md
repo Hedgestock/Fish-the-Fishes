@@ -140,6 +140,7 @@
 - [x] Ajouter l'écran de chargement Wafflestock standard
 - [x] Équilibrer les taux d'apparition (Courant marin est très dur)
 - [x] Retirer le chronomètre de sécurité pour le mode ciblé
+- [x] Ajouter la sauvegarde en pleine partie
 - [ ] Support de différentes langues
 	- [x] Anglais
 	- [ ] Français
@@ -167,7 +168,6 @@
 - [ ] Ajuster les taux d'apparition des poubelles en fonction de la largeur de l'écran
 - [ ] Optimiser la création de nouveaux poissons
 - [ ] Ajouter plus de composition
-- [ ] Ajouter la sauvegarde en pleine partie
 - [ ] Parallaxe
 - [ ] Ombre et shaders sur les biomes
 
@@ -210,3 +210,5 @@
 - [ ] Corriger les requins qui mangent des poissons déjà pêchés
 - [ ] Corriger les espadons qui pêchent des poissons déjà pêchés
 - [ ] Essayer de faire des poules pour les bulles
+- [ ] Suivre le temps d'une partie à travers la sauvegarde rapide
+- [ ] Bien suivre les vies sur l'affichage tête haute à la continuation d'une partie

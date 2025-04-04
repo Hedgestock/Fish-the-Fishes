@@ -1,19 +1,22 @@
 using Godot;
 using WaffleStock;
+using static WaffleStock.Constants;
 
 public partial class Home : CanvasLayer
 {
     [Export]
-    private RandomTimer FishTimer;
+    RandomTimer FishTimer;
     [Export]
-    private Label Message;
+    Label Message;
     [Export]
-    private Node GameContainer;
+    Node GameContainer;
     [Export]
-    private TextureRect Background;
+    TextureRect Background;
 
     [Export]
-    private Button TestButton;
+    FishableButton ContinueButton;
+    [Export]
+    Button TestButton;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -30,12 +33,17 @@ public partial class Home : CanvasLayer
             Message.Text = "Last Score:\n" + GameManager.Score.ToString();
         }
         Background.Texture = GameManager.Biome.Background;
+
+        if (GameManager.GameSave != null)
+            ContinueButton.Show();
     }
 
-    private void Play(Game.Mode mode, Biome biome)
+    void Play(Game.Mode mode, Biome biome)
     {
         GameManager.Mode = mode;
         GameManager.Biome = biome;
+        GameManager.Score = 0;
+        GameManager.Lives = 3;
 
         UserData.IncrementStatistic(Constants.TotalGamesPlayed);
 
@@ -44,61 +52,73 @@ public partial class Home : CanvasLayer
         GameManager.ChangeSceneToFile("res://Game/Scenes/Game/Game.tscn");
     }
 
-    private void PlayClassic()
+    void Continue()
+    {
+        GameManager.Mode = (Game.Mode)GameManager.GameSave?.Mode;
+        GameManager.Biome = GD.Load<Biome>(GameManager.GameSave?.BiomePath);
+        GameManager.Score = (long)GameManager.GameSave?.Score;
+        GameManager.Lives = (uint)GameManager.GameSave?.Lives;
+        GameManager.CurrentBiomeCatches = (int)GameManager.GameSave?.CurrentBiomeCatches;
+        GameManager.CalculatedBiomeThreshold = (int)GameManager.GameSave?.CalculatedBiomeThreshold;
+
+        GameManager.ChangeSceneToFile("res://Game/Scenes/Game/Game.tscn");
+    }
+
+    void PlayClassic()
     {
         Play(Game.Mode.Classic, GameManager.StartingBiome);
     }
 
-    private void PlayTimeAttack()
+    void PlayTimeAttack()
     {
         Play(Game.Mode.TimeAttack, GameManager.StartingBiome);
     }
 
-    private void PlayGoGreen()
+    void PlayGoGreen()
     {
         Play(Game.Mode.GoGreen, GameManager.StartingBiome);
     }
 
-    private void PlayTarget()
+    void PlayTarget()
     {
         Play(Game.Mode.Target, GameManager.StartingBiome);
     }
 
-    private void PlayTest()
+    void PlayTest()
     {
         Play(Game.Mode.Classic, GameManager.TestBiome);
     }
 
-    private void GoToCompendium()
+    void GoToCompendium()
     {
         GameManager.ChangeSceneToFile("res://Game/Scenes/Compendium/Compendium.tscn");
     }
 
-    private void GoToStats()
+    void GoToStats()
     {
         GameManager.ChangeSceneToFile("res://Game/Scenes/Stats/Stats.tscn");
     }
 
-    private void GoToEquipment()
+    void GoToEquipment()
     {
         GameManager.ChangeSceneToFile("res://Game/Scenes/Equipment/Equipment.tscn");
     }
 
-    private void GoToSettings()
+    void GoToSettings()
     {
         GameManager.ChangeSceneToFile("res://Game/Scenes/Settings/Settings.tscn");
     }
 
-    private void GoToTutorial()
+    void GoToTutorial()
     {
         GameManager.ChangeSceneToFile("res://Game/Scenes/Tutorial/Tutorial.tscn");
     }
 
-    private void GoToCredits()
+    void GoToCredits()
     {
         GameManager.ChangeSceneToFile("res://Game/Scenes/Credits/Credits.tscn");
     }
-    private void SpawnFish()
+    void SpawnFish()
     {
         PackedScene FishScene = GD.Load<PackedScene>(Biome.GetRandomPathFrom(GameManager.Biome.Fishes));
         Fish fish = FishScene.Instantiate<Fish>();

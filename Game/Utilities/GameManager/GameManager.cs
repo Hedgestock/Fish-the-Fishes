@@ -26,6 +26,8 @@ public partial class GameManager : Node
     private static string _target = "Fish";
     static public string Target { get { return _target; } }
 
+    static public SaveManager.GameSave? GameSave = null;
+
 
     private static Biome _biome;
     public static Biome Biome
@@ -43,6 +45,8 @@ public partial class GameManager : Node
             if (Mode == Game.Mode.Menu) return;
             if (UserData.BiomeCompendium.TryGetValue(value.ResourceName, out UserData.BiomeCompendiumEntry entry)) entry.Seen++;
             else UserData.BiomeCompendium[Biome.ResourceName] = new UserData.BiomeCompendiumEntry();
+            
+            SaveManager.SaveGame();
         }
     }
 

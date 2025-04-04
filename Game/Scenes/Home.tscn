@@ -11,12 +11,13 @@
 [ext_resource type="Texture2D" uid="uid://bkwhancs5j6o5" path="res://WaffleStock/Logo_anime_last_frame.png" id="9_2pmwa"]
 [ext_resource type="VideoStream" uid="uid://desns6vcfplb0" path="res://WaffleStock/wafflestock animé.ogv" id="9_kgnoq"]
 
-[node name="Home" type="CanvasLayer" node_paths=PackedStringArray("FishTimer", "Message", "GameContainer", "Background", "TestButton")]
+[node name="Home" type="CanvasLayer" node_paths=PackedStringArray("FishTimer", "Message", "GameContainer", "Background", "ContinueButton", "TestButton")]
 script = ExtResource("1_ptl5f")
 FishTimer = NodePath("FishTimer")
 Message = NodePath("AspectRatioContainer/MarginContainer/VBoxContainer/Message")
 GameContainer = NodePath("GameContainer")
 Background = NodePath("Background")
+ContinueButton = NodePath("AspectRatioContainer/MarginContainer/VBoxContainer/Menu/ContinueButton")
 TestButton = NodePath("AspectRatioContainer/MarginContainer/VBoxContainer/Menu/Test")
 
 [node name="FishTimer" parent="." instance=ExtResource("2_op8l2")]
@@ -112,6 +113,19 @@ scale = Vector2(11.5, 1)
 offset_right = 247.0
 offset_bottom = 158.0
 text = "Classic"
+
+[node name="ContinueButton" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu" instance=ExtResource("5_o3gki")]
+visible = false
+position = Vector2(418, -133)
+
+[node name="VisibleOnScreenNotifier2D" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/ContinueButton" index="0"]
+position = Vector2(118, 0)
+scale = Vector2(11.5, 1)
+
+[node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/ContinueButton" index="1"]
+offset_right = 247.0
+offset_bottom = 158.0
+text = "Continue"
 
 [node name="PlayTimeAttackButton" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu" instance=ExtResource("5_o3gki")]
 position = Vector2(147, 295)
@@ -265,6 +279,7 @@ horizontal_alignment = 1
 [connection signal="screen_exited" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTargetButton/VisibleOnScreenNotifier2D" to="." method="PlayTarget"]
 [connection signal="screen_exited" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayGoGreenButton/VisibleOnScreenNotifier2D" to="." method="PlayGoGreen"]
 [connection signal="screen_exited" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayClassicButton/VisibleOnScreenNotifier2D" to="." method="PlayClassic"]
+[connection signal="screen_exited" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/ContinueButton/VisibleOnScreenNotifier2D" to="." method="Continue"]
 [connection signal="screen_exited" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTimeAttackButton/VisibleOnScreenNotifier2D" to="." method="PlayTimeAttack"]
 [connection signal="screen_exited" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/EquipmentButton/VisibleOnScreenNotifier2D" to="." method="GoToEquipment"]
 [connection signal="screen_exited" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/CompendiumButton/VisibleOnScreenNotifier2D" to="." method="GoToCompendium"]
@@ -277,6 +292,7 @@ horizontal_alignment = 1
 [editable path="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTargetButton"]
 [editable path="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayGoGreenButton"]
 [editable path="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayClassicButton"]
+[editable path="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/ContinueButton"]
 [editable path="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTimeAttackButton"]
 [editable path="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/EquipmentButton"]
 [editable path="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/CompendiumButton"]
