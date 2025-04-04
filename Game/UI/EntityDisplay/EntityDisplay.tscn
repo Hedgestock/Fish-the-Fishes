@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvaaf84egrgis"]
+
+[ext_resource type="Script" uid="uid://h6iqp76k4n5f" path="res://Game/UI/EntityDisplay/EntityDisplay.cs" id="1_lkb7s"]
+
+[node name="EntityDisplay" type="SubViewportContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lkb7s")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+handle_input_locally = false
+render_target_update_mode = 4

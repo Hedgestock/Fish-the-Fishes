@@ -12,6 +12,8 @@ public partial class SerpentFish : Fish
     [Export]
     uint SegmentLength = 10;
     [Export]
+    int HeadOffset = -28;
+    [Export]
     Curve AmplitudeCurve;
     [Export]
     int WaveAmplitude = 60;
@@ -53,13 +55,13 @@ public partial class SerpentFish : Fish
         base._PhysicsProcess(delta);
         Vector2[] tmp = new Vector2[Length];
 
-        tmp[0] = Vector2.Zero;
+        tmp[0] = new Vector2(HeadOffset,0);
 
         for (int i = 1; i < Length; i++)
         {
             if (IsActionable)
             {
-                tmp[i] = new Vector2(-SegmentLength * i,
+                tmp[i] = new Vector2(HeadOffset-SegmentLength * i,
                     (float)Math.Sin((((DateTime.Now - InstanciationTime).TotalMilliseconds / 1000f) - (SegmentLength * (Length - i))) * WaveSpeed) * (WaveAmplitude * AmplitudeCurve.Sample((float)i / Length)));
                 Body.Points = tmp;
                 if (HurtBoxes.ContainsKey(i))

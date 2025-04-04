@@ -9,18 +9,19 @@
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.244395, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.1875), -1.11295, 0.0, 0, 0]
 point_count = 3
 
+[sub_resource type="Curve" id="Curve_btsbg"]
+_data = [Vector2(0, 0.964751), 0.0, 0.595641, 0, 0, Vector2(0.134529, 0.994672), 0.0, 0.0, 0, 0, Vector2(0.977579, 0.365984), 0.0, 0.445178, 0, 0]
+point_count = 3
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_8auy8"]
 radius = 30.0
-
-[sub_resource type="Curve" id="Curve_btsbg"]
-_data = [Vector2(0, 0.797541), 0.0, 1.87717, 0, 0, Vector2(0.134529, 0.994672), 0.0, 0.0, 0, 0, Vector2(0.977579, 0.365984), 0.0, 0.445178, 0, 0]
-point_count = 3
 
 [node name="SerpentFish" node_paths=PackedStringArray("Body") instance=ExtResource("1_32uni")]
 script = ExtResource("2_ujnj7")
 Body = NodePath("Line2D")
 Length = 50
 SegmentLength = 10
+HeadOffset = -28
 AmplitudeCurve = SubResource("Curve_xo0c7")
 WaveAmplitude = 60
 WaveSpeed = 5
@@ -28,16 +29,8 @@ CompendiumName = "Sea Snake"
 CompendiumDescription = ""
 Value = 2.0
 
-[node name="AnimatedSprite2D" parent="." index="1"]
-sprite_frames = ExtResource("3_1g1s3")
-animation = &"alive"
-
-[node name="HurtBox" parent="." index="2"]
-rotation = 1.5708
-shape = SubResource("CircleShape2D_8auy8")
-
-[node name="Line2D" type="Line2D" parent="." index="4"]
-points = PackedVector2Array(0, 0, -40, 0, -56, 0, -112, 0, -139, -1, -176, 0, -212, 0, -231.878, 0.389771, -264, 0, -280, 0, -304, 0)
+[node name="Line2D" type="Line2D" parent="." index="0"]
+points = PackedVector2Array(-32, 0, -56, 0, -96, 0, -120, 0, -139, -1, -176, 0, -212, 0, -231.878, 0.389771, -264, 0, -280, 0, -296, 0)
 width = 60.0
 width_curve = SubResource("Curve_btsbg")
 texture = ExtResource("4_1k2ac")
@@ -45,3 +38,11 @@ texture_mode = 2
 joint_mode = 2
 begin_cap_mode = 2
 end_cap_mode = 2
+
+[node name="AnimatedSprite2D" parent="." index="2"]
+sprite_frames = ExtResource("3_1g1s3")
+animation = &"alive"
+
+[node name="HurtBox" parent="." index="3"]
+rotation = 1.5708
+shape = SubResource("CircleShape2D_8auy8")

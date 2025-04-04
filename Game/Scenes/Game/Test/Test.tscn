@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dclhmxwm7kpgn"]
 
-[ext_resource type="Script" uid="uid://dihoq85y44x4p" path="res://Game/Scenes/Game/Game.cs" id="1_nadkq"]
+[ext_resource type="Script" uid="uid://c6jey0mrcm2v2" path="res://Game/Scenes/Game/Test/Test.cs" id="1_svad3"]
 [ext_resource type="Texture2D" uid="uid://4sfuxo2673qo" path="res://Game/Graphics/BG 2 FTF.png" id="2_y5bw1"]
 [ext_resource type="PackedScene" uid="uid://yi82g384vgwb" path="res://Game/Scenes/Game/HUD.tscn" id="3_fwryc"]
 [ext_resource type="PackedScene" uid="uid://ifoga56i10w3" path="res://Game/Assets/RandomTimer.tscn" id="4_7uts6"]
@@ -9,11 +9,8 @@
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ag258"]
 distance = 50.0
 
-[node name="Game" type="Node" node_paths=PackedStringArray("Background", "FishTimer", "TrashTimer")]
-script = ExtResource("1_nadkq")
-Background = NodePath("Background")
-FishTimer = NodePath("FishTimer")
-TrashTimer = NodePath("TrashTimer")
+[node name="Game" type="Node"]
+script = ExtResource("1_svad3")
 
 [node name="Background" type="TextureRect" parent="."]
 anchors_preset = 15

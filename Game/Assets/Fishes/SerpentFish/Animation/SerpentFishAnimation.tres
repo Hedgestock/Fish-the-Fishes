@@ -1,6 +1,6 @@
 [gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://bwqrctr8bgiyo"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5rx4i"]
+[ext_resource type="Texture2D" uid="uid://1id8jy54mn46" path="res://Game/Assets/Fishes/SerpentFish/Animation/serpent_marin_tete.png" id="1_3087n"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_p8t60"]
 
@@ -8,7 +8,7 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("CompressedTexture2D_5rx4i")
+"texture": ExtResource("1_3087n")
 }],
 "loop": true,
 "name": &"alive",
