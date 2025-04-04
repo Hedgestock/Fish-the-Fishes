@@ -54,6 +54,10 @@
 - [ ] Saumon
 - [ ] Thon
 - [ ] Serpent de mer
+- [ ] Poisson lune
+- [ ] Poisson ver de terre
+- [ ] Baleine
+- [ ] Kraken
 
 # Objets pêchables
 
