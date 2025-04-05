@@ -27,6 +27,8 @@
 - [ ] Changer le mode d'affichage des poissons dans le compendium
 - [ ] Ajouter de la physique aux boutons du menu principal
 - [ ] Ajouter de la physique aux poissons pêchés
+- [ ] Ajouter la possibilité de désactiver les vibrations
+- [ ] Ajouter la possibilité de désactiver l'effet d'eau
 
 
 # Poissons
