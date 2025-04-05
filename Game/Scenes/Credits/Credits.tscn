@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cpc2lk8mjeebi"]
 
 [ext_resource type="Script" uid="uid://ddb5usq1uqexh" path="res://Game/Scenes/Credits/Credits.cs" id="1_okroq"]
-[ext_resource type="Texture2D" uid="uid://4sfuxo2673qo" path="res://Game/Graphics/BG 2 FTF.png" id="2_0shy0"]
+[ext_resource type="PackedScene" uid="uid://bubgi8mpwbbne" path="res://Game/UI/DynamicBackground/DynamicBackground.tscn" id="2_m8kky"]
 [ext_resource type="Texture2D" uid="uid://dvkg44r1oulcs" path="res://Game/Graphics/UI/retour.png" id="3_6g4x1"]
 [ext_resource type="Texture2D" uid="uid://bjbotgfwig38a" path="res://Game/Graphics/UI/retour click.png" id="4_bgxfl"]
 [ext_resource type="Texture2D" uid="uid://bx8qk7jnypm0" path="res://Game/Graphics/UI/retour hover.png" id="5_fd448"]
@@ -15,14 +15,9 @@ events = [SubResource("InputEventAction_qkuki")]
 [node name="Credits" type="CanvasLayer"]
 script = ExtResource("1_okroq")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_0shy0")
-stretch_mode = 6
+[node name="Background" parent="." instance=ExtResource("2_m8kky")]
+offset_top = -360.0
+offset_bottom = 360.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchors_preset = 15
@@ -102,6 +97,7 @@ text = "[center][font_size=200]??/04/2025[/font_size][/center]
 [font_size=100]
 [ul]
 Added mid game save
+Added water shader
 [/ul]
 [/font_size]
 [center][font_size=200]02/04/2025[/font_size][/center]

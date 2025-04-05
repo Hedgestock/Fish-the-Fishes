@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://dwv4cu7q6wlf6"]
 
 [ext_resource type="Script" uid="uid://dc58akmbevtcf" path="res://Game/Scenes/Settings/Settings.cs" id="1_pgx6s"]
-[ext_resource type="Texture2D" uid="uid://4sfuxo2673qo" path="res://Game/Graphics/BG 2 FTF.png" id="2_okyw8"]
+[ext_resource type="PackedScene" uid="uid://bubgi8mpwbbne" path="res://Game/UI/DynamicBackground/DynamicBackground.tscn" id="2_dks8k"]
 [ext_resource type="Texture2D" uid="uid://dvkg44r1oulcs" path="res://Game/Graphics/UI/retour.png" id="3_d41ef"]
 [ext_resource type="Texture2D" uid="uid://bjbotgfwig38a" path="res://Game/Graphics/UI/retour click.png" id="4_6vns6"]
 [ext_resource type="Texture2D" uid="uid://bx8qk7jnypm0" path="res://Game/Graphics/UI/retour hover.png" id="5_rejhq"]
@@ -24,14 +24,9 @@ script = ExtResource("1_pgx6s")
 DeleteDataPopup = NodePath("ResetDataPopup")
 CompetitiveMode = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/CompetitiveModeCheckBox")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_okyw8")
-stretch_mode = 6
+[node name="Background" parent="." instance=ExtResource("2_dks8k")]
+offset_top = -360.0
+offset_bottom = 360.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchors_preset = 15

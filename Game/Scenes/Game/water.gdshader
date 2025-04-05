@@ -5,7 +5,7 @@ uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, repeat_enable, filter_ne
 group_uniforms water;
 uniform sampler2D waterNoise : repeat_enable, filter_nearest;
 uniform sampler2D waterDistortionNoise : repeat_enable, filter_nearest;
-uniform vec4 waterColor : source_color = vec4(0.117, 0.27, 0.58, 1);
+// uniform vec4 waterColor : source_color = vec4(0.117, 0.27, 0.58, 1);
 
 group_uniforms water_waves;
 // uniform float distortionForce : hint_range(0.00, .1, 0.001) = .01;
@@ -21,7 +21,7 @@ uniform float backGroundDirX : hint_range(-0.1, 0.1) = 0.01;
 uniform float backGroundDirY : hint_range(-0.1, 0.1) = 0.01;
 
 void fragment() {
-	vec4 color = vec4(waterColor.rgb , 1);
+	// vec4 color = vec4(waterColor.rgb , 1);
 	
 	// vec2 noiseUV = UV * tiling + offSetSpeed * TIME;
 	vec2 noiseUV = UV + offSetSpeed * TIME;
@@ -40,5 +40,5 @@ void fragment() {
 	backGroundUV.x += noiseValue * backGroundDirX * COLOR.r;
 	backGroundUV.y += noiseValue * backGroundDirY * COLOR.r;
 
-	COLOR = mix(texture(SCREEN_TEXTURE, backGroundUV),color, 0.2);
+	COLOR = texture(SCREEN_TEXTURE, backGroundUV);
 }

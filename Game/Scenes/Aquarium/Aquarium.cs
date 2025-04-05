@@ -8,8 +8,6 @@ public partial class Aquarium : Node
     private RandomTimer FishTimer;
     [Export]
     private RandomTimer TrashTimer;
-    [Export]
-    private TextureRect Background;
 
     [Export]
     private TextureButton BackButton;
@@ -18,7 +16,6 @@ public partial class Aquarium : Node
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        Background.Texture = GameManager.Biome.Background;
         FishTimer.Start(GameManager.Biome.TimeToSpawnFish, GameManager.Biome.TimeToSpawnFishDeviation);
         TrashTimer.Start(GameManager.Biome.TimeToSpawnTrash, GameManager.Biome.TimeToSpawnTrashDeviation);
 

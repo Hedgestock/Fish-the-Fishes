@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ifoga56i10w3" path="res://Game/Assets/RandomTimer.tscn" id="2_8vpwh"]
 [ext_resource type="PackedScene" uid="uid://by02c8ge1i57q" path="res://Game/Scenes/Equipment/EquipmentUI.tscn" id="2_53287"]
 [ext_resource type="PackedScene" uid="uid://bnkmwtljf2o3p" path="res://Game/Assets/Player/FishingLine.tscn" id="2_au0c2"]
-[ext_resource type="Texture2D" uid="uid://4sfuxo2673qo" path="res://Game/Graphics/BG 2 FTF.png" id="2_hxeyh"]
+[ext_resource type="PackedScene" uid="uid://bubgi8mpwbbne" path="res://Game/UI/DynamicBackground/DynamicBackground.tscn" id="3_t0lio"]
 [ext_resource type="Texture2D" uid="uid://dvkg44r1oulcs" path="res://Game/Graphics/UI/retour.png" id="4_pl8em"]
 [ext_resource type="Texture2D" uid="uid://bjbotgfwig38a" path="res://Game/Graphics/UI/retour click.png" id="5_nkfqv"]
 [ext_resource type="Texture2D" uid="uid://bx8qk7jnypm0" path="res://Game/Graphics/UI/retour hover.png" id="6_kg20x"]
@@ -22,14 +22,9 @@ FishingLine = NodePath("GameContainer/FishingLine")
 Menu = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/HFlowContainer")
 EquipmentUITemplate = ExtResource("2_53287")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_hxeyh")
-stretch_mode = 6
+[node name="Background" parent="." instance=ExtResource("3_t0lio")]
+offset_top = -360.0
+offset_bottom = 360.0
 
 [node name="FishTimer" parent="." instance=ExtResource("2_8vpwh")]
 autostart = true

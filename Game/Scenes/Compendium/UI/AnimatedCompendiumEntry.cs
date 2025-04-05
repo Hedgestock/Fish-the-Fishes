@@ -6,8 +6,8 @@ public partial class AnimatedCompendiumEntry : CompendiumEntry
 {
     [Export]
     private AnimatedSpriteForUI Placeholder;
-    //[Export]
-    //private EntityDisplay EntityDisplay;
+    [Export]
+    private EntityDisplay EntityDisplay;
     [Export]
     private HBoxContainer AnimationButtons;
 
@@ -18,25 +18,27 @@ public partial class AnimatedCompendiumEntry : CompendiumEntry
     {
         base._Ready();
 
-        ResourcePath = $"{EntryFolder}Animation/{EntryKey}Animation.tres";
+        EntityDisplay.Entity = (CharacterBody2D)Instance;
 
-        Placeholder.SpriteFrames = GD.Load<SpriteFrames>(ResourcePath);
+        //ResourcePath = $"{EntryFolder}Animation/{EntryKey}Animation.tres";
 
-        if (Placeholder.SpriteFrames != null)
-        {
-            Placeholder.Play();
+        //Placeholder.SpriteFrames = GD.Load<SpriteFrames>(ResourcePath);
 
-            if ((EntryType == Compendium.EntryType.Trash && !UserData.TrashCompendium.ContainsKey(EntryKey))
-                || (EntryType == Compendium.EntryType.Fish && !UserData.FishCompendium.ContainsKey(EntryKey)))
-            {
-                Placeholder.Modulate = new Color(0, 0, 0);
-                return;
-            }
-        }
-        else
-        {
-            GD.PrintErr("No animation resource found at path: ", ResourcePath);
-        }
+        //if (Placeholder.SpriteFrames != null)
+        //{
+        //    Placeholder.Play();
+
+        //    if ((EntryType == Compendium.EntryType.Trash && !UserData.TrashCompendium.ContainsKey(EntryKey))
+        //        || (EntryType == Compendium.EntryType.Fish && !UserData.FishCompendium.ContainsKey(EntryKey)))
+        //    {
+        //        Placeholder.Modulate = new Color(0, 0, 0);
+        //        return;
+        //    }
+        //}
+        //else
+        //{
+        //    GD.PrintErr("No animation resource found at path: ", ResourcePath);
+        //}
     }
 
     protected void ShowAnimationButtons()

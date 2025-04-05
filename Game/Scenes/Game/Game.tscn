@@ -28,7 +28,6 @@ noise = SubResource("FastNoiseLite_xnc2s")
 shader = ExtResource("6_p6c18")
 shader_parameter/waterNoise = SubResource("NoiseTexture2D_aoxvl")
 shader_parameter/waterDistortionNoise = SubResource("NoiseTexture2D_rj04q")
-shader_parameter/waterColor = Color(0, 0, 0, 1)
 shader_parameter/offSetSpeed = Vector2(0.03, 0.1)
 shader_parameter/backGroundDirX = 0.005
 shader_parameter/backGroundDirY = 0.005

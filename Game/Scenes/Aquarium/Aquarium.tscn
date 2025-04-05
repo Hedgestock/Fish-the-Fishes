@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://bn4j1dckgh88u"]
 
 [ext_resource type="Script" uid="uid://c6mucrrpsu6d6" path="res://Game/Scenes/Aquarium/Aquarium.cs" id="1_e2m0m"]
-[ext_resource type="Texture2D" uid="uid://4sfuxo2673qo" path="res://Game/Graphics/BG 2 FTF.png" id="2_32dsp"]
+[ext_resource type="PackedScene" uid="uid://bubgi8mpwbbne" path="res://Game/UI/DynamicBackground/DynamicBackground.tscn" id="2_n616v"]
 [ext_resource type="Texture2D" uid="uid://dvkg44r1oulcs" path="res://Game/Graphics/UI/retour.png" id="3_keuqg"]
 [ext_resource type="Texture2D" uid="uid://bjbotgfwig38a" path="res://Game/Graphics/UI/retour click.png" id="4_c0ucd"]
 [ext_resource type="PackedScene" uid="uid://ifoga56i10w3" path="res://Game/Assets/RandomTimer.tscn" id="4_qf73r"]
@@ -18,19 +18,12 @@ events = [SubResource("InputEventAction_qkuki")]
 script = ExtResource("1_e2m0m")
 FishTimer = NodePath("FishTimer")
 TrashTimer = NodePath("TrashTimer")
-Background = NodePath("Background")
+Background = NodePath("")
 BackButton = NodePath("MarginContainer/BackButton")
 
-[node name="Background" type="TextureRect" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 8
-texture = ExtResource("2_32dsp")
-stretch_mode = 6
+[node name="Background" parent="." instance=ExtResource("2_n616v")]
+offset_top = -360.0
+offset_bottom = 360.0
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 offset_right = 100.0

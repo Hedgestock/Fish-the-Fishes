@@ -3,11 +3,13 @@ using System;
 
 public partial class EntityDisplay : SubViewportContainer
 {
-    Node2D Entity
+    public CharacterBody2D Entity
     {
         set
         {
-            value.ProcessMode = ProcessModeEnum.Disabled;
+            value.Position = Vector2.One * 100;
+            value.Rotation = 0;
+            value.SetPhysicsProcess(false);
             Viewport.AddChild(value);
         }
     }

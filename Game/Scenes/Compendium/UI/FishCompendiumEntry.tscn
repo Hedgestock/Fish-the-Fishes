@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://blsj53n3v0fo7"]
 
-[ext_resource type="PackedScene" uid="uid://bjjph3hx7hdwx" path="res://Game/Scenes/Compendium/AnimatedCompendiumEntry.tscn" id="1_xdx3w"]
-[ext_resource type="Script" uid="uid://b832df7ticlm8" path="res://Game/Scenes/Compendium/FishCompendiumEntry.cs" id="2_o0dw6"]
+[ext_resource type="PackedScene" uid="uid://bjjph3hx7hdwx" path="res://Game/Scenes/Compendium/UI/AnimatedCompendiumEntry.tscn" id="1_xdx3w"]
+[ext_resource type="Script" uid="uid://b832df7ticlm8" path="res://Game/Scenes/Compendium/UI/FishCompendiumEntry.cs" id="2_o0dw6"]
 [ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://Game/Themes/FTF_theme.tres" id="2_xiolc"]
 
 [node name="PanelContainer" node_paths=PackedStringArray("NumberFished", "MaxSize", "MinSize") instance=ExtResource("1_xdx3w")]

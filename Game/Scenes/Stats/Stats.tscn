@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://r1tsllld4k82"]
 
 [ext_resource type="Script" uid="uid://dg0dnfxlkijcm" path="res://Game/Scenes/Stats/Stats.cs" id="1_yiwnl"]
-[ext_resource type="Texture2D" uid="uid://4sfuxo2673qo" path="res://Game/Graphics/BG 2 FTF.png" id="2_1e2tm"]
+[ext_resource type="PackedScene" uid="uid://bubgi8mpwbbne" path="res://Game/UI/DynamicBackground/DynamicBackground.tscn" id="2_xxqwn"]
 [ext_resource type="Texture2D" uid="uid://dvkg44r1oulcs" path="res://Game/Graphics/UI/retour.png" id="3_qefni"]
 [ext_resource type="Texture2D" uid="uid://bjbotgfwig38a" path="res://Game/Graphics/UI/retour click.png" id="4_kf377"]
 [ext_resource type="Texture2D" uid="uid://bx8qk7jnypm0" path="res://Game/Graphics/UI/retour hover.png" id="5_th8d4"]
@@ -29,14 +29,9 @@ MaxPointScored = NodePath("VBoxContainer/MarginContainer/VBoxContainer/TabContai
 TotalTrashesCleaned = NodePath("VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/TotalTrashesCleaned")
 TotalEatenFishes = NodePath("VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/TotalEatenFishes")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_1e2tm")
-stretch_mode = 6
+[node name="Background" parent="." instance=ExtResource("2_xxqwn")]
+offset_top = -360.0
+offset_bottom = 360.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchors_preset = 15
@@ -93,6 +88,7 @@ selected = 0
 fit_to_longest_item = false
 item_count = 3
 popup/item_0/text = "Mixed"
+popup/item_0/id = 0
 popup/item_1/text = "Competitive"
 popup/item_1/id = 1
 popup/item_2/text = "Casual"

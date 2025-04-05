@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cu4qvea6vce5v"]
 
-[ext_resource type="Script" uid="uid://bfdtmvs1uhtnl" path="res://Game/Scenes/Compendium/CompendiumEntry.cs" id="2_hdjfk"]
+[ext_resource type="Script" uid="uid://bfdtmvs1uhtnl" path="res://Game/Scenes/Compendium/UI/CompendiumEntry.cs" id="2_hdjfk"]
 
 [node name="PanelContainer" type="PanelContainer" node_paths=PackedStringArray("CompendiumName", "CompendiumDescription", "NumberSeen")]
 anchors_preset = 10

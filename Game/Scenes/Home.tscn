@@ -1,9 +1,9 @@
 [gd_scene load_steps=11 format=3 uid="uid://blkg0i7vjb6il"]
 
-[ext_resource type="Texture2D" uid="uid://4sfuxo2673qo" path="res://Game/Graphics/BG 2 FTF.png" id="1_4aplq"]
 [ext_resource type="Script" uid="uid://ril112dwv2k8" path="res://Game/Scenes/Home.cs" id="1_ptl5f"]
 [ext_resource type="AudioStream" uid="uid://cejn28367eqbj" path="res://Game/Audio/ftf.ogg" id="2_itj28"]
 [ext_resource type="PackedScene" uid="uid://ifoga56i10w3" path="res://Game/Assets/RandomTimer.tscn" id="2_op8l2"]
+[ext_resource type="PackedScene" uid="uid://bubgi8mpwbbne" path="res://Game/UI/DynamicBackground/DynamicBackground.tscn" id="4_2pmwa"]
 [ext_resource type="PackedScene" uid="uid://bnkmwtljf2o3p" path="res://Game/Assets/Player/FishingLine.tscn" id="4_pulgk"]
 [ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://Game/Themes/FTF_theme.tres" id="5_mnxty"]
 [ext_resource type="PackedScene" uid="uid://cifa65xrf1ken" path="res://Game/UI/FishableButton/FishableButton.tscn" id="5_o3gki"]
@@ -11,12 +11,11 @@
 [ext_resource type="Texture2D" uid="uid://bkwhancs5j6o5" path="res://WaffleStock/Logo_anime_last_frame.png" id="9_2pmwa"]
 [ext_resource type="VideoStream" uid="uid://desns6vcfplb0" path="res://WaffleStock/wafflestock animé.ogv" id="9_kgnoq"]
 
-[node name="Home" type="CanvasLayer" node_paths=PackedStringArray("FishTimer", "Message", "GameContainer", "Background", "ContinueButton", "TestButton")]
+[node name="Home" type="CanvasLayer" node_paths=PackedStringArray("FishTimer", "Message", "GameContainer", "ContinueButton", "TestButton")]
 script = ExtResource("1_ptl5f")
 FishTimer = NodePath("FishTimer")
 Message = NodePath("AspectRatioContainer/MarginContainer/VBoxContainer/Message")
 GameContainer = NodePath("GameContainer")
-Background = NodePath("Background")
 ContinueButton = NodePath("AspectRatioContainer/MarginContainer/VBoxContainer/Menu/ContinueButton")
 TestButton = NodePath("AspectRatioContainer/MarginContainer/VBoxContainer/Menu/Test")
 
@@ -26,14 +25,7 @@ autostart = true
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_itj28")
 
-[node name="Background" type="TextureRect" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_4aplq")
-stretch_mode = 6
+[node name="Background" parent="." instance=ExtResource("4_2pmwa")]
 
 [node name="GameContainer" type="Node" parent="."]
 

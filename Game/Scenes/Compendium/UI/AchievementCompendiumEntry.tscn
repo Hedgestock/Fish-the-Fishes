@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://d4ecb71kma03k"]
 
-[ext_resource type="PackedScene" uid="uid://cu4qvea6vce5v" path="res://Game/Scenes/Compendium/CompendiumEntry.tscn" id="1_bu23o"]
-[ext_resource type="Script" uid="uid://ddyq810nx78nq" path="res://Game/Scenes/Compendium/AchievementCompendiumEntry.cs" id="2_3v10s"]
+[ext_resource type="PackedScene" uid="uid://cu4qvea6vce5v" path="res://Game/Scenes/Compendium/UI/CompendiumEntry.tscn" id="1_bu23o"]
+[ext_resource type="Script" uid="uid://ddyq810nx78nq" path="res://Game/Scenes/Compendium/UI/AchievementCompendiumEntry.cs" id="2_3v10s"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_5ef8n"]
 

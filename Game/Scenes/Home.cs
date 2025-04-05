@@ -10,8 +10,6 @@ public partial class Home : CanvasLayer
     Label Message;
     [Export]
     Node GameContainer;
-    [Export]
-    TextureRect Background;
 
     [Export]
     FishableButton ContinueButton;
@@ -32,7 +30,6 @@ public partial class Home : CanvasLayer
         {
             Message.Text = "Last Score:\n" + GameManager.Score.ToString();
         }
-        Background.Texture = GameManager.Biome.Background;
 
         if (GameManager.GameSave != null)
             ContinueButton.Show();

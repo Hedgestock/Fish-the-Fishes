@@ -1,6 +1,5 @@
 using Godot;
 using WaffleStock;
-using System;
 
 public partial class Trash : CharacterBody2D, IFishable, IDescriptible
 {

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bubgi8mpwbbne"]
+
+[ext_resource type="Texture2D" uid="uid://cyqlsyp6ppauk" path="res://Game/Assets/Biomes/Beach/BeachBackground.png" id="1_4kjos"]
+[ext_resource type="Script" uid="uid://c2kyetqq485o2" path="res://Game/UI/DynamicBackground/DynamicBackground.cs" id="2_hx6q2"]
+
+[node name="Background" type="TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_4kjos")
+stretch_mode = 6
+script = ExtResource("2_hx6q2")
