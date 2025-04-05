@@ -20,6 +20,13 @@ public partial class AnimatedCompendiumEntry : CompendiumEntry
 
         EntityDisplay.Entity = (CharacterBody2D)Instance;
 
+        if ((EntryType == Compendium.EntryType.Trash && !UserData.TrashCompendium.ContainsKey(EntryKey))
+                || (EntryType == Compendium.EntryType.Fish && !UserData.FishCompendium.ContainsKey(EntryKey)))
+        {
+            ((CharacterBody2D)Instance).Modulate = new Color(0, 0, 0);
+            return;
+        }
+
         //ResourcePath = $"{EntryFolder}Animation/{EntryKey}Animation.tres";
 
         //Placeholder.SpriteFrames = GD.Load<SpriteFrames>(ResourcePath);
@@ -43,6 +50,7 @@ public partial class AnimatedCompendiumEntry : CompendiumEntry
 
     protected void ShowAnimationButtons()
     {
+        return;
         if (Placeholder.SpriteFrames.GetAnimationNames().Length > 1)
         {
             AnimationButtons.Show();

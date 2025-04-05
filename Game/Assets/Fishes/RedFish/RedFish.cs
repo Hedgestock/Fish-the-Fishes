@@ -26,6 +26,7 @@ public partial class RedFish : Fish
     public override void _Ready()
     {
         base._Ready();
+        if (IsInDisplay) return;
         WaveActualPeriod = (float)GD.Randfn(WaveAmplitude, WaveAmplitudeDeviation);
         WaveActualInverseAmplitude = (float)GD.Randfn(WaveInversePeriod, WaveInversePeriodDeviation);
     }

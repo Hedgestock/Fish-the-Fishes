@@ -13,6 +13,8 @@ public partial class Trash : CharacterBody2D, IFishable, IDescriptible
     public string CompendiumDescription { get; set; }
 
     public bool IsCaught { get; set; }
+    public bool IsInDisplay { get; set; }
+
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -23,6 +25,7 @@ public partial class Trash : CharacterBody2D, IFishable, IDescriptible
 
     public override void _PhysicsProcess(double delta)
     {
+        if (IsInDisplay) return;
         var velocity = Velocity;
         velocity.Y += (float)delta * GravityScale * (int)ProjectSettings.GetSetting("physics/2d/default_gravity");
         Velocity = velocity;

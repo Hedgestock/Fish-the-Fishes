@@ -11,6 +11,7 @@ public partial class SardineFish : Fish
     public override void _Ready()
     {
         base._Ready();
+        if (IsInDisplay) return;
         Sprite.SpeedScale = GD.Randf() + 0.5f;
         float modulation = (float)GD.RandRange(0.8, 1.2);
         Sprite.SelfModulate = new Color(modulation, modulation, modulation, 1);

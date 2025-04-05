@@ -10,6 +10,7 @@ public partial class FishableButton : StaticBody2D, IFishable
 
     bool _isCaught = false;
     public bool IsCaught { get => _isCaught; set => _isCaught = value; }
+    public bool IsInDisplay { get; set; }
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()

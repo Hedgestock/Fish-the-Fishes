@@ -49,6 +49,7 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
     protected float ActualSizeVariation = 0;
     public bool IsAlive = true;
     public bool IsCaught { get; set; }
+    public bool IsInDisplay { get; set; }
 
     public float ActualSize
     {
@@ -62,7 +63,7 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
 
     public bool IsActionable
     {
-        get { return IsAlive && !IsCaught; }
+        get { return IsAlive && !IsCaught && !IsInDisplay; }
     }
 
     public bool IsOnScreen
@@ -70,10 +71,13 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
         get { return GetNode<VisibleOnScreenNotifier2D>("VisibleOnScreenNotifier2D").IsOnScreen(); }
     }
 
-
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
+        Sprite.Animation = "alive";
+        Sprite.Play();
+
+        if (IsInDisplay) return;
         NotifySpawn();
 
         if (GameManager.Mode != Game.Mode.Menu)
@@ -130,13 +134,11 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
         }
 
         Scale *= ActualSizeVariation;
-
-        Sprite.Animation = "alive";
-        Sprite.Play();
     }
 
     public override void _PhysicsProcess(double delta)
     {
+        if (IsInDisplay) return;
         var velocity = Velocity;
         velocity.Y += (float)delta * GravityScale * (int)ProjectSettings.GetSetting("physics/2d/default_gravity");
         Velocity = velocity;

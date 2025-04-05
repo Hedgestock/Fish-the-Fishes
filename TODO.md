@@ -22,9 +22,9 @@
 - [x] Ajouter la possibilité de voir les biomes depuis le compendium
 - [x] Ajouter un écran de notes de mises à jour
 - [x] Ajouter un bouton de pause
+- [x] Changer le mode d'affichage des poissons dans le compendium
 - [ ] Ajouter un jingle pour les meilleurs scores
 - [ ] Ajouter un tutoriel
-- [ ] Changer le mode d'affichage des poissons dans le compendium
 - [ ] Ajouter de la physique aux boutons du menu principal
 - [ ] Ajouter de la physique aux poissons pêchés
 - [ ] Ajouter la possibilité de désactiver les vibrations

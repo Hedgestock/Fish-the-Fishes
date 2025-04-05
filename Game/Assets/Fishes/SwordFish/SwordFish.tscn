@@ -14,8 +14,8 @@ height = 82.0
 
 [node name="SwordFish" node_paths=PackedStringArray("HitBox") instance=ExtResource("1_jmf7p")]
 script = ExtResource("2_q8hjt")
-ImmuneToTargeting = [5, 7]
-ImmuneToSkew = [7]
+ImmuneToTargeting = Array[int]([5, 7])
+ImmuneToSkew = Array[int]([7])
 MaxStrikes = 6
 MinStrikes = 2
 HitBox = NodePath("HitBox/CollisionShape2D")
@@ -27,21 +27,19 @@ MaxSpeed = 700.0
 AverageSize = 145.0
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0"]
-position = Vector2(-210.5, -10)
-scale = Vector2(21.75, 9)
+scale = Vector2(30.625, 9)
 
 [node name="AnimatedSprite2D" parent="." index="1"]
-position = Vector2(-144, 0)
 sprite_frames = ExtResource("3_rsy4g")
 animation = &"alive"
 
 [node name="HurtBox" parent="." index="2"]
-position = Vector2(-200, -5)
+position = Vector2(-56, -5)
 rotation = -1.5708
 shape = SubResource("CapsuleShape2D_l8r55")
 
 [node name="HitBox" type="Area2D" parent="." index="4"]
-position = Vector2(45, -5)
+position = Vector2(189, -5)
 rotation = -1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" index="0"]

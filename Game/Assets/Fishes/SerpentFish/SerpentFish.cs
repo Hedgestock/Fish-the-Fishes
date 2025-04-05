@@ -53,21 +53,19 @@ public partial class SerpentFish : Fish
     public override void _PhysicsProcess(double delta)
     {
         base._PhysicsProcess(delta);
+        if (!IsActionable && !IsInDisplay) return;
         Vector2[] tmp = new Vector2[Length];
 
-        tmp[0] = new Vector2(HeadOffset,0);
+        tmp[0] = new Vector2(HeadOffset, 0);
 
         for (int i = 1; i < Length; i++)
         {
-            if (IsActionable)
+            tmp[i] = new Vector2(HeadOffset - SegmentLength * i,
+                (float)Math.Sin((((DateTime.Now - InstanciationTime).TotalMilliseconds / 1000f) - (SegmentLength * (Length - i))) * WaveSpeed) * (WaveAmplitude * AmplitudeCurve.Sample((float)i / Length)));
+            Body.Points = tmp;
+            if (HurtBoxes.ContainsKey(i))
             {
-                tmp[i] = new Vector2(HeadOffset-SegmentLength * i,
-                    (float)Math.Sin((((DateTime.Now - InstanciationTime).TotalMilliseconds / 1000f) - (SegmentLength * (Length - i))) * WaveSpeed) * (WaveAmplitude * AmplitudeCurve.Sample((float)i / Length)));
-                Body.Points = tmp;
-                if (HurtBoxes.ContainsKey(i))
-                {
-                    HurtBoxes[i].Position = tmp[i];
-                }
+                HurtBoxes[i].Position = tmp[i];
             }
         }
     }

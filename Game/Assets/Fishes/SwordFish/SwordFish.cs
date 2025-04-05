@@ -47,6 +47,7 @@ public partial class SwordFish : Fish, IFisher
     public override void _Ready()
     {
         base._Ready();
+        if (IsInDisplay) return;
         Strikes = GD.RandRange(MinStrikes, MaxStrikes);
         LaunchedSpeed = ActualSpeed;
     }
@@ -55,6 +56,7 @@ public partial class SwordFish : Fish, IFisher
     public override void _PhysicsProcess(double delta)
     {
         base._PhysicsProcess(delta);
+        if (!IsActionable) return;
         if (State == Action.Launched)
         {
             TrackTarget();

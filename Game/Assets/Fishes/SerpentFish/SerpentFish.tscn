@@ -30,6 +30,7 @@ CompendiumDescription = ""
 Value = 2.0
 
 [node name="Line2D" type="Line2D" parent="." index="0"]
+position = Vector2(262, 0)
 points = PackedVector2Array(-32, 0, -56, 0, -96, 0, -120, 0, -139, -1, -176, 0, -212, 0, -231.878, 0.389771, -264, 0, -280, 0, -296, 0)
 width = 60.0
 width_curve = SubResource("Curve_btsbg")
@@ -39,10 +40,15 @@ joint_mode = 2
 begin_cap_mode = 2
 end_cap_mode = 2
 
+[node name="VisibleOnScreenNotifier2D" parent="." index="1"]
+scale = Vector2(31, 9.6)
+
 [node name="AnimatedSprite2D" parent="." index="2"]
+position = Vector2(262, 0)
 sprite_frames = ExtResource("3_1g1s3")
 animation = &"alive"
 
 [node name="HurtBox" parent="." index="3"]
+position = Vector2(262, 0)
 rotation = 1.5708
 shape = SubResource("CircleShape2D_8auy8")

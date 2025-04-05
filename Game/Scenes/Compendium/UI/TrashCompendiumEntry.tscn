@@ -18,8 +18,7 @@ text = " Hit: "
 layout_mode = 2
 size_flags_vertical = 8
 theme_type_variation = &"DescriptionLabel"
-text = "0
-"
+text = "0"
 
 [node name="Cleaned" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Stats" index="4"]
 layout_mode = 2
@@ -31,8 +30,4 @@ text = " Cleaned: "
 layout_mode = 2
 size_flags_vertical = 8
 theme_type_variation = &"DescriptionLabel"
-text = "0
-"
-
-[node name="Graphic" parent="MarginContainer/HBoxContainer" index="1"]
-size_flags_horizontal = 8
+text = "0"

@@ -37,9 +37,3 @@ layout_mode = 2
 theme_type_variation = &"DescriptionLabel"
 theme_override_colors/font_color = Color(0.6, 0.121569, 0, 1)
 text = "0 cm"
-
-[node name="Placeholder" parent="MarginContainer/HBoxContainer/Graphic" index="0"]
-size_flags_horizontal = 8
-
-[node name="AnimationButtons" parent="MarginContainer/HBoxContainer/Graphic" index="1"]
-visible = true

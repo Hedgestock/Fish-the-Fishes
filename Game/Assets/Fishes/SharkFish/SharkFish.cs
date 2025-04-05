@@ -24,6 +24,8 @@ public partial class SharkFish : Fish, IFisher
 
         Velocity = Vector2.Zero;
 
+        if (IsInDisplay) return;
+
         //GpuParticles2D indicator = (GpuParticles2D)Bubbles.Duplicate();
         //indicator.ProcessMaterial = (Material)Bubbles.ProcessMaterial.Duplicate();
         //indicator.Position = GlobalPosition + (TravelAxis * 250);
