@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://yi82g384vgwb"]
+[gd_scene load_steps=8 format=3 uid="uid://yi82g384vgwb"]
 
 [ext_resource type="Script" uid="uid://dsu5w3o51mu13" path="res://Game/Scenes/Game/HUD.cs" id="1_6mcuw"]
 [ext_resource type="FontFile" uid="uid://bfbfdje68lt7w" path="res://Game/Themes/fonts/Amatic-Bold.ttf" id="1_tvh2u"]
@@ -6,7 +6,6 @@
 [ext_resource type="AudioStream" uid="uid://cvbwt4wdd5htw" path="res://Game/Audio/SFX/ScoreMinus.ogg" id="3_ta1pc"]
 [ext_resource type="PackedScene" uid="uid://di7207b71mnm8" path="res://Game/UI/AnimatedSpriteForUI/AnimatedSpriteForUI.tscn" id="4_38r4v"]
 [ext_resource type="AudioStream" uid="uid://cpcouodm444js" path="res://Game/Audio/SFX/JingleLose.ogg" id="4_ae21k"]
-[ext_resource type="PackedScene" uid="uid://ceyknq2cha026" path="res://Game/UI/PauseButton/PauseButton.tscn" id="8_40vyt"]
 [ext_resource type="SpriteFrames" uid="uid://dtab4ysdktcpe" path="res://Game/Scenes/Game/Animation/ClassicLifeAnimation.tres" id="8_ixkn7"]
 
 [node name="HUD" type="CanvasLayer" node_paths=PackedStringArray("ScoreLabel", "ScoreChangeLabel", "TimeLabel", "GameTimer", "LivesContainer", "Target")]
@@ -110,13 +109,6 @@ size_flags_horizontal = 8
 
 [node name="GameTimer" type="Timer" parent="."]
 wait_time = 60.0
-
-[node name="PauseButton" parent="." instance=ExtResource("8_40vyt")]
-offset_left = 32.0
-offset_top = -264.0
-offset_right = 332.0
-offset_bottom = 136.0
-rotation = 0.222272
 
 [connection signal="timeout" from="GameTimer" to="." method="EndCurrentGame"]
 
