@@ -37,6 +37,7 @@
 - [x] Banc de poisson (sardines)
 - [x] Espadon embrocheur
 - [x] Requin mange tout sur son passage
+- [x] Serpent de mer
 - [ ] Poisson volant
 - [ ] Poisson doré
 - [ ] Poisson venimeux
@@ -55,7 +56,6 @@
 - [ ] Grenouille
 - [ ] Saumon
 - [ ] Thon
-- [ ] Serpent de mer
 - [ ] Poisson lune
 - [ ] Poisson ver de terre
 - [ ] Baleine
