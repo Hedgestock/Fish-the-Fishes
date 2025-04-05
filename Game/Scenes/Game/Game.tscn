@@ -1,10 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://0sb3i5bm7j4p"]
+[gd_scene load_steps=14 format=3 uid="uid://0sb3i5bm7j4p"]
 
-[ext_resource type="Script" uid="uid://dihoq85y44x4p" path="res://Game/Scenes/Game/Game.cs" id="1_et1ja"]
+[ext_resource type="Texture2D" uid="uid://cyqlsyp6ppauk" path="res://Game/Assets/Biomes/Beach/BeachBackground.png" id="1_d6nr8"]
 [ext_resource type="PackedScene" uid="uid://yi82g384vgwb" path="res://Game/Scenes/Game/HUD.tscn" id="3_0ebou"]
 [ext_resource type="PackedScene" uid="uid://bnkmwtljf2o3p" path="res://Game/Assets/Player/FishingLine.tscn" id="3_kichm"]
 [ext_resource type="PackedScene" uid="uid://ceyknq2cha026" path="res://Game/UI/PauseButton/PauseButton.tscn" id="3_p6c18"]
-[ext_resource type="Texture2D" uid="uid://4sfuxo2673qo" path="res://Game/Graphics/BG 2 FTF.png" id="3_pinul"]
 [ext_resource type="Shader" uid="uid://dexkwxs8kvqhf" path="res://Game/Scenes/Game/water.gdshader" id="6_p6c18"]
 [ext_resource type="Texture2D" uid="uid://cfpo2ifn0346n" path="res://Game/Scenes/Game/Vignette.png" id="8_sbmws"]
 [ext_resource type="PackedScene" uid="uid://ifoga56i10w3" path="res://Game/Assets/RandomTimer.tscn" id="13_7sxe6"]
@@ -32,11 +31,7 @@ shader_parameter/offSetSpeed = Vector2(0.03, 0.1)
 shader_parameter/backGroundDirX = 0.005
 shader_parameter/backGroundDirY = 0.005
 
-[node name="Game" type="Node" node_paths=PackedStringArray("Background", "FishTimer", "TrashTimer")]
-script = ExtResource("1_et1ja")
-Background = NodePath("Background")
-FishTimer = NodePath("FishTimer")
-TrashTimer = NodePath("TrashTimer")
+[node name="Game" type="CanvasLayer"]
 
 [node name="Background" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -46,16 +41,8 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
-texture = ExtResource("3_pinul")
+texture = ExtResource("1_d6nr8")
 stretch_mode = 6
-
-[node name="PauseButton" parent="Background" instance=ExtResource("3_p6c18")]
-layout_mode = 1
-offset_left = 32.0
-offset_top = -264.0
-offset_right = 332.0
-offset_bottom = 136.0
-rotation = 0.222272
 
 [node name="HUD" parent="." instance=ExtResource("3_0ebou")]
 
@@ -91,7 +78,16 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
+mouse_filter = 2
 texture = ExtResource("8_sbmws")
+
+[node name="PauseButton" parent="." instance=ExtResource("3_p6c18")]
+z_as_relative = false
+offset_left = 32.0
+offset_top = -264.0
+offset_right = 332.0
+offset_bottom = 136.0
+rotation = 0.222272
 
 [connection signal="EndGame" from="HUD" to="." method="EndGame"]
 [connection signal="timeout" from="FishTimer" to="." method="SpawnFish"]

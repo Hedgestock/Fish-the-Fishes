@@ -1,16 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cpc2lk8mjeebi"]
+[gd_scene load_steps=4 format=3 uid="uid://cpc2lk8mjeebi"]
 
 [ext_resource type="Script" uid="uid://ddb5usq1uqexh" path="res://Game/Scenes/Credits/Credits.cs" id="1_okroq"]
 [ext_resource type="PackedScene" uid="uid://bubgi8mpwbbne" path="res://Game/UI/DynamicBackground/DynamicBackground.tscn" id="2_m8kky"]
-[ext_resource type="Texture2D" uid="uid://dvkg44r1oulcs" path="res://Game/Graphics/UI/retour.png" id="3_6g4x1"]
-[ext_resource type="Texture2D" uid="uid://bjbotgfwig38a" path="res://Game/Graphics/UI/retour click.png" id="4_bgxfl"]
-[ext_resource type="Texture2D" uid="uid://bx8qk7jnypm0" path="res://Game/Graphics/UI/retour hover.png" id="5_fd448"]
-
-[sub_resource type="InputEventAction" id="InputEventAction_qkuki"]
-action = &"menu_go_back"
-
-[sub_resource type="Shortcut" id="Shortcut_funm3"]
-events = [SubResource("InputEventAction_qkuki")]
+[ext_resource type="PackedScene" uid="uid://dfxhrdmj7km0i" path="res://Game/UI/BackButton/BackButton.tscn" id="3_tmwxg"]
 
 [node name="Credits" type="CanvasLayer"]
 script = ExtResource("1_okroq")
@@ -36,14 +28,8 @@ layout_mode = 0
 offset_right = 140.0
 offset_bottom = 140.0
 
-[node name="BackButton" type="TextureButton" parent="VBoxContainer/Control/MarginContainer"]
+[node name="BackButton" parent="VBoxContainer/Control/MarginContainer" instance=ExtResource("3_tmwxg")]
 layout_mode = 2
-shortcut = SubResource("Shortcut_funm3")
-shortcut_in_tooltip = false
-texture_normal = ExtResource("3_6g4x1")
-texture_pressed = ExtResource("4_bgxfl")
-texture_hover = ExtResource("5_fd448")
-stretch_mode = 0
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
@@ -148,4 +134,4 @@ Harpoon[img=top]res://Game/Assets/Player/Equipment/Hook/HarpoonHook/HarpoonHook_
 [/font_size]
 "
 
-[connection signal="pressed" from="VBoxContainer/Control/MarginContainer/BackButton" to="." method="GoToHome"]
+[connection signal="pressed" from="VBoxContainer/Control/MarginContainer/BackButton" to="VBoxContainer/Control/MarginContainer/BackButton" method="GoToHome"]

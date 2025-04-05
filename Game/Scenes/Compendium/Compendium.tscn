@@ -1,22 +1,14 @@
-[gd_scene load_steps=16 format=3 uid="uid://b0nv1b3x0suu5"]
+[gd_scene load_steps=12 format=3 uid="uid://b0nv1b3x0suu5"]
 
 [ext_resource type="Script" uid="uid://b1fbk8flphipc" path="res://Game/Scenes/Compendium/Compendium.cs" id="1_lwdf7"]
 [ext_resource type="PackedScene" uid="uid://blsj53n3v0fo7" path="res://Game/Scenes/Compendium/UI/FishCompendiumEntry.tscn" id="2_8qvf3"]
-[ext_resource type="Texture2D" uid="uid://dvkg44r1oulcs" path="res://Game/Graphics/UI/retour.png" id="2_mhjxi"]
 [ext_resource type="PackedScene" uid="uid://b3musubb85kyk" path="res://Game/Scenes/Compendium/UI/TrashCompendiumEntry.tscn" id="3_vf8dp"]
-[ext_resource type="Texture2D" uid="uid://bjbotgfwig38a" path="res://Game/Graphics/UI/retour click.png" id="3_xgqri"]
 [ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://Game/Themes/FTF_theme.tres" id="3_y1rnp"]
-[ext_resource type="Texture2D" uid="uid://bx8qk7jnypm0" path="res://Game/Graphics/UI/retour hover.png" id="4_5k6ur"]
 [ext_resource type="PackedScene" uid="uid://biyy1v6mq1cue" path="res://Game/Scenes/Compendium/UI/BiomeCompendiumEntry.tscn" id="4_c2qa6"]
 [ext_resource type="PackedScene" uid="uid://d4ecb71kma03k" path="res://Game/Scenes/Compendium/UI/AchievementCompendiumEntry.tscn" id="5_1s78k"]
 [ext_resource type="PackedScene" uid="uid://bubgi8mpwbbne" path="res://Game/UI/DynamicBackground/DynamicBackground.tscn" id="6_jltip"]
+[ext_resource type="PackedScene" uid="uid://dfxhrdmj7km0i" path="res://Game/UI/BackButton/BackButton.tscn" id="7_unkw3"]
 [ext_resource type="PackedScene" uid="uid://do433bt3fxs1k" path="res://Game/Scenes/BiomeDebug/BiomeGraph.tscn" id="11_fh7wn"]
-
-[sub_resource type="InputEventAction" id="InputEventAction_qkuki"]
-action = &"menu_go_back"
-
-[sub_resource type="Shortcut" id="Shortcut_02116"]
-events = [SubResource("InputEventAction_qkuki")]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_owad1"]
 
@@ -55,16 +47,8 @@ offset_bottom = 140.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
-[node name="BackButton" type="TextureButton" parent="VBoxContainer/Control/MarginContainer"]
+[node name="BackButton" parent="VBoxContainer/Control/MarginContainer" instance=ExtResource("7_unkw3")]
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-shortcut = SubResource("Shortcut_02116")
-shortcut_in_tooltip = false
-texture_normal = ExtResource("2_mhjxi")
-texture_pressed = ExtResource("3_xgqri")
-texture_hover = ExtResource("4_5k6ur")
-stretch_mode = 0
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
@@ -147,4 +131,4 @@ theme_override_styles/menu_panel = SubResource("StyleBoxEmpty_owad1")
 theme_override_styles/panel = SubResource("StyleBoxEmpty_mv8gi")
 metadata/_tab_index = 4
 
-[connection signal="pressed" from="VBoxContainer/Control/MarginContainer/BackButton" to="." method="GoToHome"]
+[connection signal="pressed" from="VBoxContainer/Control/MarginContainer/BackButton" to="VBoxContainer/Control/MarginContainer/BackButton" method="GoToHome"]

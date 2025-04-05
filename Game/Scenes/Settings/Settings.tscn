@@ -1,18 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://dwv4cu7q6wlf6"]
+[gd_scene load_steps=8 format=3 uid="uid://dwv4cu7q6wlf6"]
 
 [ext_resource type="Script" uid="uid://dc58akmbevtcf" path="res://Game/Scenes/Settings/Settings.cs" id="1_pgx6s"]
 [ext_resource type="PackedScene" uid="uid://bubgi8mpwbbne" path="res://Game/UI/DynamicBackground/DynamicBackground.tscn" id="2_dks8k"]
-[ext_resource type="Texture2D" uid="uid://dvkg44r1oulcs" path="res://Game/Graphics/UI/retour.png" id="3_d41ef"]
-[ext_resource type="Texture2D" uid="uid://bjbotgfwig38a" path="res://Game/Graphics/UI/retour click.png" id="4_6vns6"]
-[ext_resource type="Texture2D" uid="uid://bx8qk7jnypm0" path="res://Game/Graphics/UI/retour hover.png" id="5_rejhq"]
+[ext_resource type="PackedScene" uid="uid://dfxhrdmj7km0i" path="res://Game/UI/BackButton/BackButton.tscn" id="3_io5b2"]
 [ext_resource type="PackedScene" uid="uid://d1xuincg5ibnm" path="res://Game/UI/CustomCheckBox/CustomCheckBox.tscn" id="7_lhwuh"]
 [ext_resource type="PackedScene" uid="uid://ck4c7k26wfpv6" path="res://Game/UI/VolumeControl/VolumeControl.tscn" id="7_suojw"]
-
-[sub_resource type="InputEventAction" id="InputEventAction_qkuki"]
-action = &"menu_go_back"
-
-[sub_resource type="Shortcut" id="Shortcut_y2krb"]
-events = [SubResource("InputEventAction_qkuki")]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6flk2"]
 bg_color = Color(0.392157, 0, 0, 1)
@@ -45,14 +37,8 @@ layout_mode = 0
 offset_right = 100.0
 offset_bottom = 100.0
 
-[node name="BackButton" type="TextureButton" parent="VBoxContainer/Control/MarginContainer"]
+[node name="BackButton" parent="VBoxContainer/Control/MarginContainer" instance=ExtResource("3_io5b2")]
 layout_mode = 2
-shortcut = SubResource("Shortcut_y2krb")
-shortcut_in_tooltip = false
-texture_normal = ExtResource("3_d41ef")
-texture_pressed = ExtResource("4_6vns6")
-texture_hover = ExtResource("5_rejhq")
-stretch_mode = 0
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
@@ -169,7 +155,7 @@ text = "Cancel"
 layout_mode = 2
 text = "Proceed"
 
-[connection signal="pressed" from="VBoxContainer/Control/MarginContainer/BackButton" to="." method="GoToHome"]
+[connection signal="pressed" from="VBoxContainer/Control/MarginContainer/BackButton" to="VBoxContainer/Control/MarginContainer/BackButton" method="GoToHome"]
 [connection signal="toggled" from="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/CompetitiveModeCheckBox" to="." method="SetCompetitiveMode"]
 [connection signal="pressed" from="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/ResetButton" to="." method="DisplayDeleteDataPopup"]
 [connection signal="pressed" from="ResetDataPopup/PanelContainer/VBoxContainer/MarginContainer2/HBoxContainer/CancelButton" to="." method="HideDeleteDataPopup"]

@@ -9,17 +9,11 @@ public partial class Aquarium : Node
     [Export]
     private RandomTimer TrashTimer;
 
-    [Export]
-    private TextureButton BackButton;
-
-
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
         FishTimer.Start(GameManager.Biome.TimeToSpawnFish, GameManager.Biome.TimeToSpawnFishDeviation);
         TrashTimer.Start(GameManager.Biome.TimeToSpawnTrash, GameManager.Biome.TimeToSpawnTrashDeviation);
-
-        BackButton.Connect(BaseButton.SignalName.Pressed, Callable.From(GameManager.GoToPreviousScene));
     }
 
 

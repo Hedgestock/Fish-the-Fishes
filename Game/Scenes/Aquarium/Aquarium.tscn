@@ -1,25 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://bn4j1dckgh88u"]
+[gd_scene load_steps=6 format=3 uid="uid://bn4j1dckgh88u"]
 
 [ext_resource type="Script" uid="uid://c6mucrrpsu6d6" path="res://Game/Scenes/Aquarium/Aquarium.cs" id="1_e2m0m"]
 [ext_resource type="PackedScene" uid="uid://bubgi8mpwbbne" path="res://Game/UI/DynamicBackground/DynamicBackground.tscn" id="2_n616v"]
-[ext_resource type="Texture2D" uid="uid://dvkg44r1oulcs" path="res://Game/Graphics/UI/retour.png" id="3_keuqg"]
-[ext_resource type="Texture2D" uid="uid://bjbotgfwig38a" path="res://Game/Graphics/UI/retour click.png" id="4_c0ucd"]
+[ext_resource type="PackedScene" uid="uid://dfxhrdmj7km0i" path="res://Game/UI/BackButton/BackButton.tscn" id="3_xcukl"]
 [ext_resource type="PackedScene" uid="uid://ifoga56i10w3" path="res://Game/Assets/RandomTimer.tscn" id="4_qf73r"]
-[ext_resource type="Texture2D" uid="uid://bx8qk7jnypm0" path="res://Game/Graphics/UI/retour hover.png" id="5_8cqhi"]
 [ext_resource type="PackedScene" uid="uid://bnkmwtljf2o3p" path="res://Game/Assets/Player/FishingLine.tscn" id="5_fhcl3"]
 
-[sub_resource type="InputEventAction" id="InputEventAction_qkuki"]
-action = &"menu_go_back"
-
-[sub_resource type="Shortcut" id="Shortcut_lwwkp"]
-events = [SubResource("InputEventAction_qkuki")]
-
-[node name="Aquarium" type="Node" node_paths=PackedStringArray("FishTimer", "TrashTimer", "Background", "BackButton")]
+[node name="Aquarium" type="Node" node_paths=PackedStringArray("FishTimer", "TrashTimer")]
 script = ExtResource("1_e2m0m")
 FishTimer = NodePath("FishTimer")
 TrashTimer = NodePath("TrashTimer")
-Background = NodePath("")
-BackButton = NodePath("MarginContainer/BackButton")
 
 [node name="Background" parent="." instance=ExtResource("2_n616v")]
 offset_top = -360.0
@@ -31,14 +21,8 @@ offset_bottom = 100.0
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 
-[node name="BackButton" type="TextureButton" parent="MarginContainer"]
+[node name="BackButton" parent="MarginContainer" instance=ExtResource("3_xcukl")]
 layout_mode = 2
-shortcut = SubResource("Shortcut_lwwkp")
-shortcut_in_tooltip = false
-texture_normal = ExtResource("3_keuqg")
-texture_pressed = ExtResource("4_c0ucd")
-texture_hover = ExtResource("5_8cqhi")
-stretch_mode = 0
 
 [node name="FishTimer" parent="." instance=ExtResource("4_qf73r")]
 autostart = true
@@ -51,5 +35,6 @@ Deviation = 0.5
 [node name="FishingLine" parent="." instance=ExtResource("5_fhcl3")]
 visible = false
 
+[connection signal="pressed" from="MarginContainer/BackButton" to="MarginContainer/BackButton" method="GoBack"]
 [connection signal="timeout" from="FishTimer" to="." method="SpawnFish"]
 [connection signal="timeout" from="TrashTimer" to="." method="SpawnTrash"]

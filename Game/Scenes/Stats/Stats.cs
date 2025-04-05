@@ -93,8 +93,4 @@ public partial class Stats : CanvasLayer
                         t.Minutes,
                         t.Seconds);
     }
-    private void GoToHome()
-    {
-        GameManager.ChangeSceneToFile("res://Game/Scenes/Home.tscn");
-    }
 }

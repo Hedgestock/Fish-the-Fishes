@@ -1,0 +1,23 @@
+[gd_scene load_steps=7 format=3 uid="uid://dfxhrdmj7km0i"]
+
+[ext_resource type="Texture2D" uid="uid://cep1cakmjwqjb" path="res://Game/UI/BackButton/Back.png" id="1_6l4jl"]
+[ext_resource type="Texture2D" uid="uid://dt8u223yc4feo" path="res://Game/UI/BackButton/Back_pressed.png" id="2_qwwti"]
+[ext_resource type="Texture2D" uid="uid://cwnjs8ubcpemy" path="res://Game/UI/BackButton/Back_hover.png" id="3_srtyr"]
+[ext_resource type="Script" uid="uid://bjr8wx3lbahtg" path="res://Game/UI/BackButton/BackButton.cs" id="4_jykh0"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_qkuki"]
+action = &"menu_go_back"
+
+[sub_resource type="Shortcut" id="Shortcut_y2krb"]
+events = [SubResource("InputEventAction_qkuki")]
+
+[node name="BackButton" type="TextureButton"]
+size_flags_horizontal = 0
+size_flags_vertical = 0
+shortcut = SubResource("Shortcut_y2krb")
+shortcut_in_tooltip = false
+texture_normal = ExtResource("1_6l4jl")
+texture_pressed = ExtResource("2_qwwti")
+texture_hover = ExtResource("3_srtyr")
+stretch_mode = 0
+script = ExtResource("4_jykh0")

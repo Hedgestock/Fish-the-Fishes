@@ -1,19 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://jdvp2d8dcy53"]
+[gd_scene load_steps=7 format=3 uid="uid://jdvp2d8dcy53"]
 
 [ext_resource type="Script" uid="uid://djsaaoxieoacr" path="res://Game/Scenes/Equipment/Equipment.cs" id="1_vd6ao"]
 [ext_resource type="PackedScene" uid="uid://ifoga56i10w3" path="res://Game/Assets/RandomTimer.tscn" id="2_8vpwh"]
 [ext_resource type="PackedScene" uid="uid://by02c8ge1i57q" path="res://Game/Scenes/Equipment/EquipmentUI.tscn" id="2_53287"]
 [ext_resource type="PackedScene" uid="uid://bnkmwtljf2o3p" path="res://Game/Assets/Player/FishingLine.tscn" id="2_au0c2"]
 [ext_resource type="PackedScene" uid="uid://bubgi8mpwbbne" path="res://Game/UI/DynamicBackground/DynamicBackground.tscn" id="3_t0lio"]
-[ext_resource type="Texture2D" uid="uid://dvkg44r1oulcs" path="res://Game/Graphics/UI/retour.png" id="4_pl8em"]
-[ext_resource type="Texture2D" uid="uid://bjbotgfwig38a" path="res://Game/Graphics/UI/retour click.png" id="5_nkfqv"]
-[ext_resource type="Texture2D" uid="uid://bx8qk7jnypm0" path="res://Game/Graphics/UI/retour hover.png" id="6_kg20x"]
-
-[sub_resource type="InputEventAction" id="InputEventAction_qkuki"]
-action = &"menu_go_back"
-
-[sub_resource type="Shortcut" id="Shortcut_nrmag"]
-events = [SubResource("InputEventAction_qkuki")]
+[ext_resource type="PackedScene" uid="uid://dfxhrdmj7km0i" path="res://Game/UI/BackButton/BackButton.tscn" id="6_li6qf"]
 
 [node name="Equipment" type="CanvasLayer" node_paths=PackedStringArray("GameContainer", "FishingLine", "Menu")]
 script = ExtResource("1_vd6ao")
@@ -50,14 +42,8 @@ layout_mode = 0
 offset_right = 100.0
 offset_bottom = 100.0
 
-[node name="BackButton" type="TextureButton" parent="VBoxContainer/Control/MarginContainer"]
+[node name="BackButton" parent="VBoxContainer/Control/MarginContainer" instance=ExtResource("6_li6qf")]
 layout_mode = 2
-shortcut = SubResource("Shortcut_nrmag")
-shortcut_in_tooltip = false
-texture_normal = ExtResource("4_pl8em")
-texture_pressed = ExtResource("5_nkfqv")
-texture_hover = ExtResource("6_kg20x")
-stretch_mode = 0
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
@@ -90,4 +76,4 @@ size_flags_vertical = 3
 layout_mode = 2
 
 [connection signal="timeout" from="FishTimer" to="." method="SpawnFish"]
-[connection signal="pressed" from="VBoxContainer/Control/MarginContainer/BackButton" to="." method="GoToHome"]
+[connection signal="pressed" from="VBoxContainer/Control/MarginContainer/BackButton" to="VBoxContainer/Control/MarginContainer/BackButton" method="GoToHome"]

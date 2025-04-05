@@ -9,11 +9,12 @@
 [ext_resource type="SpriteFrames" uid="uid://dtab4ysdktcpe" path="res://Game/Scenes/Game/Animation/ClassicLifeAnimation.tres" id="8_ixkn7"]
 
 [node name="HUD" type="CanvasLayer" node_paths=PackedStringArray("ScoreLabel", "ScoreChangeLabel", "TimeLabel", "GameTimer", "LivesContainer", "Target")]
+layer = 2
 script = ExtResource("1_6mcuw")
 ScoreLabel = NodePath("MarginContainer/HBoxContainer/Score")
 ScoreChangeLabel = NodePath("MarginContainer/HBoxContainer/ScoreChange")
 TimeLabel = NodePath("MarginContainer/HBoxContainer/Time")
-GameTimer = NodePath("GameTimer")
+GameTimer = NodePath("MarginContainer/GameTimer")
 LivesContainer = NodePath("MarginContainer/HBoxContainer/Lives")
 Target = NodePath("MarginContainer/HBoxContainer/Control/Target")
 ScoreUp = ExtResource("2_6lsm5")
@@ -26,8 +27,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_right = 50
+
+[node name="GameTimer" type="Timer" parent="MarginContainer"]
+wait_time = 60.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -107,10 +112,7 @@ grow_horizontal = 0
 grow_vertical = 1
 size_flags_horizontal = 8
 
-[node name="GameTimer" type="Timer" parent="."]
-wait_time = 60.0
-
-[connection signal="timeout" from="GameTimer" to="." method="EndCurrentGame"]
+[connection signal="timeout" from="MarginContainer/GameTimer" to="." method="EndCurrentGame"]
 
 [editable path="MarginContainer/HBoxContainer/Lives/Life1"]
 [editable path="MarginContainer/HBoxContainer/Lives/Life2"]
