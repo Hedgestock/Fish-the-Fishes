@@ -22,11 +22,7 @@ public partial class Home : CanvasLayer
         if (OS.IsDebugBuild()) TestButton.Show();
         if (GameManager.Biome == null) GameManager.Biome = GameManager.StartingBiome;
         FishTimer.Start(GameManager.Biome.TimeToSpawnFish, GameManager.Biome.TimeToSpawnFishDeviation);
-        if (GameManager.PrevScene == "")
-        {
-            //GetNode<AudioStreamPlayer>("AudioStreamPlayer").Play();
-        }
-        else
+        if (GameManager.PrevScene == "res://Game/Scenes/Game/Game.tscn")
         {
             Message.Text = "Last Score:\n" + GameManager.Score.ToString();
         }
