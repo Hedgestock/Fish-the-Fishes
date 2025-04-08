@@ -56,12 +56,12 @@ public partial class SerpentFish : Fish
         if (!IsActionable && !IsInDisplay) return;
         Vector2[] tmp = new Vector2[Length];
 
-        tmp[0] = new Vector2(HeadOffset, 0);
+        tmp[0] = new Vector2(Sprite.Position.X + HeadOffset, Sprite.Position.Y);
 
         for (int i = 1; i < Length; i++)
         {
-            tmp[i] = new Vector2(HeadOffset - SegmentLength * i,
-                (float)Math.Sin((((DateTime.Now - InstanciationTime).TotalMilliseconds / 1000f) - (SegmentLength * (Length - i))) * WaveSpeed) * (WaveAmplitude * AmplitudeCurve.Sample((float)i / Length)));
+            tmp[i] = new Vector2(Sprite.Position.X + HeadOffset - SegmentLength * i,
+                Sprite.Position.Y + (float)Math.Sin((((DateTime.Now - InstanciationTime).TotalMilliseconds / 1000f) - (SegmentLength * (Length - i))) * WaveSpeed) * (WaveAmplitude * AmplitudeCurve.Sample((float)i / Length)));
             Body.Points = tmp;
             if (HurtBoxes.ContainsKey(i))
             {

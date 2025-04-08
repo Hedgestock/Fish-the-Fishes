@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://0sb3i5bm7j4p"]
+[gd_scene load_steps=15 format=3 uid="uid://0sb3i5bm7j4p"]
 
 [ext_resource type="Texture2D" uid="uid://cyqlsyp6ppauk" path="res://Game/Assets/Biomes/Beach/BeachBackground.png" id="1_d6nr8"]
+[ext_resource type="Script" uid="uid://dihoq85y44x4p" path="res://Game/Scenes/Game/Game.cs" id="1_sbmws"]
 [ext_resource type="PackedScene" uid="uid://yi82g384vgwb" path="res://Game/Scenes/Game/HUD.tscn" id="3_0ebou"]
 [ext_resource type="PackedScene" uid="uid://bnkmwtljf2o3p" path="res://Game/Assets/Player/FishingLine.tscn" id="3_kichm"]
 [ext_resource type="PackedScene" uid="uid://ceyknq2cha026" path="res://Game/UI/PauseButton/PauseButton.tscn" id="3_p6c18"]
@@ -31,7 +32,11 @@ shader_parameter/offSetSpeed = Vector2(0.03, 0.1)
 shader_parameter/backGroundDirX = 0.005
 shader_parameter/backGroundDirY = 0.005
 
-[node name="Game" type="CanvasLayer"]
+[node name="Game" type="CanvasLayer" node_paths=PackedStringArray("Background", "FishTimer", "TrashTimer")]
+script = ExtResource("1_sbmws")
+Background = NodePath("Background")
+FishTimer = NodePath("FishTimer")
+TrashTimer = NodePath("TrashTimer")
 
 [node name="Background" type="TextureRect" parent="."]
 anchors_preset = 15

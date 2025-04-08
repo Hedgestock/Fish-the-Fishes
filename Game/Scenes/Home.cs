@@ -24,7 +24,7 @@ public partial class Home : CanvasLayer
         FishTimer.Start(GameManager.Biome.TimeToSpawnFish, GameManager.Biome.TimeToSpawnFishDeviation);
         if (GameManager.PrevScene == "")
         {
-            GetNode<AudioStreamPlayer>("AudioStreamPlayer").Play();
+            //GetNode<AudioStreamPlayer>("AudioStreamPlayer").Play();
         }
         else
         {

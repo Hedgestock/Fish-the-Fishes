@@ -12,6 +12,8 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
     protected AnimatedSprite2D Sprite;
     [Export]
     protected AudioStreamPlayer2D Sound;
+    [Export]
+    protected VisibleOnScreenNotifier2D VisibleOnScreenNotifier;
 
     [ExportGroup("Compendium")]
     [Export]
@@ -68,7 +70,7 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
 
     public bool IsOnScreen
     {
-        get { return GetNode<VisibleOnScreenNotifier2D>("VisibleOnScreenNotifier2D").IsOnScreen(); }
+        get { return VisibleOnScreenNotifier.IsOnScreen(); }
     }
 
     // Called when the node enters the scene tree for the first time.
@@ -91,8 +93,9 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
         if (Position == Vector2.Zero)
         {
             Flip = (GD.Randi() % 2) != 0;
+            float positionOffset = VisibleOnScreenNotifier.Rect.Size.X * VisibleOnScreenNotifier.Scale.X / 2;
             Position = new Vector2(
-                Flip ? GameManager.ScreenSize.X + 200 : -200,
+                Flip ? GameManager.ScreenSize.X + positionOffset : -positionOffset,
                 (float)GD.RandRange(GameManager.ScreenSize.Y * SpawnRange.X, GameManager.ScreenSize.Y * SpawnRange.Y)
             );
         }
