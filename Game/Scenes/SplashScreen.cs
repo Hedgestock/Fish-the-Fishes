@@ -20,6 +20,7 @@ public partial class SplashScreen : ColorRect
 
         WaffleStock.Modulate = new Color("ffffff00");
         Logo.Play();
+        //Logo.Connect(VideoStreamPlayer.SignalName.Finished, Callable.From(() => { LastFrame.Show(); Logo.Hide(); }));
         Tween tween = GetTree().CreateTween();
         tween.TweenProperty(WaffleStock, "modulate", new Color("ffffff"), .5);
         tween.TweenProperty(this, "modulate", new Color("ffffff"), 1);
