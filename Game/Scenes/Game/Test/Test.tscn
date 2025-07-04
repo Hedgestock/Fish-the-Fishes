@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://dclhmxwm7kpgn"]
+[gd_scene load_steps=6 format=3 uid="uid://dclhmxwm7kpgn"]
 
 [ext_resource type="Script" uid="uid://c6jey0mrcm2v2" path="res://Game/Scenes/Game/Test/Test.cs" id="1_svad3"]
-[ext_resource type="Texture2D" uid="uid://4sfuxo2673qo" path="res://Game/Graphics/BG 2 FTF.png" id="2_y5bw1"]
 [ext_resource type="PackedScene" uid="uid://yi82g384vgwb" path="res://Game/Scenes/Game/HUD.tscn" id="3_fwryc"]
 [ext_resource type="PackedScene" uid="uid://ifoga56i10w3" path="res://Game/Assets/RandomTimer.tscn" id="4_7uts6"]
 [ext_resource type="PackedScene" uid="uid://bnkmwtljf2o3p" path="res://Game/Assets/Player/FishingLine.tscn" id="5_ruo1f"]
@@ -9,7 +8,7 @@
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ag258"]
 distance = 50.0
 
-[node name="Game" type="Node"]
+[node name="TestScene" type="Node"]
 script = ExtResource("1_svad3")
 
 [node name="Background" type="TextureRect" parent="."]
@@ -20,7 +19,6 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
-texture = ExtResource("2_y5bw1")
 stretch_mode = 6
 
 [node name="HUD" parent="." instance=ExtResource("3_fwryc")]
@@ -46,6 +44,10 @@ rotation = 3.14159
 shape = SubResource("WorldBoundaryShape2D_ag258")
 
 [node name="FishingLine" parent="." instance=ExtResource("5_ruo1f")]
+
+[node name="HFlowContainer" type="HFlowContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
 
 [connection signal="EndGame" from="HUD" to="." method="EndGame"]
 [connection signal="timeout" from="FishTimer" to="." method="SpawnFish"]
