@@ -26,6 +26,8 @@ public partial class JellyFish : Fish, IPowerup
             //tentacle.Points = Enumerable.Repeat(new Vector2(), 100).ToArray();
         }
 
+        if (IsInDisplay) return;
+
         Position = new Vector2(GameManager.ScreenSize.X / 2, GameManager.ScreenSize.Y + 50);
         Flip = (GD.Randi() % 2) != 0;
 
@@ -51,6 +53,7 @@ public partial class JellyFish : Fish, IPowerup
 
     public override void _PhysicsProcess(double delta)
     {
+        if (IsInDisplay) return;
         if (Position.Y > GameManager.ScreenSize.Y)
             Push();
         Velocity *= 0.99f;
