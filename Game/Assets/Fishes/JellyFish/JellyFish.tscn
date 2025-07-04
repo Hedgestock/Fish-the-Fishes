@@ -14,7 +14,7 @@ radius = 40.0
 script = ExtResource("2_7552x")
 Tentacles = NodePath("Tentacles")
 CompendiumName = "Jellyfish"
-CompendiumDescription = ""
+CompendiumDescription = "Legends are telling that catching a jellyfish would extend your life expectancy..."
 SpawnRange = Vector2(0, 0.3)
 
 [node name="Tentacles" type="Node2D" parent="." index="0"]
