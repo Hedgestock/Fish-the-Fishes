@@ -17,7 +17,6 @@ namespace WaffleStock
         public static string LongestSession = nameof(LongestSession);
         public static string TotalTimePlayed = nameof(TotalTimePlayed);
 
-
         public static string AchievementsFolder = "res://Game/Assets/Achievements/";
 
         // /!\ WARNING /!\ Add new fishes/trashes/biomes at the end of enums to avoid messing the underlying numbering
@@ -37,6 +36,7 @@ namespace WaffleStock
             SharkFish,
             SerpentFish,
             JellyFish,
+            SeaUrchin,
         }
 
         public static string TrashesFolder = "res://Game/Assets/Trashes/";

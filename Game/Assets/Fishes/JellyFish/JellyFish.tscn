@@ -16,6 +16,7 @@ Tentacles = NodePath("Tentacles")
 CompendiumName = "Jellyfish"
 CompendiumDescription = "Legends are telling that catching a jellyfish would extend your life expectancy..."
 SpawnRange = Vector2(0, 0.3)
+AverageSize = 44.0
 
 [node name="Tentacles" type="Node2D" parent="." index="0"]
 

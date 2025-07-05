@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cq7scn1nrw882"
-path="res://.godot/imported/oursin.png-e4c74c48574291f8437437e603ad3e65.ctex"
+path="res://.godot/imported/oursin.png-0259c1e707e26c34e6f69a363b3bf4e7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/Assets/Fishes/SeaUrchin/oursin.png"
-dest_files=["res://.godot/imported/oursin.png-e4c74c48574291f8437437e603ad3e65.ctex"]
+source_file="res://Game/Assets/Fishes/SeaUrchin/Animation/oursin.png"
+dest_files=["res://.godot/imported/oursin.png-0259c1e707e26c34e6f69a363b3bf4e7.ctex"]
 
 [params]
 

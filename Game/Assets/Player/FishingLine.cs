@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using static Hook.Action;
+using static System.Formats.Asn1.AsnWriter;
 
 
 public partial class FishingLine : CharacterBody2D, IFisher
@@ -266,7 +267,9 @@ public partial class FishingLine : CharacterBody2D, IFisher
     {
         float score = 0;
 
-        foreach (Fish fish in FishedThings)
+        List<IFishable> scoredFishes = GetScoredFishes(FishedThings);
+
+        foreach (Fish fish in scoredFishes)
         {
             score += fish.Value;
         }
@@ -325,7 +328,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
     private int TargetScore()
     {
 
-        int score = FishedThings.Any(thing => thing.GetType().Name == GameManager.Target) ? 1 : 0;
+        int score = GetScoredFishes(FishedThings).Any(thing => thing.GetType().Name == GameManager.Target) ? 1 : 0;
 
         UserData.SetHighStat(Constants.MaxFishedFishes, (uint)FishedThings.Count);
         UserData.IncrementStatistic(Constants.TotalFishedFishes, (uint)FishedThings.Count);
@@ -348,6 +351,18 @@ public partial class FishingLine : CharacterBody2D, IFisher
     {
         if (num <= 0) return 0;
         return (int)(num * MathF.Log(num, b) + 1);
+    }
+
+    private List<IFishable> GetScoredFishes(List<IFishable> fishedThings)
+    {
+        List<IFishable> scoredFishes = new(fishedThings);
+
+        foreach (IFisher fisher in fishedThings.OfType<IFisher>())
+        {
+            scoredFishes.AddRange(GetScoredFishes(fisher.FishedThings));
+        }
+
+        return scoredFishes;
     }
 
     private void UpdateFishCompendium(Fish fish)

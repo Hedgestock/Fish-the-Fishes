@@ -1,0 +1,370 @@
+[gd_scene load_steps=8 format=3 uid="uid://ylm41rhcjfe8"]
+
+[ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_uf66v"]
+[ext_resource type="Script" uid="uid://bqrum51hqb2gu" path="res://Game/Assets/Fishes/SeaUrchin/SeaUrchin.cs" id="2_m6l2c"]
+[ext_resource type="SpriteFrames" uid="uid://12cqf3wxi6x7" path="res://Game/Assets/Fishes/SeaUrchin/Animation/SeaUrchinAnimation.tres" id="3_rhn4i"]
+
+[sub_resource type="Curve" id="Curve_m6l2c"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.3), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_rhn4i"]
+offsets = PackedFloat32Array(0, 0.0223464, 0.935754, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m6l2c"]
+radius = 24.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rhn4i"]
+resource_local_to_scene = true
+radius = 64.0
+
+[node name="SeaUrchin" node_paths=PackedStringArray("HitBox") instance=ExtResource("1_uf66v")]
+script = ExtResource("2_m6l2c")
+ImmuneToSkew = Array[int]([7, 10, 3])
+HitBox = NodePath("HitBox/CollisionShape2D")
+CompendiumName = "Urchin"
+CompendiumDescription = "Fishes often get caught in the long spikes of the urchins, even though urchins themselve do not feed off of fishes."
+MinSpeed = 0.0
+MaxSpeed = 0.0
+SpawnRange = Vector2(0.3, 0.7)
+SizeDeviation = 0.3
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="0"]
+position = Vector2(1.90735e-06, -1.90735e-06)
+scale = Vector2(6.4, 6.4)
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = ExtResource("3_rhn4i")
+animation = &"alive"
+
+[node name="Line2D17" type="Line2D" parent="AnimatedSprite2D" index="0"]
+position = Vector2(-20, -4)
+rotation = 0.197222
+points = PackedVector2Array(0, 0, -2, 0, -12, 0, -20, 0)
+width = 5.0
+width_curve = SubResource("Curve_m6l2c")
+gradient = SubResource("Gradient_rhn4i")
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Line2D18" type="Line2D" parent="AnimatedSprite2D" index="1"]
+position = Vector2(-16, -12)
+rotation = 0.589921
+points = PackedVector2Array(0, 0, -2, 0, -12, 0, -20, 0)
+width = 5.0
+width_curve = SubResource("Curve_m6l2c")
+gradient = SubResource("Gradient_rhn4i")
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Line2D19" type="Line2D" parent="AnimatedSprite2D" index="2"]
+position = Vector2(-12, -16)
+rotation = 0.98262
+points = PackedVector2Array(0, 0, -2, 0, -12, 0, -20, 0)
+width = 5.0
+width_curve = SubResource("Curve_m6l2c")
+gradient = SubResource("Gradient_rhn4i")
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Line2D20" type="Line2D" parent="AnimatedSprite2D" index="3"]
+position = Vector2(-4, -20)
+rotation = 1.37532
+points = PackedVector2Array(0, 0, -2, 0, -12, 0, -20, 0)
+width = 5.0
+width_curve = SubResource("Curve_m6l2c")
+gradient = SubResource("Gradient_rhn4i")
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Line2D21" type="Line2D" parent="AnimatedSprite2D" index="4"]
+position = Vector2(4, -20)
+rotation = 1.76802
+points = PackedVector2Array(0, 0, -2, 0, -12, 0, -20, 0)
+width = 5.0
+width_curve = SubResource("Curve_m6l2c")
+gradient = SubResource("Gradient_rhn4i")
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Line2D22" type="Line2D" parent="AnimatedSprite2D" index="5"]
+position = Vector2(12, -16)
+rotation = 2.16072
+points = PackedVector2Array(0, 0, -2, 0, -12, 0, -20, 0)
+width = 5.0
+width_curve = SubResource("Curve_m6l2c")
+gradient = SubResource("Gradient_rhn4i")
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Line2D23" type="Line2D" parent="AnimatedSprite2D" index="6"]
+position = Vector2(16, -12)
+rotation = 2.55342
+points = PackedVector2Array(0, 0, -2, 0, -12, 0, -20, 0)
+width = 5.0
+width_curve = SubResource("Curve_m6l2c")
+gradient = SubResource("Gradient_rhn4i")
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Line2D24" type="Line2D" parent="AnimatedSprite2D" index="7"]
+position = Vector2(20, -4)
+rotation = 2.94612
+points = PackedVector2Array(0, 0, -2, 0, -12, 0, -20, 0)
+width = 5.0
+width_curve = SubResource("Curve_m6l2c")
+gradient = SubResource("Gradient_rhn4i")
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Line2D25" type="Line2D" parent="AnimatedSprite2D" index="8"]
+position = Vector2(20, 4)
+rotation = 3.33881
+points = PackedVector2Array(0, 0, -2, 0, -12, 0, -20, 0)
+width = 5.0
+width_curve = SubResource("Curve_m6l2c")
+gradient = SubResource("Gradient_rhn4i")
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Line2D26" type="Line2D" parent="AnimatedSprite2D" index="9"]
+position = Vector2(16, 12)
+rotation = 3.73151
+points = PackedVector2Array(0, 0, -2, 0, -12, 0, -20, 0)
+width = 5.0
+width_curve = SubResource("Curve_m6l2c")
+gradient = SubResource("Gradient_rhn4i")
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Line2D27" type="Line2D" parent="AnimatedSprite2D" index="10"]
+position = Vector2(12, 16)
+rotation = 4.12421
+points = PackedVector2Array(0, 0, -2, 0, -12, 0, -20, 0)
+width = 5.0
+width_curve = SubResource("Curve_m6l2c")
+gradient = SubResource("Gradient_rhn4i")
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Line2D28" type="Line2D" parent="AnimatedSprite2D" index="11"]
+position = Vector2(4, 20)
+rotation = 4.51691
+points = PackedVector2Array(0, 0, -2, 0, -12, 0, -20, 0)
+width = 5.0
+width_curve = SubResource("Curve_m6l2c")
+gradient = SubResource("Gradient_rhn4i")
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Line2D29" type="Line2D" parent="AnimatedSprite2D" index="12"]
+position = Vector2(-4, 20)
+rotation = 4.90961
+points = PackedVector2Array(0, 0, -2, 0, -12, 0, -20, 0)
+width = 5.0
+width_curve = SubResource("Curve_m6l2c")
+gradient = SubResource("Gradient_rhn4i")
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Line2D30" type="Line2D" parent="AnimatedSprite2D" index="13"]
+position = Vector2(-12, 16)
+rotation = 5.30231
+points = PackedVector2Array(0, 0, -2, 0, -12, 0, -20, 0)
+width = 5.0
+width_curve = SubResource("Curve_m6l2c")
+gradient = SubResource("Gradient_rhn4i")
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Line2D31" type="Line2D" parent="AnimatedSprite2D" index="14"]
+position = Vector2(-16, 12)
+rotation = 5.69501
+points = PackedVector2Array(0, 0, -2, 0, -12, 0, -20, 0)
+width = 5.0
+width_curve = SubResource("Curve_m6l2c")
+gradient = SubResource("Gradient_rhn4i")
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Line2D32" type="Line2D" parent="AnimatedSprite2D" index="15"]
+position = Vector2(-20, 4)
+rotation = 6.08771
+points = PackedVector2Array(0, 0, -2, 0, -12, 0, -20, 0)
+width = 5.0
+width_curve = SubResource("Curve_m6l2c")
+gradient = SubResource("Gradient_rhn4i")
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Line2D" type="Line2D" parent="AnimatedSprite2D" index="16"]
+position = Vector2(-12, 0)
+points = PackedVector2Array(0, 0, -8, 0, -40, 0, -48, 0)
+width = 5.0
+width_curve = SubResource("Curve_m6l2c")
+gradient = SubResource("Gradient_rhn4i")
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Line2D2" type="Line2D" parent="AnimatedSprite2D" index="17"]
+position = Vector2(-8, -8)
+rotation = 0.785398
+points = PackedVector2Array(0, 0, -8, 0, -40, 0, -48, 0)
+width = 5.0
+width_curve = SubResource("Curve_m6l2c")
+gradient = SubResource("Gradient_rhn4i")
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Line2D3" type="Line2D" parent="AnimatedSprite2D" index="18"]
+position = Vector2(0, -12)
+rotation = 1.5708
+points = PackedVector2Array(0, 0, -8, 0, -40, 0, -48, 0)
+width = 5.0
+width_curve = SubResource("Curve_m6l2c")
+gradient = SubResource("Gradient_rhn4i")
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Line2D4" type="Line2D" parent="AnimatedSprite2D" index="19"]
+position = Vector2(8, -8)
+rotation = 2.35619
+points = PackedVector2Array(0, 0, -8, 0, -40, 0, -48, 0)
+width = 5.0
+width_curve = SubResource("Curve_m6l2c")
+gradient = SubResource("Gradient_rhn4i")
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Line2D5" type="Line2D" parent="AnimatedSprite2D" index="20"]
+position = Vector2(12, 0)
+rotation = 3.14159
+points = PackedVector2Array(0, 0, -8, 0, -40, 0, -48, 0)
+width = 5.0
+width_curve = SubResource("Curve_m6l2c")
+gradient = SubResource("Gradient_rhn4i")
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Line2D6" type="Line2D" parent="AnimatedSprite2D" index="21"]
+position = Vector2(8, 8)
+rotation = 3.92699
+points = PackedVector2Array(0, 0, -8, 0, -40, 0, -48, 0)
+width = 5.0
+width_curve = SubResource("Curve_m6l2c")
+gradient = SubResource("Gradient_rhn4i")
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Line2D7" type="Line2D" parent="AnimatedSprite2D" index="22"]
+position = Vector2(0, 12)
+rotation = 4.71239
+points = PackedVector2Array(0, 0, -8, 0, -40, 0, -48, 0)
+width = 5.0
+width_curve = SubResource("Curve_m6l2c")
+gradient = SubResource("Gradient_rhn4i")
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Line2D8" type="Line2D" parent="AnimatedSprite2D" index="23"]
+position = Vector2(-8, 8)
+rotation = 5.49779
+points = PackedVector2Array(0, 0, -8, 0, -40, 0, -48, 0)
+width = 5.0
+width_curve = SubResource("Curve_m6l2c")
+gradient = SubResource("Gradient_rhn4i")
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Line2D9" type="Line2D" parent="AnimatedSprite2D" index="24"]
+position = Vector2(-16, -8)
+rotation = 0.392699
+points = PackedVector2Array(0, 0, -8, 0, -32, 0, -40, 0)
+width = 5.0
+width_curve = SubResource("Curve_m6l2c")
+gradient = SubResource("Gradient_rhn4i")
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Line2D10" type="Line2D" parent="AnimatedSprite2D" index="25"]
+position = Vector2(-8, -16)
+rotation = 1.1781
+points = PackedVector2Array(0, 0, -8, 0, -32, 0, -40, 0)
+width = 5.0
+width_curve = SubResource("Curve_m6l2c")
+gradient = SubResource("Gradient_rhn4i")
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Line2D11" type="Line2D" parent="AnimatedSprite2D" index="26"]
+position = Vector2(8, -16)
+rotation = 1.9635
+points = PackedVector2Array(0, 0, -8, 0, -32, 0, -40, 0)
+width = 5.0
+width_curve = SubResource("Curve_m6l2c")
+gradient = SubResource("Gradient_rhn4i")
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Line2D12" type="Line2D" parent="AnimatedSprite2D" index="27"]
+position = Vector2(16, -8)
+rotation = 2.74889
+points = PackedVector2Array(0, 0, -8, 0, -32, 0, -40, 0)
+width = 5.0
+width_curve = SubResource("Curve_m6l2c")
+gradient = SubResource("Gradient_rhn4i")
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Line2D13" type="Line2D" parent="AnimatedSprite2D" index="28"]
+position = Vector2(16, 8)
+rotation = 3.53429
+points = PackedVector2Array(0, 0, -8, 0, -32, 0, -40, 0)
+width = 5.0
+width_curve = SubResource("Curve_m6l2c")
+gradient = SubResource("Gradient_rhn4i")
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Line2D14" type="Line2D" parent="AnimatedSprite2D" index="29"]
+position = Vector2(8, 16)
+rotation = 4.31969
+points = PackedVector2Array(0, 0, -8, 0, -32, 0, -40, 0)
+width = 5.0
+width_curve = SubResource("Curve_m6l2c")
+gradient = SubResource("Gradient_rhn4i")
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Line2D15" type="Line2D" parent="AnimatedSprite2D" index="30"]
+position = Vector2(-8, 16)
+rotation = 5.10509
+points = PackedVector2Array(0, 0, -8, 0, -32, 0, -40, 0)
+width = 5.0
+width_curve = SubResource("Curve_m6l2c")
+gradient = SubResource("Gradient_rhn4i")
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Line2D16" type="Line2D" parent="AnimatedSprite2D" index="31"]
+position = Vector2(-16, 8)
+rotation = 5.89049
+points = PackedVector2Array(0, 0, -8, 0, -32, 0, -40, 0)
+width = 5.0
+width_curve = SubResource("Curve_m6l2c")
+gradient = SubResource("Gradient_rhn4i")
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="HurtBox" parent="." index="2"]
+shape = SubResource("CircleShape2D_m6l2c")
+
+[node name="HitBox" type="Area2D" parent="." index="4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" index="0"]
+shape = SubResource("CircleShape2D_rhn4i")
+disabled = true
+debug_color = Color(1, 0, 0, 0.419608)
+
+[connection signal="body_entered" from="HitBox" to="." method="OnFishSkewered"]
