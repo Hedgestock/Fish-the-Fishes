@@ -198,7 +198,6 @@
 - [x] Corriger le problème du reparentage d'espadon
 - [x] Corriger l'espadon qui chasse même mort
 - [x] Empêcher les requins de se faire tuer par les poissons rouges
-- [x] [**Actuellement Impossible**] Corriger les bulles des requins qui disparaissent
 - [x] [**Actuellement impossible**] Corriger les requins en attente de lancement
 - [x] Corriger l'affichage des credits
 - [x] Corriger le chargement dynamique de ressource (haut faits)
