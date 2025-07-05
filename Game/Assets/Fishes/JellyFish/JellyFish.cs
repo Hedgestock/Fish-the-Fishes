@@ -26,21 +26,23 @@ public partial class JellyFish : Fish, IPowerup
             //tentacle.Points = Enumerable.Repeat(new Vector2(), 100).ToArray();
         }
 
-        if (IsInDisplay) return;
+        if (!IsInDisplay)
+        {
+            Position = new Vector2(GameManager.ScreenSize.X / 2, GameManager.ScreenSize.Y + 50);
+            Flip = (GD.Randi() % 2) != 0;
 
-        Position = new Vector2(GameManager.ScreenSize.X / 2, GameManager.ScreenSize.Y + 50);
-        Flip = (GD.Randi() % 2) != 0;
-
-        Vector2 objective = new Vector2(
-            !Flip ? GameManager.ScreenSize.X : 0,
-            (float)GD.RandRange(
-                GameManager.ScreenSize.Y * SpawnRange.X,
-                GameManager.ScreenSize.Y * SpawnRange.Y
-                )
-            );
-        TravelAxis = (objective - Position).Normalized();
-
+            Vector2 objective = new Vector2(
+                !Flip ? GameManager.ScreenSize.X : 0,
+                (float)GD.RandRange(
+                    GameManager.ScreenSize.Y * SpawnRange.X,
+                    GameManager.ScreenSize.Y * SpawnRange.Y
+                    )
+                );
+            TravelAxis = (objective - Position).Normalized();
+        }
         base._Ready();
+
+        if (IsInDisplay) return;
 
         LastPosition = Position;
 

@@ -274,7 +274,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
             score += fish.Value;
         }
         score = ScoringFunction((int)Math.Ceiling(score));
-        foreach (Fish fish in FishedThings)
+        foreach (Fish fish in scoredFishes)
         {
             if (fish.IsNegative)
             {
@@ -283,12 +283,12 @@ public partial class FishingLine : CharacterBody2D, IFisher
             }
         }
 
-        UserData.SetHighStat(Constants.MaxFishedFishes, FishedThings.Count);
-        UserData.IncrementStatistic(Constants.TotalFishedFishes, FishedThings.Count);
+        UserData.SetHighStat(Constants.MaxFishedFishes, scoredFishes.Count);
+        UserData.IncrementStatistic(Constants.TotalFishedFishes, scoredFishes.Count);
 
-        GameManager.CurrentBiomeCatches += FishedThings.Count;
+        GameManager.CurrentBiomeCatches += scoredFishes.Count;
 
-        foreach (Fish fish in FishedThings)
+        foreach (Fish fish in scoredFishes)
         {
             UpdateFishCompendium(fish);
             score *= fish.Multiplier;
@@ -327,16 +327,17 @@ public partial class FishingLine : CharacterBody2D, IFisher
 
     private int TargetScore()
     {
+        List<IFishable> scoredFishes = GetScoredFishes(FishedThings);
 
-        int score = GetScoredFishes(FishedThings).Any(thing => thing.GetType().Name == GameManager.Target) ? 1 : 0;
+        int score = scoredFishes.Any(thing => thing.GetType().Name == GameManager.Target) ? 1 : 0;
 
-        UserData.SetHighStat(Constants.MaxFishedFishes, (uint)FishedThings.Count);
-        UserData.IncrementStatistic(Constants.TotalFishedFishes, (uint)FishedThings.Count);
+        UserData.SetHighStat(Constants.MaxFishedFishes, (uint)scoredFishes.Count);
+        UserData.IncrementStatistic(Constants.TotalFishedFishes, (uint)scoredFishes.Count);
 
         UserData.SetHighStat(Constants.MaxPointScored, (uint)score);
         UserData.IncrementStatistic(Constants.TotalPointsScored, (uint)score);
 
-        foreach (Fish fish in FishedThings)
+        foreach (Fish fish in scoredFishes)
         {
             UpdateFishCompendium(fish);
             if (fish is IPowerup powerup) powerup.Activate();

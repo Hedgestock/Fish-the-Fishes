@@ -23,13 +23,18 @@ public partial class SeaUrchin : Fish, IFisher
     {
         spikes = Sprite.GetChildren().OfType<Line2D>().ToList();
 
-        float positionOffset = VisibleOnScreenNotifier.Rect.Size.Y * VisibleOnScreenNotifier.Scale.Y / 2;
-        Position = new Vector2(
-                (float)GD.RandRange(positionOffset, GameManager.ScreenSize.X - positionOffset),
-                (float)GD.RandRange(GameManager.ScreenSize.Y * SpawnRange.X, GameManager.ScreenSize.Y * SpawnRange.Y)
-            );
+        if (!IsInDisplay)
+        {
+            float positionOffset = VisibleOnScreenNotifier.Rect.Size.Y * VisibleOnScreenNotifier.Scale.Y / 2;
+            Position = new Vector2(
+                    (float)GD.RandRange(positionOffset, GameManager.ScreenSize.X - positionOffset),
+                    (float)GD.RandRange(GameManager.ScreenSize.Y * SpawnRange.X, GameManager.ScreenSize.Y * SpawnRange.Y)
+                );
+        }
 
         base._Ready();
+
+        if (IsInDisplay) return;
 
         Scale = Vector2.Zero;
 
@@ -85,7 +90,7 @@ public partial class SeaUrchin : Fish, IFisher
     private void OnFishSkewered(Node2D body)
     {
         //TODO: Check that we're not fishing a parent
-        if (!(body is Fish) || FishedThings.Contains(body as Fish) || body == this  || CheckImmunity(ImmuneToSkew, body.GetType())) return;
+        if (!(body is Fish) || FishedThings.Contains(body as Fish) || body == this || CheckImmunity(ImmuneToSkew, body.GetType())) return;
 
         Fish Skew = body as Fish;
 
