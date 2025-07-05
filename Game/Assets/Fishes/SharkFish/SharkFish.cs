@@ -6,6 +6,9 @@ using System.Collections.Generic;
 
 public partial class SharkFish : Fish, IFisher
 {
+    [Export]
+    public Array<Constants.Fishes> CantFlee = new Array<Constants.Fishes>();
+
     //[Export]
     //private GpuParticles2D Blood;
     [Export]
@@ -94,11 +97,15 @@ public partial class SharkFish : Fish, IFisher
 
     private void FrightenFishes()
     {
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < GD.RandRange(8,12); i++)
         {
             PackedScene FishScene = GD.Load<PackedScene>(Biome.GetRandomPathFrom(GameManager.Biome.Fishes));
             Fish fish = FishScene.Instantiate<Fish>();
-            if (fish is SharkFish) continue;
+            if (CheckImmunity(CantFlee, fish.GetType()))
+            {
+                i--;
+                continue;
+            }
             fish.Position = Position;
             fish.Flip = Flip;
             fish.ActualSpeed = fish.MaxSpeed * 1.5f;

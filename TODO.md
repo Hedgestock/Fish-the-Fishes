@@ -38,12 +38,12 @@
 - [x] Espadon embrocheur
 - [x] Requin mange tout sur son passage
 - [x] Serpent de mer
+- [x] Méduse de vie
 - [ ] Poisson volant
 - [ ] Poisson doré
 - [ ] Poisson venimeux
 - [ ] Poisson bombe
 - [ ] Poisson erratique
-- [ ] Méduse de vie
 - [ ] Nautile bonus
 - [ ] Calamar encreur
 - [ ] Étoile de mer d'invincibilité
@@ -63,8 +63,8 @@
 
 # Objets pêchables
 
+- [x] Oursin
 - [ ] Crabe d'appât
-- [ ] Oursin
 - [ ] Anémone avec des bonus
 - [ ] Crevettes d'appât
 
@@ -213,9 +213,9 @@
 - [ ] [**Plus de bulles pour l'instant**]Corriger les bulles des requins qui disparaissent trop tôt
 - [ ] Passer à des listes de noms plutôt que des énumérations
 - [ ] Corriger les poissons qui restent sur la ligne après une remontée
-- [ ] Ajouter un tag pour les poissons à point d'apparition particulier (Et empêcher ces derniers de fuir les requins)
 - [ ] Réparer le mode Go Green (Toucher un déchêt ne devrait pas agir comme en classique)
 - [ ] Corriger les requins qui mangent des poissons déjà pêchés
 - [ ] Corriger les espadons qui pêchent des poissons déjà pêchés
 - [ ] Essayer de faire des poules pour les bulles
 - [ ] Suivre le temps d'une partie à travers la sauvegarde rapide
+- [ ] Corriger les oursins qui s'auto-pêchent et la capture cirulaire
