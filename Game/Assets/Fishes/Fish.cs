@@ -206,7 +206,7 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
 
     private void Despawn()
     {
-        if (!IsCaught)
+        if (!IsCaught && !IsInDisplay)
         {
             QueueFree();
         }

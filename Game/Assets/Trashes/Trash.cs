@@ -49,7 +49,7 @@ public partial class Trash : CharacterBody2D, IFishable, IDescriptible
 
     protected void Despawn()
     {
-        if (!IsCaught)
+        if (!IsCaught && !IsInDisplay)
         {
             QueueFree();
         }
