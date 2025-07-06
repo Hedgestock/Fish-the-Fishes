@@ -12,7 +12,10 @@ animations = [{
 "name": &"alive",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jbpy7")
+}],
 "loop": true,
 "name": &"dead",
 "speed": 5.0

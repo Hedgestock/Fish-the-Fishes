@@ -17,8 +17,8 @@ SpawnRange = Vector2(0, 0.3)
 AverageSize = 22.0
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0"]
-position = Vector2(-0.499997, -0.500001)
-scale = Vector2(4.35, 2.75)
+position = Vector2(0, -9.53674e-07)
+scale = Vector2(4.8, 3.2)
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = ExtResource("2_e3t31")

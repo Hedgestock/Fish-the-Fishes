@@ -55,11 +55,16 @@ public partial class SeaUrchin : Fish, IFisher
         return base.GetCaughtBy(by);
     }
 
-    //public override void Kill()
-    //{
-    //    base.Kill();
-    //    HitBox.Disabled = true;
-    //}
+    public override void Kill()
+    {
+        //foreach (Line2D spike in spikes)
+        //{
+        spikes[0].Gradient.SetColor(1, new Color("666666"));
+        spikes[0].Gradient.SetColor(2, new Color("999999"));
+        //}
+        Sprite.UseParentMaterial = true;
+        base.Kill();
+    }
 
     private void Grow()
     {

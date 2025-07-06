@@ -81,10 +81,15 @@ layout_mode = 2
 bbcode_enabled = true
 text = "[center][font_size=200]??/07/2025[/font_size][/center]
 [font_size=100]
-Mélany forced me through psychological to release this update:
+[center]Mélany forced me through psychological to release this update:
+[/center]
 [ul]
 Fixed fleeing fishes before sharks
-Added jellyfishes and urchins
+Added clown fish
+Added blue fish
+Added jellyfish
+Added serpent fish
+Added urchins
 Added mid game save
 Added water shader
 [/ul]

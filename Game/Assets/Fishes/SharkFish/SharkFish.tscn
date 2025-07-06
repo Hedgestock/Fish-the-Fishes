@@ -14,6 +14,7 @@ height = 166.0
 
 [node name="SharkFish" node_paths=PackedStringArray("HitBox") instance=ExtResource("1_0ee32")]
 script = ExtResource("2_3d5gd")
+CantFlee = Array[int]([10, 3, 5, 8, 9])
 HitBox = NodePath("HitBox/CollisionShape2D")
 CompendiumName = "Shark"
 CompendiumDescription = "A fierce predator almost unstoppable. It will eat anything in its path as long as it fits in its mouth."

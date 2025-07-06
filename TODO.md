@@ -26,7 +26,6 @@
 - [ ] Ajouter un jingle pour les meilleurs scores
 - [ ] Ajouter un tutoriel
 - [ ] Ajouter de la physique aux boutons du menu principal
-- [ ] Ajouter de la physique aux poissons pêchés
 - [ ] Ajouter la possibilité de désactiver les vibrations
 - [ ] Ajouter la possibilité de désactiver l'effet d'eau
 
@@ -177,6 +176,10 @@
 - [ ] Ajouter plus de composition
 - [ ] Parallaxe
 - [ ] Ombre et shaders sur les biomes
+- [ ] Ajouter de la physique aux poissons pêchés
+- [ ] Ajouter de la physique aux serpents de mer et méduses en cas de mort/pêche
+- [ ] Ajouter du balancement sur les pics des oursins
+- [ ] Faire apparaître les oursins en clusters
 
 # Corrections
 

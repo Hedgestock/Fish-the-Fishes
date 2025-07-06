@@ -1,0 +1,34 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://br2058c4eqn71"]
+
+[ext_resource type="Texture2D" uid="uid://djftb554bqcc7" path="res://Game/Assets/Fishes/BlueFish/Animation/Blue-alive_1.png" id="1_h8tak"]
+[ext_resource type="Texture2D" uid="uid://bkrn56x0m8hyq" path="res://Game/Assets/Fishes/BlueFish/Animation/Blue-alive_2.png" id="2_o7x6t"]
+[ext_resource type="Texture2D" uid="uid://cdqdt8qafvyq8" path="res://Game/Assets/Fishes/BlueFish/Animation/Blue-alive_3.png" id="3_qgti6"]
+[ext_resource type="Texture2D" uid="uid://wvghgqmw7u5t" path="res://Game/Assets/Fishes/BlueFish/Animation/Blue_dead.png" id="4_7uccb"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_h8tak")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_o7x6t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_h8tak")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qgti6")
+}],
+"loop": true,
+"name": &"alive",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_7uccb")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}]

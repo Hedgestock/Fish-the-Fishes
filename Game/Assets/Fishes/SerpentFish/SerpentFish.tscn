@@ -28,6 +28,7 @@ WaveSpeed = 5
 CompendiumName = "Sea Snake"
 CompendiumDescription = "Those were the first slithering species to be found in the oceans."
 Value = 2.0
+AverageSize = 160.0
 
 [node name="Line2D" type="Line2D" parent="." index="0"]
 points = PackedVector2Array(-32, 0, -56, 0, -96, 0, -120, 0, -139, -1, -176, 0, -212, 0, -231.878, 0.389771, -264, 0, -280, 0, -296, 0)

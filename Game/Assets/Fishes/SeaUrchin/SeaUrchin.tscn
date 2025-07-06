@@ -1,14 +1,19 @@
-[gd_scene load_steps=8 format=3 uid="uid://ylm41rhcjfe8"]
+[gd_scene load_steps=10 format=3 uid="uid://ylm41rhcjfe8"]
 
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_uf66v"]
 [ext_resource type="Script" uid="uid://bqrum51hqb2gu" path="res://Game/Assets/Fishes/SeaUrchin/SeaUrchin.cs" id="2_m6l2c"]
+[ext_resource type="Shader" uid="uid://kkdx24u0rap" path="res://Game/Assets/Fishes/SeaUrchin/Animation/SeaUrchin_dead.gdshader" id="2_rhn4i"]
 [ext_resource type="SpriteFrames" uid="uid://12cqf3wxi6x7" path="res://Game/Assets/Fishes/SeaUrchin/Animation/SeaUrchinAnimation.tres" id="3_rhn4i"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_utild"]
+shader = ExtResource("2_rhn4i")
 
 [sub_resource type="Curve" id="Curve_m6l2c"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.3), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="Gradient" id="Gradient_rhn4i"]
+resource_local_to_scene = true
 offsets = PackedFloat32Array(0, 0.0223464, 0.935754, 1)
 colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1)
 
@@ -20,6 +25,7 @@ resource_local_to_scene = true
 radius = 64.0
 
 [node name="SeaUrchin" node_paths=PackedStringArray("HitBox") instance=ExtResource("1_uf66v")]
+material = SubResource("ShaderMaterial_utild")
 script = ExtResource("2_m6l2c")
 ImmuneToSkew = Array[int]([7, 10, 3])
 HitBox = NodePath("HitBox/CollisionShape2D")
@@ -28,6 +34,7 @@ CompendiumDescription = "Fishes often get caught in the long spikes of the urchi
 MinSpeed = 0.0
 MaxSpeed = 0.0
 SpawnRange = Vector2(0.3, 0.7)
+AverageSize = 20.0
 SizeDeviation = 0.3
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0"]

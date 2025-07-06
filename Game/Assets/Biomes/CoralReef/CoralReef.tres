@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Biome" load_steps=21 format=3 uid="uid://cm3ec1bh0wjj6"]
+[gd_resource type="Resource" script_class="Biome" load_steps=24 format=3 uid="uid://cm3ec1bh0wjj6"]
 
 [ext_resource type="Texture2D" uid="uid://dqua3c734qylv" path="res://Game/Assets/Biomes/CoralReef/CoralReefBackground.png" id="1_bgh5j"]
 [ext_resource type="Script" uid="uid://bprtko2ut7gy0" path="res://Game/Utilities/Weighted/WeightedFish.cs" id="2_17j4d"]
@@ -7,10 +7,22 @@
 [ext_resource type="Script" uid="uid://du5t70kmo5wl6" path="res://Game/Utilities/Weighted/WeightedTrash.cs" id="4_75g0y"]
 [ext_resource type="Script" uid="uid://62lfoitacli2" path="res://Game/Assets/Biomes/Biome.cs" id="5_byup3"]
 
+[sub_resource type="Resource" id="Resource_0cb85"]
+script = ExtResource("2_17j4d")
+Fish = 12
+Weight = 200
+metadata/_custom_type_script = "uid://bprtko2ut7gy0"
+
 [sub_resource type="Resource" id="Resource_f4pan"]
 script = ExtResource("2_17j4d")
 Fish = 2
 Weight = 100
+
+[sub_resource type="Resource" id="Resource_3olg4"]
+script = ExtResource("2_17j4d")
+Fish = 11
+Weight = 100
+metadata/_custom_type_script = "uid://bprtko2ut7gy0"
 
 [sub_resource type="Resource" id="Resource_xyg2j"]
 script = ExtResource("2_17j4d")
@@ -47,6 +59,12 @@ Weight = 30
 script = ExtResource("2_17j4d")
 Fish = 0
 Weight = 10
+
+[sub_resource type="Resource" id="Resource_3wuju"]
+script = ExtResource("2_17j4d")
+Fish = 10
+Weight = 10
+metadata/_custom_type_script = "uid://bprtko2ut7gy0"
 
 [sub_resource type="Resource" id="Resource_p1mqj"]
 script = ExtResource("2_17j4d")
@@ -88,7 +106,7 @@ TimeToSpawnTrash = 5.0
 TimeToSpawnTrashDeviation = 0.5
 ChangeBiomeThreshold = 100
 ChangeBiomeThresholdDeviation = 20
-Fishes = Array[Object]([SubResource("Resource_f4pan"), SubResource("Resource_xyg2j"), SubResource("Resource_3ginu"), SubResource("Resource_cn611"), SubResource("Resource_1ox07"), SubResource("Resource_1c6ge"), SubResource("Resource_okm2r"), SubResource("Resource_7w1j6"), SubResource("Resource_p1mqj")])
+Fishes = Array[Object]([SubResource("Resource_0cb85"), SubResource("Resource_f4pan"), SubResource("Resource_3olg4"), SubResource("Resource_xyg2j"), SubResource("Resource_3ginu"), SubResource("Resource_cn611"), SubResource("Resource_1ox07"), SubResource("Resource_1c6ge"), SubResource("Resource_okm2r"), SubResource("Resource_7w1j6"), SubResource("Resource_3wuju"), SubResource("Resource_p1mqj")])
 Trashes = Array[Object]([SubResource("Resource_jbhkk"), SubResource("Resource_8v5i1"), SubResource("Resource_bqsre")])
 FollowupBiomes = Array[Object]([SubResource("Resource_l62ly"), SubResource("Resource_3cux3")])
 CompendiumName = "Coral Reef"

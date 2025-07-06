@@ -55,8 +55,8 @@ texture = ExtResource("6_nuo0v")
 texture_mode = 2
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="1"]
-position = Vector2(3.8147e-06, 56)
-scale = Vector2(6.4, 10.4)
+position = Vector2(3.8147e-06, 68)
+scale = Vector2(6.4, 11.6)
 
 [node name="AnimatedSprite2D" parent="." index="2"]
 position = Vector2(0, -12)
