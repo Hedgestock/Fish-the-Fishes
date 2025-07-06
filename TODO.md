@@ -23,6 +23,7 @@
 - [x] Ajouter un écran de notes de mises à jour
 - [x] Ajouter un bouton de pause
 - [x] Changer le mode d'affichage des poissons dans le compendium
+- [ ] Ajouter un menu de pause
 - [ ] Ajouter un jingle pour les meilleurs scores
 - [ ] Ajouter un tutoriel
 - [ ] Ajouter de la physique aux boutons du menu principal
@@ -113,7 +114,7 @@
 
 - [x] Classique
 - [x] Contre la montre
-- [X] Poissons ciblés
+- [ ] Poissons ciblés
 - [ ] Go green
 - [ ] Zen
 - [ ] Training mode
@@ -180,6 +181,7 @@
 - [ ] Ajouter de la physique aux serpents de mer et méduses en cas de mort/pêche
 - [ ] Ajouter du balancement sur les pics des oursins
 - [ ] Faire apparaître les oursins en clusters
+- [ ] Faire en sorte que le poisson flèche mette tous les autres poissons dans son sens
 
 # Corrections
 
@@ -196,7 +198,6 @@
 - [x] Verifier le passage en négatif de la statistique de score
 - [x] Couper le son d'un poisson mort
 - [x] Corriger la présence de la cible au changement de biome
-- [x] [**Solution autre**] Corriger le problème lorsqu'un espadon vole un poisson pêché
 - [x] Corriger le problème des espadons fous
 - [x] Corriger le problème du reparentage d'espadon
 - [x] Corriger l'espadon qui chasse même mort
