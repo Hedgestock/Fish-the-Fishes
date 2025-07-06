@@ -14,7 +14,7 @@ distance = 50.0
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_sbmws"]
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_rj04q"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_sbmws"]
 seamless = true
 noise = SubResource("FastNoiseLite_sbmws")
 
@@ -27,7 +27,7 @@ noise = SubResource("FastNoiseLite_xnc2s")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_t2qr5"]
 shader = ExtResource("6_p6c18")
 shader_parameter/waterNoise = SubResource("NoiseTexture2D_aoxvl")
-shader_parameter/waterDistortionNoise = SubResource("NoiseTexture2D_rj04q")
+shader_parameter/waterDistortionNoise = SubResource("NoiseTexture2D_sbmws")
 shader_parameter/offSetSpeed = Vector2(0.03, 0.1)
 shader_parameter/backGroundDirX = 0.005
 shader_parameter/backGroundDirY = 0.005

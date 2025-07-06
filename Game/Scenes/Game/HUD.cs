@@ -61,7 +61,8 @@ public partial class HUD : CanvasLayer
                 LivesContainer.GetNode<AnimatedSpriteForUI>("Life1").Play();
                 LivesContainer.GetNode<AnimatedSpriteForUI>("Life2").Play();
                 LivesContainer.GetNode<AnimatedSpriteForUI>("Life3").Play();
-                GameManager.Instance.LifeUp += LifeUp;
+                GameManager.Instance.Connect(GameManager.SignalName.LifeUp, new Callable(this, MethodName.LifeUp));
+
                 break;
         }
 
