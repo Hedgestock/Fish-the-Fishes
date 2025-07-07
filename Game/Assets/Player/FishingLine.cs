@@ -70,8 +70,9 @@ public partial class FishingLine : CharacterBody2D, IFisher
         if (Hook != null) { Hook.QueueFree(); }
         Hook = Hooks[hookKey].Instantiate<Hook>();
         AddChild(Hook);
-        Hook.FishBox.BodyEntered += OnFishBoxBodyEntered;
-        Hook.HitBox.BodyEntered += OnHitBoxBodyEntered;
+
+        Hook.FishBox.Connect(Area2D.SignalName.BodyEntered, Callable.From<Node2D>(OnFishBoxBodyEntered));
+        Hook.HitBox.Connect(Area2D.SignalName.BodyEntered, Callable.From<Node2D>(OnHitBoxBodyEntered));
         BasePosition = BasePosition = new Vector2(GameManager.ScreenSize.X / 2, 100 - Hook.AimOffset);
         Position = BasePosition;
         _invincible = false;

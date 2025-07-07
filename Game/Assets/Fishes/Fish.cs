@@ -3,6 +3,7 @@ using Godot.Collections;
 using WaffleStock;
 using System;
 using System.Linq;
+using System.Diagnostics;
 
 
 
@@ -150,6 +151,8 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
 
     public virtual IFishable GetCaughtBy(IFisher by)
     {
+        //TODO: Fix the frame by frame call in the fishing line
+        GD.PrintErr("What ?", GetType(), by.GetType());
 
         if (by == this)
         {
@@ -177,14 +180,6 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
 
         by.FishedThings.Add(this);
         IsCaught = true;
-
-
-        // In case we are a fisher thing, we make sure to give all of our fished things to what is currently catching us
-        if (this is IFisher)
-        {
-            by.FishedThings.AddRange((this as IFisher).FishedThings);
-            (this as IFisher).FishedThings.Clear();
-        }
 
         CallDeferred(Node.MethodName.Reparent, by as Node);
         return this;

@@ -1,0 +1,34 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://cchugj0lsp7tl"]
+
+[ext_resource type="Texture2D" uid="uid://byg1f5aypgl0d" path="res://Game/Assets/Fishes/ParrotFish/Animation/clown_alive_1.png" id="1_oywlx"]
+[ext_resource type="Texture2D" uid="uid://bfrbf0fdqgrov" path="res://Game/Assets/Fishes/ParrotFish/Animation/parrot_alive_2.png" id="2_12gfo"]
+[ext_resource type="Texture2D" uid="uid://yavvtg76tl27" path="res://Game/Assets/Fishes/ParrotFish/Animation/parrot_alive_3.png" id="3_l3db8"]
+[ext_resource type="Texture2D" uid="uid://dlcw0mga24l2a" path="res://Game/Assets/Fishes/ParrotFish/Animation/parrot_dead.png" id="4_qraiy"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_oywlx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_12gfo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_oywlx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_l3db8")
+}],
+"loop": true,
+"name": &"alive",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_qraiy")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}]

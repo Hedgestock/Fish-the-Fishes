@@ -222,3 +222,5 @@
 - [ ] Essayer de faire des poules pour les bulles
 - [ ] Suivre le temps d'une partie à travers la sauvegarde rapide
 - [ ] Corriger les oursins qui s'auto-pêchent et la capture cirulaire
+- [ ] Corriger deux oursins sur l'hammeçon qui s'échangeraient un poisson à chaque frame
+- [ ] Mettre un point de deboggage sur `GetCaughtBy()` semble s'activer à chaque frame pour la ligne, mais pas les espadons

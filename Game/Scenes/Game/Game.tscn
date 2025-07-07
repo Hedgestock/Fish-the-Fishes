@@ -87,6 +87,7 @@ mouse_filter = 2
 texture = ExtResource("8_sbmws")
 
 [node name="PauseButton" parent="." instance=ExtResource("3_p6c18")]
+z_index = 99
 z_as_relative = false
 offset_left = 32.0
 offset_top = -264.0

@@ -39,6 +39,7 @@ namespace WaffleStock
             SeaUrchin,
             BlueFish,
             ClownFish,
+            ParrotFish,
         }
 
         public static string TrashesFolder = "res://Game/Assets/Trashes/";

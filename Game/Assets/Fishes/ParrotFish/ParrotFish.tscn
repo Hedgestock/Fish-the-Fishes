@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqmsa0kqy76gw"]
+
+[ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_78x8d"]
+[ext_resource type="Script" uid="uid://cp1iu4iajmib2" path="res://Game/Assets/Fishes/ParrotFish/ParrotFish.cs" id="2_260lm"]
+[ext_resource type="SpriteFrames" uid="uid://cchugj0lsp7tl" path="res://Game/Assets/Fishes/ParrotFish/Animation/ParrotFishAnimation.tres" id="3_uym21"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ctkeo"]
+radius = 40.0
+height = 224.0
+
+[node name="ParrotFish" instance=ExtResource("1_78x8d")]
+script = ExtResource("2_260lm")
+CompendiumName = "Parrot Fish"
+CompendiumDescription = "This colorful fish feeds on corrals and thus is immune to urchins spikes."
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = ExtResource("3_uym21")
+animation = &"alive"
+
+[node name="HurtBox" parent="." index="2"]
+position = Vector2(0, -8)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_ctkeo")

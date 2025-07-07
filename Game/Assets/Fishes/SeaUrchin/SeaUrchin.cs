@@ -44,6 +44,8 @@ public partial class SeaUrchin : Fish, IFisher
 
     public override IFishable GetCaughtBy(IFisher by)
     {
+        //Avoid being called every frame
+        if (growth >= 0) return this;
         growth = 0;
         Grow();
 
@@ -94,6 +96,7 @@ public partial class SeaUrchin : Fish, IFisher
 
     private void OnFishSkewered(Node2D body)
     {
+        GD.Print("skewering fish ", body.GetType());
         //TODO: Check that we're not fishing a parent
         if (!(body is Fish) || FishedThings.Contains(body as Fish) || body == this || CheckImmunity(ImmuneToSkew, body.GetType())) return;
 
