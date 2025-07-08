@@ -28,11 +28,6 @@ script = ExtResource("1_h6x5b")
 Fish = 0
 Weight = 100
 
-[sub_resource type="Resource" id="Resource_3ginu"]
-script = ExtResource("1_h6x5b")
-Fish = 1
-Weight = 100
-
 [sub_resource type="Resource" id="Resource_cn611"]
 script = ExtResource("1_h6x5b")
 Fish = 4
@@ -52,6 +47,11 @@ Weight = 30
 script = ExtResource("1_h6x5b")
 Fish = 7
 Weight = 20
+
+[sub_resource type="Resource" id="Resource_3ginu"]
+script = ExtResource("1_h6x5b")
+Fish = 1
+Weight = 10
 
 [sub_resource type="Resource" id="Resource_xrelp"]
 script = ExtResource("1_h6x5b")
@@ -93,7 +93,7 @@ TimeToSpawnTrash = 5.0
 TimeToSpawnTrashDeviation = 0.5
 ChangeBiomeThreshold = 20
 ChangeBiomeThresholdDeviation = 5
-Fishes = Array[Object]([SubResource("Resource_f4pan"), SubResource("Resource_xyg2j"), SubResource("Resource_nn0c1"), SubResource("Resource_7w1j6"), SubResource("Resource_3ginu"), SubResource("Resource_cn611"), SubResource("Resource_1c6ge"), SubResource("Resource_okm2r"), SubResource("Resource_qul34"), SubResource("Resource_xrelp")])
+Fishes = Array[Object]([SubResource("Resource_f4pan"), SubResource("Resource_xyg2j"), SubResource("Resource_nn0c1"), SubResource("Resource_7w1j6"), SubResource("Resource_cn611"), SubResource("Resource_1c6ge"), SubResource("Resource_okm2r"), SubResource("Resource_qul34"), SubResource("Resource_3ginu"), SubResource("Resource_xrelp")])
 Trashes = Array[Object]([SubResource("Resource_jbhkk"), SubResource("Resource_8v5i1"), SubResource("Resource_bqsre")])
 FollowupBiomes = Array[Object]([SubResource("Resource_l62ly"), SubResource("Resource_o0ehq")])
 CompendiumName = "Great Blue"

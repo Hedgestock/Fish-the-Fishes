@@ -110,7 +110,7 @@ public partial class SharkFish : Fish, IFisher
             fish.Flip = Flip;
             fish.ActualSpeed = fish.MaxSpeed * 1.5f;
 
-            fish.TravelAxis = TravelAxis.Rotated((float)GD.RandRange(-.5, .5));
+            fish.TravelAxis = TravelAxis.Rotated((float)GD.RandRange(-.3, .3));
 
             // Spawn the fish by adding it to the main scene.
             GetParent().AddChild(fish);

@@ -170,7 +170,6 @@
 - [ ] Ajouter un moyen de trier/filtrer le compendium
 - [ ] Ajouter un moyen d'exporter/importer une sauvegarde
 - [ ] Utiliser une vraie ligne pour la ligne de pêche.
-- [ ] Passer au gestionnaire de scène, de sauvegarde etc... Standards de wafflestock
 - [ ] Ajouter un filtre audio pour chaque biome
 - [ ] Ajuster les taux d'apparition des poubelles en fonction de la largeur de l'écran
 - [ ] Optimiser la création de nouveaux poissons
@@ -182,6 +181,7 @@
 - [ ] Ajouter du balancement sur les pics des oursins
 - [ ] Faire apparaître les oursins en clusters
 - [ ] Faire en sorte que le poisson flèche mette tous les autres poissons dans son sens
+- [ ] Passer au gestionnaire de scène, de sauvegarde etc... Standards de wafflestock
 
 # Corrections
 

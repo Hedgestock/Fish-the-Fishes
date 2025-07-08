@@ -48,6 +48,7 @@ public partial class GameManager : Node
         }
     }
 
+    public static int Flip = 0;
 
     public static Game.Mode Mode = Game.Mode.Menu;
     public static long Score = 0;

@@ -93,7 +93,11 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
         // If the inheriting class did not set the spawning Posision, we do it now.
         if (Position == Vector2.Zero)
         {
-            Flip = (GD.Randi() % 2) != 0;
+            GD.Print("flip is ", GameManager.Flip);
+            if (GameManager.Flip != 0)
+                Flip = GameManager.Flip > 0;
+            else
+                Flip = (GD.Randi() % 2) != 0;
             float positionOffset = VisibleOnScreenNotifier.Rect.Size.X * VisibleOnScreenNotifier.Scale.X / 2;
             Position = new Vector2(
                 Flip ? GameManager.ScreenSize.X + positionOffset : -positionOffset,
