@@ -17,13 +17,14 @@ MaxSpeed = 300.0
 AverageSize = 40.0
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0"]
-position = Vector2(-6.67572e-06, -4.76837e-07)
-scale = Vector2(9.6, 5.6)
+position = Vector2(0.999996, -4.76837e-07)
+scale = Vector2(9.5, 5.6)
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = ExtResource("2_3xtnc")
 animation = &"alive"
 
 [node name="HurtBox" parent="." index="2"]
+position = Vector2(5, 2)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_g7owi")

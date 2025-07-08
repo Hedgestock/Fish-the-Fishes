@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://decf6h2dapr5u" path="res://Game/Assets/Fishes/JellyFish/Animation/Jelly_4.png" id="6_nuo0v"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dh8h5"]
-radius = 40.0
+radius = 41.0122
 
 [node name="JellyFish" node_paths=PackedStringArray("Tentacles") instance=ExtResource("1_v1625")]
 script = ExtResource("2_7552x")
@@ -55,8 +55,8 @@ texture = ExtResource("6_nuo0v")
 texture_mode = 2
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="1"]
-position = Vector2(3.8147e-06, 68)
-scale = Vector2(6.4, 11.6)
+position = Vector2(3.8147e-06, 61.5)
+scale = Vector2(6.4, 10.95)
 
 [node name="AnimatedSprite2D" parent="." index="2"]
 position = Vector2(0, -12)

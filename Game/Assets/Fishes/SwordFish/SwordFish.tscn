@@ -27,7 +27,8 @@ MaxSpeed = 700.0
 AverageSize = 145.0
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0"]
-scale = Vector2(30.625, 9)
+position = Vector2(-1.375, -1)
+scale = Vector2(30.7625, 9.1)
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = ExtResource("3_rsy4g")

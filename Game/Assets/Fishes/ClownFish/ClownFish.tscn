@@ -15,8 +15,8 @@ CompendiumDescription = "It does not sound as funny as its name lets us believe.
 AverageSize = 23.0
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0"]
-position = Vector2(0, 1.90735e-06)
-scale = Vector2(5.6, 3.2)
+position = Vector2(1.5, 7.45058e-07)
+scale = Vector2(5.15, 3.1)
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 position = Vector2(1, 0)
@@ -25,5 +25,6 @@ sprite_frames = ExtResource("2_6a7gd")
 animation = &"alive"
 
 [node name="HurtBox" parent="." index="2"]
+position = Vector2(2, 0)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_tg0eg")

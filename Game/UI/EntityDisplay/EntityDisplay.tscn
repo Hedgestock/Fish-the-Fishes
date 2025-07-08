@@ -14,3 +14,4 @@ Viewport = NodePath("SubViewport")
 [node name="SubViewport" type="SubViewport" parent="."]
 transparent_bg = true
 handle_input_locally = false
+render_target_update_mode = 4

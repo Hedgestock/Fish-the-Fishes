@@ -18,8 +18,8 @@ Value = 0.5
 AverageSize = 21.0
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0"]
-position = Vector2(-1.43051e-06, -0.5)
-scale = Vector2(4.3, 1.35)
+position = Vector2(-1.3113e-06, -0.5)
+scale = Vector2(4.5, 1.45)
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = ExtResource("3_kidlv")

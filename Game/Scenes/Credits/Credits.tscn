@@ -42,10 +42,9 @@ size_flags_vertical = 3
 
 [node name="Panel" type="TabContainer" parent="VBoxContainer/MarginContainer"]
 layout_mode = 2
-current_tab = 1
+current_tab = 0
 
 [node name="Credits" type="MarginContainer" parent="VBoxContainer/MarginContainer/Panel"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -58,7 +57,7 @@ Developper: Hedgestock
 Graphic Designer: Beewaffle
 [img]res://Game/Assets/Fishes/YellowFish/Animation/yellow_alive_1.png[/img]
 Sound Designer: Odun
-[img]res://Game/Assets/Fishes/BlueFish/Blue.png[/img]
+[img]res://Game/Assets/Fishes/BlueFish/Animation/blue_alive_1.png[/img]
 [url=https://flowerheadmusic.itch.io/somewhat-good-underwater]Music by flowerhead[/url]
 [img]res://Game/Assets/Fishes/ArrowFish/Animation/arrow_alive_1.png[/img]
 
@@ -73,6 +72,7 @@ All rights reserved.
 "
 
 [node name="Patch Notes" type="MarginContainer" parent="VBoxContainer/MarginContainer/Panel"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
@@ -81,10 +81,18 @@ layout_mode = 2
 bbcode_enabled = true
 text = "[center][font_size=200]??/07/2025[/font_size][/center]
 [font_size=100]
-[center]Mélany forced me through psychological to release this update:
+[ul]
+Fixed parrot fish compendium display
+Added guppy fish
+[/ul]
+[/font_size]
+[center][font_size=200]07/07/2025[/font_size][/center]
+[font_size=100]
+[center]Mélany forced me through psychological torture to release this update:
 [/center]
 [ul]
 Fixed fleeing fishes before sharks
+Added parrot fish
 Added clown fish
 Added blue fish
 Added jellyfish

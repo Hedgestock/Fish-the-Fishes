@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkrn56x0m8hyq"
-path="res://.godot/imported/Blue-alive_2.png-a6ba97c816f0523003a05280f248140e.ctex"
+uid="uid://l2rip241p0h0"
+path="res://.godot/imported/guppy_dead.png-ac4ac043c316441bcd71950c08ff1695.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/Assets/Fishes/BlueFish/Animation/Blue-alive_2.png"
-dest_files=["res://.godot/imported/Blue-alive_2.png-a6ba97c816f0523003a05280f248140e.ctex"]
+source_file="res://Game/Assets/Fishes/GuppyFish/Animation/guppy_dead.png"
+dest_files=["res://.godot/imported/guppy_dead.png-ac4ac043c316441bcd71950c08ff1695.ctex"]
 
 [params]
 
