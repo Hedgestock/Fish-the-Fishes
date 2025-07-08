@@ -3,9 +3,15 @@ using System;
 
 public partial class PauseButton : TextureButton
 {
-    void OnPressed()
+    private void TogglePause()
     {
-        SaveManager.SaveGame();
         GetTree().Paused = !GetTree().Paused;
+    }
+
+    private void QuitGame()
+    {
+        GetTree().Paused = false;
+        SaveManager.SaveGame();
+        GameManager.ChangeSceneToFile("res://Game/Scenes/Home.tscn");
     }
 }

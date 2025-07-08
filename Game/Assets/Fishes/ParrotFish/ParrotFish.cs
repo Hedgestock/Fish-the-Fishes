@@ -14,7 +14,6 @@ public partial class ParrotFish : Fish
 
     public override void _Ready()
     {
-        GD.Print("parrot");
         base._Ready();
         if (IsInDisplay) return;
         Fish[] targets = GetTree().GetNodesInGroup("Fishes").OfType<Fish>()
@@ -63,7 +62,6 @@ public partial class ParrotFish : Fish
 
     private void Leave()
     {
-        GD.Print("parrot leaving");
         Velocity = TravelAxis * ActualSpeed;
         Rotation = TravelAxis.Angle();
     }

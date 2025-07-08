@@ -59,7 +59,6 @@ public partial class GameManager : Node
         get { return _currentBiomeCatches; }
         set
         {
-            GD.Print($"Biome catches set to {value}");
             if (value > CalculatedBiomeThreshold)
             {
                 ChangeBiome();

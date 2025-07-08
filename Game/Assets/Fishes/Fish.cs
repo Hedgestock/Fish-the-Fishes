@@ -93,7 +93,6 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
         // If the inheriting class did not set the spawning Posision, we do it now.
         if (Position == Vector2.Zero)
         {
-            GD.Print("flip is ", GameManager.Flip);
             if (GameManager.Flip != 0)
                 Flip = GameManager.Flip > 0;
             else
@@ -156,7 +155,6 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
     public virtual IFishable GetCaughtBy(IFisher by)
     {
         //TODO: Fix the frame by frame call in the fishing line
-        GD.PrintErr("What ?", GetType(), by.GetType());
 
         if (by == this)
         {

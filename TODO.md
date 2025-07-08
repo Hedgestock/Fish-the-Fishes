@@ -23,7 +23,7 @@
 - [x] Ajouter un écran de notes de mises à jour
 - [x] Ajouter un bouton de pause
 - [x] Changer le mode d'affichage des poissons dans le compendium
-- [ ] Ajouter un menu de pause
+- [x] Ajouter un menu de pause
 - [ ] Ajouter un jingle pour les meilleurs scores
 - [ ] Ajouter un tutoriel
 - [ ] Ajouter de la physique aux boutons du menu principal
@@ -57,7 +57,6 @@
 - [ ] Saumon
 - [ ] Thon
 - [ ] Poisson lune
-- [ ] Poisson ver de terre
 - [ ] Baleine
 - [ ] Kraken
 
