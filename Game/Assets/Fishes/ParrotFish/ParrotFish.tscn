@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bqmsa0kqy76gw"]
+[gd_scene load_steps=6 format=3 uid="uid://bqmsa0kqy76gw"]
 
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_78x8d"]
 [ext_resource type="Script" uid="uid://cp1iu4iajmib2" path="res://Game/Assets/Fishes/ParrotFish/ParrotFish.cs" id="2_260lm"]
@@ -8,8 +8,12 @@
 radius = 40.0
 height = 230.0
 
-[node name="ParrotFish" instance=ExtResource("1_78x8d")]
+[sub_resource type="CircleShape2D" id="CircleShape2D_78x8d"]
+
+[node name="ParrotFish" node_paths=PackedStringArray("HitBox") instance=ExtResource("1_78x8d")]
 script = ExtResource("2_260lm")
+FoodTypes = Array[int]([10])
+HitBox = NodePath("HitBox/CollisionShape2D")
 CompendiumName = "Parrot Fish"
 CompendiumDescription = "This colorful fish feeds on corrals and thus is immune to urchins spikes."
 MinSpeed = 250.0
@@ -27,3 +31,12 @@ animation = &"alive"
 position = Vector2(0, -5)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_ctkeo")
+
+[node name="HitBox" type="Area2D" parent="." index="4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" index="0"]
+position = Vector2(105, -2)
+shape = SubResource("CircleShape2D_78x8d")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[connection signal="body_entered" from="HitBox" to="." method="OnFoodSecured"]

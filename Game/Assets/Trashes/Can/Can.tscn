@@ -21,4 +21,5 @@ scale = Vector2(2, 2)
 shape = SubResource("CapsuleShape2D_r4b5q")
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="2"]
-scale = Vector2(5, 8)
+position = Vector2(-0.999999, -0.499995)
+scale = Vector2(6.3, 8.65)

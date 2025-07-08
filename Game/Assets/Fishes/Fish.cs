@@ -126,13 +126,13 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
             TravelAxis = (objective - Position).Normalized();
         }
 
-        Velocity = TravelAxis * ActualSpeed;
-        Rotation = (float)(TravelAxis.Angle() - (Flip ? Mathf.Pi : 0));
-
         if (Flip)
         {
             Scale = new Vector2(-1, 1);
         }
+
+        Velocity = TravelAxis * ActualSpeed;
+        Rotation = (float)(TravelAxis.Angle() - (Flip ? Mathf.Pi : 0));
 
 
         // If the inheriting class did not set the ActualSizeVariation, we do it now.
@@ -218,9 +218,9 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
         else UserData.FishCompendium[GetType().Name] = new UserData.FishCompendiumEntry();
     }
 
-    protected bool CheckImmunity(Array<Constants.Fishes> ImmunityList, Type FishType)
+    protected bool FishListContains(Array<Constants.Fishes> List, Type FishType)
     {
-        return ImmunityList.Select(i => i.ToString()).Contains(FishType.ToString());
+        return List.Select(i => i.ToString()).Contains(FishType.ToString());
     }
 }
 

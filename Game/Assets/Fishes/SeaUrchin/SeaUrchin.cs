@@ -98,7 +98,7 @@ public partial class SeaUrchin : Fish, IFisher
     {
         GD.Print("skewering fish ", body.GetType());
         //TODO: Check that we're not fishing a parent
-        if (!(body is Fish) || FishedThings.Contains(body as Fish) || body == this || CheckImmunity(ImmuneToSkew, body.GetType())) return;
+        if (!(body is Fish) || FishedThings.Contains(body as Fish) || body == this || FishListContains(ImmuneToSkew, body.GetType())) return;
 
         Fish Skew = body as Fish;
 

@@ -99,7 +99,7 @@ public partial class SwordFish : Fish, IFisher
         Sprite.Animation = "seek";
 
         Node[] fishes = GetTree().GetNodesInGroup("Fishes")
-            .Where(fish => (fish as Fish).IsAlive && (fish as Fish).IsOnScreen && !FishedThings.Contains(fish as Fish) && !CheckImmunity(ImmuneToTargeting, fish.GetType()))
+            .Where(fish => (fish as Fish).IsAlive && (fish as Fish).IsOnScreen && !FishedThings.Contains(fish as Fish) && !FishListContains(ImmuneToTargeting, fish.GetType()))
             .ToArray();
 
         if (fishes.Length == 0)
@@ -144,7 +144,7 @@ public partial class SwordFish : Fish, IFisher
     {
         Sprite.Animation = IsAlive ? "alive" : "dead";
         if (!IsActionable) return;
-        Velocity = new Vector2(ActualSpeed * (Flip ? -1 : 1), 0);
+        Velocity = TravelAxis * ActualSpeed;
 
         RotationTween = RotateAtConstantSpeed(Velocity.Angle());
 
@@ -153,7 +153,7 @@ public partial class SwordFish : Fish, IFisher
 
     private void OnFishSkewered(Node2D body)
     {
-        if (!(body is Fish) || FishedThings.Contains(body as Fish) || body == this || !IsActionable || CheckImmunity(ImmuneToSkew, body.GetType())) return;
+        if (!(body is Fish) || FishedThings.Contains(body as Fish) || body == this || !IsActionable || FishListContains(ImmuneToSkew, body.GetType())) return;
 
         Fish Skew = body as Fish;
 

@@ -5,7 +5,7 @@
 [ext_resource type="SpriteFrames" uid="uid://bybglcna4kd5n" path="res://Game/Assets/Trashes/Tire/Animation/TireAnimation.tres" id="3_t55un"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_men1j"]
-radius = 80.0
+radius = 75.0
 
 [node name="Tire" instance=ExtResource("1_0vkjc")]
 script = ExtResource("2_wqbsq")
@@ -21,4 +21,4 @@ frame_progress = 0.542382
 shape = SubResource("CircleShape2D_men1j")
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="2"]
-scale = Vector2(7, 7)
+scale = Vector2(8, 8)

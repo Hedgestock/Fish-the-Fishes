@@ -48,7 +48,7 @@ public partial class RedFish : Fish
 
     private void _on_body_entered(Node body)
     {
-        if (body is Fish && !CheckImmunity(ImmuneToRed, body.GetType()))
+        if (body is Fish && !FishListContains(ImmuneToRed, body.GetType()))
         {
             (body as Fish).Kill();
         }

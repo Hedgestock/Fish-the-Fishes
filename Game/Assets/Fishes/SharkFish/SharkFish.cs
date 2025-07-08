@@ -101,7 +101,7 @@ public partial class SharkFish : Fish, IFisher
         {
             PackedScene FishScene = GD.Load<PackedScene>(Biome.GetRandomPathFrom(GameManager.Biome.Fishes));
             Fish fish = FishScene.Instantiate<Fish>();
-            if (CheckImmunity(CantFlee, fish.GetType()))
+            if (FishListContains(CantFlee, fish.GetType()))
             {
                 i--;
                 continue;
