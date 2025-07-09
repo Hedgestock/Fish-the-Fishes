@@ -1,7 +1,6 @@
 using Godot;
 using System;
 using WaffleStock;
-using static WaffleStock.Constants;
 
 public partial class Home : CanvasLayer
 {
@@ -34,6 +33,18 @@ public partial class Home : CanvasLayer
 
     void Play(Game.Mode mode, Biome biome)
     {
+        if (GameManager.GameSave != null)
+        {
+            GameManager.Mode = (Game.Mode)GameManager.GameSave?.Mode;
+            uint playtime = (uint)Math.Ceiling(((TimeSpan)GameManager.GameSave?.TimePlayed).TotalSeconds);
+            UserData.SetHighStat(Constants.LongestSession, playtime);
+            UserData.IncrementStatistic(Constants.TotalTimePlayed, playtime);
+            UserData.SetHighStat(Constants.HighScore, (long)GameManager.GameSave?.Score);
+            SaveManager.SaveData();
+            AchievementsManager.OnGameEnd();
+            SaveManager.EraseGame();
+        }
+
         GameManager.Mode = mode;
         GameManager.Biome = biome;
         GameManager.Score = 0;
@@ -56,9 +67,6 @@ public partial class Home : CanvasLayer
         GameManager.CurrentBiomeCatches = (int)GameManager.GameSave?.CurrentBiomeCatches;
         GameManager.CalculatedBiomeThreshold = (int)GameManager.GameSave?.CalculatedBiomeThreshold;
         GameManager.StartTime = (DateTime)(DateTime.Now - GameManager.GameSave?.TimePlayed);
-
-        GD.Print(DateTime.Now);
-        GD.Print(GameManager.StartTime);
 
         GameManager.ChangeSceneToFile("res://Game/Scenes/Game/Game.tscn");
     }

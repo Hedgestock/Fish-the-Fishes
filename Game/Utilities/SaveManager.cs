@@ -71,6 +71,7 @@ public partial class SaveManager : Node
 
     static public void SaveGame()
     {
+        SaveData();
         GameManager.GameSave = new()
         {
             Mode = GameManager.Mode,
@@ -81,9 +82,6 @@ public partial class SaveManager : Node
             CalculatedBiomeThreshold = GameManager.CalculatedBiomeThreshold,
             TimePlayed = DateTime.Now - GameManager.StartTime
         };
-
-        GD.Print("saving ", GameManager.GameSave?.TimePlayed);
-        GD.Print(DateTime.Now - GameManager.StartTime," -- ", DateTime.Now," -- ", GameManager.StartTime);
 
         using var gameSave = FileAccess.Open(GameFilePath, FileAccess.ModeFlags.Write);
 

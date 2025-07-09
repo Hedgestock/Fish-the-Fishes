@@ -36,7 +36,6 @@ public partial class Game : Node
     {
         AudioManager.StopMusic();
         uint playtime = (uint)Math.Ceiling((DateTime.Now - GameManager.StartTime).TotalSeconds);
-        GD.Print("game time ", playtime);
         UserData.SetHighStat(Constants.LongestSession, playtime);
         UserData.IncrementStatistic(Constants.TotalTimePlayed, playtime);
         UserData.SetHighStat(Constants.HighScore, GameManager.Score);
