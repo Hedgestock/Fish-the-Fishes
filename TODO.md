@@ -225,3 +225,4 @@
 - [ ] Mettre un point de deboggage sur `GetCaughtBy()` semble s'activer à chaque frame pour la ligne, mais pas les espadons
 - [ ] Corriger les espadons qui chassent un autre espadon mais qui le volent sans s'en rendre compte
 - [ ] Enlever les poissons de rivière des biomes salés (guppy, perche et rivière)
+- [ ] Faire une transition douce entre les biomes
