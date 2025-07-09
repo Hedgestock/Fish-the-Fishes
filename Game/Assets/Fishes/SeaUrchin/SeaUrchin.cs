@@ -59,11 +59,8 @@ public partial class SeaUrchin : Fish, IFisher
 
     public override void Kill()
     {
-        //foreach (Line2D spike in spikes)
-        //{
         spikes[0].Gradient.SetColor(1, new Color("666666"));
         spikes[0].Gradient.SetColor(2, new Color("999999"));
-        //}
         Sprite.UseParentMaterial = true;
         base.Kill();
     }
@@ -97,8 +94,8 @@ public partial class SeaUrchin : Fish, IFisher
     private void OnFishSkewered(Node2D body)
     {
         GD.Print("skewering fish ", body.GetType());
-        //TODO: Check that we're not fishing a parent
-        if (!(body is Fish) || FishedThings.Contains(body as Fish) || body == this || FishListContains(ImmuneToSkew, body.GetType())) return;
+
+        if (!(body is Fish) || body.IsAncestorOf(this) || FishedThings.Contains(body as Fish) || FishListContains(ImmuneToSkew, body.GetType()) || body == this) return;
 
         Fish Skew = body as Fish;
 

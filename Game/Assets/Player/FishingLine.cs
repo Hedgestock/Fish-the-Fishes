@@ -4,12 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using static Hook.Action;
-using static System.Formats.Asn1.AsnWriter;
-
 
 public partial class FishingLine : CharacterBody2D, IFisher
 {
-
     public enum DamageType
     {
         Default,
@@ -268,8 +265,12 @@ public partial class FishingLine : CharacterBody2D, IFisher
     {
         float score = 0;
 
-        List<IFishable> scoredFishes = GetScoredFishes(FishedThings);
+        List<IFishable> scoredFishes = ((IFisher)this).FlattenFishedThings(FishedThings);
 
+        foreach (var item in scoredFishes)
+        {
+            GD.Print(item.GetType());
+        }
         foreach (Fish fish in scoredFishes)
         {
             score += fish.Value;
@@ -328,7 +329,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
 
     private int TargetScore()
     {
-        List<IFishable> scoredFishes = GetScoredFishes(FishedThings);
+        List<IFishable> scoredFishes = ((IFisher)this).FlattenFishedThings(FishedThings);
 
         int score = scoredFishes.Any(thing => thing.GetType().Name == GameManager.Target) ? 1 : 0;
 
@@ -353,18 +354,6 @@ public partial class FishingLine : CharacterBody2D, IFisher
     {
         if (num <= 0) return 0;
         return (int)(num * MathF.Log(num, b) + 1);
-    }
-
-    private List<IFishable> GetScoredFishes(List<IFishable> fishedThings)
-    {
-        List<IFishable> scoredFishes = new(fishedThings);
-
-        foreach (IFisher fisher in fishedThings.OfType<IFisher>())
-        {
-            scoredFishes.AddRange(GetScoredFishes(fisher.FishedThings));
-        }
-
-        return scoredFishes;
     }
 
     private void UpdateFishCompendium(Fish fish)

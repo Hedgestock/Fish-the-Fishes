@@ -29,6 +29,12 @@ public partial class ParrotFish : Fish
         Rotation = (float)(Velocity.Angle() - (Flip ? Mathf.Pi : 0));
     }
 
+    public override void Kill()
+    {
+        HitBox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
+        base.Kill();
+    }
+
     private Vector2 GetDirectionTo(Fish target)
     {
         return target.GlobalPosition - GlobalPosition;

@@ -162,7 +162,7 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
             return this;
         }
 
-        if (by.FishedThings.Contains(this) || (by as Node).GetChildren().Contains(this))
+        if (by.FishedThings.Contains(this) || (by as Node).IsAncestorOf(this))
             return this; // This avoids multiple calls on reparenting
 
         Velocity = Vector2.Zero;
@@ -170,20 +170,17 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
         if (IsAlive) Sprite.Animation = "alive";
 
         var parent = GetParent();
-        if (IsCaught)
-        {
-            // In case we are already caught by another fishable thing, we make that parent the target of the catching action
-            if (parent is IFishable)
-                return (parent as IFishable).GetCaughtBy(by);
-
-            // In case we are already caught by a non fishable thing, we make sure that we are removed from its list ("stolen")
-            (parent as IFisher).FishedThings.Remove(this);
-        };
+        Callable.From(() =>
+            {
+                Reparent(by as Node);
+                if (parent is IFisher fisher)
+                    fisher.FishedThings.Remove(this);
+            }
+            ).CallDeferred();
 
         by.FishedThings.Add(this);
         IsCaught = true;
 
-        CallDeferred(Node.MethodName.Reparent, by as Node);
         return this;
     }
 

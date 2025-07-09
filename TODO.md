@@ -212,17 +212,17 @@
 - [x] Grouper les vérifications de hauts faits en un seul appel de fonction
 - [x] Empêcher la ligne de bouger en même temps que les intéractions avec l'interface utilisateur
 - [x] Bien suivre les vies sur l'affichage tête haute à la continuation d'une partie
+- [x] Corriger les espadons qui pêchent des poissons déjà pêchés
+- [x] Corriger les oursins qui s'auto-pêchent et la capture cirulaire
 - [ ] [**Plus de bulles pour l'instant**]Corriger les bulles des requins qui disparaissent trop tôt
 - [ ] Passer à des listes de noms plutôt que des énumérations
 - [ ] Corriger les poissons qui restent sur la ligne après une remontée
 - [ ] Réparer le mode Go Green (Toucher un déchêt ne devrait pas agir comme en classique)
 - [ ] Corriger les requins qui mangent des poissons déjà pêchés
-- [ ] Corriger les espadons qui pêchent des poissons déjà pêchés
 - [ ] Essayer de faire des poules pour les bulles
-- [ ] Suivre le temps d'une partie à travers la sauvegarde rapide
-- [ ] Corriger les oursins qui s'auto-pêchent et la capture cirulaire
 - [ ] Corriger deux oursins sur l'hammeçon qui s'échangeraient un poisson à chaque frame
 - [ ] Mettre un point de deboggage sur `GetCaughtBy()` semble s'activer à chaque frame pour la ligne, mais pas les espadons
 - [ ] Corriger les espadons qui chassent un autre espadon mais qui le volent sans s'en rendre compte
 - [ ] Enlever les poissons de rivière des biomes salés (guppy, perche et rivière)
 - [ ] Faire une transition douce entre les biomes
+- [ ] Suivre le temps d'une partie à travers la sauvegarde rapide

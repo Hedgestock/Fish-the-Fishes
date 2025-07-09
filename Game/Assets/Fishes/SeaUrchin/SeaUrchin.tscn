@@ -27,7 +27,7 @@ radius = 64.0
 [node name="SeaUrchin" node_paths=PackedStringArray("HitBox") instance=ExtResource("1_uf66v")]
 material = SubResource("ShaderMaterial_utild")
 script = ExtResource("2_m6l2c")
-ImmuneToSkew = Array[int]([7, 10, 3, 13, 5])
+ImmuneToSkew = Array[int]([7, 3, 13])
 HitBox = NodePath("HitBox/CollisionShape2D")
 CompendiumName = "Urchin"
 CompendiumDescription = "Fishes often get caught in the long spikes of the urchins, even though urchins themselve do not feed off of fishes."

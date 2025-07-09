@@ -122,7 +122,7 @@ public partial class SwordFish : Fish, IFisher
     {
         if (!IsActionable) return;
 
-        if (!IsInstanceValid(Target)|| FishedThings.Contains(Target))
+        if (!IsInstanceValid(Target) || FishedThings.Contains(Target))
         {
             State = Action.Swimming;
             SeekTarget();
@@ -153,7 +153,7 @@ public partial class SwordFish : Fish, IFisher
 
     private void OnFishSkewered(Node2D body)
     {
-        if (!(body is Fish) || FishedThings.Contains(body as Fish) || body == this || !IsActionable || FishListContains(ImmuneToSkew, body.GetType())) return;
+        if (!(body is Fish) || body.IsAncestorOf(this) || FishedThings.Contains(body as Fish) || FishListContains(ImmuneToSkew, body.GetType()) || body == this || !IsActionable) return;
 
         Fish Skew = body as Fish;
 
@@ -186,7 +186,7 @@ public partial class SwordFish : Fish, IFisher
         if (!IsInstanceValid(Target) || FishedThings.Contains(Target))
         {
             GD.PrintErr($"{Name}({GetType()}) trying to track invalid or contained target");
-            GD.PrintErr($"{!IsInstanceValid(Target)} {FishedThings.Contains(Target)}");
+            GD.PrintErr($"invalid: {!IsInstanceValid(Target)} contained: {FishedThings.Contains(Target)}");
 
             State = Action.Swimming;
             SeekTarget();
