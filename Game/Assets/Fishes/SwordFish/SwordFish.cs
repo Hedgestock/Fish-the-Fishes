@@ -142,8 +142,8 @@ public partial class SwordFish : Fish, IFisher
 
     private void Leave()
     {
+        Sprite.Animation = IsAlive ? "alive" : "dead";
         if (!IsActionable) return;
-        Sprite.Animation = "alive";
         Velocity = TravelAxis * ActualSpeed;
 
         RotationTween = RotateAtConstantSpeed(Velocity.Angle());

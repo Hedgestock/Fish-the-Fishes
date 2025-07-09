@@ -89,8 +89,8 @@
 - [x] Récif de corail
 - [x] Grand bleu
 - [x] Courant marin
+- [x] Lac
 - [ ] Rivière
-- [ ] Lac
 - [ ] Mare
 - [ ] Mangrove
 - [ ] Arctique

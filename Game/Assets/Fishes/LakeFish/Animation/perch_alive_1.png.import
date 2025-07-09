@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pot1oxp46jkh"
-path="res://.godot/imported/Blue.png-500f1c444b135b6f714d9c2478f2761d.ctex"
+uid="uid://dl6pnw5uwe254"
+path="res://.godot/imported/perch_alive_1.png-a09337d634f299d8e6adbfd124dad6f4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/Assets/Fishes/BlueFish/Blue.png"
-dest_files=["res://.godot/imported/Blue.png-500f1c444b135b6f714d9c2478f2761d.ctex"]
+source_file="res://Game/Assets/Fishes/LakeFish/Animation/perch_alive_1.png"
+dest_files=["res://.godot/imported/perch_alive_1.png-a09337d634f299d8e6adbfd124dad6f4.ctex"]
 
 [params]
 

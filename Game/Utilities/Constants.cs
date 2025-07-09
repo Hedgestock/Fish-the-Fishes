@@ -41,7 +41,7 @@ namespace WaffleStock
             ClownFish,
             ParrotFish,
             GuppyFish,
-            PerchFish,
+            LakeFish,
             RiverFish,
         }
 
