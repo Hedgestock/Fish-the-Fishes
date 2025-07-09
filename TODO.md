@@ -214,6 +214,7 @@
 - [x] Bien suivre les vies sur l'affichage tête haute à la continuation d'une partie
 - [x] Corriger les espadons qui pêchent des poissons déjà pêchés
 - [x] Corriger les oursins qui s'auto-pêchent et la capture cirulaire
+- [x] Suivre le temps d'une partie à travers la sauvegarde rapide
 - [ ] [**Plus de bulles pour l'instant**]Corriger les bulles des requins qui disparaissent trop tôt
 - [ ] Passer à des listes de noms plutôt que des énumérations
 - [ ] Corriger les poissons qui restent sur la ligne après une remontée
@@ -225,4 +226,4 @@
 - [ ] Corriger les espadons qui chassent un autre espadon mais qui le volent sans s'en rendre compte
 - [ ] Enlever les poissons de rivière des biomes salés (guppy, perche et rivière)
 - [ ] Faire une transition douce entre les biomes
-- [ ] Suivre le temps d'une partie à travers la sauvegarde rapide
+- [ ] Sauvegarder les statistiques lorsqu'une partie en cours est écrasée

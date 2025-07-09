@@ -28,6 +28,7 @@ public partial class GameManager : Node
 
     static public SaveManager.GameSave? GameSave = null;
 
+    static public DateTime StartTime;
 
     private static Biome _biome;
     public static Biome Biome

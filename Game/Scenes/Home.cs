@@ -1,4 +1,5 @@
 using Godot;
+using System;
 using WaffleStock;
 using static WaffleStock.Constants;
 
@@ -37,6 +38,7 @@ public partial class Home : CanvasLayer
         GameManager.Biome = biome;
         GameManager.Score = 0;
         GameManager.Lives = 3;
+        GameManager.StartTime = DateTime.Now;
 
         UserData.IncrementStatistic(Constants.TotalGamesPlayed);
 
@@ -53,6 +55,10 @@ public partial class Home : CanvasLayer
         GameManager.Lives = (uint)GameManager.GameSave?.Lives;
         GameManager.CurrentBiomeCatches = (int)GameManager.GameSave?.CurrentBiomeCatches;
         GameManager.CalculatedBiomeThreshold = (int)GameManager.GameSave?.CalculatedBiomeThreshold;
+        GameManager.StartTime = (DateTime)(DateTime.Now - GameManager.GameSave?.TimePlayed);
+
+        GD.Print(DateTime.Now);
+        GD.Print(GameManager.StartTime);
 
         GameManager.ChangeSceneToFile("res://Game/Scenes/Game/Game.tscn");
     }

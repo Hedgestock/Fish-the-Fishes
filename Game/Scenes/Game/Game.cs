@@ -12,8 +12,6 @@ public partial class Game : Node
     [Export]
     private RandomTimer TrashTimer;
 
-    private DateTime StartTime;
-
     public enum Mode
     {
         AllModes,
@@ -32,14 +30,13 @@ public partial class Game : Node
     {
         SetupBiome();
         GameManager.Instance.Connect(GameManager.SignalName.BiomeChanged, new Callable(this, MethodName.SetupBiome));
-
-        StartTime = DateTime.Now;
     }
 
     public void EndGame()
     {
         AudioManager.StopMusic();
-        uint playtime = (uint)Math.Ceiling((DateTime.Now - StartTime).TotalSeconds);
+        uint playtime = (uint)Math.Ceiling((DateTime.Now - GameManager.StartTime).TotalSeconds);
+        GD.Print("game time ", playtime);
         UserData.SetHighStat(Constants.LongestSession, playtime);
         UserData.IncrementStatistic(Constants.TotalTimePlayed, playtime);
         UserData.SetHighStat(Constants.HighScore, GameManager.Score);
