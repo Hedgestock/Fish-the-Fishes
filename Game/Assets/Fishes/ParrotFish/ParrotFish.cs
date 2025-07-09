@@ -36,8 +36,10 @@ public partial class ParrotFish : Fish
 
     private void OnFoodSecured(Node2D body)
     {
-        if (!FishListContains(FoodTypes, body.GetType())) return;
+        if (!IsActionable && !FishListContains(FoodTypes, body.GetType())) return;
         Velocity = Vector2.Zero;
+        Sprite.Animation = "eating";
+
         Fish food = body as Fish;
         // We "catch" it to prevent gravity taking over
         food.IsCaught = true;
@@ -50,6 +52,8 @@ public partial class ParrotFish : Fish
         Action Clean = () =>
         {
             food.QueueFree();
+            Sprite.Animation = IsAlive ? "alive" : "dead";
+            if (!IsActionable) return;
             Velocity = TravelAxis * ActualSpeed;
             Rotation = TravelAxis.Angle();
         };
@@ -58,11 +62,5 @@ public partial class ParrotFish : Fish
         tweenScale.TweenProperty(food, "scale", Vector2.Zero, .5);
         tweenScale.TweenCallback(Callable.From(Clean));
 
-    }
-
-    private void Leave()
-    {
-        Velocity = TravelAxis * ActualSpeed;
-        Rotation = TravelAxis.Angle();
     }
 }
