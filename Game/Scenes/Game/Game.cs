@@ -6,11 +6,12 @@ using System;
 public partial class Game : Node
 {
     [Export]
-    private TextureRect Background;
-    [Export]
     private RandomTimer FishTimer;
     [Export]
     private RandomTimer TrashTimer;
+    [Export]
+    private TextureRect Background;
+    private TextureRect BackgroundTransition;
 
     public enum Mode
     {
@@ -28,6 +29,8 @@ public partial class Game : Node
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
+        BackgroundTransition = Background.GetNode<TextureRect>("BackgroundTransition");
+        BackgroundTransition.Texture = GameManager.Biome.Background;
         SetupBiome();
         GameManager.Instance.Connect(GameManager.SignalName.BiomeChanged, new Callable(this, MethodName.SetupBiome));
     }
@@ -70,6 +73,18 @@ public partial class Game : Node
     private void SetupBiome()
     {
         Background.Texture = GameManager.Biome.Background;
+        if (Background.Texture != BackgroundTransition.Texture) {
+            BackgroundTransition.Show();
+            Tween backgroundTween = CreateTween();
+            backgroundTween.TweenProperty(BackgroundTransition, "modulate:a", 0, .5f);
+            backgroundTween.TweenCallback(Callable.From(() =>
+                {
+                    BackgroundTransition.Hide();
+                    BackgroundTransition.Modulate = Colors.White;
+                    BackgroundTransition.Texture = Background.Texture;
+                }
+            ));
+        }
         AudioManager.PlayMusic(GameManager.Biome.Music);
         GD.Print($"Biome threshold = {GameManager.CalculatedBiomeThreshold}");
         FishTimer.Start(GameManager.Biome.TimeToSpawnFish, GameManager.Biome.TimeToSpawnFishDeviation);
