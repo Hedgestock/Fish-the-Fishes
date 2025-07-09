@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://ysvrflpejd5u"]
+[gd_scene load_steps=5 format=3 uid="uid://ysvrflpejd5u"]
 
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_lk6on"]
 [ext_resource type="Script" uid="uid://dimw6w5ard23e" path="res://Game/Assets/Fishes/YellowFish/YellowFish.cs" id="2_7wvo0"]
 [ext_resource type="SpriteFrames" uid="uid://dib3yn73u4ctr" path="res://Game/Assets/Fishes/YellowFish/Animation/YellowFishAnimation.tres" id="2_e3t31"]
-[ext_resource type="AudioStream" uid="uid://cv3hogwjako7s" path="res://Game/Audio/Fish popapopapopapopa.wav" id="4_vki7v"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dfnsu"]
 radius = 22.0
@@ -29,6 +28,3 @@ frame_progress = 0.702968
 position = Vector2(3, 1)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_dfnsu")
-
-[node name="AudioStreamPlayer" parent="." index="3"]
-stream = ExtResource("4_vki7v")

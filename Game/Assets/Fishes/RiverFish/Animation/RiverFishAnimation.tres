@@ -1,0 +1,34 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://6owu5f5m33b0"]
+
+[ext_resource type="Texture2D" uid="uid://c7c3x56bto7kr" path="res://Game/Assets/Fishes/RiverFish/Animation/riverfish_alive_1.png" id="1_f0nrh"]
+[ext_resource type="Texture2D" uid="uid://48tjb216oc55" path="res://Game/Assets/Fishes/RiverFish/Animation/riverfish_alive_2.png" id="2_bobau"]
+[ext_resource type="Texture2D" uid="uid://dka862412oa1o" path="res://Game/Assets/Fishes/RiverFish/Animation/riverfish_alive_3.png" id="3_iklig"]
+[ext_resource type="Texture2D" uid="uid://bk86oh60i34w1" path="res://Game/Assets/Fishes/RiverFish/Animation/riverfish_dead.png" id="4_35v46"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_f0nrh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_bobau")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_f0nrh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_iklig")
+}],
+"loop": true,
+"name": &"alive",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_35v46")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}]

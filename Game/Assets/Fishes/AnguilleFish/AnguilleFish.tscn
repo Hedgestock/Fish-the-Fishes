@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://oxxpqubwwblb"]
+[gd_scene load_steps=5 format=3 uid="uid://oxxpqubwwblb"]
 
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_d3b32"]
 [ext_resource type="SpriteFrames" uid="uid://l22v2s0dn5uh" path="res://Game/Assets/Fishes/AnguilleFish/Animation/AnguilleFishAnimation.tres" id="2_2ati3"]
 [ext_resource type="Script" uid="uid://chvol61tn2dwn" path="res://Game/Assets/Fishes/AnguilleFish/AnguilleFish.cs" id="2_2x4bm"]
-[ext_resource type="AudioStream" uid="uid://f8tkwqdr0cs8" path="res://Game/Audio/Fish fushfushfushfush.wav" id="4_5av3g"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lvcgl"]
 radius = 31.0
@@ -30,6 +29,3 @@ animation = &"alive"
 [node name="HurtBox" parent="." index="2"]
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_lvcgl")
-
-[node name="AudioStreamPlayer" parent="." index="3"]
-stream = ExtResource("4_5av3g")

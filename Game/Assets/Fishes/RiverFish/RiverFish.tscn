@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://la7mhjo3dplx"]
+
+[ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_h8xj4"]
+[ext_resource type="SpriteFrames" uid="uid://6owu5f5m33b0" path="res://Game/Assets/Fishes/RiverFish/Animation/RiverFishAnimation.tres" id="2_f8ucb"]
+[ext_resource type="Script" uid="uid://dwbiejtq8telo" path="res://Game/Assets/Fishes/RiverFish/RiverFish.cs" id="2_t3ocf"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t3ocf"]
+radius = 34.0
+height = 144.0
+
+[node name="RiverFish" instance=ExtResource("1_h8xj4")]
+script = ExtResource("2_t3ocf")
+CompendiumName = "River Fish"
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="0"]
+position = Vector2(1.5, -1.5)
+scale = Vector2(8.15, 4.85)
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = ExtResource("2_f8ucb")
+animation = &"alive"
+
+[node name="HurtBox" parent="." index="2"]
+position = Vector2(2, 6)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_t3ocf")
