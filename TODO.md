@@ -166,21 +166,21 @@
 - [ ] SLB dans le fond
 - [ ] Ajouter une animation pour signifier la casse de l'hameçon à la remontée
 - [ ] Afficher un biome aléatoire dans ceux visités pour le fond du menu
-- [ ] Ajouter un moyen de trier/filtrer le compendium
-- [ ] Ajouter un moyen d'exporter/importer une sauvegarde
 - [ ] Utiliser une vraie ligne pour la ligne de pêche.
 - [ ] Ajouter un filtre audio pour chaque biome
-- [ ] Ajuster les taux d'apparition des poubelles en fonction de la largeur de l'écran
 - [ ] Optimiser la création de nouveaux poissons
 - [ ] Ajouter plus de composition
 - [ ] Parallaxe
-- [ ] Ombre et shaders sur les biomes
-- [ ] Ajouter de la physique aux poissons pêchés
 - [ ] Ajouter de la physique aux serpents de mer et méduses en cas de mort/pêche
 - [ ] Ajouter du balancement sur les pics des oursins
 - [ ] Faire apparaître les oursins en clusters
 - [ ] Faire en sorte que le poisson flèche mette tous les autres poissons dans son sens
 - [ ] Passer au gestionnaire de scène, de sauvegarde etc... Standards de wafflestock
+- [ ] Ajouter de la physique aux poissons pêchés
+- [ ] Ombre et shaders sur les biomes
+- [ ] Ajuster les taux d'apparition des poubelles en fonction de la largeur de l'écran
+- [ ] Ajouter un moyen d'exporter/importer une sauvegarde
+- [ ] Ajouter un moyen de trier/filtrer le compendium
 
 # Corrections
 
@@ -216,6 +216,7 @@
 - [x] Corriger les oursins qui s'auto-pêchent et la capture cirulaire
 - [x] Suivre le temps d'une partie à travers la sauvegarde rapide
 - [x] Faire une transition douce entre les biomes
+- [x] Sauvegarder les statistiques lorsqu'une partie en cours est écrasée
 - [ ] [**Plus de bulles pour l'instant**]Corriger les bulles des requins qui disparaissent trop tôt
 - [ ] Passer à des listes de noms plutôt que des énumérations
 - [ ] Corriger les poissons qui restent sur la ligne après une remontée
@@ -226,4 +227,3 @@
 - [ ] Mettre un point de deboggage sur `GetCaughtBy()` semble s'activer à chaque frame pour la ligne, mais pas les espadons
 - [ ] Corriger les espadons qui chassent un autre espadon mais qui le volent sans s'en rendre compte
 - [ ] Enlever les poissons de rivière des biomes salés (guppy, perche et rivière)
-- [ ] Sauvegarder les statistiques lorsqu'une partie en cours est écrasée

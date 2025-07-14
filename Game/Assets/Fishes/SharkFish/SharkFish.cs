@@ -95,25 +95,47 @@ public partial class SharkFish : Fish, IFisher
         }
     }
 
-    private void FrightenFishes()
+    private void FrightenFishes(int i = 0, int limit = -1)
     {
-        for (int i = 0; i < GD.RandRange(8,12); i++)
+        if (limit < 0) limit = GD.RandRange(8, 12);
+        if (i >= limit) return;
+        PackedScene FishScene = GD.Load<PackedScene>(Biome.GetRandomPathFrom(GameManager.Biome.Fishes));
+        Fish fish = FishScene.Instantiate<Fish>();
+
+        if (FishListContains(CantFlee, fish.GetType()))
         {
-            PackedScene FishScene = GD.Load<PackedScene>(Biome.GetRandomPathFrom(GameManager.Biome.Fishes));
-            Fish fish = FishScene.Instantiate<Fish>();
-            if (FishListContains(CantFlee, fish.GetType()))
-            {
-                i--;
-                continue;
-            }
-            fish.Position = Position;
-            fish.Flip = Flip;
-            fish.ActualSpeed = fish.MaxSpeed * 1.5f;
-
-            fish.TravelAxis = TravelAxis.Rotated((float)GD.RandRange(-.3, .3));
-
-            // Spawn the fish by adding it to the main scene.
-            GetParent().AddChild(fish);
+            // If fish is invalid, we retry
+            Callable.From<int, int>(FrightenFishes).CallDeferred(i, limit);
+            return;
         }
+        // Otherwise we spawn it
+        fish.Position = Position;
+        fish.Flip = Flip;
+        fish.ActualSpeed = fish.MaxSpeed * 1.5f;
+
+        fish.TravelAxis = TravelAxis.Rotated((float)GD.RandRange(-.3, .3));
+
+        // Spawn the fish by adding it to the main scene.
+        GetParent().AddChild(fish);
+        Callable.From<int, int>(FrightenFishes).CallDeferred(++i, limit);
+
+        //for (int i = 0; i < GD.RandRange(8,12); i++)
+        //{
+        //    PackedScene FishScene = GD.Load<PackedScene>(Biome.GetRandomPathFrom(GameManager.Biome.Fishes));
+        //    Fish fish = FishScene.Instantiate<Fish>();
+        //    if (FishListContains(CantFlee, fish.GetType()))
+        //    {
+        //        i--;
+        //        continue;
+        //    }
+        //    fish.Position = Position;
+        //    fish.Flip = Flip;
+        //    fish.ActualSpeed = fish.MaxSpeed * 1.5f;
+
+        //    fish.TravelAxis = TravelAxis.Rotated((float)GD.RandRange(-.3, .3));
+
+        //    // Spawn the fish by adding it to the main scene.
+        //    GetParent().AddChild(fish);
+        //}
     }
 }

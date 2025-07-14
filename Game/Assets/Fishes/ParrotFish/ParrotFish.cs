@@ -17,7 +17,7 @@ public partial class ParrotFish : Fish
         base._Ready();
         if (IsInDisplay) return;
         Fish[] targets = GetTree().GetNodesInGroup("Fishes").OfType<Fish>()
-            .Where(target =>           
+            .Where(target =>
                 FishListContains(FoodTypes, target.GetType()) && target.IsActionable
             ).ToArray();
 
@@ -42,7 +42,7 @@ public partial class ParrotFish : Fish
 
     private void OnFoodSecured(Node2D body)
     {
-        if (!IsActionable && !FishListContains(FoodTypes, body.GetType())) return;
+        if (!IsActionable || !FishListContains(FoodTypes, body.GetType())) return;
         Velocity = Vector2.Zero;
         Sprite.Animation = "eating";
 
