@@ -1,4 +1,5 @@
 using Godot;
+using Godot.Collections;
 using WaffleStock;
 using System;
 using System.Collections.Generic;
@@ -16,11 +17,16 @@ public partial class GameManager : Node
     public delegate void LifeUpEventHandler();
 
     [Export]
-    private Biome _startingBiome;
+    private Array<Biome> _startingBiomes;
     [Export]
     private Biome _testBiome;
 
-    public static Biome StartingBiome { get { return _instance._startingBiome; } }
+    public static Biome StartingBiome {
+        get 
+        {
+            return _instance._startingBiomes.PickRandom();
+        }
+    }
     public static Biome TestBiome { get { return _instance._testBiome; } }
 
     private static string _target = "Fish";

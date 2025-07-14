@@ -82,6 +82,7 @@ bbcode_enabled = true
 text = "[center][font_size=200]??/07/2025[/font_size][/center]
 [font_size=100]
 [ul]
+Added new starting biomes
 Changed the fleeing fish spawning strategy
 Fixed swordfish behaviour and introduced new bugs
 Fixed parrot fish compendium display

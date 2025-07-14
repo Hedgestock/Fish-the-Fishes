@@ -228,3 +228,4 @@
 - [ ] Enlever les poissons de rivière des biomes salés (guppy, perche et rivière)
 - [ ] Corriger deux oursins sur l'hammeçon qui s'échangeraient un poisson à chaque frame
 - [ ] Corriger les espadons qui font une boucle infinie avec l'oursin
+- [ ] Mettre à jour le fichier avec les informations sur les poissons

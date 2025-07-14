@@ -51,7 +51,7 @@ namespace WaffleStock
         {
             Can,
             Shoe,
-            Tire
+            Tire,
         }
 
         public static string BiomesFolder = "res://Game/Assets/Biomes/";
@@ -64,7 +64,8 @@ namespace WaffleStock
             Abyss,
             CoralReef,
             GreatBlue,
-            OceanCurrent
+            OceanCurrent,
+            Lake,
         }
     }
 }
