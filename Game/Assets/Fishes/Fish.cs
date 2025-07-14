@@ -9,6 +9,9 @@ using System.Diagnostics;
 
 public partial class Fish : CharacterBody2D, IFishable, IDescriptible
 {
+    [Signal]
+    public delegate void GotFishedEventHandler(Node by);
+
     [Export]
     protected AnimatedSprite2D Sprite;
     [Export]
@@ -181,6 +184,7 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
         by.FishedThings.Add(this);
         IsCaught = true;
 
+        EmitSignal(SignalName.GotFished, by as Node);
         return this;
     }
 

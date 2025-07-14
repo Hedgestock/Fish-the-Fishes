@@ -42,6 +42,8 @@ public partial class SwordFish : Fish, IFisher
     private float LaunchedSpeed;
     private Tween RotationTween;
 
+    private Callable TargetGotFished;
+
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -104,11 +106,20 @@ public partial class SwordFish : Fish, IFisher
 
         if (fishes.Length == 0)
         {
+            GD.Print($"{this} didn't find any suitable target");
             Leave();
             return;
         }
 
         Target = (Fish)fishes[(int)(GD.Randi() % fishes.Length)];
+
+        TargetGotFished = Callable.From((Node by) =>
+        {
+            if (!this.IsAncestorOf(by)) return;
+            FishedTarget();
+        });
+
+        Target.Connect(Fish.SignalName.GotFished,TargetGotFished);
 
         Velocity = Vector2.Zero;
 
@@ -122,7 +133,7 @@ public partial class SwordFish : Fish, IFisher
     {
         if (!IsActionable) return;
 
-        if (!IsInstanceValid(Target) || FishedThings.Contains(Target))
+        if (!IsInstanceValid(Target) || ((IFisher)this).FlattenFishedThings(FishedThings).Contains(Target))
         {
             State = Action.Swimming;
             SeekTarget();
@@ -153,19 +164,22 @@ public partial class SwordFish : Fish, IFisher
 
     private void OnFishSkewered(Node2D body)
     {
-        if (!(body is Fish) || body.IsAncestorOf(this) || FishedThings.Contains(body as Fish) || FishListContains(ImmuneToSkew, body.GetType()) || body == this || !IsActionable) return;
+        if (!(body is Fish) || body.IsAncestorOf(this) || ((IFisher)this).FlattenFishedThings(FishedThings).Contains(body as Fish) || FishListContains(ImmuneToSkew, body.GetType()) || body == this || !IsActionable) return;
 
         Fish Skew = body as Fish;
 
         Skew = Skew.GetCaughtBy(this) as Fish;
         Skew.Kill();
 
+        if (((IFisher)this).FlattenFishedThings(FishedThings).Contains(Skew)) FishedTarget();
+    }
 
-        if (FishedThings.Contains(Target))
-        {
-            Velocity = Vector2.Zero;
-            SeekTarget();
-        }
+    private void FishedTarget()
+    {
+        Velocity = Vector2.Zero;
+        Target.Disconnect(Fish.SignalName.GotFished, TargetGotFished);
+        State = Action.Swimming;
+        SeekTarget();
     }
 
     #region helpers
@@ -173,7 +187,7 @@ public partial class SwordFish : Fish, IFisher
     {
         return target.GlobalPosition - GlobalPosition;
     }
-
+    
     private float TrackTarget(bool atLaunch = false)
     {
 

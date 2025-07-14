@@ -217,13 +217,14 @@
 - [x] Suivre le temps d'une partie à travers la sauvegarde rapide
 - [x] Faire une transition douce entre les biomes
 - [x] Sauvegarder les statistiques lorsqu'une partie en cours est écrasée
+- [x] Corriger les espadons qui chassent un autre espadon mais qui le volent sans s'en rendre compte
 - [ ] [**Plus de bulles pour l'instant**]Corriger les bulles des requins qui disparaissent trop tôt
 - [ ] Passer à des listes de noms plutôt que des énumérations
 - [ ] Corriger les poissons qui restent sur la ligne après une remontée
 - [ ] Réparer le mode Go Green (Toucher un déchêt ne devrait pas agir comme en classique)
 - [ ] Corriger les requins qui mangent des poissons déjà pêchés
 - [ ] Essayer de faire des poules pour les bulles
-- [ ] Corriger deux oursins sur l'hammeçon qui s'échangeraient un poisson à chaque frame
 - [ ] Mettre un point de deboggage sur `GetCaughtBy()` semble s'activer à chaque frame pour la ligne, mais pas les espadons
-- [ ] Corriger les espadons qui chassent un autre espadon mais qui le volent sans s'en rendre compte
 - [ ] Enlever les poissons de rivière des biomes salés (guppy, perche et rivière)
+- [ ] Corriger deux oursins sur l'hammeçon qui s'échangeraient un poisson à chaque frame
+- [ ] Corriger les espadons qui font une boucle infinie avec l'oursin
