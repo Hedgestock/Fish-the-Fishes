@@ -1,26 +1,26 @@
 [gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://cchugj0lsp7tl"]
 
-[ext_resource type="Texture2D" uid="uid://byg1f5aypgl0d" path="res://Game/Assets/Fishes/ParrotFish/Animation/clown_alive_1.png" id="1_oywlx"]
-[ext_resource type="Texture2D" uid="uid://bfrbf0fdqgrov" path="res://Game/Assets/Fishes/ParrotFish/Animation/parrot_alive_2.png" id="2_12gfo"]
-[ext_resource type="Texture2D" uid="uid://yavvtg76tl27" path="res://Game/Assets/Fishes/ParrotFish/Animation/parrot_alive_3.png" id="3_l3db8"]
-[ext_resource type="Texture2D" uid="uid://dlcw0mga24l2a" path="res://Game/Assets/Fishes/ParrotFish/Animation/parrot_dead.png" id="4_qraiy"]
-[ext_resource type="Texture2D" uid="uid://0lno0ja2momj" path="res://Game/Assets/Fishes/ParrotFish/Animation/parrot_eat_1.png" id="5_l3db8"]
-[ext_resource type="Texture2D" uid="uid://cfrw7hj5wrgou" path="res://Game/Assets/Fishes/ParrotFish/Animation/parrot_eat_2.png" id="6_qraiy"]
+[ext_resource type="Texture2D" uid="uid://pk7jb778pe5r" path="res://Game/Assets/Fishes/ParrotFish/Animation/parrot_alive_1.webp" id="1_l3db8"]
+[ext_resource type="Texture2D" uid="uid://1dqo36clg6be" path="res://Game/Assets/Fishes/ParrotFish/Animation/parrot_alive_2.webp" id="2_qraiy"]
+[ext_resource type="Texture2D" uid="uid://dkegfbxfnu3r7" path="res://Game/Assets/Fishes/ParrotFish/Animation/parrot_alive_3.webp" id="3_mp2h2"]
+[ext_resource type="Texture2D" uid="uid://bvigi3w1qovne" path="res://Game/Assets/Fishes/ParrotFish/Animation/parrot_dead.webp" id="4_n815l"]
+[ext_resource type="Texture2D" uid="uid://cnw4lco3uhr6r" path="res://Game/Assets/Fishes/ParrotFish/Animation/parrot_eating_1.webp" id="5_h8ook"]
+[ext_resource type="Texture2D" uid="uid://ckgwnjyvdrb60" path="res://Game/Assets/Fishes/ParrotFish/Animation/parrot_eating_2.webp" id="6_6c4x6"]
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_oywlx")
+"texture": ExtResource("1_l3db8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_12gfo")
+"texture": ExtResource("2_qraiy")
 }, {
 "duration": 1.0,
-"texture": ExtResource("1_oywlx")
+"texture": ExtResource("1_l3db8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_l3db8")
+"texture": ExtResource("3_mp2h2")
 }],
 "loop": true,
 "name": &"alive",
@@ -28,7 +28,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_qraiy")
+"texture": ExtResource("4_n815l")
 }],
 "loop": true,
 "name": &"dead",
@@ -36,10 +36,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_l3db8")
+"texture": ExtResource("5_h8ook")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_qraiy")
+"texture": ExtResource("6_6c4x6")
 }],
 "loop": true,
 "name": &"eating",

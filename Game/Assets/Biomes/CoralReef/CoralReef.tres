@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Biome" load_steps=24 format=3 uid="uid://cm3ec1bh0wjj6"]
 
-[ext_resource type="Texture2D" uid="uid://dqua3c734qylv" path="res://Game/Assets/Biomes/CoralReef/CoralReefBackground.png" id="1_bgh5j"]
+[ext_resource type="Texture2D" uid="uid://dy3gprox6yyy1" path="res://Game/Assets/Biomes/CoralReef/Coral_reef.webp" id="1_1ox07"]
 [ext_resource type="Script" uid="uid://bprtko2ut7gy0" path="res://Game/Utilities/Weighted/WeightedFish.cs" id="2_17j4d"]
 [ext_resource type="Script" uid="uid://bysvm4vph3aiq" path="res://Game/Utilities/Weighted/WeightedBiome.cs" id="3_tt0m1"]
 [ext_resource type="AudioStream" uid="uid://dsk3fvsqdlluj" path="res://Game/Assets/Biomes/CoralReef/Sea Shaman.wav" id="4_1ox07"]
@@ -112,5 +112,5 @@ Trashes = Array[Object]([SubResource("Resource_jbhkk"), SubResource("Resource_8v
 FollowupBiomes = Array[Object]([SubResource("Resource_l62ly"), SubResource("Resource_3cux3")])
 CompendiumName = "Coral Reef"
 CompendiumDescription = "A gorgeous coral reel full of colorful life and slippery fishes."
-Background = ExtResource("1_bgh5j")
+Background = ExtResource("1_1ox07")
 Music = ExtResource("4_1ox07")
