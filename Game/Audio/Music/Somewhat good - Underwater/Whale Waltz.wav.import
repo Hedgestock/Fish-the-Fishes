@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dgdro3n78ivq8"
+path="res://.godot/imported/Whale Waltz.wav-e529a4b2354aa8c3e61ef787136e4030.sample"
+
+[deps]
+
+source_file="res://Game/Audio/Music/Somewhat good - Underwater/Whale Waltz.wav"
+dest_files=["res://.godot/imported/Whale Waltz.wav-e529a4b2354aa8c3e61ef787136e4030.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

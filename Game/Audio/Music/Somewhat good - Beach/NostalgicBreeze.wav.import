@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b0g0qsodduhd0"
+path="res://.godot/imported/NostalgicBreeze.wav-fe34fd1fa2fe6dd3e9e298acad711be8.sample"
+
+[deps]
+
+source_file="res://Game/Audio/Music/Somewhat good - Beach/NostalgicBreeze.wav"
+dest_files=["res://.godot/imported/NostalgicBreeze.wav-fe34fd1fa2fe6dd3e9e298acad711be8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

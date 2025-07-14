@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://2hdbni0jr2uv" path="res://Game/Assets/Biomes/OceanCurrent/OceanCurrentBackground.png" id="1_sxxsc"]
 [ext_resource type="Script" uid="uid://bysvm4vph3aiq" path="res://Game/Utilities/Weighted/WeightedBiome.cs" id="2_3yslt"]
 [ext_resource type="Script" uid="uid://du5t70kmo5wl6" path="res://Game/Utilities/Weighted/WeightedTrash.cs" id="3_v3qbn"]
-[ext_resource type="AudioStream" uid="uid://cnv0utu7jrfyb" path="res://Game/Assets/Biomes/OceanCurrent/OceanHome.wav" id="4_4s6vv"]
+[ext_resource type="AudioStream" uid="uid://do3lb54qr0ll7" path="res://Game/Assets/Biomes/OceanCurrent/Sunken Rest.wav" id="4_4s6vv"]
 [ext_resource type="Script" uid="uid://62lfoitacli2" path="res://Game/Assets/Biomes/Biome.cs" id="4_k2kbw"]
 
 [sub_resource type="Resource" id="Resource_cn611"]

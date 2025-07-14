@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="Biome" load_steps=11 format=3 uid="uid://c8qpjfirhsmut"]
+[gd_resource type="Resource" script_class="Biome" load_steps=12 format=3 uid="uid://c8qpjfirhsmut"]
 
 [ext_resource type="Script" uid="uid://62lfoitacli2" path="res://Game/Assets/Biomes/Biome.cs" id="1_k6y4m"]
 [ext_resource type="Texture2D" uid="uid://dsn42wqy7ti1r" path="res://Game/Assets/Biomes/Lake/LakeBackground.png" id="1_mg20f"]
 [ext_resource type="Script" uid="uid://bprtko2ut7gy0" path="res://Game/Utilities/Weighted/WeightedFish.cs" id="2_i0oob"]
+[ext_resource type="AudioStream" uid="uid://ea2fasuvexgw" path="res://Game/Assets/Biomes/Lake/Whale Waltz.wav" id="3_i0oob"]
 [ext_resource type="Script" uid="uid://du5t70kmo5wl6" path="res://Game/Utilities/Weighted/WeightedTrash.cs" id="3_vvqtd"]
 
 [sub_resource type="Resource" id="Resource_kbw8s"]
@@ -52,4 +53,5 @@ FollowupBiomes = Array[Object]([])
 CompendiumName = "Lake"
 CompendiumDescription = ""
 Background = ExtResource("1_mg20f")
+Music = ExtResource("3_i0oob")
 metadata/_custom_type_script = "uid://62lfoitacli2"

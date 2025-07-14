@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dy3gprox6yyy1" path="res://Game/Assets/Biomes/CoralReef/Coral_reef.webp" id="1_1ox07"]
 [ext_resource type="Script" uid="uid://bprtko2ut7gy0" path="res://Game/Utilities/Weighted/WeightedFish.cs" id="2_17j4d"]
 [ext_resource type="Script" uid="uid://bysvm4vph3aiq" path="res://Game/Utilities/Weighted/WeightedBiome.cs" id="3_tt0m1"]
-[ext_resource type="AudioStream" uid="uid://dsk3fvsqdlluj" path="res://Game/Assets/Biomes/CoralReef/Sea Shaman.wav" id="4_1ox07"]
+[ext_resource type="AudioStream" uid="uid://cdse3ypiqqk6a" path="res://Game/Assets/Biomes/CoralReef/Dolphin Shores.wav" id="4_1ox07"]
 [ext_resource type="Script" uid="uid://du5t70kmo5wl6" path="res://Game/Utilities/Weighted/WeightedTrash.cs" id="4_75g0y"]
 [ext_resource type="Script" uid="uid://62lfoitacli2" path="res://Game/Assets/Biomes/Biome.cs" id="5_byup3"]
 
