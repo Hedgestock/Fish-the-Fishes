@@ -1,6 +1,6 @@
 [gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://12cqf3wxi6x7"]
 
-[ext_resource type="Texture2D" uid="uid://cq7scn1nrw882" path="res://Game/Assets/Fishes/SeaUrchin/Animation/oursin.png" id="1_jbpy7"]
+[ext_resource type="Texture2D" uid="uid://dkgi8be313b6c" path="res://Game/Assets/Fishes/SeaUrchin/Animation/oursin.webp" id="1_jbpy7"]
 
 [resource]
 animations = [{

@@ -1,12 +1,12 @@
 [gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://dfq5oyqiu8wpr"]
 
-[ext_resource type="Texture2D" uid="uid://bmgjxky08w1m6" path="res://Game/Assets/Fishes/JellyFish/Animation/Jellyfish_head.png" id="1_5ybio"]
+[ext_resource type="Texture2D" uid="uid://d4eqj4erit7ft" path="res://Game/Assets/Fishes/JellyFish/Animation/jelly_head.webp" id="1_wkhcc"]
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_5ybio")
+"texture": ExtResource("1_wkhcc")
 }],
 "loop": true,
 "name": &"alive",
@@ -14,7 +14,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_5ybio")
+"texture": ExtResource("1_wkhcc")
 }],
 "loop": true,
 "name": &"dead",

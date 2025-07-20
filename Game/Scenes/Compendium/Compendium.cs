@@ -8,33 +8,37 @@ public partial class Compendium : CanvasLayer
 {
     [Export]
     VBoxContainer Fishes;
-
     [Export]
     PackedScene FishEntry;
 
     [Export]
     VBoxContainer Trashes;
-
     [Export]
     PackedScene TrashEntry;
 
     [Export]
     VBoxContainer Biomes;
-
     [Export]
     PackedScene BiomeEntry;
 
     [Export]
     VBoxContainer Achievements;
-
     [Export]
     PackedScene AchievementEntry;
 
+    [Export]
+    OptionButton TabButton;
+    [Export]
+    TabContainer TabContainer;
+
+    [Export]
+    OptionButton FilterButton;
+
     public enum EntryType
     {
-        Biome,
         Fish,
         Trash,
+        Biome,
         Achievement
     }
 
@@ -45,6 +49,20 @@ public partial class Compendium : CanvasLayer
         PopulateTrashCompendium();
         PopulateBiomeCompendium();
         PopulateAchievementCompendium();
+
+        // TODO: Actually look at the tabs
+        foreach (EntryType entryType in Enum.GetValues<EntryType>())
+        {
+            TabButton.AddItem(entryType.ToString(), (int)entryType);
+        }
+
+        Biomes[] biomes = Enum.GetValues<Biomes>();
+        foreach (Biomes biome in biomes)
+        {
+            FilterButton.AddItem(biome.ToString(), (int)biome);
+        }
+        FilterButton.AddItem("No filter", biomes.Length);
+        FilterButton.Selected = biomes.Length;
     }
 
     private void GoToHome()
@@ -150,4 +168,38 @@ public partial class Compendium : CanvasLayer
         Achievements.AddChild(newEntry);
     }
 
+    private void ChangeTab(int tabIndex)
+    {
+        TabContainer.CurrentTab = tabIndex;
+        FilterButton.Visible = tabIndex <= (int)EntryType.Trash;
+    }
+
+    private void Filter(int biomeIndex)
+    {
+        if (biomeIndex >= Enum.GetValues<Biomes>().Length)
+        {
+            foreach (var fishEntry in Fishes.GetChildren().OfType<FishCompendiumEntry>())
+            {
+                fishEntry.Visible = true;
+            }
+            foreach (var trashEntry in Trashes.GetChildren().OfType<TrashCompendiumEntry>())
+            {
+                trashEntry.Visible = true;
+            }
+            return;
+        }
+
+        string entryKey = ((Biomes)biomeIndex).ToString();
+        Biome biome = GD.Load<Biome>($"{BiomesFolder}{entryKey}/{entryKey}.tres");
+        string[] fishes = biome.Fishes.Select(f => f.Fish.ToString()).ToArray();
+        string[] trashes = biome.Trashes.Select(f => f.Trash.ToString()).ToArray();
+        foreach (var fishEntry in Fishes.GetChildren().OfType<FishCompendiumEntry>())
+        {
+            fishEntry.Visible = fishes.Contains(fishEntry.EntryKey);
+        }
+        foreach (var trashEntry in Trashes.GetChildren().OfType<TrashCompendiumEntry>())
+        {
+            trashEntry.Visible = trashes.Contains(trashEntry.EntryKey);
+        }
+    }
 }

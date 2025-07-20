@@ -7,7 +7,6 @@ public partial class Notification : PanelContainer
     [Export]
     public Label AchievementName;
 
-
     public void FadeAway()
     {
         Tween tweenOpacity = CreateTween();

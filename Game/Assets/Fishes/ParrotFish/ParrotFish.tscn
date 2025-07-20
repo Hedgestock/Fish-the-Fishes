@@ -18,6 +18,7 @@ CompendiumName = "Parrot Fish"
 CompendiumDescription = "This colorful fish feeds on corrals and thus is immune to urchins spikes."
 MinSpeed = 250.0
 MaxSpeed = 300.0
+AverageSize = 55.0
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0"]
 position = Vector2(-1.99999, -1.5)

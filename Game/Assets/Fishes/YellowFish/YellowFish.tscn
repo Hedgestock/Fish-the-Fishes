@@ -22,7 +22,6 @@ scale = Vector2(4.65, 3.05)
 [node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = ExtResource("2_e3t31")
 animation = &"alive"
-frame_progress = 0.702968
 
 [node name="HurtBox" parent="." index="2"]
 position = Vector2(3, 1)

@@ -5,8 +5,6 @@
 
 [node name="Notification" type="PanelContainer"]
 top_level = true
-z_index = 100
-z_as_relative = false
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0

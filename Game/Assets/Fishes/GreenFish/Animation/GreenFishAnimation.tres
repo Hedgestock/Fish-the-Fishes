@@ -1,24 +1,24 @@
 [gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://dxpxq818n4txw"]
 
-[ext_resource type="Texture2D" uid="uid://da6lvk01aj30y" path="res://Game/Assets/Fishes/GreenFish/Animation/green_alive_1.png" id="1_rmayw"]
-[ext_resource type="Texture2D" uid="uid://nxy12vspgvhr" path="res://Game/Assets/Fishes/GreenFish/Animation/green_dead.png" id="2_6wwfr"]
-[ext_resource type="Texture2D" uid="uid://dtburiyjhljh5" path="res://Game/Assets/Fishes/GreenFish/Animation/green_alive_2.png" id="2_o7ncu"]
-[ext_resource type="Texture2D" uid="uid://b8jocwm6m0nkb" path="res://Game/Assets/Fishes/GreenFish/Animation/grren_alive_3.png" id="3_4pvqr"]
+[ext_resource type="Texture2D" uid="uid://eqjmbqfxpf" path="res://Game/Assets/Fishes/GreenFish/Animation/green_alive_0001.webp" id="4_068st"]
+[ext_resource type="Texture2D" uid="uid://ddbyb152i636w" path="res://Game/Assets/Fishes/GreenFish/Animation/green_alive_0002.webp" id="5_jehjm"]
+[ext_resource type="Texture2D" uid="uid://ch6hmlksbcdea" path="res://Game/Assets/Fishes/GreenFish/Animation/green_alive_0003.webp" id="6_6oo2i"]
+[ext_resource type="Texture2D" uid="uid://b1eqmfqus7go" path="res://Game/Assets/Fishes/GreenFish/Animation/green_dead.webp" id="8_jqgf7"]
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_rmayw")
+"texture": ExtResource("4_068st")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_o7ncu")
+"texture": ExtResource("5_jehjm")
 }, {
 "duration": 1.0,
-"texture": ExtResource("1_rmayw")
+"texture": ExtResource("4_068st")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_4pvqr")
+"texture": ExtResource("6_6oo2i")
 }],
 "loop": true,
 "name": &"alive",
@@ -26,7 +26,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_6wwfr")
+"texture": ExtResource("8_jqgf7")
 }],
 "loop": true,
 "name": &"dead",

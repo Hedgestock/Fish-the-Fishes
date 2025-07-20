@@ -4,7 +4,7 @@ using WaffleStock;
 using System.Collections.Generic;
 using System.Linq;
 
-public partial class AchievementsManager : Node
+public partial class AchievementsManager : CanvasLayer
 {
     private PackedScene AchievementsNotificationScene = GD.Load<PackedScene>("uid://b4hl7jdtefkae");
 
@@ -26,6 +26,7 @@ public partial class AchievementsManager : Node
     public override void _Ready()
     {
         base._Ready();
+        Layer = 10;
         foreach (string path in GetAchievements(AchievementsBasePath))
         {
             AchievementsList.Add(GD.Load<Achievement>(path));
@@ -117,7 +118,7 @@ public partial class AchievementsManager : Node
 
                 // We have to display something if the queue is not yet active
                 if (_instance._achievementsQueue.Count == 0)
-                    _instance.GetTree().Root.AddChild(AchievementNotification);
+                    _instance.AddChild(AchievementNotification);
                 _instance._achievementsQueue.Enqueue(AchievementNotification);
             }
         }

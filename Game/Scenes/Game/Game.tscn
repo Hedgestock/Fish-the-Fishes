@@ -1,9 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://0sb3i5bm7j4p"]
+[gd_scene load_steps=15 format=3 uid="uid://0sb3i5bm7j4p"]
 
 [ext_resource type="Script" uid="uid://dihoq85y44x4p" path="res://Game/Scenes/Game/Game.cs" id="1_sbmws"]
-[ext_resource type="Texture2D" uid="uid://horqethlbwnb" path="res://Game/Assets/Biomes/Abyss/AbyssBackground.png" id="2_aoxvl"]
+[ext_resource type="Texture2D" uid="uid://dp080lwp13kug" path="res://Game/Assets/Biomes/Beach/beach.webp" id="2_sbmws"]
 [ext_resource type="PackedScene" uid="uid://yi82g384vgwb" path="res://Game/Scenes/Game/HUD.tscn" id="3_0ebou"]
-[ext_resource type="Texture2D" uid="uid://dsn42wqy7ti1r" path="res://Game/Assets/Biomes/Lake/LakeBackground.png" id="3_aoxvl"]
 [ext_resource type="PackedScene" uid="uid://bnkmwtljf2o3p" path="res://Game/Assets/Player/FishingLine.tscn" id="3_kichm"]
 [ext_resource type="PackedScene" uid="uid://ceyknq2cha026" path="res://Game/UI/PauseButton/PauseButton.tscn" id="3_p6c18"]
 [ext_resource type="Shader" uid="uid://dexkwxs8kvqhf" path="res://Game/Scenes/Game/water.gdshader" id="6_p6c18"]
@@ -47,7 +46,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
-texture = ExtResource("2_aoxvl")
+texture = ExtResource("2_sbmws")
 stretch_mode = 6
 
 [node name="BackgroundTransition" type="TextureRect" parent="Background"]
@@ -60,7 +59,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
-texture = ExtResource("3_aoxvl")
+texture = ExtResource("2_sbmws")
 stretch_mode = 6
 
 [node name="HUD" parent="." instance=ExtResource("3_0ebou")]

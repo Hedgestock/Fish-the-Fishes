@@ -1,14 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://cghnipcqvmc3k"]
+[gd_scene load_steps=6 format=3 uid="uid://cghnipcqvmc3k"]
 
 [ext_resource type="PackedScene" uid="uid://caai7o1q2a1n0" path="res://Game/Assets/Player/Equipment/Hook/StandardHook/StandardHook.tscn" id="1_b3v4a"]
-[ext_resource type="Texture2D" uid="uid://b35566bewxhw3" path="res://Game/Assets/Player/Equipment/Hook/ControlHook/ControlHook_broken.png" id="1_pc67o"]
-[ext_resource type="Texture2D" uid="uid://wl1uy5nm1a8g" path="res://Game/Assets/Player/Equipment/Hook/ControlHook/ControlHook_default.png" id="2_rhcf7"]
+[ext_resource type="Texture2D" uid="uid://ce7n05ya525rt" path="res://Game/Assets/Player/Equipment/Hook/ControlHook/control.webp" id="2_lr7er"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_37ege"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_pc67o")
+"texture": ExtResource("2_lr7er")
 }],
 "loop": true,
 "name": &"broken",
@@ -16,7 +15,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_rhcf7")
+"texture": ExtResource("2_lr7er")
 }],
 "loop": true,
 "name": &"default",

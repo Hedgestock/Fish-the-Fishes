@@ -16,7 +16,7 @@ namespace WaffleStock
             }
         }
 
-        public static void Save(string path)
+        public static bool Save(string path)
         {
             ConfigFile config = new();
 
@@ -28,7 +28,15 @@ namespace WaffleStock
                 config.SetValue("Audio", AudioServer.GetBusName(bus) + "Volume", AudioServer.GetBusVolumeLinear(bus));
             }
 
-            config.Save(path);
+            Error err = config.Save(path);
+
+            if (err != Error.Ok)
+            {
+                GD.PrintErr(err);
+                return false;
+            }
+
+            return true;
         }
 
         public static bool Load(string path)
@@ -37,7 +45,11 @@ namespace WaffleStock
 
             Error err = config.Load(path);
 
-            if (err != Error.Ok) return false;
+            if (err != Error.Ok)
+            {
+                GD.PrintErr(err);
+                return false;
+            }
 
             CompetitiveMode = (bool)config.GetValue(null, nameof(CompetitiveMode), false);
 

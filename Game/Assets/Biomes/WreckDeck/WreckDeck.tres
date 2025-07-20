@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Biome" load_steps=21 format=3 uid="uid://dpe15eoelonv6"]
 
-[ext_resource type="Texture2D" uid="uid://btpi1awv4ytjy" path="res://Game/Assets/Biomes/WreckDeck/WreckDeckBackground.png" id="1_6dssh"]
+[ext_resource type="Texture2D" uid="uid://boxn1h68kvxv0" path="res://Game/Assets/Biomes/WreckDeck/wreck_deck.webp" id="1_i2d2j"]
 [ext_resource type="Script" uid="uid://bprtko2ut7gy0" path="res://Game/Utilities/Weighted/WeightedFish.cs" id="1_oj2i6"]
 [ext_resource type="Script" uid="uid://bysvm4vph3aiq" path="res://Game/Utilities/Weighted/WeightedBiome.cs" id="2_d15sk"]
 [ext_resource type="Script" uid="uid://du5t70kmo5wl6" path="res://Game/Utilities/Weighted/WeightedTrash.cs" id="3_pda3m"]
@@ -95,5 +95,5 @@ Trashes = Array[Object]([SubResource("Resource_f5yep"), SubResource("Resource_pm
 FollowupBiomes = Array[Object]([SubResource("Resource_vtufd")])
 CompendiumName = "Wreck Deck"
 CompendiumDescription = "The deck of a sunken ship, now overgrown by marine life."
-Background = ExtResource("1_6dssh")
+Background = ExtResource("1_i2d2j")
 Music = ExtResource("4_i2d2j")

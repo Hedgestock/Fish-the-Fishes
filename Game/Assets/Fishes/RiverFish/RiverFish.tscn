@@ -11,6 +11,7 @@ height = 144.0
 [node name="RiverFish" instance=ExtResource("1_h8xj4")]
 script = ExtResource("2_t3ocf")
 CompendiumName = "River Fish"
+AverageSize = 38.0
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0"]
 position = Vector2(1.5, -1.5)
@@ -19,7 +20,6 @@ scale = Vector2(8.15, 4.85)
 [node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = ExtResource("2_f8ucb")
 animation = &"alive"
-frame_progress = 0.916109
 
 [node name="HurtBox" parent="." index="2"]
 position = Vector2(2, 6)

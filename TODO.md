@@ -147,6 +147,7 @@
 - [x] Équilibrer les taux d'apparition (Courant marin est très dur)
 - [x] Retirer le chronomètre de sécurité pour le mode ciblé
 - [x] Ajouter la sauvegarde en pleine partie
+- [x] Ajouter un moyen de trier/filtrer le compendium
 - [ ] Support de différentes langues
 	- [x] Anglais
 	- [ ] Français
@@ -180,7 +181,7 @@
 - [ ] Ombre et shaders sur les biomes
 - [ ] Ajuster les taux d'apparition des poubelles en fonction de la largeur de l'écran
 - [ ] Ajouter un moyen d'exporter/importer une sauvegarde
-- [ ] Ajouter un moyen de trier/filtrer le compendium
+- [ ] Ajouter le chargement dans un fil pour le compendium
 
 # Corrections
 
@@ -201,7 +202,7 @@
 - [x] Corriger le problème du reparentage d'espadon
 - [x] Corriger l'espadon qui chasse même mort
 - [x] Empêcher les requins de se faire tuer par les poissons rouges
-- [x] [**Actuellement impossible**] Corriger les requins en attente de lancement
+- [x] Corriger les requins en attente de lancement
 - [x] Corriger l'affichage des credits
 - [x] Corriger le chargement dynamique de ressource (haut faits)
 - [x] Les paramètres audios doivent lire les bus et le gestionnaire audio doit mettre les bus à jour en fonction du fichier de sauvegarde
@@ -218,6 +219,9 @@
 - [x] Faire une transition douce entre les biomes
 - [x] Sauvegarder les statistiques lorsqu'une partie en cours est écrasée
 - [x] Corriger les espadons qui chassent un autre espadon mais qui le volent sans s'en rendre compte
+- [x] Enlever les poissons de rivière des biomes salés (guppy, perche et rivière)
+- [x] Corriger l'affichage des notifications de hauts faits
+- [x] Régler la taille des nouveaux poissons
 - [ ] [**Plus de bulles pour l'instant**]Corriger les bulles des requins qui disparaissent trop tôt
 - [ ] Passer à des listes de noms plutôt que des énumérations
 - [ ] Corriger les poissons qui restent sur la ligne après une remontée
@@ -225,7 +229,7 @@
 - [ ] Corriger les requins qui mangent des poissons déjà pêchés
 - [ ] Essayer de faire des poules pour les bulles
 - [ ] Mettre un point de deboggage sur `GetCaughtBy()` semble s'activer à chaque frame pour la ligne, mais pas les espadons
-- [ ] Enlever les poissons de rivière des biomes salés (guppy, perche et rivière)
 - [ ] Corriger deux oursins sur l'hammeçon qui s'échangeraient un poisson à chaque frame
 - [ ] Corriger les espadons qui font une boucle infinie avec l'oursin
 - [ ] Mettre à jour le fichier avec les informations sur les poissons
+- [ ] Régler l'erreur en cas d'absence de fichier de configuration

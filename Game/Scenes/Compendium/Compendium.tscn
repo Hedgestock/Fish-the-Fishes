@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b0nv1b3x0suu5"]
+[gd_scene load_steps=9 format=3 uid="uid://b0nv1b3x0suu5"]
 
 [ext_resource type="Script" uid="uid://b1fbk8flphipc" path="res://Game/Scenes/Compendium/Compendium.cs" id="1_lwdf7"]
 [ext_resource type="PackedScene" uid="uid://blsj53n3v0fo7" path="res://Game/Scenes/Compendium/UI/FishCompendiumEntry.tscn" id="2_8qvf3"]
@@ -8,22 +8,20 @@
 [ext_resource type="PackedScene" uid="uid://d4ecb71kma03k" path="res://Game/Scenes/Compendium/UI/AchievementCompendiumEntry.tscn" id="5_1s78k"]
 [ext_resource type="PackedScene" uid="uid://bubgi8mpwbbne" path="res://Game/UI/DynamicBackground/DynamicBackground.tscn" id="6_jltip"]
 [ext_resource type="PackedScene" uid="uid://dfxhrdmj7km0i" path="res://Game/UI/BackButton/BackButton.tscn" id="7_unkw3"]
-[ext_resource type="PackedScene" uid="uid://do433bt3fxs1k" path="res://Game/Scenes/BiomeDebug/BiomeGraph.tscn" id="11_fh7wn"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_owad1"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mv8gi"]
-
-[node name="Compendium" type="CanvasLayer" node_paths=PackedStringArray("Fishes", "Trashes", "Biomes", "Achievements")]
+[node name="Compendium" type="CanvasLayer" node_paths=PackedStringArray("Fishes", "Trashes", "Biomes", "Achievements", "TabButton", "TabContainer", "FilterButton")]
 script = ExtResource("1_lwdf7")
-Fishes = NodePath("VBoxContainer/MarginContainer/TabContainer/Fishes/MarginContainer/FishCompendiumEntriesContainer")
+Fishes = NodePath("VBoxContainer/MarginContainer/VBoxContainer/TabContainer/Fishes/MarginContainer/FishCompendiumEntriesContainer")
 FishEntry = ExtResource("2_8qvf3")
-Trashes = NodePath("VBoxContainer/MarginContainer/TabContainer/Trashes/MarginContainer/TrashCompendiumEntriesContainer")
+Trashes = NodePath("VBoxContainer/MarginContainer/VBoxContainer/TabContainer/Trashes/MarginContainer/TrashCompendiumEntriesContainer")
 TrashEntry = ExtResource("3_vf8dp")
-Biomes = NodePath("VBoxContainer/MarginContainer/TabContainer/Biomes/MarginContainer/BiomesCompendiumEntriesContainer")
+Biomes = NodePath("VBoxContainer/MarginContainer/VBoxContainer/TabContainer/Biomes/MarginContainer/BiomesCompendiumEntriesContainer")
 BiomeEntry = ExtResource("4_c2qa6")
-Achievements = NodePath("VBoxContainer/MarginContainer/TabContainer/Achievements/MarginContainer/AchievementsCompendiumEntriesContainer")
+Achievements = NodePath("VBoxContainer/MarginContainer/VBoxContainer/TabContainer/Achievements/MarginContainer/AchievementsCompendiumEntriesContainer")
 AchievementEntry = ExtResource("5_1s78k")
+TabButton = NodePath("VBoxContainer/MarginContainer/VBoxContainer/HFlowContainer/TabButton")
+TabContainer = NodePath("VBoxContainer/MarginContainer/VBoxContainer/TabContainer")
+FilterButton = NodePath("VBoxContainer/MarginContainer/VBoxContainer/HFlowContainer/FilterButton")
 
 [node name="Background" parent="." instance=ExtResource("6_jltip")]
 offset_top = -360.0
@@ -60,75 +58,82 @@ text = "Compendium"
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="TabContainer" type="TabContainer" parent="VBoxContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer"]
 layout_mode = 2
-tab_alignment = 1
-current_tab = 0
 
-[node name="Fishes" type="ScrollContainer" parent="VBoxContainer/MarginContainer/TabContainer"]
+[node name="HFlowContainer" type="HFlowContainer" parent="VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TabButton" type="OptionButton" parent="VBoxContainer/MarginContainer/VBoxContainer/HFlowContainer"]
+layout_mode = 2
+
+[node name="FilterButton" type="OptionButton" parent="VBoxContainer/MarginContainer/VBoxContainer/HFlowContainer"]
+layout_mode = 2
+
+[node name="TabContainer" type="TabContainer" parent="VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+current_tab = 0
+tabs_visible = false
+
+[node name="Fishes" type="ScrollContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer"]
 layout_mode = 2
 metadata/_tab_index = 0
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/TabContainer/Fishes"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/Fishes"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="FishCompendiumEntriesContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/TabContainer/Fishes/MarginContainer"]
+[node name="FishCompendiumEntriesContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/Fishes/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Trashes" type="ScrollContainer" parent="VBoxContainer/MarginContainer/TabContainer"]
+[node name="Trashes" type="ScrollContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer"]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/TabContainer/Trashes"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/Trashes"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="TrashCompendiumEntriesContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/TabContainer/Trashes/MarginContainer"]
+[node name="TrashCompendiumEntriesContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/Trashes/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Biomes" type="ScrollContainer" parent="VBoxContainer/MarginContainer/TabContainer"]
+[node name="Biomes" type="ScrollContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer"]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/TabContainer/Biomes"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/Biomes"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="BiomesCompendiumEntriesContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/TabContainer/Biomes/MarginContainer"]
+[node name="BiomesCompendiumEntriesContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/Biomes/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Achievements" type="ScrollContainer" parent="VBoxContainer/MarginContainer/TabContainer"]
+[node name="Achievements" type="ScrollContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer"]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/TabContainer/Achievements"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/Achievements"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="AchievementsCompendiumEntriesContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/TabContainer/Achievements/MarginContainer"]
+[node name="AchievementsCompendiumEntriesContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/Achievements/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-
-[node name="Biomes Graph" parent="VBoxContainer/MarginContainer/TabContainer" instance=ExtResource("11_fh7wn")]
-visible = false
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_styles/menu_panel = SubResource("StyleBoxEmpty_owad1")
-theme_override_styles/panel = SubResource("StyleBoxEmpty_mv8gi")
-metadata/_tab_index = 4
 
 [connection signal="pressed" from="VBoxContainer/Control/MarginContainer/BackButton" to="VBoxContainer/Control/MarginContainer/BackButton" method="GoToHome"]
+[connection signal="item_selected" from="VBoxContainer/MarginContainer/VBoxContainer/HFlowContainer/TabButton" to="." method="ChangeTab"]
+[connection signal="item_selected" from="VBoxContainer/MarginContainer/VBoxContainer/HFlowContainer/FilterButton" to="." method="Filter"]

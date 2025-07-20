@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Biome" load_steps=17 format=3 uid="uid://cub1hi1q8poi"]
 
-[ext_resource type="Texture2D" uid="uid://horqethlbwnb" path="res://Game/Assets/Biomes/Abyss/AbyssBackground.png" id="1_6jhds"]
+[ext_resource type="Texture2D" uid="uid://suaqfagdq73b" path="res://Game/Assets/Biomes/Abyss/abyss.webp" id="1_dqesl"]
 [ext_resource type="Script" uid="uid://bprtko2ut7gy0" path="res://Game/Utilities/Weighted/WeightedFish.cs" id="1_l3bwr"]
 [ext_resource type="Script" uid="uid://bysvm4vph3aiq" path="res://Game/Utilities/Weighted/WeightedBiome.cs" id="2_nsdd8"]
 [ext_resource type="Script" uid="uid://du5t70kmo5wl6" path="res://Game/Utilities/Weighted/WeightedTrash.cs" id="3_r1s2o"]
@@ -73,5 +73,5 @@ Trashes = Array[Object]([SubResource("Resource_0d7d5"), SubResource("Resource_ld
 FollowupBiomes = Array[Object]([SubResource("Resource_e8lrw"), SubResource("Resource_a21oa"), SubResource("Resource_e6gle")])
 CompendiumName = "Abyss"
 CompendiumDescription = "Those are the abysses"
-Background = ExtResource("1_6jhds")
+Background = ExtResource("1_dqesl")
 Music = ExtResource("4_dqesl")

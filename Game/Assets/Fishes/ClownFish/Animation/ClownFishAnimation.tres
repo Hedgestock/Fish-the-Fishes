@@ -1,9 +1,9 @@
 [gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://kxtjwbw4m0xa"]
 
-[ext_resource type="Texture2D" uid="uid://duto118vtxtrn" path="res://Game/Assets/Fishes/ClownFish/Animation/clown_alive_1.png" id="1_pan4j"]
-[ext_resource type="Texture2D" uid="uid://ccn426aeo7h1q" path="res://Game/Assets/Fishes/ClownFish/Animation/clown_alive_2.png" id="2_pcrkv"]
-[ext_resource type="Texture2D" uid="uid://bajqvvl01yfbq" path="res://Game/Assets/Fishes/ClownFish/Animation/clown_alive_3.png" id="3_og5f1"]
-[ext_resource type="Texture2D" uid="uid://br48ocfpld80g" path="res://Game/Assets/Fishes/ClownFish/Animation/clown_dead.png" id="4_ewjxo"]
+[ext_resource type="Texture2D" uid="uid://caeqpquexb6ik" path="res://Game/Assets/Fishes/ClownFish/Animation/clown_alive_0001.webp" id="1_pan4j"]
+[ext_resource type="Texture2D" uid="uid://d2bp7i8mmgoi5" path="res://Game/Assets/Fishes/ClownFish/Animation/clown_alive_0002.webp" id="2_pcrkv"]
+[ext_resource type="Texture2D" uid="uid://bbcuplfjqvjsc" path="res://Game/Assets/Fishes/ClownFish/Animation/clown_alive_0003.webp" id="3_og5f1"]
+[ext_resource type="Texture2D" uid="uid://b1y0bjr6ikj0t" path="res://Game/Assets/Fishes/ClownFish/Animation/clown_dead.webp" id="4_pan4j"]
 
 [resource]
 animations = [{
@@ -26,7 +26,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_ewjxo")
+"texture": ExtResource("4_pan4j")
 }],
 "loop": true,
 "name": &"dead",

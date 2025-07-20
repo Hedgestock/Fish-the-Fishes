@@ -1,7 +1,7 @@
 [gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://bwqrctr8bgiyo"]
 
-[ext_resource type="Texture2D" uid="uid://1id8jy54mn46" path="res://Game/Assets/Fishes/SerpentFish/Animation/SerpentFish_alive.png" id="1_saq1d"]
-[ext_resource type="Texture2D" uid="uid://c33e7fbsfhrmt" path="res://Game/Assets/Fishes/SerpentFish/Animation/SerpentFish_dead.png" id="2_q8xjx"]
+[ext_resource type="Texture2D" uid="uid://7ku4nl1nfi75" path="res://Game/Assets/Fishes/SerpentFish/Animation/serpent_alive.webp" id="1_saq1d"]
+[ext_resource type="Texture2D" uid="uid://u0idhv1572u2" path="res://Game/Assets/Fishes/SerpentFish/Animation/serpent_dead.webp" id="2_q8xjx"]
 
 [resource]
 animations = [{

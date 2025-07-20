@@ -1,24 +1,24 @@
 [gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://bp5itcp0b03xn"]
 
-[ext_resource type="Texture2D" uid="uid://165l2gumtvkr" path="res://Game/Assets/Fishes/RedFish/Animation/red_alive_1.png" id="1_cued8"]
-[ext_resource type="Texture2D" uid="uid://b2rofas27gvrw" path="res://Game/Assets/Fishes/RedFish/Animation/red_dead.png" id="2_iu2a3"]
-[ext_resource type="Texture2D" uid="uid://bw7drsbqkyjid" path="res://Game/Assets/Fishes/RedFish/Animation/red_alive_2.png" id="2_n7lmx"]
-[ext_resource type="Texture2D" uid="uid://b7mjsysxdi08h" path="res://Game/Assets/Fishes/RedFish/Animation/red_alive_3.png" id="3_5mqxe"]
+[ext_resource type="Texture2D" uid="uid://4exwin6yled1" path="res://Game/Assets/Fishes/RedFish/Animation/red_alive_0001.webp" id="1_rdkrn"]
+[ext_resource type="Texture2D" uid="uid://byrl1kio0avcp" path="res://Game/Assets/Fishes/RedFish/Animation/red_alive_0002.webp" id="2_w28st"]
+[ext_resource type="Texture2D" uid="uid://cbmv2b7y6ligf" path="res://Game/Assets/Fishes/RedFish/Animation/red_alive_0003.webp" id="3_ewjw1"]
+[ext_resource type="Texture2D" uid="uid://822gms0en6ow" path="res://Game/Assets/Fishes/RedFish/Animation/red_dead.webp" id="4_8pr15"]
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_cued8")
+"texture": ExtResource("1_rdkrn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_n7lmx")
+"texture": ExtResource("2_w28st")
 }, {
 "duration": 1.0,
-"texture": ExtResource("1_cued8")
+"texture": ExtResource("1_rdkrn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_5mqxe")
+"texture": ExtResource("3_ewjw1")
 }],
 "loop": true,
 "name": &"alive",
@@ -26,7 +26,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_iu2a3")
+"texture": ExtResource("4_8pr15")
 }],
 "loop": true,
 "name": &"dead",
