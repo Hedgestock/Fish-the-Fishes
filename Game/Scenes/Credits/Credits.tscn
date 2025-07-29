@@ -53,11 +53,11 @@ layout_mode = 2
 bbcode_enabled = true
 text = "[center][img]res://Game/Assets/Fishes/AnguilleFish/Animation/anguille_alive_1.png[/img]
 Developper: Hedgestock
-[img]res://Game/Assets/Fishes/GreenFish/Animation/green_alive_1.png[/img]
+[img]res://Game/Assets/Fishes/GreenFish/Animation/green_alive_0001.webp[/img]
 Graphic Designer: Beewaffle
-[img]res://Game/Assets/Fishes/YellowFish/Animation/yellow_alive_1.png[/img]
+[img]res://Game/Assets/Fishes/YellowFish/Animation/yellow_alive_0001.webp[/img]
 Sound Designer: Odun
-[img]res://Game/Assets/Fishes/BlueFish/Animation/blue_alive_1.png[/img]
+[img]res://Game/Assets/Fishes/BlueFish/Animation/blue_alive_0001.webp[/img]
 [url=https://flowerheadmusic.itch.io/somewhat-good-underwater]Music by flowerhead[/url]
 [img]res://Game/Assets/Fishes/ArrowFish/Animation/arrow_alive_1.png[/img]
 
@@ -79,7 +79,7 @@ metadata/_tab_index = 1
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/MarginContainer/Panel/Patch Notes"]
 layout_mode = 2
 bbcode_enabled = true
-text = "[center][font_size=200]??/07/2025[/font_size][/center]
+text = "[center][font_size=200]21/07/2025[/font_size][/center]
 [font_size=100]
 [ul]
 Added a way to filter the compendium items
@@ -90,6 +90,7 @@ Fixed parrot fish compendium display
 Added pause menu
 Added eating behaviour to parrot fish
 Added guppy fish
+Added current fish
 Added lake fish
 Added river fish
 Added lake biome
