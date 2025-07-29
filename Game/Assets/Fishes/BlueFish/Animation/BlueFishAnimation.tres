@@ -1,9 +1,9 @@
 [gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://br2058c4eqn71"]
 
-[ext_resource type="Texture2D" uid="uid://ccnsuysntf8qw" path="res://Game/Assets/Fishes/BlueFish/Animation/blue_alive_0001.webp" id="1_h8tak"]
-[ext_resource type="Texture2D" uid="uid://ckr3rodarlkde" path="res://Game/Assets/Fishes/BlueFish/Animation/blue_alive_0002.webp" id="2_o7x6t"]
-[ext_resource type="Texture2D" uid="uid://x4p4hqi6c47y" path="res://Game/Assets/Fishes/BlueFish/Animation/blue_alive_0003.webp" id="3_qgti6"]
-[ext_resource type="Texture2D" uid="uid://biwdi4yb4e62i" path="res://Game/Assets/Fishes/BlueFish/Animation/blue_dead.webp" id="4_7uccb"]
+[ext_resource type="Texture2D" uid="uid://djftb554bqcc7" path="res://Game/Assets/Fishes/BlueFish/Animation/blue_alive_1.png" id="1_h8tak"]
+[ext_resource type="Texture2D" uid="uid://bkrn56x0m8hyq" path="res://Game/Assets/Fishes/BlueFish/Animation/blue_alive_2.png" id="2_o7x6t"]
+[ext_resource type="Texture2D" uid="uid://cdqdt8qafvyq8" path="res://Game/Assets/Fishes/BlueFish/Animation/blue_alive_3.png" id="3_qgti6"]
+[ext_resource type="Texture2D" uid="uid://wvghgqmw7u5t" path="res://Game/Assets/Fishes/BlueFish/Animation/blue_dead.png" id="4_7uccb"]
 
 [resource]
 animations = [{

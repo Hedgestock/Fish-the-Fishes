@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Biome" load_steps=22 format=3 uid="uid://cdgwvohk2wes5"]
 
-[ext_resource type="Texture2D" uid="uid://bdf520heejogj" path="res://Game/Assets/Biomes/OceanCurrent/ocean_current.webp" id="1_4s6vv"]
 [ext_resource type="Script" uid="uid://bprtko2ut7gy0" path="res://Game/Utilities/Weighted/WeightedFish.cs" id="1_khfau"]
+[ext_resource type="Texture2D" uid="uid://2hdbni0jr2uv" path="res://Game/Assets/Biomes/OceanCurrent/OceanCurrentBackground.png" id="1_sxxsc"]
 [ext_resource type="Script" uid="uid://bysvm4vph3aiq" path="res://Game/Utilities/Weighted/WeightedBiome.cs" id="2_3yslt"]
 [ext_resource type="Script" uid="uid://du5t70kmo5wl6" path="res://Game/Utilities/Weighted/WeightedTrash.cs" id="3_v3qbn"]
 [ext_resource type="AudioStream" uid="uid://do3lb54qr0ll7" path="res://Game/Assets/Biomes/OceanCurrent/Sunken Rest.wav" id="4_4s6vv"]
@@ -99,5 +99,5 @@ Trashes = Array[Object]([SubResource("Resource_jbhkk"), SubResource("Resource_8v
 FollowupBiomes = Array[Object]([SubResource("Resource_l62ly"), SubResource("Resource_o0ehq")])
 CompendiumName = "Ocean Current"
 CompendiumDescription = "Similar to the Great Blue, this place is vast and mostly empty, however the strong currents promote the development of stronger fishes, able to swim against the stream of water."
-Background = ExtResource("1_4s6vv")
+Background = ExtResource("1_sxxsc")
 Music = ExtResource("4_4s6vv")

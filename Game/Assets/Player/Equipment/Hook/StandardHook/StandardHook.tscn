@@ -1,13 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://caai7o1q2a1n0"]
+[gd_scene load_steps=8 format=3 uid="uid://caai7o1q2a1n0"]
 
-[ext_resource type="Texture2D" uid="uid://cyv30kww7ecx4" path="res://Game/Assets/Player/Equipment/Hook/StandardHook/standard.webp" id="1_hfps3"]
+[ext_resource type="Texture2D" uid="uid://dee8677kcqnft" path="res://Game/Assets/Player/Equipment/Hook/StandardHook/StandardHook_broken.png" id="1_hhlor"]
+[ext_resource type="Texture2D" uid="uid://qjdujjo8m4n" path="res://Game/Assets/Player/Equipment/Hook/StandardHook/StandardHook_default.png" id="2_okh3i"]
 [ext_resource type="Script" uid="uid://c0alauqc2ml7" path="res://Game/Assets/Player/Equipment/Hook/Hook.cs" id="3_a136t"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_e7146"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_hfps3")
+"texture": ExtResource("1_hhlor")
 }],
 "loop": true,
 "name": &"broken",
@@ -15,7 +16,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_hfps3")
+"texture": ExtResource("2_okh3i")
 }],
 "loop": true,
 "name": &"default",
@@ -35,7 +36,6 @@ height = 92.0
 [node name="Hook" type="AnimatedSprite2D"]
 position = Vector2(-78, -15)
 sprite_frames = SubResource("SpriteFrames_e7146")
-animation = &"broken"
 centered = false
 script = ExtResource("3_a136t")
 AimOffset = 145

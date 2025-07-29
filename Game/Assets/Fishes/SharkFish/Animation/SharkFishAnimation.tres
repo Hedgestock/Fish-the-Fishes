@@ -1,32 +1,32 @@
 [gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://6520w7uakc1q"]
 
-[ext_resource type="Texture2D" uid="uid://cgdrqw7mu35yo" path="res://Game/Assets/Fishes/SharkFish/Animation/shark_alive_0001.webp" id="1_3e7my"]
-[ext_resource type="Texture2D" uid="uid://c88x4a6cw5vd0" path="res://Game/Assets/Fishes/SharkFish/Animation/shark_alive_0002.webp" id="2_ji57o"]
-[ext_resource type="Texture2D" uid="uid://cs10b7e60hcbc" path="res://Game/Assets/Fishes/SharkFish/Animation/shark_alive_0003.webp" id="3_5trrc"]
-[ext_resource type="Texture2D" uid="uid://bop7wjwa23lwq" path="res://Game/Assets/Fishes/SharkFish/Animation/shark_dead.webp" id="4_gj1x5"]
+[ext_resource type="Texture2D" uid="uid://73rgpry4gq1f" path="res://Game/Assets/Fishes/SharkFish/Animation/shark_alive_1.png" id="1_5qnaq"]
+[ext_resource type="Texture2D" uid="uid://5m45cbqmkbet" path="res://Game/Assets/Fishes/SharkFish/Animation/shark_alive_2.png" id="2_ajg0c"]
+[ext_resource type="Texture2D" uid="uid://b1b8bl730pfax" path="res://Game/Assets/Fishes/SharkFish/Animation/shark_alive_3.png" id="3_ldtnw"]
+[ext_resource type="Texture2D" uid="uid://d3y5ciwc16g3k" path="res://Game/Assets/Fishes/SharkFish/Animation/shark_dead.png" id="4_j6dq7"]
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_3e7my")
+"texture": ExtResource("1_5qnaq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("1_3e7my")
+"texture": ExtResource("2_ajg0c")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_ji57o")
+"texture": ExtResource("1_5qnaq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_5trrc")
+"texture": ExtResource("3_ldtnw")
 }],
 "loop": true,
 "name": &"alive",
-"speed": 15.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_gj1x5")
+"texture": ExtResource("4_j6dq7")
 }],
 "loop": true,
 "name": &"dead",

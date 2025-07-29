@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Biome" load_steps=22 format=3 uid="uid://dvre55q8d3y0b"]
 
 [ext_resource type="Script" uid="uid://bprtko2ut7gy0" path="res://Game/Utilities/Weighted/WeightedFish.cs" id="1_h6x5b"]
-[ext_resource type="Texture2D" uid="uid://cj1bsosdt2ab7" path="res://Game/Assets/Biomes/GreatBlue/great_blue.webp" id="1_xrelp"]
+[ext_resource type="Texture2D" uid="uid://b3xmgqijoo4cg" path="res://Game/Assets/Biomes/GreatBlue/GreatBlueBackground.png" id="1_n54uy"]
 [ext_resource type="Script" uid="uid://bysvm4vph3aiq" path="res://Game/Utilities/Weighted/WeightedBiome.cs" id="2_cnfug"]
 [ext_resource type="Script" uid="uid://du5t70kmo5wl6" path="res://Game/Utilities/Weighted/WeightedTrash.cs" id="3_l2tfw"]
 [ext_resource type="Script" uid="uid://62lfoitacli2" path="res://Game/Assets/Biomes/Biome.cs" id="4_g4nce"]
@@ -98,5 +98,5 @@ Trashes = Array[Object]([SubResource("Resource_jbhkk"), SubResource("Resource_8v
 FollowupBiomes = Array[Object]([SubResource("Resource_l62ly"), SubResource("Resource_o0ehq")])
 CompendiumName = "Great Blue"
 CompendiumDescription = "A deep and spacious expense of water  far from the coast where all kind of marine animals cohabit."
-Background = ExtResource("1_xrelp")
+Background = ExtResource("1_n54uy")
 Music = ExtResource("4_xrelp")

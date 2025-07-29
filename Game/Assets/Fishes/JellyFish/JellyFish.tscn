@@ -3,9 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_v1625"]
 [ext_resource type="Script" uid="uid://do052ec684mam" path="res://Game/Assets/Fishes/JellyFish/JellyFish.cs" id="2_7552x"]
 [ext_resource type="SpriteFrames" uid="uid://dfq5oyqiu8wpr" path="res://Game/Assets/Fishes/JellyFish/Animation/JellyFishAnimation.tres" id="3_8r5tt"]
-[ext_resource type="Texture2D" uid="uid://bl2oni1tgsg27" path="res://Game/Assets/Fishes/JellyFish/Animation/jelly_tent_0002.webp" id="3_xkgqu"]
-[ext_resource type="Texture2D" uid="uid://dncq2p55814ge" path="res://Game/Assets/Fishes/JellyFish/Animation/jelly_tent_0001.webp" id="4_0druy"]
+[ext_resource type="Texture2D" uid="uid://dpvq8ihrtvt8f" path="res://Game/Assets/Fishes/JellyFish/Animation/Jelly_2.png" id="4_5f46n"]
 [ext_resource type="PackedScene" uid="uid://ifoga56i10w3" path="res://Game/Assets/RandomTimer.tscn" id="4_5j62k"]
+[ext_resource type="Texture2D" uid="uid://decf6h2dapr5u" path="res://Game/Assets/Fishes/JellyFish/Animation/Jelly_4.png" id="6_nuo0v"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dh8h5"]
 radius = 41.0122
@@ -16,7 +16,7 @@ Tentacles = NodePath("Tentacles")
 CompendiumName = "Jellyfish"
 CompendiumDescription = "Legends are telling that catching a jellyfish would extend your life expectancy..."
 SpawnRange = Vector2(0, 0.3)
-AverageSize = 20.0
+AverageSize = 44.0
 
 [node name="Tentacles" type="Node2D" parent="." index="0"]
 
@@ -24,34 +24,34 @@ AverageSize = 20.0
 position = Vector2(-32, 0)
 points = PackedVector2Array(0, 0, 0, 150)
 width = 32.0
-texture = ExtResource("3_xkgqu")
+texture = ExtResource("4_5f46n")
 texture_mode = 2
 
 [node name="Line2D2" type="Line2D" parent="Tentacles" index="1"]
 points = PackedVector2Array(0, 0, 0, 150)
 width = 32.0
-texture = ExtResource("3_xkgqu")
+texture = ExtResource("4_5f46n")
 texture_mode = 2
 
 [node name="Line2D3" type="Line2D" parent="Tentacles" index="2"]
 position = Vector2(32, 0)
 points = PackedVector2Array(0, 0, 0, 150)
 width = 32.0
-texture = ExtResource("3_xkgqu")
+texture = ExtResource("4_5f46n")
 texture_mode = 2
 
 [node name="Line2D10" type="Line2D" parent="Tentacles" index="3"]
 position = Vector2(-16, 0)
 points = PackedVector2Array(0, 0, 0, 100)
 width = 32.0
-texture = ExtResource("4_0druy")
+texture = ExtResource("6_nuo0v")
 texture_mode = 2
 
 [node name="Line2D11" type="Line2D" parent="Tentacles" index="4"]
 position = Vector2(16, 0)
 points = PackedVector2Array(0, 0, 0, 100)
 width = 32.0
-texture = ExtResource("4_0druy")
+texture = ExtResource("6_nuo0v")
 texture_mode = 2
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="1"]

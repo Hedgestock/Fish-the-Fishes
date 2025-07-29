@@ -1,24 +1,24 @@
 [gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://2ouyh6wa8r13"]
 
-[ext_resource type="Texture2D" uid="uid://cv5phdjgubkjg" path="res://Game/Assets/Fishes/LakeFish/Animation/lake_alive_0001.webp" id="1_x53wh"]
-[ext_resource type="Texture2D" uid="uid://borsk0d2gi2ye" path="res://Game/Assets/Fishes/LakeFish/Animation/lake_alive_0002.webp" id="2_6jok3"]
-[ext_resource type="Texture2D" uid="uid://cuyac2xk6rtuw" path="res://Game/Assets/Fishes/LakeFish/Animation/lake_alive_0003.webp" id="3_bfc4d"]
-[ext_resource type="Texture2D" uid="uid://yg71k7847y1g" path="res://Game/Assets/Fishes/LakeFish/Animation/lake_dead.webp" id="4_g7seh"]
+[ext_resource type="Texture2D" uid="uid://dl6pnw5uwe254" path="res://Game/Assets/Fishes/LakeFish/Animation/perch_alive_1.png" id="1_y5cej"]
+[ext_resource type="Texture2D" uid="uid://cjxstlpdubwps" path="res://Game/Assets/Fishes/LakeFish/Animation/perch_alive_2.png" id="2_dkaws"]
+[ext_resource type="Texture2D" uid="uid://6uuy05ibpwk2" path="res://Game/Assets/Fishes/LakeFish/Animation/perch_alive_3.png" id="3_vwon8"]
+[ext_resource type="Texture2D" uid="uid://b6cqgnqi3rr88" path="res://Game/Assets/Fishes/LakeFish/Animation/Perch_dead.png" id="4_3d3j3"]
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_x53wh")
+"texture": ExtResource("1_y5cej")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_6jok3")
+"texture": ExtResource("2_dkaws")
 }, {
 "duration": 1.0,
-"texture": ExtResource("1_x53wh")
+"texture": ExtResource("1_y5cej")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_bfc4d")
+"texture": ExtResource("3_vwon8")
 }],
 "loop": true,
 "name": &"alive",
@@ -26,7 +26,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_g7seh")
+"texture": ExtResource("4_3d3j3")
 }],
 "loop": true,
 "name": &"dead",
