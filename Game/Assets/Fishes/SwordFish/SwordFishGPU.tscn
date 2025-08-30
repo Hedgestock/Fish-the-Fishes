@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://dk06endxq4n0n"]
 
-[ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_uvwmi"]
+[ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Biomes/Fish.tscn" id="1_uvwmi"]
 [ext_resource type="Script" uid="uid://c1mkn0uov1i0b" path="res://Game/Assets/Fishes/SwordFish/SwordFish.cs" id="2_dawsy"]
 [ext_resource type="SpriteFrames" uid="uid://cyv8fnlha8eri" path="res://Game/Assets/Fishes/SwordFish/Animation/SwordFishAnimation.tres" id="3_p6qrq"]
 [ext_resource type="Material" uid="uid://bvt1xao725px5" path="res://Game/Assets/Fishes/shared/BubbleParticleMaterial.tres" id="4_4p40o"]

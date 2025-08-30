@@ -182,6 +182,7 @@
 - [ ] Ajuster les taux d'apparition des poubelles en fonction de la largeur de l'écran
 - [ ] Ajouter un moyen d'exporter/importer une sauvegarde
 - [ ] Ajouter le chargement dans un fil pour le compendium
+- [ ] Baisser le volume de la musique en pause
 
 # Corrections
 

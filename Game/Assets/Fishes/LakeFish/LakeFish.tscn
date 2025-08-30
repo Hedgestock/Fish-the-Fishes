@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dyh4pqaitbufq"]
 
-[ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_4uw0s"]
+[ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Biomes/Fish.tscn" id="1_4uw0s"]
 [ext_resource type="Script" uid="uid://dbt7nvxvg5vyw" path="res://Game/Assets/Fishes/LakeFish/LakeFish.cs" id="2_nbohj"]
 [ext_resource type="SpriteFrames" uid="uid://2ouyh6wa8r13" path="res://Game/Assets/Fishes/LakeFish/Animation/LakeFishAnimation.tres" id="3_xo71d"]
 
@@ -11,6 +11,7 @@ height = 246.0
 [node name="LakeFish" instance=ExtResource("1_4uw0s")]
 script = ExtResource("2_nbohj")
 CompendiumName = "Lake Fish"
+AverageSize = 62.5
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0"]
 position = Vector2(1, -0.500008)

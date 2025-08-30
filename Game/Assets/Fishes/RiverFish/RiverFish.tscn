@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://la7mhjo3dplx"]
 
-[ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_h8xj4"]
+[ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Biomes/Fish.tscn" id="1_h8xj4"]
 [ext_resource type="SpriteFrames" uid="uid://6owu5f5m33b0" path="res://Game/Assets/Fishes/RiverFish/Animation/RiverFishAnimation.tres" id="2_f8ucb"]
 [ext_resource type="Script" uid="uid://dwbiejtq8telo" path="res://Game/Assets/Fishes/RiverFish/RiverFish.cs" id="2_t3ocf"]
 
@@ -11,6 +11,7 @@ height = 144.0
 [node name="RiverFish" instance=ExtResource("1_h8xj4")]
 script = ExtResource("2_t3ocf")
 CompendiumName = "River Fish"
+AverageSize = 38.75
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0"]
 position = Vector2(1.5, -1.5)

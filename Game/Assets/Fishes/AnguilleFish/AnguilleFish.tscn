@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://oxxpqubwwblb"]
 
-[ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_d3b32"]
+[ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Biomes/Fish.tscn" id="1_d3b32"]
 [ext_resource type="SpriteFrames" uid="uid://l22v2s0dn5uh" path="res://Game/Assets/Fishes/AnguilleFish/Animation/AnguilleFishAnimation.tres" id="2_2ati3"]
 [ext_resource type="Script" uid="uid://chvol61tn2dwn" path="res://Game/Assets/Fishes/AnguilleFish/AnguilleFish.cs" id="2_2x4bm"]
 
@@ -15,7 +15,7 @@ CompendiumDescription = "This slippery fish loves lurking under rocks and mostly
 MinSpeed = 200.0
 MaxSpeed = 300.0
 SpawnRange = Vector2(0.5, 1)
-AverageSize = 66.0
+AverageSize = 66.25
 SizeDeviation = 0.3
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0"]

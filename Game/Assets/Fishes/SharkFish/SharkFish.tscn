@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dbp5wtcfp4yv5"]
 
-[ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_0ee32"]
+[ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Biomes/Fish.tscn" id="1_0ee32"]
 [ext_resource type="Script" uid="uid://c16knpal1qn53" path="res://Game/Assets/Fishes/SharkFish/SharkFish.cs" id="2_3d5gd"]
 [ext_resource type="SpriteFrames" uid="uid://6520w7uakc1q" path="res://Game/Assets/Fishes/SharkFish/Animation/SharkFishAnimation.tres" id="3_rhaxs"]
 
@@ -23,7 +23,7 @@ Multiplier = 2
 MinSpeed = 1500.0
 MaxSpeed = 2500.0
 TajectoryDeviation = 1.0
-AverageSize = 155.0
+AverageSize = 153.75
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0"]
 position = Vector2(-18, 0)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://c41vxnkhc7q6y"]
 
-[ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_v1625"]
+[ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Biomes/Fish.tscn" id="1_v1625"]
 [ext_resource type="Script" uid="uid://do052ec684mam" path="res://Game/Assets/Fishes/JellyFish/JellyFish.cs" id="2_7552x"]
 [ext_resource type="SpriteFrames" uid="uid://dfq5oyqiu8wpr" path="res://Game/Assets/Fishes/JellyFish/Animation/JellyFishAnimation.tres" id="3_8r5tt"]
 [ext_resource type="Texture2D" uid="uid://dpvq8ihrtvt8f" path="res://Game/Assets/Fishes/JellyFish/Animation/Jelly_2.png" id="4_5f46n"]

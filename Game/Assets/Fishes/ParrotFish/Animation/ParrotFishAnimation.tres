@@ -1,11 +1,11 @@
 [gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://cchugj0lsp7tl"]
 
-[ext_resource type="Texture2D" uid="uid://pk7jb778pe5r" path="res://Game/Assets/Fishes/ParrotFish/Animation/parrot_alive_1.webp" id="1_l3db8"]
-[ext_resource type="Texture2D" uid="uid://1dqo36clg6be" path="res://Game/Assets/Fishes/ParrotFish/Animation/parrot_alive_2.webp" id="2_qraiy"]
-[ext_resource type="Texture2D" uid="uid://dkegfbxfnu3r7" path="res://Game/Assets/Fishes/ParrotFish/Animation/parrot_alive_3.webp" id="3_mp2h2"]
-[ext_resource type="Texture2D" uid="uid://bvigi3w1qovne" path="res://Game/Assets/Fishes/ParrotFish/Animation/parrot_dead.webp" id="4_n815l"]
-[ext_resource type="Texture2D" uid="uid://cnw4lco3uhr6r" path="res://Game/Assets/Fishes/ParrotFish/Animation/parrot_eating_1.webp" id="5_h8ook"]
-[ext_resource type="Texture2D" uid="uid://ckgwnjyvdrb60" path="res://Game/Assets/Fishes/ParrotFish/Animation/parrot_eating_2.webp" id="6_6c4x6"]
+[ext_resource type="Texture2D" uid="uid://b53hv6bc5q6uv" path="res://Game/Assets/Fishes/ParrotFish/Animation/parrot_alive_0001.png" id="1_l3db8"]
+[ext_resource type="Texture2D" uid="uid://ceao0wj67nuxe" path="res://Game/Assets/Fishes/ParrotFish/Animation/parrot_alive_0002.png" id="2_qraiy"]
+[ext_resource type="Texture2D" uid="uid://de5hum40648rt" path="res://Game/Assets/Fishes/ParrotFish/Animation/parrot_alive_0003.png" id="3_mp2h2"]
+[ext_resource type="Texture2D" uid="uid://g8esivrcho8t" path="res://Game/Assets/Fishes/ParrotFish/Animation/parrot_dead.png" id="4_n815l"]
+[ext_resource type="Texture2D" uid="uid://c7ug0xt17cvdj" path="res://Game/Assets/Fishes/ParrotFish/Animation/parrot_eat_0001.png" id="5_h8ook"]
+[ext_resource type="Texture2D" uid="uid://cr36o26cpd6n6" path="res://Game/Assets/Fishes/ParrotFish/Animation/parrot_eat_0002.png" id="6_6c4x6"]
 
 [resource]
 animations = [{

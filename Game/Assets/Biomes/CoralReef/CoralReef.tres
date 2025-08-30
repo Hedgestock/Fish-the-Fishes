@@ -1,6 +1,6 @@
-[gd_resource type="Resource" script_class="Biome" load_steps=24 format=3 uid="uid://cm3ec1bh0wjj6"]
+[gd_resource type="Resource" script_class="Biome" load_steps=25 format=3 uid="uid://cm3ec1bh0wjj6"]
 
-[ext_resource type="Texture2D" uid="uid://dy3gprox6yyy1" path="res://Game/Assets/Biomes/CoralReef/Coral_reef.webp" id="1_1ox07"]
+[ext_resource type="Texture2D" uid="uid://ia38rj6ecxn0" path="res://Game/Assets/Biomes/CoralReef/CoralReefBackground.png" id="1_1ox07"]
 [ext_resource type="Script" uid="uid://bprtko2ut7gy0" path="res://Game/Utilities/Weighted/WeightedFish.cs" id="2_17j4d"]
 [ext_resource type="Script" uid="uid://bysvm4vph3aiq" path="res://Game/Utilities/Weighted/WeightedBiome.cs" id="3_tt0m1"]
 [ext_resource type="AudioStream" uid="uid://cdse3ypiqqk6a" path="res://Game/Assets/Biomes/CoralReef/Dolphin Shores.wav" id="4_1ox07"]
@@ -13,21 +13,23 @@ Fish = 12
 Weight = 200
 metadata/_custom_type_script = "uid://bprtko2ut7gy0"
 
+[sub_resource type="Resource" id="Resource_oao2e"]
+script = ExtResource("2_17j4d")
+Fish = 17
+metadata/_custom_type_script = "uid://bprtko2ut7gy0"
+
 [sub_resource type="Resource" id="Resource_f4pan"]
 script = ExtResource("2_17j4d")
 Fish = 2
-Weight = 100
 
 [sub_resource type="Resource" id="Resource_3olg4"]
 script = ExtResource("2_17j4d")
 Fish = 11
-Weight = 100
 metadata/_custom_type_script = "uid://bprtko2ut7gy0"
 
 [sub_resource type="Resource" id="Resource_xyg2j"]
 script = ExtResource("2_17j4d")
 Fish = 6
-Weight = 100
 
 [sub_resource type="Resource" id="Resource_s6o80"]
 script = ExtResource("2_17j4d")
@@ -53,7 +55,6 @@ Weight = 30
 
 [sub_resource type="Resource" id="Resource_7w1j6"]
 script = ExtResource("2_17j4d")
-Fish = 0
 Weight = 20
 
 [sub_resource type="Resource" id="Resource_cn611"]
@@ -76,27 +77,21 @@ metadata/_custom_type_script = "uid://bprtko2ut7gy0"
 [sub_resource type="Resource" id="Resource_l62ly"]
 script = ExtResource("3_tt0m1")
 Biome = 5
-Weight = 100
 
 [sub_resource type="Resource" id="Resource_3cux3"]
 script = ExtResource("3_tt0m1")
 Biome = 6
-Weight = 100
 
 [sub_resource type="Resource" id="Resource_jbhkk"]
 script = ExtResource("4_75g0y")
-Trash = 0
-Weight = 100
 
 [sub_resource type="Resource" id="Resource_8v5i1"]
 script = ExtResource("4_75g0y")
 Trash = 1
-Weight = 100
 
 [sub_resource type="Resource" id="Resource_bqsre"]
 script = ExtResource("4_75g0y")
 Trash = 2
-Weight = 100
 
 [resource]
 resource_name = "CoralReef"
@@ -104,10 +99,9 @@ script = ExtResource("5_byup3")
 TimeToSpawnFish = 0.5
 TimeToSpawnFishDeviation = 0.2
 TimeToSpawnTrash = 5.0
-TimeToSpawnTrashDeviation = 0.5
 ChangeBiomeThreshold = 100
 ChangeBiomeThresholdDeviation = 20
-Fishes = Array[Object]([SubResource("Resource_0cb85"), SubResource("Resource_f4pan"), SubResource("Resource_3olg4"), SubResource("Resource_xyg2j"), SubResource("Resource_s6o80"), SubResource("Resource_1ox07"), SubResource("Resource_1c6ge"), SubResource("Resource_okm2r"), SubResource("Resource_7w1j6"), SubResource("Resource_cn611"), SubResource("Resource_3wuju"), SubResource("Resource_p1mqj")])
+Fishes = Array[Object]([SubResource("Resource_0cb85"), SubResource("Resource_oao2e"), SubResource("Resource_f4pan"), SubResource("Resource_3olg4"), SubResource("Resource_xyg2j"), SubResource("Resource_s6o80"), SubResource("Resource_1ox07"), SubResource("Resource_1c6ge"), SubResource("Resource_okm2r"), SubResource("Resource_7w1j6"), SubResource("Resource_cn611"), SubResource("Resource_3wuju"), SubResource("Resource_p1mqj")])
 Trashes = Array[Object]([SubResource("Resource_jbhkk"), SubResource("Resource_8v5i1"), SubResource("Resource_bqsre")])
 FollowupBiomes = Array[Object]([SubResource("Resource_l62ly"), SubResource("Resource_3cux3")])
 CompendiumName = "Coral Reef"

@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bcvq4yujb5igf"]
 
-[ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_32uni"]
+[ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Biomes/Fish.tscn" id="1_32uni"]
 [ext_resource type="Script" uid="uid://xcsesbulx310" path="res://Game/Assets/Fishes/SerpentFish/SerpentFish.cs" id="2_ujnj7"]
 [ext_resource type="SpriteFrames" uid="uid://bwqrctr8bgiyo" path="res://Game/Assets/Fishes/SerpentFish/Animation/SerpentFishAnimation.tres" id="3_1g1s3"]
 [ext_resource type="Texture2D" uid="uid://bmgfceejcd48n" path="res://Game/Assets/Fishes/SerpentFish/Animation/SerpentFish_tail.png" id="4_1k2ac"]
@@ -28,7 +28,7 @@ WaveSpeed = 5
 CompendiumName = "Sea Snake"
 CompendiumDescription = "Those were the first slithering species to be found in the oceans."
 Value = 2.0
-AverageSize = 160.0
+AverageSize = 150.0
 
 [node name="Line2D" type="Line2D" parent="." index="0"]
 points = PackedVector2Array(-32, 0, -56, 0, -96, 0, -120, 0, -139, -1, -176, 0, -212, 0, -231.878, 0.389771, -264, 0, -280, 0, -296, 0)

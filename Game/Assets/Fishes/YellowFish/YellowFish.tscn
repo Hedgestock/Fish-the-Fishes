@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://ysvrflpejd5u"]
 
-[ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_lk6on"]
+[ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Biomes/Fish.tscn" id="1_lk6on"]
 [ext_resource type="Script" uid="uid://dimw6w5ard23e" path="res://Game/Assets/Fishes/YellowFish/YellowFish.cs" id="2_7wvo0"]
 [ext_resource type="SpriteFrames" uid="uid://dib3yn73u4ctr" path="res://Game/Assets/Fishes/YellowFish/Animation/YellowFishAnimation.tres" id="2_e3t31"]
 

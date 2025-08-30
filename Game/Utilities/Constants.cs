@@ -43,6 +43,8 @@ namespace WaffleStock
             GuppyFish,
             LakeFish,
             RiverFish,
+            BubbleFish,
+            CurrentFish,
         }
 
         public static string TrashesFolder = "res://Game/Assets/Trashes/";

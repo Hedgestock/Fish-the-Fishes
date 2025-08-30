@@ -1,0 +1,34 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://cx0fk5b0k5b1k"]
+
+[ext_resource type="Texture2D" uid="uid://cxf7r7ab26i5g" path="res://Game/Assets/Fishes/BubbleFish/Animation/bubble_alive_0001.png" id="1_fbyft"]
+[ext_resource type="Texture2D" uid="uid://cl6cxa2fhm660" path="res://Game/Assets/Fishes/BubbleFish/Animation/bubble_alive_0002.png" id="2_xaqu4"]
+[ext_resource type="Texture2D" uid="uid://bry77ogn6od5d" path="res://Game/Assets/Fishes/BubbleFish/Animation/bubble_alive_0003.png" id="3_2tkjr"]
+[ext_resource type="Texture2D" uid="uid://c4u2wcfokasbn" path="res://Game/Assets/Fishes/BubbleFish/Animation/bubble_dead.png" id="4_r2s5v"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_fbyft")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_xaqu4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2tkjr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2tkjr")
+}],
+"loop": true,
+"name": &"alive",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_r2s5v")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}]

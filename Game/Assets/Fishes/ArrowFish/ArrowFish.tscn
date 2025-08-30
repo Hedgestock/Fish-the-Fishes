@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bkk5qxylrwsky"]
 
-[ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_7swat"]
+[ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Biomes/Fish.tscn" id="1_7swat"]
 [ext_resource type="Script" uid="uid://bif5hty7m5336" path="res://Game/Assets/Fishes/ArrowFish/ArrowFish.cs" id="2_762bw"]
 [ext_resource type="SpriteFrames" uid="uid://b3if7btqlo4am" path="res://Game/Assets/Fishes/ArrowFish/Animation/ArrowFishAnimation.tres" id="3_ju7kg"]
 
@@ -15,7 +15,7 @@ CompendiumDescription = "This strangely shaped fish is pretty common, so common 
 MinSpeed = 300.0
 MaxSpeed = 350.0
 TajectoryDeviation = 0.0
-AverageSize = 29.0
+AverageSize = 28.75
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0"]
 scale = Vector2(6.1, 5)
