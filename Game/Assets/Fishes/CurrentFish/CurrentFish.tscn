@@ -11,6 +11,7 @@ height = 238.0
 [node name="CurrentFish" instance=ExtResource("1_jho2v")]
 script = ExtResource("2_32700")
 CompendiumName = "Current Fish"
+CompendiumDescription = "This slim profiled fish adapted itself to swim in strong currents."
 MinSpeed = 250.0
 MaxSpeed = 350.0
 TajectoryDeviation = 0.0
