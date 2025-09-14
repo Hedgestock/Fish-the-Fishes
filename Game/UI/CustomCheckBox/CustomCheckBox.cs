@@ -16,7 +16,7 @@ public partial class CustomCheckBox : Button
     public override void _Ready()
     {
         base._Ready();
-        Icon = Unchecked;
+        Icon = ButtonPressed ? Checked : Unchecked;
     }
 
     private void OnToggle(bool toggled)

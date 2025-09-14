@@ -37,7 +37,7 @@ public partial class SharkFish : Fish, IFisher
 
         //Bubbles.Amount = (int)ActualSpeed/3;
 
-        Input.VibrateHandheld(500);
+        if (UserSettings.Vibrations) Input.VibrateHandheld(500);
 
         FrightenFishes();
 

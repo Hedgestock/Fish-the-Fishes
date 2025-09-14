@@ -8,6 +8,7 @@
 script = ExtResource("1_okroq")
 
 [node name="Background" parent="." instance=ExtResource("2_m8kky")]
+anchors_preset = -1
 offset_top = -360.0
 offset_bottom = 360.0
 
@@ -79,7 +80,14 @@ metadata/_tab_index = 1
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/MarginContainer/Panel/Patch Notes"]
 layout_mode = 2
 bbcode_enabled = true
-text = "[center][font_size=200]21/07/2025[/font_size][/center]
+text = "[center][font_size=200]13/09/2025[/font_size][/center]
+[font_size=100]
+[ul]
+Fixed background not loading
+Added bubble fish
+[/ul]
+[/font_size]
+[center][font_size=200]21/07/2025[/font_size][/center]
 [font_size=100]
 [ul]
 Added a way to filter the compendium items

@@ -24,11 +24,11 @@
 - [x] Ajouter un bouton de pause
 - [x] Changer le mode d'affichage des poissons dans le compendium
 - [x] Ajouter un menu de pause
+- [x] Ajouter la possibilité de désactiver les vibrations
+- [x] Ajouter la possibilité de désactiver l'effet d'eau
 - [ ] Ajouter un jingle pour les meilleurs scores
 - [ ] Ajouter un tutoriel
 - [ ] Ajouter de la physique aux boutons du menu principal
-- [ ] Ajouter la possibilité de désactiver les vibrations
-- [ ] Ajouter la possibilité de désactiver l'effet d'eau
 
 
 # Poissons
@@ -223,14 +223,13 @@
 - [x] Enlever les poissons de rivière des biomes salés (guppy, perche et rivière)
 - [x] Corriger l'affichage des notifications de hauts faits
 - [x] Régler la taille des nouveaux poissons
+- [x] Régler l'erreur en cas d'absence de fichier de configuration
 - [ ] [**Plus de bulles pour l'instant**]Corriger les bulles des requins qui disparaissent trop tôt
 - [ ] Passer à des listes de noms plutôt que des énumérations
 - [ ] Corriger les poissons qui restent sur la ligne après une remontée
-- [ ] Réparer le mode Go Green (Toucher un déchêt ne devrait pas agir comme en classique)
 - [ ] Corriger les requins qui mangent des poissons déjà pêchés
 - [ ] Essayer de faire des poules pour les bulles
 - [ ] Mettre un point de deboggage sur `GetCaughtBy()` semble s'activer à chaque frame pour la ligne, mais pas les espadons
 - [ ] Corriger deux oursins sur l'hammeçon qui s'échangeraient un poisson à chaque frame
 - [ ] Corriger les espadons qui font une boucle infinie avec l'oursin
 - [ ] Mettre à jour le fichier avec les informations sur les poissons
-- [ ] Régler l'erreur en cas d'absence de fichier de configuration

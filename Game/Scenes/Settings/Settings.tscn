@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dwv4cu7q6wlf6"]
+[gd_scene load_steps=9 format=3 uid="uid://dwv4cu7q6wlf6"]
 
 [ext_resource type="Script" uid="uid://dc58akmbevtcf" path="res://Game/Scenes/Settings/Settings.cs" id="1_pgx6s"]
 [ext_resource type="PackedScene" uid="uid://bubgi8mpwbbne" path="res://Game/UI/DynamicBackground/DynamicBackground.tscn" id="2_dks8k"]
 [ext_resource type="PackedScene" uid="uid://dfxhrdmj7km0i" path="res://Game/UI/BackButton/BackButton.tscn" id="3_io5b2"]
+[ext_resource type="Texture2D" uid="uid://cm4706uc8b0mw" path="res://Game/UI/CustomCheckBox/Checkbox_checked.png" id="5_jc7l0"]
 [ext_resource type="PackedScene" uid="uid://d1xuincg5ibnm" path="res://Game/UI/CustomCheckBox/CustomCheckBox.tscn" id="7_lhwuh"]
 [ext_resource type="PackedScene" uid="uid://ck4c7k26wfpv6" path="res://Game/UI/VolumeControl/VolumeControl.tscn" id="7_suojw"]
 
@@ -11,12 +12,15 @@ bg_color = Color(0.392157, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vkyyb"]
 
-[node name="Settings" type="CanvasLayer" node_paths=PackedStringArray("DeleteDataPopup", "CompetitiveMode")]
+[node name="Settings" type="CanvasLayer" node_paths=PackedStringArray("DeleteDataPopup", "CompetitiveMode", "Vibrations", "WaterEffect")]
 script = ExtResource("1_pgx6s")
 DeleteDataPopup = NodePath("ResetDataPopup")
 CompetitiveMode = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/CompetitiveModeCheckBox")
+Vibrations = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/VibrationsCheckBox")
+WaterEffect = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/WaterEffectCheckBox")
 
 [node name="Background" parent="." instance=ExtResource("2_dks8k")]
+anchors_preset = -1
 offset_top = -360.0
 offset_bottom = 360.0
 
@@ -72,6 +76,18 @@ layout_mode = 2
 [node name="CompetitiveModeCheckBox" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_lhwuh")]
 layout_mode = 2
 text = "Competitive Mode"
+
+[node name="VibrationsCheckBox" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_lhwuh")]
+layout_mode = 2
+button_pressed = true
+text = "Vibrations"
+icon = ExtResource("5_jc7l0")
+
+[node name="WaterEffectCheckBox" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_lhwuh")]
+layout_mode = 2
+button_pressed = true
+text = "Water effect"
+icon = ExtResource("5_jc7l0")
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -155,8 +171,10 @@ text = "Cancel"
 layout_mode = 2
 text = "Proceed"
 
-[connection signal="pressed" from="VBoxContainer/Control/MarginContainer/BackButton" to="VBoxContainer/Control/MarginContainer/BackButton" method="GoToHome"]
+[connection signal="pressed" from="VBoxContainer/Control/MarginContainer/BackButton" to="." method="GoToHome"]
 [connection signal="toggled" from="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/CompetitiveModeCheckBox" to="." method="SetCompetitiveMode"]
+[connection signal="toggled" from="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/VibrationsCheckBox" to="." method="SetVibrations"]
+[connection signal="toggled" from="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/WaterEffectCheckBox" to="." method="SetWaterEffect"]
 [connection signal="pressed" from="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/ResetButton" to="." method="DisplayDeleteDataPopup"]
 [connection signal="pressed" from="ResetDataPopup/PanelContainer/VBoxContainer/MarginContainer2/HBoxContainer/CancelButton" to="." method="HideDeleteDataPopup"]
 [connection signal="pressed" from="ResetDataPopup/PanelContainer/VBoxContainer/MarginContainer2/HBoxContainer/ProceedButton" to="." method="DeleteData"]

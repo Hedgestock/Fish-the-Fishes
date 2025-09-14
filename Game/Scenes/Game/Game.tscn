@@ -1,11 +1,12 @@
-[gd_scene load_steps=15 format=3 uid="uid://0sb3i5bm7j4p"]
+[gd_scene load_steps=16 format=3 uid="uid://0sb3i5bm7j4p"]
 
 [ext_resource type="Script" uid="uid://dihoq85y44x4p" path="res://Game/Scenes/Game/Game.cs" id="1_sbmws"]
-[ext_resource type="Texture2D" uid="uid://dp080lwp13kug" path="res://Game/Assets/Biomes/Beach/beach.webp" id="2_sbmws"]
+[ext_resource type="Texture2D" uid="uid://cyqlsyp6ppauk" path="res://Game/Assets/Biomes/Beach/BeachBackground.png" id="2_sbmws"]
 [ext_resource type="PackedScene" uid="uid://yi82g384vgwb" path="res://Game/Scenes/Game/HUD.tscn" id="3_0ebou"]
 [ext_resource type="PackedScene" uid="uid://bnkmwtljf2o3p" path="res://Game/Assets/Player/FishingLine.tscn" id="3_kichm"]
 [ext_resource type="PackedScene" uid="uid://ceyknq2cha026" path="res://Game/UI/PauseButton/PauseButton.tscn" id="3_p6c18"]
 [ext_resource type="Shader" uid="uid://dexkwxs8kvqhf" path="res://Game/Scenes/Game/water.gdshader" id="6_p6c18"]
+[ext_resource type="Script" uid="uid://bnapcqd7vris2" path="res://Game/Utilities/WaterEffect.cs" id="8_aoxvl"]
 [ext_resource type="Texture2D" uid="uid://cfpo2ifn0346n" path="res://Game/Scenes/Game/Vignette.png" id="8_sbmws"]
 [ext_resource type="PackedScene" uid="uid://ifoga56i10w3" path="res://Game/Assets/RandomTimer.tscn" id="13_7sxe6"]
 
@@ -15,14 +16,14 @@ distance = 50.0
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_sbmws"]
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_sbmws"]
-seamless = true
 noise = SubResource("FastNoiseLite_sbmws")
+seamless = true
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_xnc2s"]
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_aoxvl"]
-seamless = true
 noise = SubResource("FastNoiseLite_xnc2s")
+seamless = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_t2qr5"]
 shader = ExtResource("6_p6c18")
@@ -98,9 +99,11 @@ size_flags_horizontal = 4
 size_flags_vertical = 8
 mouse_filter = 2
 texture = ExtResource("8_sbmws")
+script = ExtResource("8_aoxvl")
 
 [node name="PauseButton" parent="." instance=ExtResource("3_p6c18")]
 z_index = 99
+anchors_preset = -1
 offset_left = 32.0
 offset_top = -264.0
 offset_right = 332.0

@@ -16,11 +16,16 @@ namespace WaffleStock
             }
         }
 
+        public static bool Vibrations = true;
+        public static bool WaterEffect = true;
+
         public static bool Save(string path)
         {
             ConfigFile config = new();
 
             config.SetValue(null, nameof(CompetitiveMode), CompetitiveMode);
+            config.SetValue(null, nameof(Vibrations), Vibrations);
+            config.SetValue(null, nameof(WaterEffect), WaterEffect);
 
             for (int bus = 0; bus < AudioServer.BusCount; bus++)
             {
@@ -47,11 +52,12 @@ namespace WaffleStock
 
             if (err != Error.Ok)
             {
-                GD.PrintErr(err);
-                return false;
+                GD.PrintErr($"Error loading settings file, creating a fresh one: {err}");
             }
 
-            CompetitiveMode = (bool)config.GetValue(null, nameof(CompetitiveMode), false);
+            CompetitiveMode = (bool)config.GetValue(null, nameof(CompetitiveMode), CompetitiveMode);
+            Vibrations = (bool)config.GetValue(null, nameof(Vibrations), Vibrations);
+            WaterEffect = (bool)config.GetValue(null, nameof(WaterEffect), WaterEffect);
 
             for (int bus = 0; bus < AudioServer.BusCount; bus++)
             {
