@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Fish the Fishes"
-config/version="2025.09.13.0"
+config/version="2025.09.14.0"
 run/main_scene="uid://blkg0i7vjb6il"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="WaffleStock/FishTheFishes"

@@ -233,3 +233,4 @@
 - [ ] Corriger deux oursins sur l'hammeçon qui s'échangeraient un poisson à chaque frame
 - [ ] Corriger les espadons qui font une boucle infinie avec l'oursin
 - [ ] Mettre à jour le fichier avec les informations sur les poissons
+- [ ] Utiliser un nœud 2D dans les hameçons plutôt qu'un simple entier

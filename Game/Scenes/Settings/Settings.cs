@@ -16,12 +16,9 @@ public partial class Settings : CanvasLayer
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        GD.Print(UserSettings.CompetitiveMode, UserSettings.Vibrations, UserSettings.WaterEffect);
-        GD.Print(CompetitiveMode.ButtonPressed, Vibrations.ButtonPressed, WaterEffect.ButtonPressed);
         CompetitiveMode.ButtonPressed = UserSettings.CompetitiveMode;
         Vibrations.ButtonPressed = UserSettings.Vibrations;
         WaterEffect.ButtonPressed = UserSettings.WaterEffect;
-        GD.Print(CompetitiveMode.ButtonPressed, Vibrations.ButtonPressed, WaterEffect.ButtonPressed);
     }
 
     private void GoToHome()
