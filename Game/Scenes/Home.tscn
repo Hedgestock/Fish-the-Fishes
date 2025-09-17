@@ -11,13 +11,14 @@
 [ext_resource type="Texture2D" uid="uid://bkwhancs5j6o5" path="res://WaffleStock/Logo_anime_last_frame.png" id="9_2pmwa"]
 [ext_resource type="VideoStream" uid="uid://desns6vcfplb0" path="res://WaffleStock/wafflestock animé.ogv" id="9_kgnoq"]
 
-[node name="Home" type="CanvasLayer" node_paths=PackedStringArray("FishTimer", "Message", "GameContainer", "ContinueButton", "TestButton")]
+[node name="Home" type="CanvasLayer" node_paths=PackedStringArray("FishTimer", "Message", "GameContainer", "ContinueButton", "TestButton", "Background")]
 script = ExtResource("1_ptl5f")
 FishTimer = NodePath("FishTimer")
 Message = NodePath("AspectRatioContainer/MarginContainer/VBoxContainer/Message")
 GameContainer = NodePath("GameContainer")
 ContinueButton = NodePath("AspectRatioContainer/MarginContainer/VBoxContainer/Menu/ContinueButton")
 TestButton = NodePath("AspectRatioContainer/MarginContainer/VBoxContainer/Menu/Test")
+Background = NodePath("Background")
 
 [node name="FishTimer" parent="." instance=ExtResource("2_op8l2")]
 autostart = true
@@ -73,6 +74,7 @@ position = Vector2(102.5, 0)
 scale = Vector2(10, 1)
 
 [node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTargetButton" index="1"]
+anchors_preset = -1
 offset_right = 217.0
 offset_bottom = 158.0
 text = "Target
@@ -90,6 +92,7 @@ position = Vector2(147.5, 0)
 scale = Vector2(14.5, 1)
 
 [node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayGoGreenButton" index="1"]
+anchors_preset = -1
 offset_right = 306.0
 offset_bottom = 158.0
 text = "Go Green
@@ -103,6 +106,7 @@ position = Vector2(118, 0)
 scale = Vector2(11.5, 1)
 
 [node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayClassicButton" index="1"]
+anchors_preset = -1
 offset_right = 247.0
 offset_bottom = 158.0
 text = "Classic"
@@ -116,6 +120,7 @@ position = Vector2(118, 0)
 scale = Vector2(11.5, 1)
 
 [node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/ContinueButton" index="1"]
+anchors_preset = -1
 offset_right = 247.0
 offset_bottom = 158.0
 text = "Continue"
@@ -128,6 +133,7 @@ position = Vector2(56.5, 0)
 scale = Vector2(5.5, 1)
 
 [node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTimeAttackButton" index="1"]
+anchors_preset = -1
 offset_right = 401.0
 offset_bottom = 158.0
 text = "Time Attack"
@@ -143,6 +149,7 @@ position = Vector2(141.5, 0)
 scale = Vector2(14, 1)
 
 [node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/EquipmentButton" index="1"]
+anchors_preset = -1
 offset_right = 365.0
 offset_bottom = 158.0
 text = "Equipment
@@ -156,6 +163,7 @@ position = Vector2(217, 0)
 scale = Vector2(22, 1)
 
 [node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/CompendiumButton" index="1"]
+anchors_preset = -1
 offset_right = 448.0
 offset_bottom = 158.0
 text = "Compendium"
@@ -168,6 +176,7 @@ position = Vector2(83.5, 0)
 scale = Vector2(8, 1)
 
 [node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/StatsButton" index="1"]
+anchors_preset = -1
 offset_right = 178.0
 offset_bottom = 158.0
 text = "Stats
@@ -181,6 +190,7 @@ position = Vector2(119, 0)
 scale = Vector2(12, 1)
 
 [node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/CreditsButton" index="1"]
+anchors_preset = -1
 offset_right = 248.0
 offset_bottom = 158.0
 text = "Credits"
@@ -193,6 +203,7 @@ position = Vector2(141, 0)
 scale = Vector2(14, 1)
 
 [node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/SettingsButton" index="1"]
+anchors_preset = -1
 offset_right = 293.0
 offset_bottom = 158.0
 text = "Settings"
@@ -206,6 +217,7 @@ position = Vector2(141.5, 0)
 scale = Vector2(14, 1)
 
 [node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/TutorialButton" index="1"]
+anchors_preset = -1
 offset_right = 293.0
 offset_bottom = 158.0
 text = "Tutorial"
@@ -253,7 +265,7 @@ stream = ExtResource("9_kgnoq")
 
 [node name="WaffleStock" type="Label" parent="ColorRect"]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5

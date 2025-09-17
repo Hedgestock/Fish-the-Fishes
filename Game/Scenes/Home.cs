@@ -16,19 +16,30 @@ public partial class Home : CanvasLayer
     [Export]
     Button TestButton;
 
+    [Export]
+    DynamicBackground Background;
+
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
         if (OS.IsDebugBuild()) TestButton.Show();
-        if (GameManager.Biome == null) GameManager.Biome = GameManager.StartingBiome;
+
+        if (GameManager.GameSave != null)
+        {
+            ContinueButton.Show();
+            GameManager.Biome = GD.Load<Biome>(GameManager.GameSave?.BiomePath);
+        }
+
+        if (GameManager.Biome == null) 
+            GameManager.Biome = GameManager.StartingBiome;
+
+        Background._Ready();
+
         FishTimer.Start(GameManager.Biome.TimeToSpawnFish, GameManager.Biome.TimeToSpawnFishDeviation);
         if (GameManager.PrevScene == "res://Game/Scenes/Game/Game.tscn")
         {
             Message.Text = "Last Score:\n" + GameManager.Score.ToString();
         }
-
-        if (GameManager.GameSave != null)
-            ContinueButton.Show();
     }
 
     void Play(Game.Mode mode, Biome biome)
