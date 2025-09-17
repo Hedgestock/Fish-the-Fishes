@@ -5,9 +5,5 @@
 [resource]
 script = ExtResource("1_e8omp")
 Threshold = 3
-Category = 0
-Mode = 0
-UnlockableName = ""
-UnlockableType = 0
 CompendiumName = "3 at once"
 CompendiumDescription = "3 at once! Did you see the score multiplier?"

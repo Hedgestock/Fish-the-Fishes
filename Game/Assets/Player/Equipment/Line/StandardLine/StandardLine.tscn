@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://r57nubtmjtlg"]
+
+[ext_resource type="SpriteFrames" uid="uid://bi72ueuctbdl3" path="res://Game/Assets/Player/LineAnimation.tres" id="1_gwp3o"]
+[ext_resource type="Script" uid="uid://dvqpn4f8nq7mo" path="res://Game/Assets/Player/Equipment/EquipmentPiece.cs" id="2_gwp3o"]
+
+[node name="Line" type="AnimatedSprite2D"]
+texture_repeat = 2
+position = Vector2(0, -1500)
+sprite_frames = ExtResource("1_gwp3o")
+animation = &"loose"
+script = ExtResource("2_gwp3o")

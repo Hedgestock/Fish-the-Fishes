@@ -29,7 +29,7 @@ public partial class SardineFish : Fish
         if (newPosX > -20 && newPosX < GetViewport().GetVisibleRect().Size.X + 20)
             newPosX = Flip ? -20 : GetViewport().GetVisibleRect().Size.X + 20;
 
-        Fish fish = ResourceLoader.Load<PackedScene>(SceneFilePath).Instantiate() as Fish;
+        Fish fish = ResourceLoader.Load<PackedScene>(SceneFilePath).Instantiate<Fish>();
 
         Vector2 fishSpawnLocation = new Vector2(newPosX, newPosY);
 

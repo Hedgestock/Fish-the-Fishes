@@ -10,7 +10,7 @@ public partial class EquipmentPiece : AnimatedSprite2D
         Bait,
         Lure,
         Weight,
-        Cork
+        Cork,
     }
 
     [Export]

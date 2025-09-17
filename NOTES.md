@@ -1,3 +1,3 @@
-HugeHook Fished25FishesMax
+HugeHook    Fished25FishesMax
 HarpoonHook Scored40PointsMax
-ControlHook Played10TargetGames.tres
+ControlHook Played10TargetGames

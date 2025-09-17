@@ -1,7 +1,7 @@
 [gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://bi72ueuctbdl3"]
 
-[ext_resource type="Texture2D" uid="uid://bomtf706jn6xi" path="res://Game/Assets/Player/Equipment/Line/line_straight.png" id="1_3hive"]
-[ext_resource type="Texture2D" uid="uid://reinm7r7t34w" path="res://Game/Assets/Player/Equipment/Line/line_loose.png" id="2_r364n"]
+[ext_resource type="Texture2D" uid="uid://bomtf706jn6xi" path="res://Game/Assets/Player/Equipment/Line/StandardLine/line_straight.png" id="1_3hive"]
+[ext_resource type="Texture2D" uid="uid://reinm7r7t34w" path="res://Game/Assets/Player/Equipment/Line/StandardLine/line_loose.png" id="2_r364n"]
 
 [resource]
 animations = [{

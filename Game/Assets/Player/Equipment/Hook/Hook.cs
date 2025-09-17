@@ -16,7 +16,6 @@ public partial class Hook : EquipmentPiece
     public Area2D FishBox;
     public Area2D HitBox;
 
-
     [Export]
     public int AimOffset = 50;
 

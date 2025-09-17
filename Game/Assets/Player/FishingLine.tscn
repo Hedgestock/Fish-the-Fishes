@@ -1,10 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bnkmwtljf2o3p"]
+[gd_scene load_steps=9 format=3 uid="uid://bnkmwtljf2o3p"]
 
 [ext_resource type="Script" uid="uid://bjl5ls0osnndw" path="res://Game/Assets/Player/FishingLine.cs" id="1_n5cos"]
 [ext_resource type="PackedScene" uid="uid://ogoejx5sl264" path="res://Game/Assets/Player/Equipment/Hook/HugeHook/HugeHook.tscn" id="3_se18j"]
 [ext_resource type="PackedScene" uid="uid://caai7o1q2a1n0" path="res://Game/Assets/Player/Equipment/Hook/StandardHook/StandardHook.tscn" id="3_x8i5s"]
 [ext_resource type="PackedScene" uid="uid://dy1dv6tfxqajl" path="res://Game/Assets/Player/Equipment/Hook/FastHook/FastHook.tscn" id="4_141u0"]
-[ext_resource type="SpriteFrames" uid="uid://bi72ueuctbdl3" path="res://Game/Assets/Player/LineAnimation.tres" id="4_l5pqx"]
 [ext_resource type="AudioStream" uid="uid://c8x2gam58vw1l" path="res://Game/Assets/Player/Toyouying.wav" id="4_qchpe"]
 [ext_resource type="PackedScene" uid="uid://cghnipcqvmc3k" path="res://Game/Assets/Player/Equipment/Hook/ControlHook/ControlHook.tscn" id="5_yr3uc"]
 [ext_resource type="PackedScene" uid="uid://bv5hyshljxn2u" path="res://Game/Assets/Player/Equipment/Hook/HarpoonHook/HarpoonHook.tscn" id="6_nkp0g"]
@@ -23,12 +22,6 @@ Hooks = {
 "HugeHook": ExtResource("3_se18j"),
 "StandardHook": ExtResource("3_x8i5s")
 }
-
-[node name="Line" type="AnimatedSprite2D" parent="."]
-texture_repeat = 2
-position = Vector2(0, -1500)
-sprite_frames = ExtResource("4_l5pqx")
-animation = &"loose"
 
 [node name="HitSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_qchpe")

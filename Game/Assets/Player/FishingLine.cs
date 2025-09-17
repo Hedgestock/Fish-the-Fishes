@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using static Hook.Action;
+using System.Reflection;
 
 public partial class FishingLine : CharacterBody2D, IFisher
 {
@@ -26,10 +27,12 @@ public partial class FishingLine : CharacterBody2D, IFisher
     [Export]
     private uint Speed;
 
-    [Export]
-    public Godot.Collections.Dictionary<string, PackedScene> Hooks;
-
     private Hook Hook;
+    private EquipmentPiece Line;
+    private EquipmentPiece Bait;
+    private EquipmentPiece Lure;
+    private EquipmentPiece Weight;
+    private EquipmentPiece Cork;
 
     public List<IFishable> FishedThings { get; } = new List<IFishable>();
 
@@ -40,13 +43,10 @@ public partial class FishingLine : CharacterBody2D, IFisher
     private bool _invincible;
     public bool IsInvincible { get { return _invincible; } }
 
-    private AnimatedSprite2D Line;
-
     public override void _Ready()
     {
         EquipStuff();
 
-        Line = GetNode<AnimatedSprite2D>("Line");
         Line.Play();
 
         GetTree().Root.Connect(Viewport.SignalName.SizeChanged, Callable.From(OnScreenResize));
@@ -54,19 +54,8 @@ public partial class FishingLine : CharacterBody2D, IFisher
 
     public void EquipStuff()
     {
-        // If this is the first launch of the game or if a now unavailable hook is equipped, this will be null
-        string hookKey = UserData.Equipments.Where(e => e.Value.Type == EquipmentPiece.Type.Hook).FirstOrDefault(e => e.Value.IsEquipped).Key;
-
-        if (hookKey == null)
-        {
-            // In the case of an invalid equippped item we default to standard
-            hookKey = "StandardHook";
-            UserData.Equipments[hookKey] = new UserData.EquipmentStatus(EquipmentPiece.Type.Hook, true);
-        }
-
-        if (Hook != null) { Hook.QueueFree(); }
-        Hook = Hooks[hookKey].Instantiate<Hook>();
-        AddChild(Hook);
+        EquipHook();
+        EquipLine();
 
         Hook.FishBox.Connect(Area2D.SignalName.BodyEntered, Callable.From<Node2D>(OnFishBoxBodyEntered));
         Hook.HitBox.Connect(Area2D.SignalName.BodyEntered, Callable.From<Node2D>(OnHitBoxBodyEntered));
@@ -75,6 +64,28 @@ public partial class FishingLine : CharacterBody2D, IFisher
         _invincible = false;
 
         ComputeScore();
+    }
+
+    public void EquipHook()
+    {
+        EquipSingle(ref Hook, EquipmentPiece.Type.Hook, "StandardHook");
+    }
+
+    public void EquipLine()
+    {
+        EquipSingle(ref Line, EquipmentPiece.Type.Line, "StandardLine");
+    }
+
+    private void EquipSingle<PieceType>(ref PieceType piece, EquipmentPiece.Type pieceType, StringName fallbackPiece) where PieceType : EquipmentPiece
+    {
+        // If this is the first launch of the game or if a now unavailable equipment piece is equipped, we use the fallback
+        string equipmentKey = UserData.Equipments.Where(e => e.Value.Type == pieceType).FirstOrDefault(e => e.Value.IsEquipped).Key ?? fallbackPiece;
+
+        UserData.Equipments[equipmentKey] = new UserData.EquipmentStatus(pieceType, true);
+
+        if (piece != null) { piece.QueueFree(); }
+        piece = GD.Load<PackedScene>(Constants.EquipmentList[pieceType][equipmentKey]).Instantiate<PieceType>();
+        AddChild(piece);
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.

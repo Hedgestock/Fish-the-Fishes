@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace WaffleStock
 {
@@ -69,5 +70,23 @@ namespace WaffleStock
             OceanCurrent,
             Lake,
         }
+
+        public static string EquipmentsFolder = "res://Game/Assets/Player/Equipment/";
+
+        public static Dictionary<EquipmentPiece.Type, Dictionary<string, string>> EquipmentList = new()
+        {
+            [EquipmentPiece.Type.Hook] = new()
+            {
+                ["StandardHook"] = "uid://caai7o1q2a1n0",
+                ["HugeHook"] = "uid://ogoejx5sl264",
+                ["HarpoonHook"] = "uid://bv5hyshljxn2u",
+                ["FastHook"] = "uid://dy1dv6tfxqajl",
+                ["ControlHook"] = "uid://cghnipcqvmc3k",
+            },
+            [EquipmentPiece.Type.Line] = new()
+            {
+                ["StandardLine"] = "uid://r57nubtmjtlg",
+            },
+        };
     }
 }
