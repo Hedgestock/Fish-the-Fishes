@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1xqky60o4qx1"]
+
+[ext_resource type="Texture2D" uid="uid://dxtj84kaqsi31" path="res://Game/Assets/Player/Equipment/Weight/Lead/Round.png" id="1_lr3f6"]
+[ext_resource type="Script" uid="uid://dvqpn4f8nq7mo" path="res://Game/Assets/Player/Equipment/EquipmentPiece.cs" id="2_4uh7i"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4uh7i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_lr3f6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Lead" type="AnimatedSprite2D"]
+position = Vector2(-24, 91)
+scale = Vector2(7.2000003, 10.1)
+sprite_frames = SubResource("SpriteFrames_4uh7i")
+script = ExtResource("2_4uh7i")
+EquipmentType = 2
+EquipmentName = "Lead"
+EquipmentDescription = "Adding this lead augments the casting speed, at the cost of a slower rewind speed."
+FlatSpeedModifierDown = 500
+FlatSpeedModifierUp = -300

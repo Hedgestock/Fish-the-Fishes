@@ -7,12 +7,12 @@ public partial class EquipmentPiece : AnimatedSprite2D
     {
         Hook,
         Line,
-        Bait,
-        Lure,
         Weight,
-        Cork,
+        Attractor,
     }
 
+    [Export]
+    public Type EquipmentType;
     [Export]
     public string EquipmentName { get; set; }
     [Export(PropertyHint.MultilineText)]

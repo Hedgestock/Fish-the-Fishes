@@ -4,6 +4,7 @@
 [ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://Game/Themes/FTF_theme.tres" id="2_ojt1q"]
 
 [node name="EquipmentUi" type="TextureButton"]
+custom_minimum_size = Vector2(200, 200)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -11,6 +12,9 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
 theme = ExtResource("2_ojt1q")
+ignore_texture_size = true
+stretch_mode = 5
 script = ExtResource("1_13at4")
 
-[connection signal="pressed" from="." to="." method="OnClick"]
+[connection signal="focus_entered" from="." to="." method="Focus" binds= [true]]
+[connection signal="focus_exited" from="." to="." method="Focus" binds= [false]]

@@ -74,11 +74,11 @@
 - [x] Harpon (pêche à la descente)
 - [ ] Hameçon téléguidé
 - [ ] Hameçon rapide
-- [ ] Poids (augmente la vitesse de descente, réduit la vitesse de remonté)
-- [ ] Flotteur (réduit la vitesse de descente, augmente la vitesse de remonté)
+- [x] Poids (augmente la vitesse de descente, réduit la vitesse de remonté)
+- [x] Flotteur (réduit la vitesse de descente, augmente la vitesse de remonté)
 - [ ] Leurre (attire les poissons)
 - [ ] Aimant (attire les déchêts)
-- [ ] Inventaire de lignes de pêche
+- [ ] [**Solution Autre**]Inventaire de lignes de pêche
 
 # Biomes
 

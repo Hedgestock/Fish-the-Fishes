@@ -8,7 +8,6 @@
 script = ExtResource("1_okroq")
 
 [node name="Background" parent="." instance=ExtResource("2_m8kky")]
-anchors_preset = -1
 offset_top = -360.0
 offset_bottom = 360.0
 
@@ -80,7 +79,16 @@ metadata/_tab_index = 1
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/MarginContainer/Panel/Patch Notes"]
 layout_mode = 2
 bbcode_enabled = true
-text = "[center][font_size=200]14/09/2025[/font_size][/center]
+text = "[center][font_size=200]??/??/2025[/font_size][/center]
+[font_size=100]
+[ul]
+Added new equipment menu UI
+Fixed current fish animation
+Added Cork equipment
+Added Lead equipment
+[/ul]
+[/font_size]
+[center][font_size=200]14/09/2025[/font_size][/center]
 [font_size=100]
 [ul]
 Added vibration toggle in the settings
@@ -151,10 +159,10 @@ Added graph of biomes with spawn rates
 Changed spawn position and trajectory of fishes
 Added achievements to unlock hidden hook:
 [ol]
-Control Hook[img=top]res://Game/Assets/Player/Equipment/Hook/ControlHook/ControlHook_default.png[/img]
+Control Hook
 [/ol]
 Fixed a lot of achievements conditions and display in the compendium
-Fixed Harpoon [img=top]res://Game/Assets/Player/Equipment/Hook/HarpoonHook/HarpoonHook_default.png[/img] being invicible while going up and adjusted its speed
+Fixed Harpoon being invicible while going up and adjusted its speed
 Fixed a bug on hooks still fishing after getting hit, and sometime while getting hit, leading to \"undead\" fishes on the line for the rest of the game
 Separated fishbox and hitbox for all hooks
 Added biome specific trash and fish density
@@ -166,11 +174,11 @@ Shark are now indicated by fleeing fishes
 [font_size=100]
 [ul]
 Added Patch Notes page
-Added a new hook: the Harpoon [img=top]res://Game/Assets/Player/Equipment/Hook/HarpoonHook/HarpoonHook_default.png[/img]
+Added a new hook: the Harpoon
 Added achievements to unlock hidden hooks: 
 [ol]
-Huge Hook[img=top]res://Game/Assets/Player/Equipment/Hook/HugeHook/HugeHook_default.png[/img]
-Harpoon[img=top]res://Game/Assets/Player/Equipment/Hook/HarpoonHook/HarpoonHook_default.png[/img]
+Huge Hook
+Harpoon
 [/ol]
 [/ul]
 [/font_size]

@@ -29,10 +29,8 @@ public partial class FishingLine : CharacterBody2D, IFisher
 
     private Hook Hook;
     private EquipmentPiece Line;
-    private EquipmentPiece Bait;
-    private EquipmentPiece Lure;
     private EquipmentPiece Weight;
-    private EquipmentPiece Cork;
+    private EquipmentPiece Attractor;
 
     public List<IFishable> FishedThings { get; } = new List<IFishable>();
 
@@ -56,6 +54,8 @@ public partial class FishingLine : CharacterBody2D, IFisher
     {
         EquipHook();
         EquipLine();
+        EquipWeigth();
+        EquipAttractor();
 
         Hook.FishBox.Connect(Area2D.SignalName.BodyEntered, Callable.From<Node2D>(OnFishBoxBodyEntered));
         Hook.HitBox.Connect(Area2D.SignalName.BodyEntered, Callable.From<Node2D>(OnHitBoxBodyEntered));
@@ -76,16 +76,32 @@ public partial class FishingLine : CharacterBody2D, IFisher
         EquipSingle(ref Line, EquipmentPiece.Type.Line, "StandardLine");
     }
 
+    public void EquipWeigth()
+    {
+        EquipSingle(ref Weight, EquipmentPiece.Type.Weight, null);
+    }
+
+    public void EquipAttractor()
+    {
+        EquipSingle(ref Attractor, EquipmentPiece.Type.Attractor, null);
+    }
+
     private void EquipSingle<PieceType>(ref PieceType piece, EquipmentPiece.Type pieceType, StringName fallbackPiece) where PieceType : EquipmentPiece
     {
+        if (piece != null) RemoveChild(piece);
+
         // If this is the first launch of the game or if a now unavailable equipment piece is equipped, we use the fallback
         string equipmentKey = UserData.Equipments.Where(e => e.Value.Type == pieceType).FirstOrDefault(e => e.Value.IsEquipped).Key ?? fallbackPiece;
 
-        UserData.Equipments[equipmentKey] = new UserData.EquipmentStatus(pieceType, true);
+        if (equipmentKey != null)
+        {
+            // This is redudancy to equip a fallback
+            UserData.Equipments[equipmentKey] = new UserData.EquipmentStatus(pieceType, true);
+            piece = GD.Load<PackedScene>(Constants.EquipmentList[pieceType][equipmentKey]).Instantiate<PieceType>();
+            AddChild(piece);
+        }
 
-        if (piece != null) { piece.QueueFree(); }
-        piece = GD.Load<PackedScene>(Constants.EquipmentList[pieceType][equipmentKey]).Instantiate<PieceType>();
-        AddChild(piece);
+        ComputeSpeed();
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -156,23 +172,36 @@ public partial class FishingLine : CharacterBody2D, IFisher
         }
     }
 
+    private float ComputedSpeedDown;
+    private float ComputedSpeedUp;
+
+    private EquipmentPiece DefaultPiece = new();
+
+    private void ComputeSpeed()
+    {
+        ComputedSpeedUp = Speed * (Line ?? DefaultPiece).SpeedMultiplierUp * (Hook ?? DefaultPiece).SpeedMultiplierUp * (Weight ?? DefaultPiece).SpeedMultiplierUp * (Attractor ?? DefaultPiece).SpeedMultiplierUp
+                                + (Line ?? DefaultPiece).FlatSpeedModifierUp + (Hook ?? DefaultPiece).FlatSpeedModifierUp + (Weight ?? DefaultPiece).FlatSpeedModifierUp + (Attractor ?? DefaultPiece).FlatSpeedModifierUp;
+        ComputedSpeedDown = Speed * (Line ?? DefaultPiece).SpeedMultiplierDown * (Hook ?? DefaultPiece).SpeedMultiplierDown * (Weight ?? DefaultPiece).SpeedMultiplierDown * (Attractor ?? DefaultPiece).SpeedMultiplierDown
+                                + (Line ?? DefaultPiece).FlatSpeedModifierDown + (Hook ?? DefaultPiece).FlatSpeedModifierDown + (Weight ?? DefaultPiece).FlatSpeedModifierDown + (Attractor ?? DefaultPiece).FlatSpeedModifierDown;
+    }
+
     public void MoveTowardsCustom(Vector2 position)
     {
         Destination = position;
         Start = Position;
 
-        float computedSpeed = Speed;
+        float realSpeed = Speed;
 
         switch (Hook.State)
         {
             case MovingDown:
-                computedSpeed = Speed * Hook.SpeedMultiplierDown + Hook.FlatSpeedModifierDown;
+                realSpeed = ComputedSpeedDown;
                 break;
             case MovingUp:
-                computedSpeed = Speed * Hook.SpeedMultiplierUp + Hook.FlatSpeedModifierUp;
+                realSpeed = ComputedSpeedUp;
                 break;
             case Stopped:
-                computedSpeed = 0;
+                realSpeed = 0;
                 break;
             case GettingHit:
             case Resetting:
@@ -180,9 +209,9 @@ public partial class FishingLine : CharacterBody2D, IFisher
                 break;
         }
 
-        computedSpeed = Math.Max(computedSpeed, Speed / 4);
+        realSpeed = Math.Clamp(realSpeed, Speed / 4, Speed * 2);
 
-        Velocity = (position - Position).Normalized() * computedSpeed;
+        Velocity = (position - Position).Normalized() * realSpeed;
     }
 
     void OnFishBoxBodyEntered(Node2D body)

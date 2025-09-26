@@ -1,7 +1,8 @@
-[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://2fuwx3oj2mub"]
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://2fuwx3oj2mub"]
 
 [ext_resource type="Texture2D" uid="uid://dgrgw05dda1if" path="res://Game/Assets/Fishes/CurrentFish/Animation/current_alive_0001.png" id="1_81l7p"]
 [ext_resource type="Texture2D" uid="uid://bdbh2ovpopb7m" path="res://Game/Assets/Fishes/CurrentFish/Animation/current_alive_0002.png" id="2_gwocm"]
+[ext_resource type="Texture2D" uid="uid://cgd7uxr5cojh" path="res://Game/Assets/Fishes/CurrentFish/Animation/current_alive_0003.png" id="3_81l7p"]
 [ext_resource type="Texture2D" uid="uid://biqiktu6wjngw" path="res://Game/Assets/Fishes/CurrentFish/Animation/current_dead.png" id="4_g6twd"]
 
 [resource]
@@ -15,10 +16,13 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("1_81l7p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_81l7p")
 }],
 "loop": true,
 "name": &"alive",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,

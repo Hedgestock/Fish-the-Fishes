@@ -31,6 +31,7 @@ public partial class AchievementsManager : CanvasLayer
         {
             AchievementsList.Add(GD.Load<Achievement>(path));
         }
+        CheckAll();
     }
 
     private List<string> GetAchievements(string dirPath)

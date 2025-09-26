@@ -5,9 +5,7 @@
 [resource]
 script = ExtResource("1_h4fbb")
 Threshold = 1
-Category = 0
-Mode = 0
-UnlockableName = ""
-UnlockableType = 0
+UnlockableName = "Cork"
+UnlockableType = 2
 CompendiumName = "Started playing"
 CompendiumDescription = "You started playing!"

@@ -87,6 +87,11 @@ namespace WaffleStock
             {
                 ["StandardLine"] = "uid://r57nubtmjtlg",
             },
+            [EquipmentPiece.Type.Weight] = new() {
+                ["Cork"] = "uid://ti5hjckxy2yf",
+                ["Lead"] = "uid://c1xqky60o4qx1",
+            },
+            [EquipmentPiece.Type.Attractor] = new() { },
         };
     }
 }

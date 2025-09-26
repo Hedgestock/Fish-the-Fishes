@@ -14,6 +14,7 @@ events = [SubResource("InputEventAction_qkuki")]
 [node name="BackButton" type="TextureButton"]
 size_flags_horizontal = 0
 size_flags_vertical = 0
+mouse_default_cursor_shape = 2
 shortcut = SubResource("Shortcut_y2krb")
 shortcut_in_tooltip = false
 texture_normal = ExtResource("1_6l4jl")

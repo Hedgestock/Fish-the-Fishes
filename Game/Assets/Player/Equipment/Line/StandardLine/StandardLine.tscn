@@ -9,3 +9,6 @@ position = Vector2(0, -1500)
 sprite_frames = ExtResource("1_gwp3o")
 animation = &"loose"
 script = ExtResource("2_gwp3o")
+EquipmentType = 1
+EquipmentName = "Standard Line"
+EquipmentDescription = "Standard fishing line, good for all purpose fishing."
