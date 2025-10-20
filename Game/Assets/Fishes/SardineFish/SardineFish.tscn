@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c0df7a2ej0abq"]
 
-[ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Biomes/Fish.tscn" id="1_wxgi5"]
+[ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_wxgi5"]
 [ext_resource type="Script" uid="uid://bot8k30fu6fb3" path="res://Game/Assets/Fishes/SardineFish/SardineFish.cs" id="2_kltwx"]
 [ext_resource type="SpriteFrames" uid="uid://dytgg6dbrwhc7" path="res://Game/Assets/Fishes/SardineFish/Animation/SardineFishAnimation.tres" id="3_kidlv"]
 

@@ -1,0 +1,26 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://q7xal57gjeb6"]
+
+[ext_resource type="Texture2D" uid="uid://bg4v11eg44xrn" path="res://Game/Assets/Fishes/BossGiantSquid/Animation/boss_giant_squid_alive_1.png" id="1_8q577"]
+[ext_resource type="Texture2D" uid="uid://dfhnxqg7b0a5r" path="res://Game/Assets/Fishes/BossGiantSquid/Animation/boss_giant_squid_alive_2.png" id="2_j8yhi"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8q577")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_j8yhi")
+}],
+"loop": true,
+"name": &"alive",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8q577")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}]

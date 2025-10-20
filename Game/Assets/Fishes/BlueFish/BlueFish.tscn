@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dw1u5k1ainq81"]
 
-[ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Biomes/Fish.tscn" id="1_fqoxl"]
+[ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_fqoxl"]
 [ext_resource type="SpriteFrames" uid="uid://br2058c4eqn71" path="res://Game/Assets/Fishes/BlueFish/Animation/BlueFishAnimation.tres" id="2_3xtnc"]
 [ext_resource type="Script" uid="uid://kh6p1omste0x" path="res://Game/Assets/Fishes/BlueFish/BlueFish.cs" id="2_g7owi"]
 

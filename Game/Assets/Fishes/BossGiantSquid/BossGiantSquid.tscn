@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://dndtj2avudhph"]
+
+[ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_p0x88"]
+[ext_resource type="Script" uid="uid://c1haqaugu6cqi" path="res://Game/Assets/Fishes/BossGiantSquid/BossGiantSquid.cs" id="2_10rc6"]
+[ext_resource type="SpriteFrames" uid="uid://q7xal57gjeb6" path="res://Game/Assets/Fishes/BossGiantSquid/Animation/BossGiantSquidAnimation.tres" id="3_uw8mj"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_10rc6"]
+radius = 115.0
+height = 676.0
+
+[node name="BossGiantSquid" instance=ExtResource("1_p0x88")]
+script = ExtResource("2_10rc6")
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = ExtResource("3_uw8mj")
+animation = &"alive"
+
+[node name="HurtBox" parent="." index="2"]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_10rc6")

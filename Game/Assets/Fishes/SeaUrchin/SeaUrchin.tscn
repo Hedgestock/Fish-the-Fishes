@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://ylm41rhcjfe8"]
 
-[ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Biomes/Fish.tscn" id="1_uf66v"]
+[ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_uf66v"]
 [ext_resource type="Script" uid="uid://bqrum51hqb2gu" path="res://Game/Assets/Fishes/SeaUrchin/SeaUrchin.cs" id="2_m6l2c"]
 [ext_resource type="Shader" uid="uid://kkdx24u0rap" path="res://Game/Assets/Fishes/SeaUrchin/Animation/SeaUrchin_dead.gdshader" id="2_rhn4i"]
 [ext_resource type="SpriteFrames" uid="uid://12cqf3wxi6x7" path="res://Game/Assets/Fishes/SeaUrchin/Animation/SeaUrchinAnimation.tres" id="3_rhn4i"]

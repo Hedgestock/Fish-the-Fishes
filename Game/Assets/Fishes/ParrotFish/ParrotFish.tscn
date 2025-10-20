@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bqmsa0kqy76gw"]
 
-[ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Biomes/Fish.tscn" id="1_78x8d"]
+[ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_78x8d"]
 [ext_resource type="Script" uid="uid://cp1iu4iajmib2" path="res://Game/Assets/Fishes/ParrotFish/ParrotFish.cs" id="2_260lm"]
 [ext_resource type="SpriteFrames" uid="uid://cchugj0lsp7tl" path="res://Game/Assets/Fishes/ParrotFish/Animation/ParrotFishAnimation.tres" id="3_uym21"]
 

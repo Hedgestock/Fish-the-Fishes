@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cw84k8wml5icn"]
 
-[ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Biomes/Fish.tscn" id="1_sc6li"]
+[ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_sc6li"]
 [ext_resource type="SpriteFrames" uid="uid://kxtjwbw4m0xa" path="res://Game/Assets/Fishes/ClownFish/Animation/ClownFishAnimation.tres" id="2_6a7gd"]
 [ext_resource type="Script" uid="uid://cp6es0ncxambk" path="res://Game/Assets/Fishes/ClownFish/ClownFish.cs" id="2_tg0eg"]
 
