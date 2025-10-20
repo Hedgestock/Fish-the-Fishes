@@ -93,6 +93,14 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
 
         IsCaught = false;
 
+        // If the inheriting class did not set the ActualSizeVariation, we do it now.
+        if (ActualSizeVariation == 0)
+        {
+            ActualSizeVariation = (float)Mathf.Max(0.01, GD.Randfn(1, SizeDeviation));
+        }
+
+        Scale *= ActualSizeVariation;
+
         // If the inheriting class did not set the spawning Posision, we do it now.
         if (Position == Vector2.Zero)
         {
@@ -100,7 +108,7 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
                 Flip = GameManager.Flip > 0;
             else
                 Flip = (GD.Randi() % 2) != 0;
-            float positionOffset = VisibleOnScreenNotifier.Rect.Size.X * VisibleOnScreenNotifier.Scale.X / 2;
+            float positionOffset = VisibleOnScreenNotifier.Rect.Size.X * VisibleOnScreenNotifier.Scale.X / 2 * ActualSizeVariation;
             Position = new Vector2(
                 Flip ? GameManager.ScreenSize.X + positionOffset : -positionOffset,
                 (float)GD.RandRange(GameManager.ScreenSize.Y * SpawnRange.X, GameManager.ScreenSize.Y * SpawnRange.Y)
@@ -135,15 +143,6 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
 
         Velocity = TravelAxis * ActualSpeed;
         Rotation = (float)(TravelAxis.Angle() - (Flip ? Mathf.Pi : 0));
-
-
-        // If the inheriting class did not set the ActualSizeVariation, we do it now.
-        if (ActualSizeVariation == 0)
-        {
-            ActualSizeVariation = (float)Mathf.Max(0.01, GD.Randfn(1, SizeDeviation));
-        }
-
-        Scale *= ActualSizeVariation;
     }
 
     public override void _PhysicsProcess(double delta)

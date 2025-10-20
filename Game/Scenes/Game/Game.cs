@@ -33,6 +33,7 @@ public partial class Game : Node
         BackgroundTransition.Texture = GameManager.Biome.Background;
         SetupBiome();
         GameManager.Instance.Connect(GameManager.SignalName.BiomeChanged, new Callable(this, MethodName.SetupBiome));
+        SpawnFish();
     }
 
     public void EndGame()

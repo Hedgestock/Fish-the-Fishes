@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dndtj2avudhph"]
+[gd_scene load_steps=6 format=3 uid="uid://dndtj2avudhph"]
 
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_p0x88"]
 [ext_resource type="Script" uid="uid://c1haqaugu6cqi" path="res://Game/Assets/Fishes/BossGiantSquid/BossGiantSquid.cs" id="2_10rc6"]
 [ext_resource type="SpriteFrames" uid="uid://q7xal57gjeb6" path="res://Game/Assets/Fishes/BossGiantSquid/Animation/BossGiantSquidAnimation.tres" id="3_uw8mj"]
+[ext_resource type="PackedScene" uid="uid://dsrx3fh1s4i27" path="res://Game/Assets/Fishes/BossGiantSquid/BossGiantSquidEye.tscn" id="4_uw8mj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_10rc6"]
 radius = 115.0
@@ -18,3 +19,11 @@ animation = &"alive"
 [node name="HurtBox" parent="." index="2"]
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_10rc6")
+disabled = true
+
+[node name="BossGiantSquidEye1" parent="." index="4" instance=ExtResource("4_uw8mj")]
+position = Vector2(-268, -116)
+
+[node name="BossGiantSquidEye2" parent="." index="5" instance=ExtResource("4_uw8mj")]
+position = Vector2(-268, 107)
+scale = Vector2(1, -1)

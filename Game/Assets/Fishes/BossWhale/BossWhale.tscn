@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://boa7mncaagpgp"]
+
+[ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_snaee"]
+[ext_resource type="Script" uid="uid://bson8swbe80uu" path="res://Game/Assets/Fishes/BossWhale/BossWhale.cs" id="2_5kqeq"]
+[ext_resource type="SpriteFrames" uid="uid://df4qasessukfa" path="res://Game/Assets/Fishes/BossWhale/Animation/BossWhaleAnimation.tres" id="2_dwf3w"]
+[ext_resource type="PackedScene" uid="uid://cds5ulqcu8lau" path="res://Game/Assets/Fishes/BossWhale/Barnacle/Barnacle.tscn" id="3_8jtwi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8jtwi"]
+size = Vector2(698.0001, 3026)
+
+[sub_resource type="Curve2D" id="Curve2D_glwst"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 2269, 717, 0, 0, 0, 0, -112, 323, 0, 0, 0, 0, 2556, 681, 0, 0, 0, 0, 3362, 744, 0, 0, 0, 0, -596, 126, 0, 0, 0, 0, 3675, 690, 0, 0, 0, 0, -641, 1, 0, 0, 0, 0, 3989, 618, 0, 0, 0, 0, -614, -143, 0, 0, 0, 0, 2833, 287, 0, 0, 0, 0, 4338, 547, 0, 0, 0, 0, 3093, 198, 0, 0, 0, 0, -650, -259, 0, 0, 0, 0, 2323, 27, 0, 0, 0, 0, -677, -375, 0, 0, 0, 0, 2968, -17, 0, 0, 0, 0, -686, -528, 0, 0, 0, 0, 3971, 10, 0, 0, 0, 0, -739, -662, 0, 0, 0, 0, 890, -528, 0, 0, 0, 0, 4159, -35, 0, 0, 0, 0, 904, -642, 0, 0, 0, 0, -782, -767, 0, 0, 0, 0, 894, -774, 0, 0, 0, 0, 4405, -76, 0, 0, 0, 0, 889, -866, 0, 0, 0, 0, -757, -859, 0, 0, 0, 0, 255, -949)
+}
+point_count = 28
+
+[node name="BossWhale" node_paths=PackedStringArray("BarnaclePath") instance=ExtResource("1_snaee")]
+z_index = -1
+script = ExtResource("2_5kqeq")
+BarnacleScene = ExtResource("3_8jtwi")
+BarnaclePath = NodePath("Path2D/PathFollow2D")
+MinSpeed = 200.0
+MaxSpeed = 300.0
+SpawnRange = Vector2(0.4, 0.6)
+AverageSize = 2500.0
+SizeDeviation = 0.02
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="0"]
+scale = Vector2(500, 150)
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = ExtResource("2_dwf3w")
+animation = &"alive"
+
+[node name="HurtBox" parent="." index="2"]
+position = Vector2(3.000122, -434.99997)
+rotation = 1.5707964
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_8jtwi")
+disabled = true
+
+[node name="Path2D" type="Path2D" parent="." index="4"]
+curve = SubResource("Curve2D_glwst")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" index="0"]
+position = Vector2(2269, 717)
+rotation = -2.977602

@@ -1,0 +1,23 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://df4qasessukfa"]
+
+[ext_resource type="Texture2D" uid="uid://c820a16xgi0qq" path="res://Game/Assets/Fishes/BossWhale/Animation/boss_whale_alive_1.png" id="1_ivji0"]
+[ext_resource type="Texture2D" uid="uid://d0avkito6yl5o" path="res://Game/Assets/Fishes/BossWhale/Animation/boss_whale_alive_2.png" id="2_rbwqd"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ivji0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_rbwqd")
+}],
+"loop": true,
+"name": &"alive",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}]

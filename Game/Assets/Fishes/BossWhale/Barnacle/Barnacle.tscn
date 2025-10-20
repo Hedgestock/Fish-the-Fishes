@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://cds5ulqcu8lau"]
+
+[ext_resource type="Script" uid="uid://b8y80q12bikx2" path="res://Game/Assets/Fishes/BossWhale/Barnacle/Barnacle.cs" id="1_vxnhu"]
+[ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_ykrpa"]
+[ext_resource type="Texture2D" uid="uid://coian0yvt0h1p" path="res://Game/Assets/Fishes/BossWhale/Barnacle/barnacle.png" id="2_vxnhu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a6u02"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vxnhu")
+}],
+"loop": true,
+"name": &"alive",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vxnhu")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_277ck"]
+radius = 50.0
+
+[node name="Barnacle" instance=ExtResource("1_ykrpa")]
+script = ExtResource("1_vxnhu")
+MinSpeed = 0.0
+MaxSpeed = 0.0
+SizeDeviation = 0.5
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="0"]
+scale = Vector2(7, 7)
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_a6u02")
+animation = &"alive"
+
+[node name="HurtBox" parent="." index="2"]
+shape = SubResource("CircleShape2D_277ck")

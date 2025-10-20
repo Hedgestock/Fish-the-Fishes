@@ -40,6 +40,7 @@ TrashTimer = NodePath("TrashTimer")
 Background = NodePath("Background")
 
 [node name="Background" type="TextureRect" parent="."]
+z_index = -10
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -103,7 +104,6 @@ script = ExtResource("8_aoxvl")
 
 [node name="PauseButton" parent="." instance=ExtResource("3_p6c18")]
 z_index = 99
-anchors_preset = -1
 offset_left = 32.0
 offset_top = -264.0
 offset_right = 332.0

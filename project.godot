@@ -48,6 +48,7 @@ project/assembly_name="FTF"
 
 Fishes=""
 Trashes=""
+Hurtboxes=""
 
 [gui]
 

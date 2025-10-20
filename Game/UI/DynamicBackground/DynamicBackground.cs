@@ -7,5 +7,6 @@ public partial class DynamicBackground : TextureRect
     {
         base._Ready();
         Texture = GameManager.Biome?.Background ?? Texture;
+        ZIndex = -10;
     }
 }
