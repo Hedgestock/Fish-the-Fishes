@@ -29,8 +29,8 @@ public partial class GameManager : Node
     }
     public static Biome TestBiome { get { return _instance._testBiome; } }
 
-    private static string _target = "Fish";
-    static public string Target { get { return _target; } }
+    private static Constants.Fishes _target = 0;
+    static public Constants.Fishes Target { get { return _target; } }
 
     static public SaveManager.GameSave? GameSave = null;
 
@@ -100,7 +100,7 @@ public partial class GameManager : Node
 
     static public void ChangeTarget()
     {
-        _target = (WeightedItem.ChooseFrom(Biome.Fishes.ToArray()) as WeightedFish).Fish.ToString();
+        _target = (WeightedItem.ChooseFrom(Biome.Fishes.ToArray()) as WeightedFish).Fish;
         _instance.EmitSignal(SignalName.TargetChanged);
     }
 
@@ -111,7 +111,7 @@ public partial class GameManager : Node
 
         // That's a mouthfull, but we simply check the current biome to check if the target is still valid
         // otherwise, we just set a new one.
-        if (Mode == Game.Mode.Target && !Biome.Fishes.Select(fish => fish.ToString()).Contains(Target))
+        if (Mode == Game.Mode.Target && !Biome.Fishes.Select(fish => fish.Fish).Contains(Target))
             ChangeTarget();
     }
 

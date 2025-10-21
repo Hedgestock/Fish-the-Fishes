@@ -30,7 +30,7 @@ public partial class Home : CanvasLayer
             GameManager.Biome = GD.Load<Biome>(GameManager.GameSave?.BiomePath);
         }
 
-        if (GameManager.Biome == null) 
+        if (GameManager.Biome == null)
             GameManager.Biome = GameManager.StartingBiome;
 
         Background._Ready();
@@ -55,16 +55,18 @@ public partial class Home : CanvasLayer
             AchievementsManager.OnGameEnd();
             SaveManager.EraseGame();
         }
+        else
+        {
+            UserData.IncrementStatistic(Constants.TotalGamesPlayed);
+            AchievementsManager.OnGameStart();
+        }
 
         GameManager.Mode = mode;
         GameManager.Biome = biome;
         GameManager.Score = 0;
         GameManager.Lives = 3;
         GameManager.StartTime = DateTime.Now;
-
-        UserData.IncrementStatistic(Constants.TotalGamesPlayed);
-
-        AchievementsManager.OnGameStart();
+        GameManager.LoadedBosses = new();
 
         GameManager.ChangeSceneToFile("res://Game/Scenes/Game/Game.tscn");
     }

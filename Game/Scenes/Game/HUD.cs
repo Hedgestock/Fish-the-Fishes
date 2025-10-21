@@ -196,7 +196,7 @@ public partial class HUD : CanvasLayer
 
     private void OnTargetChanged()
     {
-        string resourcePath = $"res://Game/Assets/Fishes/{GameManager.Target}/Animation/{GameManager.Target}Animation.tres";
+        string resourcePath = $"res://Game/Assets/Fishes/{GameManager.Target.ToString()}/Animation/{GameManager.Target.ToString()}Animation.tres";
         Target.SpriteFrames = GD.Load<SpriteFrames>(resourcePath);
 
         Target.Play();

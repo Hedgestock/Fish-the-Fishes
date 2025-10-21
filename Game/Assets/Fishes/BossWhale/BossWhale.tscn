@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cds5ulqcu8lau" path="res://Game/Assets/Fishes/BossWhale/Barnacle/Barnacle.tscn" id="3_8jtwi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8jtwi"]
-size = Vector2(698.0001, 3026)
+size = Vector2(1939.9995, 9594)
 
 [sub_resource type="Curve2D" id="Curve2D_glwst"]
 _data = {
@@ -17,10 +17,11 @@ point_count = 28
 [node name="BossWhale" node_paths=PackedStringArray("BarnaclePath") instance=ExtResource("1_snaee")]
 z_index = -1
 script = ExtResource("2_5kqeq")
+Passes = 3
 BarnacleScene = ExtResource("3_8jtwi")
 BarnaclePath = NodePath("Path2D/PathFollow2D")
-MinSpeed = 200.0
-MaxSpeed = 300.0
+MinSpeed = 1000.0
+MaxSpeed = 1200.0
 SpawnRange = Vector2(0.4, 0.6)
 AverageSize = 2500.0
 SizeDeviation = 0.02
@@ -33,9 +34,8 @@ sprite_frames = ExtResource("2_dwf3w")
 animation = &"alive"
 
 [node name="HurtBox" parent="." index="2"]
-position = Vector2(3.000122, -434.99997)
+position = Vector2(44.000137, -79.00002)
 rotation = 1.5707964
-scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_8jtwi")
 disabled = true
 

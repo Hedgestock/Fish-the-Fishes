@@ -81,7 +81,7 @@ namespace WaffleStock
 
         public static int TargetScore(List<IFishable> scoredFishes)
         {
-            int score = scoredFishes.Any(thing => thing.GetType().Name == GameManager.Target) ? 1 : 0;
+            int score = scoredFishes.Any(thing => thing.GetType().Name == GameManager.Target.ToString()) ? 1 : 0;
 
             UserData.SetHighStat(Constants.MaxFishedFishes, (uint)scoredFishes.Count);
             UserData.IncrementStatistic(Constants.TotalFishedFishes, (uint)scoredFishes.Count);

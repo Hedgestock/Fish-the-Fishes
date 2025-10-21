@@ -35,17 +35,17 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
 
     [ExportGroup("Behaviour")]
     [Export]
-    private float MinSpeed = 150;
+    protected float MinSpeed = 150;
     [Export]
     public float MaxSpeed = 250;
     [Export(PropertyHint.Range, "0,1")]
-    private float TajectoryDeviation = 0.1f;
+    protected float TajectoryDeviation = 0.1f;
     [Export]
     protected Vector2 SpawnRange = new(0, 1);
     [Export]
     public float AverageSize = 100;
     [Export]
-    private float SizeDeviation = 0.1f;
+    protected float SizeDeviation = 0.1f;
 
     protected float GravityScale = 0;
 
@@ -99,8 +99,6 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
             ActualSizeVariation = (float)Mathf.Max(0.01, GD.Randfn(1, SizeDeviation));
         }
 
-        Scale *= ActualSizeVariation;
-
         // If the inheriting class did not set the spawning Posision, we do it now.
         if (Position == Vector2.Zero)
         {
@@ -114,6 +112,13 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
                 (float)GD.RandRange(GameManager.ScreenSize.Y * SpawnRange.X, GameManager.ScreenSize.Y * SpawnRange.Y)
             );
         }
+
+        if (Flip)
+        {
+            Scale = new Vector2(-1, 1);
+        }
+
+        Scale *= ActualSizeVariation;
 
         // If the inheriting class did not set the ActualSpeed, we do it now.
         if (ActualSpeed == 0)
@@ -134,11 +139,6 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
                     )
                 );
             TravelAxis = (objective - Position).Normalized();
-        }
-
-        if (Flip)
-        {
-            Scale = new Vector2(-1, 1);
         }
 
         Velocity = TravelAxis * ActualSpeed;
@@ -201,7 +201,7 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
         Sound.Stop();
     }
 
-    private void Despawn()
+    protected virtual void Despawn()
     {
         if (!IsCaught && !IsInDisplay)
         {
