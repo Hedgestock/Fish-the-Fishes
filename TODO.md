@@ -234,3 +234,4 @@
 - [ ] Mettre un point de deboggage sur `GetCaughtBy()` semble s'activer à chaque frame pour la ligne, mais pas les espadons
 - [ ] Corriger deux oursins sur l'hammeçon qui s'échangeraient un poisson à chaque frame
 - [ ] Corriger les espadons qui font une boucle infinie avec l'oursin
+- [ ] Changer le texte dans le compendium pour la baleine

@@ -14,7 +14,7 @@ namespace WaffleStock
             return (int)(num * MathF.Log(num, b) + 1);
         }
 
-        public static int ClassicScore(List<IFishable> scoredFishes)
+        public static int ClassicScore(List<IFishable> scoredFishes, bool free = true)
         {
             float score = 0;
 
@@ -46,7 +46,7 @@ namespace WaffleStock
                 UpdateFishCompendium(fish);
                 score *= fish.Multiplier;
                 if (fish is IPowerup powerup) powerup.Activate();
-                fish.QueueFree();
+                if (free) fish.QueueFree();
             }
             AchievementsManager.OnFishFished();
 

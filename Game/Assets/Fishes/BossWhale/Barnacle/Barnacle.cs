@@ -4,13 +4,19 @@ using WaffleStock;
 
 public partial class Barnacle : Fish
 {
-    override public IFishable GetCaughtBy(IFisher by)
+    public override IFishable GetCaughtBy(IFisher by)
     {
         if (!IsAlive) return this;
+        ((BossWhale)GetParent()).RemoveBarnacle();
         Kill();
-        CallDeferred(MethodName.Reparent, GetParent().GetParent());
-        Velocity = new(GD.RandRange(-100,100), -300);
         return this;
+    }
+
+    public override void Kill()
+    {
+        CallDeferred(MethodName.Reparent, GetParent().GetParent());
+        Velocity = new(GD.RandRange(-100, 100), -300);
+        base.Kill();
     }
 
     protected override void Despawn()

@@ -1,10 +1,11 @@
 using Godot;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using WaffleStock;
 
 public partial class BossWhale : Fish
 {
-    [Export]
-    int Passes = 3;
 
     [Export]
     PackedScene BarnacleScene;
@@ -13,6 +14,9 @@ public partial class BossWhale : Fish
     PathFollow2D BarnaclePath;
 
     bool IsFirstPass = true;
+    int Passes;
+    int BarnaclesLeft;
+    int BarnaclesMax;
 
     public override void _Ready()
     {
@@ -29,7 +33,11 @@ public partial class BossWhale : Fish
             if (IsInDisplay) return;
             NotifySpawn();
 
-            for (int i = 0; i < 100; i++)
+            Passes = GD.RandRange(3, 5);
+
+            BarnaclesLeft = BarnaclesMax = GD.RandRange(80, 120);
+
+            for (int i = 0; i < BarnaclesMax; i++)
             {
                 BarnaclePath.ProgressRatio = GD.Randf();
                 Barnacle barnacle = BarnacleScene.Instantiate<Barnacle>();
@@ -69,29 +77,49 @@ public partial class BossWhale : Fish
         TravelAxis = Flip ? Vector2.Left : Vector2.Right;
 
         Velocity = TravelAxis * ActualSpeed;
-        GD.Print($"Spawning whale {Flip} {Position}");
     }
 
     protected override void Despawn()
     {
-        GD.Print($"Despawning whale {Flip} {Position}");
-
         if (Passes > 0)
         {
             Passes--;
             var parent = GetParent();
             Flip = !Flip;
-            GetTree().CreateTimer(1).Timeout += () =>
+            GetTree().CreateTimer(GD.RandRange(3, 12)).Timeout += () =>
             {
                 parent.AddChild(this);
                 this._Ready();
             };
             parent.RemoveChild(this);
-            GD.Print($" {Flip} passes left {Passes}");
         }
         else
         {
             base.Despawn();
+        }
+    }
+
+    public void RemoveBarnacle()
+    {
+        BarnaclesLeft--;
+        if (BarnaclesLeft <= BarnaclesMax * 0.2)
+        {
+            foreach (var barnacle in GetChildren().OfType<Barnacle>())
+            {
+                barnacle.Kill();
+            }
+
+            int score = 0;
+
+            switch (GameManager.Mode)
+            {
+                case Game.Mode.Classic:
+                case Game.Mode.TimeAttack:
+                    score = Scoring.ClassicScore([this], false);
+                    break;
+            }
+
+            GetNode("../FishingLine").EmitSignal(FishingLine.SignalName.Score, score);
         }
     }
 }

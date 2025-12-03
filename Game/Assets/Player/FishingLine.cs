@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using static Hook.Action;
-using System.Reflection;
 
 public partial class FishingLine : CharacterBody2D, IFisher
 {
@@ -62,8 +61,6 @@ public partial class FishingLine : CharacterBody2D, IFisher
         BasePosition = BasePosition = new Vector2(GameManager.ScreenSize.X / 2, 100 - Hook.AimOffset);
         Position = BasePosition;
         _invincible = false;
-
-        ComputeScore();
     }
 
     public void EquipHook()
@@ -124,7 +121,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
                 case MovingUp:
                     // This avoids loosing on target mode when we fish nothing
                     if (FishedThings.Count > 0)
-                        EmitSignal(SignalName.Score, ComputeScore());
+                        EmitSignalScore(ComputeScore());
                     Line.Animation = "loose";
                     ReelingSound.Stop();
                     goto case GettingHit;
