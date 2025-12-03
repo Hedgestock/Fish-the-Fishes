@@ -16,9 +16,11 @@ script = ExtResource("2_pthwn")
 EntityDisplay = NodePath("MarginContainer/HBoxContainer/Graphic/EntityDisplay")
 AnimationButtons = NodePath("MarginContainer/HBoxContainer/Graphic/AnimationButtons")
 
+[node name="Graphic" parent="MarginContainer/HBoxContainer" index="1"]
+size_flags_horizontal = 1
+
 [node name="EntityDisplay" parent="MarginContainer/HBoxContainer/Graphic" index="0" instance=ExtResource("3_qgptv")]
 layout_mode = 2
-size_flags_horizontal = 8
 
 [node name="AnimationButtons" type="HBoxContainer" parent="MarginContainer/HBoxContainer/Graphic" index="1"]
 visible = false

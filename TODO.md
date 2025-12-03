@@ -57,8 +57,8 @@
 - [ ] Saumon
 - [ ] Thon
 - [ ] Poisson lune
-- [ ] Baleine
-- [ ] Kraken
+- [x] Baleine
+- [x] Kraken
 
 # Objets pêchables
 
@@ -224,6 +224,8 @@
 - [x] Corriger l'affichage des notifications de hauts faits
 - [x] Régler la taille des nouveaux poissons
 - [x] Régler l'erreur en cas d'absence de fichier de configuration
+- [x] Mettre à jour le fichier avec les informations sur les poissons
+- [x] Utiliser un nœud 2D dans les hameçons plutôt qu'un simple entier
 - [ ] [**Plus de bulles pour l'instant**]Corriger les bulles des requins qui disparaissent trop tôt
 - [ ] Passer à des listes de noms plutôt que des énumérations
 - [ ] Corriger les poissons qui restent sur la ligne après une remontée
@@ -232,5 +234,3 @@
 - [ ] Mettre un point de deboggage sur `GetCaughtBy()` semble s'activer à chaque frame pour la ligne, mais pas les espadons
 - [ ] Corriger deux oursins sur l'hammeçon qui s'échangeraient un poisson à chaque frame
 - [ ] Corriger les espadons qui font une boucle infinie avec l'oursin
-- [ ] Mettre à jour le fichier avec les informations sur les poissons
-- [ ] Utiliser un nœud 2D dans les hameçons plutôt qu'un simple entier

@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=17 format=3 uid="uid://dqud8bhj4fopd"]
+[gd_resource type="Theme" load_steps=14 format=3 uid="uid://dqud8bhj4fopd"]
 
 [ext_resource type="StyleBox" uid="uid://cis4bdbay2jpn" path="res://Game/Themes/ButtonTextureHover.tres" id="1_mcx8r"]
 [ext_resource type="StyleBox" uid="uid://fj8sndej8q55" path="res://Game/Themes/ButtonTexture.tres" id="2_k2wvy"]
@@ -11,6 +11,18 @@
 [ext_resource type="Texture2D" uid="uid://csxfp4n3h00us" path="res://Game/Assets/Fishes/ArrowFish/Animation/arrow_alive_3.png" id="7_srjgg"]
 [ext_resource type="StyleBox" uid="uid://iftmxcpwxot8" path="res://Game/Themes/PanelTexture.tres" id="10_q6ye7"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_epvj8"]
+content_margin_left = 0.0
+content_margin_top = 15.0
+content_margin_right = 0.0
+content_margin_bottom = 15.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 6
+
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_q8gnl"]
 content_margin_left = 4.0
 content_margin_top = 0.0
@@ -18,42 +30,6 @@ content_margin_right = 4.0
 content_margin_bottom = 0.0
 color = Color(0.5, 0.5, 0.5, 1)
 thickness = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e005x"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(1, 1, 1, 0.4)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-corner_detail = 6
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_euiel"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(1, 1, 1, 0.75)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-corner_detail = 6
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6cfm"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.75, 0.75, 0.75, 0.75)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-corner_detail = 6
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_603q0"]
 content_margin_left = 15.0
@@ -67,27 +43,6 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 corner_detail = 6
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6txf4"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(1, 1, 1, 0.75)
-draw_center = false
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
-expand_margin_left = 2.0
-expand_margin_top = 2.0
-expand_margin_right = 2.0
-expand_margin_bottom = 2.0
-
 [resource]
 resource_name = "FTF"
 default_font_size = 128
@@ -97,6 +52,7 @@ Button/styles/pressed = ExtResource("3_4eyv1")
 DescriptionLabel/base_type = &"Label"
 DescriptionLabel/font_sizes/font_size = 64
 HFlowContainer/constants/h_separation = 10
+HScrollBar/styles/scroll = SubResource("StyleBoxFlat_epvj8")
 HSeparator/constants/separation = 20
 HSeparator/styles/separator = SubResource("StyleBoxLine_q8gnl")
 HSlider/icons/grabber = ExtResource("4_epvj8")
@@ -115,8 +71,4 @@ TabContainer/icons/increment_highlight = ExtResource("7_srjgg")
 TabContainer/icons/menu = null
 TabContainer/icons/menu_highlight = null
 TabContainer/styles/panel = ExtResource("10_q6ye7")
-VScrollBar/styles/grabber = SubResource("StyleBoxFlat_e005x")
-VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_euiel")
-VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_q6cfm")
 VScrollBar/styles/scroll = SubResource("StyleBoxFlat_603q0")
-VScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_6txf4")

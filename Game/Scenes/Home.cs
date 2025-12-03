@@ -66,7 +66,6 @@ public partial class Home : CanvasLayer
         GameManager.Score = 0;
         GameManager.Lives = 3;
         GameManager.StartTime = DateTime.Now;
-        GameManager.LoadedBosses = new();
 
         GameManager.ChangeSceneToFile("res://Game/Scenes/Game/Game.tscn");
     }
