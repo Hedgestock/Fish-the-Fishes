@@ -1,21 +1,84 @@
-[gd_scene load_steps=2 format=3 uid="uid://dvaaf84egrgis"]
+[gd_scene load_steps=9 format=3 uid="uid://dvaaf84egrgis"]
 
 [ext_resource type="Script" uid="uid://h6iqp76k4n5f" path="res://Game/UI/EntityDisplay/EntityDisplay.cs" id="1_lkb7s"]
+[ext_resource type="Texture2D" uid="uid://sf5nbt1ewklc" path="res://Game/Assets/Fishes/ArrowFish/Animation/arrow_left.png" id="2_1de3d"]
+[ext_resource type="Texture2D" uid="uid://b3ygkwfip0qaj" path="res://Game/Assets/Fishes/ArrowFish/Animation/arrow_left_3.png" id="3_tmuaj"]
+[ext_resource type="Texture2D" uid="uid://b6u50qvxp6of2" path="res://Game/Assets/Fishes/ArrowFish/Animation/arrow_left_2.png" id="4_l6crr"]
+[ext_resource type="Texture2D" uid="uid://t6xoo5v6v31m" path="res://Game/Assets/Fishes/ArrowFish/Animation/arrow_dead.png" id="5_8xuxw"]
+[ext_resource type="Texture2D" uid="uid://cdlcldgajtn4i" path="res://Game/Assets/Fishes/ArrowFish/Animation/arrow_alive_1.png" id="6_jhcas"]
+[ext_resource type="Texture2D" uid="uid://csxfp4n3h00us" path="res://Game/Assets/Fishes/ArrowFish/Animation/arrow_alive_3.png" id="7_cxc5r"]
+[ext_resource type="Texture2D" uid="uid://bcg3wdk8om5h4" path="res://Game/Assets/Fishes/ArrowFish/Animation/arrow_alive_2.png" id="8_f2fsi"]
 
-[node name="EntityDisplay" type="ScrollContainer" node_paths=PackedStringArray("Viewport")]
-custom_minimum_size = Vector2(500, 500)
+[node name="EntityDisplay" type="VBoxContainer" node_paths=PackedStringArray("Scroll", "EntityViewport", "ZoomButtons", "AnimationButtons")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lkb7s")
-Viewport = NodePath("SubViewportContainer/SubViewport")
+Scroll = NodePath("ScrollContainer")
+EntityViewport = NodePath("ScrollContainer/SubViewportContainer/SubViewport")
+ZoomButtons = NodePath("HBoxContainer/ZoomButtons")
+AnimationButtons = NodePath("HBoxContainer/AnimationButtons")
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="ScrollContainer"]
 layout_mode = 2
 
-[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+[node name="SubViewport" type="SubViewport" parent="ScrollContainer/SubViewportContainer"]
 transparent_bg = true
 handle_input_locally = false
 render_target_update_mode = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+alignment = 2
+
+[node name="ZoomButtons" type="HBoxContainer" parent="HBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Minus" type="Button" parent="HBoxContainer/ZoomButtons"]
+custom_minimum_size = Vector2(160, 160)
+layout_mode = 2
+size_flags_vertical = 0
+text = "-"
+
+[node name="Plus" type="Button" parent="HBoxContainer/ZoomButtons"]
+custom_minimum_size = Vector2(160, 160)
+layout_mode = 2
+size_flags_vertical = 0
+text = "+"
+
+[node name="AnimationButtons" type="HBoxContainer" parent="HBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 2
+
+[node name="PreviousAnimationButton" type="TextureButton" parent="HBoxContainer/AnimationButtons"]
+layout_mode = 2
+mouse_filter = 1
+texture_normal = ExtResource("2_1de3d")
+texture_pressed = ExtResource("3_tmuaj")
+texture_hover = ExtResource("4_l6crr")
+texture_disabled = ExtResource("5_8xuxw")
+stretch_mode = 5
+
+[node name="NextAnimationButton" type="TextureButton" parent="HBoxContainer/AnimationButtons"]
+layout_mode = 2
+size_flags_vertical = 0
+mouse_filter = 1
+texture_normal = ExtResource("6_jhcas")
+texture_pressed = ExtResource("7_cxc5r")
+texture_hover = ExtResource("8_f2fsi")
+texture_disabled = ExtResource("5_8xuxw")
+stretch_mode = 4
