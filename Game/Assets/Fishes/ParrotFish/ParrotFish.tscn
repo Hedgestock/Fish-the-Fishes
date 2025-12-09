@@ -33,7 +33,7 @@ position = Vector2(0, -5)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_ctkeo")
 
-[node name="HitBox" type="Area2D" parent="." index="4"]
+[node name="HitBox" type="Area2D" parent="." index="4" groups=["Hitboxes"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" index="0"]
 position = Vector2(105, -2)

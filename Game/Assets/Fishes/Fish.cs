@@ -154,18 +154,25 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
         MoveAndSlide();
     }
 
+    protected bool GetCaughtBySafetyGuard(IFisher by)
+    {
+        if (by == this)
+        {
+            GD.PrintErr(by, " is ", this);
+            return true;
+        }
+
+        if (by.FishedThings.Contains(this) || (by as Node).IsAncestorOf(this as Node))
+            return true; // This avoids multiple calls on reparenting
+        return false;
+    }
+
     public virtual IFishable GetCaughtBy(IFisher by)
     {
         //TODO: Fix the frame by frame call in the fishing line
 
-        if (by == this)
-        {
-            GD.PrintErr(by, " is ", this);
+        if (GetCaughtBySafetyGuard(by))
             return this;
-        }
-
-        if (by.FishedThings.Contains(this) || (by as Node).IsAncestorOf(this))
-            return this; // This avoids multiple calls on reparenting
 
         Velocity = Vector2.Zero;
         GravityScale = 0;
@@ -221,5 +228,3 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
         return List.Select(i => i.ToString()).Contains(FishType.ToString());
     }
 }
-
-

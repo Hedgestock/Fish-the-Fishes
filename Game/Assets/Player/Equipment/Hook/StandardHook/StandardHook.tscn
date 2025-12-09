@@ -51,7 +51,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_61v6c")
 disabled = true
 
-[node name="HitBox" type="Area2D" parent="."]
+[node name="HitBox" type="Area2D" parent="." groups=["Hitboxes"]]
 position = Vector2(83, 145)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]

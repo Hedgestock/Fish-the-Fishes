@@ -34,7 +34,7 @@ scale = Vector2(7.95, 7.5)
 sprite_frames = ExtResource("3_wupup")
 animation = &"alive"
 
-[node name="HitBox" type="Area2D" parent="." index="2"]
+[node name="HitBox" type="Area2D" parent="." index="2" groups=["Hitboxes"]]
 position = Vector2(6, -2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" index="0"]

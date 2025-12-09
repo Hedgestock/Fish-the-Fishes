@@ -24,6 +24,8 @@ public partial class SerpentFish : Fish
 
     private DateTime InstanciationTime = DateTime.Now;
 
+    private int CaughtSegment = 0; 
+
     public override void _Ready()
     {
         base._Ready();
@@ -72,6 +74,9 @@ public partial class SerpentFish : Fish
 
     public override IFishable GetCaughtBy(IFisher by)
     {
+        if (GetCaughtBySafetyGuard(by))
+            return this;
+        Node2D HitBox = (by as Node2D).FindChild("HitBox", true, false) as Node2D;
 
         return base.GetCaughtBy(by);
     }

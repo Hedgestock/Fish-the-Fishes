@@ -38,7 +38,7 @@ position = Vector2(-18, 13)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_jdtfq")
 
-[node name="HitBox" type="Area2D" parent="." index="4"]
+[node name="HitBox" type="Area2D" parent="." index="4" groups=["Hitboxes"]]
 position = Vector2(213, 19)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" index="0"]

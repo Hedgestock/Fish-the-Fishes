@@ -367,7 +367,7 @@ end_cap_mode = 2
 [node name="HurtBox" parent="." index="2"]
 shape = SubResource("CircleShape2D_m6l2c")
 
-[node name="HitBox" type="Area2D" parent="." index="4"]
+[node name="HitBox" type="Area2D" parent="." index="4" groups=["Hitboxes"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" index="0"]
 shape = SubResource("CircleShape2D_rhn4i")
