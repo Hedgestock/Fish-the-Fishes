@@ -53,7 +53,7 @@ public partial class SerpentFish : Fish
         }
 
 
-        GetNode<VisibleOnScreenNotifier2D>("VisibleOnScreenNotifier2D").Rect = new Rect2(-SegmentLength * Length, -WaveAmplitude, SegmentLength * Length, WaveAmplitude * 2);
+        VisibleOnScreenNotifier.Rect = new Rect2(-SegmentLength * Length, -WaveAmplitude, SegmentLength * Length, WaveAmplitude * 2);
     }
 
     public override void _PhysicsProcess(double delta)

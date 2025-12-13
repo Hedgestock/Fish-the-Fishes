@@ -1,3 +1,23 @@
-[gd_scene format=3 uid="uid://cx6ahor51tgex"]
+[gd_scene load_steps=5 format=3 uid="uid://cx6ahor51tgex"]
 
-[node name="BossGiantSquidTentacle" type="RigidBody2D"]
+[ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_y6vpg"]
+[ext_resource type="Script" uid="uid://2wi35i43lops" path="res://Game/Assets/Fishes/BossGiantSquid/BossGiantSquidTentacle.cs" id="2_erl5v"]
+[ext_resource type="Texture2D" uid="uid://ta5yuyx8w4pc" path="res://Game/Assets/Fishes/BossGiantSquid/Animation/Tentacle_1.png" id="3_us57q"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_erl5v"]
+radius = 25.0
+
+[node name="BossGiantSquidTentacle" instance=ExtResource("1_y6vpg")]
+script = ExtResource("2_erl5v")
+
+[node name="HurtBox" parent="." index="2"]
+shape = SubResource("CircleShape2D_erl5v")
+
+[node name="Line2D" type="Line2D" parent="." index="4"]
+points = PackedVector2Array(0, 0, -700, 0)
+width = 60.0
+texture = ExtResource("3_us57q")
+texture_mode = 2
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
