@@ -21,6 +21,7 @@ public partial class BossGiantSquidEye : StaticBody2D, IFishable
 
     public IFishable GetCaughtBy(IFisher by)
     {
+        GD.Print("CLOSED BY ", by);
         IsCaught = true;
         return this;
     }

@@ -62,7 +62,7 @@ public partial class SerpentFish : Fish
 
         if (IsCaught)
         {
-            GetDragged(delta);
+            GetDragged();
             return;
         }
 
@@ -88,7 +88,7 @@ public partial class SerpentFish : Fish
         Body.Points = tmp;
     }
 
-    private void GetDragged(double delta)
+    private void GetDragged()
     {
         Vector2 velocity = (AnchorPoint.GlobalPosition - AnchorPointLastPosition).Rotated(-GlobalRotation);
         if (Flip)

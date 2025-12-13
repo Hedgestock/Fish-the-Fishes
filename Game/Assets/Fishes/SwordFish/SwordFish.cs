@@ -4,8 +4,6 @@ using WaffleStock;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Collections;
-using System.Diagnostics;
 
 public partial class SwordFish : Fish, IFisher
 {
@@ -54,6 +52,7 @@ public partial class SwordFish : Fish, IFisher
         if (IsInDisplay) return;
         Strikes = GD.RandRange(MinStrikes, MaxStrikes);
         LaunchedSpeed = ActualSpeed;
+        ImmuneToTargeting.AddRange(ImmuneToSkew);
     }
 
 
@@ -166,12 +165,14 @@ public partial class SwordFish : Fish, IFisher
 
     private void OnFishSkewered(Node2D body)
     {
-        if (!(body is Fish) || body.IsAncestorOf(this) || ((IFisher)this).FlattenFishedThings(FishedThings).Contains(body as Fish) || FishListContains(ImmuneToSkew, body.GetType()) || body == this || !IsActionable) return;
+        if (body.IsAncestorOf(this) || ((IFisher)this).FlattenFishedThings(FishedThings).Contains(body as Fish) || FishListContains(ImmuneToSkew, body.GetType()) || body is Trash || body == this || !IsActionable) return;
 
-        Fish Skew = body as Fish;
+        IFishable Skew = body as IFishable;
 
-        Skew = Skew.GetCaughtBy(this) as Fish;
-        Skew.Kill();
+        Skew = Skew.GetCaughtBy(this);
+
+        if (Skew is Fish)
+            ((Fish)Skew).Kill();
 
         if (Target != null && ((IFisher)this).FlattenFishedThings(FishedThings).Contains(Target))
             FishedTarget();

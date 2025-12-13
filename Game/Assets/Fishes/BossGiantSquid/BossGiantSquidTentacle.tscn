@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://cx6ahor51tgex"]
+
+[node name="BossGiantSquidTentacle" type="RigidBody2D"]

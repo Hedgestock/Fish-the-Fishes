@@ -17,7 +17,6 @@ point_count = 28
 [node name="BossWhale" node_paths=PackedStringArray("BarnaclePath") instance=ExtResource("1_snaee")]
 z_index = -1
 script = ExtResource("2_5kqeq")
-Passes = 3
 BarnacleScene = ExtResource("3_8jtwi")
 BarnaclePath = NodePath("Path2D/PathFollow2D")
 Value = 28.0

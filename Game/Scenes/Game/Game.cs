@@ -13,6 +13,8 @@ public partial class Game : Node
     private TextureRect Background;
     private TextureRect BackgroundTransition;
 
+    private Fish CurrentBoss = null;
+
     public enum Mode
     {
         AllModes,

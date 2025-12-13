@@ -1,10 +1,8 @@
 using Godot;
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using WaffleStock;
 
-public partial class BossWhale : Fish
+public partial class BossWhale : Boss
 {
 
     [Export]
@@ -13,51 +11,26 @@ public partial class BossWhale : Fish
     [Export]
     PathFollow2D BarnaclePath;
 
-    bool IsFirstPass = true;
-    int Passes;
     int BarnaclesLeft;
     int BarnaclesMax;
 
     public override void _Ready()
     {
-        if (IsFirstPass)
+        base._Ready();
+        BarnaclesLeft = BarnaclesMax = GD.RandRange(80, 120);
+
+        for (int i = 0; i < BarnaclesMax; i++)
         {
-            if (GameManager.Flip != 0)
-                Flip = GameManager.Flip > 0;
-            else
-                Flip = (GD.Randi() % 2) != 0;
-
-            Sprite.Animation = "alive";
-            Sprite.Play();
-
-            if (IsInDisplay) return;
-            NotifySpawn();
-
-            Passes = GD.RandRange(3, 5);
-
-            BarnaclesLeft = BarnaclesMax = GD.RandRange(80, 120);
-
-            for (int i = 0; i < BarnaclesMax; i++)
-            {
-                BarnaclePath.ProgressRatio = GD.Randf();
-                Barnacle barnacle = BarnacleScene.Instantiate<Barnacle>();
-                barnacle.Position = BarnaclePath.Position;
-                AddChild(barnacle);
-            }
-
-            if (GameManager.Mode != Game.Mode.Menu)
-            {
-                Sound.Play();
-            }
-
-            IsCaught = false;
-
-            ActualSizeVariation = (float)Mathf.Max(0.01, GD.Randfn(1, SizeDeviation));
-
-            ActualSpeed = (float)GD.RandRange(MinSpeed, MaxSpeed);
-
-            IsFirstPass = false;
+            BarnaclePath.ProgressRatio = GD.Randf();
+            Barnacle barnacle = BarnacleScene.Instantiate<Barnacle>();
+            barnacle.Position = BarnaclePath.Position;
+            AddChild(barnacle);
         }
+    }
+
+    protected override void PreparePass()
+    {
+        base.PreparePass();
 
         Rotation = 0;
 
@@ -77,26 +50,6 @@ public partial class BossWhale : Fish
         TravelAxis = Flip ? Vector2.Left : Vector2.Right;
 
         Velocity = TravelAxis * ActualSpeed;
-    }
-
-    protected override void Despawn()
-    {
-        if (Passes > 0)
-        {
-            Passes--;
-            var parent = GetParent();
-            Flip = !Flip;
-            GetTree().CreateTimer(GD.RandRange(3, 12)).Timeout += () =>
-            {
-                parent.AddChild(this);
-                this._Ready();
-            };
-            parent.RemoveChild(this);
-        }
-        else
-        {
-            base.Despawn();
-        }
     }
 
     public void RemoveBarnacle()
