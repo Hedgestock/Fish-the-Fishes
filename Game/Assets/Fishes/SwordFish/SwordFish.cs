@@ -4,6 +4,8 @@ using WaffleStock;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Collections;
+using System.Diagnostics;
 
 public partial class SwordFish : Fish, IFisher
 {
@@ -178,6 +180,14 @@ public partial class SwordFish : Fish, IFisher
     {
         Velocity = Vector2.Zero;
         Target.Disconnect(Fish.SignalName.GotFished, TargetGotFished);
+  //      E 0:00:30:902   void SwordFish.FishedTarget(): System.NullReferenceException: Object reference not set to an instance of an object.
+  //< C# Error>    System.NullReferenceException
+  //< C# Source>   SwordFish.cs:180 @ void SwordFish.FishedTarget()
+  //< Stack Trace > SwordFish.cs:180 @ void SwordFish.FishedTarget()
+  //              SwordFish.cs:174 @ void SwordFish.OnFishSkewered(Godot.Node2D)
+  //              SwordFish_ScriptMethods.generated.cs:124 @ bool SwordFish.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name &, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant &)
+  //              CSharpInstanceBridge.cs:24 @ Godot.NativeInterop.godot_bool Godot.Bridge.CSharpInstanceBridge.Call(nint, Godot.NativeInterop.godot_string_name *, Godot.NativeInterop.godot_variant * *, int, Godot.NativeInterop.godot_variant_call_error *, Godot.NativeInterop.godot_variant *)
+
         State = Action.Swimming;
         SeekTarget();
     }

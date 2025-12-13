@@ -7,6 +7,7 @@ public partial class SerpentFish : Fish
 {
     [Export]
     Line2D Body;
+
     [Export]
     uint Length = 50;
     [Export]
@@ -50,6 +51,7 @@ public partial class SerpentFish : Fish
                 lasti = i;
             }
         }
+
 
         GetNode<VisibleOnScreenNotifier2D>("VisibleOnScreenNotifier2D").Rect = new Rect2(-SegmentLength * Length, -WaveAmplitude, SegmentLength * Length, WaveAmplitude * 2);
     }
@@ -97,7 +99,7 @@ public partial class SerpentFish : Fish
 
         tmp[CaughtHurtBoxIndex] = Body.Points[CaughtHurtBoxIndex];
 
-        for (int i = 1; i < CaughtHurtBoxIndex || i < Length - CaughtHurtBoxIndex; i++)
+        for (int i = 1; i <= CaughtHurtBoxIndex || i < Length - CaughtHurtBoxIndex; i++)
         {
             int tail = CaughtHurtBoxIndex - i;
             if (tail >= 0)
@@ -124,6 +126,9 @@ public partial class SerpentFish : Fish
         }
 
         Body.Points = tmp;
+
+        Sprite.Position = Body.Points[0] + Body.Points[0].DirectionTo(Body.Points[1]) * HeadOffset;
+        Sprite.Rotation = Body.Points[0].AngleToPoint(Body.Points[1]) - Mathf.Pi;
     }
 
     public override IFishable GetCaughtBy(IFisher by)

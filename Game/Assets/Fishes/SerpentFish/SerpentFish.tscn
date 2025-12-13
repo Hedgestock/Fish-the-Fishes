@@ -41,7 +41,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="1"]
-scale = Vector2(31, 9.6)
+rect = Rect2(-312, -128, 624, 256)
 
 [node name="AnimatedSprite2D" parent="." index="2"]
 position = Vector2(262, 0)

@@ -82,6 +82,7 @@ bbcode_enabled = true
 text = "[center][font_size=200]??/??/2025[/font_size][/center]
 [font_size=100]
 [ul]
+Added tentacles physics
 Added new equipment menu UI
 Fixed current fish animation
 Added cork equipment
