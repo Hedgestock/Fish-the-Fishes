@@ -9,19 +9,16 @@
 
 [sub_resource type="Resource" id="Resource_lh1t3"]
 script = ExtResource("1_s5ogd")
-Fish = 0
 Weight = 150
 
 [sub_resource type="Resource" id="Resource_b0bxr"]
 script = ExtResource("1_s5ogd")
 Fish = 12
-Weight = 100
 metadata/_custom_type_script = "uid://bprtko2ut7gy0"
 
 [sub_resource type="Resource" id="Resource_e1vti"]
 script = ExtResource("1_s5ogd")
 Fish = 4
-Weight = 100
 
 [sub_resource type="Resource" id="Resource_yfq0p"]
 script = ExtResource("1_s5ogd")
@@ -59,42 +56,32 @@ metadata/_custom_type_script = "uid://bprtko2ut7gy0"
 [sub_resource type="Resource" id="Resource_q1u8b"]
 script = ExtResource("2_pjrry")
 Biome = 4
-Weight = 100
 
 [sub_resource type="Resource" id="Resource_1tna7"]
 script = ExtResource("2_pjrry")
 Biome = 5
-Weight = 100
 
 [sub_resource type="Resource" id="Resource_eh8is"]
 script = ExtResource("2_pjrry")
 Biome = 6
-Weight = 100
 
 [sub_resource type="Resource" id="Resource_1d7gb"]
 script = ExtResource("1_qjkc5")
-Trash = 0
-Weight = 100
 
 [sub_resource type="Resource" id="Resource_whwyb"]
 script = ExtResource("1_qjkc5")
 Trash = 1
-Weight = 100
 
 [sub_resource type="Resource" id="Resource_7dqit"]
 script = ExtResource("1_qjkc5")
 Trash = 2
-Weight = 100
 
 [resource]
 resource_name = "WreckInside"
 script = ExtResource("11_ncojd")
 TimeToSpawnFish = 0.8
 TimeToSpawnFishDeviation = 0.2
-TimeToSpawnTrash = 3.0
-TimeToSpawnTrashDeviation = 0.5
 ChangeBiomeThreshold = 70
-ChangeBiomeThresholdDeviation = 5
 Fishes = Array[Object]([SubResource("Resource_lh1t3"), SubResource("Resource_b0bxr"), SubResource("Resource_e1vti"), SubResource("Resource_yfq0p"), SubResource("Resource_igdd7"), SubResource("Resource_bwx4x"), SubResource("Resource_k1o2i"), SubResource("Resource_4aqr4"), SubResource("Resource_m78x2")])
 Trashes = Array[Object]([SubResource("Resource_1d7gb"), SubResource("Resource_whwyb"), SubResource("Resource_7dqit")])
 FollowupBiomes = Array[Object]([SubResource("Resource_q1u8b"), SubResource("Resource_1tna7"), SubResource("Resource_eh8is")])
