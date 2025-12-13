@@ -171,8 +171,8 @@ public partial class SwordFish : Fish, IFisher
 
         Skew = Skew.GetCaughtBy(this);
 
-        if (Skew is Fish)
-            ((Fish)Skew).Kill();
+        if (Skew is Fish fish)
+            fish.Kill();
 
         if (Target != null && ((IFisher)this).FlattenFishedThings(FishedThings).Contains(Target))
             FishedTarget();

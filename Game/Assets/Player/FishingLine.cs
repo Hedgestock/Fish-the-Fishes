@@ -213,19 +213,19 @@ public partial class FishingLine : CharacterBody2D, IFisher
 
     void OnFishBoxBodyEntered(Node2D body)
     {
-        if (body is IFishable)
+        if (body is IFishable fishable)
         {
-            (body as IFishable).GetCaughtBy(this);
+            fishable.GetCaughtBy(this);
         }
     }
 
     void OnHitBoxBodyEntered(Node2D body)
     {
-        if (body is Trash)
+        if (body is Trash trash)
         {
             if (FishedThings.Count == 0 || IsInvincible) return;
 
-            UserData.TrashCompendium[body.GetType().Name].Hit++;
+            UserData.TrashCompendium[trash.GetType().Name].Hit++;
 
             GetHit(DamageType.Trash);
         }

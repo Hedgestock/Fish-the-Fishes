@@ -14,8 +14,8 @@ height = 82.0
 
 [node name="SwordFish" node_paths=PackedStringArray("HitBox") instance=ExtResource("1_jmf7p")]
 script = ExtResource("2_q8hjt")
-ImmuneToTargeting = Array[int]([5, 19])
-ImmuneToSkew = Array[int]([7, 20])
+ImmuneToTargeting = Array[int]([5])
+ImmuneToSkew = Array[int]([7, 19, 20])
 MaxStrikes = 6
 MinStrikes = 2
 HitBox = NodePath("HitBox/CollisionShape2D")

@@ -137,11 +137,4 @@ public partial class Home : CanvasLayer
     {
         GameManager.ChangeSceneToFile("res://Game/Scenes/Credits/Credits.tscn");
     }
-    void SpawnFish()
-    {
-        PackedScene FishScene = GD.Load<PackedScene>(Biome.GetRandomPathFrom(GameManager.Biome.Fishes));
-        Fish fish = FishScene.Instantiate<Fish>();
-
-        GameContainer.AddChild(fish);
-    }
 }

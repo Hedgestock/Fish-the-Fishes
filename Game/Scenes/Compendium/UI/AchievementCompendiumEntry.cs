@@ -19,12 +19,12 @@ public partial class AchievementCompendiumEntry : CompendiumEntry
 
         Instance = GD.Load<Achievement>(EntryKey);
 
-        if (Instance is DoneXTimes)
+        if (Instance is DoneXTimes doneXTimes)
         {
-            DoneXTimes tmpInstance = (DoneXTimes)Instance;
+            DoneXTimes tmpInstance = doneXTimes;
             ProgressBar.Show();
             ProgressBar.CustomMinimumSize = new Vector2(20, 20);
-            ProgressBar.MaxValue = (Instance as DoneXTimes).Threshold;
+            ProgressBar.MaxValue = doneXTimes.Threshold;
             ProgressBar.Value = UserData.GetStatistic(tmpInstance.Category, tmpInstance.Mode, tmpInstance.Stat);
         }
 

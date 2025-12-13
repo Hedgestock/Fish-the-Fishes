@@ -73,6 +73,8 @@ public partial class BossWhale : Boss
             }
 
             GetNode("../FishingLine").EmitSignal(FishingLine.SignalName.Score, score);
+
+            Passes = 0;
         }
     }
 }

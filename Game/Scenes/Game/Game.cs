@@ -13,7 +13,7 @@ public partial class Game : Node
     private TextureRect Background;
     private TextureRect BackgroundTransition;
 
-    private Fish CurrentBoss = null;
+    private Boss CurrentBoss = null;
 
     public enum Mode
     {
@@ -56,6 +56,18 @@ public partial class Game : Node
     {
         PackedScene FishScene = GD.Load<PackedScene>(Biome.GetRandomPathFrom(GameManager.Biome.Fishes));
         Fish fish = FishScene.Instantiate<Fish>();
+        
+        if (fish is Boss boss)
+        {
+            if (CurrentBoss != null)
+            {
+                GD.Print($"Stopped {boss.GetType()} because {CurrentBoss.GetType()} is still in game");
+                return;
+            }
+
+            boss.Connect(Boss.SignalName.Despawning, Callable.From(() => CurrentBoss = null));
+            CurrentBoss = boss;
+        }
 
         // Spawn the fish by adding it to the main scene.
         AddChild(fish);
