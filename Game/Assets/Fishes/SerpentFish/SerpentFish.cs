@@ -24,7 +24,9 @@ public partial class SerpentFish : Fish
 
     private DateTime InstanciationTime = DateTime.Now;
 
-    private int CaughtSegment = 0; 
+    private Node2D AnchorPoint = null;
+    private Vector2 AnchorPointLastPosition = Vector2.Zero;
+    private int CaughtHurtBoxIndex = 0;
 
     public override void _Ready()
     {
@@ -55,28 +57,96 @@ public partial class SerpentFish : Fish
     public override void _PhysicsProcess(double delta)
     {
         base._PhysicsProcess(delta);
+
+        if (IsCaught)
+        {
+            GetDragged(delta);
+            return;
+        }
+
         if (!IsActionable && !IsInDisplay) return;
+
+        Slither();
+    }
+
+    private void Slither()
+    {
         Vector2[] tmp = new Vector2[Length];
 
-        tmp[0] = new Vector2(Sprite.Position.X + HeadOffset, Sprite.Position.Y);
-
-        for (int i = 1; i < Length; i++)
+        for (int i = 0; i < Length; i++)
         {
             tmp[i] = new Vector2(Sprite.Position.X + HeadOffset - SegmentLength * i,
                 Sprite.Position.Y + (float)Math.Sin((((DateTime.Now - InstanciationTime).TotalMilliseconds / 1000f) - (SegmentLength * (Length - i))) * WaveSpeed) * (WaveAmplitude * AmplitudeCurve.Sample((float)i / Length)));
-            Body.Points = tmp;
             if (HurtBoxes.ContainsKey(i))
             {
                 HurtBoxes[i].Position = tmp[i];
             }
         }
+
+        Body.Points = tmp;
+    }
+
+    private void GetDragged(double delta)
+    {
+        Vector2 velocity = (AnchorPoint.GlobalPosition - AnchorPointLastPosition).Rotated(-GlobalRotation);
+        if (Flip)
+            velocity = new Vector2(velocity.X, -velocity.Y);
+        AnchorPointLastPosition = AnchorPoint.GlobalPosition;
+
+        Vector2[] tmp = new Vector2[Length];
+
+        tmp[CaughtHurtBoxIndex] = Body.Points[CaughtHurtBoxIndex];
+
+        for (int i = 1; i < CaughtHurtBoxIndex || i < Length - CaughtHurtBoxIndex; i++)
+        {
+            int tail = CaughtHurtBoxIndex - i;
+            if (tail >= 0)
+            {
+                tmp[tail] = tmp[tail + 1] + tmp[tail + 1].DirectionTo(Body.Points[tail] - velocity) * SegmentLength;
+
+                if (HurtBoxes.ContainsKey(tail))
+                {
+                    HurtBoxes[tail].Position = tmp[tail];
+                }
+            }
+
+            int head = CaughtHurtBoxIndex + i;
+            if (head < Length)
+            {
+                tmp[head] = tmp[head - 1] + tmp[head - 1].DirectionTo(Body.Points[head] - velocity) * SegmentLength;
+
+                if (HurtBoxes.ContainsKey(head))
+                {
+                    HurtBoxes[head].Position = tmp[head];
+                }
+            }
+
+        }
+
+        Body.Points = tmp;
     }
 
     public override IFishable GetCaughtBy(IFisher by)
     {
         if (GetCaughtBySafetyGuard(by))
             return this;
-        Node2D HitBox = (by as Node2D).FindChild("HitBox", true, false) as Node2D;
+        AnchorPoint = (by as Node2D).FindChild("HitBox", true, false) as Node2D;
+        AnchorPointLastPosition = AnchorPoint.GlobalPosition;
+
+        float minDistance = float.MaxValue;
+
+        foreach (var hurtBox in HurtBoxes)
+        {
+
+            float distance = hurtBox.Value.GlobalPosition.DistanceTo(AnchorPoint.GlobalPosition);
+            if (distance < minDistance)
+            {
+                minDistance = distance;
+                CaughtHurtBoxIndex = hurtBox.Key;
+            }
+        }
+
+        HurtBoxes[CaughtHurtBoxIndex].DebugColor = Colors.Black;
 
         return base.GetCaughtBy(by);
     }
