@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bmgfceejcd48n" path="res://Game/Assets/Fishes/SerpentFish/Animation/SerpentFish_tail.png" id="4_1k2ac"]
 
 [sub_resource type="Curve" id="Curve_xo0c7"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.244395, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.1875), -1.11295, 0.0, 0, 0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.25, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.2), 0.0, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="Curve" id="Curve_btsbg"]
@@ -19,19 +19,15 @@ radius = 30.0
 [node name="SerpentFish" node_paths=PackedStringArray("Body") instance=ExtResource("1_32uni")]
 script = ExtResource("2_ujnj7")
 Body = NodePath("Line2D")
-Length = 50
-SegmentLength = 10
-HeadOffset = -28
 AmplitudeCurve = SubResource("Curve_xo0c7")
-WaveAmplitude = 60
-WaveSpeed = 5
 CompendiumName = "Sea Snake"
 CompendiumDescription = "Those were the first slithering species to be found in the oceans."
 Value = 2.0
-AverageSize = 150.0
+AverageSize = 125.0
+SizeDeviation = 0.2
 
 [node name="Line2D" type="Line2D" parent="." index="0"]
-points = PackedVector2Array(-32, 0, -56, 0, -96, 0, -120, 0, -139, -1, -176, 0, -212, 0, -231.878, 0.389771, -264, 0, -280, 0, -296, 0)
+points = PackedVector2Array(0, 0, -50, 0, -100, 0, -150, 0, -200, 0, -250, 0, -300, 0, -350, 0.39, -400, 0, -450, 0, -500, 0)
 width = 60.0
 width_curve = SubResource("Curve_btsbg")
 texture = ExtResource("4_1k2ac")
@@ -41,14 +37,15 @@ begin_cap_mode = 2
 end_cap_mode = 2
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="1"]
-rect = Rect2(-312, -128, 624, 256)
+position = Vector2(-224, 0)
+scale = Vector2(30, 15)
 
 [node name="AnimatedSprite2D" parent="." index="2"]
-position = Vector2(262, 0)
+position = Vector2(25, 1)
 sprite_frames = ExtResource("3_1g1s3")
 animation = &"alive"
 
 [node name="HurtBox" parent="." index="3"]
-position = Vector2(262, 0)
+position = Vector2(25, 1)
 rotation = 1.5708
 shape = SubResource("CircleShape2D_8auy8")

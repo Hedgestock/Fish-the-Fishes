@@ -23,7 +23,6 @@ public partial class JellyFish : Fish, IPowerup
                 tmp.Add(new Vector2(0, i * tentacle.Points[1].Y / 10));
             }
             tentacle.Points = tmp.ToArray();
-            //tentacle.Points = Enumerable.Repeat(new Vector2(), 100).ToArray();
         }
 
         if (!IsInDisplay)

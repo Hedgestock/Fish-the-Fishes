@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://boa7mncaagpgp"]
+[gd_scene load_steps=8 format=3 uid="uid://boa7mncaagpgp"]
 
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_snaee"]
 [ext_resource type="Script" uid="uid://bson8swbe80uu" path="res://Game/Assets/Fishes/BossWhale/BossWhale.cs" id="2_5kqeq"]
 [ext_resource type="SpriteFrames" uid="uid://df4qasessukfa" path="res://Game/Assets/Fishes/BossWhale/Animation/BossWhaleAnimation.tres" id="2_dwf3w"]
 [ext_resource type="PackedScene" uid="uid://cds5ulqcu8lau" path="res://Game/Assets/Fishes/BossWhale/Barnacle/Barnacle.tscn" id="3_8jtwi"]
+[ext_resource type="AudioStream" uid="uid://c2hcvwro7wvhs" path="res://Game/Assets/Fishes/BossWhale/BaleineMono.ogg" id="5_glwst"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8jtwi"]
 size = Vector2(1939.9995, 9594)
@@ -42,6 +43,11 @@ position = Vector2(44.000137, -79.00002)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_8jtwi")
 disabled = true
+
+[node name="AudioStreamPlayer" parent="." index="3"]
+position = Vector2(4496, 171)
+stream = ExtResource("5_glwst")
+max_distance = 4096.0
 
 [node name="Path2D" type="Path2D" parent="." index="4"]
 curve = SubResource("Curve2D_glwst")

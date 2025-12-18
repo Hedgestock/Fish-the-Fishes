@@ -8,18 +8,13 @@ public partial class SerpentFish : Fish
     [Export]
     Line2D Body;
 
-    [Export]
-    uint Length = 50;
-    [Export]
+    uint Length;
     uint SegmentLength = 10;
-    [Export]
-    int HeadOffset = -28;
+
     [Export]
     Curve AmplitudeCurve;
-    [Export]
     int WaveAmplitude = 60;
-    [Export]
-    int WaveSpeed = 10;
+    int WaveSpeed = 5;
 
     private Dictionary<int, CollisionShape2D> HurtBoxes = new();
 
@@ -29,9 +24,22 @@ public partial class SerpentFish : Fish
     private Vector2 AnchorPointLastPosition = Vector2.Zero;
     private int CaughtHurtBoxIndex = 0;
 
+    public override float ActualSize
+    {
+        get { return (SegmentLength * Length / 4) * ActualSizeVariation; }
+    }
+
     public override void _Ready()
     {
+        float pixels = Math.Abs(Body.Points[Body.Points.Length - 1].X / SegmentLength);
+        Length = IsInDisplay ? (uint)pixels : (uint)Mathf.Max(SegmentLength * 3, GD.Randfn(pixels, pixels * SizeDeviation));
+
+        VisibleOnScreenNotifier.Rect = new Rect2(-SegmentLength * Length, -WaveAmplitude, SegmentLength * Length, WaveAmplitude * 2);
+
         base._Ready();
+
+        GD.Print(ActualSize);
+
         HurtBoxes[0] = GetNode<CollisionShape2D>("HurtBox");
 
         int lasti = 0;
@@ -51,9 +59,6 @@ public partial class SerpentFish : Fish
                 lasti = i;
             }
         }
-
-
-        VisibleOnScreenNotifier.Rect = new Rect2(-SegmentLength * Length, -WaveAmplitude, SegmentLength * Length, WaveAmplitude * 2);
     }
 
     public override void _PhysicsProcess(double delta)
@@ -77,8 +82,8 @@ public partial class SerpentFish : Fish
 
         for (int i = 0; i < Length; i++)
         {
-            tmp[i] = new Vector2(Sprite.Position.X + HeadOffset - SegmentLength * i,
-                Sprite.Position.Y + (float)Math.Sin((((DateTime.Now - InstanciationTime).TotalMilliseconds / 1000f) - (SegmentLength * (Length - i))) * WaveSpeed) * (WaveAmplitude * AmplitudeCurve.Sample((float)i / Length)));
+            tmp[i] = new Vector2(-SegmentLength * i,
+                (float)Math.Sin((((DateTime.Now - InstanciationTime).TotalMilliseconds / 1000f) - (SegmentLength * (Length - i))) * WaveSpeed) * (WaveAmplitude * AmplitudeCurve.Sample((float)i / Length)));
             if (HurtBoxes.ContainsKey(i))
             {
                 HurtBoxes[i].Position = tmp[i];
@@ -127,7 +132,7 @@ public partial class SerpentFish : Fish
 
         Body.Points = tmp;
 
-        Sprite.Position = Body.Points[0] + Body.Points[0].DirectionTo(Body.Points[1]) * HeadOffset;
+        Sprite.Position = Body.Points[0] + Body.Points[0].DirectionTo(Body.Points[1]) * -28;
         Sprite.Rotation = Body.Points[0].AngleToPoint(Body.Points[1]) - Mathf.Pi;
     }
 

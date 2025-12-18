@@ -26,6 +26,7 @@ public partial class BossWhale : Boss
             barnacle.Position = BarnaclePath.Position;
             AddChild(barnacle);
         }
+        GD.Print(Sound.Playing);
     }
 
     protected override void PreparePass()

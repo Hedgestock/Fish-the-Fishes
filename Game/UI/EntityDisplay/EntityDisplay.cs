@@ -8,10 +8,10 @@ public partial class EntityDisplay : Container
     {
         set
         {
-            var tmp = value.GetNode<VisibleOnScreenNotifier2D>("VisibleOnScreenNotifier2D");
-            EntityViewport.Size = (Vector2I)(tmp.Rect.Size * tmp.Scale);
+            var vosn = value.GetNode<VisibleOnScreenNotifier2D>("VisibleOnScreenNotifier2D");
+            EntityViewport.Size = (Vector2I)(vosn.Rect.Size * vosn.Scale);
             SetEntityDiplaysSize();
-            value.Position = tmp.Rect.Size * tmp.Scale / 2;
+            value.Position = (vosn.Rect.Size * vosn.Scale / 2) - vosn.Position;
             ((IFishable)value).IsInDisplay = true;
             EntityViewport.AddChild(value);
         }

@@ -57,7 +57,7 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
     public bool IsCaught { get; set; }
     public bool IsInDisplay { get; set; }
 
-    public float ActualSize
+    public virtual float ActualSize
     {
         get { return AverageSize * ActualSizeVariation; }
     }

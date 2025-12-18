@@ -1,14 +1,35 @@
-[gd_scene load_steps=5 format=3 uid="uid://cx6ahor51tgex"]
+[gd_scene load_steps=7 format=3 uid="uid://cx6ahor51tgex"]
 
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_y6vpg"]
 [ext_resource type="Script" uid="uid://2wi35i43lops" path="res://Game/Assets/Fishes/BossGiantSquid/BossGiantSquidTentacle.cs" id="2_erl5v"]
 [ext_resource type="Texture2D" uid="uid://ta5yuyx8w4pc" path="res://Game/Assets/Fishes/BossGiantSquid/Animation/Tentacle_1.png" id="3_us57q"]
 
+[sub_resource type="Curve" id="Curve_erl5v"]
+_data = [Vector2(0.02631579, 0.024702787), 0.0, 0.0, 0, 0, Vector2(0.16267942, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_erl5v"]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_erl5v"]
 radius = 25.0
 
-[node name="BossGiantSquidTentacle" instance=ExtResource("1_y6vpg")]
+[node name="BossGiantSquidTentacle" node_paths=PackedStringArray("Body") instance=ExtResource("1_y6vpg")]
 script = ExtResource("2_erl5v")
+Body = NodePath("Line2D")
+Length = 50
+SegmentLength = 10
+HeadOffset = -28
+AmplitudeCurve = SubResource("Curve_erl5v")
+WaveAmplitude = 60
+WaveSpeed = 10
+CompendiumName = ""
+CompendiumDescription = ""
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="0"]
+rect = Rect2(-1000, -1000, 2000, 2000)
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_erl5v")
 
 [node name="HurtBox" parent="." index="2"]
 shape = SubResource("CircleShape2D_erl5v")

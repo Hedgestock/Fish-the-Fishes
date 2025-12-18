@@ -13,6 +13,10 @@ height = 676.0
 
 [node name="BossGiantSquid" instance=ExtResource("1_p0x88")]
 script = ExtResource("2_10rc6")
+MaxPasses = 5
+MinPasses = 3
+MaxWait = 12
+MinWait = 3
 
 [node name="BossGiantSquidTentacle" parent="." index="0" instance=ExtResource("3_8rpoo")]
 position = Vector2(-325, -75)
