@@ -27,7 +27,6 @@ public partial class Game : Node
         Zen,
     }
 
-
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
@@ -56,7 +55,7 @@ public partial class Game : Node
     {
         PackedScene FishScene = GD.Load<PackedScene>(Biome.GetRandomPathFrom(GameManager.Biome.Fishes));
         Fish fish = FishScene.Instantiate<Fish>();
-        
+
         if (fish is Boss boss)
         {
             if (CurrentBoss != null)
@@ -88,7 +87,8 @@ public partial class Game : Node
     private void SetupBiome()
     {
         Background.Texture = GameManager.Biome.Background;
-        if (Background.Texture != BackgroundTransition.Texture) {
+        if (Background.Texture != BackgroundTransition.Texture)
+        {
             BackgroundTransition.Show();
             Tween backgroundTween = CreateTween();
             backgroundTween.TweenProperty(BackgroundTransition, "modulate:a", 0, .5f);
@@ -104,6 +104,10 @@ public partial class Game : Node
         GD.Print($"Biome threshold = {GameManager.CalculatedBiomeThreshold}");
         FishTimer.Start(GameManager.Biome.TimeToSpawnFish, GameManager.Biome.TimeToSpawnFishDeviation);
         TrashTimer.Start(GameManager.Biome.TimeToSpawnTrash, GameManager.Biome.TimeToSpawnTrashDeviation);
-        SaveManager.SaveGame();
+
+        if (GameManager.Mode != Mode.Menu)
+        {
+            SaveManager.SaveGame();
+        }
     }
 }

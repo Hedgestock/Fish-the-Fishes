@@ -13,12 +13,17 @@ public partial class SaveManager : Node
     const string GameFileName = "game.json";
     const string GameFilePath = SaveDirectory + GameFileName;
 
+    public override void _EnterTree()
+    {
+        base._EnterTree();
+        LoadData();
+        LoadGame();
+    }
+
     public override void _Ready()
     {
         base._Ready();
         UserSettings.Load(SettingsFilePath);
-        LoadData();
-        LoadGame();
     }
 
     static public void SaveData()

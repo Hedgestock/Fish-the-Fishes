@@ -1,46 +1,20 @@
-[gd_scene load_steps=14 format=3 uid="uid://bn4j1dckgh88u"]
+[gd_scene load_steps=3 format=3 uid="uid://bn4j1dckgh88u"]
 
-[ext_resource type="Script" uid="uid://c6mucrrpsu6d6" path="res://Game/Scenes/Aquarium/Aquarium.cs" id="1_e2m0m"]
-[ext_resource type="PackedScene" uid="uid://bubgi8mpwbbne" path="res://Game/UI/DynamicBackground/DynamicBackground.tscn" id="2_n616v"]
+[ext_resource type="PackedScene" uid="uid://0sb3i5bm7j4p" path="res://Game/Scenes/Game/Game.tscn" id="1_2q1to"]
 [ext_resource type="PackedScene" uid="uid://dfxhrdmj7km0i" path="res://Game/UI/BackButton/BackButton.tscn" id="3_xcukl"]
-[ext_resource type="PackedScene" uid="uid://ifoga56i10w3" path="res://Game/Assets/RandomTimer.tscn" id="4_qf73r"]
-[ext_resource type="PackedScene" uid="uid://bnkmwtljf2o3p" path="res://Game/Assets/Player/FishingLine.tscn" id="5_fhcl3"]
-[ext_resource type="Shader" uid="uid://dexkwxs8kvqhf" path="res://Game/Scenes/Game/water.gdshader" id="6_n616v"]
-[ext_resource type="Texture2D" uid="uid://cfpo2ifn0346n" path="res://Game/Scenes/Game/Vignette.png" id="7_7xya8"]
-[ext_resource type="Script" uid="uid://bnapcqd7vris2" path="res://Game/Utilities/WaterEffect.cs" id="8_7xya8"]
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_bf643"]
+[node name="Aquarium" type="Node"]
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_rj04q"]
-noise = SubResource("FastNoiseLite_bf643")
-seamless = true
+[node name="Game" parent="." instance=ExtResource("1_2q1to")]
+layer = -1
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_jt52l"]
+[node name="HUD" parent="Game" index="1"]
+visible = false
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_aoxvl"]
-noise = SubResource("FastNoiseLite_jt52l")
-seamless = true
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_x27iu"]
-shader = ExtResource("6_n616v")
-shader_parameter/waterNoise = SubResource("NoiseTexture2D_aoxvl")
-shader_parameter/waterDistortionNoise = SubResource("NoiseTexture2D_rj04q")
-shader_parameter/offSetSpeed = Vector2(0.03, 0.1)
-shader_parameter/backGroundDirX = 0.005
-shader_parameter/backGroundDirY = 0.005
-
-[node name="Aquarium" type="Node" node_paths=PackedStringArray("FishTimer", "TrashTimer")]
-script = ExtResource("1_e2m0m")
-FishTimer = NodePath("FishTimer")
-TrashTimer = NodePath("TrashTimer")
-
-[node name="Background" parent="." instance=ExtResource("2_n616v")]
-anchors_preset = -1
-offset_top = -360.0
-offset_bottom = 360.0
+[node name="PauseButton" parent="Game" index="7"]
+visible = false
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-anchors_preset = -1
 offset_right = 100.0
 offset_bottom = 100.0
 theme_override_constants/margin_left = 20
@@ -49,31 +23,6 @@ theme_override_constants/margin_top = 20
 [node name="BackButton" parent="MarginContainer" instance=ExtResource("3_xcukl")]
 layout_mode = 2
 
-[node name="FishTimer" parent="." instance=ExtResource("4_qf73r")]
-autostart = true
-
-[node name="TrashTimer" parent="." instance=ExtResource("4_qf73r")]
-autostart = true
-WaitTimeAverage = 3.0
-Deviation = 0.5
-
-[node name="FishingLine" parent="." instance=ExtResource("5_fhcl3")]
-visible = false
-
-[node name="WaterEffect" type="TextureRect" parent="."]
-z_index = 100
-material = SubResource("ShaderMaterial_x27iu")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 8
-mouse_filter = 2
-texture = ExtResource("7_7xya8")
-script = ExtResource("8_7xya8")
-
 [connection signal="pressed" from="MarginContainer/BackButton" to="MarginContainer/BackButton" method="GoBack"]
-[connection signal="timeout" from="FishTimer" to="." method="SpawnFish"]
-[connection signal="timeout" from="TrashTimer" to="." method="SpawnTrash"]
+
+[editable path="Game"]

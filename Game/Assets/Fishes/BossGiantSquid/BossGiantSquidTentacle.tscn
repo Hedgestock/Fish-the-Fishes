@@ -26,7 +26,8 @@ CompendiumName = ""
 CompendiumDescription = ""
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0"]
-rect = Rect2(-1000, -1000, 2000, 2000)
+position = Vector2(-350, 0)
+scale = Vector2(40, 10)
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = SubResource("SpriteFrames_erl5v")

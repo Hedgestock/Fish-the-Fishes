@@ -1,10 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://blkg0i7vjb6il"]
+[gd_scene load_steps=9 format=3 uid="uid://blkg0i7vjb6il"]
 
 [ext_resource type="Script" uid="uid://ril112dwv2k8" path="res://Game/Scenes/Home.cs" id="1_ptl5f"]
 [ext_resource type="AudioStream" uid="uid://cejn28367eqbj" path="res://Game/Audio/ftf.ogg" id="2_itj28"]
-[ext_resource type="PackedScene" uid="uid://ifoga56i10w3" path="res://Game/Assets/RandomTimer.tscn" id="2_op8l2"]
-[ext_resource type="PackedScene" uid="uid://bubgi8mpwbbne" path="res://Game/UI/DynamicBackground/DynamicBackground.tscn" id="4_2pmwa"]
-[ext_resource type="PackedScene" uid="uid://bnkmwtljf2o3p" path="res://Game/Assets/Player/FishingLine.tscn" id="4_pulgk"]
+[ext_resource type="PackedScene" uid="uid://0sb3i5bm7j4p" path="res://Game/Scenes/Game/Game.tscn" id="2_phf7v"]
 [ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://Game/Themes/FTF_theme.tres" id="5_mnxty"]
 [ext_resource type="PackedScene" uid="uid://cifa65xrf1ken" path="res://Game/UI/FishableButton/FishableButton.tscn" id="5_o3gki"]
 [ext_resource type="Script" uid="uid://cktwlq38w4b27" path="res://Game/Scenes/SplashScreen.cs" id="8_kgnoq"]
@@ -13,24 +11,24 @@
 
 [node name="Home" type="CanvasLayer" node_paths=PackedStringArray("FishTimer", "Message", "GameContainer", "ContinueButton", "TestButton", "Background")]
 script = ExtResource("1_ptl5f")
-FishTimer = NodePath("FishTimer")
+FishTimer = NodePath("")
 Message = NodePath("AspectRatioContainer/MarginContainer/VBoxContainer/Message")
-GameContainer = NodePath("GameContainer")
+GameContainer = NodePath("")
 ContinueButton = NodePath("AspectRatioContainer/MarginContainer/VBoxContainer/Menu/ContinueButton")
 TestButton = NodePath("AspectRatioContainer/MarginContainer/VBoxContainer/Menu/Test")
-Background = NodePath("Background")
+Background = NodePath("")
 
-[node name="FishTimer" parent="." instance=ExtResource("2_op8l2")]
-autostart = true
+[node name="Game" parent="." instance=ExtResource("2_phf7v")]
+layer = 0
+
+[node name="HUD" parent="Game" index="1"]
+visible = false
+
+[node name="PauseButton" parent="Game" index="7"]
+visible = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_itj28")
-
-[node name="Background" parent="." instance=ExtResource("4_2pmwa")]
-
-[node name="GameContainer" type="Node" parent="."]
-
-[node name="FishingLine" parent="GameContainer" instance=ExtResource("4_pulgk")]
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
 anchors_preset = 15
@@ -279,7 +277,6 @@ grow_vertical = 2
 text = "WaffleStock"
 horizontal_alignment = 1
 
-[connection signal="timeout" from="FishTimer" to="." method="SpawnFish"]
 [connection signal="screen_exited" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTargetButton/VisibleOnScreenNotifier2D" to="." method="PlayTarget"]
 [connection signal="screen_exited" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayGoGreenButton/VisibleOnScreenNotifier2D" to="." method="PlayGoGreen"]
 [connection signal="screen_exited" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayClassicButton/VisibleOnScreenNotifier2D" to="." method="PlayClassic"]
@@ -293,6 +290,7 @@ horizontal_alignment = 1
 [connection signal="screen_exited" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/TutorialButton/VisibleOnScreenNotifier2D" to="." method="GoToTutorial"]
 [connection signal="pressed" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/Test" to="." method="PlayTest"]
 
+[editable path="Game"]
 [editable path="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayTargetButton"]
 [editable path="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayGoGreenButton"]
 [editable path="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/PlayClassicButton"]

@@ -8,18 +8,13 @@ public partial class BossGiantSquidTentacle : Fish
     [Export]
     Line2D Body;
 
-    [Export]
-    uint Length = 50;
-    [Export]
+    uint Length;
     uint SegmentLength = 10;
-    [Export]
-    int HeadOffset = -28;
+
     [Export]
     Curve AmplitudeCurve;
-    [Export]
     int WaveAmplitude = 60;
-    [Export]
-    int WaveSpeed = 10;
+    int WaveSpeed = 5;
 
     private Dictionary<int, CollisionShape2D> HurtBoxes = new();
 
@@ -35,6 +30,8 @@ public partial class BossGiantSquidTentacle : Fish
         // We skip the base ready function because even though it's of fish class for convenience
         // it is obvously not an autonomous fish at all
         //base._Ready();
+
+        Length = (uint)Math.Abs(Body.Points[Body.Points.Length - 1].X / SegmentLength);
 
         HurtBoxes[0] = GetNode<CollisionShape2D>("HurtBox");
 
@@ -77,7 +74,7 @@ public partial class BossGiantSquidTentacle : Fish
 
         for (int i = 0; i < Length; i++)
         {
-            tmp[i] = new Vector2(Sprite.Position.X + HeadOffset - SegmentLength * i,
+            tmp[i] = new Vector2(Sprite.Position.X - SegmentLength * i,
                 Sprite.Position.Y + (float)Math.Sin((((DateTime.Now - InstanciationTime).TotalMilliseconds / 1000f) - (SegmentLength * (Length - i))) * WaveSpeed) * (WaveAmplitude * AmplitudeCurve.Sample((float)i / Length)));
             if (HurtBoxes.ContainsKey(i))
             {
