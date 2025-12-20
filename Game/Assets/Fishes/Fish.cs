@@ -106,19 +106,16 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
                 Flip = GameManager.Flip > 0;
             else
                 Flip = (GD.Randi() % 2) != 0;
-            float positionOffset = VisibleOnScreenNotifier.Rect.Size.X * VisibleOnScreenNotifier.Scale.X / 2 * ActualSizeVariation;
-            Position = new Vector2(
-                Flip ? GameManager.ScreenSize.X + positionOffset : -positionOffset,
-                (float)GD.RandRange(GameManager.ScreenSize.Y * SpawnRange.X, GameManager.ScreenSize.Y * SpawnRange.Y)
-            );
+            SetPosition();
         }
 
-        if (Flip)
+        SetScale();
+
+        // If the inheriting class did not set the TravelAxis, we do it now.
+        if (TravelAxis == Vector2.Zero)
         {
-            Scale = new Vector2(-1, 1);
+            SetTravelAxis();
         }
-
-        Scale *= ActualSizeVariation;
 
         // If the inheriting class did not set the ActualSpeed, we do it now.
         if (ActualSpeed == 0)
@@ -126,23 +123,38 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
             ActualSpeed = (float)GD.RandRange(MinSpeed, MaxSpeed);
         }
 
-        // If the inheriting class did not set the TravelAxis, we do it now.
-        if (TravelAxis == Vector2.Zero)
-        {
-            // Here, we invert the Flip condition to get a point that's on the opposite side of the spawning Position
-            float trajectoryVariation = GameManager.ScreenSize.Y * TajectoryDeviation;
-            Vector2 objective = new Vector2(
-                !Flip ? GameManager.ScreenSize.X : 0,
-                (float)GD.RandRange(
-                    MathF.Max(0, Position.Y - trajectoryVariation),
-                    MathF.Min(Position.Y + trajectoryVariation, GameManager.ScreenSize.Y)
-                    )
-                );
-            TravelAxis = (objective - Position).Normalized();
-        }
-
         Velocity = TravelAxis * ActualSpeed;
         Rotation = (float)(TravelAxis.Angle() - (Flip ? Mathf.Pi : 0));
+    }
+
+    protected void SetScale()
+    {
+        Scale = Flip ? new Vector2(-1, 1) : Vector2.One;
+
+        Scale *= ActualSizeVariation;
+    }
+
+    protected void SetPosition()
+    {
+        float positionOffset = VisibleOnScreenNotifier.Rect.Size.X * VisibleOnScreenNotifier.Scale.X / 2 * ActualSizeVariation;
+        Position = new Vector2(
+            Flip ? GameManager.ScreenSize.X + positionOffset : -positionOffset,
+            (float)GD.RandRange(GameManager.ScreenSize.Y * SpawnRange.X, GameManager.ScreenSize.Y * SpawnRange.Y)
+        );
+    }
+
+    protected void SetTravelAxis()
+    {
+        // Here, we invert the Flip condition to get a point that's on the opposite side of the spawning Position
+        float trajectoryVariation = GameManager.ScreenSize.Y * TajectoryDeviation;
+        Vector2 objective = new Vector2(
+            !Flip ? GameManager.ScreenSize.X : 0,
+            (float)GD.RandRange(
+                MathF.Max(0, Position.Y - trajectoryVariation),
+                MathF.Min(Position.Y + trajectoryVariation, GameManager.ScreenSize.Y)
+                )
+            );
+        TravelAxis = (objective - Position).Normalized();
     }
 
     public override void _PhysicsProcess(double delta)

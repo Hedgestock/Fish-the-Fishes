@@ -62,7 +62,7 @@ namespace WaffleStock
                 {
                     if (typeof(UserData).GetProperty(property.Name).GetValue(_instance) == null)
                     {
-                        typeof(UserData).GetProperty(property.Name).SetValue(_instance, property.PropertyType.GetConstructor(new Type[] { }).Invoke(new object[] { }));
+                        typeof(UserData).GetProperty(property.Name).SetValue(_instance, property.PropertyType.GetConstructor(Array.Empty<Type>()).Invoke(Array.Empty<object>()));
                     }
                 }
                 return true;

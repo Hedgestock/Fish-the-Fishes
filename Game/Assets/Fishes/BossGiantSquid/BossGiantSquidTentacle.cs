@@ -5,22 +5,29 @@ using WaffleStock;
 
 public partial class BossGiantSquidTentacle : Fish
 {
-    [Export]
-    Line2D Body;
-
-    uint Length;
-    uint SegmentLength = 10;
+    [Signal]
+    public delegate void GotCaughtEventHandler();
 
     [Export]
-    Curve AmplitudeCurve;
-    int WaveAmplitude = 60;
-    int WaveSpeed = 5;
+    private Line2D Body;
+
+    private uint Length;
+    private uint SegmentLength = 10;
+
+    [Export]
+    private Curve AmplitudeCurve;
+    [Export]
+    private int WaveAmplitude = 150;
+    [Export]
+    private int WaveSpeed = 5;
+
+    public float CatchRate = 1;
 
     private Dictionary<int, CollisionShape2D> HurtBoxes = new();
 
     private DateTime InstanciationTime = DateTime.Now;
 
-    private Node2D AnchorPoint = null;
+    public Node2D AnchorPoint = null;
     private Vector2 AnchorPointLastPosition = Vector2.Zero;
     private int CaughtHurtBoxIndex = 0;
 
@@ -30,6 +37,8 @@ public partial class BossGiantSquidTentacle : Fish
         // We skip the base ready function because even though it's of fish class for convenience
         // it is obvously not an autonomous fish at all
         //base._Ready();
+
+        AnchorPoint = (Node2D)GetParent();
 
         Length = (uint)Math.Abs(Body.Points[Body.Points.Length - 1].X / SegmentLength);
 
@@ -52,14 +61,18 @@ public partial class BossGiantSquidTentacle : Fish
                 lasti = i;
             }
         }
+
+        Body.Points = new Vector2[Length];
     }
+
+    int test = 0;
     public override void _PhysicsProcess(double delta)
     {
         base._PhysicsProcess(delta);
 
         if (IsCaught)
         {
-            //GetDragged();
+            GetDragged();
             return;
         }
 
@@ -75,7 +88,14 @@ public partial class BossGiantSquidTentacle : Fish
         for (int i = 0; i < Length; i++)
         {
             tmp[i] = new Vector2(Sprite.Position.X - SegmentLength * i,
-                Sprite.Position.Y + (float)Math.Sin((((DateTime.Now - InstanciationTime).TotalMilliseconds / 1000f) - (SegmentLength * (Length - i))) * WaveSpeed) * (WaveAmplitude * AmplitudeCurve.Sample((float)i / Length)));
+                Sprite.Position.Y +
+                (float)
+                Math.Sin((((DateTime.Now - InstanciationTime).TotalMilliseconds / 1000f) - (SegmentLength * (Length - i))) * WaveSpeed
+
+                + Math.Abs(Position.Y)
+                // This mirrors up and down tentacles
+                + (Position.Y > 0 ? Math.PI : 0))
+               * (WaveAmplitude * AmplitudeCurve.Sample((float)i / Length)));
             if (HurtBoxes.ContainsKey(i))
             {
                 HurtBoxes[i].Position = tmp[i];
@@ -85,9 +105,80 @@ public partial class BossGiantSquidTentacle : Fish
         Body.Points = tmp;
     }
 
+    private void GetDragged()
+    {
+        Vector2 velocity = (AnchorPoint.GlobalPosition - AnchorPointLastPosition).Rotated(-GlobalRotation);
+        if (Flip)
+            velocity = new Vector2(velocity.X, -velocity.Y);
+        AnchorPointLastPosition = AnchorPoint.GlobalPosition;
+
+        Vector2[] tmp = new Vector2[Length];
+
+        tmp[CaughtHurtBoxIndex] = Body.Points[CaughtHurtBoxIndex];
+
+        for (int i = 1; i <= CaughtHurtBoxIndex || i < Length - CaughtHurtBoxIndex; i++)
+        {
+            int tail = CaughtHurtBoxIndex - i;
+            if (tail >= 0)
+            {
+                tmp[tail] = tmp[tail + 1] + tmp[tail + 1].DirectionTo(Body.Points[tail] - velocity) * SegmentLength;
+
+                if (HurtBoxes.ContainsKey(tail))
+                {
+                    HurtBoxes[tail].Position = tmp[tail];
+                }
+            }
+
+            int head = CaughtHurtBoxIndex + i;
+            if (head < Length)
+            {
+                tmp[head] = tmp[head - 1] + tmp[head - 1].DirectionTo(Body.Points[head] - velocity) * SegmentLength;
+
+                if (HurtBoxes.ContainsKey(head))
+                {
+                    HurtBoxes[head].Position = tmp[head];
+                }
+            }
+
+        }
+
+        Body.Points = tmp;
+    }
+
     public override IFishable GetCaughtBy(IFisher by)
     {
-        return base.GetCaughtBy(by);
+        if (GD.Randf() > CatchRate)
+            return this;
 
+        if (GetCaughtBySafetyGuard(by))
+            return this;
+
+        EmitSignalGotCaught();
+
+        AnchorPoint = (by as Node2D).FindChild("HitBox", true, false) as Node2D;
+        AnchorPointLastPosition = AnchorPoint.GlobalPosition;
+
+        float minDistance = float.MaxValue;
+
+        foreach (var hurtBox in HurtBoxes)
+        {
+
+            float distance = hurtBox.Value.GlobalPosition.DistanceTo(AnchorPoint.GlobalPosition);
+            if (distance < minDistance)
+            {
+                minDistance = distance;
+                CaughtHurtBoxIndex = hurtBox.Key;
+            }
+        }
+
+        HurtBoxes[CaughtHurtBoxIndex].DebugColor = Colors.Black;
+
+        return base.GetCaughtBy(by);
+    }
+
+    protected override void Despawn()
+    {
+        if (!(GetParent() is BossGiantSquid))
+            base.Despawn();
     }
 }

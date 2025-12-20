@@ -59,6 +59,8 @@ public partial class SerpentFish : Fish
                 lasti = i;
             }
         }
+
+        Body.Points = new Vector2[Length];
     }
 
     public override void _PhysicsProcess(double delta)

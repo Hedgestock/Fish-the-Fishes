@@ -26,7 +26,6 @@ public partial class Home : CanvasLayer
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        GD.Print("ready home");
         if (OS.IsDebugBuild()) TestButton.Show();
 
         if (GameManager.GameSave != null)

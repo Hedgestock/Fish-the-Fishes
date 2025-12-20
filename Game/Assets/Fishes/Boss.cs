@@ -23,11 +23,19 @@ public partial class Boss : Fish
         base._Ready();
 
         Passes = GD.RandRange(3, 5);
-
-        PreparePass();
     }
 
-    protected virtual void PreparePass() { }
+    protected virtual void PreparePass()
+    {
+        SetScale();
+
+        SetPosition();
+
+        SetTravelAxis();
+
+        Velocity = TravelAxis * ActualSpeed;
+        Rotation = (float)(TravelAxis.Angle() - (Flip ? Mathf.Pi : 0));
+    }
 
     protected override void Despawn()
     {

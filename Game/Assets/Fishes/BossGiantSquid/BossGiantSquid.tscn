@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dndtj2avudhph"]
+[gd_scene load_steps=9 format=3 uid="uid://dndtj2avudhph"]
 
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_p0x88"]
 [ext_resource type="Script" uid="uid://c1haqaugu6cqi" path="res://Game/Assets/Fishes/BossGiantSquid/BossGiantSquid.cs" id="2_10rc6"]
@@ -6,6 +6,10 @@
 [ext_resource type="SpriteFrames" uid="uid://q7xal57gjeb6" path="res://Game/Assets/Fishes/BossGiantSquid/Animation/BossGiantSquidAnimation.tres" id="3_uw8mj"]
 [ext_resource type="Texture2D" uid="uid://c2hohyud2aova" path="res://Game/Assets/Fishes/BossGiantSquid/Animation/Tentacle_2.png" id="4_ln052"]
 [ext_resource type="PackedScene" uid="uid://dsrx3fh1s4i27" path="res://Game/Assets/Fishes/BossGiantSquid/BossGiantSquidEye.tscn" id="4_uw8mj"]
+
+[sub_resource type="Curve" id="Curve_8rpoo"]
+_data = [Vector2(0.02631579, 0.024702787), 0.0, 0.0, 0, 0, Vector2(0.44976074, 0.20311081), 0.0, 0.0, 0, 0, Vector2(0.6985646, 1), 0.0, 0.0, 0, 0, Vector2(0.84928226, 0.20311081), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 5
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_10rc6"]
 radius = 115.0
@@ -15,8 +19,12 @@ height = 676.0
 script = ExtResource("2_10rc6")
 MaxPasses = 5
 MinPasses = 3
-MaxWait = 12
-MinWait = 3
+MaxWait = 2
+MinWait = 1
+Value = 10.0
+Multiplier = 2
+SpawnRange = Vector2(0.5, 0.9)
+SizeDeviation = 0.3
 
 [node name="BossGiantSquidTentacle" parent="." index="0" instance=ExtResource("3_8rpoo")]
 position = Vector2(-325, -75)
@@ -30,19 +38,27 @@ position = Vector2(-325, 15)
 [node name="BossGiantSquidTentacle4" parent="." index="3" instance=ExtResource("3_8rpoo")]
 position = Vector2(-325, 75)
 
-[node name="BossGiantSquidTentacle5" parent="." index="4" instance=ExtResource("3_8rpoo")]
+[node name="Arm1" parent="." index="4" instance=ExtResource("3_8rpoo")]
 position = Vector2(-325, -45)
+AmplitudeCurve = SubResource("Curve_8rpoo")
+WaveAmplitude = 60
 
-[node name="Line2D" parent="BossGiantSquidTentacle5" index="4"]
+[node name="Line2D" parent="Arm1" index="4"]
 points = PackedVector2Array(0, 0, -1200, 0)
 texture = ExtResource("4_ln052")
 
-[node name="BossGiantSquidTentacle6" parent="." index="5" instance=ExtResource("3_8rpoo")]
+[node name="Arm2" parent="." index="5" instance=ExtResource("3_8rpoo")]
 position = Vector2(-325, 45)
+AmplitudeCurve = SubResource("Curve_8rpoo")
+WaveAmplitude = 60
 
-[node name="Line2D" parent="BossGiantSquidTentacle6" index="4"]
+[node name="Line2D" parent="Arm2" index="4"]
 points = PackedVector2Array(0, 0, -1200, 0)
 texture = ExtResource("4_ln052")
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="6"]
+position = Vector2(-590.99994, 0)
+scale = Vector2(100, 30)
 
 [node name="AnimatedSprite2D" parent="." index="7"]
 sprite_frames = ExtResource("3_uw8mj")
@@ -51,7 +67,6 @@ animation = &"alive"
 [node name="HurtBox" parent="." index="8"]
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_10rc6")
-disabled = true
 
 [node name="BossGiantSquidEye1" parent="." index="10" instance=ExtResource("4_uw8mj")]
 position = Vector2(-268, -116)
@@ -60,5 +75,5 @@ position = Vector2(-268, -116)
 position = Vector2(-268, 107)
 scale = Vector2(1, -1)
 
-[editable path="BossGiantSquidTentacle5"]
-[editable path="BossGiantSquidTentacle6"]
+[editable path="Arm1"]
+[editable path="Arm2"]

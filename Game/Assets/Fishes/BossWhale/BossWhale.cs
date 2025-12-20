@@ -29,30 +29,6 @@ public partial class BossWhale : Boss
         GD.Print(Sound.Playing); 
     }
 
-    protected override void PreparePass()
-    {
-        base.PreparePass();
-
-        Rotation = 0;
-
-        if (Flip)
-            Scale = new(-1, 1);
-        else
-            Scale = new(1, 1);
-
-        Scale *= ActualSizeVariation;
-
-        float positionOffset = VisibleOnScreenNotifier.Rect.Size.X * VisibleOnScreenNotifier.Scale.X / 2 * ActualSizeVariation;
-        Position = new Vector2(
-            Flip ? GameManager.ScreenSize.X + positionOffset : -positionOffset,
-            GameManager.ScreenSize.Y / 2
-        );
-
-        TravelAxis = Flip ? Vector2.Left : Vector2.Right;
-
-        Velocity = TravelAxis * ActualSpeed;
-    }
-
     public void RemoveBarnacle()
     {
         BarnaclesLeft--;

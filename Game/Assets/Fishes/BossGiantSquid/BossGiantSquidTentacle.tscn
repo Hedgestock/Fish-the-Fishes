@@ -9,6 +9,17 @@ _data = [Vector2(0.02631579, 0.024702787), 0.0, 0.0, 0, 0, Vector2(0.16267942, 1
 point_count = 3
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_erl5v"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"alive",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_erl5v"]
 radius = 25.0
@@ -16,14 +27,10 @@ radius = 25.0
 [node name="BossGiantSquidTentacle" node_paths=PackedStringArray("Body") instance=ExtResource("1_y6vpg")]
 script = ExtResource("2_erl5v")
 Body = NodePath("Line2D")
-Length = 50
-SegmentLength = 10
-HeadOffset = -28
 AmplitudeCurve = SubResource("Curve_erl5v")
-WaveAmplitude = 60
-WaveSpeed = 10
-CompendiumName = ""
-CompendiumDescription = ""
+WaveAmplitude = 150
+WaveSpeed = 5
+Value = 2.0
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0"]
 position = Vector2(-350, 0)
@@ -31,6 +38,7 @@ scale = Vector2(40, 10)
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = SubResource("SpriteFrames_erl5v")
+animation = &"dead"
 
 [node name="HurtBox" parent="." index="2"]
 shape = SubResource("CircleShape2D_erl5v")

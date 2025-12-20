@@ -103,6 +103,9 @@ namespace WaffleStock
         private static void UpdateFishCompendium(Fish fish)
         {
             string fishTypeName = fish.GetType().Name;
+            if (!UserData.FishCompendium.ContainsKey(fishTypeName))
+                return;
+
             UserData.FishCompendium[fishTypeName].Caught++;
             if (UserData.FishCompendium[fishTypeName].MaxSize < 0)
             {
