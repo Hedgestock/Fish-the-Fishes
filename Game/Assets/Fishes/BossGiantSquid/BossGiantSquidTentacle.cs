@@ -21,6 +21,8 @@ public partial class BossGiantSquidTentacle : Fish
     [Export]
     private int WaveSpeed = 5;
 
+    private float Seed;
+
     public float CatchRate = 1;
 
     private Dictionary<int, CollisionShape2D> HurtBoxes = new();
@@ -41,6 +43,8 @@ public partial class BossGiantSquidTentacle : Fish
         Length = (uint)Math.Abs(Body.Points[Body.Points.Length - 1].X / SegmentLength);
 
         HurtBoxes[0] = GetNode<CollisionShape2D>("HurtBox");
+
+        Seed = GD.RandRange(0, 1000);
 
         int lasti = 0;
         float radius = (HurtBoxes[0].Shape as CircleShape2D).Radius;
@@ -88,7 +92,7 @@ public partial class BossGiantSquidTentacle : Fish
             tmp[i] = new Vector2(Sprite.Position.X - SegmentLength * i,
                 Sprite.Position.Y +
                 (float)
-                Math.Sin(((GlobalPosition.X / 300f) - (SegmentLength * (Length - i))) * WaveSpeed
+                Math.Sin((((GlobalPosition.X + Seed) / 300f) - (SegmentLength * (Length - i))) * WaveSpeed
 
                 + Math.Abs(Position.Y)
                 // This mirrors up and down tentacles

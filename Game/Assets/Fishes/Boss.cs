@@ -53,8 +53,14 @@ public partial class Boss : Fish
         }
         else
         {
-            EmitSignalDespawning();
             base.Despawn();
         }
+    }
+
+    public override void _Notification(int what)
+    {
+        base._Notification(what);
+        if (what == NotificationPredelete)
+            EmitSignalDespawning();
     }
 }

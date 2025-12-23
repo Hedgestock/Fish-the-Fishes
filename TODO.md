@@ -235,3 +235,4 @@
 - [ ] Corriger deux oursins sur l'hammeçon qui s'échangeraient un poisson à chaque frame
 - [ ] Corriger les espadons qui font une boucle infinie avec l'oursin
 - [ ] Changer le texte dans le compendium pour la baleine
+- [ ] Corriger la fonction d'oscillation des tentacules

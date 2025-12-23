@@ -29,52 +29,64 @@ SpawnRange = Vector2(0.5, 0.9)
 SizeDeviation = 0.3
 
 [node name="BossGiantSquidTentacle" parent="." index="0" instance=ExtResource("3_8rpoo")]
-position = Vector2(-325, -75)
+position = Vector2(-325, -77)
 
 [node name="BossGiantSquidTentacle2" parent="." index="1" instance=ExtResource("3_8rpoo")]
-position = Vector2(-325, -15)
+position = Vector2(-325, -55)
 
 [node name="BossGiantSquidTentacle3" parent="." index="2" instance=ExtResource("3_8rpoo")]
-position = Vector2(-325, 15)
+position = Vector2(-325, -33)
 
 [node name="BossGiantSquidTentacle4" parent="." index="3" instance=ExtResource("3_8rpoo")]
-position = Vector2(-325, 75)
+position = Vector2(-325, -11)
 
-[node name="Arm1" parent="." index="4" instance=ExtResource("3_8rpoo")]
-position = Vector2(-325, -45)
+[node name="BossGiantSquidTentacle5" parent="." index="4" instance=ExtResource("3_8rpoo")]
+position = Vector2(-325, 11)
+
+[node name="BossGiantSquidTentacle6" parent="." index="5" instance=ExtResource("3_8rpoo")]
+position = Vector2(-325, 33)
+
+[node name="BossGiantSquidTentacle7" parent="." index="6" instance=ExtResource("3_8rpoo")]
+position = Vector2(-325, 55)
+
+[node name="BossGiantSquidTentacle8" parent="." index="7" instance=ExtResource("3_8rpoo")]
+position = Vector2(-325, 77)
+
+[node name="Arm1" parent="." index="8" instance=ExtResource("3_8rpoo")]
+position = Vector2(-325, -35)
 AmplitudeCurve = SubResource("Curve_8rpoo")
-WaveAmplitude = 60
+WaveAmplitude = 40
 
 [node name="Line2D" parent="Arm1" index="4"]
 points = PackedVector2Array(0, 0, -1200, 0)
 texture = ExtResource("4_ln052")
 
-[node name="Arm2" parent="." index="5" instance=ExtResource("3_8rpoo")]
-position = Vector2(-325, 45)
+[node name="Arm2" parent="." index="9" instance=ExtResource("3_8rpoo")]
+position = Vector2(-325, 35)
 AmplitudeCurve = SubResource("Curve_8rpoo")
-WaveAmplitude = 60
+WaveAmplitude = 40
 
 [node name="Line2D" parent="Arm2" index="4"]
 points = PackedVector2Array(0, 0, -1200, 0)
 texture = ExtResource("4_ln052")
 
-[node name="VisibleOnScreenNotifier2D" parent="." index="6"]
+[node name="VisibleOnScreenNotifier2D" parent="." index="10"]
 position = Vector2(-590.99994, 0)
 scale = Vector2(100, 30)
 
-[node name="AnimatedSprite2D" parent="." index="7"]
+[node name="AnimatedSprite2D" parent="." index="11"]
 sprite_frames = ExtResource("3_uw8mj")
 animation = &"alive"
 
-[node name="HurtBox" parent="." index="8"]
+[node name="HurtBox" parent="." index="12"]
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_10rc6")
 disabled = true
 
-[node name="BossGiantSquidEye1" parent="." index="10" instance=ExtResource("4_uw8mj")]
+[node name="BossGiantSquidEye1" parent="." index="14" instance=ExtResource("4_uw8mj")]
 position = Vector2(-268, -116)
 
-[node name="BossGiantSquidEye2" parent="." index="11" instance=ExtResource("4_uw8mj")]
+[node name="BossGiantSquidEye2" parent="." index="15" instance=ExtResource("4_uw8mj")]
 position = Vector2(-268, 107)
 scale = Vector2(1, -1)
 
