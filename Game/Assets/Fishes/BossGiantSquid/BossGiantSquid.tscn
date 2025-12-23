@@ -23,6 +23,8 @@ MaxWait = 2
 MinWait = 1
 Value = 10.0
 Multiplier = 2
+MinSpeed = 1000.0
+MaxSpeed = 2500.0
 SpawnRange = Vector2(0.5, 0.9)
 SizeDeviation = 0.3
 
@@ -67,6 +69,7 @@ animation = &"alive"
 [node name="HurtBox" parent="." index="8"]
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_10rc6")
+disabled = true
 
 [node name="BossGiantSquidEye1" parent="." index="10" instance=ExtResource("4_uw8mj")]
 position = Vector2(-268, -116)

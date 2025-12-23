@@ -67,7 +67,7 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
         get { return ActualSize > 75; }
     }
 
-    public bool IsActionable
+    public virtual bool IsActionable
     {
         get { return IsAlive && !IsCaught && !IsInDisplay; }
     }
@@ -120,7 +120,7 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
         // If the inheriting class did not set the ActualSpeed, we do it now.
         if (ActualSpeed == 0)
         {
-            ActualSpeed = (float)GD.RandRange(MinSpeed, MaxSpeed);
+            SetSpeed();
         }
 
         Velocity = TravelAxis * ActualSpeed;
@@ -155,6 +155,11 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
                 )
             );
         TravelAxis = (objective - Position).Normalized();
+    }
+
+    protected virtual void SetSpeed()
+    {
+        ActualSpeed = (float)GD.RandRange(MinSpeed, MaxSpeed);
     }
 
     public override void _PhysicsProcess(double delta)

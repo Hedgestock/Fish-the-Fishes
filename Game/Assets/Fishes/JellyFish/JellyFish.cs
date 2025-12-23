@@ -57,7 +57,7 @@ public partial class JellyFish : Fish, IPowerup
         if (IsInDisplay) return;
         if (Position.Y > GameManager.ScreenSize.Y)
             Push();
-        Velocity *= 0.99f;
+        Velocity *= 1.0f - (float)ProjectSettings.GetSetting("physics/2d/default_linear_damp") * (float)delta;
 
         foreach (var tentacle in TentaclesList)
         {

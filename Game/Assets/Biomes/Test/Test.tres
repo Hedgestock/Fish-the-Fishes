@@ -17,7 +17,6 @@ script = ExtResource("3_xj8ii")
 [resource]
 resource_name = "Test"
 script = ExtResource("12_3wj4f")
-TimeToSpawnFish = 36000.0
 TimeToSpawnFishDeviation = 0.2
 TimeToSpawnTrash = 36000.0
 Fishes = Array[Object]([SubResource("Resource_m1ufk")])

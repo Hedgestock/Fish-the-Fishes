@@ -25,8 +25,6 @@ public partial class BossGiantSquidTentacle : Fish
 
     private Dictionary<int, CollisionShape2D> HurtBoxes = new();
 
-    private DateTime InstanciationTime = DateTime.Now;
-
     public Node2D AnchorPoint = null;
     private Vector2 AnchorPointLastPosition = Vector2.Zero;
     private int CaughtHurtBoxIndex = 0;
@@ -90,7 +88,7 @@ public partial class BossGiantSquidTentacle : Fish
             tmp[i] = new Vector2(Sprite.Position.X - SegmentLength * i,
                 Sprite.Position.Y +
                 (float)
-                Math.Sin((((DateTime.Now - InstanciationTime).TotalMilliseconds / 1000f) - (SegmentLength * (Length - i))) * WaveSpeed
+                Math.Sin(((GlobalPosition.X / 300f) - (SegmentLength * (Length - i))) * WaveSpeed
 
                 + Math.Abs(Position.Y)
                 // This mirrors up and down tentacles

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Biome" load_steps=17 format=3 uid="uid://cub1hi1q8poi"]
+[gd_resource type="Resource" script_class="Biome" load_steps=18 format=3 uid="uid://cub1hi1q8poi"]
 
 [ext_resource type="Texture2D" uid="uid://horqethlbwnb" path="res://Game/Assets/Biomes/Abyss/AbyssBackground.png" id="1_6jhds"]
 [ext_resource type="Script" uid="uid://bprtko2ut7gy0" path="res://Game/Utilities/Weighted/WeightedFish.cs" id="1_l3bwr"]
@@ -9,13 +9,11 @@
 
 [sub_resource type="Resource" id="Resource_e35ma"]
 script = ExtResource("1_l3bwr")
-Fish = 0
 Weight = 300
 
 [sub_resource type="Resource" id="Resource_vh5i2"]
 script = ExtResource("1_l3bwr")
 Fish = 8
-Weight = 100
 metadata/_custom_type_script = "uid://bprtko2ut7gy0"
 
 [sub_resource type="Resource" id="Resource_h78nu"]
@@ -26,6 +24,12 @@ Weight = 50
 [sub_resource type="Resource" id="Resource_dqesl"]
 script = ExtResource("1_l3bwr")
 Fish = 10
+Weight = 1
+metadata/_custom_type_script = "uid://bprtko2ut7gy0"
+
+[sub_resource type="Resource" id="Resource_aok0y"]
+script = ExtResource("1_l3bwr")
+Fish = 19
 Weight = 1
 metadata/_custom_type_script = "uid://bprtko2ut7gy0"
 
@@ -42,22 +46,17 @@ Weight = 10
 [sub_resource type="Resource" id="Resource_e6gle"]
 script = ExtResource("2_nsdd8")
 Biome = 3
-Weight = 100
 
 [sub_resource type="Resource" id="Resource_0d7d5"]
 script = ExtResource("3_r1s2o")
-Trash = 0
-Weight = 100
 
 [sub_resource type="Resource" id="Resource_ld3fx"]
 script = ExtResource("3_r1s2o")
 Trash = 1
-Weight = 100
 
 [sub_resource type="Resource" id="Resource_0f7p0"]
 script = ExtResource("3_r1s2o")
 Trash = 2
-Weight = 100
 
 [resource]
 resource_name = "Abyss"
@@ -67,8 +66,7 @@ TimeToSpawnFishDeviation = 0.5
 TimeToSpawnTrash = 2.0
 TimeToSpawnTrashDeviation = 0.2
 ChangeBiomeThreshold = 30
-ChangeBiomeThresholdDeviation = 5
-Fishes = Array[Object]([SubResource("Resource_e35ma"), SubResource("Resource_vh5i2"), SubResource("Resource_h78nu"), SubResource("Resource_dqesl")])
+Fishes = Array[Object]([SubResource("Resource_e35ma"), SubResource("Resource_vh5i2"), SubResource("Resource_h78nu"), SubResource("Resource_dqesl"), SubResource("Resource_aok0y")])
 Trashes = Array[Object]([SubResource("Resource_0d7d5"), SubResource("Resource_ld3fx"), SubResource("Resource_0f7p0")])
 FollowupBiomes = Array[Object]([SubResource("Resource_e8lrw"), SubResource("Resource_a21oa"), SubResource("Resource_e6gle")])
 CompendiumName = "Abyss"
