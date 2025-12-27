@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ta5yuyx8w4pc" path="res://Game/Assets/Fishes/BossGiantSquid/Animation/Tentacle_1.png" id="3_us57q"]
 
 [sub_resource type="Curve" id="Curve_erl5v"]
-_data = [Vector2(0.02631579, 0.024702787), 0.0, 0.0, 0, 0, Vector2(0.16267942, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+_data = [Vector2(0.02631579, 0.024702787), 0.0, 0.0, 0, 0, Vector2(0.16267942, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.19973433), 0.0, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_erl5v"]

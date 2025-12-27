@@ -55,7 +55,7 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
     protected float ActualSizeVariation = 0;
     public bool IsAlive = true;
     public bool IsCaught { get; set; }
-    public bool IsInDisplay { get; set; }
+    public virtual bool IsInDisplay { get; set; }
 
     public virtual float ActualSize
     {
@@ -96,7 +96,7 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
         // If the inheriting class did not set the ActualSizeVariation, we do it now.
         if (ActualSizeVariation == 0)
         {
-            ActualSizeVariation = (float)Mathf.Max(0.01, GD.Randfn(1, SizeDeviation));
+            SetSize();
         }
 
         // If the inheriting class did not set the spawning Posision, we do it now.
@@ -125,6 +125,11 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
 
         Velocity = TravelAxis * ActualSpeed;
         Rotation = (float)(TravelAxis.Angle() - (Flip ? Mathf.Pi : 0));
+    }
+
+    protected void SetSize()
+    {
+        ActualSizeVariation = (float)Mathf.Max(0.01, GD.Randfn(1, SizeDeviation));
     }
 
     protected void SetScale()

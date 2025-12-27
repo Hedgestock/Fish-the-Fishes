@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using WaffleStock;
 
@@ -38,6 +39,8 @@ public partial class BossGiantSquid : Boss
             tentacle.Flip = Flip;
 
             tentacle.CatchRate = Tentacles.Count / (2 * MaxTentacles);
+
+            tentacle.IsInDisplay = IsInDisplay;
         }
     }
 

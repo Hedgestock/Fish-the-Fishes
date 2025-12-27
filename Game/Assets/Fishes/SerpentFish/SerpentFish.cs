@@ -14,7 +14,7 @@ public partial class SerpentFish : Fish
     [Export]
     Curve AmplitudeCurve;
     int WaveAmplitude = 60;
-    int WaveSpeed = 5;
+    int WaveLength = 5;
 
     private Dictionary<int, CollisionShape2D> HurtBoxes = new();
 
@@ -34,7 +34,8 @@ public partial class SerpentFish : Fish
         float pixels = Math.Abs(Body.Points[Body.Points.Length - 1].X / SegmentLength);
         Length = IsInDisplay ? (uint)pixels : (uint)Mathf.Max(SegmentLength * 3, GD.Randfn(pixels, pixels * SizeDeviation));
 
-        VisibleOnScreenNotifier.Rect = new Rect2(-SegmentLength * Length, -WaveAmplitude, SegmentLength * Length, WaveAmplitude * 2);
+        VisibleOnScreenNotifier.Rect = new Rect2(-30 - SegmentLength * Length, -WaveAmplitude, 30 + SegmentLength * Length, WaveAmplitude * 2);
+        VisibleOnScreenNotifier.Scale = Vector2.One;
 
         base._Ready();
 
@@ -85,7 +86,7 @@ public partial class SerpentFish : Fish
         for (int i = 0; i < Length; i++)
         {
             tmp[i] = new Vector2(-SegmentLength * i,
-                (float)Math.Sin((((DateTime.Now - InstanciationTime).TotalMilliseconds / 1000f) - (SegmentLength * (Length - i))) * WaveSpeed) * (WaveAmplitude * AmplitudeCurve.Sample((float)i / Length)));
+                (float)Math.Sin((((DateTime.Now - InstanciationTime).TotalMilliseconds / 1000f) - (SegmentLength * (Length - i))) * WaveLength) * (WaveAmplitude * AmplitudeCurve.Sample((float)i / Length)));
             if (HurtBoxes.ContainsKey(i))
             {
                 HurtBoxes[i].Position = tmp[i];

@@ -15,8 +15,8 @@ public partial class BossGiantSquidEye : StaticBody2D, IFishable
         }
         set
         {
+            if (value && Sprite.Animation != "closed") EmitSignalClosing();
             Sprite.Animation = value ? "closed" : "open";
-            if (value) EmitSignalClosing();
         }
     }
 
