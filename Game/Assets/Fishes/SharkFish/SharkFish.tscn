@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dbp5wtcfp4yv5"]
+[gd_scene load_steps=9 format=3 uid="uid://dbp5wtcfp4yv5"]
 
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_0ee32"]
 [ext_resource type="Script" uid="uid://c16knpal1qn53" path="res://Game/Assets/Fishes/SharkFish/SharkFish.cs" id="2_3d5gd"]
 [ext_resource type="SpriteFrames" uid="uid://6520w7uakc1q" path="res://Game/Assets/Fishes/SharkFish/Animation/SharkFishAnimation.tres" id="3_rhaxs"]
+[ext_resource type="Texture2D" uid="uid://bosadrqergwx2" path="res://Game/Assets/Fishes/shared/bubbles.png" id="4_5ikqo"]
+[ext_resource type="Material" uid="uid://bvt1xao725px5" path="res://Game/Assets/Fishes/shared/BubbleParticleMaterial.tres" id="5_mxp71"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jdtfq"]
 radius = 66.0
@@ -12,10 +14,17 @@ height = 532.0
 radius = 31.0
 height = 166.0
 
-[node name="SharkFish" node_paths=PackedStringArray("HitBox") instance=ExtResource("1_0ee32")]
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_f8g2p"]
+particles_animation = true
+particles_anim_h_frames = 4
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[node name="SharkFish" node_paths=PackedStringArray("HitBox", "Bubbles") instance=ExtResource("1_0ee32")]
 script = ExtResource("2_3d5gd")
 CantFlee = Array[int]([10, 3, 5, 8, 9, 7, 19, 20])
 HitBox = NodePath("HitBox/CollisionShape2D")
+Bubbles = NodePath("Bubbles")
 CompendiumName = "Shark"
 CompendiumDescription = "A fierce predator almost unstoppable. It will eat anything in its path as long as it fits in its mouth."
 Value = 10.0
@@ -46,5 +55,16 @@ rotation = 0.191986
 shape = SubResource("CapsuleShape2D_n0n4s")
 disabled = true
 debug_color = Color(1, 0, 0, 0.419608)
+
+[node name="Bubbles" type="GPUParticles2D" parent="." index="5"]
+material = SubResource("CanvasItemMaterial_f8g2p")
+position = Vector2(-242, 19)
+amount = 32
+texture = ExtResource("4_5ikqo")
+randomness = 0.5
+fixed_fps = 15
+fract_delta = false
+visibility_rect = Rect2(-75, -125, 600, 200)
+process_material = ExtResource("5_mxp71")
 
 [connection signal="body_entered" from="HitBox" to="." method="OnFishEaten"]

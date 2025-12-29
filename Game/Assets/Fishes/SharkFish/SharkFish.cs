@@ -13,8 +13,8 @@ public partial class SharkFish : Fish, IFisher
     //private GpuParticles2D Blood;
     [Export]
     private CollisionShape2D HitBox;
-    //[Export]
-    //private GpuParticles2D Bubbles;
+    [Export]
+    private GpuParticles2D Bubbles;
 
     public List<IFishable> FishedThings { get; } = new List<IFishable>();
 
@@ -29,13 +29,13 @@ public partial class SharkFish : Fish, IFisher
 
         if (IsInDisplay) return;
 
-        //GpuParticles2D indicator = (GpuParticles2D)Bubbles.Duplicate();
-        //indicator.ProcessMaterial = (Material)Bubbles.ProcessMaterial.Duplicate();
-        //indicator.Position = GlobalPosition + (TravelAxis * 250);
-        //(indicator.ProcessMaterial as ParticleProcessMaterial).Gravity = new Vector3(TravelAxis.X, TravelAxis.Y, 0) * 500;
-        //GetParent().AddChild(indicator);
+        GpuParticles2D indicator = (GpuParticles2D)Bubbles.Duplicate();
+        indicator.ProcessMaterial = (Material)Bubbles.ProcessMaterial.Duplicate();
+        indicator.Position = GlobalPosition + (TravelAxis * 250);
+        (indicator.ProcessMaterial as ParticleProcessMaterial).Gravity = new Vector3(TravelAxis.X, TravelAxis.Y, 0) * 500;
+        GetParent().AddChild(indicator);
 
-        //Bubbles.Amount = (int)ActualSpeed/3;
+        Bubbles.Amount = (int)ActualSpeed / 3;
 
         if (UserSettings.Vibrations) Input.VibrateHandheld(500);
 
@@ -72,7 +72,7 @@ public partial class SharkFish : Fish, IFisher
 
     private void CleanCurrentBehaviors()
     {
-        //Bubbles.Emitting = false;
+        Bubbles.Emitting = false;
     }
 
     private void OnFishEaten(Node2D body)

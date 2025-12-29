@@ -26,5 +26,6 @@ rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_ianp1")
 
 [node name="PoisonTimer" parent="." index="4" instance=ExtResource("4_x0yu8")]
+autostart = true
 
 [connection signal="timeout" from="PoisonTimer" to="." method="EmitPoison"]
