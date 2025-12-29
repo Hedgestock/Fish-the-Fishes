@@ -48,6 +48,9 @@ namespace WaffleStock
             CurrentFish,
             BossGiantSquid,
             BossWhale,
+            PoisonFish,
+            BombFish,
+            LanternFish,
         }
 
         public static string TrashesFolder = "res://Game/Assets/Trashes/";

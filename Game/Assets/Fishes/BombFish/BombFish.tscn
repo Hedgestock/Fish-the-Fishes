@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://514pdtjx8yd0"]
+
+[ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_qt5lc"]
+[ext_resource type="Script" uid="uid://y3m5ejfd6iv" path="res://Game/Assets/Fishes/BombFish/BombFish.cs" id="2_kvoxu"]
+[ext_resource type="SpriteFrames" uid="uid://ber4a88l4aq0i" path="res://Game/Assets/Fishes/BombFish/Animation/BombFishAnimation.tres" id="2_wbnha"]
+
+[node name="BombFish" instance=ExtResource("1_qt5lc")]
+script = ExtResource("2_kvoxu")
+CompendiumName = "Bomb Fish"
+CompendiumDescription = ""
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="0"]
+scale = Vector2(15, 7)
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = ExtResource("2_wbnha")
+animation = &"alive"

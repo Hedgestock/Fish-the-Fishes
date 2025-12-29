@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://cm8364e26h8h3"]
+
+[ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_f5cnx"]
+[ext_resource type="Script" uid="uid://c486g3xwge0cc" path="res://Game/Assets/Fishes/LanternFish/LanternFish.cs" id="2_qgwwi"]
+[ext_resource type="SpriteFrames" uid="uid://dxmp1jai4drwy" path="res://Game/Assets/Fishes/LanternFish/Animation/LanternFishAnimation.tres" id="3_y23ad"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5j1mm"]
+radius = 14.3178215
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y23ad"]
+radius = 69.0
+
+[node name="LanternFish" instance=ExtResource("1_f5cnx")]
+script = ExtResource("2_qgwwi")
+CompendiumName = "Lantern Fish"
+CompendiumDescription = ""
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = ExtResource("3_y23ad")
+animation = &"alive"
+
+[node name="HitBox" type="Area2D" parent="." index="2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" index="0"]
+position = Vector2(81, -37)
+shape = SubResource("CircleShape2D_5j1mm")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[node name="HurtBox" parent="." index="3"]
+position = Vector2(-11, 12)
+shape = SubResource("CircleShape2D_y23ad")

@@ -1,0 +1,22 @@
+[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://ber4a88l4aq0i"]
+
+[ext_resource type="Texture2D" uid="uid://cs4hfgiwtbxyg" path="res://Game/Assets/Fishes/BombFish/Animation/Bombfish.png" id="1_fqtba"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_fqtba")
+}],
+"loop": true,
+"name": &"alive",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_fqtba")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}]

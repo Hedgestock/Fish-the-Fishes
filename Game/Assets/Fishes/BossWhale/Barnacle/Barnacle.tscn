@@ -28,6 +28,8 @@ radius = 50.0
 
 [node name="Barnacle" instance=ExtResource("1_ykrpa")]
 script = ExtResource("1_vxnhu")
+CompendiumName = "Barnacle"
+CompendiumDescription = "You're not supposed to see that description."
 MinSpeed = 0.0
 MaxSpeed = 0.0
 SizeDeviation = 0.5

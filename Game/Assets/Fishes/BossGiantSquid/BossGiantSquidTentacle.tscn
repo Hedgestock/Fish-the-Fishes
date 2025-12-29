@@ -30,6 +30,8 @@ Body = NodePath("Line2D")
 AmplitudeCurve = SubResource("Curve_erl5v")
 WaveAmplitude = 150
 WaveSpeed = 5
+CompendiumName = "Giant Tentacle"
+CompendiumDescription = "You're not supposed to see that description."
 Value = 2.0
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0"]

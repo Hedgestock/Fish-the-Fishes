@@ -216,11 +216,6 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
         return this;
     }
 
-    public virtual void Trigger()
-    {
-        Kill();
-    }
-
     public virtual void Kill()
     {
         if (!IsCaught) GravityScale = 0.6f;
