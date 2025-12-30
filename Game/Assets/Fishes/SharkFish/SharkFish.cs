@@ -30,8 +30,9 @@ public partial class SharkFish : Fish, IFisher
         if (IsInDisplay) return;
 
         GpuParticles2D indicator = (GpuParticles2D)Bubbles.Duplicate();
+        indicator.ZIndex = 1;
         indicator.ProcessMaterial = (Material)Bubbles.ProcessMaterial.Duplicate();
-        indicator.Position = GlobalPosition + (TravelAxis * 250);
+        indicator.Position = GlobalPosition + (TravelAxis * 300);
         (indicator.ProcessMaterial as ParticleProcessMaterial).Gravity = new Vector3(TravelAxis.X, TravelAxis.Y, 0) * 500;
         GetParent().AddChild(indicator);
 
@@ -46,7 +47,7 @@ public partial class SharkFish : Fish, IFisher
         LaunchTimer = GetTree().CreateTimer(2);
         LaunchTimer.Timeout += () =>
         {
-            //indicator.QueueFree();
+            indicator.QueueFree();
             if (!IsInstanceValid(this)) return;
             Show();
             HitBox.SetDeferred(CollisionShape2D.PropertyName.Disabled, false);
@@ -104,8 +105,9 @@ public partial class SharkFish : Fish, IFisher
 
         if (FishListContains(CantFlee, fish.GetType()))
         {
-            // If fish is invalid, we retry
-            Callable.From<int, int>(FrightenFishes).CallDeferred(i, limit);
+            // If fish is invalid, we retry but still increment the count
+            // to avoid infinite loop on badly configured biomes
+            Callable.From<int, int>(FrightenFishes).CallDeferred(++i, limit);
             return;
         }
         // Otherwise we spawn it
