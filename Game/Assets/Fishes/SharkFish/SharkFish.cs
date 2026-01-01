@@ -9,8 +9,8 @@ public partial class SharkFish : Fish, IFisher
     [Export]
     public Array<Constants.Fishes> CantFlee = new Array<Constants.Fishes>();
 
-    //[Export]
-    //private GpuParticles2D Blood;
+    [Export]
+    private GpuParticles2D Blood;
     [Export]
     private CollisionShape2D HitBox;
     [Export]
@@ -86,11 +86,11 @@ public partial class SharkFish : Fish, IFisher
         Food.Kill();
         if (!Food.IsHuge)
         {
-            //GpuParticles2D bleeding = (GpuParticles2D)Blood.Duplicate();
-            //bleeding.Emitting = true;
-            //bleeding.Position = Food.Position;
-            //GetParent().AddChild(bleeding);
-            //GetTree().CreateTimer(bleeding.Lifetime).Timeout += bleeding.QueueFree;
+            GpuParticles2D bleeding = (GpuParticles2D)Blood.Duplicate();
+            bleeding.Emitting = true;
+            bleeding.Position = Food.Position;
+            GetParent().AddChild(bleeding);
+            GetTree().CreateTimer(bleeding.Lifetime).Timeout += bleeding.QueueFree;
 
             Food.QueueFree();
         }

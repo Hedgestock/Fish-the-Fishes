@@ -9,14 +9,11 @@
 [ext_resource type="Texture2D" uid="uid://bkwhancs5j6o5" path="res://WaffleStock/Logo_anime_last_frame.png" id="9_2pmwa"]
 [ext_resource type="VideoStream" uid="uid://desns6vcfplb0" path="res://WaffleStock/wafflestock animé.ogv" id="9_kgnoq"]
 
-[node name="Home" type="CanvasLayer" node_paths=PackedStringArray("FishTimer", "Message", "GameContainer", "ContinueButton", "TestButton", "Background")]
+[node name="Home" type="CanvasLayer" node_paths=PackedStringArray("Message", "ContinueButton", "TestButton")]
 script = ExtResource("1_ptl5f")
-FishTimer = NodePath("")
 Message = NodePath("AspectRatioContainer/MarginContainer/VBoxContainer/Message")
-GameContainer = NodePath("")
 ContinueButton = NodePath("AspectRatioContainer/MarginContainer/VBoxContainer/Menu/ContinueButton")
 TestButton = NodePath("AspectRatioContainer/MarginContainer/VBoxContainer/Menu/Test")
-Background = NodePath("")
 
 [node name="Game" parent="." instance=ExtResource("2_phf7v")]
 layer = 0

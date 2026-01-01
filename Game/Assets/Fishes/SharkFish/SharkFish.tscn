@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dbp5wtcfp4yv5"]
+[gd_scene load_steps=15 format=3 uid="uid://dbp5wtcfp4yv5"]
 
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_0ee32"]
 [ext_resource type="Script" uid="uid://c16knpal1qn53" path="res://Game/Assets/Fishes/SharkFish/SharkFish.cs" id="2_3d5gd"]
 [ext_resource type="SpriteFrames" uid="uid://6520w7uakc1q" path="res://Game/Assets/Fishes/SharkFish/Animation/SharkFishAnimation.tres" id="3_rhaxs"]
 [ext_resource type="Texture2D" uid="uid://bosadrqergwx2" path="res://Game/Assets/Fishes/shared/bubbles.png" id="4_5ikqo"]
 [ext_resource type="Material" uid="uid://bvt1xao725px5" path="res://Game/Assets/Fishes/shared/BubbleParticleMaterial.tres" id="5_mxp71"]
+[ext_resource type="Texture2D" uid="uid://6xu544aj1jlv" path="res://Game/Assets/Fishes/SharkFish/Animation/Ball.png" id="6_mxp71"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jdtfq"]
 radius = 66.0
@@ -20,9 +21,34 @@ particles_anim_h_frames = 4
 particles_anim_v_frames = 1
 particles_anim_loop = false
 
-[node name="SharkFish" node_paths=PackedStringArray("HitBox", "Bubbles") instance=ExtResource("1_0ee32")]
+[sub_resource type="Curve" id="Curve_mxp71"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.5027323, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_f8g2p"]
+curve = SubResource("Curve_mxp71")
+
+[sub_resource type="Curve" id="Curve_f8g2p"]
+_data = [Vector2(1e-05, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_1q7cr"]
+curve = SubResource("Curve_f8g2p")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_f8g2p"]
+spread = 0.0
+gravity = Vector3(0, -20, 0)
+scale_curve = SubResource("CurveTexture_1q7cr")
+color = Color(0.8808251, 0, 0, 1)
+alpha_curve = SubResource("CurveTexture_f8g2p")
+turbulence_noise_strength = 0.0
+turbulence_noise_scale = 1.0
+turbulence_noise_speed_random = 0.0
+
+[node name="SharkFish" node_paths=PackedStringArray("Blood", "HitBox", "Bubbles") instance=ExtResource("1_0ee32")]
 script = ExtResource("2_3d5gd")
 CantFlee = Array[int]([10, 3, 5, 8, 9, 7, 19, 20])
+Blood = NodePath("Blood")
 HitBox = NodePath("HitBox/CollisionShape2D")
 Bubbles = NodePath("Bubbles")
 CompendiumName = "Shark"
@@ -65,5 +91,17 @@ randomness = 0.5
 fract_delta = false
 visibility_rect = Rect2(-75, -125, 600, 200)
 process_material = ExtResource("5_mxp71")
+
+[node name="Blood" type="GPUParticles2D" parent="." index="6"]
+position = Vector2(213, 19)
+emitting = false
+amount = 1
+texture = ExtResource("6_mxp71")
+lifetime = 15.0
+one_shot = true
+preprocess = 2.0
+trail_enabled = true
+trail_lifetime = 8.0
+process_material = SubResource("ParticleProcessMaterial_f8g2p")
 
 [connection signal="body_entered" from="HitBox" to="." method="OnFishEaten"]
