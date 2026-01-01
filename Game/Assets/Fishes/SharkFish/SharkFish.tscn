@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dbp5wtcfp4yv5"]
+[gd_scene load_steps=17 format=3 uid="uid://dbp5wtcfp4yv5"]
 
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_0ee32"]
 [ext_resource type="Script" uid="uid://c16knpal1qn53" path="res://Game/Assets/Fishes/SharkFish/SharkFish.cs" id="2_3d5gd"]
@@ -28,16 +28,30 @@ point_count = 2
 [sub_resource type="CurveTexture" id="CurveTexture_f8g2p"]
 curve = SubResource("Curve_mxp71")
 
-[sub_resource type="Curve" id="Curve_f8g2p"]
-_data = [Vector2(1e-05, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+[sub_resource type="Curve" id="Curve_1q7cr"]
+_limits = [0.0, 100.0, 0.0, 1.0]
+_data = [Vector2(0, 50), 0.0, 0.0, 0, 0, Vector2(0.08, 2), 0.0, 0.0, 0, 0]
 point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_tyluu"]
+curve = SubResource("Curve_1q7cr")
+
+[sub_resource type="Curve" id="Curve_f8g2p"]
+_data = [Vector2(0, 0.3), 0.0, 9.128516, 0, 0, Vector2(0.25, 1), 0.0, 0.0, 0, 0, Vector2(0.5, 0), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="CurveTexture" id="CurveTexture_1q7cr"]
 curve = SubResource("Curve_f8g2p")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_f8g2p"]
+direction = Vector3(0, -1, 0)
 spread = 0.0
-gravity = Vector3(0, -20, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 50.0
+gravity = Vector3(0, 0, 0)
+damping_min = 1.0
+damping_max = 1.0
+damping_curve = SubResource("CurveTexture_tyluu")
 scale_curve = SubResource("CurveTexture_1q7cr")
 color = Color(0.8808251, 0, 0, 1)
 alpha_curve = SubResource("CurveTexture_f8g2p")
@@ -99,9 +113,10 @@ amount = 1
 texture = ExtResource("6_mxp71")
 lifetime = 15.0
 one_shot = true
-preprocess = 2.0
 trail_enabled = true
 trail_lifetime = 8.0
+trail_sections = 20
+trail_section_subdivisions = 1
 process_material = SubResource("ParticleProcessMaterial_f8g2p")
 
 [connection signal="body_entered" from="HitBox" to="." method="OnFishEaten"]
