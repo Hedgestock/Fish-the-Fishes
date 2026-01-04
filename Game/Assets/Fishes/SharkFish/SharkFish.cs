@@ -4,19 +4,17 @@ using WaffleStock;
 using System;
 using System.Collections.Generic;
 
-public partial class SharkFish : Fish, IFisher
+public partial class SharkFish : Fish
 {
     [Export]
     public Array<Constants.Fishes> CantFlee = new Array<Constants.Fishes>();
 
     [Export]
-    private GpuParticles2D Blood;
+    private PackedScene Blood;
     [Export]
     private CollisionShape2D HitBox;
     [Export]
     private GpuParticles2D Bubbles;
-
-    public List<IFishable> FishedThings { get; } = new List<IFishable>();
 
     private SceneTreeTimer LaunchTimer = null;
 
@@ -78,7 +76,7 @@ public partial class SharkFish : Fish, IFisher
 
     private void OnFishEaten(Node2D body)
     {
-        if (!(body is Fish) || FishedThings.Contains(body as Fish) || body == this || !IsActionable) return;
+        if (!(body is Fish) || body == this || !IsActionable) return;
 
         Fish Food = body as Fish;
 
@@ -86,9 +84,9 @@ public partial class SharkFish : Fish, IFisher
         Food.Kill();
         if (!Food.IsHuge)
         {
-            GpuParticles2D bleeding = (GpuParticles2D)Blood.Duplicate();
+            GpuParticles2D bleeding = Blood.Instantiate<GpuParticles2D>();
             bleeding.Emitting = true;
-            bleeding.Position = Food.Position;
+            bleeding.GlobalPosition = Food.GlobalPosition + Velocity.Normalized()*100;
             GetParent().AddChild(bleeding);
             GetTree().CreateTimer(bleeding.Lifetime).Timeout += bleeding.QueueFree;
 

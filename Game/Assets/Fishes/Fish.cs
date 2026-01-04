@@ -57,25 +57,13 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
     public bool IsCaught { get; set; }
     public virtual bool IsInDisplay { get; set; }
 
-    public virtual float ActualSize
-    {
-        get { return AverageSize * ActualSizeVariation; }
-    }
+    public virtual float ActualSize => AverageSize * ActualSizeVariation;
 
-    public bool IsHuge
-    {
-        get { return ActualSize > 75; }
-    }
+    public bool IsHuge => ActualSize > 75;
 
-    public virtual bool IsActionable
-    {
-        get { return IsAlive && !IsCaught && !IsInDisplay; }
-    }
+    public virtual bool IsActionable => IsAlive && !IsCaught && !IsInDisplay;
 
-    public bool IsOnScreen
-    {
-        get { return VisibleOnScreenNotifier.IsOnScreen(); }
-    }
+    public bool IsOnScreen => VisibleOnScreenNotifier.IsOnScreen();
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()

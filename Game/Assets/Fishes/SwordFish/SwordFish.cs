@@ -147,7 +147,7 @@ public partial class SwordFish : Fish, IFisher
 
         Sprite.Animation = "dash";
         Bubbles.Emitting = true;
-        Bubbles.AmountRatio = Mathf.Min(LaunchedSpeed/2000, 1);
+        Bubbles.AmountRatio = LaunchedSpeed/MaxSpeed;
 
         State = Action.Launched;
     }

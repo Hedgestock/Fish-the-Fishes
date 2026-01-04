@@ -24,10 +24,7 @@ public partial class SerpentFish : Fish
     private Vector2 AnchorPointLastPosition = Vector2.Zero;
     private int CaughtHurtBoxIndex = 0;
 
-    public override float ActualSize
-    {
-        get { return (SegmentLength * Length / 4) * ActualSizeVariation; }
-    }
+    public override float ActualSize => SegmentLength * Length / 4 * ActualSizeVariation;
 
     public override void _Ready()
     {

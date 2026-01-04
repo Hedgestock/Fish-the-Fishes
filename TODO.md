@@ -226,13 +226,14 @@
 - [x] Régler l'erreur en cas d'absence de fichier de configuration
 - [x] Mettre à jour le fichier avec les informations sur les poissons
 - [x] Utiliser un nœud 2D dans les hameçons plutôt qu'un simple entier
-- [ ] [**Plus de bulles pour l'instant**]Corriger les bulles des requins qui disparaissent trop tôt
+- [x] [**Changement de moteur de rendu**]Essayer de faire des poules pour les bulles
 - [ ] Passer à des listes de noms plutôt que des énumérations
 - [ ] Corriger les poissons qui restent sur la ligne après une remontée
 - [ ] Corriger les requins qui mangent des poissons déjà pêchés
-- [ ] Essayer de faire des poules pour les bulles
 - [ ] Mettre un point de deboggage sur `GetCaughtBy()` semble s'activer à chaque frame pour la ligne, mais pas les espadons
 - [ ] Corriger deux oursins sur l'hammeçon qui s'échangeraient un poisson à chaque frame
 - [ ] Corriger les espadons qui font une boucle infinie avec l'oursin
 - [ ] Corriger la fonction d'oscillation des tentacules
 - [ ] Vérifier le comportement d'un oursin qui se fait manger mais en étant activé
+- [ ] Corriger les bulles des requins qui disparaissent trop tôt
+- [ ] Partager la scène des bulles

@@ -5,15 +5,15 @@
 [ext_resource type="Script" uid="uid://du5t70kmo5wl6" path="res://Game/Utilities/Weighted/WeightedTrash.cs" id="3_xj8ii"]
 [ext_resource type="Script" uid="uid://62lfoitacli2" path="res://Game/Assets/Biomes/Biome.cs" id="12_3wj4f"]
 
-[sub_resource type="Resource" id="Resource_qbc61"]
+[sub_resource type="Resource" id="Resource_xt8bu"]
 script = ExtResource("1_bycrx")
-Fish = 7
-Weight = 50
+Fish = 4
 metadata/_custom_type_script = "uid://bprtko2ut7gy0"
 
-[sub_resource type="Resource" id="Resource_m1ufk"]
+[sub_resource type="Resource" id="Resource_e64e2"]
 script = ExtResource("1_bycrx")
-Fish = 6
+Fish = 23
+Weight = 50
 metadata/_custom_type_script = "uid://bprtko2ut7gy0"
 
 [sub_resource type="Resource" id="Resource_cigae"]
@@ -24,7 +24,7 @@ resource_name = "Test"
 script = ExtResource("12_3wj4f")
 TimeToSpawnFishDeviation = 0.2
 TimeToSpawnTrash = 36000.0
-Fishes = Array[Object]([SubResource("Resource_qbc61"), SubResource("Resource_m1ufk")])
+Fishes = Array[Object]([SubResource("Resource_xt8bu"), SubResource("Resource_e64e2")])
 Trashes = Array[Object]([SubResource("Resource_cigae")])
 FollowupBiomes = Array[Object]([])
 CompendiumName = "Test"

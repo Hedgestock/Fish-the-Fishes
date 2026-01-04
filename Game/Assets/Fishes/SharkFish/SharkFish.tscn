@@ -1,11 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://dbp5wtcfp4yv5"]
+[gd_scene load_steps=10 format=3 uid="uid://dbp5wtcfp4yv5"]
 
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_0ee32"]
 [ext_resource type="Script" uid="uid://c16knpal1qn53" path="res://Game/Assets/Fishes/SharkFish/SharkFish.cs" id="2_3d5gd"]
 [ext_resource type="SpriteFrames" uid="uid://6520w7uakc1q" path="res://Game/Assets/Fishes/SharkFish/Animation/SharkFishAnimation.tres" id="3_rhaxs"]
 [ext_resource type="Texture2D" uid="uid://bosadrqergwx2" path="res://Game/Assets/Fishes/shared/bubbles.png" id="4_5ikqo"]
 [ext_resource type="Material" uid="uid://bvt1xao725px5" path="res://Game/Assets/Fishes/shared/BubbleParticleMaterial.tres" id="5_mxp71"]
-[ext_resource type="Texture2D" uid="uid://6xu544aj1jlv" path="res://Game/Assets/Fishes/SharkFish/Animation/Ball.png" id="6_mxp71"]
+[ext_resource type="PackedScene" uid="uid://kprspjj676xe" path="res://Game/Assets/Fishes/shared/Blood.tscn" id="6_mxp71"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jdtfq"]
 radius = 66.0
@@ -21,48 +21,10 @@ particles_anim_h_frames = 4
 particles_anim_v_frames = 1
 particles_anim_loop = false
 
-[sub_resource type="Curve" id="Curve_mxp71"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.5027323, 0), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_f8g2p"]
-curve = SubResource("Curve_mxp71")
-
-[sub_resource type="Curve" id="Curve_1q7cr"]
-_limits = [0.0, 100.0, 0.0, 1.0]
-_data = [Vector2(0, 50), 0.0, 0.0, 0, 0, Vector2(0.08, 2), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_tyluu"]
-curve = SubResource("Curve_1q7cr")
-
-[sub_resource type="Curve" id="Curve_f8g2p"]
-_data = [Vector2(0, 0.3), 0.0, 9.128516, 0, 0, Vector2(0.25, 1), 0.0, 0.0, 0, 0, Vector2(0.5, 0), 0.0, 0.0, 0, 0]
-point_count = 3
-
-[sub_resource type="CurveTexture" id="CurveTexture_1q7cr"]
-curve = SubResource("Curve_f8g2p")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_f8g2p"]
-direction = Vector3(0, -1, 0)
-spread = 0.0
-initial_velocity_min = 50.0
-initial_velocity_max = 50.0
-gravity = Vector3(0, 0, 0)
-damping_min = 1.0
-damping_max = 1.0
-damping_curve = SubResource("CurveTexture_tyluu")
-scale_curve = SubResource("CurveTexture_1q7cr")
-color = Color(0.8808251, 0, 0, 1)
-alpha_curve = SubResource("CurveTexture_f8g2p")
-turbulence_noise_strength = 0.0
-turbulence_noise_scale = 1.0
-turbulence_noise_speed_random = 0.0
-
-[node name="SharkFish" node_paths=PackedStringArray("Blood", "HitBox", "Bubbles") instance=ExtResource("1_0ee32")]
+[node name="SharkFish" node_paths=PackedStringArray("HitBox", "Bubbles") instance=ExtResource("1_0ee32")]
 script = ExtResource("2_3d5gd")
-CantFlee = Array[int]([10, 3, 5, 8, 9, 7, 19, 20])
-Blood = NodePath("Blood")
+CantFlee = Array[int]([10, 3, 5, 8, 9, 7, 19, 20, 21, 22, 23])
+Blood = ExtResource("6_mxp71")
 HitBox = NodePath("HitBox/CollisionShape2D")
 Bubbles = NodePath("Bubbles")
 CompendiumName = "Shark"
@@ -88,7 +50,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_jdtfq")
 
 [node name="HitBox" type="Area2D" parent="." index="4" groups=["Hitboxes"]]
-position = Vector2(213, 19)
+position = Vector2(223, 19)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" index="0"]
 rotation = 0.191986
@@ -105,18 +67,5 @@ randomness = 0.5
 fract_delta = false
 visibility_rect = Rect2(-75, -125, 600, 200)
 process_material = ExtResource("5_mxp71")
-
-[node name="Blood" type="GPUParticles2D" parent="." index="6"]
-position = Vector2(213, 19)
-emitting = false
-amount = 1
-texture = ExtResource("6_mxp71")
-lifetime = 15.0
-one_shot = true
-trail_enabled = true
-trail_lifetime = 8.0
-trail_sections = 20
-trail_section_subdivisions = 1
-process_material = SubResource("ParticleProcessMaterial_f8g2p")
 
 [connection signal="body_entered" from="HitBox" to="." method="OnFishEaten"]

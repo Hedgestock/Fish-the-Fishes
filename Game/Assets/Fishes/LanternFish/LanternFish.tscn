@@ -1,31 +1,76 @@
-[gd_scene load_steps=6 format=3 uid="uid://cm8364e26h8h3"]
+[gd_scene load_steps=9 format=3 uid="uid://cm8364e26h8h3"]
 
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_f5cnx"]
 [ext_resource type="Script" uid="uid://c486g3xwge0cc" path="res://Game/Assets/Fishes/LanternFish/LanternFish.cs" id="2_qgwwi"]
+[ext_resource type="PackedScene" uid="uid://kprspjj676xe" path="res://Game/Assets/Fishes/shared/Blood.tscn" id="3_5j1mm"]
 [ext_resource type="SpriteFrames" uid="uid://dxmp1jai4drwy" path="res://Game/Assets/Fishes/LanternFish/Animation/LanternFishAnimation.tres" id="3_y23ad"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_7lf0f"]
+radius = 500.004
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_5j1mm"]
-radius = 14.3178215
+radius = 50.24938
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y23ad"]
+radius = 61.0
+height = 182.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y23ad"]
 radius = 69.0
 
-[node name="LanternFish" instance=ExtResource("1_f5cnx")]
+[node name="LanternFish" node_paths=PackedStringArray("AttractionBox", "HitBox", "MouthRange", "Timer") instance=ExtResource("1_f5cnx")]
 script = ExtResource("2_qgwwi")
+ImmuneToAttraction = Array[int]([3, 5, 20, 19, 23, 7])
+Blood = ExtResource("3_5j1mm")
+AttractionBox = NodePath("AttractionBox")
+HitBox = NodePath("HitBox")
+MouthRange = NodePath("MouthHitBox/CollisionShape2D")
+Timer = NodePath("Timer")
 CompendiumName = "Lantern Fish"
 CompendiumDescription = ""
+MinSpeed = 100.0
+MaxSpeed = 150.0
+SpawnRange = Vector2(0.5, 0.9)
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="0"]
+scale = Vector2(10, 10)
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = ExtResource("3_y23ad")
 animation = &"alive"
 
-[node name="HitBox" type="Area2D" parent="." index="2"]
+[node name="AttractionBox" type="Area2D" parent="." index="2"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttractionBox" index="0"]
+shape = SubResource("CircleShape2D_7lf0f")
+debug_color = Color(1, 1, 0, 0.42000002)
+
+[node name="HitBox" type="Area2D" parent="." index="3"]
+position = Vector2(81, -37)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" index="0"]
-position = Vector2(81, -37)
 shape = SubResource("CircleShape2D_5j1mm")
 debug_color = Color(1, 0, 0, 0.419608)
 
-[node name="HurtBox" parent="." index="3"]
+[node name="MouthHitBox" type="Area2D" parent="." index="4"]
+position = Vector2(81, -12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MouthHitBox" index="0"]
+position = Vector2(-3, 1)
+shape = SubResource("CapsuleShape2D_y23ad")
+disabled = true
+debug_color = Color(1, 0, 0, 0.419608)
+
+[node name="HurtBox" parent="." index="5"]
 position = Vector2(-11, 12)
 shape = SubResource("CircleShape2D_y23ad")
+
+[node name="Timer" type="Timer" parent="." index="7"]
+process_callback = 0
+wait_time = 0.2
+one_shot = true
+
+[connection signal="body_entered" from="HitBox" to="." method="OnFishedLured"]
+[connection signal="body_entered" from="MouthHitBox" to="." method="OnFishEaten"]
+[connection signal="timeout" from="Timer" to="." method="OnFinishedEating"]

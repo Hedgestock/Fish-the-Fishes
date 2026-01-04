@@ -60,10 +60,10 @@ debug_color = Color(1, 0, 0, 0.419608)
 material = SubResource("CanvasItemMaterial_hid6o")
 position = Vector2(-340, 0)
 emitting = false
-amount = 50
+amount = 32
 texture = ExtResource("4_goumb")
 randomness = 0.5
-fixed_fps = 20
+fixed_fps = 60
 visibility_rect = Rect2(-100, -75, 600, 150)
 process_material = ExtResource("5_fgjcb")
 
