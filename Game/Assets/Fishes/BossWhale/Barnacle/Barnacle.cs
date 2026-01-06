@@ -4,6 +4,8 @@ using WaffleStock;
 
 public partial class Barnacle : Fish
 {
+    public override bool IsActionable => false;
+
     public override void _Ready()
     {
         // We skip the base ready function because even though it's of fish class for convenience

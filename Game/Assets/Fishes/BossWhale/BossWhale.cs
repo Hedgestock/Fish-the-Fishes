@@ -24,12 +24,15 @@ public partial class BossWhale : Boss
             BarnaclePath.ProgressRatio = GD.Randf();
             Barnacle barnacle = BarnacleScene.Instantiate<Barnacle>();
             barnacle.Position = BarnaclePath.Position;
+            barnacle.Connect(Fish.SignalName.GotFished, Callable.From((Node by) => RemoveBarnacle()),
+                (uint)ConnectFlags.OneShot);
+
             AddChild(barnacle);
         }
         GD.Print(Sound.Playing); 
     }
 
-    public void RemoveBarnacle()
+    private void RemoveBarnacle()
     {
         BarnaclesLeft--;
         if (BarnaclesLeft <= BarnaclesMax * 0.2)

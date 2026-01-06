@@ -5,9 +5,6 @@ using WaffleStock;
 
 public partial class BossGiantSquidTentacle : Fish
 {
-    [Signal]
-    public delegate void GotCaughtEventHandler();
-
     [Export]
     private Line2D Body;
 
@@ -29,6 +26,7 @@ public partial class BossGiantSquidTentacle : Fish
     private Vector2 AnchorPointLastPosition = Vector2.Zero;
     private int CaughtHurtBoxIndex = 0;
 
+    public override bool IsActionable => false;
 
     public override void _Ready()
     {
@@ -79,8 +77,6 @@ public partial class BossGiantSquidTentacle : Fish
             DisplaySlither();
             return;
         }
-
-        if (!IsActionable) return;
 
         Slither();
     }

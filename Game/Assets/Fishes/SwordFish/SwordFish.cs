@@ -147,7 +147,7 @@ public partial class SwordFish : Fish, IFisher
 
         Sprite.Animation = "dash";
         Bubbles.Emitting = true;
-        Bubbles.AmountRatio = LaunchedSpeed/MaxSpeed;
+        Bubbles.AmountRatio = LaunchedSpeed / MaxSpeed;
 
         State = Action.Launched;
     }
@@ -169,7 +169,7 @@ public partial class SwordFish : Fish, IFisher
 
         IFishable Skew = body as IFishable;
 
-        Skew = Skew.GetCaughtBy(this);
+        Skew.GetCaughtBy(this);
 
         if (Skew is Fish fish)
             fish.Kill();

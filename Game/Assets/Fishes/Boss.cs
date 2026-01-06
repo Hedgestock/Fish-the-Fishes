@@ -3,9 +3,6 @@ using System;
 
 public partial class Boss : Fish
 {
-    [Signal]
-    public delegate void DespawningEventHandler();
-
     [Export]
     private int MaxPasses = 5;
     [Export]
@@ -55,12 +52,5 @@ public partial class Boss : Fish
         {
             base.Despawn();
         }
-    }
-
-    public override void _Notification(int what)
-    {
-        base._Notification(what);
-        if (what == NotificationPredelete)
-            EmitSignalDespawning();
     }
 }

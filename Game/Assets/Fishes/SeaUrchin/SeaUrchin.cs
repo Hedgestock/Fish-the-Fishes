@@ -99,7 +99,7 @@ public partial class SeaUrchin : Fish, IFisher
 
         Fish Skew = body as Fish;
 
-        Skew = Skew.GetCaughtBy(this) as Fish;
+        Skew.GetCaughtBy(this);
         Skew.Kill();
     }
 }

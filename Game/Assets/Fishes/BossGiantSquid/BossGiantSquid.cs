@@ -32,8 +32,8 @@ public partial class BossGiantSquid : Boss
 
         foreach (var tentacle in Tentacles)
         {
-            tentacle.Connect(BossGiantSquidTentacle.SignalName.GotCaught, Callable.From(
-                () => LoseTentacle(tentacle)),
+            tentacle.Connect(Fish.SignalName.GotFished, Callable.From(
+                (Node by) => LoseTentacle(tentacle)),
                 (uint)ConnectFlags.OneShot);
 
             tentacle.Flip = Flip;

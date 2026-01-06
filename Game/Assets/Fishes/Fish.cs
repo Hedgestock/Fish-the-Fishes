@@ -10,6 +10,9 @@ using System.Diagnostics;
 public partial class Fish : CharacterBody2D, IFishable, IDescriptible
 {
     [Signal]
+    public delegate void DespawningEventHandler();
+
+    [Signal]
     public delegate void GotFishedEventHandler(Node by);
 
     [Export]
@@ -219,6 +222,12 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
         {
             QueueFree();
         }
+    }
+    public override void _Notification(int what)
+    {
+        base._Notification(what);
+        if (what == NotificationPredelete)
+            EmitSignalDespawning();
     }
 
     protected void NotifySpawn()

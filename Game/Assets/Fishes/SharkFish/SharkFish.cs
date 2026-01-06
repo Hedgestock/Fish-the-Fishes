@@ -4,7 +4,7 @@ using WaffleStock;
 using System;
 using System.Collections.Generic;
 
-public partial class SharkFish : Fish
+public partial class SharkFish : Fish, IFisher
 {
     [Export]
     public Array<Constants.Fishes> CantFlee = new Array<Constants.Fishes>();
@@ -17,6 +17,8 @@ public partial class SharkFish : Fish
     private GpuParticles2D Bubbles;
 
     private SceneTreeTimer LaunchTimer = null;
+
+    public List<IFishable> FishedThings { get; } = new List<IFishable>();
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -80,13 +82,15 @@ public partial class SharkFish : Fish
 
         Fish Food = body as Fish;
 
-        //Food = Food.GetCaughtBy(this) as Fish;
         Food.Kill();
+
         if (!Food.IsHuge)
         {
+            Food.GetCaughtBy(this);
+
             GpuParticles2D bleeding = Blood.Instantiate<GpuParticles2D>();
             bleeding.Emitting = true;
-            bleeding.GlobalPosition = Food.GlobalPosition + Velocity.Normalized()*100;
+            bleeding.GlobalPosition = Food.GlobalPosition + Velocity.Normalized() * 100;
             GetParent().AddChild(bleeding);
             GetTree().CreateTimer(bleeding.Lifetime).Timeout += bleeding.QueueFree;
 
