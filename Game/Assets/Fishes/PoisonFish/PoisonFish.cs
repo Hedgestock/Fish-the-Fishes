@@ -4,16 +4,19 @@ using WaffleStock;
 
 public partial class PoisonFish : Fish
 {
-    public override IFishable GetCaughtBy(IFisher by)
+    public override bool GetCaughtBy(IFisher by)
     {
-        if (!IsCaught)
-            EmitPoison();
+        if (base.GetCaughtBy(by)) return false;
 
-        return base.GetCaughtBy(by);
+        EmitPoison();
+
+        return true;
     }
 
     private void EmitPoison()
     {
+        if (!IsActionable) return;
+
         GD.Print("POISON");
     }
 }

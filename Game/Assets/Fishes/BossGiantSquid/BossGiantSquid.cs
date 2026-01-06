@@ -79,6 +79,7 @@ public partial class BossGiantSquid : Boss
 
     void LoseTentacle(BossGiantSquidTentacle tentacle)
     {
+        GD.Print("tentacle lost");
         Tentacles.Remove(tentacle);
         float catchRate = Mathf.Max(.1f, Tentacles.Count / (3 * MaxTentacles));
         foreach (var t in Tentacles)
@@ -98,12 +99,14 @@ public partial class BossGiantSquid : Boss
         GotHurt = DateTime.Now;
     }
 
-    public override IFishable GetCaughtBy(IFisher by)
+    public override bool GetCaughtBy(IFisher by)
     {
+        if (!base.GetCaughtBy(by)) return false;
+
         foreach (var tentacle in Tentacles)
         {
             tentacle.IsCaught = true;
         }
-        return base.GetCaughtBy(by);
+        return true;
     }
 }

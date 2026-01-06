@@ -42,10 +42,13 @@ public partial class SeaUrchin : Fish, IFisher
         tween.TweenProperty(this, "scale", Vector2.One * ActualSizeVariation, 0.3);
     }
 
-    public override IFishable GetCaughtBy(IFisher by)
+    public override bool GetCaughtBy(IFisher by)
     {
+        if (!base.GetCaughtBy(by)) return false;
+
         //Avoid being called every frame
-        if (growth >= 0) return this;
+        if (growth >= 0) return false;
+
         growth = 0;
         Grow();
 
@@ -54,7 +57,7 @@ public partial class SeaUrchin : Fish, IFisher
 
         HitBox.SetDeferred(CollisionShape2D.PropertyName.Disabled, false);
 
-        return base.GetCaughtBy(by);
+        return true;
     }
 
     public override void Kill()

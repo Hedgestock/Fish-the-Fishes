@@ -136,10 +136,10 @@ public partial class SerpentFish : Fish
         Sprite.Rotation = Body.Points[0].AngleToPoint(Body.Points[1]) - Mathf.Pi;
     }
 
-    public override IFishable GetCaughtBy(IFisher by)
+    public override bool GetCaughtBy(IFisher by)
     {
-        if (GetCaughtBySafetyGuard(by))
-            return this;
+        if (!base.GetCaughtBy(by)) return false;
+
         AnchorPoint = (by as Node2D).FindChild("HitBox", true, false) as Node2D;
         AnchorPointLastPosition = AnchorPoint.GlobalPosition;
 
@@ -158,6 +158,6 @@ public partial class SerpentFish : Fish
 
         HurtBoxes[CaughtHurtBoxIndex].DebugColor = Colors.Black;
 
-        return base.GetCaughtBy(by);
+        return true;
     }
 }

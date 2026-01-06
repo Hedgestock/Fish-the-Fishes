@@ -169,16 +169,11 @@ public partial class BossGiantSquidTentacle : Fish
         Body.Points = tmp;
     }
 
-    public override IFishable GetCaughtBy(IFisher by)
+    public override bool GetCaughtBy(IFisher by)
     {
-        if (GD.Randf() > CatchRate)
-            return this;
-
-        if (GetCaughtBySafetyGuard(by))
-            return this;
-
-        EmitSignalGotCaught();
-
+        if (!base.GetCaughtBy(by) || GD.Randf() > CatchRate)
+            return false;
+              
         AnchorPoint = (by as Node2D).FindChild("HitBox", true, false) as Node2D;
         AnchorPointLastPosition = AnchorPoint.GlobalPosition;
 
@@ -197,7 +192,7 @@ public partial class BossGiantSquidTentacle : Fish
 
         HurtBoxes[CaughtHurtBoxIndex].DebugColor = Colors.Black;
 
-        return base.GetCaughtBy(by);
+           return IsCaught = true;
     }
 
     protected override void Despawn()

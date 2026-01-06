@@ -57,11 +57,13 @@ public partial class SharkFish : Fish, IFisher
         };
     }
 
-    public override IFishable GetCaughtBy(IFisher by)
+    public override bool GetCaughtBy(IFisher by)
     {
+        if (!base.GetCaughtBy(by)) return false;
+
         HitBox.SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
         CleanCurrentBehaviors();
-        return base.GetCaughtBy(by);
+        return true;
     }
 
     public override void Kill()

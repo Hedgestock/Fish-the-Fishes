@@ -16,12 +16,12 @@ public partial class Barnacle : Fish
 
         SetScale();
     }
-    public override IFishable GetCaughtBy(IFisher by)
+    public override bool GetCaughtBy(IFisher by)
     {
-        if (!IsAlive) return this;
-        ((BossWhale)GetParent()).RemoveBarnacle();
+        if (!base.GetCaughtBy(by) || !IsAlive) return false;
+
         Kill();
-        return this;
+        return true;
     }
 
     public override void Kill()

@@ -1,11 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://514pdtjx8yd0"]
+[gd_scene load_steps=6 format=3 uid="uid://514pdtjx8yd0"]
 
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_qt5lc"]
 [ext_resource type="Script" uid="uid://y3m5ejfd6iv" path="res://Game/Assets/Fishes/BombFish/BombFish.cs" id="2_kvoxu"]
 [ext_resource type="SpriteFrames" uid="uid://ber4a88l4aq0i" path="res://Game/Assets/Fishes/BombFish/Animation/BombFishAnimation.tres" id="2_wbnha"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_kvoxu"]
+radius = 52.03845
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wex35"]
+radius = 500.004
+
 [node name="BombFish" instance=ExtResource("1_qt5lc")]
 script = ExtResource("2_kvoxu")
+ImmuneToAttraction = Array[int]([])
 CompendiumName = "Bomb Fish"
 CompendiumDescription = ""
 
@@ -15,3 +22,13 @@ scale = Vector2(15, 7)
 [node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = ExtResource("2_wbnha")
 animation = &"alive"
+
+[node name="HurtBox" parent="." index="2"]
+position = Vector2(68, 0)
+shape = SubResource("CircleShape2D_kvoxu")
+
+[node name="ExplosionArea" type="Area2D" parent="." index="4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExplosionArea" index="0"]
+shape = SubResource("CircleShape2D_wex35")
+debug_color = Color(1, 1, 0, 0.1)

@@ -180,12 +180,12 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
         return false;
     }
 
-    public virtual IFishable GetCaughtBy(IFisher by)
+    public virtual bool GetCaughtBy(IFisher by)
     {
         //TODO: Fix the frame by frame call in the fishing line
 
         if (GetCaughtBySafetyGuard(by))
-            return this;
+            return false;
 
         Velocity = Vector2.Zero;
         GravityScale = 0;
@@ -201,10 +201,9 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
             ).CallDeferred();
 
         by.FishedThings.Add(this);
-        IsCaught = true;
 
-        EmitSignal(SignalName.GotFished, by as Node);
-        return this;
+        EmitSignalGotFished(by as Node);
+        return IsCaught = true;
     }
 
     public virtual void Kill()

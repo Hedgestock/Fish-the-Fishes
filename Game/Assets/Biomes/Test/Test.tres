@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Biome" load_steps=8 format=3 uid="uid://nmu6wfnfu8ax"]
+[gd_resource type="Resource" script_class="Biome" load_steps=10 format=3 uid="uid://nmu6wfnfu8ax"]
 
 [ext_resource type="Script" uid="uid://bprtko2ut7gy0" path="res://Game/Utilities/Weighted/WeightedFish.cs" id="1_bycrx"]
 [ext_resource type="Texture2D" uid="uid://cyqlsyp6ppauk" path="res://Game/Assets/Biomes/Beach/BeachBackground.png" id="1_qbc61"]
@@ -7,13 +7,23 @@
 
 [sub_resource type="Resource" id="Resource_xt8bu"]
 script = ExtResource("1_bycrx")
-Fish = 4
+Fish = 6
 metadata/_custom_type_script = "uid://bprtko2ut7gy0"
 
 [sub_resource type="Resource" id="Resource_e64e2"]
 script = ExtResource("1_bycrx")
 Fish = 23
-Weight = 50
+Weight = 20
+metadata/_custom_type_script = "uid://bprtko2ut7gy0"
+
+[sub_resource type="Resource" id="Resource_qbc61"]
+script = ExtResource("1_bycrx")
+Fish = 5
+Weight = 10
+metadata/_custom_type_script = "uid://bprtko2ut7gy0"
+
+[sub_resource type="Resource" id="Resource_m1ufk"]
+script = ExtResource("1_bycrx")
 metadata/_custom_type_script = "uid://bprtko2ut7gy0"
 
 [sub_resource type="Resource" id="Resource_cigae"]
@@ -24,7 +34,7 @@ resource_name = "Test"
 script = ExtResource("12_3wj4f")
 TimeToSpawnFishDeviation = 0.2
 TimeToSpawnTrash = 36000.0
-Fishes = Array[Object]([SubResource("Resource_xt8bu"), SubResource("Resource_e64e2")])
+Fishes = Array[Object]([SubResource("Resource_xt8bu"), SubResource("Resource_e64e2"), SubResource("Resource_qbc61"), SubResource("Resource_m1ufk")])
 Trashes = Array[Object]([SubResource("Resource_cigae")])
 FollowupBiomes = Array[Object]([])
 CompendiumName = "Test"

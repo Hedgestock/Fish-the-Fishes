@@ -32,19 +32,19 @@ public partial class Trash : CharacterBody2D, IFishable, IDescriptible
         MoveAndSlide();
     }
 
-    public IFishable GetCaughtBy(IFisher by)
+    public bool GetCaughtBy(IFisher by)
     {
         if (GameManager.Mode == Game.Mode.GoGreen && by is FishingLine)
         {
             if (by.FishedThings.Contains(this))
-                return this; // This avoids multiple calls on reparenting
+                return true; // This avoids multiple calls on reparenting
             IsCaught = true;
             by.FishedThings.Add(this);
             CallDeferred(Node.MethodName.Reparent, by as Node);
             Velocity = Vector2.Zero;
             GravityScale = 0;
         }
-        return this;
+        return true;
     }
 
     protected void Despawn()
