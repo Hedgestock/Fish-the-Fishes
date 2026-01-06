@@ -22,12 +22,13 @@ radius = 69.0
 script = ExtResource("2_qgwwi")
 ImmuneToAttraction = Array[int]([3, 5, 20, 19, 23, 7])
 Blood = ExtResource("3_5j1mm")
-AttractionBox = NodePath("AttractionBox")
+AttractionBox = NodePath("AttractionArea")
 HitBox = NodePath("HitBox")
 MouthRange = NodePath("MouthHitBox/CollisionShape2D")
 Timer = NodePath("Timer")
 CompendiumName = "Lantern Fish"
 CompendiumDescription = ""
+Value = 2.0
 MinSpeed = 100.0
 MaxSpeed = 150.0
 SpawnRange = Vector2(0.5, 0.9)
@@ -39,12 +40,11 @@ scale = Vector2(10, 10)
 sprite_frames = ExtResource("3_y23ad")
 animation = &"alive"
 
-[node name="AttractionBox" type="Area2D" parent="." index="2"]
-visible = false
+[node name="AttractionArea" type="Area2D" parent="." index="2"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AttractionBox" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttractionArea" index="0"]
 shape = SubResource("CircleShape2D_7lf0f")
-debug_color = Color(1, 1, 0, 0.42000002)
+debug_color = Color(1, 1, 0, 0.1)
 
 [node name="HitBox" type="Area2D" parent="." index="3"]
 position = Vector2(81, -37)
@@ -71,6 +71,7 @@ process_callback = 0
 wait_time = 0.2
 one_shot = true
 
+[connection signal="body_entered" from="AttractionArea" to="." method="OnAttractionAreaEntered"]
 [connection signal="body_entered" from="HitBox" to="." method="OnFishedLured"]
 [connection signal="body_entered" from="MouthHitBox" to="." method="OnFishEaten"]
 [connection signal="timeout" from="Timer" to="." method="OnFinishedEating"]
