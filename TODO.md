@@ -238,4 +238,10 @@
 - [ ] Corriger les bulles des requins qui disparaissent trop tôt
 - [ ] Partager la scène des bulles
 - [ ] Vérifier que les poissons mangés par les requins et les poissons lanterne sont bien retirés de leur liste
-- [ ] Corriger la capture des tentacules du kraken
+- [ ] Les oursins doivent percer les yeux du kraken
+
+# Regression
+
+- [x] Corriger la capture des tentacules du kraken
+- [ ] Corriger le problème du reparentage d'espadon
+- [ ] Corriger la collision du hameçon

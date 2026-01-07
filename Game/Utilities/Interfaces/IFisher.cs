@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Godot;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -6,7 +7,10 @@ namespace WaffleStock
 {
     public interface IFisher
     {
-        public List<IFishable> FishedThings { get; }
+        public List<IFishable> FishedThings()
+        {
+            return (this as Node).GetChildren().OfType<IFishable>().ToList();
+        }
 
         public List<IFishable> FlattenFishedThings(List<IFishable> fishedThings)
         {
@@ -14,7 +18,7 @@ namespace WaffleStock
 
             foreach (IFisher fisher in fishedThings.OfType<IFisher>())
             {
-                scoredFishes.AddRange(FlattenFishedThings(fisher.FishedThings));
+                scoredFishes.AddRange(FlattenFishedThings(fisher.FishedThings()));
             }
 
             return scoredFishes;

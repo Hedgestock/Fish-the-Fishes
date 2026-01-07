@@ -79,9 +79,9 @@ public partial class BossGiantSquid : Boss
 
     void LoseTentacle(BossGiantSquidTentacle tentacle)
     {
-        GD.Print("tentacle lost");
         Tentacles.Remove(tentacle);
         float catchRate = Mathf.Max(.1f, Tentacles.Count / (3 * MaxTentacles));
+        GD.Print("tentacle lost ", catchRate);
         foreach (var t in Tentacles)
         {
             t.CatchRate = catchRate;

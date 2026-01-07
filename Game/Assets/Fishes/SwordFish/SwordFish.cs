@@ -136,7 +136,7 @@ public partial class SwordFish : Fish, IFisher
     {
         if (!IsActionable) return;
 
-        if (!IsInstanceValid(Target) || ((IFisher)this).FlattenFishedThings(FishedThings).Contains(Target))
+        if (!IsInstanceValid(Target) || (this as IFisher).FlattenFishedThings(FishedThings).Contains(Target))
         {
             State = Action.Swimming;
             SeekTarget();
@@ -167,16 +167,17 @@ public partial class SwordFish : Fish, IFisher
 
     private void OnFishSkewered(Node2D body)
     {
-        if (body.IsAncestorOf(this) || ((IFisher)this).FlattenFishedThings(FishedThings).Contains(body as Fish) || FishListContains(ImmuneToSkew, body.GetType()) || body is Trash || body == this || !IsActionable) return;
+        //if (body.IsAncestorOf(this) || (this as IFisher).FlattenFishedThings(FishedThings).Contains(body as Fish) || FishListContains(ImmuneToSkew, body.GetType()) || body is Trash || body == this || !IsActionable) return;
+        if (body.IsAncestorOf(this) || FishListContains(ImmuneToSkew, body.GetType()) || body is Trash || body == this || !IsActionable) return;
 
         IFishable Skew = body as IFishable;
 
-        Skew.GetCaughtBy(this);
+        if (!Skew.GetCaughtBy(this)) return;
 
         if (Skew is Fish fish)
             fish.Kill();
 
-        if (Target != null && ((IFisher)this).FlattenFishedThings(FishedThings).Contains(Target))
+        if (Target == Skew)
             FishedTarget();
     }
 

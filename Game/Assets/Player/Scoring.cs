@@ -18,6 +18,8 @@ namespace WaffleStock
         {
             float score = 0;
 
+            GD.Print("Classic scoring");
+
             foreach (var item in scoredFishes)
             {
                 GD.Print(item.GetType());

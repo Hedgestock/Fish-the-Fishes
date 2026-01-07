@@ -169,14 +169,16 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
 
     protected bool GetCaughtBySafetyGuard(IFisher by)
     {
+        GD.Print("safety");
         if (by == this)
         {
             GD.PrintErr(by, " is ", this);
             return true;
         }
 
-        if (by.FishedThings.Contains(this) || (by as Node).IsAncestorOf(this as Node))
+        if ((by as Node).IsAncestorOf(this))
             return true; // This avoids multiple calls on reparenting
+        GD.Print("safe");
         return false;
     }
 
@@ -195,13 +197,10 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
         Callable.From(() =>
             {
                 Reparent(by as Node);
-                if (parent is IFisher fisher)
-                    fisher.FishedThings.Remove(this);
             }
             ).CallDeferred();
 
-        by.FishedThings.Add(this);
-
+        GD.Print($"{Name} got fished by {by.GetType()}");
         EmitSignalGotFished(by as Node);
         return IsCaught = true;
     }

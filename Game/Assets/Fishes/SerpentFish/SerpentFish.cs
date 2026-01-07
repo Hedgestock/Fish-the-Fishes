@@ -36,8 +36,6 @@ public partial class SerpentFish : Fish
 
         base._Ready();
 
-        GD.Print(ActualSize);
-
         HurtBoxes[0] = GetNode<CollisionShape2D>("HurtBox");
 
         int lasti = 0;

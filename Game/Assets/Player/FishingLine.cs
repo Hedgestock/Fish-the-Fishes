@@ -31,8 +31,6 @@ public partial class FishingLine : CharacterBody2D, IFisher
     private EquipmentPiece Weight;
     private EquipmentPiece Attractor;
 
-    public List<IFishable> FishedThings { get; } = new List<IFishable>();
-
     private Vector2 BasePosition;
     private Vector2 Destination;
     private Vector2 Start;
@@ -120,7 +118,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
                     break;
                 case MovingUp:
                     // This avoids loosing on target mode when we fish nothing
-                    if (FishedThings.Count > 0)
+                    if ((this as IFisher).FishedThings().Count > 0)
                         EmitSignalScore(ComputeScore());
                     Line.Animation = "loose";
                     ReelingSound.Stop();
@@ -223,7 +221,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
     {
         if (body is Trash trash)
         {
-            if (FishedThings.Count == 0 || IsInvincible) return;
+            if ((this as IFisher).FishedThings().Count == 0 || IsInvincible) return;
 
             UserData.TrashCompendium[trash.GetType().Name].Hit++;
 
@@ -233,7 +231,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
 
     public void GetHit(DamageType damageType = DamageType.Trash)
     {
-        if (FishedThings.Count == 0 || _invincible) return;
+        if ((this as IFisher).FishedThings().Count == 0 || _invincible) return;
         EmitSignal(SignalName.Hit, (int)damageType);
         Hook.State = GettingHit;
         AchievementsManager.OnHit(damageType);
@@ -243,7 +241,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
             UserData.IncrementStatistic(Constants.TotalTrashesHit);
         }
 
-        foreach (IFishable thing in FishedThings)
+        foreach (IFishable thing in (this as IFisher).FishedThings())
         {
             (thing as Node).CallDeferred(Node.MethodName.Reparent, GetParent());
             thing.IsCaught = false;
@@ -257,7 +255,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
         Velocity = new Vector2(0, 0);
         Line.Animation = "hit";
 
-        GetTree().CreateTimer(1).Timeout += () => { MoveTowardsCustom(Destination); Line.Animation = "loose"; FishedThings.Clear(); };
+        GetTree().CreateTimer(1).Timeout += () => { MoveTowardsCustom(Destination); Line.Animation = "loose"; };
     }
 
     private int ComputeScore()
@@ -268,7 +266,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
             {
 
                 case Game.Mode.Menu:
-                    foreach (Node node in FishedThings)
+                    foreach (Node node in (this as IFisher).FishedThings())
                     {
                         node.QueueFree();
                     }
@@ -276,7 +274,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
                 case Game.Mode.GoGreen:
                     return Scoring.GoGreenScore();
                 case Game.Mode.Target:
-                    return Scoring.TargetScore(((IFisher)this).FlattenFishedThings(FishedThings));
+                    return Scoring.TargetScore((this as IFisher).FlattenFishedThings((this as IFisher).FishedThings()));
                 case Game.Mode.Training:
                     break;
                 case Game.Mode.Zen:
@@ -284,16 +282,12 @@ public partial class FishingLine : CharacterBody2D, IFisher
                 case Game.Mode.Classic:
                 case Game.Mode.TimeAttack:
                 default:
-                    return Scoring.ClassicScore(((IFisher)this).FlattenFishedThings(FishedThings));
+                    return Scoring.ClassicScore((this as IFisher).FlattenFishedThings((this as IFisher).FishedThings()));
             }
         }
         catch (Exception e)
         {
             GD.PrintErr(e);
-        }
-        finally
-        {
-            FishedThings.Clear();
         }
         return 0;
     }
