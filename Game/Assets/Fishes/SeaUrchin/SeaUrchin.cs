@@ -96,13 +96,15 @@ public partial class SeaUrchin : Fish, IFisher
 
     private void OnFishSkewered(Node2D body)
     {
-        GD.Print("skewering fish ", body.GetType());
+        GD.Print("urchin skewering fish ", body.GetType());
 
-        if (!(body is Fish) || body.IsAncestorOf(this) || FishedThings.Contains(body as Fish) || FishListContains(ImmuneToSkew, body.GetType()) || body == this) return;
+        if (body.IsAncestorOf(this) || FishListContains(ImmuneToSkew, body.GetType()) || body is Trash || body == this || !IsActionable) return;
 
-        Fish Skew = body as Fish;
+        IFishable Skew = body as IFishable;
 
-        Skew.GetCaughtBy(this);
-        Skew.Kill();
+        if (!Skew.GetCaughtBy(this)) return;
+
+        if (Skew is Fish fish)
+            fish.Kill();
     }
 }

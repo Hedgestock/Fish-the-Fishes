@@ -167,7 +167,6 @@ public partial class SwordFish : Fish, IFisher
 
     private void OnFishSkewered(Node2D body)
     {
-        //if (body.IsAncestorOf(this) || (this as IFisher).FlattenFishedThings(FishedThings).Contains(body as Fish) || FishListContains(ImmuneToSkew, body.GetType()) || body is Trash || body == this || !IsActionable) return;
         if (body.IsAncestorOf(this) || FishListContains(ImmuneToSkew, body.GetType()) || body is Trash || body == this || !IsActionable) return;
 
         IFishable Skew = body as IFishable;
@@ -177,7 +176,7 @@ public partial class SwordFish : Fish, IFisher
         if (Skew is Fish fish)
             fish.Kill();
 
-        if (Target == Skew)
+        if (Target == Skew || body.IsAncestorOf(Target))
             FishedTarget();
     }
 
