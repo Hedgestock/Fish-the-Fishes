@@ -8,13 +8,15 @@ public partial class FishableButton : StaticBody2D, IFishable
     Button Button;
     Vector2 BasePosition;
 
-    bool _isCaught = false;
-    public bool IsCaught { get => _isCaught; set => _isCaught = value; }
+    public bool IsCaught { get; set; }
+    public bool IsGettingCaught { get; set; }
+
     public bool IsInDisplay { get; set; }
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
+        IsCaught = false;
         CollisionShape = GetNode<CollisionShape2D>("CollisionShape2D");
         Button = GetNode<Button>("Button");
         CollisionShape.Shape = new RectangleShape2D();

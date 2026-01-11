@@ -243,5 +243,5 @@
 # Regression
 
 - [x] Corriger la capture des tentacules du kraken
-- [ ] Corriger le problème du reparentage d'espadon
+- [x] Corriger le problème du reparentage d'espadon
 - [ ] Corriger la collision du hameçon
