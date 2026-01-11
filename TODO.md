@@ -227,9 +227,11 @@
 - [x] Mettre à jour le fichier avec les informations sur les poissons
 - [x] Utiliser un nœud 2D dans les hameçons plutôt qu'un simple entier
 - [x] [**Changement de moteur de rendu**]Essayer de faire des poules pour les bulles
+- [x] Corriger les poissons qui restent sur la ligne après une remontée
+- [x] Corriger les requins qui mangent des poissons déjà pêchés
+- [x] [**Solution autre**] Vérifier que les poissons mangés par les requins et les poissons lanterne sont bien retirés de leur liste
+- [x] Les oursins doivent percer les yeux du kraken
 - [ ] Passer à des listes de noms plutôt que des énumérations
-- [ ] Corriger les poissons qui restent sur la ligne après une remontée
-- [ ] Corriger les requins qui mangent des poissons déjà pêchés
 - [ ] Mettre un point de deboggage sur `GetCaughtBy()` semble s'activer à chaque frame pour la ligne, mais pas les espadons
 - [ ] Corriger deux oursins sur l'hammeçon qui s'échangeraient un poisson à chaque frame
 - [ ] Corriger les espadons qui font une boucle infinie avec l'oursin
@@ -237,11 +239,9 @@
 - [ ] Vérifier le comportement d'un oursin qui se fait manger mais en étant activé
 - [ ] Corriger les bulles des requins qui disparaissent trop tôt
 - [ ] Partager la scène des bulles
-- [ ] Vérifier que les poissons mangés par les requins et les poissons lanterne sont bien retirés de leur liste
-- [ ] Les oursins doivent percer les yeux du kraken
 
 # Regression
 
 - [x] Corriger la capture des tentacules du kraken
 - [x] Corriger le problème du reparentage d'espadon
-- [ ] Corriger la collision du hameçon
+- [x] Corriger la collision du hameçon

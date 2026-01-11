@@ -53,9 +53,9 @@ public partial class Hook : EquipmentPiece
 
     protected void DisableFishBox(bool disabled)
     {
-        foreach (CollisionShape2D hitbox in FishBox.GetChildren().Where(c => c is CollisionShape2D))
+        foreach (CollisionShape2D fishbox in FishBox.GetChildren().Where(c => c is CollisionShape2D))
         {
-            hitbox.SetDeferred(CollisionShape2D.PropertyName.Disabled, disabled);
+            fishbox.SetDeferred(CollisionShape2D.PropertyName.Disabled, disabled);
         }
     }
 

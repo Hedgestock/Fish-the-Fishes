@@ -243,11 +243,23 @@ public partial class FishingLine : CharacterBody2D, IFisher
 
         foreach (IFishable thing in (this as IFisher).FishedThings())
         {
-            (thing as Node).CallDeferred(Node.MethodName.Reparent, GetParent());
+            //(thing as Node).CallDeferred(Node.MethodName.Reparent, GetParent());
+            thing.IsGettingCaught = true;
+            Callable.From(
+                () =>
+                {
+                    (thing as Node).Reparent(GetParent());
+                    // This trick prevents the instant refishing that still happens
+                    // even though the fishbox theoratically disabled in the deffered call from before
+                    // triggered by `Hook.State = GettingHit;` 
+                    thing.IsGettingCaught = false;
+                }).CallDeferred();
+
+
             thing.IsCaught = false;
-            if (GameManager.Mode != Game.Mode.GoGreen && thing is Fish)
+            if (GameManager.Mode != Game.Mode.GoGreen && thing is Fish fish)
             {
-                (thing as Fish).Kill();
+                fish.Kill();
                 UserData.IncrementStatistic(Constants.TotalLostFishes);
             }
         }
