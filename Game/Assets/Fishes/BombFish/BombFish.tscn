@@ -10,9 +10,9 @@ radius = 52.03845
 [sub_resource type="CircleShape2D" id="CircleShape2D_wex35"]
 radius = 500.004
 
-[node name="BombFish" instance=ExtResource("1_qt5lc")]
+[node name="BombFish" node_paths=PackedStringArray("ExplosionArea") instance=ExtResource("1_qt5lc")]
 script = ExtResource("2_kvoxu")
-ImmuneToAttraction = Array[int]([])
+ExplosionArea = NodePath("ExplosionArea")
 CompendiumName = "Bomb Fish"
 CompendiumDescription = ""
 
