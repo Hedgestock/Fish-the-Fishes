@@ -36,7 +36,6 @@ public partial class EntityDisplay : Container
     private void SetEntityDiplaysSize()
     {
         CustomMinimumSize = Scroll.CustomMinimumSize = new(Math.Min(GetViewportRect().Size.X / 2, EntityViewport.Size.X), Math.Min(1000, EntityViewport.Size.Y));
-        //GD.Print(Scroll.GetVScrollBar().Visible, Scroll.GetHScrollBar().Visible);
     }
 
     private void OnScreenResize()

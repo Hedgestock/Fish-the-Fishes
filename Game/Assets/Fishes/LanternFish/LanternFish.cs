@@ -55,15 +55,14 @@ public partial class LanternFish : Fish, IFisher
 
     private void OnFishEaten(Node2D body)
     {
-        if (!(body is Fish) || body == this || !IsActionable) return;
+        if (!(body is Fish) || body == this || !IsActionable || body is Boss) return;
 
         Fish Food = body as Fish;
 
+        if (Food.IsHuge || !Food.GetCaughtBy(this)) return;
+
         Food.Kill();
 
-        if (Food.IsHuge) return;
-
-        Food.GetCaughtBy(this);
         GpuParticles2D bleeding = Blood.Instantiate<GpuParticles2D>();
         bleeding.Emitting = true;
         bleeding.GlobalPosition = Food.GlobalPosition;
@@ -88,7 +87,7 @@ public partial class LanternFish : Fish, IFisher
 
     private void LureFish(Fish prey)
     {
-        if (!IsActionable || !prey.IsActionable || FishListContains(ImmuneToAttraction, prey.GetType())) return;
+        if (!IsActionable || !prey.IsActionable || prey.IsHuge || FishListContains(ImmuneToAttraction, prey.GetType())) return;
 
         prey.Velocity = prey.GlobalPosition.DirectionTo(HitBox.GlobalPosition) * prey.MaxSpeed;
         prey.Rotation = prey.Velocity.Angle();

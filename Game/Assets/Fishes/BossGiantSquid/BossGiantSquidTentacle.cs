@@ -111,8 +111,6 @@ public partial class BossGiantSquidTentacle : Fish
     {
         Vector2[] tmp = new Vector2[Length];
 
-        GD.Print($"{DateTime.Now}, {DateTime.Today}, {(DateTime.Now - DateTime.Today).TotalMilliseconds}");
-
         for (int i = 0; i < Length; i++)
         {
             tmp[i] = new Vector2(Sprite.Position.X - SegmentLength * i,
@@ -175,13 +173,10 @@ public partial class BossGiantSquidTentacle : Fish
     public override bool GetCaughtBy(IFisher by)
     {
         float test = GD.Randf();
-        GD.Print($"Attempt to catch {Name} with catch rate {test}/{CatchRate}");
-
 
         if (test > CatchRate || !base.GetCaughtBy(by))
             return false;
 
-        GD.Print("caught ", Name);
         AnchorPoint = (by as Node2D).FindChild("HitBox", true, false) as Node2D;
         AnchorPointLastPosition = AnchorPoint.GlobalPosition;
 
@@ -201,6 +196,11 @@ public partial class BossGiantSquidTentacle : Fish
         HurtBoxes[CaughtHurtBoxIndex].DebugColor = Colors.Black;
 
         return IsCaught = true;
+    }
+
+    public override void Kill()
+    {
+        // They are not a fish so they can't be killed
     }
 
     protected override void Despawn()

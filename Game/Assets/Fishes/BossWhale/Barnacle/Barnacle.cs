@@ -21,10 +21,9 @@ public partial class Barnacle : Fish
     }
     public override bool GetCaughtBy(IFisher by)
     {
-        if (!base.GetCaughtBy(by) || !IsAlive) return false;
-
+        if (!IsAlive) return false;
         Kill();
-        return true;
+        return false;
     }
 
     public override void Kill()

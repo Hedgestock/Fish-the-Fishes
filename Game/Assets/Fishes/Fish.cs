@@ -171,8 +171,6 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
 
     protected bool GetCaughtBySafetyGuard(IFisher by)
     {
-        GD.Print("safety");
-
         if (CantGetCaught)
             return true; // This avoids infinite loops on reparenting between two IFisher
 
@@ -185,7 +183,6 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
             return true;
         }
 
-        GD.Print("safe");
         return false;
     }
 

@@ -22,7 +22,7 @@ particles_anim_loop = false
 
 [node name="SwordFish" node_paths=PackedStringArray("HitBox", "Bubbles") instance=ExtResource("1_jmf7p")]
 script = ExtResource("2_q8hjt")
-ImmuneToTargeting = Array[int]([5, 22])
+ImmuneToTargeting = Array[int]([5])
 ImmuneToSkew = Array[int]([7, 19, 20])
 MaxStrikes = 6
 MinStrikes = 2

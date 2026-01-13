@@ -29,7 +29,6 @@ public partial class BossWhale : Boss
 
             AddChild(barnacle);
         }
-        GD.Print(Sound.Playing); 
     }
 
     private void RemoveBarnacle()

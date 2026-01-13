@@ -36,7 +36,7 @@ public partial class Boss : Fish
 
     protected override void Despawn()
     {
-        if (Passes > 0)
+        if (IsAlive && Passes > 0)
         {
             Passes--;
             var parent = GetParent();

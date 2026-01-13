@@ -86,18 +86,16 @@ public partial class SharkFish : Fish, IFisher
 
         Food.Kill();
 
-        if (!Food.IsHuge)
-        {
-            Food.GetCaughtBy(this);
+        if (Food.IsHuge || !Food.GetCaughtBy(this)) return;
 
-            GpuParticles2D bleeding = Blood.Instantiate<GpuParticles2D>();
-            bleeding.Emitting = true;
-            bleeding.GlobalPosition = Food.GlobalPosition + Velocity.Normalized() * 100;
-            GetParent().AddChild(bleeding);
-            GetTree().CreateTimer(bleeding.Lifetime).Timeout += bleeding.QueueFree;
+        GpuParticles2D bleeding = Blood.Instantiate<GpuParticles2D>();
+        bleeding.Emitting = true;
+        bleeding.GlobalPosition = Food.GlobalPosition + Velocity.Normalized() * 100;
+        GetParent().AddChild(bleeding);
+        GetTree().CreateTimer(bleeding.Lifetime).Timeout += bleeding.QueueFree;
 
-            Food.QueueFree();
-        }
+        Food.QueueFree();
+
     }
 
     private void FrightenFishes(int i = 0, int limit = -1)

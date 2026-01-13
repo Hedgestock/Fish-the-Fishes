@@ -119,7 +119,7 @@ public partial class SwordFish : Fish, IFisher
         TargetGotFished = Callable.From((Node by) =>
         {
             if (!this.IsAncestorOf(by)) return;
-            FishedTarget();
+            ChangeTarget();
         });
 
         Target.Connect(Fish.SignalName.GotFished, TargetGotFished);
@@ -171,16 +171,21 @@ public partial class SwordFish : Fish, IFisher
 
         IFishable Skew = body as IFishable;
 
-        if (!Skew.GetCaughtBy(this)) return;
+        if (!Skew.GetCaughtBy(this))
+        {
+            if (Target == Skew) // Here we reached the target, but failed to skewer it
+                ChangeTarget();
+            return;
+        }
 
         if (Skew is Fish fish)
             fish.Kill();
 
         if (Target == Skew || body.IsAncestorOf(Target))
-            FishedTarget();
+            ChangeTarget();
     }
 
-    private void FishedTarget()
+    private void ChangeTarget()
     {
         Velocity = Vector2.Zero;
         Target.Disconnect(Fish.SignalName.GotFished, TargetGotFished);
