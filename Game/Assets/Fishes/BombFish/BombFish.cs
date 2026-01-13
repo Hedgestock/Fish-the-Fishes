@@ -10,7 +10,16 @@ public partial class BombFish : Fish
     //public Array<Constants.Fishes> ImmuneToExplosion = new Array<Constants.Fishes>();
 
     [Export]
+    AnimatedSprite2D Explosion;
+
+    [Export]
     Area2D ExplosionArea;
+
+    public override void _Ready()
+    {
+        base._Ready();
+        Explosion.Connect(AnimatedSprite2D.SignalName.AnimationFinished, Callable.From(QueueFree));
+    }
 
     public override bool GetCaughtBy(IFisher by)
     {
@@ -22,11 +31,16 @@ public partial class BombFish : Fish
     {
         if (!CanGetCaught) return;
         CanGetCaught = false;
+        IsCaught = true;
+        Velocity = Vector2.Zero;
         base.Kill();
-        foreach (var fish in ExplosionArea.GetOverlappingBodies().OfType<Fish>())
+        Explosion.Play();
+        GetTree().CreateTimer(.2).Timeout += () =>
         {
-            fish.Kill();
-        }
-        QueueFree();
+            foreach (var fish in ExplosionArea.GetOverlappingBodies().OfType<Fish>())
+            {
+                fish.Kill();
+            }
+        };
     }
 }

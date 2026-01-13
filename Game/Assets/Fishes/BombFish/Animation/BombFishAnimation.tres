@@ -14,7 +14,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_fqtba")
+"texture": null
 }],
 "loop": true,
 "name": &"dead",

@@ -1,8 +1,86 @@
-[gd_scene load_steps=6 format=3 uid="uid://514pdtjx8yd0"]
+[gd_scene load_steps=17 format=3 uid="uid://514pdtjx8yd0"]
 
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_qt5lc"]
 [ext_resource type="Script" uid="uid://y3m5ejfd6iv" path="res://Game/Assets/Fishes/BombFish/BombFish.cs" id="2_kvoxu"]
 [ext_resource type="SpriteFrames" uid="uid://ber4a88l4aq0i" path="res://Game/Assets/Fishes/BombFish/Animation/BombFishAnimation.tres" id="2_wbnha"]
+[ext_resource type="Texture2D" uid="uid://ds5ydl4fhidip" path="res://Game/Assets/Fishes/BombFish/Animation/Explosion.png" id="4_wex35"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_118ja"]
+atlas = ExtResource("4_wex35")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a3lgp"]
+atlas = ExtResource("4_wex35")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3tvai"]
+atlas = ExtResource("4_wex35")
+region = Rect2(1024, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xpr1m"]
+atlas = ExtResource("4_wex35")
+region = Rect2(0, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_884o6"]
+atlas = ExtResource("4_wex35")
+region = Rect2(512, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kbaa8"]
+atlas = ExtResource("4_wex35")
+region = Rect2(1024, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v32d8"]
+atlas = ExtResource("4_wex35")
+region = Rect2(0, 1024, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p2tnr"]
+atlas = ExtResource("4_wex35")
+region = Rect2(512, 1024, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ngbhr"]
+atlas = ExtResource("4_wex35")
+region = Rect2(1024, 1024, 512, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8wsnm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_118ja")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a3lgp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3tvai")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xpr1m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_884o6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kbaa8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v32d8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p2tnr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ngbhr")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"default",
+"speed": 30.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kvoxu"]
 radius = 52.03845
@@ -10,24 +88,36 @@ radius = 52.03845
 [sub_resource type="CircleShape2D" id="CircleShape2D_wex35"]
 radius = 500.004
 
-[node name="BombFish" node_paths=PackedStringArray("ExplosionArea") instance=ExtResource("1_qt5lc")]
+[node name="BombFish" node_paths=PackedStringArray("Explosion", "ExplosionArea") instance=ExtResource("1_qt5lc")]
 script = ExtResource("2_kvoxu")
+Explosion = NodePath("ExplosionSprite")
 ExplosionArea = NodePath("ExplosionArea")
 CompendiumName = "Bomb Fish"
 CompendiumDescription = ""
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0"]
+position = Vector2(-69, 0)
 scale = Vector2(15, 7)
 
 [node name="AnimatedSprite2D" parent="." index="1"]
+position = Vector2(-69, 0)
 sprite_frames = ExtResource("2_wbnha")
 animation = &"alive"
 
-[node name="HurtBox" parent="." index="2"]
-position = Vector2(68, 0)
+[node name="ExplosionSprite" type="AnimatedSprite2D" parent="." index="2"]
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_8wsnm")
+frame = 10
+frame_progress = 1.0
+
+[node name="HurtBox" parent="." index="3"]
+position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_kvoxu")
 
-[node name="ExplosionArea" type="Area2D" parent="." index="4"]
+[node name="AudioStreamPlayer" parent="." index="4"]
+position = Vector2(-69, 0)
+
+[node name="ExplosionArea" type="Area2D" parent="." index="5"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExplosionArea" index="0"]
 shape = SubResource("CircleShape2D_wex35")
