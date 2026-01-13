@@ -29,8 +29,8 @@ public partial class BombFish : Fish
 
     public override void Kill()
     {
-        if (!CanGetCaught) return;
-        CanGetCaught = false;
+        if (CantGetCaught) return;
+        CantGetCaught = true;
         IsCaught = true;
         Velocity = Vector2.Zero;
         base.Kill();

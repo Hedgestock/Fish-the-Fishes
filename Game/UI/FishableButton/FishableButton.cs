@@ -9,7 +9,7 @@ public partial class FishableButton : StaticBody2D, IFishable
     Vector2 BasePosition;
 
     public bool IsCaught { get; set; }
-    public bool CanGetCaught { get; set; }
+    public bool CantGetCaught { get; set; }
 
     public bool IsInDisplay { get; set; }
 

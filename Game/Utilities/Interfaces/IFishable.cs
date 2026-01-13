@@ -7,7 +7,7 @@ namespace WaffleStock
     {
         public bool IsInDisplay { get; set; }
         public bool IsCaught { get; set; }
-        public bool CanGetCaught { get; set; }
+        public bool CantGetCaught { get; set; }
         public bool GetCaughtBy(IFisher by);
     }
 }

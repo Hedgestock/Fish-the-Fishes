@@ -58,7 +58,7 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
     protected float ActualSizeVariation = 0;
     public bool IsAlive = true;
     public bool IsCaught { get; set; }
-    public bool CanGetCaught { get; set; }
+    public bool CantGetCaught { get; set; }
     public virtual bool IsInDisplay { get; set; }
 
     public virtual float ActualSize => AverageSize * ActualSizeVariation;
@@ -84,7 +84,7 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
         }
 
         IsCaught = false;
-        CanGetCaught = true;
+        CantGetCaught = false;
 
         // If the inheriting class did not set the ActualSizeVariation, we do it now.
         if (ActualSizeVariation == 0)
@@ -173,7 +173,7 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
     {
         GD.Print("safety");
 
-        if (!CanGetCaught)
+        if (CantGetCaught)
             return true; // This avoids infinite loops on reparenting between two IFisher
 
         //if ((by as Node).IsAncestorOf(this))
@@ -196,7 +196,7 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
         if (GetCaughtBySafetyGuard(by))
             return false;
 
-        CanGetCaught = false;
+        CantGetCaught = true;
 
         Velocity = Vector2.Zero;
         GravityScale = 0;
@@ -206,7 +206,7 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
         Callable.From(() =>
             {
                 Reparent(by as Node);
-                CanGetCaught = true;
+                CantGetCaught = false;
             }
             ).CallDeferred();
 

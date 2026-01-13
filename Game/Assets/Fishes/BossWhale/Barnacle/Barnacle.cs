@@ -13,7 +13,7 @@ public partial class Barnacle : Fish
         //base._Ready();
 
         IsCaught = false;
-        CanGetCaught = true;
+        CantGetCaught = false;
 
         SetSize();
 

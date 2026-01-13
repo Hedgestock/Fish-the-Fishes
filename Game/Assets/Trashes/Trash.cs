@@ -13,7 +13,7 @@ public partial class Trash : CharacterBody2D, IFishable, IDescriptible
     public string CompendiumDescription { get; set; }
 
     public bool IsCaught { get; set; }
-    public bool CanGetCaught { get; set; }
+    public bool CantGetCaught { get; set; }
 
     public bool IsInDisplay { get; set; }
 

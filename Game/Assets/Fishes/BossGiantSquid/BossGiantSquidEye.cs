@@ -20,7 +20,7 @@ public partial class BossGiantSquidEye : StaticBody2D, IFishable
         }
     }
 
-    public bool CanGetCaught { get; set; }
+    public bool CantGetCaught { get; set; }
 
     [Export]
     AnimatedSprite2D Sprite;

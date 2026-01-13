@@ -35,7 +35,7 @@ public partial class BossGiantSquidTentacle : Fish
         //base._Ready();
 
         IsCaught = false;
-        CanGetCaught = true;
+        CantGetCaught = false;
 
         AnchorPoint = (Node2D)GetParent();
 

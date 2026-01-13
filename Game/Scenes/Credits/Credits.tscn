@@ -79,7 +79,7 @@ metadata/_tab_index = 1
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/MarginContainer/Panel/Patch Notes"]
 layout_mode = 2
 bbcode_enabled = true
-text = "[center][font_size=200]??/??/2025[/font_size][/center]
+text = "[center][font_size=200]??/??/2026[/font_size][/center]
 [font_size=100]
 [ul]
 Added tentacles physics
@@ -89,6 +89,8 @@ Added cork equipment
 Added lead equipment
 Added whale
 Added giant squid
+Added bomb fish
+Added lantern fish
 [/ul]
 [/font_size]
 [center][font_size=200]14/09/2025[/font_size][/center]
