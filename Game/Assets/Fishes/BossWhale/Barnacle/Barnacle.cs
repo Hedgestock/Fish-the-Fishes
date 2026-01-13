@@ -12,6 +12,9 @@ public partial class Barnacle : Fish
         // it is obvously not an autonomous fish at all
         //base._Ready();
 
+        IsCaught = false;
+        CanGetCaught = true;
+
         SetSize();
 
         SetScale();

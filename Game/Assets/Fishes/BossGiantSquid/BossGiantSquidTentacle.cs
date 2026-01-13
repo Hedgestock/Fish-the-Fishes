@@ -34,6 +34,9 @@ public partial class BossGiantSquidTentacle : Fish
         // it is obvously not an autonomous fish at all
         //base._Ready();
 
+        IsCaught = false;
+        CanGetCaught = true;
+
         AnchorPoint = (Node2D)GetParent();
 
         Length = (uint)Math.Abs(Body.Points[Body.Points.Length - 1].X / SegmentLength);
