@@ -11,7 +11,9 @@ public partial class FishingLine : CharacterBody2D, IFisher
     {
         Default,
         Trash,
-        Electric
+        Electric,
+        Explosion,
+        Poison,
     }
 
     [Signal]
@@ -37,6 +39,9 @@ public partial class FishingLine : CharacterBody2D, IFisher
 
     private bool _invincible;
     public bool IsInvincible { get { return _invincible; } }
+
+    public Area2D FishBox { get { return Hook.FishBox; } }
+    public Area2D HitBox { get { return Hook.HitBox; } }
 
     public override void _Ready()
     {
@@ -229,7 +234,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
         }
     }
 
-    public void GetHit(DamageType damageType = DamageType.Trash)
+    public void GetHit(DamageType damageType = DamageType.Default)
     {
         if ((this as IFisher).FishedThings().Count == 0 || _invincible) return;
         EmitSignal(SignalName.Hit, (int)damageType);

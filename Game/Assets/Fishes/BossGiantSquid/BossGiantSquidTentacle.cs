@@ -81,6 +81,8 @@ public partial class BossGiantSquidTentacle : Fish
             return;
         }
 
+        if (!IsAlive) return;
+
         Slither();
     }
 
@@ -200,7 +202,8 @@ public partial class BossGiantSquidTentacle : Fish
 
     public override void Kill()
     {
-        // They are not a fish so they can't be killed
+        if (GetParent() is BossGiantSquid) return;
+        base.Kill();
     }
 
     protected override void Despawn()

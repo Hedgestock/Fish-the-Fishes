@@ -47,7 +47,6 @@ metadata/_custom_type_script = "uid://bprtko2ut7gy0"
 
 [sub_resource type="Resource" id="Resource_14dvw"]
 script = ExtResource("1_bycrx")
-Weight = 0
 metadata/_custom_type_script = "uid://bprtko2ut7gy0"
 
 [sub_resource type="Resource" id="Resource_lle5i"]
