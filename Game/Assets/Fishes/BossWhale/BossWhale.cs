@@ -34,6 +34,7 @@ public partial class BossWhale : Boss
     private void RemoveBarnacle()
     {
         BarnaclesLeft--;
+        GD.Print($"Barnacles left {BarnaclesLeft} {BarnaclesLeft / BarnaclesMax}");
         if (BarnaclesLeft <= BarnaclesMax * 0.2)
         {
             foreach (var barnacle in GetChildren().OfType<Barnacle>())

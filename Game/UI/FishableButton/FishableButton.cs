@@ -32,11 +32,15 @@ public partial class FishableButton : StaticBody2D, IFishable
             Position = new Vector2(BasePosition.X + (float)Math.Sin((new TimeSpan(DateTime.Now.Ticks).TotalMilliseconds + Position.X * 3) / (200 * Math.PI)) * 5, BasePosition.Y + (float)Math.Sin((new TimeSpan(DateTime.Now.Ticks).TotalMilliseconds + Position.Y * 3) / (200 * Math.PI)) * 5); ;
     }
 
-    public bool GetCaughtBy(IFisher by)
+    public bool Escape(IFisher fisher)
+    {
+        return false;
+    }
+
+    public void GetCaughtBy(IFisher fisher)
     {
         IsCaught = true;
-        CallDeferred(Node.MethodName.Reparent, by as Node);
-        return true;
+        CallDeferred(Node.MethodName.Reparent, fisher as Node);
     }
 
     public void OnPressed()

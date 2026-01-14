@@ -8,6 +8,13 @@ namespace WaffleStock
         public bool IsInDisplay { get; set; }
         public bool IsCaught { get; set; }
         public bool CantGetCaught { get; set; }
-        public bool GetCaughtBy(IFisher by);
+        public bool Escape(IFisher fisher);
+        public void GetCaughtBy(IFisher fisher);
+        public bool EscapeOrGetCaughtBy(IFisher fisher)
+        {
+            if(Escape(fisher)) return true;
+            GetCaughtBy(fisher);
+            return false;
+        }
     }
 }

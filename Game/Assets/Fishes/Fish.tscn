@@ -14,6 +14,7 @@ Sound = NodePath("AudioStreamPlayer")
 VisibleOnScreenNotifier = NodePath("VisibleOnScreenNotifier2D")
 CompendiumName = "Fish"
 CompendiumDescription = "This is a fish"
+AverageSize = 50.0
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 

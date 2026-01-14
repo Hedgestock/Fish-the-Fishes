@@ -99,14 +99,23 @@ public partial class BossGiantSquid : Boss
         GotHurt = DateTime.Now;
     }
 
-    public override bool GetCaughtBy(IFisher by)
+    public override void GetCaughtBy(IFisher fisher)
     {
-        if (!base.GetCaughtBy(by)) return false;
+        base.GetCaughtBy(fisher);
 
         foreach (var tentacle in Tentacles)
         {
             tentacle.IsCaught = true;
         }
-        return true;
+    }
+
+    public override void Kill()
+    {
+        base.Kill();
+
+        foreach (var tentacle in Tentacles)
+        {
+            tentacle.IsCaught = true;
+        }
     }
 }

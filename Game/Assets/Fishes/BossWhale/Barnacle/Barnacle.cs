@@ -19,18 +19,26 @@ public partial class Barnacle : Fish
 
         SetScale();
     }
-    public override bool GetCaughtBy(IFisher by)
+
+    public override bool Escape(IFisher fisher)
     {
-        if (!IsAlive) return false;
         Kill();
-        return false;
+        return true;
+    }
+
+    public override void GetCaughtBy(IFisher fisher)
+    {
+        Kill();
     }
 
     public override void Kill()
     {
+        if (!IsAlive) return;
         CallDeferred(MethodName.Reparent, GetParent().GetParent());
         Velocity = new(GD.RandRange(-100, 100), -300);
         base.Kill();
+
+        EmitSignalGotFished(null);
     }
 
     protected override void Despawn()

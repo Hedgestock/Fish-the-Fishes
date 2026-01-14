@@ -6,14 +6,13 @@ using WaffleStock;
 
 public partial class BombFish : Fish
 {
-    //[Export]
-    //public Array<Constants.Fishes> ImmuneToExplosion = new Array<Constants.Fishes>();
-
-    [Export]
+        [Export]
     AnimatedSprite2D Explosion;
 
     [Export]
     Area2D ExplosionArea;
+
+    public override bool IsHuge => true; //This is not true, but makes it behave correctly when eaten
 
     public override void _Ready()
     {
@@ -21,10 +20,9 @@ public partial class BombFish : Fish
         Explosion.Connect(AnimatedSprite2D.SignalName.AnimationFinished, Callable.From(QueueFree));
     }
 
-    public override bool GetCaughtBy(IFisher by)
+    public override void GetCaughtBy(IFisher fisher)
     {
         Kill();
-        return false;
     }
 
     public override void Kill()

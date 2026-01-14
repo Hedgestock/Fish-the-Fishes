@@ -33,6 +33,7 @@ WaveSpeed = 5
 CompendiumName = "Giant Tentacle"
 CompendiumDescription = "You're not supposed to see that description."
 Value = 2.0
+SizeDeviation = 0.0
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0"]
 position = Vector2(-350, 0)

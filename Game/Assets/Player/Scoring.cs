@@ -58,29 +58,6 @@ namespace WaffleStock
             return (int)score;
         }
 
-        public static int GoGreenScore()
-        {
-            //int score = FishedThings.Where(thing => thing is Trash).Count();
-
-            //if (FishedThings.OfType<Fish>().Any())
-            //{
-            //    UserData.IncrementStatistic(Constants.TotalEatenFishes, (uint)FishedThings.Where(thing => thing is Fish).Count());
-            //    CallDeferred(MethodName.EmitSignal, SignalName.Hit, (int)DamageType.Default);
-            //}
-
-            //UserData.IncrementStatistic(Constants.TotalTrashesCleaned, (uint)FishedThings.Where(thing => thing is Trash).Count());
-
-            //foreach (Node thing in FishedThings)
-            //{
-            //    if (thing is Trash) UserData.TrashCompendium[thing.GetType().Name].Cleaned++;
-            //    if (thing is IPowerup powerup) powerup.Activate();
-            //    thing.QueueFree();
-            //}
-
-            //return score;
-            return 1;
-        }
-
         public static int TargetScore(List<IFishable> scoredFishes)
         {
             int score = scoredFishes.Any(thing => thing.GetType().Name == GameManager.Target.ToString()) ? 1 : 0;
@@ -123,6 +100,5 @@ namespace WaffleStock
                 UserData.FishCompendium[fishTypeName].MinSize = fish.ActualSize;
             }
         }
-
     }
 }

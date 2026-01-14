@@ -172,14 +172,17 @@ public partial class BossGiantSquidTentacle : Fish
         Body.Points = tmp;
     }
 
-    public override bool GetCaughtBy(IFisher by)
+    public override bool Escape(IFisher fisher)
     {
         float test = GD.Randf();
 
-        if (test > CatchRate || !base.GetCaughtBy(by))
-            return false;
+        return test > CatchRate || base.Escape(fisher);
+    }
 
-        AnchorPoint = (by as Node2D).FindChild("HitBox", true, false) as Node2D;
+    public override void GetCaughtBy(IFisher fisher)
+    {
+        base.GetCaughtBy(fisher);
+        AnchorPoint = (fisher as Node2D).FindChild("HitBox", true, false) as Node2D;
         AnchorPointLastPosition = AnchorPoint.GlobalPosition;
 
         float minDistance = float.MaxValue;
@@ -196,8 +199,6 @@ public partial class BossGiantSquidTentacle : Fish
         }
 
         HurtBoxes[CaughtHurtBoxIndex].DebugColor = Colors.Black;
-
-        return IsCaught = true;
     }
 
     public override void Kill()

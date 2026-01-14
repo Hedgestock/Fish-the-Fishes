@@ -1,7 +1,7 @@
 using Godot;
 using WaffleStock;
 
-public partial class Trash : CharacterBody2D, IFishable, IDescriptible
+public partial class Trash : CharacterBody2D, IDescriptible
 {
     [Export]
     private float GravityScale = 0.2f;
@@ -11,9 +11,6 @@ public partial class Trash : CharacterBody2D, IFishable, IDescriptible
     public string CompendiumName { get; set; }
     [Export(PropertyHint.MultilineText)]
     public string CompendiumDescription { get; set; }
-
-    public bool IsCaught { get; set; }
-    public bool CantGetCaught { get; set; }
 
     public bool IsInDisplay { get; set; }
 
@@ -34,27 +31,11 @@ public partial class Trash : CharacterBody2D, IFishable, IDescriptible
         MoveAndSlide();
     }
 
-    public bool GetCaughtBy(IFisher by)
-    {
-        if (GameManager.Mode == Game.Mode.GoGreen && by is FishingLine)
-        {
-            if (by.FishedThings().Contains(this))
-                return true; // This avoids multiple calls on reparenting
-            IsCaught = true;
-            CallDeferred(Node.MethodName.Reparent, by as Node);
-            Velocity = Vector2.Zero;
-            GravityScale = 0;
-        }
-        return true;
-    }
-
     protected void Despawn()
     {
-        if (!IsCaught && !IsInDisplay)
-        {
-            QueueFree();
-        }
-    }
+        if (!IsInDisplay)
+                   QueueFree();
+            }
 
     protected void NotifySpawn()
     {

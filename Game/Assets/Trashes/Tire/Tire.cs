@@ -4,5 +4,3 @@ using System;
 public partial class Tire : Trash
 {
 }
-
-

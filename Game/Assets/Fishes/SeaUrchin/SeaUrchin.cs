@@ -42,12 +42,17 @@ public partial class SeaUrchin : Fish, IFisher
         tween.TweenProperty(this, "scale", Vector2.One * ActualSizeVariation, 0.3);
     }
 
-    public override bool GetCaughtBy(IFisher by)
+    public override bool Escape(IFisher fisher)
     {
-        if (!base.GetCaughtBy(by)) return false;
-
         //Avoid being called every frame
         if (growth >= 0) return false;
+
+        return base.Escape(fisher);
+    }
+
+    public override void GetCaughtBy(IFisher fisher)
+    {
+        base.GetCaughtBy(fisher);
 
         growth = 0;
         Grow();
@@ -56,8 +61,6 @@ public partial class SeaUrchin : Fish, IFisher
         tweenGrowth.TweenProperty(HitBox.Shape, "radius", 174, 0.25).SetEase(Tween.EaseType.Out).SetTrans(Tween.TransitionType.Cubic);
 
         HitBox.SetDeferred(CollisionShape2D.PropertyName.Disabled, false);
-
-        return true;
     }
 
     public override void Kill()
@@ -98,11 +101,9 @@ public partial class SeaUrchin : Fish, IFisher
     {
         GD.Print("urchin skewering fish ", body.GetType());
 
-        if (body.IsAncestorOf(this) || FishListContains(ImmuneToSkew, body.GetType()) || body is Trash || body == this || !IsActionable) return;
+        if (!(body is IFishable Skew) || body.IsAncestorOf(this) || FishListContains(ImmuneToSkew, body.GetType()) || body == this) return;
 
-        IFishable Skew = body as IFishable;
-
-        if (!Skew.GetCaughtBy(this)) return;
+        if (Skew.EscapeOrGetCaughtBy(this)) return;
 
         if (Skew is Fish fish)
             fish.Kill();

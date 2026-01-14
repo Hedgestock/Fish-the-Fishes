@@ -28,6 +28,7 @@ Multiplier = 2
 MinSpeed = 1000.0
 MaxSpeed = 2500.0
 SpawnRange = Vector2(0.5, 0.9)
+AverageSize = 700.0
 SizeDeviation = 0.3
 
 [node name="BossGiantSquidTentacle" parent="." index="0" instance=ExtResource("3_8rpoo")]

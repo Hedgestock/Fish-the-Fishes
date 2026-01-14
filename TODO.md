@@ -233,10 +233,7 @@
 - [x] Les oursins doivent percer les yeux du kraken
 - [ ] Passer à des listes de noms plutôt que des énumérations
 - [ ] Mettre un point de deboggage sur `GetCaughtBy()` semble s'activer à chaque frame pour la ligne, mais pas les espadons
-- [ ] Corriger deux oursins sur l'hammeçon qui s'échangeraient un poisson à chaque frame
-- [ ] Corriger les espadons qui font une boucle infinie avec l'oursin
 - [ ] Corriger la fonction d'oscillation des tentacules du kraken
-- [ ] Vérifier le comportement d'un oursin qui se fait manger mais en étant activé
 - [ ] Corriger les bulles des requins qui disparaissent trop tôt
 - [ ] Partager la scène des bulles
 
@@ -245,3 +242,10 @@
 - [x] Corriger la capture des tentacules du kraken
 - [x] Corriger le problème du reparentage d'espadon
 - [x] Corriger la collision du hameçon
+
+# Interactions
+
+- [ ] Vérifier le comportement d'un oursin qui se fait manger mais en étant activé
+- [ ] Corriger les espadons qui font une boucle infinie avec l'oursin
+- [ ] Corriger deux oursins sur l'hammeçon qui s'échangeraient un poisson à chaque frame
+- [ ] Requin et chapeaux chinois

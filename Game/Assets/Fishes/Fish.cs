@@ -63,7 +63,7 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
 
     public virtual float ActualSize => AverageSize * ActualSizeVariation;
 
-    public bool IsHuge => ActualSize > 75;
+    public virtual bool IsHuge => ActualSize > 75;
 
     public virtual bool IsActionable => IsAlive && !IsCaught && !IsInDisplay;
 
@@ -169,31 +169,24 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
         MoveAndSlide();
     }
 
-    protected bool GetCaughtBySafetyGuard(IFisher by)
+    public virtual bool Escape(IFisher fisher)
     {
         if (CantGetCaught)
             return true; // This avoids infinite loops on reparenting between two IFisher
 
-        //if ((by as Node).IsAncestorOf(this))
-        //    return true; // This avoids multiple calls on reparenting
-
-        if (by == this)
+        if (fisher == this)
         {
-            GD.PrintErr(by, " is ", this);
+            GD.PrintErr(fisher, " is ", this);
             return true;
         }
 
         return false;
     }
 
-    public virtual bool GetCaughtBy(IFisher by)
+    public virtual void GetCaughtBy(IFisher fisher)
     {
         //TODO: Fix the frame by frame call in the fishing line
-
-        if (GetCaughtBySafetyGuard(by))
-            return false;
-
-        CantGetCaught = true;
+        IsCaught = CantGetCaught = true;
 
         Velocity = Vector2.Zero;
         GravityScale = 0;
@@ -202,14 +195,13 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
         var parent = GetParent();
         Callable.From(() =>
             {
-                Reparent(by as Node);
+                Reparent(fisher as Node);
                 CantGetCaught = false;
             }
             ).CallDeferred();
 
-        GD.Print($"{Name} got fished by {by.GetType()}");
-        EmitSignalGotFished(by as Node);
-        return IsCaught = true;
+        GD.Print($"{Name} got fished by {fisher.GetType()} {(fisher as Node).Name}");
+        EmitSignalGotFished(fisher as Node);
     }
 
     public virtual void Kill()

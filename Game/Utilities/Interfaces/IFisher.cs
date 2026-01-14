@@ -12,16 +12,21 @@ namespace WaffleStock
             return (this as Node).GetChildren().OfType<IFishable>().ToList();
         }
 
-        public List<IFishable> FlattenFishedThings(List<IFishable> fishedThings)
+        public List<IFishable> FlattennedFishedThings()
         {
-            List<IFishable> scoredFishes = new(fishedThings);
+            return FlattenFishedThings(FishedThings());
+        }
+
+        private List<IFishable> FlattenFishedThings(List<IFishable> fishedThings)
+        {
+            List<IFishable> fishes = new(fishedThings);
 
             foreach (IFisher fisher in fishedThings.OfType<IFisher>())
             {
-                scoredFishes.AddRange(FlattenFishedThings(fisher.FishedThings()));
+                fishes.AddRange(FlattenFishedThings(fisher.FishedThings()));
             }
 
-            return scoredFishes;
+            return fishes;
         }
     }
 }

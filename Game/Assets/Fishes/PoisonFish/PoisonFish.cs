@@ -4,13 +4,11 @@ using WaffleStock;
 
 public partial class PoisonFish : Fish
 {
-    public override bool GetCaughtBy(IFisher by)
+    public override void GetCaughtBy(IFisher fisher)
     {
-        if (base.GetCaughtBy(by)) return false;
+        base.GetCaughtBy(fisher);
 
         EmitPoison();
-
-        return true;
     }
 
     private void EmitPoison()

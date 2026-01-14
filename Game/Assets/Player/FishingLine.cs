@@ -218,7 +218,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
     {
         if (body is IFishable fishable)
         {
-            fishable.GetCaughtBy(this);
+            fishable.EscapeOrGetCaughtBy(this);
         }
     }
 
@@ -288,10 +288,8 @@ public partial class FishingLine : CharacterBody2D, IFisher
                         node.QueueFree();
                     }
                     break;
-                case Game.Mode.GoGreen:
-                    return Scoring.GoGreenScore();
                 case Game.Mode.Target:
-                    return Scoring.TargetScore((this as IFisher).FlattenFishedThings((this as IFisher).FishedThings()));
+                    return Scoring.TargetScore((this as IFisher).FlattennedFishedThings());
                 case Game.Mode.Training:
                     break;
                 case Game.Mode.Zen:
@@ -299,7 +297,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
                 case Game.Mode.Classic:
                 case Game.Mode.TimeAttack:
                 default:
-                    return Scoring.ClassicScore((this as IFisher).FlattenFishedThings((this as IFisher).FishedThings()));
+                    return Scoring.ClassicScore((this as IFisher).FlattennedFishedThings());
             }
         }
         catch (Exception e)
