@@ -150,6 +150,7 @@ public partial class SwordFish : Fish, IFisher
         Bubbles.Emitting = true;
         Bubbles.AmountRatio = LaunchedSpeed / MaxSpeed;
 
+
         State = Action.Launched;
         GD.Print($"{Name}({GetType()}) is launching at target {Target.Name}");
 
@@ -230,7 +231,7 @@ public partial class SwordFish : Fish, IFisher
 
         Rotation = Velocity.Angle();
 
-        GD.Print($"{Name}({GetType()}) is tracking target {Target.Name}");
+        //GD.Print($"{Name}({GetType()}) is tracking target {Target.Name}");
 
         return Velocity.Length();
     }

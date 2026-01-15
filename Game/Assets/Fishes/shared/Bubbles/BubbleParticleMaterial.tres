@@ -11,7 +11,6 @@ curve = SubResource("Curve_i2pi2")
 lifetime_randomness = 0.3
 emission_shape = 1
 emission_sphere_radius = 50.0
-spread = 100.0
 gravity = Vector3(0, -300, 0)
 attractor_interaction_enabled = false
 scale_curve = SubResource("CurveTexture_eqpdk")

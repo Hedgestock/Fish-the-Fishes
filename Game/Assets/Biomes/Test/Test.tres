@@ -8,7 +8,6 @@
 [sub_resource type="Resource" id="Resource_m1ufk"]
 script = ExtResource("1_bycrx")
 Fish = 7
-Weight = 0
 metadata/_custom_type_script = "uid://bprtko2ut7gy0"
 
 [sub_resource type="Resource" id="Resource_qbc61"]
@@ -54,13 +53,11 @@ metadata/_custom_type_script = "uid://bprtko2ut7gy0"
 [sub_resource type="Resource" id="Resource_lle5i"]
 script = ExtResource("1_bycrx")
 Fish = 10
-Weight = 0
 metadata/_custom_type_script = "uid://bprtko2ut7gy0"
 
 [sub_resource type="Resource" id="Resource_fdqv3"]
 script = ExtResource("1_bycrx")
 Fish = 13
-Weight = 0
 metadata/_custom_type_script = "uid://bprtko2ut7gy0"
 
 [sub_resource type="Resource" id="Resource_cigae"]

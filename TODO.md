@@ -231,11 +231,11 @@
 - [x] Corriger les requins qui mangent des poissons déjà pêchés
 - [x] [**Solution autre**] Vérifier que les poissons mangés par les requins et les poissons lanterne sont bien retirés de leur liste
 - [x] Les oursins doivent percer les yeux du kraken
+- [x] Partager la scène des bulles
 - [ ] Passer à des listes de noms plutôt que des énumérations
 - [ ] Mettre un point de deboggage sur `GetCaughtBy()` semble s'activer à chaque frame pour la ligne, mais pas les espadons
 - [ ] Corriger la fonction d'oscillation des tentacules du kraken
 - [ ] Corriger les bulles des requins qui disparaissent trop tôt
-- [ ] Partager la scène des bulles
 
 # Regression
 
@@ -245,7 +245,6 @@
 
 # Interactions
 
-- [ ] Vérifier le comportement d'un oursin qui se fait manger mais en étant activé
+- [x] Vérifier le comportement d'un oursin qui se fait manger mais en étant activé
 - [ ] Corriger les espadons qui font une boucle infinie avec l'oursin
 - [ ] Corriger deux oursins sur l'hammeçon qui s'échangeraient un poisson à chaque frame
-- [ ] Requin et chapeaux chinois

@@ -36,7 +36,8 @@ public partial class SharkFish : Fish, IFisher
         (indicator.ProcessMaterial as ParticleProcessMaterial).Gravity = new Vector3(TravelAxis.X, TravelAxis.Y, 0) * 500;
         GetParent().AddChild(indicator);
 
-        Bubbles.Amount = (int)ActualSpeed / 3;
+        Bubbles.Amount = (int)ActualSpeed / 4;
+        GD.Print(Bubbles.Amount);
 
         if (UserSettings.Vibrations) Input.VibrateHandheld(500);
 

@@ -42,11 +42,11 @@ public partial class ParrotFish : Fish
 
     private void OnFoodSecured(Node2D body)
     {
-        if (!IsActionable || !FishListContains(FoodTypes, body.GetType())) return;
+        if (!IsActionable || !FishListContains(FoodTypes, body.GetType()) || !(body is Fish food) || food.IsCaught) return;
+
         Velocity = Vector2.Zero;
         Sprite.Animation = "eating";
 
-        Fish food = body as Fish;
         // We "catch" it to prevent gravity taking over
         food.IsCaught = true;
         food.Kill();
@@ -67,6 +67,5 @@ public partial class ParrotFish : Fish
         Tween tweenScale = CreateTween();
         tweenScale.TweenProperty(food, "scale", Vector2.Zero, .5);
         tweenScale.TweenCallback(Callable.From(Clean));
-
     }
 }

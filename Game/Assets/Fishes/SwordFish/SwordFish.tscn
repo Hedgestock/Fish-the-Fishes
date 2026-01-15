@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://be1nxedcwhn2i"]
+[gd_scene load_steps=7 format=3 uid="uid://be1nxedcwhn2i"]
 
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_jmf7p"]
 [ext_resource type="Script" uid="uid://c1mkn0uov1i0b" path="res://Game/Assets/Fishes/SwordFish/SwordFish.cs" id="2_q8hjt"]
 [ext_resource type="SpriteFrames" uid="uid://cyv8fnlha8eri" path="res://Game/Assets/Fishes/SwordFish/Animation/SwordFishAnimation.tres" id="3_rsy4g"]
-[ext_resource type="Texture2D" uid="uid://bosadrqergwx2" path="res://Game/Assets/Fishes/shared/bubbles.png" id="4_goumb"]
-[ext_resource type="Material" uid="uid://bvt1xao725px5" path="res://Game/Assets/Fishes/shared/BubbleParticleMaterial.tres" id="5_fgjcb"]
+[ext_resource type="PackedScene" uid="uid://bded8qrveasxd" path="res://Game/Assets/Fishes/shared/Bubbles/Bubbles.tscn" id="6_fgjcb"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l8r55"]
 radius = 36.2116
@@ -13,12 +12,6 @@ height = 413.57
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rp7cb"]
 radius = 8.0
 height = 82.0
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_hid6o"]
-particles_animation = true
-particles_anim_h_frames = 4
-particles_anim_v_frames = 1
-particles_anim_loop = false
 
 [node name="SwordFish" node_paths=PackedStringArray("HitBox", "Bubbles") instance=ExtResource("1_jmf7p")]
 script = ExtResource("2_q8hjt")
@@ -56,16 +49,10 @@ rotation = -1.5708
 shape = SubResource("CapsuleShape2D_rp7cb")
 debug_color = Color(1, 0, 0, 0.419608)
 
-[node name="Bubbles" type="GPUParticles2D" parent="." index="5"]
-material = SubResource("CanvasItemMaterial_hid6o")
-position = Vector2(-340, 0)
+[node name="Bubbles" parent="." index="5" instance=ExtResource("6_fgjcb")]
+position = Vector2(-270, 0)
 emitting = false
-amount = 32
-texture = ExtResource("4_goumb")
-randomness = 0.5
-fixed_fps = 60
-visibility_rect = Rect2(-100, -75, 600, 150)
-process_material = ExtResource("5_fgjcb")
+amount = 128
 
 [connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="SeekTarget"]
 [connection signal="body_entered" from="HitBox" to="." method="OnFishSkewered"]
