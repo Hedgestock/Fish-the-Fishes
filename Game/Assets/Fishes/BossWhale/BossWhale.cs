@@ -34,18 +34,16 @@ public partial class BossWhale : Boss
     private void RemoveBarnacle()
     {
         BarnaclesLeft--;
-        GD.Print($"Barnacles left {BarnaclesLeft} {BarnaclesLeft / BarnaclesMax}");
-        if (BarnaclesLeft <= BarnaclesMax * 0.2)
+        GD.Print($"Barnacles left {BarnaclesLeft} {BarnaclesMax * 0.2}");
+        if (!IsCaught && BarnaclesLeft <= BarnaclesMax * 0.2)
         {
-            foreach (var barnacle in GetChildren().OfType<Barnacle>())
-            {
-                barnacle.Kill();
-            }
+            IsCaught = true;
 
             int score = 0;
 
             switch (GameManager.Mode)
             {
+                case Game.Mode.Training:
                 case Game.Mode.Classic:
                 case Game.Mode.TimeAttack:
                     score = Scoring.ClassicScore([this], false);
@@ -53,6 +51,13 @@ public partial class BossWhale : Boss
             }
 
             GetNode("../FishingLine").EmitSignal(FishingLine.SignalName.Score, score);
+
+            foreach (var barnacle in GetChildren().OfType<Barnacle>())
+            {
+                barnacle.Kill();
+            }
+
+            GD.Print($"scoring whalw {score}");
 
             Passes = 0;
         }

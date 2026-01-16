@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using WaffleStock;
+using static WaffleStock.Constants;
 
 public partial class Home : CanvasLayer
 {
@@ -49,11 +50,9 @@ public partial class Home : CanvasLayer
             AchievementsManager.OnGameEnd();
             SaveManager.EraseGame();
         }
-        else
-        {
-            UserData.IncrementStatistic(Constants.TotalGamesPlayed);
-            AchievementsManager.OnGameStart();
-        }
+
+        UserData.IncrementStatistic(Constants.TotalGamesPlayed);
+        AchievementsManager.OnGameStart();
 
         GameManager.Mode = mode;
         GameManager.Biome = biome;
@@ -99,7 +98,13 @@ public partial class Home : CanvasLayer
 
     void PlayTest()
     {
-        Play(Game.Mode.Classic, GameManager.TestBiome);
+        GameManager.Mode = Game.Mode.Training;
+        GameManager.Biome = GameManager.TestBiome;
+        GameManager.Score = 0;
+        GameManager.Lives = 3;
+        GameManager.StartTime = DateTime.Now;
+
+        GameManager.ChangeSceneToFile("res://Game/Scenes/Test/Test.tscn");
     }
 
     void GoToCompendium()

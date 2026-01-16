@@ -77,8 +77,7 @@ public partial class Compendium : CanvasLayer
             AddFishEntry(entry.Key);
         }
 
-        var listOfExistingFishTypes = Enum.GetValues(typeof(Constants.Fishes))
-            .Cast<Constants.Fishes>()
+        var listOfExistingFishTypes = Enum.GetValues<Constants.Fishes>()
             .Select(v => v.ToString()).Except(UserData.FishCompendium.Keys);
 
         foreach (var fishType in listOfExistingFishTypes)
@@ -102,8 +101,7 @@ public partial class Compendium : CanvasLayer
             AddTrashEntry(entry.Key);
         }
 
-        var listOfExistingTrashTypes = Enum.GetValues(typeof(Constants.Trashes))
-            .Cast<Constants.Trashes>()
+        var listOfExistingTrashTypes = Enum.GetValues<Constants.Trashes>()
             .Select(v => v.ToString()).Except(UserData.TrashCompendium.Keys);
 
         foreach (var trashType in listOfExistingTrashTypes)
@@ -127,8 +125,7 @@ public partial class Compendium : CanvasLayer
             AddBiomeEntry(entry.Key);
         }
 
-        var listOfExistingBiomeTypes = Enum.GetValues(typeof(Constants.Biomes))
-            .Cast<Constants.Biomes>()
+        var listOfExistingBiomeTypes = Enum.GetValues<Constants.Biomes>()
             .Select(v => v.ToString()).Except(UserData.BiomeCompendium.Keys);
 
         foreach (var biomeType in listOfExistingBiomeTypes)

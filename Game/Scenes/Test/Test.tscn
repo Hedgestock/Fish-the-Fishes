@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://ereddneqlo34"]
+
+[ext_resource type="Script" uid="uid://1pxk2cqttmga" path="res://Game/Scenes/Test/Test.cs" id="1_ggcmt"]
+[ext_resource type="PackedScene" uid="uid://0sb3i5bm7j4p" path="res://Game/Scenes/Game/Game.tscn" id="2_iwvtm"]
+
+[node name="Test" type="CanvasLayer"]
+script = ExtResource("1_ggcmt")
+
+[node name="Game" parent="." instance=ExtResource("2_iwvtm")]

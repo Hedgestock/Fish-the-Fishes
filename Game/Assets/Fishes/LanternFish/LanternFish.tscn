@@ -20,7 +20,7 @@ radius = 69.0
 
 [node name="LanternFish" node_paths=PackedStringArray("AttractionBox", "HitBox", "MouthRange", "Timer") instance=ExtResource("1_f5cnx")]
 script = ExtResource("2_qgwwi")
-ImmuneToAttraction = Array[int]([3, 5, 20, 19, 23, 7])
+ImmuneToAttraction = Array[int]([3, 5, 20, 19, 23, 7, 9])
 Blood = ExtResource("3_5j1mm")
 AttractionBox = NodePath("AttractionArea")
 HitBox = NodePath("HitBox")
