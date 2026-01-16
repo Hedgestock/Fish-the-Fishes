@@ -33,6 +33,7 @@ public partial class BossGiantSquidTentacle : Fish
         // We skip the base ready function because even though it's of fish class for convenience
         // it is obvously not an autonomous fish at all
         //base._Ready();
+        RemoveFromGroup("Fishes");
 
         IsCaught = false;
         CantGetCaught = false;
