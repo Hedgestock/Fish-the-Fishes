@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Biome" load_steps=16 format=3 uid="uid://nmu6wfnfu8ax"]
+[gd_resource type="Resource" script_class="Biome" load_steps=11 format=3 uid="uid://nmu6wfnfu8ax"]
 
 [ext_resource type="Script" uid="uid://bprtko2ut7gy0" path="res://Game/Utilities/Weighted/WeightedFish.cs" id="1_bycrx"]
 [ext_resource type="Texture2D" uid="uid://cyqlsyp6ppauk" path="res://Game/Assets/Biomes/Beach/BeachBackground.png" id="1_qbc61"]
@@ -7,57 +7,26 @@
 
 [sub_resource type="Resource" id="Resource_m1ufk"]
 script = ExtResource("1_bycrx")
-Fish = 7
+Fish = 8
 metadata/_custom_type_script = "uid://bprtko2ut7gy0"
 
 [sub_resource type="Resource" id="Resource_qbc61"]
 script = ExtResource("1_bycrx")
-Fish = 20
-Weight = 0
 metadata/_custom_type_script = "uid://bprtko2ut7gy0"
 
 [sub_resource type="Resource" id="Resource_xt8bu"]
 script = ExtResource("1_bycrx")
-Fish = 22
-Weight = 0
+Fish = 5
 metadata/_custom_type_script = "uid://bprtko2ut7gy0"
 
 [sub_resource type="Resource" id="Resource_e64e2"]
 script = ExtResource("1_bycrx")
-Fish = 23
-Weight = 0
+Fish = 4
 metadata/_custom_type_script = "uid://bprtko2ut7gy0"
 
 [sub_resource type="Resource" id="Resource_i7gya"]
 script = ExtResource("1_bycrx")
-Fish = 21
-Weight = 0
-metadata/_custom_type_script = "uid://bprtko2ut7gy0"
-
-[sub_resource type="Resource" id="Resource_w1vid"]
-script = ExtResource("1_bycrx")
-Fish = 4
-Weight = 0
-metadata/_custom_type_script = "uid://bprtko2ut7gy0"
-
-[sub_resource type="Resource" id="Resource_8u0og"]
-script = ExtResource("1_bycrx")
-Fish = 5
-metadata/_custom_type_script = "uid://bprtko2ut7gy0"
-
-[sub_resource type="Resource" id="Resource_14dvw"]
-script = ExtResource("1_bycrx")
-Fish = 19
-metadata/_custom_type_script = "uid://bprtko2ut7gy0"
-
-[sub_resource type="Resource" id="Resource_lle5i"]
-script = ExtResource("1_bycrx")
-Fish = 10
-metadata/_custom_type_script = "uid://bprtko2ut7gy0"
-
-[sub_resource type="Resource" id="Resource_fdqv3"]
-script = ExtResource("1_bycrx")
-Fish = 13
+Fish = 7
 metadata/_custom_type_script = "uid://bprtko2ut7gy0"
 
 [sub_resource type="Resource" id="Resource_cigae"]
@@ -68,7 +37,7 @@ resource_name = "Test"
 script = ExtResource("12_3wj4f")
 TimeToSpawnFishDeviation = 0.2
 TimeToSpawnTrash = 36000.0
-Fishes = Array[Object]([SubResource("Resource_m1ufk"), SubResource("Resource_qbc61"), SubResource("Resource_xt8bu"), SubResource("Resource_e64e2"), SubResource("Resource_i7gya"), SubResource("Resource_w1vid"), SubResource("Resource_8u0og"), SubResource("Resource_14dvw"), SubResource("Resource_lle5i"), SubResource("Resource_fdqv3")])
+Fishes = Array[Object]([SubResource("Resource_m1ufk"), SubResource("Resource_qbc61"), SubResource("Resource_xt8bu"), SubResource("Resource_e64e2"), SubResource("Resource_i7gya")])
 Trashes = Array[Object]([SubResource("Resource_cigae")])
 FollowupBiomes = Array[Object]([])
 CompendiumName = "Test"

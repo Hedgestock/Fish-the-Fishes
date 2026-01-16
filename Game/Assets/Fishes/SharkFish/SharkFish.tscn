@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://c16knpal1qn53" path="res://Game/Assets/Fishes/SharkFish/SharkFish.cs" id="2_3d5gd"]
 [ext_resource type="SpriteFrames" uid="uid://6520w7uakc1q" path="res://Game/Assets/Fishes/SharkFish/Animation/SharkFishAnimation.tres" id="3_rhaxs"]
 [ext_resource type="PackedScene" uid="uid://bded8qrveasxd" path="res://Game/Assets/Fishes/shared/Bubbles/Bubbles.tscn" id="5_5ikqo"]
-[ext_resource type="PackedScene" uid="uid://kprspjj676xe" path="res://Game/Assets/Fishes/shared/Blood.tscn" id="6_mxp71"]
+[ext_resource type="PackedScene" uid="uid://kprspjj676xe" path="res://Game/Assets/Fishes/shared/Blood/Blood.tscn" id="6_mxp71"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jdtfq"]
 radius = 66.0
@@ -51,7 +51,11 @@ shape = SubResource("CapsuleShape2D_n0n4s")
 disabled = true
 debug_color = Color(1, 0, 0, 0.419608)
 
-[node name="Bubbles" parent="." index="5" instance=ExtResource("5_5ikqo")]
+[node name="BubblesRemoteTransform" type="RemoteTransform2D" parent="." index="5"]
+position = Vector2(-242, 19)
+remote_path = NodePath("../Bubbles")
+
+[node name="Bubbles" parent="." index="6" instance=ExtResource("5_5ikqo")]
 position = Vector2(-242, 19)
 
 [connection signal="body_entered" from="HitBox" to="." method="OnFishEaten"]

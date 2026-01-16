@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_f5cnx"]
 [ext_resource type="Script" uid="uid://c486g3xwge0cc" path="res://Game/Assets/Fishes/LanternFish/LanternFish.cs" id="2_qgwwi"]
-[ext_resource type="PackedScene" uid="uid://kprspjj676xe" path="res://Game/Assets/Fishes/shared/Blood.tscn" id="3_5j1mm"]
+[ext_resource type="PackedScene" uid="uid://kprspjj676xe" path="res://Game/Assets/Fishes/shared/Blood/Blood.tscn" id="3_5j1mm"]
 [ext_resource type="SpriteFrames" uid="uid://dxmp1jai4drwy" path="res://Game/Assets/Fishes/LanternFish/Animation/LanternFishAnimation.tres" id="3_y23ad"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7lf0f"]

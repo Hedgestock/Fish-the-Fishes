@@ -2,9 +2,7 @@ using Godot;
 using Godot.Collections;
 using WaffleStock;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
 
 public partial class SwordFish : Fish, IFisher
 {
@@ -32,7 +30,7 @@ public partial class SwordFish : Fish, IFisher
     [Export]
     private CollisionShape2D HitBox;
     [Export]
-    private GpuParticles2D Bubbles;
+    private Bubbles Bubbles;
 
     private int Strikes = 3;
     private Fish Target = null;
@@ -51,6 +49,8 @@ public partial class SwordFish : Fish, IFisher
         Strikes = GD.RandRange(MinStrikes, MaxStrikes);
         LaunchedSpeed = ActualSpeed;
         ImmuneToTargeting.AddRange(ImmuneToSkew);
+
+        //Bubbles.Reparent(GetTree().Root.GetChildren().OfType<Game>().First());
     }
 
 
@@ -85,6 +85,15 @@ public partial class SwordFish : Fish, IFisher
         if (RotationTween != null) RotationTween.Kill();
         Bubbles.Emitting = false;
     }
+
+    //public override void _Notification(int what)
+    //{
+    //    if (what == NotificationPredelete)
+    //    {
+    //        Bubbles.DelayedDespawn();
+    //    }
+    //    base._Notification(what);
+    //}
 
     private void SeekTarget()
     {

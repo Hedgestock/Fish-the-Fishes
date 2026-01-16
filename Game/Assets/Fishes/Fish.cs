@@ -222,9 +222,9 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
     }
     public override void _Notification(int what)
     {
-        base._Notification(what);
         if (what == NotificationPredelete)
             EmitSignalDespawning();
+        base._Notification(what);
     }
 
     protected void NotifySpawn()

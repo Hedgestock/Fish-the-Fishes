@@ -42,7 +42,7 @@
 - [ ] Poisson volant
 - [ ] Poisson doré
 - [ ] Poisson venimeux
-- [ ] Poisson bombe
+- [x] Poisson bombe
 - [ ] Poisson erratique
 - [ ] Nautile bonus
 - [ ] Calamar encreur
@@ -59,6 +59,7 @@
 - [ ] Poisson lune
 - [x] Baleine
 - [x] Kraken
+- [x] Baudroie
 
 # Objets pêchables
 
@@ -172,7 +173,7 @@
 - [ ] Optimiser la création de nouveaux poissons
 - [ ] Ajouter plus de composition
 - [ ] Parallaxe
-- [ ] Ajouter de la physique aux serpents de mer et méduses en cas de mort/pêche
+- [ ] Ajouter de la physique aux serpents de mer et méduses en cas de mort
 - [ ] Ajouter du balancement sur les pics des oursins
 - [ ] Faire apparaître les oursins en clusters
 - [ ] Faire en sorte que le poisson flèche mette tous les autres poissons dans son sens
@@ -232,10 +233,10 @@
 - [x] [**Solution autre**] Vérifier que les poissons mangés par les requins et les poissons lanterne sont bien retirés de leur liste
 - [x] Les oursins doivent percer les yeux du kraken
 - [x] Partager la scène des bulles
+- [x] Corriger les bulles des requins qui disparaissent trop tôt
 - [ ] Passer à des listes de noms plutôt que des énumérations
 - [ ] Mettre un point de deboggage sur `GetCaughtBy()` semble s'activer à chaque frame pour la ligne, mais pas les espadons
 - [ ] Corriger la fonction d'oscillation des tentacules du kraken
-- [ ] Corriger les bulles des requins qui disparaissent trop tôt
 
 # Regression
 

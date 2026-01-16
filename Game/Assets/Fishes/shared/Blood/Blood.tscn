@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://kprspjj676xe"]
+[gd_scene load_steps=10 format=3 uid="uid://kprspjj676xe"]
 
 [ext_resource type="Texture2D" uid="uid://6xu544aj1jlv" path="res://Game/Assets/Fishes/SharkFish/Animation/Ball.png" id="1_t2t2j"]
+[ext_resource type="Script" uid="uid://crgv2alb4mibs" path="res://Game/Assets/Fishes/shared/Blood/Blood.cs" id="2_i4g8v"]
 
 [sub_resource type="Curve" id="Curve_mxp71"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.5027323, 0), 0.0, 0.0, 0, 0]
@@ -51,3 +52,4 @@ trail_lifetime = 8.0
 trail_sections = 20
 trail_section_subdivisions = 1
 process_material = SubResource("ParticleProcessMaterial_f8g2p")
+script = ExtResource("2_i4g8v")

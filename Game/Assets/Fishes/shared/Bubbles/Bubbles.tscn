@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bded8qrveasxd"]
+[gd_scene load_steps=5 format=3 uid="uid://bded8qrveasxd"]
 
 [ext_resource type="Texture2D" uid="uid://bosadrqergwx2" path="res://Game/Assets/Fishes/shared/Bubbles/bubbles.png" id="1_i7pl2"]
 [ext_resource type="Material" uid="uid://bvt1xao725px5" path="res://Game/Assets/Fishes/shared/Bubbles/BubbleParticleMaterial.tres" id="2_5lmmd"]
+[ext_resource type="Script" uid="uid://bekj3m6jeh2il" path="res://Game/Assets/Fishes/shared/Bubbles/Bubbles.cs" id="3_5ac0k"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_f8g2p"]
 particles_animation = true
@@ -18,3 +19,4 @@ fixed_fps = 60
 fract_delta = false
 visibility_rect = Rect2(-300, -200, 600, 300)
 process_material = ExtResource("2_5lmmd")
+script = ExtResource("3_5ac0k")

@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Linq;
 using WaffleStock;
 
 public partial class Barnacle : Fish
@@ -34,7 +35,9 @@ public partial class Barnacle : Fish
     public override void Kill()
     {
         if (!IsAlive) return;
-        CallDeferred(MethodName.Reparent, GetParent().GetParent());
+        //CallDeferred(MethodName.Reparent, GetParent().GetParent());
+        CallDeferred(MethodName.Reparent, GetTree().Root.GetChildren().OfType<Game>().First());
+
         Velocity = new(GD.RandRange(-100, 100), -300);
         base.Kill();
 

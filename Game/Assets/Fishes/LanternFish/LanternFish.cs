@@ -65,11 +65,9 @@ public partial class LanternFish : Fish, IFisher
 
         fish.GetCaughtBy(this);
 
-        GpuParticles2D bleeding = Blood.Instantiate<GpuParticles2D>();
-        bleeding.Emitting = true;
+        GpuParticles2D bleeding = Blood.Instantiate<Blood>();
         bleeding.GlobalPosition = fish.GlobalPosition;
         GetParent().AddChild(bleeding);
-        GetTree().CreateTimer(bleeding.Lifetime).Timeout += bleeding.QueueFree;
 
         fish.QueueFree();
     }

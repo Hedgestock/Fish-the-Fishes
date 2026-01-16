@@ -3,6 +3,7 @@ using Godot.Collections;
 using WaffleStock;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 public partial class SharkFish : Fish, IFisher
 {
@@ -14,7 +15,7 @@ public partial class SharkFish : Fish, IFisher
     [Export]
     private CollisionShape2D HitBox;
     [Export]
-    private GpuParticles2D Bubbles;
+    private Bubbles Bubbles;
 
     private SceneTreeTimer LaunchTimer = null;
 
@@ -37,7 +38,8 @@ public partial class SharkFish : Fish, IFisher
         GetParent().AddChild(indicator);
 
         Bubbles.Amount = (int)ActualSpeed / 4;
-        GD.Print(Bubbles.Amount);
+        //Bubbles.Reparent(GetParent());
+        Bubbles.Reparent(GetTree().Root.GetChildren().OfType<Game>().First());
 
         if (UserSettings.Vibrations) Input.VibrateHandheld(500);
 
@@ -73,6 +75,15 @@ public partial class SharkFish : Fish, IFisher
         base.Kill();
     }
 
+    public override void _Notification(int what)
+    {
+        if (what == NotificationPredelete)
+        {
+            Bubbles.DelayedDespawn();
+        }
+        base._Notification(what);
+    }
+
     private void CleanCurrentBehaviors()
     {
         Bubbles.Emitting = false;
@@ -97,10 +108,8 @@ public partial class SharkFish : Fish, IFisher
         fish.GetCaughtBy(this);
 
         GpuParticles2D bleeding = Blood.Instantiate<GpuParticles2D>();
-        bleeding.Emitting = true;
         bleeding.GlobalPosition = fish.GlobalPosition + Velocity.Normalized() * 100;
         GetParent().AddChild(bleeding);
-        GetTree().CreateTimer(bleeding.Lifetime).Timeout += bleeding.QueueFree;
 
         fish.QueueFree();
     }
