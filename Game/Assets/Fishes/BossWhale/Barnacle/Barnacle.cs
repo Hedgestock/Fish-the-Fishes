@@ -35,8 +35,7 @@ public partial class Barnacle : Fish
     public override void Kill()
     {
         if (!IsAlive) return;
-        //CallDeferred(MethodName.Reparent, GetParent().GetParent());
-        CallDeferred(MethodName.Reparent, GetTree().Root.GetChildren().OfType<Game>().First());
+        CallDeferred(MethodName.Reparent, FindParent("Game"));
 
         Velocity = new(GD.RandRange(-100, 100), -300);
         base.Kill();

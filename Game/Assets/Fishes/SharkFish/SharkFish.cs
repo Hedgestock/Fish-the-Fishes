@@ -38,8 +38,7 @@ public partial class SharkFish : Fish, IFisher
         GetParent().AddChild(indicator);
 
         Bubbles.Amount = (int)ActualSpeed / 4;
-        //Bubbles.Reparent(GetParent());
-        Bubbles.Reparent(GetTree().Root.GetChildren().OfType<Game>().First());
+        Bubbles.Reparent(FindParent("Game"));
 
         if (UserSettings.Vibrations) Input.VibrateHandheld(500);
 

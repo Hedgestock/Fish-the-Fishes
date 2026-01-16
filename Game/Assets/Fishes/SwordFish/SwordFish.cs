@@ -50,7 +50,7 @@ public partial class SwordFish : Fish, IFisher
         LaunchedSpeed = ActualSpeed;
         ImmuneToTargeting.AddRange(ImmuneToSkew);
 
-        //Bubbles.Reparent(GetTree().Root.GetChildren().OfType<Game>().First());
+        //Bubbles.Reparent(FindParent("Game"));
     }
 
 
