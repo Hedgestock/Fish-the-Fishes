@@ -3,7 +3,7 @@ using WaffleStock;
 using System;
 
 
-public partial class Game : Node
+public partial class Game : CanvasLayer
 {
     [Export]
     private RandomTimer FishTimer;
