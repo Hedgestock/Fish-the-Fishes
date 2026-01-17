@@ -30,7 +30,6 @@
 - [ ] Ajouter un tutoriel
 - [ ] Ajouter de la physique aux boutons du menu principal
 
-
 # Poissons
 
 - [x] Poisson rouge
@@ -184,6 +183,7 @@
 - [ ] Ajouter un moyen d'exporter/importer une sauvegarde
 - [ ] Ajouter le chargement dans un fil pour le compendium
 - [ ] Baisser le volume de la musique en pause
+- [ ] Rendre les objets pondérés génériques
 
 # Corrections
 

@@ -1,14 +1,10 @@
-[gd_resource type="Theme" load_steps=14 format=3 uid="uid://dqud8bhj4fopd"]
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://dqud8bhj4fopd"]
 
 [ext_resource type="StyleBox" uid="uid://cis4bdbay2jpn" path="res://Game/Themes/ButtonTextureHover.tres" id="1_mcx8r"]
 [ext_resource type="StyleBox" uid="uid://fj8sndej8q55" path="res://Game/Themes/ButtonTexture.tres" id="2_k2wvy"]
 [ext_resource type="StyleBox" uid="uid://dikcbdrw0gio5" path="res://Game/Themes/ButtonTexturePressed.tres" id="3_4eyv1"]
 [ext_resource type="Texture2D" uid="uid://dsnbmphv0scr7" path="res://Game/Assets/Fishes/SardineFish/Animation/sardine_alive_1.png" id="4_epvj8"]
-[ext_resource type="Texture2D" uid="uid://sf5nbt1ewklc" path="res://Game/Assets/Fishes/ArrowFish/Animation/arrow_left.png" id="4_f26mx"]
-[ext_resource type="Texture2D" uid="uid://b3ygkwfip0qaj" path="res://Game/Assets/Fishes/ArrowFish/Animation/arrow_left_3.png" id="5_cttsl"]
 [ext_resource type="Texture2D" uid="uid://vkh1e4p832lp" path="res://Game/Assets/Fishes/SardineFish/Animation/sardine_alive_2.png" id="5_p8kom"]
-[ext_resource type="Texture2D" uid="uid://cdlcldgajtn4i" path="res://Game/Assets/Fishes/ArrowFish/Animation/arrow_alive_1.png" id="6_23sy7"]
-[ext_resource type="Texture2D" uid="uid://csxfp4n3h00us" path="res://Game/Assets/Fishes/ArrowFish/Animation/arrow_alive_3.png" id="7_srjgg"]
 [ext_resource type="StyleBox" uid="uid://iftmxcpwxot8" path="res://Game/Themes/PanelTexture.tres" id="10_q6ye7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_epvj8"]
@@ -51,6 +47,11 @@ Button/styles/normal = ExtResource("2_k2wvy")
 Button/styles/pressed = ExtResource("3_4eyv1")
 DescriptionLabel/base_type = &"Label"
 DescriptionLabel/font_sizes/font_size = 64
+FoldableContainer/styles/panel = ExtResource("10_q6ye7")
+FoldableContainer/styles/title_collapsed_hover_panel = ExtResource("1_mcx8r")
+FoldableContainer/styles/title_collapsed_panel = ExtResource("2_k2wvy")
+FoldableContainer/styles/title_hover_panel = ExtResource("1_mcx8r")
+FoldableContainer/styles/title_panel = ExtResource("2_k2wvy")
 HFlowContainer/constants/h_separation = 10
 HScrollBar/styles/scroll = SubResource("StyleBoxFlat_epvj8")
 HSeparator/constants/separation = 20
@@ -63,12 +64,4 @@ MarginContainer/constants/margin_right = 20
 MarginContainer/constants/margin_top = 20
 Panel/styles/panel = ExtResource("10_q6ye7")
 PanelContainer/styles/panel = ExtResource("10_q6ye7")
-TabContainer/icons/decrement = ExtResource("4_f26mx")
-TabContainer/icons/decrement_highlight = ExtResource("5_cttsl")
-TabContainer/icons/drop_mark = null
-TabContainer/icons/increment = ExtResource("6_23sy7")
-TabContainer/icons/increment_highlight = ExtResource("7_srjgg")
-TabContainer/icons/menu = null
-TabContainer/icons/menu_highlight = null
-TabContainer/styles/panel = ExtResource("10_q6ye7")
 VScrollBar/styles/scroll = SubResource("StyleBoxFlat_603q0")
