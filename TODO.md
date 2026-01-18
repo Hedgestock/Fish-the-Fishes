@@ -237,6 +237,7 @@
 - [ ] Passer à des listes de noms plutôt que des énumérations
 - [ ] Mettre un point de deboggage sur `GetCaughtBy()` semble s'activer à chaque frame pour la ligne, mais pas les espadons
 - [ ] Corriger la fonction d'oscillation des tentacules du kraken
+- [ ] Ne connecter la fonction de dessin des formes qu'une seule fois
 
 # Regression
 

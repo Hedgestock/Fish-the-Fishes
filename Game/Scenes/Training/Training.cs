@@ -1,85 +1,36 @@
 using Godot;
-using Godot.Collections;
 using System;
 using System.Linq;
-using WaffleStock;
 
-public partial class Training : FoldableContainer
+public partial class Training : CanvasLayer
 {
     [Export]
-    PackedScene SpawnLineScene;
-
-    [Export]
-    Container FishesSettings;
-
-    [Export]
-    Container TrashesSettings;
+    Game Game;
 
     public override void _Ready()
     {
+        Game.Connect(SignalName.ChildEnteredTree, Callable.From<Node>(ConnectColorBoxes));
         base._Ready();
+    }
 
-        GameManager.Biome.Fishes = new(Enum.GetValues<Constants.Fishes>().Select(f => new WeightedFish { Fish = f }));
-        GameManager.Biome.Trashes = new(Enum.GetValues<Constants.Trashes>().Select(t => new WeightedTrash { Trash = t }));
+    void ConnectColorBoxes(Node node)
+    {
+        if (!(node is Node2D node2d)) return;
+        node.Connect(Node2D.SignalName.Draw, Callable.From(() => ColorBoxes(node2d)));
+        ColorBoxes(node2d);
+    }
 
-        foreach (var fish in GameManager.Biome.Fishes)
+    void ColorBoxes(Node2D node)
+    {
+        //GetTree().CreateTimer(.1).Timeout +=
+        Callable.From(() =>
         {
-            SpawnLine spawnLine = SpawnLineScene.Instantiate<SpawnLine>();
-            spawnLine.Item = fish;
-            FishesSettings.AddChild(spawnLine);
-        }
-
-        foreach (var fish in GameManager.Biome.Fishes)
-        {
-            SpawnLine spawnLine = SpawnLineScene.Instantiate<SpawnLine>();
-            spawnLine.Item = fish;
-            FishesSettings.AddChild(spawnLine);
-        }
-
-        FoldingChanged += (bool isFolded) =>
-        {
-            if (isFolded)
+            foreach (var child in node.GetChildren().OfType<Node2D>())
             {
-                SizeFlagsHorizontal = SizeFlags.ShrinkEnd;
-                GameManager.Biome = GameManager.Biome;
+                if (child is CollisionShape2D cShape)
+                    cShape.Shape.Draw(cShape.GetCanvasItem(), cShape.DebugColor);
+                ColorBoxes(child);
             }
-            else
-                SizeFlagsHorizontal = SizeFlags.Fill;
-        };
-    }
-
-    void SetAllFishes(bool spawn)
-    {
-        foreach (var spawnLine in FishesSettings.GetChildren().OfType<SpawnLine>())
-        {
-            spawnLine.CheckBox.ButtonPressed = spawn;
-        }
-    }
-    void SetAllTrashes(bool spawn)
-    {
-        foreach (var spawnLine in TrashesSettings.GetChildren().OfType<SpawnLine>())
-        {
-            spawnLine.CheckBox.ButtonPressed = spawn;
-        }
-    }
-
-    void SetTimeToSpawnFish(float time)
-    {
-        GameManager.Biome.TimeToSpawnFish = time;
-    }
-
-    void SetTimeToSpawnFishDeviation(float timeDeviation)
-    {
-        GameManager.Biome.TimeToSpawnFishDeviation = timeDeviation;
-    }
-
-    void SetTimeToSpawnTrash(float time)
-    {
-        GameManager.Biome.TimeToSpawnTrash = time;
-    }
-
-    void SetTimeToSpawnTrashDeviation(float timeDeviation)
-    {
-        GameManager.Biome.TimeToSpawnTrashDeviation = timeDeviation;
+        }).CallDeferred();
     }
 }

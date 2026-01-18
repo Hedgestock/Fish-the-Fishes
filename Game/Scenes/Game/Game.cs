@@ -34,7 +34,6 @@ public partial class Game : CanvasLayer
         BackgroundTransition.Texture = GameManager.Biome.Background;
         SetupBiome();
         GameManager.Instance.Connect(GameManager.SignalName.BiomeChanged, new Callable(this, MethodName.SetupBiome));
-        SpawnFish();
     }
 
     public void EndGame()

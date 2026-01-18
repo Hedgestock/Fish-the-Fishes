@@ -54,6 +54,8 @@ public partial class SharkFish : Fish, IFisher
             Show();
             HitBox.SetDeferred(CollisionShape2D.PropertyName.Disabled, false);
 
+            Bubbles.Emitting = true;
+
             if (!IsActionable) return;
             Velocity = TravelAxis * ActualSpeed;
         };

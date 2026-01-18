@@ -1,11 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://ereddneqlo34"]
+[gd_scene load_steps=5 format=3 uid="uid://ereddneqlo34"]
 
 [ext_resource type="PackedScene" uid="uid://0sb3i5bm7j4p" path="res://Game/Scenes/Game/Game.tscn" id="1_mpkow"]
-[ext_resource type="Script" uid="uid://1pxk2cqttmga" path="res://Game/Scenes/Training/Training.cs" id="2_w5y2v"]
+[ext_resource type="Script" uid="uid://c307y40ggy5vb" path="res://Game/Scenes/Training/Training.cs" id="2_w5y2v"]
 [ext_resource type="PackedScene" uid="uid://qm1hpjicotin" path="res://Game/Scenes/Training/SpawnLine/SpawnLine.tscn" id="3_skeo5"]
+[ext_resource type="Script" uid="uid://1pxk2cqttmga" path="res://Game/Scenes/Training/TrainingUI.cs" id="3_w5y2v"]
 
-[node name="Test" type="CanvasLayer"]
+[node name="Training" type="CanvasLayer" node_paths=PackedStringArray("Game")]
 layer = 3
+script = ExtResource("2_w5y2v")
+Game = NodePath("Game")
 
 [node name="Game" parent="." instance=ExtResource("1_mpkow")]
 
@@ -26,7 +29,7 @@ folded = true
 title = "Biome Settings"
 title_alignment = 2
 title_position = 1
-script = ExtResource("2_w5y2v")
+script = ExtResource("3_w5y2v")
 SpawnLineScene = ExtResource("3_skeo5")
 FishesSettings = NodePath("TabContainer/Fishes/ScrollContainer/FishesSettings")
 TrashesSettings = NodePath("TabContainer/Trashes/ScrollContainer/TrashesSettings")
