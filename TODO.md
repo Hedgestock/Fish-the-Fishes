@@ -248,4 +248,4 @@
 
 - [x] Vérifier le comportement d'un oursin qui se fait manger mais en étant activé
 - [ ] Corriger les espadons qui font une boucle infinie avec l'oursin
-- [ ] Corriger deux oursins sur l'hammeçon qui s'échangeraient un poisson à chaque frame
+- [ ] Corriger deux oursins sur l'hammeçon qui s'échangeraient un poisson à chaque frame et leur boucle infinie

@@ -4,7 +4,7 @@ using System;
 using System.Linq;
 using WaffleStock;
 
-public partial class Test : FoldableContainer
+public partial class Training : FoldableContainer
 {
     [Export]
     PackedScene SpawnLineScene;

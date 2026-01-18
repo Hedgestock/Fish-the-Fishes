@@ -32,7 +32,7 @@ public partial class Home : CanvasLayer
         if (GameManager.GameSave != null)
             ContinueButton.Show();
 
-        if (GameManager.PrevScene == "res://Game/Scenes/Game/Game.tscn")
+        if (GameManager.PrevScene == "uid://0sb3i5bm7j4p")
             Message.Text = "Last Score:\n" + GameManager.Score.ToString();
 
     }
@@ -60,7 +60,7 @@ public partial class Home : CanvasLayer
         GameManager.Lives = 3;
         GameManager.StartTime = DateTime.Now;
 
-        GameManager.ChangeSceneToFile("res://Game/Scenes/Game/Game.tscn");
+        GameManager.ChangeSceneToFile("uid://0sb3i5bm7j4p");
     }
 
     void Continue()
@@ -73,7 +73,7 @@ public partial class Home : CanvasLayer
         GameManager.CalculatedBiomeThreshold = (int)GameManager.GameSave?.CalculatedBiomeThreshold;
         GameManager.StartTime = (DateTime)(DateTime.Now - GameManager.GameSave?.TimePlayed);
 
-        GameManager.ChangeSceneToFile("res://Game/Scenes/Game/Game.tscn");
+        GameManager.ChangeSceneToFile("uid://0sb3i5bm7j4p");
     }
 
     void PlayClassic()
@@ -104,27 +104,27 @@ public partial class Home : CanvasLayer
         GameManager.Lives = 3;
         GameManager.StartTime = DateTime.Now;
 
-        GameManager.ChangeSceneToFile("res://Game/Scenes/Test/Test.tscn");
+        GameManager.ChangeSceneToFile("uid://ereddneqlo34");
     }
 
     void GoToCompendium()
     {
-        GameManager.ChangeSceneToFile("res://Game/Scenes/Compendium/Compendium.tscn");
+        GameManager.ChangeSceneToFile("uid://b0nv1b3x0suu5");
     }
 
     void GoToStats()
     {
-        GameManager.ChangeSceneToFile("res://Game/Scenes/Stats/Stats.tscn");
+        GameManager.ChangeSceneToFile("uid://r1tsllld4k82");
     }
 
     void GoToEquipment()
     {
-        GameManager.ChangeSceneToFile("res://Game/Scenes/Equipment/Equipment.tscn");
+        GameManager.ChangeSceneToFile("uid://jdvp2d8dcy53");
     }
 
     void GoToSettings()
     {
-        GameManager.ChangeSceneToFile("res://Game/Scenes/Settings/Settings.tscn");
+        GameManager.ChangeSceneToFile("uid://dwv4cu7q6wlf6");
     }
 
     void GoToTutorial()
@@ -134,6 +134,6 @@ public partial class Home : CanvasLayer
 
     void GoToCredits()
     {
-        GameManager.ChangeSceneToFile("res://Game/Scenes/Credits/Credits.tscn");
+        GameManager.ChangeSceneToFile("uid://cpc2lk8mjeebi");
     }
 }

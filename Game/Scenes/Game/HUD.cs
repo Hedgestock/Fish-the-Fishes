@@ -53,9 +53,9 @@ public partial class HUD : CanvasLayer
                 LivesContainer.GetNode<AnimatedSpriteForUI>("Life2").Animation = "life_go_green";
                 LivesContainer.GetNode<AnimatedSpriteForUI>("Life3").Animation = "life_go_green";
                 goto default;
-            case Game.Mode.Classic:
-            case Game.Mode.Zen:
             case Game.Mode.Training:
+            case Game.Mode.Zen:
+            case Game.Mode.Classic:
             default:
                 LivesContainer.Show();
                 LivesContainer.GetNode<AnimatedSpriteForUI>("Life1").Play();

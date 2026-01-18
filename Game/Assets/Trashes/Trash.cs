@@ -39,7 +39,7 @@ public partial class Trash : CharacterBody2D, IDescriptible
 
     protected void NotifySpawn()
     {
-        if (GameManager.Mode == Game.Mode.Menu) return;
+        if (GameManager.Mode <= Game.Mode.Training) return;
         if (UserData.TrashCompendium.TryGetValue(GetType().Name, out UserData.TrashCompendiumEntry entry)) entry.Seen++;
         else UserData.TrashCompendium[GetType().Name] = new UserData.TrashCompendiumEntry();
     }

@@ -290,10 +290,10 @@ public partial class FishingLine : CharacterBody2D, IFisher
                     break;
                 case Game.Mode.Target:
                     return Scoring.TargetScore((this as IFisher).FlattennedFishedThings());
-                case Game.Mode.Zen:
                 case Game.Mode.Training:
-                case Game.Mode.Classic:
                 case Game.Mode.TimeAttack:
+                case Game.Mode.Zen:
+                case Game.Mode.Classic:
                 default:
                     return Scoring.ClassicScore((this as IFisher).FlattennedFishedThings());
             }

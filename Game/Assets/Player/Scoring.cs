@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using static Game;
 
 
 namespace WaffleStock
@@ -45,7 +46,8 @@ namespace WaffleStock
 
             foreach (Fish fish in scoredFishes)
             {
-                UpdateFishCompendium(fish);
+                if (GameManager.Mode > Mode.Training)
+                    UpdateFishCompendium(fish);
                 score *= fish.Multiplier;
                 if (fish is IPowerup powerup) powerup.Activate();
                 if (free) fish.QueueFree();
@@ -70,7 +72,8 @@ namespace WaffleStock
 
             foreach (Fish fish in scoredFishes)
             {
-                UpdateFishCompendium(fish);
+                if (GameManager.Mode > Mode.Training)
+                    UpdateFishCompendium(fish);
                 if (fish is IPowerup powerup) powerup.Activate();
                 fish.QueueFree();
             }

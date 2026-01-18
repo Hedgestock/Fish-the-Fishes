@@ -19,10 +19,10 @@ public partial class Game : CanvasLayer
     {
         AllModes,
         Menu,
+        Training,
         Classic,
         GoGreen,
         Target,
-        Training,
         TimeAttack,
         Zen,
     }
@@ -48,7 +48,7 @@ public partial class Game : CanvasLayer
         AchievementsManager.OnGameEnd();
         GameManager.Mode = Mode.Menu;
         SaveManager.EraseGame();
-        GameManager.ChangeSceneToFile("res://Game/Scenes/Home.tscn");
+        GameManager.ChangeSceneToFile("uid://blkg0i7vjb6il");
     }
 
     private void SpawnFish()
@@ -105,7 +105,7 @@ public partial class Game : CanvasLayer
         FishTimer.Start(GameManager.Biome.TimeToSpawnFish, GameManager.Biome.TimeToSpawnFishDeviation);
         TrashTimer.Start(GameManager.Biome.TimeToSpawnTrash, GameManager.Biome.TimeToSpawnTrashDeviation);
 
-        if (GameManager.Mode != Mode.Menu)
+        if (GameManager.Mode > Mode.Training)
         {
             SaveManager.SaveGame();
         }

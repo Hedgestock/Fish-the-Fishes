@@ -49,7 +49,7 @@ public partial class GameManager : Node
 
             Instance.EmitSignal(SignalName.BiomeChanged);
 
-            if (Mode == Game.Mode.Menu) return;
+            if (Mode <= Game.Mode.Training) return;
             if (UserData.BiomeCompendium.TryGetValue(value.ResourceName, out UserData.BiomeCompendiumEntry entry)) entry.Seen++;
             else UserData.BiomeCompendium[Biome.ResourceName] = new UserData.BiomeCompendiumEntry();
         }
