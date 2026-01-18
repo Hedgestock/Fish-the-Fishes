@@ -62,4 +62,24 @@ public partial class Training : FoldableContainer
             spawnLine.CheckBox.ButtonPressed = spawn;
         }
     }
+
+    void SetTimeToSpawnFish(float time)
+    {
+        GameManager.Biome.TimeToSpawnFish = time;
+    }
+
+    void SetTimeToSpawnFishDeviation(float timeDeviation)
+    {
+        GameManager.Biome.TimeToSpawnFishDeviation = timeDeviation;
+    }
+
+    void SetTimeToSpawnTrash(float time)
+    {
+        GameManager.Biome.TimeToSpawnTrash = time;
+    }
+
+    void SetTimeToSpawnTrashDeviation(float timeDeviation)
+    {
+        GameManager.Biome.TimeToSpawnTrashDeviation = timeDeviation;
+    }
 }

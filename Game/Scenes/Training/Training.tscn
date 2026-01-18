@@ -34,9 +34,8 @@ TrashesSettings = NodePath("TabContainer/Trashes/ScrollContainer/TrashesSettings
 [node name="TabContainer" type="TabContainer" parent="MarginContainer/FoldableContainer"]
 visible = false
 layout_mode = 2
-tab_alignment = 2
+tab_alignment = 1
 current_tab = 0
-tabs_position = 1
 
 [node name="Fishes" type="VBoxContainer" parent="MarginContainer/FoldableContainer/TabContainer"]
 layout_mode = 2
@@ -60,11 +59,13 @@ layout_mode = 2
 
 [node name="TimeToSpawnFish" type="SpinBox" parent="MarginContainer/FoldableContainer/TabContainer/Fishes/HBoxContainer2"]
 layout_mode = 2
+max_value = 1000.0
 step = 0.1
 value = 1.0
 
 [node name="TimeToSpawnFishDeviation" type="SpinBox" parent="MarginContainer/FoldableContainer/TabContainer/Fishes/HBoxContainer2"]
 layout_mode = 2
+max_value = 1000.0
 step = 0.01
 value = 0.2
 
@@ -101,11 +102,13 @@ layout_mode = 2
 
 [node name="TimeToSpawnTrash" type="SpinBox" parent="MarginContainer/FoldableContainer/TabContainer/Trashes/HBoxContainer2"]
 layout_mode = 2
+max_value = 1000.0
 step = 0.1
 value = 3.0
 
 [node name="TimeToSpawnTrashDeviation" type="SpinBox" parent="MarginContainer/FoldableContainer/TabContainer/Trashes/HBoxContainer2"]
 layout_mode = 2
+max_value = 1000.0
 step = 0.01
 value = 0.5
 
@@ -121,5 +124,9 @@ size_flags_vertical = 3
 
 [connection signal="pressed" from="MarginContainer/FoldableContainer/TabContainer/Fishes/HBoxContainer/AllFishes" to="MarginContainer/FoldableContainer" method="SetAllFishes" binds= [true]]
 [connection signal="pressed" from="MarginContainer/FoldableContainer/TabContainer/Fishes/HBoxContainer/NoFishes" to="MarginContainer/FoldableContainer" method="SetAllFishes" binds= [false]]
+[connection signal="value_changed" from="MarginContainer/FoldableContainer/TabContainer/Fishes/HBoxContainer2/TimeToSpawnFish" to="MarginContainer/FoldableContainer" method="SetTimeToSpawnFish"]
+[connection signal="value_changed" from="MarginContainer/FoldableContainer/TabContainer/Fishes/HBoxContainer2/TimeToSpawnFishDeviation" to="MarginContainer/FoldableContainer" method="SetTimeToSpawnFishDeviation"]
 [connection signal="pressed" from="MarginContainer/FoldableContainer/TabContainer/Trashes/HBoxContainer/AllTrashes" to="MarginContainer/FoldableContainer" method="SetAllTrashes" binds= [true]]
 [connection signal="pressed" from="MarginContainer/FoldableContainer/TabContainer/Trashes/HBoxContainer/NoTrashes" to="MarginContainer/FoldableContainer" method="SetAllTrashes" binds= [false]]
+[connection signal="value_changed" from="MarginContainer/FoldableContainer/TabContainer/Trashes/HBoxContainer2/TimeToSpawnTrash" to="MarginContainer/FoldableContainer" method="SetTimeToSpawnTrash"]
+[connection signal="value_changed" from="MarginContainer/FoldableContainer/TabContainer/Trashes/HBoxContainer2/TimeToSpawnTrashDeviation" to="MarginContainer/FoldableContainer" method="SetTimeToSpawnTrashDeviation"]
