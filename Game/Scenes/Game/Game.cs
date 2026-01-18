@@ -106,8 +106,6 @@ public partial class Game : CanvasLayer
         TrashTimer.Start(GameManager.Biome.TimeToSpawnTrash, GameManager.Biome.TimeToSpawnTrashDeviation);
 
         if (GameManager.Mode > Mode.Training)
-        {
             SaveManager.SaveGame();
-        }
     }
 }

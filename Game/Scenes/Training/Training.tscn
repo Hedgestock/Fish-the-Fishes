@@ -17,20 +17,24 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="FoldableContainer" type="FoldableContainer" parent="MarginContainer" node_paths=PackedStringArray("BiomeSettings")]
+[node name="FoldableContainer" type="FoldableContainer" parent="MarginContainer" node_paths=PackedStringArray("FishesSettings", "TrashesSettings")]
 layout_mode = 2
 size_flags_horizontal = 8
 focus_mode = 0
 mouse_filter = 1
+folded = true
 title = "Biome Settings"
 title_alignment = 2
 title_position = 1
 script = ExtResource("2_w5y2v")
 SpawnLineScene = ExtResource("3_skeo5")
-BiomeSettings = NodePath("TabContainer/Fishes/ScrollContainer/VBoxContainer")
+FishesSettings = NodePath("TabContainer/Fishes/ScrollContainer/FishesSettings")
+TrashesSettings = NodePath("TabContainer/Trashes/ScrollContainer/TrashesSettings")
 
 [node name="TabContainer" type="TabContainer" parent="MarginContainer/FoldableContainer"]
+visible = false
 layout_mode = 2
+tab_alignment = 2
 current_tab = 0
 tabs_position = 1
 
@@ -41,12 +45,14 @@ metadata/_tab_index = 0
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/FoldableContainer/TabContainer/Fishes"]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="MarginContainer/FoldableContainer/TabContainer/Fishes/HBoxContainer"]
+[node name="AllFishes" type="Button" parent="MarginContainer/FoldableContainer/TabContainer/Fishes/HBoxContainer"]
 layout_mode = 2
+focus_mode = 0
 text = "All"
 
-[node name="Button2" type="Button" parent="MarginContainer/FoldableContainer/TabContainer/Fishes/HBoxContainer"]
+[node name="NoFishes" type="Button" parent="MarginContainer/FoldableContainer/TabContainer/Fishes/HBoxContainer"]
 layout_mode = 2
+focus_mode = 0
 text = "None"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/FoldableContainer/TabContainer/Fishes"]
@@ -67,7 +73,7 @@ layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/FoldableContainer/TabContainer/Fishes/ScrollContainer"]
+[node name="FishesSettings" type="VBoxContainer" parent="MarginContainer/FoldableContainer/TabContainer/Fishes/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -80,12 +86,14 @@ metadata/_tab_index = 1
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/FoldableContainer/TabContainer/Trashes"]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="MarginContainer/FoldableContainer/TabContainer/Trashes/HBoxContainer"]
+[node name="AllTrashes" type="Button" parent="MarginContainer/FoldableContainer/TabContainer/Trashes/HBoxContainer"]
 layout_mode = 2
+focus_mode = 0
 text = "All"
 
-[node name="Button2" type="Button" parent="MarginContainer/FoldableContainer/TabContainer/Trashes/HBoxContainer"]
+[node name="NoTrashes" type="Button" parent="MarginContainer/FoldableContainer/TabContainer/Trashes/HBoxContainer"]
 layout_mode = 2
+focus_mode = 0
 text = "None"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/FoldableContainer/TabContainer/Trashes"]
@@ -94,24 +102,24 @@ layout_mode = 2
 [node name="TimeToSpawnTrash" type="SpinBox" parent="MarginContainer/FoldableContainer/TabContainer/Trashes/HBoxContainer2"]
 layout_mode = 2
 step = 0.1
-value = 1.0
+value = 3.0
 
 [node name="TimeToSpawnTrashDeviation" type="SpinBox" parent="MarginContainer/FoldableContainer/TabContainer/Trashes/HBoxContainer2"]
 layout_mode = 2
 step = 0.01
-value = 0.2
+value = 0.5
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/FoldableContainer/TabContainer/Trashes"]
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/FoldableContainer/TabContainer/Trashes/ScrollContainer"]
+[node name="TrashesSettings" type="VBoxContainer" parent="MarginContainer/FoldableContainer/TabContainer/Trashes/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[connection signal="pressed" from="MarginContainer/FoldableContainer/TabContainer/Fishes/HBoxContainer/Button" to="MarginContainer/FoldableContainer" method="SetAllFishes" binds= [true]]
-[connection signal="pressed" from="MarginContainer/FoldableContainer/TabContainer/Fishes/HBoxContainer/Button2" to="MarginContainer/FoldableContainer" method="SetAllFishes" binds= [false]]
-[connection signal="pressed" from="MarginContainer/FoldableContainer/TabContainer/Trashes/HBoxContainer/Button" to="MarginContainer/FoldableContainer" method="SetAllFishes" binds= [true]]
-[connection signal="pressed" from="MarginContainer/FoldableContainer/TabContainer/Trashes/HBoxContainer/Button2" to="MarginContainer/FoldableContainer" method="SetAllFishes" binds= [false]]
+[connection signal="pressed" from="MarginContainer/FoldableContainer/TabContainer/Fishes/HBoxContainer/AllFishes" to="MarginContainer/FoldableContainer" method="SetAllFishes" binds= [true]]
+[connection signal="pressed" from="MarginContainer/FoldableContainer/TabContainer/Fishes/HBoxContainer/NoFishes" to="MarginContainer/FoldableContainer" method="SetAllFishes" binds= [false]]
+[connection signal="pressed" from="MarginContainer/FoldableContainer/TabContainer/Trashes/HBoxContainer/AllTrashes" to="MarginContainer/FoldableContainer" method="SetAllTrashes" binds= [true]]
+[connection signal="pressed" from="MarginContainer/FoldableContainer/TabContainer/Trashes/HBoxContainer/NoTrashes" to="MarginContainer/FoldableContainer" method="SetAllTrashes" binds= [false]]

@@ -10,7 +10,10 @@ public partial class Training : FoldableContainer
     PackedScene SpawnLineScene;
 
     [Export]
-    Container BiomeSettings;
+    Container FishesSettings;
+
+    [Export]
+    Container TrashesSettings;
 
     public override void _Ready()
     {
@@ -23,13 +26,23 @@ public partial class Training : FoldableContainer
         {
             SpawnLine spawnLine = SpawnLineScene.Instantiate<SpawnLine>();
             spawnLine.Item = fish;
-            BiomeSettings.AddChild(spawnLine);
+            FishesSettings.AddChild(spawnLine);
+        }
+
+        foreach (var fish in GameManager.Biome.Fishes)
+        {
+            SpawnLine spawnLine = SpawnLineScene.Instantiate<SpawnLine>();
+            spawnLine.Item = fish;
+            FishesSettings.AddChild(spawnLine);
         }
 
         FoldingChanged += (bool isFolded) =>
         {
             if (isFolded)
+            {
                 SizeFlagsHorizontal = SizeFlags.ShrinkEnd;
+                GameManager.Biome = GameManager.Biome;
+            }
             else
                 SizeFlagsHorizontal = SizeFlags.Fill;
         };
@@ -37,7 +50,14 @@ public partial class Training : FoldableContainer
 
     void SetAllFishes(bool spawn)
     {
-        foreach (var spawnLine in BiomeSettings.GetChildren().OfType<SpawnLine>())
+        foreach (var spawnLine in FishesSettings.GetChildren().OfType<SpawnLine>())
+        {
+            spawnLine.CheckBox.ButtonPressed = spawn;
+        }
+    }
+    void SetAllTrashes(bool spawn)
+    {
+        foreach (var spawnLine in TrashesSettings.GetChildren().OfType<SpawnLine>())
         {
             spawnLine.CheckBox.ButtonPressed = spawn;
         }

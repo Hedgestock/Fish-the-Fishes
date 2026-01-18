@@ -6,21 +6,28 @@ public partial class SpawnLine : HBoxContainer
     [Export]
     public CustomCheckBox CheckBox;
 
-    WeightedFish _item;
-    public WeightedFish Item
+    WeightedItem _item;
+    public WeightedItem Item
     {
         get { return _item; }
         set
         {
             _item = value;
-            CheckBox.Text = _item.Fish.ToString();
+            switch (value)
+            {
+                case WeightedFish wf:
+                    CheckBox.Text = wf.Fish.ToString();
+                    break;
+                case WeightedTrash wt:
+                    CheckBox.Text = wt.Trash.ToString();
+                    break;
+            }
         }
     }
 
     private void OnWeightChanged(float weight)
     {
         _item.Weight = (uint)weight;
-        GD.Print($"Changed {_item.Fish.ToString()} weight to {weight}");
     }
 
 
@@ -30,12 +37,15 @@ public partial class SpawnLine : HBoxContainer
         {
             case WeightedFish weightedFish:
                 if (spawning)
-                {
                     GameManager.Biome.Fishes.Add(weightedFish);
-                    GD.Print(weightedFish.Weight);
-                }
                 else
                     GD.Print(GameManager.Biome.Fishes.Remove(weightedFish));
+                break;
+            case WeightedTrash weightedTrash:
+                if (spawning)
+                    GameManager.Biome.Trashes.Add(weightedTrash);
+                else
+                    GD.Print(GameManager.Biome.Trashes.Remove(weightedTrash));
                 break;
         }
     }
