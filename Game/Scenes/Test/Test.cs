@@ -34,4 +34,12 @@ public partial class Test : FoldableContainer
                 SizeFlagsHorizontal = SizeFlags.Fill;
         };
     }
+
+    void SetAllFishes(bool spawn)
+    {
+        foreach (var spawnLine in BiomeSettings.GetChildren().OfType<SpawnLine>())
+        {
+            spawnLine.CheckBox.ButtonPressed = spawn;
+        }
+    }
 }

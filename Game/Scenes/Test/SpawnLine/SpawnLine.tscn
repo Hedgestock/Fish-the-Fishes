@@ -23,9 +23,10 @@ icon = ExtResource("3_rgfip")
 [node name="Weight" type="SpinBox" parent="."]
 layout_mode = 2
 size_flags_horizontal = 8
+min_value = 1.0
 max_value = 1000.0
 value = 100.0
 alignment = 2
-update_on_text_changed = true
 
 [connection signal="toggled" from="Item" to="." method="OnSpawnToggle"]
+[connection signal="value_changed" from="Weight" to="." method="OnWeightChanged"]
