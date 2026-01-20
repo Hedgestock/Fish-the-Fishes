@@ -200,7 +200,7 @@ public partial class Fish : CharacterBody2D, IFishable, IDescriptible
             }
             ).CallDeferred();
 
-        GD.Print($"{Name} got fished by {fisher.GetType()} {(fisher as Node).Name}");
+        //GD.Print($"{Name} got fished by {fisher.GetType()} {(fisher as Node).Name}");
         EmitSignalGotFished(fisher as Node);
     }
 

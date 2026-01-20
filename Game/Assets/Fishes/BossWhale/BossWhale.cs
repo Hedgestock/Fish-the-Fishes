@@ -34,10 +34,9 @@ public partial class BossWhale : Boss
     private void RemoveBarnacle()
     {
         BarnaclesLeft--;
-        GD.Print($"Barnacles left {BarnaclesLeft} {BarnaclesMax * 0.2}");
         if (!IsCaught && BarnaclesLeft <= BarnaclesMax * 0.2)
         {
-            IsCaught = true;
+            //IsCaught = true;
 
             int score = 0;
 
@@ -56,8 +55,6 @@ public partial class BossWhale : Boss
             {
                 barnacle.Kill();
             }
-
-            GD.Print($"scoring whalw {score}");
 
             Passes = 0;
         }

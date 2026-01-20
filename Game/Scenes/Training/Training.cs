@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 public partial class Training : CanvasLayer
@@ -7,30 +8,44 @@ public partial class Training : CanvasLayer
     [Export]
     Game Game;
 
+    Callable ConnectColorBoxes;
+
     public override void _Ready()
     {
-        Game.Connect(SignalName.ChildEnteredTree, Callable.From<Node>(ConnectColorBoxes));
         base._Ready();
-    }
 
-    void ConnectColorBoxes(Node node)
-    {
-        if (!(node is Node2D node2d)) return;
-        node.Connect(Node2D.SignalName.Draw, Callable.From(() => ColorBoxes(node2d)));
-        ColorBoxes(node2d);
-    }
-
-    void ColorBoxes(Node2D node)
-    {
-        //GetTree().CreateTimer(.1).Timeout +=
-        Callable.From(() =>
+        ConnectColorBoxes = Callable.From<Node>((node) =>
         {
-            foreach (var child in node.GetChildren().OfType<Node2D>())
-            {
-                if (child is CollisionShape2D cShape)
-                    cShape.Shape.Draw(cShape.GetCanvasItem(), cShape.DebugColor);
-                ColorBoxes(child);
-            }
-        }).CallDeferred();
+            if (!(node is Node2D node2d)) return;
+            Callable.From<Node2D>(FindAndConnect).CallDeferred(node);
+        });
+    }
+
+    void VisibleCollisions(bool visible)
+    {
+        if (Visible)
+        {
+            Game.Connect(SignalName.ChildEnteredTree, ConnectColorBoxes);
+            ConnectColorBoxes.Call(Game);
+        }
+        else
+        {
+            Game.Disconnect(SignalName.ChildEnteredTree, ConnectColorBoxes);
+        }
+    }
+
+    void FindAndConnect(Node2D node)
+    {
+        foreach (var child in node.GetChildren().OfType<Node2D>())
+        {
+            if (child is CollisionShape2D cShape)
+                cShape.Connect(Node2D.SignalName.Draw, Callable.From(() => DrawCollision(cShape)));
+            FindAndConnect(child);
+        }
+    }
+
+    void DrawCollision(CollisionShape2D shape)
+    {
+        shape.Shape.Draw(shape.GetCanvasItem(), shape.DebugColor);
     }
 }

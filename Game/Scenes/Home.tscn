@@ -217,6 +217,19 @@ offset_right = 293.0
 offset_bottom = 158.0
 text = "Tutorial"
 
+[node name="TrainingButton" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu" instance=ExtResource("5_o3gki")]
+position = Vector2(423, 765)
+
+[node name="VisibleOnScreenNotifier2D" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/TrainingButton" index="0"]
+position = Vector2(141.5, 0)
+scale = Vector2(14, 1)
+
+[node name="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/TrainingButton" index="1"]
+anchors_preset = -1
+offset_right = 293.0
+offset_bottom = 158.0
+text = "Training"
+
 [node name="Test" type="Button" parent="AspectRatioContainer/MarginContainer/VBoxContainer/Menu"]
 visible = false
 layout_mode = 0
@@ -285,6 +298,7 @@ horizontal_alignment = 1
 [connection signal="screen_exited" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/CreditsButton/VisibleOnScreenNotifier2D" to="." method="GoToCredits"]
 [connection signal="screen_exited" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/SettingsButton/VisibleOnScreenNotifier2D" to="." method="GoToSettings"]
 [connection signal="screen_exited" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/TutorialButton/VisibleOnScreenNotifier2D" to="." method="GoToTutorial"]
+[connection signal="screen_exited" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/TrainingButton/VisibleOnScreenNotifier2D" to="." method="PlayTest"]
 [connection signal="pressed" from="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/Test" to="." method="PlayTest"]
 
 [editable path="Game"]
@@ -299,3 +313,4 @@ horizontal_alignment = 1
 [editable path="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/CreditsButton"]
 [editable path="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/SettingsButton"]
 [editable path="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/TutorialButton"]
+[editable path="AspectRatioContainer/MarginContainer/VBoxContainer/Menu/TrainingButton"]

@@ -50,7 +50,6 @@ public partial class TrainingUI : FoldableContainer
 
     void SetAllFishes(bool spawn)
     {
-        GD.Print(spawn);
         foreach (var spawnLine in FishesSettings.GetChildren().OfType<SpawnLine>())
         {
             spawnLine.CheckBox.ButtonPressed = spawn;

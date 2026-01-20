@@ -1,7 +1,6 @@
 using Godot;
 using System;
 using WaffleStock;
-using static WaffleStock.Constants;
 
 public partial class Home : CanvasLayer
 {
