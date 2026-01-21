@@ -33,8 +33,9 @@ public partial class SharkFish : Fish, IFisher
         GpuParticles2D indicator = (GpuParticles2D)Bubbles.Duplicate();
         indicator.ZIndex = 1;
         indicator.ProcessMaterial = (Material)Bubbles.ProcessMaterial.Duplicate();
-        indicator.Position = GlobalPosition + (TravelAxis * 300);
-        (indicator.ProcessMaterial as ParticleProcessMaterial).Gravity = new Vector3(TravelAxis.X, TravelAxis.Y, 0) * 500;
+        indicator.Position = GlobalPosition + (TravelAxis * 300 * Scale.X);
+        (indicator.ProcessMaterial as ParticleProcessMaterial).Gravity = new Vector3(TravelAxis.X, TravelAxis.Y, 0) * (ActualSpeed / 5);
+        indicator.Emitting = true;
         GetParent().AddChild(indicator);
 
         Bubbles.Amount = (int)ActualSpeed / 4;

@@ -52,8 +52,15 @@ public partial class Game : CanvasLayer
 
     private void SpawnFish()
     {
+        SpawnFish(Vector2.Zero);
+    }
+
+    public void SpawnFish(Vector2 position)
+    {
         PackedScene FishScene = GD.Load<PackedScene>(Biome.GetRandomPathFrom(GameManager.Biome.Fishes));
         Fish fish = FishScene.Instantiate<Fish>();
+
+        fish.Position = position;
 
         if (fish is Boss boss)
         {

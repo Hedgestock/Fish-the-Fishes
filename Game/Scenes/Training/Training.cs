@@ -16,7 +16,6 @@ public partial class Training : CanvasLayer
 
         ConnectColorBoxes = Callable.From<Node>((node) =>
         {
-            if (!(node is Node2D node2d)) return;
             Callable.From<Node2D>(FindAndConnect).CallDeferred(node);
         });
     }
@@ -26,7 +25,7 @@ public partial class Training : CanvasLayer
         if (Visible)
         {
             Game.Connect(SignalName.ChildEnteredTree, ConnectColorBoxes);
-            ConnectColorBoxes.Call(Game);
+            FindAndConnect(Game);
         }
         else
         {
@@ -34,18 +33,26 @@ public partial class Training : CanvasLayer
         }
     }
 
-    void FindAndConnect(Node2D node)
+    void FindAndConnect(Node node)
     {
-        foreach (var child in node.GetChildren().OfType<Node2D>())
-        {
-            if (child is CollisionShape2D cShape)
-                cShape.Connect(Node2D.SignalName.Draw, Callable.From(() => DrawCollision(cShape)));
+        if (node is CollisionShape2D cShape)
+            cShape.Connect(Node2D.SignalName.Draw, Callable.From(() => DrawCollision(cShape)));
+        foreach (var child in node.GetChildren())
             FindAndConnect(child);
-        }
     }
 
     void DrawCollision(CollisionShape2D shape)
     {
         shape.Shape.Draw(shape.GetCanvasItem(), shape.DebugColor);
+    }
+
+    public override void _UnhandledInput(InputEvent @event)
+    {
+        if (Visible == false) return;
+        // Mouse in viewport coordinates.
+        if (@event is InputEventMouseButton eventMouseButton && @event.IsActionPressed("screen_hold"))
+        {
+            Game.SpawnFish(eventMouseButton.Position);
+        }
     }
 }
