@@ -3,9 +3,6 @@ using Godot.Collections;
 using WaffleStock;
 using System;
 using System.Linq;
-using System.Diagnostics;
-
-
 
 public partial class Fish : CharacterBody2D, IFishable, IDescriptible
 {

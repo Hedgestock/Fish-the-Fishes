@@ -165,7 +165,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
     {
         if (Visible == false) return;
         // Mouse in viewport coordinates.
-        if (@event is InputEventMouseButton eventMouseButton && @event.IsActionPressed("screen_tap") && Hook.CanMove(Hook.State))
+        if (@event is InputEventMouseButton eventMouseButton && @event.IsReleased() && @event.IsActionReleased("screen_tap") && Hook.CanMove)
         {
             Hook.State = MovingDown;
             MoveTowardsCustom(new Vector2(eventMouseButton.Position.X, eventMouseButton.Position.Y - Hook.AimOffset));

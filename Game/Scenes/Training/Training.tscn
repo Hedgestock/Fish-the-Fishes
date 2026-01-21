@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://ereddneqlo34"]
+[gd_scene load_steps=7 format=3 uid="uid://ereddneqlo34"]
 
 [ext_resource type="PackedScene" uid="uid://0sb3i5bm7j4p" path="res://Game/Scenes/Game/Game.tscn" id="1_mpkow"]
 [ext_resource type="Script" uid="uid://c307y40ggy5vb" path="res://Game/Scenes/Training/Training.cs" id="2_w5y2v"]
+[ext_resource type="PackedScene" uid="uid://ooiws0wk1npj" path="res://Game/Scenes/Training/SpawnHandler/SpawnHandler.tscn" id="3_pesve"]
 [ext_resource type="PackedScene" uid="uid://qm1hpjicotin" path="res://Game/Scenes/Training/SpawnLine/SpawnLine.tscn" id="3_skeo5"]
 [ext_resource type="Script" uid="uid://1pxk2cqttmga" path="res://Game/Scenes/Training/TrainingUI.cs" id="3_w5y2v"]
 [ext_resource type="PackedScene" uid="uid://d1xuincg5ibnm" path="res://Game/UI/CustomCheckBox/CustomCheckBox.tscn" id="5_skeo5"]
@@ -12,6 +13,9 @@ script = ExtResource("2_w5y2v")
 Game = NodePath("Game")
 
 [node name="Game" parent="." instance=ExtResource("1_mpkow")]
+
+[node name="SpawnHandler" parent="." node_paths=PackedStringArray("Game") instance=ExtResource("3_pesve")]
+Game = NodePath("../Game")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 z_index = 1000
@@ -39,10 +43,9 @@ TrashesSettings = NodePath("TabContainer/Trashes/Trashes/ScrollContainer/Trashes
 visible = false
 layout_mode = 2
 tab_alignment = 1
-current_tab = 1
+current_tab = 0
 
 [node name="General" type="MarginContainer" parent="MarginContainer/FoldableContainer/TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -53,7 +56,12 @@ layout_mode = 2
 layout_mode = 2
 text = "Display Hitboxes"
 
+[node name="DragToSpawn" parent="MarginContainer/FoldableContainer/TabContainer/General/General" instance=ExtResource("5_skeo5")]
+layout_mode = 2
+text = "Drag To Spawn"
+
 [node name="Fishes" type="MarginContainer" parent="MarginContainer/FoldableContainer/TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
@@ -145,6 +153,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [connection signal="toggled" from="MarginContainer/FoldableContainer/TabContainer/General/General/DisplayHitboxes" to="." method="VisibleCollisions"]
+[connection signal="toggled" from="MarginContainer/FoldableContainer/TabContainer/General/General/DragToSpawn" to="SpawnHandler" method="SetEnabled"]
 [connection signal="pressed" from="MarginContainer/FoldableContainer/TabContainer/Fishes/Fishes/HBoxContainer/AllFishes" to="MarginContainer/FoldableContainer" method="SetAllFishes" binds= [true]]
 [connection signal="pressed" from="MarginContainer/FoldableContainer/TabContainer/Fishes/Fishes/HBoxContainer/NoFishes" to="MarginContainer/FoldableContainer" method="SetAllFishes" binds= [false]]
 [connection signal="value_changed" from="MarginContainer/FoldableContainer/TabContainer/Fishes/Fishes/HBoxContainer2/TimeToSpawnFish" to="MarginContainer/FoldableContainer" method="SetTimeToSpawnFish"]

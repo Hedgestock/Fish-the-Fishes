@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ooiws0wk1npj"]
+
+[ext_resource type="Script" uid="uid://5f42lbiotsxk" path="res://Game/Scenes/Training/SpawnHandler/SpawnHandler.cs" id="1_4ya6t"]
+
+[node name="SpawnHandler" type="Node"]
+script = ExtResource("1_4ya6t")

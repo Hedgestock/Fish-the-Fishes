@@ -36,6 +36,11 @@ public partial class Hook : EquipmentPiece
         }
     }
 
+    public bool CanMove
+    {
+        get { return (State == Action.Stopped || State == Action.MovingDown) && MovesLeft-- > 0; }
+    }
+
     public override void _Ready()
     {
         FishBox = GetNode<Area2D>("FishBox");
@@ -57,11 +62,6 @@ public partial class Hook : EquipmentPiece
         {
             fishbox.SetDeferred(CollisionShape2D.PropertyName.Disabled, disabled);
         }
-    }
-
-    public bool CanMove(Action state)
-    {
-        return (state == Action.Stopped || state == Action.MovingDown) && MovesLeft-- > 0;
     }
 
     public void Reset() { MovesLeft = (int)TotalMoves; }
