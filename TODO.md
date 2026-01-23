@@ -238,6 +238,12 @@
 - [ ] Mettre un point de deboggage sur `GetCaughtBy()` semble s'activer à chaque frame pour la ligne, mais pas les espadons
 - [ ] Corriger la fonction d'oscillation des tentacules du kraken
 - [ ] Ne connecter la fonction de dessin des formes qu'une seule fois
+- [ ] Utitliser des boutons natifs pour les encoches
+- [ ] Ne pas sauvegarder en sortant du mode entraînement
+- [ ] Ajouter la génération de chemim de scene
+- [ ] Rendre les énumérations statiques
+- [ ] Optimiser les appels aux fonctions de transformations en chaine de caractères
+- [ ] Gérer le retournement des poissons créés manuellement
 
 # Regression
 

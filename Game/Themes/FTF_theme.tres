@@ -1,11 +1,15 @@
-[gd_resource type="Theme" load_steps=11 format=3 uid="uid://dqud8bhj4fopd"]
+[gd_resource type="Theme" load_steps=14 format=3 uid="uid://dqud8bhj4fopd"]
 
 [ext_resource type="StyleBox" uid="uid://cis4bdbay2jpn" path="res://Game/Themes/ButtonTextureHover.tres" id="1_mcx8r"]
 [ext_resource type="StyleBox" uid="uid://fj8sndej8q55" path="res://Game/Themes/ButtonTexture.tres" id="2_k2wvy"]
 [ext_resource type="StyleBox" uid="uid://dikcbdrw0gio5" path="res://Game/Themes/ButtonTexturePressed.tres" id="3_4eyv1"]
 [ext_resource type="Texture2D" uid="uid://dsnbmphv0scr7" path="res://Game/Assets/Fishes/SardineFish/Animation/sardine_alive_1.png" id="4_epvj8"]
+[ext_resource type="Texture2D" uid="uid://cm4706uc8b0mw" path="res://Game/UI/CustomCheckBox/Checkbox_checked.png" id="4_rpsmk"]
+[ext_resource type="Texture2D" uid="uid://bhvn4jlu88k8a" path="res://Game/UI/CustomCheckBox/Checkbox_crossed.png" id="5_jxcow"]
 [ext_resource type="Texture2D" uid="uid://vkh1e4p832lp" path="res://Game/Assets/Fishes/SardineFish/Animation/sardine_alive_2.png" id="5_p8kom"]
 [ext_resource type="StyleBox" uid="uid://iftmxcpwxot8" path="res://Game/Themes/PanelTexture.tres" id="10_q6ye7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rpsmk"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gw65w"]
 
@@ -45,8 +49,12 @@ corner_detail = 6
 resource_name = "FTF"
 default_font_size = 128
 Button/styles/hover = ExtResource("1_mcx8r")
+Button/styles/hover_pressed = ExtResource("1_mcx8r")
 Button/styles/normal = ExtResource("2_k2wvy")
 Button/styles/pressed = ExtResource("3_4eyv1")
+CheckBox/icons/checked = ExtResource("4_rpsmk")
+CheckBox/icons/unchecked = ExtResource("5_jxcow")
+CheckBox/styles/disabled = SubResource("StyleBoxEmpty_rpsmk")
 DescriptionLabel/base_type = &"Label"
 DescriptionLabel/font_sizes/font_size = 64
 FoldableContainer/styles/panel = SubResource("StyleBoxEmpty_gw65w")

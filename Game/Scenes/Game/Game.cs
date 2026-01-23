@@ -52,12 +52,13 @@ public partial class Game : CanvasLayer
 
     private void SpawnFish()
     {
-        SpawnFish(Vector2.Zero, Vector2.Zero);
+        SpawnFish(Biome.GetRandomPathFrom(GameManager.Biome.Fishes), Vector2.Zero, Vector2.Zero);
     }
 
-    public void SpawnFish(Vector2 position, Vector2 travelAxis)
+    //public void SpawnFish(Constants.Fishes fishType, Vector2 position, Vector2 travelAxis)
+    public void SpawnFish(string path, Vector2 position, Vector2 travelAxis)
     {
-        PackedScene FishScene = GD.Load<PackedScene>(Biome.GetRandomPathFrom(GameManager.Biome.Fishes));
+        PackedScene FishScene = GD.Load<PackedScene>(path);
         Fish fish = FishScene.Instantiate<Fish>();
 
         fish.Position = position;
