@@ -63,6 +63,7 @@ public partial class Game : CanvasLayer
 
         fish.Position = position;
         fish.TravelAxis = travelAxis;
+        fish.Flip = travelAxis.X < 0;
 
         if (fish is Boss boss)
         {
