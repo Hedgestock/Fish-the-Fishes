@@ -245,7 +245,6 @@
 - [ ] Ajouter la génération de chemim de scene
 - [ ] Rendre les énumérations statiques
 - [ ] Optimiser les appels aux fonctions de transformation en chaine de caractères
-- [ ] Changer le comportement des boss entre les écrans de chargement
 
 # Regression
 

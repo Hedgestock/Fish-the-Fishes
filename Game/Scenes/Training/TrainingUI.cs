@@ -29,11 +29,11 @@ public partial class TrainingUI : FoldableContainer
             FishesSettings.AddChild(spawnLine);
         }
 
-        foreach (var fish in GameManager.Biome.Fishes)
+        foreach (var trash in GameManager.Biome.Trashes)
         {
             SpawnLine spawnLine = SpawnLineScene.Instantiate<SpawnLine>();
-            spawnLine.Item = fish;
-            FishesSettings.AddChild(spawnLine);
+            spawnLine.Item = trash;
+            TrashesSettings.AddChild(spawnLine);
         }
 
         FoldingChanged += (bool isFolded) =>
