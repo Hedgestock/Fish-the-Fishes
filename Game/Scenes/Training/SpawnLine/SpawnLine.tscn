@@ -1,8 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://qm1hpjicotin"]
+[gd_scene load_steps=2 format=3 uid="uid://qm1hpjicotin"]
 
 [ext_resource type="Script" uid="uid://cfcex0scq2y1t" path="res://Game/Scenes/Training/SpawnLine/SpawnLine.cs" id="1_qk2tn"]
-[ext_resource type="PackedScene" uid="uid://d1xuincg5ibnm" path="res://Game/UI/CustomCheckBox/CustomCheckBox.tscn" id="2_rgfip"]
-[ext_resource type="Texture2D" uid="uid://cm4706uc8b0mw" path="res://Game/UI/CustomCheckBox/Checkbox_checked.png" id="3_rgfip"]
 
 [node name="SpawnLine" type="HBoxContainer" node_paths=PackedStringArray("CheckBox")]
 anchors_preset = 10
@@ -11,16 +9,14 @@ offset_bottom = 158.0
 grow_horizontal = 2
 size_flags_horizontal = 3
 script = ExtResource("1_qk2tn")
-CheckBox = NodePath("Item")
+CheckBox = NodePath("CheckBox")
 
-[node name="Item" parent="." instance=ExtResource("2_rgfip")]
+[node name="CheckBox" type="CheckBox" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
-focus_mode = 0
-mouse_filter = 1
 button_pressed = true
-text = "Fish"
-icon = ExtResource("3_rgfip")
+text = "Item"
+flat = true
 
 [node name="Weight" type="SpinBox" parent="."]
 layout_mode = 2
@@ -30,5 +26,5 @@ max_value = 1000.0
 value = 100.0
 alignment = 2
 
-[connection signal="toggled" from="Item" to="." method="OnSpawnToggle"]
+[connection signal="toggled" from="CheckBox" to="." method="OnSpawnToggle"]
 [connection signal="value_changed" from="Weight" to="." method="OnWeightChanged"]

@@ -4,8 +4,8 @@
 [ext_resource type="StyleBox" uid="uid://fj8sndej8q55" path="res://Game/Themes/ButtonTexture.tres" id="2_k2wvy"]
 [ext_resource type="StyleBox" uid="uid://dikcbdrw0gio5" path="res://Game/Themes/ButtonTexturePressed.tres" id="3_4eyv1"]
 [ext_resource type="Texture2D" uid="uid://dsnbmphv0scr7" path="res://Game/Assets/Fishes/SardineFish/Animation/sardine_alive_1.png" id="4_epvj8"]
-[ext_resource type="Texture2D" uid="uid://cm4706uc8b0mw" path="res://Game/UI/CustomCheckBox/Checkbox_checked.png" id="4_rpsmk"]
-[ext_resource type="Texture2D" uid="uid://bhvn4jlu88k8a" path="res://Game/UI/CustomCheckBox/Checkbox_crossed.png" id="5_jxcow"]
+[ext_resource type="Texture2D" uid="uid://cm4706uc8b0mw" path="res://Game/Themes/CheckBox/Checkbox_checked.png" id="4_rpsmk"]
+[ext_resource type="Texture2D" uid="uid://bhvn4jlu88k8a" path="res://Game/Themes/CheckBox/Checkbox_crossed.png" id="5_jxcow"]
 [ext_resource type="Texture2D" uid="uid://vkh1e4p832lp" path="res://Game/Assets/Fishes/SardineFish/Animation/sardine_alive_2.png" id="5_p8kom"]
 [ext_resource type="StyleBox" uid="uid://iftmxcpwxot8" path="res://Game/Themes/PanelTexture.tres" id="10_q6ye7"]
 

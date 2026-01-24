@@ -7,11 +7,11 @@ public partial class Settings : CanvasLayer
     Container DeleteDataPopup;
 
     [Export]
-    CustomCheckBox CompetitiveMode;
+    CheckBox CompetitiveMode;
     [Export]
-    CustomCheckBox Vibrations;
+    CheckBox Vibrations;
     [Export]
-    CustomCheckBox WaterEffect;
+    CheckBox WaterEffect;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()

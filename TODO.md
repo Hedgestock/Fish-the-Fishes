@@ -26,6 +26,7 @@
 - [x] Ajouter un menu de pause
 - [x] Ajouter la possibilité de désactiver les vibrations
 - [x] Ajouter la possibilité de désactiver l'effet d'eau
+- [x] Utitliser des boutons natifs pour les encoches
 - [ ] Ajouter un jingle pour les meilleurs scores
 - [ ] Ajouter un tutoriel
 - [ ] Ajouter de la physique aux boutons du menu principal
@@ -238,7 +239,6 @@
 - [ ] Mettre un point de deboggage sur `GetCaughtBy()` semble s'activer à chaque frame pour la ligne, mais pas les espadons
 - [ ] Corriger la fonction d'oscillation des tentacules du kraken
 - [ ] Ne connecter la fonction de dessin des formes qu'une seule fois
-- [ ] Utitliser des boutons natifs pour les encoches
 - [ ] Ne pas sauvegarder en sortant du mode entraînement
 - [ ] Ajouter la génération de chemim de scene
 - [ ] Rendre les énumérations statiques

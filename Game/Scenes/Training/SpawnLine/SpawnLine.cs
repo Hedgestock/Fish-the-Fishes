@@ -4,7 +4,7 @@ using System;
 public partial class SpawnLine : HBoxContainer
 {
     [Export]
-    public CustomCheckBox CheckBox;
+    public CheckBox CheckBox;
 
     WeightedItem _item;
     public WeightedItem Item
