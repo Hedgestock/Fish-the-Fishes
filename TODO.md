@@ -3,7 +3,7 @@
 - [x] Plus de points pour plus de poissons pêchés en un coup [x(log_3(x))+1]
 - [x] [**Solution autre**] Plus de points pour les poissons plus loin sur l'écran
 - [x] [**Solution autre**] Multiplicateur pour les combos
-- [ ] Multiplicateur en fonction du biome
+- [x] [**Solution autre**] Multiplicateur en fonction du biome
 
 # Menus et Interfaces
 
@@ -114,10 +114,10 @@
 
 - [x] Classique
 - [x] Contre la montre
+- [x] Training mode
+- [ ] Zen
 - [ ] Poissons ciblés
 - [ ] Go green
-- [ ] Zen
-- [ ] Training mode
 
 # Autre
 
@@ -149,6 +149,7 @@
 - [x] Retirer le chronomètre de sécurité pour le mode ciblé
 - [x] Ajouter la sauvegarde en pleine partie
 - [x] Ajouter un moyen de trier/filtrer le compendium
+- [x] Ajouter plus de composition
 - [ ] Support de différentes langues
 	- [x] Anglais
 	- [ ] Français
@@ -171,7 +172,6 @@
 - [ ] Utiliser une vraie ligne pour la ligne de pêche.
 - [ ] Ajouter un filtre audio pour chaque biome
 - [ ] Optimiser la création de nouveaux poissons
-- [ ] Ajouter plus de composition
 - [ ] Parallaxe
 - [ ] Ajouter de la physique aux serpents de mer et méduses en cas de mort
 - [ ] Ajouter du balancement sur les pics des oursins
@@ -235,6 +235,8 @@
 - [x] Les oursins doivent percer les yeux du kraken
 - [x] Partager la scène des bulles
 - [x] Corriger les bulles des requins qui disparaissent trop tôt
+- [x] Gérer le retournement des poissons créés manuellement
+- [x] Ne pas débloquer de haut-faits en entraînement
 - [ ] Passer à des listes de noms plutôt que des énumérations
 - [ ] Mettre un point de deboggage sur `GetCaughtBy()` semble s'activer à chaque frame pour la ligne, mais pas les espadons
 - [ ] Corriger la fonction d'oscillation des tentacules du kraken
@@ -242,8 +244,8 @@
 - [ ] Ne pas sauvegarder en sortant du mode entraînement
 - [ ] Ajouter la génération de chemim de scene
 - [ ] Rendre les énumérations statiques
-- [ ] Optimiser les appels aux fonctions de transformations en chaine de caractères
-- [ ] Gérer le retournement des poissons créés manuellement
+- [ ] Optimiser les appels aux fonctions de transformation en chaine de caractères
+- [ ] Changer le comportement des boss entre les écrans de chargement
 
 # Regression
 

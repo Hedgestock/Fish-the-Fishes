@@ -101,6 +101,7 @@ public partial class AchievementsManager : CanvasLayer
 
     private static void CheckPredicate(IAchievable.CheckTiming timing)
     {
+        if (GameManager.Mode <= Game.Mode.Training) return;
         List<Achievement> checkableAchievements = _instance.AchievementsList.Where((a) => a.Timing == timing).ToList();
         foreach (var achievement in checkableAchievements)
         {

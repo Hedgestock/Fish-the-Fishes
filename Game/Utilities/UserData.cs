@@ -89,6 +89,7 @@ namespace WaffleStock
 
         public static void SetHighStat(string statName, long stat)
         {
+            if (GameManager.Mode <= Game.Mode.Training) return;
             _setHighStat(StatCategory.Scratch, Game.Mode.AllModes, statName, stat);
             _setHighStat(StatCategory.Scratch, GameManager.Mode, statName, stat);
             _setHighStat(UserSettings.CompetitiveMode ? StatCategory.Competitive : StatCategory.Casual, Game.Mode.AllModes, statName, stat);
@@ -104,6 +105,7 @@ namespace WaffleStock
 
         public static void IncrementStatistic(string statName, long incr = 1)
         {
+            if (GameManager.Mode <= Game.Mode.Training) return;
             _incrementStatistic(StatCategory.Scratch, Game.Mode.AllModes, statName, incr);
             _incrementStatistic(StatCategory.Scratch, GameManager.Mode, statName, incr);
             _incrementStatistic(UserSettings.CompetitiveMode ? StatCategory.Competitive : StatCategory.Casual, Game.Mode.AllModes, statName, incr);

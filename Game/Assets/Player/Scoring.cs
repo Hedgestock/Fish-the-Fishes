@@ -46,8 +46,7 @@ namespace WaffleStock
 
             foreach (Fish fish in scoredFishes)
             {
-                if (GameManager.Mode > Mode.Training)
-                    UpdateFishCompendium(fish);
+                UpdateFishCompendium(fish);
                 score *= fish.Multiplier;
                 if (fish is IPowerup powerup) powerup.Activate();
                 if (free) fish.QueueFree();
@@ -72,8 +71,7 @@ namespace WaffleStock
 
             foreach (Fish fish in scoredFishes)
             {
-                if (GameManager.Mode > Mode.Training)
-                    UpdateFishCompendium(fish);
+                UpdateFishCompendium(fish);
                 if (fish is IPowerup powerup) powerup.Activate();
                 fish.QueueFree();
             }
@@ -84,6 +82,8 @@ namespace WaffleStock
 
         private static void UpdateFishCompendium(Fish fish)
         {
+            if (GameManager.Mode <= Game.Mode.Training) return;
+
             string fishTypeName = fish.GetType().Name;
             if (!UserData.FishCompendium.ContainsKey(fishTypeName))
                 return;

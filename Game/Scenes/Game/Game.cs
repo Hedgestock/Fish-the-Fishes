@@ -39,14 +39,18 @@ public partial class Game : CanvasLayer
     public void EndGame()
     {
         AudioManager.StopMusic();
-        uint playtime = (uint)Math.Ceiling((DateTime.Now - GameManager.StartTime).TotalSeconds);
-        UserData.SetHighStat(Constants.LongestSession, playtime);
-        UserData.IncrementStatistic(Constants.TotalTimePlayed, playtime);
-        UserData.SetHighStat(Constants.HighScore, GameManager.Score);
-        SaveManager.SaveData();
-        AchievementsManager.OnGameEnd();
+        if (GameManager.Mode > Mode.Training)
+        {
+            uint playtime = (uint)Math.Ceiling((DateTime.Now - GameManager.StartTime).TotalSeconds);
+            UserData.SetHighStat(Constants.LongestSession, playtime);
+            UserData.IncrementStatistic(Constants.TotalTimePlayed, playtime);
+            UserData.SetHighStat(Constants.HighScore, GameManager.Score);
+            SaveManager.SaveData();
+            AchievementsManager.OnGameEnd();
+            SaveManager.EraseGame();
+        }
+
         GameManager.Mode = Mode.Menu;
-        SaveManager.EraseGame();
         GameManager.ChangeSceneToFile("uid://blkg0i7vjb6il");
     }
 
