@@ -29,7 +29,9 @@ mouse_filter = 2
 [node name="FoldableContainer" type="FoldableContainer" parent="MarginContainer" node_paths=PackedStringArray("FishesSettings", "TrashesSettings")]
 layout_mode = 2
 size_flags_horizontal = 8
+size_flags_vertical = 8
 focus_mode = 0
+mouse_default_cursor_shape = 2
 folded = true
 title = "Biome Settings"
 title_alignment = 2

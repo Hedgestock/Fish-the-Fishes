@@ -41,10 +41,14 @@ public partial class TrainingUI : FoldableContainer
             if (isFolded)
             {
                 SizeFlagsHorizontal = SizeFlags.ShrinkEnd;
+                SizeFlagsVertical = SizeFlags.ShrinkEnd;
                 GameManager.Biome = GameManager.Biome;
             }
             else
+            {
                 SizeFlagsHorizontal = SizeFlags.Fill;
+                SizeFlagsVertical = SizeFlags.Fill;
+            }
         };
     }
 
