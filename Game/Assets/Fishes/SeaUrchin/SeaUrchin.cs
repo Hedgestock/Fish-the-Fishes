@@ -23,7 +23,7 @@ public partial class SeaUrchin : Fish, IFisher
     {
         spikes = Sprite.GetChildren().OfType<Line2D>().ToList();
 
-        if (!IsInDisplay)
+        if (!IsInDisplay && Position == Vector2.Zero)
         {
             float positionOffset = VisibleOnScreenNotifier.Rect.Size.Y * VisibleOnScreenNotifier.Scale.Y / 2;
             Position = new Vector2(

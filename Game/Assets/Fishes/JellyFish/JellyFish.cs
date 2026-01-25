@@ -27,17 +27,24 @@ public partial class JellyFish : Fish, IPowerup
 
         if (!IsInDisplay)
         {
-            Position = new Vector2(GameManager.ScreenSize.X / 2, GameManager.ScreenSize.Y + 50);
-            Flip = (GD.Randi() % 2) != 0;
+            if (Position == Vector2.Zero)
+            {
+                Position = new Vector2(GameManager.ScreenSize.X / 2, GameManager.ScreenSize.Y + 50);
+                Flip = (GD.Randi() % 2) != 0;
+            }
 
-            Vector2 objective = new Vector2(
-                !Flip ? GameManager.ScreenSize.X : 0,
-                (float)GD.RandRange(
-                    GameManager.ScreenSize.Y * SpawnRange.X,
-                    GameManager.ScreenSize.Y * SpawnRange.Y
-                    )
-                );
-            TravelAxis = (objective - Position).Normalized();
+
+            if (TravelAxis == Vector2.Zero)
+            {
+                Vector2 objective = new Vector2(
+                    !Flip ? GameManager.ScreenSize.X : 0,
+                    (float)GD.RandRange(
+                        GameManager.ScreenSize.Y * SpawnRange.X,
+                        GameManager.ScreenSize.Y * SpawnRange.Y
+                        )
+                    );
+                TravelAxis = (objective - Position).Normalized();
+            }
         }
         base._Ready();
 
