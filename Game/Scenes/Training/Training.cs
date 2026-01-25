@@ -19,7 +19,7 @@ public partial class Training : CanvasLayer
 
     void VisibleCollisions(bool visible)
     {
-        if (Visible)
+        if (visible)
         {
             Game.Connect(SignalName.ChildEnteredTree, ConnectColorBoxes);
             FindAndConnect(Game);
@@ -40,6 +40,13 @@ public partial class Training : CanvasLayer
 
     void DrawCollision(CollisionShape2D shape)
     {
-        shape.Shape.Draw(shape.GetCanvasItem(), shape.DebugColor);
+        Color drawColor = shape.DebugColor;
+
+        if (shape.Disabled)
+        {
+            drawColor = new Color(drawColor.V, drawColor.V, drawColor.V, 0.5f);
+        }
+
+        shape.Shape.Draw(shape.GetCanvasItem(), drawColor);
     }
 }
