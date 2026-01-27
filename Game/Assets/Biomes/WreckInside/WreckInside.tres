@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Biome" load_steps=22 format=3 uid="uid://c1b0bsuac41gk"]
+[gd_resource type="Resource" script_class="Biome" format=3 uid="uid://c1b0bsuac41gk"]
 
 [ext_resource type="Texture2D" uid="uid://ddyw4r010lfyk" path="res://Game/Assets/Biomes/WreckInside/WreckInsideBackground.png" id="1_i523y"]
 [ext_resource type="Script" uid="uid://du5t70kmo5wl6" path="res://Game/Utilities/Weighted/WeightedTrash.cs" id="1_qjkc5"]

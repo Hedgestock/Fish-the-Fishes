@@ -1,13 +1,9 @@
-[gd_resource type="Resource" script_class="PlayedXGames" load_steps=2 format=3 uid="uid://bs03v07ert3vp"]
+[gd_resource type="Resource" script_class="PlayedXGames" format=3 uid="uid://bs03v07ert3vp"]
 
 [ext_resource type="Script" uid="uid://bln4fmjg4mamo" path="res://Game/Assets/Achievements/DoneXTimes/PlayedXGames/PlayedXGames.cs" id="1_eprqu"]
 
 [resource]
 script = ExtResource("1_eprqu")
 Threshold = 1000
-Category = 0
-Mode = 0
-UnlockableName = ""
-UnlockableType = 0
 CompendiumName = "Played 1000 Games"
 CompendiumDescription = "You're now a master baiter!"

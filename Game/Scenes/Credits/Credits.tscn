@@ -1,17 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://cpc2lk8mjeebi"]
+[gd_scene format=3 uid="uid://cpc2lk8mjeebi"]
 
 [ext_resource type="Script" uid="uid://ddb5usq1uqexh" path="res://Game/Scenes/Credits/Credits.cs" id="1_okroq"]
 [ext_resource type="PackedScene" uid="uid://bubgi8mpwbbne" path="res://Game/UI/DynamicBackground/DynamicBackground.tscn" id="2_m8kky"]
 [ext_resource type="PackedScene" uid="uid://dfxhrdmj7km0i" path="res://Game/UI/BackButton/BackButton.tscn" id="3_tmwxg"]
 
-[node name="Credits" type="CanvasLayer"]
+[node name="Credits" type="CanvasLayer" unique_id=1822456140]
 script = ExtResource("1_okroq")
 
-[node name="Background" parent="." instance=ExtResource("2_m8kky")]
+[node name="Background" parent="." unique_id=101631027 instance=ExtResource("2_m8kky")]
 offset_top = -360.0
 offset_bottom = 360.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=14763302]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -20,35 +20,35 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Control" type="Control" parent="VBoxContainer"]
+[node name="Control" type="Control" parent="VBoxContainer" unique_id=521163257]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Control"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Control" unique_id=817175915]
 layout_mode = 0
 offset_right = 140.0
 offset_bottom = 140.0
 
-[node name="BackButton" parent="VBoxContainer/Control/MarginContainer" instance=ExtResource("3_tmwxg")]
+[node name="BackButton" parent="VBoxContainer/Control/MarginContainer" unique_id=1944609523 instance=ExtResource("3_tmwxg")]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=122299814]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Credits"
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" unique_id=1082824319]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Panel" type="TabContainer" parent="VBoxContainer/MarginContainer"]
+[node name="Panel" type="TabContainer" parent="VBoxContainer/MarginContainer" unique_id=136360048]
 layout_mode = 2
 current_tab = 0
 
-[node name="Credits" type="MarginContainer" parent="VBoxContainer/MarginContainer/Panel"]
+[node name="Credits" type="MarginContainer" parent="VBoxContainer/MarginContainer/Panel" unique_id=529847537]
 layout_mode = 2
 metadata/_tab_index = 0
 
-[node name="Credits" type="RichTextLabel" parent="VBoxContainer/MarginContainer/Panel/Credits"]
+[node name="Credits" type="RichTextLabel" parent="VBoxContainer/MarginContainer/Panel/Credits" unique_id=1003137495]
 layout_mode = 2
 bbcode_enabled = true
 text = "[center][img]res://Game/Assets/Fishes/AnguilleFish/Animation/anguille_alive_1.png[/img]
@@ -71,12 +71,12 @@ All rights reserved.
 [/center]
 "
 
-[node name="Patch Notes" type="MarginContainer" parent="VBoxContainer/MarginContainer/Panel"]
+[node name="Patch Notes" type="MarginContainer" parent="VBoxContainer/MarginContainer/Panel" unique_id=795368437]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/MarginContainer/Panel/Patch Notes"]
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/MarginContainer/Panel/Patch Notes" unique_id=467948151]
 layout_mode = 2
 bbcode_enabled = true
 text = "[center][font_size=200]??/??/2026[/font_size][/center]

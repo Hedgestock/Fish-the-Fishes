@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cds5ulqcu8lau"]
+[gd_scene format=3 uid="uid://cds5ulqcu8lau"]
 
 [ext_resource type="Script" uid="uid://b8y80q12bikx2" path="res://Game/Assets/Fishes/BossWhale/Barnacle/Barnacle.cs" id="1_vxnhu"]
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_ykrpa"]
@@ -26,7 +26,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_277ck"]
 radius = 50.0
 
-[node name="Barnacle" instance=ExtResource("1_ykrpa")]
+[node name="Barnacle" unique_id=238977707 instance=ExtResource("1_ykrpa")]
 script = ExtResource("1_vxnhu")
 CompendiumName = "Barnacle"
 CompendiumDescription = "You're not supposed to see that description."
@@ -34,13 +34,13 @@ MinSpeed = 0.0
 MaxSpeed = 0.0
 SizeDeviation = 0.5
 
-[node name="VisibleOnScreenNotifier2D" parent="." index="0"]
+[node name="VisibleOnScreenNotifier2D" parent="." index="0" unique_id=1780839485]
 scale = Vector2(7, 7)
 
-[node name="AnimatedSprite2D" parent="." index="1"]
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=58809509]
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_a6u02")
 animation = &"alive"
 
-[node name="HurtBox" parent="." index="2"]
+[node name="HurtBox" parent="." index="2" unique_id=1269771636]
 shape = SubResource("CircleShape2D_277ck")

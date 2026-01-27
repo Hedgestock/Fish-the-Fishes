@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cym0nidrqx2cf"]
+[gd_scene format=3 uid="uid://cym0nidrqx2cf"]
 
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_28mxf"]
 [ext_resource type="SpriteFrames" uid="uid://cm7uoix4j3i1r" path="res://Game/Assets/Fishes/PoisonFish/Animation/PoisonFishAnimation.tres" id="2_ianp1"]
@@ -9,23 +9,23 @@
 radius = 37.0
 height = 156.0
 
-[node name="PoisonFish" instance=ExtResource("1_28mxf")]
+[node name="PoisonFish" unique_id=180073452 instance=ExtResource("1_28mxf")]
 script = ExtResource("2_p1g2j")
 CompendiumName = "Poison Fish"
 CompendiumDescription = ""
 
-[node name="VisibleOnScreenNotifier2D" parent="." index="0"]
+[node name="VisibleOnScreenNotifier2D" parent="." index="0" unique_id=1780839485]
 scale = Vector2(10, 6)
 
-[node name="AnimatedSprite2D" parent="." index="1"]
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=58809509]
 sprite_frames = ExtResource("2_ianp1")
 animation = &"dead"
 
-[node name="HurtBox" parent="." index="2"]
+[node name="HurtBox" parent="." index="2" unique_id=1269771636]
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_ianp1")
 
-[node name="PoisonTimer" parent="." index="4" instance=ExtResource("4_x0yu8")]
+[node name="PoisonTimer" parent="." index="4" unique_id=1905089563 instance=ExtResource("4_x0yu8")]
 autostart = true
 
 [connection signal="timeout" from="PoisonTimer" to="." method="EmitPoison"]

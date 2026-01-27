@@ -1,11 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://dfvcoq3nvotbv"]
+[gd_scene format=3 uid="uid://dfvcoq3nvotbv"]
 
 [ext_resource type="Script" uid="uid://d26mtpjng2kcu" path="res://Game/Scenes/BiomeDebug/BiomeGraphNode.cs" id="1_v44y7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u23pd"]
 bg_color = Color(0, 0, 0, 0.490196)
 
-[node name="BiomeGraphNode" type="GraphNode" node_paths=PackedStringArray("Fishes", "Trashes", "FishDensity", "TrashDensity")]
+[node name="BiomeGraphNode" type="GraphNode" unique_id=925842263 node_paths=PackedStringArray("Fishes", "Trashes", "FishDensity", "TrashDensity")]
 offset_right = 102.0
 offset_bottom = 124.0
 size_flags_horizontal = 0
@@ -25,69 +25,69 @@ Trashes = NodePath("VBoxContainer/GridContainer/PanelContainer2/MarginContainer/
 FishDensity = NodePath("VBoxContainer/FishDensity")
 TrashDensity = NodePath("VBoxContainer/TrashDensity")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1059591442]
 layout_mode = 2
 
-[node name="Aquarium" type="Button" parent="VBoxContainer"]
+[node name="Aquarium" type="Button" parent="VBoxContainer" unique_id=464797183]
 layout_mode = 2
 text = "Open Aquarium"
 
-[node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer" unique_id=2131611366]
 layout_mode = 2
 theme_override_constants/h_separation = 10
 columns = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/GridContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/GridContainer" unique_id=283118888]
 layout_mode = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_u23pd")
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/GridContainer/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/GridContainer/PanelContainer" unique_id=767737280]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/GridContainer/PanelContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/GridContainer/PanelContainer/MarginContainer" unique_id=1977358276]
 layout_mode = 2
 
-[node name="Fishes" type="Label" parent="VBoxContainer/GridContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Fishes" type="Label" parent="VBoxContainer/GridContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1672567987]
 layout_mode = 2
 text = "Fishes"
 
-[node name="FishesContainer" type="GridContainer" parent="VBoxContainer/GridContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="FishesContainer" type="GridContainer" parent="VBoxContainer/GridContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1002806330]
 layout_mode = 2
 columns = 2
 
-[node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer/GridContainer"]
+[node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer/GridContainer" unique_id=2074363457]
 layout_mode = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_u23pd")
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/GridContainer/PanelContainer2"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/GridContainer/PanelContainer2" unique_id=870677035]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/GridContainer/PanelContainer2/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/GridContainer/PanelContainer2/MarginContainer" unique_id=1748638330]
 layout_mode = 2
 
-[node name="Trashes" type="Label" parent="VBoxContainer/GridContainer/PanelContainer2/MarginContainer/VBoxContainer"]
+[node name="Trashes" type="Label" parent="VBoxContainer/GridContainer/PanelContainer2/MarginContainer/VBoxContainer" unique_id=1716156855]
 layout_mode = 2
 text = "Trashes"
 
-[node name="TrashesContainer" type="GridContainer" parent="VBoxContainer/GridContainer/PanelContainer2/MarginContainer/VBoxContainer"]
+[node name="TrashesContainer" type="GridContainer" parent="VBoxContainer/GridContainer/PanelContainer2/MarginContainer/VBoxContainer" unique_id=734797222]
 layout_mode = 2
 columns = 2
 
-[node name="FishDensity" type="Label" parent="VBoxContainer"]
+[node name="FishDensity" type="Label" parent="VBoxContainer" unique_id=1821043139]
 layout_mode = 2
 text = "Fish Density: "
 
-[node name="TrashDensity" type="Label" parent="VBoxContainer"]
+[node name="TrashDensity" type="Label" parent="VBoxContainer" unique_id=673326461]
 layout_mode = 2
 text = "Trash Density: "
 
-[node name="NextBiomThreshold" type="Label" parent="VBoxContainer"]
+[node name="NextBiomThreshold" type="Label" parent="VBoxContainer" unique_id=1710178253]
 layout_mode = 2
 text = "Next Biome threshold : "
 
-[node name="FollowupBiomes" type="Label" parent="VBoxContainer"]
+[node name="FollowupBiomes" type="Label" parent="VBoxContainer" unique_id=2030979147]
 layout_mode = 2
 text = "Followup Biomes"
 

@@ -1,13 +1,10 @@
-[gd_resource type="Resource" script_class="FishedXFishesMax" load_steps=2 format=3 uid="uid://dveem7vjeb3q4"]
+[gd_resource type="Resource" script_class="FishedXFishesMax" format=3 uid="uid://dveem7vjeb3q4"]
 
 [ext_resource type="Script" uid="uid://brwf3sapfpb6a" path="res://Game/Assets/Achievements/DoneXTimes/FishedXFishesMax/FishedXFishesMax.cs" id="1_u5u4c"]
 
 [resource]
 script = ExtResource("1_u5u4c")
 Threshold = 25
-Category = 0
-Mode = 0
 UnlockableName = "ControlHook"
-UnlockableType = 0
 CompendiumName = "Go big"
 CompendiumDescription = "Time to go big or go home, looks like you've unlocked a \"little\" something!"

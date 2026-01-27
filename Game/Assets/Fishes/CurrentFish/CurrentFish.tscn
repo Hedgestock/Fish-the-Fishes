@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bpa8ffoy7sx8r"]
+[gd_scene format=3 uid="uid://bpa8ffoy7sx8r"]
 
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_jho2v"]
 [ext_resource type="Script" uid="uid://d3jan4kjefge0" path="res://Game/Assets/Fishes/CurrentFish/CurrentFish.cs" id="2_32700"]
@@ -8,7 +8,7 @@
 radius = 16.0
 height = 238.0
 
-[node name="CurrentFish" instance=ExtResource("1_jho2v")]
+[node name="CurrentFish" unique_id=1200645910 instance=ExtResource("1_jho2v")]
 script = ExtResource("2_32700")
 CompendiumName = "Current Fish"
 CompendiumDescription = "This slim profiled fish adapted itself to swim in strong currents."
@@ -18,14 +18,14 @@ TajectoryDeviation = 0.0
 SpawnRange = Vector2(0.25, 0.75)
 AverageSize = 63.75
 
-[node name="VisibleOnScreenNotifier2D" parent="." index="0"]
+[node name="VisibleOnScreenNotifier2D" parent="." index="0" unique_id=1780839485]
 scale = Vector2(14, 4)
 
-[node name="AnimatedSprite2D" parent="." index="1"]
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=58809509]
 sprite_frames = ExtResource("3_pbw2c")
 animation = &"alive"
 
-[node name="HurtBox" parent="." index="2"]
+[node name="HurtBox" parent="." index="2" unique_id=1269771636]
 position = Vector2(7, 0)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_fwdmi")

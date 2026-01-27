@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://b3if7btqlo4am"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://b3if7btqlo4am"]
 
 [ext_resource type="Texture2D" uid="uid://cdlcldgajtn4i" path="res://Game/Assets/Fishes/ArrowFish/Animation/arrow_alive_1.png" id="1_jfpe7"]
 [ext_resource type="Texture2D" uid="uid://bcg3wdk8om5h4" path="res://Game/Assets/Fishes/ArrowFish/Animation/arrow_alive_2.png" id="2_bofgc"]

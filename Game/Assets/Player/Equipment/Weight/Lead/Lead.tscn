@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://c1xqky60o4qx1"]
+[gd_scene format=3 uid="uid://c1xqky60o4qx1"]
 
 [ext_resource type="Texture2D" uid="uid://dxtj84kaqsi31" path="res://Game/Assets/Player/Equipment/Weight/Lead/Round.png" id="1_lr3f6"]
 [ext_resource type="Script" uid="uid://dvqpn4f8nq7mo" path="res://Game/Assets/Player/Equipment/EquipmentPiece.cs" id="2_4uh7i"]
@@ -14,7 +14,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Lead" type="AnimatedSprite2D"]
+[node name="Lead" type="AnimatedSprite2D" unique_id=280173891]
 position = Vector2(-24, 91)
 scale = Vector2(7.2000003, 10.1)
 sprite_frames = SubResource("SpriteFrames_4uh7i")

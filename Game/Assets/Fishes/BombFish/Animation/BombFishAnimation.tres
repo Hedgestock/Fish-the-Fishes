@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://ber4a88l4aq0i"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://ber4a88l4aq0i"]
 
 [ext_resource type="Texture2D" uid="uid://cs4hfgiwtbxyg" path="res://Game/Assets/Fishes/BombFish/Animation/Bombfish.png" id="1_fqtba"]
 

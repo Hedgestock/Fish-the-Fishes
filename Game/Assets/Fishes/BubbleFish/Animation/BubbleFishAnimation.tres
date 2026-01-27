@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://cx0fk5b0k5b1k"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://cx0fk5b0k5b1k"]
 
 [ext_resource type="Texture2D" uid="uid://cxf7r7ab26i5g" path="res://Game/Assets/Fishes/BubbleFish/Animation/bubble_alive_0001.png" id="1_fbyft"]
 [ext_resource type="Texture2D" uid="uid://cl6cxa2fhm660" path="res://Game/Assets/Fishes/BubbleFish/Animation/bubble_alive_0002.png" id="2_xaqu4"]

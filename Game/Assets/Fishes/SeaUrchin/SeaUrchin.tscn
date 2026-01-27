@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ylm41rhcjfe8"]
+[gd_scene format=3 uid="uid://ylm41rhcjfe8"]
 
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_uf66v"]
 [ext_resource type="Script" uid="uid://bqrum51hqb2gu" path="res://Game/Assets/Fishes/SeaUrchin/SeaUrchin.cs" id="2_m6l2c"]
@@ -24,7 +24,7 @@ radius = 24.0
 resource_local_to_scene = true
 radius = 64.0
 
-[node name="SeaUrchin" node_paths=PackedStringArray("HitBox") instance=ExtResource("1_uf66v")]
+[node name="SeaUrchin" unique_id=1824759857 node_paths=PackedStringArray("HitBox") instance=ExtResource("1_uf66v")]
 material = SubResource("ShaderMaterial_utild")
 script = ExtResource("2_m6l2c")
 ImmuneToSkew = Array[int]([7, 3, 13])
@@ -37,15 +37,15 @@ SpawnRange = Vector2(0.3, 0.7)
 AverageSize = 20.0
 SizeDeviation = 0.3
 
-[node name="VisibleOnScreenNotifier2D" parent="." index="0"]
+[node name="VisibleOnScreenNotifier2D" parent="." index="0" unique_id=1780839485]
 position = Vector2(1.90735e-06, -1.90735e-06)
 scale = Vector2(6.4, 6.4)
 
-[node name="AnimatedSprite2D" parent="." index="1"]
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=58809509]
 sprite_frames = ExtResource("3_rhn4i")
 animation = &"alive"
 
-[node name="Line2D17" type="Line2D" parent="AnimatedSprite2D" index="0"]
+[node name="Line2D17" type="Line2D" parent="AnimatedSprite2D" index="0" unique_id=951257978]
 position = Vector2(-20, -4)
 rotation = 0.197222
 points = PackedVector2Array(0, 0, -2, 0, -12, 0, -20, 0)
@@ -55,7 +55,7 @@ gradient = SubResource("Gradient_rhn4i")
 begin_cap_mode = 2
 end_cap_mode = 2
 
-[node name="Line2D18" type="Line2D" parent="AnimatedSprite2D" index="1"]
+[node name="Line2D18" type="Line2D" parent="AnimatedSprite2D" index="1" unique_id=1380641729]
 position = Vector2(-16, -12)
 rotation = 0.589921
 points = PackedVector2Array(0, 0, -2, 0, -12, 0, -20, 0)
@@ -65,7 +65,7 @@ gradient = SubResource("Gradient_rhn4i")
 begin_cap_mode = 2
 end_cap_mode = 2
 
-[node name="Line2D19" type="Line2D" parent="AnimatedSprite2D" index="2"]
+[node name="Line2D19" type="Line2D" parent="AnimatedSprite2D" index="2" unique_id=483677037]
 position = Vector2(-12, -16)
 rotation = 0.98262
 points = PackedVector2Array(0, 0, -2, 0, -12, 0, -20, 0)
@@ -75,7 +75,7 @@ gradient = SubResource("Gradient_rhn4i")
 begin_cap_mode = 2
 end_cap_mode = 2
 
-[node name="Line2D20" type="Line2D" parent="AnimatedSprite2D" index="3"]
+[node name="Line2D20" type="Line2D" parent="AnimatedSprite2D" index="3" unique_id=1766812957]
 position = Vector2(-4, -20)
 rotation = 1.37532
 points = PackedVector2Array(0, 0, -2, 0, -12, 0, -20, 0)
@@ -85,7 +85,7 @@ gradient = SubResource("Gradient_rhn4i")
 begin_cap_mode = 2
 end_cap_mode = 2
 
-[node name="Line2D21" type="Line2D" parent="AnimatedSprite2D" index="4"]
+[node name="Line2D21" type="Line2D" parent="AnimatedSprite2D" index="4" unique_id=527754049]
 position = Vector2(4, -20)
 rotation = 1.76802
 points = PackedVector2Array(0, 0, -2, 0, -12, 0, -20, 0)
@@ -95,7 +95,7 @@ gradient = SubResource("Gradient_rhn4i")
 begin_cap_mode = 2
 end_cap_mode = 2
 
-[node name="Line2D22" type="Line2D" parent="AnimatedSprite2D" index="5"]
+[node name="Line2D22" type="Line2D" parent="AnimatedSprite2D" index="5" unique_id=1027979543]
 position = Vector2(12, -16)
 rotation = 2.16072
 points = PackedVector2Array(0, 0, -2, 0, -12, 0, -20, 0)
@@ -105,7 +105,7 @@ gradient = SubResource("Gradient_rhn4i")
 begin_cap_mode = 2
 end_cap_mode = 2
 
-[node name="Line2D23" type="Line2D" parent="AnimatedSprite2D" index="6"]
+[node name="Line2D23" type="Line2D" parent="AnimatedSprite2D" index="6" unique_id=1912982041]
 position = Vector2(16, -12)
 rotation = 2.55342
 points = PackedVector2Array(0, 0, -2, 0, -12, 0, -20, 0)
@@ -115,7 +115,7 @@ gradient = SubResource("Gradient_rhn4i")
 begin_cap_mode = 2
 end_cap_mode = 2
 
-[node name="Line2D24" type="Line2D" parent="AnimatedSprite2D" index="7"]
+[node name="Line2D24" type="Line2D" parent="AnimatedSprite2D" index="7" unique_id=1704163763]
 position = Vector2(20, -4)
 rotation = 2.94612
 points = PackedVector2Array(0, 0, -2, 0, -12, 0, -20, 0)
@@ -125,7 +125,7 @@ gradient = SubResource("Gradient_rhn4i")
 begin_cap_mode = 2
 end_cap_mode = 2
 
-[node name="Line2D25" type="Line2D" parent="AnimatedSprite2D" index="8"]
+[node name="Line2D25" type="Line2D" parent="AnimatedSprite2D" index="8" unique_id=170831162]
 position = Vector2(20, 4)
 rotation = 3.33881
 points = PackedVector2Array(0, 0, -2, 0, -12, 0, -20, 0)
@@ -135,7 +135,7 @@ gradient = SubResource("Gradient_rhn4i")
 begin_cap_mode = 2
 end_cap_mode = 2
 
-[node name="Line2D26" type="Line2D" parent="AnimatedSprite2D" index="9"]
+[node name="Line2D26" type="Line2D" parent="AnimatedSprite2D" index="9" unique_id=1370037966]
 position = Vector2(16, 12)
 rotation = 3.73151
 points = PackedVector2Array(0, 0, -2, 0, -12, 0, -20, 0)
@@ -145,7 +145,7 @@ gradient = SubResource("Gradient_rhn4i")
 begin_cap_mode = 2
 end_cap_mode = 2
 
-[node name="Line2D27" type="Line2D" parent="AnimatedSprite2D" index="10"]
+[node name="Line2D27" type="Line2D" parent="AnimatedSprite2D" index="10" unique_id=408276160]
 position = Vector2(12, 16)
 rotation = 4.12421
 points = PackedVector2Array(0, 0, -2, 0, -12, 0, -20, 0)
@@ -155,7 +155,7 @@ gradient = SubResource("Gradient_rhn4i")
 begin_cap_mode = 2
 end_cap_mode = 2
 
-[node name="Line2D28" type="Line2D" parent="AnimatedSprite2D" index="11"]
+[node name="Line2D28" type="Line2D" parent="AnimatedSprite2D" index="11" unique_id=814522930]
 position = Vector2(4, 20)
 rotation = 4.51691
 points = PackedVector2Array(0, 0, -2, 0, -12, 0, -20, 0)
@@ -165,7 +165,7 @@ gradient = SubResource("Gradient_rhn4i")
 begin_cap_mode = 2
 end_cap_mode = 2
 
-[node name="Line2D29" type="Line2D" parent="AnimatedSprite2D" index="12"]
+[node name="Line2D29" type="Line2D" parent="AnimatedSprite2D" index="12" unique_id=333785607]
 position = Vector2(-4, 20)
 rotation = 4.90961
 points = PackedVector2Array(0, 0, -2, 0, -12, 0, -20, 0)
@@ -175,7 +175,7 @@ gradient = SubResource("Gradient_rhn4i")
 begin_cap_mode = 2
 end_cap_mode = 2
 
-[node name="Line2D30" type="Line2D" parent="AnimatedSprite2D" index="13"]
+[node name="Line2D30" type="Line2D" parent="AnimatedSprite2D" index="13" unique_id=1068650957]
 position = Vector2(-12, 16)
 rotation = 5.30231
 points = PackedVector2Array(0, 0, -2, 0, -12, 0, -20, 0)
@@ -185,7 +185,7 @@ gradient = SubResource("Gradient_rhn4i")
 begin_cap_mode = 2
 end_cap_mode = 2
 
-[node name="Line2D31" type="Line2D" parent="AnimatedSprite2D" index="14"]
+[node name="Line2D31" type="Line2D" parent="AnimatedSprite2D" index="14" unique_id=2014460235]
 position = Vector2(-16, 12)
 rotation = 5.69501
 points = PackedVector2Array(0, 0, -2, 0, -12, 0, -20, 0)
@@ -195,7 +195,7 @@ gradient = SubResource("Gradient_rhn4i")
 begin_cap_mode = 2
 end_cap_mode = 2
 
-[node name="Line2D32" type="Line2D" parent="AnimatedSprite2D" index="15"]
+[node name="Line2D32" type="Line2D" parent="AnimatedSprite2D" index="15" unique_id=2045658119]
 position = Vector2(-20, 4)
 rotation = 6.08771
 points = PackedVector2Array(0, 0, -2, 0, -12, 0, -20, 0)
@@ -205,7 +205,7 @@ gradient = SubResource("Gradient_rhn4i")
 begin_cap_mode = 2
 end_cap_mode = 2
 
-[node name="Line2D" type="Line2D" parent="AnimatedSprite2D" index="16"]
+[node name="Line2D" type="Line2D" parent="AnimatedSprite2D" index="16" unique_id=1709599307]
 position = Vector2(-12, 0)
 points = PackedVector2Array(0, 0, -8, 0, -40, 0, -48, 0)
 width = 5.0
@@ -214,7 +214,7 @@ gradient = SubResource("Gradient_rhn4i")
 begin_cap_mode = 2
 end_cap_mode = 2
 
-[node name="Line2D2" type="Line2D" parent="AnimatedSprite2D" index="17"]
+[node name="Line2D2" type="Line2D" parent="AnimatedSprite2D" index="17" unique_id=2029994303]
 position = Vector2(-8, -8)
 rotation = 0.785398
 points = PackedVector2Array(0, 0, -8, 0, -40, 0, -48, 0)
@@ -224,7 +224,7 @@ gradient = SubResource("Gradient_rhn4i")
 begin_cap_mode = 2
 end_cap_mode = 2
 
-[node name="Line2D3" type="Line2D" parent="AnimatedSprite2D" index="18"]
+[node name="Line2D3" type="Line2D" parent="AnimatedSprite2D" index="18" unique_id=535671277]
 position = Vector2(0, -12)
 rotation = 1.5708
 points = PackedVector2Array(0, 0, -8, 0, -40, 0, -48, 0)
@@ -234,7 +234,7 @@ gradient = SubResource("Gradient_rhn4i")
 begin_cap_mode = 2
 end_cap_mode = 2
 
-[node name="Line2D4" type="Line2D" parent="AnimatedSprite2D" index="19"]
+[node name="Line2D4" type="Line2D" parent="AnimatedSprite2D" index="19" unique_id=31139497]
 position = Vector2(8, -8)
 rotation = 2.35619
 points = PackedVector2Array(0, 0, -8, 0, -40, 0, -48, 0)
@@ -244,7 +244,7 @@ gradient = SubResource("Gradient_rhn4i")
 begin_cap_mode = 2
 end_cap_mode = 2
 
-[node name="Line2D5" type="Line2D" parent="AnimatedSprite2D" index="20"]
+[node name="Line2D5" type="Line2D" parent="AnimatedSprite2D" index="20" unique_id=495555850]
 position = Vector2(12, 0)
 rotation = 3.14159
 points = PackedVector2Array(0, 0, -8, 0, -40, 0, -48, 0)
@@ -254,7 +254,7 @@ gradient = SubResource("Gradient_rhn4i")
 begin_cap_mode = 2
 end_cap_mode = 2
 
-[node name="Line2D6" type="Line2D" parent="AnimatedSprite2D" index="21"]
+[node name="Line2D6" type="Line2D" parent="AnimatedSprite2D" index="21" unique_id=430180621]
 position = Vector2(8, 8)
 rotation = 3.92699
 points = PackedVector2Array(0, 0, -8, 0, -40, 0, -48, 0)
@@ -264,7 +264,7 @@ gradient = SubResource("Gradient_rhn4i")
 begin_cap_mode = 2
 end_cap_mode = 2
 
-[node name="Line2D7" type="Line2D" parent="AnimatedSprite2D" index="22"]
+[node name="Line2D7" type="Line2D" parent="AnimatedSprite2D" index="22" unique_id=1732104156]
 position = Vector2(0, 12)
 rotation = 4.71239
 points = PackedVector2Array(0, 0, -8, 0, -40, 0, -48, 0)
@@ -274,7 +274,7 @@ gradient = SubResource("Gradient_rhn4i")
 begin_cap_mode = 2
 end_cap_mode = 2
 
-[node name="Line2D8" type="Line2D" parent="AnimatedSprite2D" index="23"]
+[node name="Line2D8" type="Line2D" parent="AnimatedSprite2D" index="23" unique_id=1888571351]
 position = Vector2(-8, 8)
 rotation = 5.49779
 points = PackedVector2Array(0, 0, -8, 0, -40, 0, -48, 0)
@@ -284,7 +284,7 @@ gradient = SubResource("Gradient_rhn4i")
 begin_cap_mode = 2
 end_cap_mode = 2
 
-[node name="Line2D9" type="Line2D" parent="AnimatedSprite2D" index="24"]
+[node name="Line2D9" type="Line2D" parent="AnimatedSprite2D" index="24" unique_id=858681627]
 position = Vector2(-16, -8)
 rotation = 0.392699
 points = PackedVector2Array(0, 0, -8, 0, -32, 0, -40, 0)
@@ -294,7 +294,7 @@ gradient = SubResource("Gradient_rhn4i")
 begin_cap_mode = 2
 end_cap_mode = 2
 
-[node name="Line2D10" type="Line2D" parent="AnimatedSprite2D" index="25"]
+[node name="Line2D10" type="Line2D" parent="AnimatedSprite2D" index="25" unique_id=396230469]
 position = Vector2(-8, -16)
 rotation = 1.1781
 points = PackedVector2Array(0, 0, -8, 0, -32, 0, -40, 0)
@@ -304,7 +304,7 @@ gradient = SubResource("Gradient_rhn4i")
 begin_cap_mode = 2
 end_cap_mode = 2
 
-[node name="Line2D11" type="Line2D" parent="AnimatedSprite2D" index="26"]
+[node name="Line2D11" type="Line2D" parent="AnimatedSprite2D" index="26" unique_id=1739039441]
 position = Vector2(8, -16)
 rotation = 1.9635
 points = PackedVector2Array(0, 0, -8, 0, -32, 0, -40, 0)
@@ -314,7 +314,7 @@ gradient = SubResource("Gradient_rhn4i")
 begin_cap_mode = 2
 end_cap_mode = 2
 
-[node name="Line2D12" type="Line2D" parent="AnimatedSprite2D" index="27"]
+[node name="Line2D12" type="Line2D" parent="AnimatedSprite2D" index="27" unique_id=1874823173]
 position = Vector2(16, -8)
 rotation = 2.74889
 points = PackedVector2Array(0, 0, -8, 0, -32, 0, -40, 0)
@@ -324,7 +324,7 @@ gradient = SubResource("Gradient_rhn4i")
 begin_cap_mode = 2
 end_cap_mode = 2
 
-[node name="Line2D13" type="Line2D" parent="AnimatedSprite2D" index="28"]
+[node name="Line2D13" type="Line2D" parent="AnimatedSprite2D" index="28" unique_id=776400594]
 position = Vector2(16, 8)
 rotation = 3.53429
 points = PackedVector2Array(0, 0, -8, 0, -32, 0, -40, 0)
@@ -334,7 +334,7 @@ gradient = SubResource("Gradient_rhn4i")
 begin_cap_mode = 2
 end_cap_mode = 2
 
-[node name="Line2D14" type="Line2D" parent="AnimatedSprite2D" index="29"]
+[node name="Line2D14" type="Line2D" parent="AnimatedSprite2D" index="29" unique_id=1073632764]
 position = Vector2(8, 16)
 rotation = 4.31969
 points = PackedVector2Array(0, 0, -8, 0, -32, 0, -40, 0)
@@ -344,7 +344,7 @@ gradient = SubResource("Gradient_rhn4i")
 begin_cap_mode = 2
 end_cap_mode = 2
 
-[node name="Line2D15" type="Line2D" parent="AnimatedSprite2D" index="30"]
+[node name="Line2D15" type="Line2D" parent="AnimatedSprite2D" index="30" unique_id=1291252576]
 position = Vector2(-8, 16)
 rotation = 5.10509
 points = PackedVector2Array(0, 0, -8, 0, -32, 0, -40, 0)
@@ -354,7 +354,7 @@ gradient = SubResource("Gradient_rhn4i")
 begin_cap_mode = 2
 end_cap_mode = 2
 
-[node name="Line2D16" type="Line2D" parent="AnimatedSprite2D" index="31"]
+[node name="Line2D16" type="Line2D" parent="AnimatedSprite2D" index="31" unique_id=1521046393]
 position = Vector2(-16, 8)
 rotation = 5.89049
 points = PackedVector2Array(0, 0, -8, 0, -32, 0, -40, 0)
@@ -364,12 +364,12 @@ gradient = SubResource("Gradient_rhn4i")
 begin_cap_mode = 2
 end_cap_mode = 2
 
-[node name="HurtBox" parent="." index="2"]
+[node name="HurtBox" parent="." index="2" unique_id=1269771636]
 shape = SubResource("CircleShape2D_m6l2c")
 
-[node name="HitBox" type="Area2D" parent="." index="4" groups=["Hitboxes"]]
+[node name="HitBox" type="Area2D" parent="." index="4" unique_id=1621175526 groups=["Hitboxes"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" index="0" unique_id=2138583188]
 shape = SubResource("CircleShape2D_rhn4i")
 disabled = true
 debug_color = Color(1, 0, 0, 0.419608)

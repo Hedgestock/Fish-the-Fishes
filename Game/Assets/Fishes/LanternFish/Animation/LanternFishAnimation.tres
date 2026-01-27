@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://dxmp1jai4drwy"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://dxmp1jai4drwy"]
 
 [ext_resource type="Texture2D" uid="uid://cbdbutlhp1lqv" path="res://Game/Assets/Fishes/LanternFish/Animation/Lanternfish.png" id="1_5lt8x"]
 [ext_resource type="Texture2D" uid="uid://c7ug0xt17cvdj" path="res://Game/Assets/Fishes/ParrotFish/Animation/parrot_eat_0001.png" id="2_ekqwj"]

@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://2fuwx3oj2mub"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://2fuwx3oj2mub"]
 
 [ext_resource type="Texture2D" uid="uid://dgrgw05dda1if" path="res://Game/Assets/Fishes/CurrentFish/Animation/current_alive_0001.png" id="1_81l7p"]
 [ext_resource type="Texture2D" uid="uid://bdbh2ovpopb7m" path="res://Game/Assets/Fishes/CurrentFish/Animation/current_alive_0002.png" id="2_gwocm"]

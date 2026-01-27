@@ -1,13 +1,9 @@
-[gd_resource type="Resource" script_class="FishedXFishesTotal" load_steps=2 format=3 uid="uid://cu6jrqe2cry0p"]
+[gd_resource type="Resource" script_class="FishedXFishesTotal" format=3 uid="uid://cu6jrqe2cry0p"]
 
 [ext_resource type="Script" uid="uid://bl3q1427if8fq" path="res://Game/Assets/Achievements/DoneXTimes/FishedXFishesTotal/FishedXFishesTotal.cs" id="1_tbnpk"]
 
 [resource]
 script = ExtResource("1_tbnpk")
 Threshold = 1000
-Category = 0
-Mode = 0
-UnlockableName = ""
-UnlockableType = 0
 CompendiumName = "One Kilo Please"
 CompendiumDescription = "A 1000 of them! Hopefully you like seafood!"

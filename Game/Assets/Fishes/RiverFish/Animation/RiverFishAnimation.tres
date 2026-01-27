@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://6owu5f5m33b0"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://6owu5f5m33b0"]
 
 [ext_resource type="Texture2D" uid="uid://c7c3x56bto7kr" path="res://Game/Assets/Fishes/RiverFish/Animation/riverfish_alive_1.png" id="1_f0nrh"]
 [ext_resource type="Texture2D" uid="uid://48tjb216oc55" path="res://Game/Assets/Fishes/RiverFish/Animation/riverfish_alive_2.png" id="2_bobau"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://ereddneqlo34"]
+[gd_scene format=3 uid="uid://ereddneqlo34"]
 
 [ext_resource type="PackedScene" uid="uid://0sb3i5bm7j4p" path="res://Game/Scenes/Game/Game.tscn" id="1_mpkow"]
 [ext_resource type="Script" uid="uid://c307y40ggy5vb" path="res://Game/Scenes/Training/Training.cs" id="2_w5y2v"]
@@ -6,18 +6,18 @@
 [ext_resource type="PackedScene" uid="uid://qm1hpjicotin" path="res://Game/Scenes/Training/SpawnLine/SpawnLine.tscn" id="3_skeo5"]
 [ext_resource type="Script" uid="uid://1pxk2cqttmga" path="res://Game/Scenes/Training/TrainingUI.cs" id="3_w5y2v"]
 
-[node name="Training" type="CanvasLayer" node_paths=PackedStringArray("Game")]
+[node name="Training" type="CanvasLayer" unique_id=1107043117 node_paths=PackedStringArray("Game")]
 layer = 3
 script = ExtResource("2_w5y2v")
 Game = NodePath("Game")
 
-[node name="Game" parent="." instance=ExtResource("1_mpkow")]
+[node name="Game" parent="." unique_id=1482665250 instance=ExtResource("1_mpkow")]
 
-[node name="SpawnHandler" parent="." node_paths=PackedStringArray("Game", "LoadedFish") instance=ExtResource("3_pesve")]
+[node name="SpawnHandler" parent="." unique_id=1990536497 node_paths=PackedStringArray("Game", "LoadedFish") instance=ExtResource("3_pesve")]
 Game = NodePath("../Game")
 LoadedFish = NodePath("../MarginContainer/FoldableContainer/TabContainer/General/General/LoadedFish")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=23120268]
 z_index = 1000
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,7 +26,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="FoldableContainer" type="FoldableContainer" parent="MarginContainer" node_paths=PackedStringArray("FishesSettings", "TrashesSettings")]
+[node name="FoldableContainer" type="FoldableContainer" parent="MarginContainer" unique_id=1300945505 node_paths=PackedStringArray("FishesSettings", "TrashesSettings")]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
@@ -41,121 +41,121 @@ SpawnLineScene = ExtResource("3_skeo5")
 FishesSettings = NodePath("TabContainer/Fishes/Fishes/ScrollContainer/FishesSettings")
 TrashesSettings = NodePath("TabContainer/Trashes/Trashes/ScrollContainer/TrashesSettings")
 
-[node name="TabContainer" type="TabContainer" parent="MarginContainer/FoldableContainer"]
+[node name="TabContainer" type="TabContainer" parent="MarginContainer/FoldableContainer" unique_id=1405568567]
 visible = false
 layout_mode = 2
 tab_alignment = 1
 current_tab = 0
 
-[node name="General" type="MarginContainer" parent="MarginContainer/FoldableContainer/TabContainer"]
+[node name="General" type="MarginContainer" parent="MarginContainer/FoldableContainer/TabContainer" unique_id=2066488072]
 layout_mode = 2
 metadata/_tab_index = 0
 
-[node name="General" type="VBoxContainer" parent="MarginContainer/FoldableContainer/TabContainer/General"]
+[node name="General" type="VBoxContainer" parent="MarginContainer/FoldableContainer/TabContainer/General" unique_id=731600201]
 layout_mode = 2
 
-[node name="VisibleCollisions" type="CheckBox" parent="MarginContainer/FoldableContainer/TabContainer/General/General"]
+[node name="VisibleCollisions" type="CheckBox" parent="MarginContainer/FoldableContainer/TabContainer/General/General" unique_id=875462100]
 layout_mode = 2
 text = "Visible Collisions"
 flat = true
 
-[node name="DragToSpawn" type="CheckBox" parent="MarginContainer/FoldableContainer/TabContainer/General/General"]
+[node name="DragToSpawn" type="CheckBox" parent="MarginContainer/FoldableContainer/TabContainer/General/General" unique_id=227237516]
 layout_mode = 2
 text = "Drag To Spawn"
 flat = true
 
-[node name="LoadedFish" type="OptionButton" parent="MarginContainer/FoldableContainer/TabContainer/General/General"]
+[node name="LoadedFish" type="OptionButton" parent="MarginContainer/FoldableContainer/TabContainer/General/General" unique_id=952357800]
 visible = false
 layout_mode = 2
 
-[node name="Fishes" type="MarginContainer" parent="MarginContainer/FoldableContainer/TabContainer"]
+[node name="Fishes" type="MarginContainer" parent="MarginContainer/FoldableContainer/TabContainer" unique_id=1552917884]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
-[node name="Fishes" type="VBoxContainer" parent="MarginContainer/FoldableContainer/TabContainer/Fishes"]
+[node name="Fishes" type="VBoxContainer" parent="MarginContainer/FoldableContainer/TabContainer/Fishes" unique_id=1885997768]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/FoldableContainer/TabContainer/Fishes/Fishes"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/FoldableContainer/TabContainer/Fishes/Fishes" unique_id=610393778]
 layout_mode = 2
 
-[node name="AllFishes" type="Button" parent="MarginContainer/FoldableContainer/TabContainer/Fishes/Fishes/HBoxContainer"]
+[node name="AllFishes" type="Button" parent="MarginContainer/FoldableContainer/TabContainer/Fishes/Fishes/HBoxContainer" unique_id=1540345091]
 layout_mode = 2
 focus_mode = 0
 text = "All"
 
-[node name="NoFishes" type="Button" parent="MarginContainer/FoldableContainer/TabContainer/Fishes/Fishes/HBoxContainer"]
+[node name="NoFishes" type="Button" parent="MarginContainer/FoldableContainer/TabContainer/Fishes/Fishes/HBoxContainer" unique_id=2055445273]
 layout_mode = 2
 focus_mode = 0
 text = "None"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/FoldableContainer/TabContainer/Fishes/Fishes"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/FoldableContainer/TabContainer/Fishes/Fishes" unique_id=1481718008]
 layout_mode = 2
 
-[node name="TimeToSpawnFish" type="SpinBox" parent="MarginContainer/FoldableContainer/TabContainer/Fishes/Fishes/HBoxContainer2"]
+[node name="TimeToSpawnFish" type="SpinBox" parent="MarginContainer/FoldableContainer/TabContainer/Fishes/Fishes/HBoxContainer2" unique_id=1959087536]
 layout_mode = 2
 max_value = 1000.0
 step = 0.1
 value = 1.0
 
-[node name="TimeToSpawnFishDeviation" type="SpinBox" parent="MarginContainer/FoldableContainer/TabContainer/Fishes/Fishes/HBoxContainer2"]
+[node name="TimeToSpawnFishDeviation" type="SpinBox" parent="MarginContainer/FoldableContainer/TabContainer/Fishes/Fishes/HBoxContainer2" unique_id=817960632]
 layout_mode = 2
 max_value = 1000.0
 step = 0.01
 value = 0.2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/FoldableContainer/TabContainer/Fishes/Fishes"]
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/FoldableContainer/TabContainer/Fishes/Fishes" unique_id=1549660643]
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 0
 
-[node name="FishesSettings" type="VBoxContainer" parent="MarginContainer/FoldableContainer/TabContainer/Fishes/Fishes/ScrollContainer"]
+[node name="FishesSettings" type="VBoxContainer" parent="MarginContainer/FoldableContainer/TabContainer/Fishes/Fishes/ScrollContainer" unique_id=1785084424]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Trashes" type="MarginContainer" parent="MarginContainer/FoldableContainer/TabContainer"]
+[node name="Trashes" type="MarginContainer" parent="MarginContainer/FoldableContainer/TabContainer" unique_id=1982243029]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
-[node name="Trashes" type="VBoxContainer" parent="MarginContainer/FoldableContainer/TabContainer/Trashes"]
+[node name="Trashes" type="VBoxContainer" parent="MarginContainer/FoldableContainer/TabContainer/Trashes" unique_id=1587497601]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/FoldableContainer/TabContainer/Trashes/Trashes"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/FoldableContainer/TabContainer/Trashes/Trashes" unique_id=91008822]
 layout_mode = 2
 
-[node name="AllTrashes" type="Button" parent="MarginContainer/FoldableContainer/TabContainer/Trashes/Trashes/HBoxContainer"]
+[node name="AllTrashes" type="Button" parent="MarginContainer/FoldableContainer/TabContainer/Trashes/Trashes/HBoxContainer" unique_id=952831630]
 layout_mode = 2
 focus_mode = 0
 text = "All"
 
-[node name="NoTrashes" type="Button" parent="MarginContainer/FoldableContainer/TabContainer/Trashes/Trashes/HBoxContainer"]
+[node name="NoTrashes" type="Button" parent="MarginContainer/FoldableContainer/TabContainer/Trashes/Trashes/HBoxContainer" unique_id=1471411348]
 layout_mode = 2
 focus_mode = 0
 text = "None"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/FoldableContainer/TabContainer/Trashes/Trashes"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/FoldableContainer/TabContainer/Trashes/Trashes" unique_id=599438595]
 layout_mode = 2
 
-[node name="TimeToSpawnTrash" type="SpinBox" parent="MarginContainer/FoldableContainer/TabContainer/Trashes/Trashes/HBoxContainer2"]
+[node name="TimeToSpawnTrash" type="SpinBox" parent="MarginContainer/FoldableContainer/TabContainer/Trashes/Trashes/HBoxContainer2" unique_id=71977591]
 layout_mode = 2
 max_value = 1000.0
 step = 0.1
 value = 3.0
 
-[node name="TimeToSpawnTrashDeviation" type="SpinBox" parent="MarginContainer/FoldableContainer/TabContainer/Trashes/Trashes/HBoxContainer2"]
+[node name="TimeToSpawnTrashDeviation" type="SpinBox" parent="MarginContainer/FoldableContainer/TabContainer/Trashes/Trashes/HBoxContainer2" unique_id=1967618911]
 layout_mode = 2
 max_value = 1000.0
 step = 0.01
 value = 0.5
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/FoldableContainer/TabContainer/Trashes/Trashes"]
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/FoldableContainer/TabContainer/Trashes/Trashes" unique_id=398638132]
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 0
 
-[node name="TrashesSettings" type="VBoxContainer" parent="MarginContainer/FoldableContainer/TabContainer/Trashes/Trashes/ScrollContainer"]
+[node name="TrashesSettings" type="VBoxContainer" parent="MarginContainer/FoldableContainer/TabContainer/Trashes/Trashes/ScrollContainer" unique_id=1725228633]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3

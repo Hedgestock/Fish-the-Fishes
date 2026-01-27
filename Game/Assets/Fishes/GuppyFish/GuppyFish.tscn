@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://qvf4t4nwyj4c"]
+[gd_scene format=3 uid="uid://qvf4t4nwyj4c"]
 
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_txpkp"]
 [ext_resource type="Script" uid="uid://dpta5afjgpp4u" path="res://Game/Assets/Fishes/GuppyFish/GuppyFish.cs" id="2_sxa50"]
@@ -7,19 +7,19 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bivm5"]
 height = 92.0
 
-[node name="GuppyFish" instance=ExtResource("1_txpkp")]
+[node name="GuppyFish" unique_id=1927063022 instance=ExtResource("1_txpkp")]
 script = ExtResource("2_sxa50")
 CompendiumName = "Guppy Fish"
 AverageSize = 22.5
 
-[node name="VisibleOnScreenNotifier2D" parent="." index="0"]
+[node name="VisibleOnScreenNotifier2D" parent="." index="0" unique_id=1780839485]
 position = Vector2(-0.499997, -1.5)
 scale = Vector2(4.65, 1.95)
 
-[node name="AnimatedSprite2D" parent="." index="1"]
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=58809509]
 sprite_frames = ExtResource("3_cc8jf")
 animation = &"alive"
 
-[node name="HurtBox" parent="." index="2"]
+[node name="HurtBox" parent="." index="2" unique_id=1269771636]
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_bivm5")

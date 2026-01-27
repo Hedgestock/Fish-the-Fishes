@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="FishedXFishesMax" load_steps=2 format=3 uid="uid://gkgsht6h7e3i"]
+[gd_resource type="Resource" script_class="FishedXFishesMax" format=3 uid="uid://gkgsht6h7e3i"]
 
 [ext_resource type="Script" uid="uid://brwf3sapfpb6a" path="res://Game/Assets/Achievements/DoneXTimes/FishedXFishesMax/FishedXFishesMax.cs" id="1_e8omp"]
 

@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://dxpxq818n4txw"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://dxpxq818n4txw"]
 
 [ext_resource type="Texture2D" uid="uid://da6lvk01aj30y" path="res://Game/Assets/Fishes/GreenFish/Animation/green_alive_1.png" id="1_rmayw"]
 [ext_resource type="Texture2D" uid="uid://nxy12vspgvhr" path="res://Game/Assets/Fishes/GreenFish/Animation/green_dead.png" id="2_6wwfr"]

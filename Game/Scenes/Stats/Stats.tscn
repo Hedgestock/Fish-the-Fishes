@@ -1,11 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://r1tsllld4k82"]
+[gd_scene format=3 uid="uid://r1tsllld4k82"]
 
 [ext_resource type="Script" uid="uid://dg0dnfxlkijcm" path="res://Game/Scenes/Stats/Stats.cs" id="1_yiwnl"]
 [ext_resource type="PackedScene" uid="uid://bubgi8mpwbbne" path="res://Game/UI/DynamicBackground/DynamicBackground.tscn" id="2_xxqwn"]
 [ext_resource type="PackedScene" uid="uid://dfxhrdmj7km0i" path="res://Game/UI/BackButton/BackButton.tscn" id="3_3hh4n"]
 [ext_resource type="PackedScene" uid="uid://dq66jd7bayssh" path="res://Game/Scenes/Stats/StatLine.tscn" id="7_7s432"]
 
-[node name="Stats" type="CanvasLayer" node_paths=PackedStringArray("Category", "Mode", "HighScore", "LongestSession", "TotalTimePlayed", "TotalFishedFishes", "TotalPointsScored", "TotalTrashesHit", "TotalLostFishes", "MaxFishedFishes", "MaxPointScored", "TotalTrashesCleaned", "TotalEatenFishes")]
+[node name="Stats" type="CanvasLayer" unique_id=48167171 node_paths=PackedStringArray("Category", "Mode", "HighScore", "LongestSession", "TotalTimePlayed", "TotalFishedFishes", "TotalPointsScored", "TotalTrashesHit", "TotalLostFishes", "MaxFishedFishes", "MaxPointScored", "TotalTrashesCleaned", "TotalEatenFishes")]
 script = ExtResource("1_yiwnl")
 Category = NodePath("VBoxContainer/MarginContainer/VBoxContainer/HFlowContainer/CompetitiveOptionButton")
 Mode = NodePath("VBoxContainer/MarginContainer/VBoxContainer/HFlowContainer/ModeOptionButton")
@@ -21,11 +21,11 @@ MaxPointScored = NodePath("VBoxContainer/MarginContainer/VBoxContainer/TabContai
 TotalTrashesCleaned = NodePath("VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/TotalTrashesCleaned")
 TotalEatenFishes = NodePath("VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/TotalEatenFishes")
 
-[node name="Background" parent="." instance=ExtResource("2_xxqwn")]
+[node name="Background" parent="." unique_id=1325510931 instance=ExtResource("2_xxqwn")]
 offset_top = -360.0
 offset_bottom = 360.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=475026440]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -34,37 +34,37 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 2
 
-[node name="Control" type="Control" parent="VBoxContainer"]
+[node name="Control" type="Control" parent="VBoxContainer" unique_id=1789548074]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Control"]
-layout_mode = 2
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Control" unique_id=144298460]
+layout_mode = 0
 offset_top = 4.0
 offset_right = 100.0
 offset_bottom = 104.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
-[node name="BackButton" parent="VBoxContainer/Control/MarginContainer" instance=ExtResource("3_3hh4n")]
+[node name="BackButton" parent="VBoxContainer/Control/MarginContainer" unique_id=112881890 instance=ExtResource("3_3hh4n")]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1255282116]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 1
 text = "Statistics"
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" unique_id=1856983292]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer" unique_id=703863112]
 layout_mode = 2
 
-[node name="HFlowContainer" type="HFlowContainer" parent="VBoxContainer/MarginContainer/VBoxContainer"]
+[node name="HFlowContainer" type="HFlowContainer" parent="VBoxContainer/MarginContainer/VBoxContainer" unique_id=798980656]
 layout_mode = 2
 
-[node name="CompetitiveOptionButton" type="OptionButton" parent="VBoxContainer/MarginContainer/VBoxContainer/HFlowContainer"]
+[node name="CompetitiveOptionButton" type="OptionButton" parent="VBoxContainer/MarginContainer/VBoxContainer/HFlowContainer" unique_id=613717611]
 layout_mode = 2
 size_flags_vertical = 0
 shortcut_in_tooltip = false
@@ -78,99 +78,99 @@ popup/item_1/id = 1
 popup/item_2/text = "Casual"
 popup/item_2/id = 2
 
-[node name="ModeOptionButton" type="OptionButton" parent="VBoxContainer/MarginContainer/VBoxContainer/HFlowContainer"]
+[node name="ModeOptionButton" type="OptionButton" parent="VBoxContainer/MarginContainer/VBoxContainer/HFlowContainer" unique_id=1010888187]
 layout_mode = 2
 size_flags_vertical = 0
 shortcut_in_tooltip = false
 
-[node name="TabContainer" type="TabContainer" parent="VBoxContainer/MarginContainer/VBoxContainer"]
+[node name="TabContainer" type="TabContainer" parent="VBoxContainer/MarginContainer/VBoxContainer" unique_id=1130997454]
 layout_mode = 2
 size_flags_vertical = 3
 current_tab = 0
 tabs_visible = false
 
-[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer" unique_id=1161380198]
 layout_mode = 2
 size_flags_vertical = 3
 horizontal_scroll_mode = 0
 metadata/_tab_index = 0
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer" unique_id=694903275]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer" unique_id=1644724195]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="HighScore" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_7s432")]
+[node name="HighScore" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=825124951 instance=ExtResource("7_7s432")]
 layout_mode = 2
 
-[node name="StatLabel" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/HighScore" index="0"]
+[node name="StatLabel" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/HighScore" index="0" unique_id=858644469]
 text = "High score"
 
-[node name="LongestSession" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_7s432")]
+[node name="LongestSession" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1360098159 instance=ExtResource("7_7s432")]
 layout_mode = 2
 
-[node name="StatLabel" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/LongestSession" index="0"]
+[node name="StatLabel" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/LongestSession" index="0" unique_id=858644469]
 text = "Longest session"
 
-[node name="TotalTimePlayed" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_7s432")]
+[node name="TotalTimePlayed" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1658119493 instance=ExtResource("7_7s432")]
 layout_mode = 2
 
-[node name="StatLabel" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/TotalTimePlayed" index="0"]
+[node name="StatLabel" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/TotalTimePlayed" index="0" unique_id=858644469]
 text = "Total time played"
 
-[node name="TotalFishedFishes" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_7s432")]
+[node name="TotalFishedFishes" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1663454108 instance=ExtResource("7_7s432")]
 layout_mode = 2
 
-[node name="StatLabel" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/TotalFishedFishes" index="0"]
+[node name="StatLabel" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/TotalFishedFishes" index="0" unique_id=858644469]
 text = "Total fishes fished"
 
-[node name="TotalPointsScored" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_7s432")]
+[node name="TotalPointsScored" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1438198354 instance=ExtResource("7_7s432")]
 layout_mode = 2
 
-[node name="StatLabel" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/TotalPointsScored" index="0"]
+[node name="StatLabel" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/TotalPointsScored" index="0" unique_id=858644469]
 text = "Total points scored"
 
-[node name="TotalTrashesHit" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_7s432")]
+[node name="TotalTrashesHit" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1772301786 instance=ExtResource("7_7s432")]
 layout_mode = 2
 
-[node name="StatLabel" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/TotalTrashesHit" index="0"]
+[node name="StatLabel" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/TotalTrashesHit" index="0" unique_id=858644469]
 text = "Total trashes hit"
 
-[node name="TotalLostFishes" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_7s432")]
+[node name="TotalLostFishes" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=2045429331 instance=ExtResource("7_7s432")]
 layout_mode = 2
 
-[node name="StatLabel" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/TotalLostFishes" index="0"]
+[node name="StatLabel" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/TotalLostFishes" index="0" unique_id=858644469]
 text = "Total fishes lost"
 
-[node name="MaxFishedFishes" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_7s432")]
+[node name="MaxFishedFishes" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=673481844 instance=ExtResource("7_7s432")]
 layout_mode = 2
 
-[node name="StatLabel" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/MaxFishedFishes" index="0"]
+[node name="StatLabel" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/MaxFishedFishes" index="0" unique_id=858644469]
 text = "Maximum fishes in one catch"
 
-[node name="MaxPointsScored" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_7s432")]
+[node name="MaxPointsScored" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=2026032729 instance=ExtResource("7_7s432")]
 layout_mode = 2
 
-[node name="StatLabel" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/MaxPointsScored" index="0"]
+[node name="StatLabel" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/MaxPointsScored" index="0" unique_id=858644469]
 text = "Maximum points in one catch"
 
-[node name="TotalTrashesCleaned" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_7s432")]
+[node name="TotalTrashesCleaned" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1292573343 instance=ExtResource("7_7s432")]
 layout_mode = 2
 
-[node name="StatLabel" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/TotalTrashesCleaned" index="0"]
+[node name="StatLabel" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/TotalTrashesCleaned" index="0" unique_id=858644469]
 text = "Total Trashes Cleaned"
 
-[node name="TotalEatenFishes" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_7s432")]
+[node name="TotalEatenFishes" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1307841474 instance=ExtResource("7_7s432")]
 layout_mode = 2
 
-[node name="StatLabel" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/TotalEatenFishes" index="0"]
+[node name="StatLabel" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer/ScrollContainer/MarginContainer/VBoxContainer/TotalEatenFishes" index="0" unique_id=858644469]
 text = "Total Accident Catches"
 
-[node name="Panel" type="Panel" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer"]
+[node name="Panel" type="Panel" parent="VBoxContainer/MarginContainer/VBoxContainer/TabContainer" unique_id=1146274222]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 1

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="PlayedXGames" load_steps=2 format=3 uid="uid://8i2qkrho88u4"]
+[gd_resource type="Resource" script_class="PlayedXGames" format=3 uid="uid://8i2qkrho88u4"]
 
 [ext_resource type="Script" uid="uid://bln4fmjg4mamo" path="res://Game/Assets/Achievements/DoneXTimes/PlayedXGames/PlayedXGames.cs" id="1_h4fbb"]
 

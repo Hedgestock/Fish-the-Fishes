@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Biome" load_steps=24 format=3 uid="uid://cdgwvohk2wes5"]
+[gd_resource type="Resource" script_class="Biome" format=3 uid="uid://cdgwvohk2wes5"]
 
 [ext_resource type="Script" uid="uid://bprtko2ut7gy0" path="res://Game/Utilities/Weighted/WeightedFish.cs" id="1_khfau"]
 [ext_resource type="Texture2D" uid="uid://2hdbni0jr2uv" path="res://Game/Assets/Biomes/OceanCurrent/OceanCurrentBackground.png" id="1_sxxsc"]

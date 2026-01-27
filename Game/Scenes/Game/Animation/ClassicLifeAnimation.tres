@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://dtab4ysdktcpe"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://dtab4ysdktcpe"]
 
 [ext_resource type="Texture2D" uid="uid://r8hgxewljrec" path="res://Game/Scenes/Game/Animation/Mort.png" id="1_bwp02"]
 [ext_resource type="Texture2D" uid="uid://cvfej3t1agje8" path="res://Game/Scenes/Game/Animation/life_icon1.png" id="2_pe41w"]

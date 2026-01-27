@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://cchugj0lsp7tl"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://cchugj0lsp7tl"]
 
 [ext_resource type="Texture2D" uid="uid://b53hv6bc5q6uv" path="res://Game/Assets/Fishes/ParrotFish/Animation/parrot_alive_0001.png" id="1_l3db8"]
 [ext_resource type="Texture2D" uid="uid://ceao0wj67nuxe" path="res://Game/Assets/Fishes/ParrotFish/Animation/parrot_alive_0002.png" id="2_qraiy"]

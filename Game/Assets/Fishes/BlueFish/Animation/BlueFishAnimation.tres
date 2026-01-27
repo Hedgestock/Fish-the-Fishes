@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://br2058c4eqn71"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://br2058c4eqn71"]
 
 [ext_resource type="Texture2D" uid="uid://djftb554bqcc7" path="res://Game/Assets/Fishes/BlueFish/Animation/blue_alive_1.png" id="1_h8tak"]
 [ext_resource type="Texture2D" uid="uid://bkrn56x0m8hyq" path="res://Game/Assets/Fishes/BlueFish/Animation/blue_alive_2.png" id="2_o7x6t"]

@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://bybglcna4kd5n"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://bybglcna4kd5n"]
 
 [ext_resource type="Texture2D" uid="uid://cjpox8q0xlsf7" path="res://Game/Assets/Trashes/Tire/Animation/tire_1.png" id="1_pf4x5"]
 [ext_resource type="Texture2D" uid="uid://cc5egvf70e6rr" path="res://Game/Assets/Trashes/Tire/Animation/tire_2.png" id="2_rv6l3"]

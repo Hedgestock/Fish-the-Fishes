@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bv5hyshljxn2u"]
+[gd_scene format=3 uid="uid://bv5hyshljxn2u"]
 
 [ext_resource type="PackedScene" uid="uid://caai7o1q2a1n0" path="res://Game/Assets/Player/Equipment/Hook/StandardHook/StandardHook.tscn" id="1_h6oal"]
 [ext_resource type="Texture2D" uid="uid://1grh4c4hsl7m" path="res://Game/Assets/Player/Equipment/Hook/HarpoonHook/HarpoonHook_broken.png" id="1_ntyyr"]
@@ -32,7 +32,7 @@ height = 136.0
 radius = 17.0
 height = 96.0
 
-[node name="HarpoonHook" instance=ExtResource("1_h6oal")]
+[node name="HarpoonHook" unique_id=502347365 instance=ExtResource("1_h6oal")]
 position = Vector2(-25, -7)
 sprite_frames = SubResource("SpriteFrames_hyelc")
 animation = &"broken"

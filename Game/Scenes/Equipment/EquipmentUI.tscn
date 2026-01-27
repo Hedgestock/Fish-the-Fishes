@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://by02c8ge1i57q"]
+[gd_scene format=3 uid="uid://by02c8ge1i57q"]
 
 [ext_resource type="Script" uid="uid://c4fsx70vsmqyk" path="res://Game/Scenes/Equipment/EquipmentUi.cs" id="1_13at4"]
 [ext_resource type="Theme" uid="uid://dqud8bhj4fopd" path="res://Game/Themes/FTF_theme.tres" id="2_ojt1q"]
 
-[node name="EquipmentUi" type="TextureButton"]
+[node name="EquipmentUi" type="TextureButton" unique_id=531674497]
 custom_minimum_size = Vector2(200, 200)
 anchors_preset = 15
 anchor_right = 1.0

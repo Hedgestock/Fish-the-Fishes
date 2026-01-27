@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dfxhrdmj7km0i"]
+[gd_scene format=3 uid="uid://dfxhrdmj7km0i"]
 
 [ext_resource type="Texture2D" uid="uid://cep1cakmjwqjb" path="res://Game/UI/BackButton/Back.png" id="1_6l4jl"]
 [ext_resource type="Texture2D" uid="uid://dt8u223yc4feo" path="res://Game/UI/BackButton/Back_pressed.png" id="2_qwwti"]
@@ -11,7 +11,7 @@ action = &"menu_go_back"
 [sub_resource type="Shortcut" id="Shortcut_y2krb"]
 events = [SubResource("InputEventAction_qkuki")]
 
-[node name="BackButton" type="TextureButton"]
+[node name="BackButton" type="TextureButton" unique_id=251599454]
 size_flags_horizontal = 0
 size_flags_vertical = 0
 mouse_default_cursor_shape = 2

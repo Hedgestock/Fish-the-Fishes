@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://ct3hvitsd17g5"]
+[gd_scene format=3 uid="uid://ct3hvitsd17g5"]
 
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_vcqog"]
 [ext_resource type="Script" uid="uid://dtnppi302kt3f" path="res://Game/Assets/Fishes/RedFish/RedFish.cs" id="2_xfklb"]
@@ -10,7 +10,7 @@ radius = 73.0274
 [sub_resource type="CircleShape2D" id="CircleShape2D_bpbot"]
 radius = 51.0
 
-[node name="RedFish" instance=ExtResource("1_vcqog")]
+[node name="RedFish" unique_id=44008798 instance=ExtResource("1_vcqog")]
 script = ExtResource("2_xfklb")
 ImmuneToRed = Array[int]([7, 3, 10, 19, 20])
 WaveAmplitude = 1.0
@@ -26,22 +26,22 @@ TajectoryDeviation = 0.0
 SpawnRange = Vector2(0, 0.5)
 AverageSize = 35.0
 
-[node name="VisibleOnScreenNotifier2D" parent="." index="0"]
+[node name="VisibleOnScreenNotifier2D" parent="." index="0" unique_id=1780839485]
 position = Vector2(3.49999, -1.00001)
 scale = Vector2(7.95, 7.5)
 
-[node name="AnimatedSprite2D" parent="." index="1"]
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=58809509]
 sprite_frames = ExtResource("3_wupup")
 animation = &"alive"
 
-[node name="HitBox" type="Area2D" parent="." index="2" groups=["Hitboxes"]]
+[node name="HitBox" type="Area2D" parent="." index="2" unique_id=703460062 groups=["Hitboxes"]]
 position = Vector2(6, -2)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" index="0" unique_id=1577397978]
 shape = SubResource("CircleShape2D_t08b6")
 debug_color = Color(1, 0, 0, 0.419608)
 
-[node name="HurtBox" parent="." index="3"]
+[node name="HurtBox" parent="." index="3" unique_id=1269771636]
 position = Vector2(6, -2)
 shape = SubResource("CircleShape2D_bpbot")
 

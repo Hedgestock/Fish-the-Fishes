@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://bi72ueuctbdl3"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://bi72ueuctbdl3"]
 
 [ext_resource type="Texture2D" uid="uid://bomtf706jn6xi" path="res://Game/Assets/Player/Equipment/Line/StandardLine/line_straight.png" id="1_3hive"]
 [ext_resource type="Texture2D" uid="uid://cfovku1jtg5ry" path="res://Game/Assets/Player/Equipment/Line/StandardLine/line_display.png" id="1_k2utv"]

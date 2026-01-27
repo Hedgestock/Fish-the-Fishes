@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://dib3yn73u4ctr"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://dib3yn73u4ctr"]
 
 [ext_resource type="Texture2D" uid="uid://bs6psgplrpsp7" path="res://Game/Assets/Fishes/YellowFish/Animation/yellow_alive_1.png" id="1_lyems"]
 [ext_resource type="Texture2D" uid="uid://cbqtdehdboo8y" path="res://Game/Assets/Fishes/YellowFish/Animation/yellow_dead.png" id="2_bbmi7"]

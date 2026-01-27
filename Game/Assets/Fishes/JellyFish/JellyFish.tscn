@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c41vxnkhc7q6y"]
+[gd_scene format=3 uid="uid://c41vxnkhc7q6y"]
 
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_v1625"]
 [ext_resource type="Script" uid="uid://do052ec684mam" path="res://Game/Assets/Fishes/JellyFish/JellyFish.cs" id="2_7552x"]
@@ -10,7 +10,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_dh8h5"]
 radius = 41.0122
 
-[node name="JellyFish" node_paths=PackedStringArray("Tentacles") instance=ExtResource("1_v1625")]
+[node name="JellyFish" unique_id=1448539237 node_paths=PackedStringArray("Tentacles") instance=ExtResource("1_v1625")]
 script = ExtResource("2_7552x")
 Tentacles = NodePath("Tentacles")
 CompendiumName = "Jellyfish"
@@ -20,55 +20,55 @@ MaxSpeed = 300.0
 SpawnRange = Vector2(0, 0.3)
 AverageSize = 44.0
 
-[node name="Tentacles" type="Node2D" parent="." index="0"]
+[node name="Tentacles" type="Node2D" parent="." index="0" unique_id=1518416500]
 
-[node name="Line2D" type="Line2D" parent="Tentacles" index="0"]
+[node name="Line2D" type="Line2D" parent="Tentacles" index="0" unique_id=545819090]
 position = Vector2(-32, 0)
 points = PackedVector2Array(0, 0, 0, 150)
 width = 32.0
 texture = ExtResource("4_5f46n")
 texture_mode = 2
 
-[node name="Line2D2" type="Line2D" parent="Tentacles" index="1"]
+[node name="Line2D2" type="Line2D" parent="Tentacles" index="1" unique_id=238591544]
 points = PackedVector2Array(0, 0, 0, 150)
 width = 32.0
 texture = ExtResource("4_5f46n")
 texture_mode = 2
 
-[node name="Line2D3" type="Line2D" parent="Tentacles" index="2"]
+[node name="Line2D3" type="Line2D" parent="Tentacles" index="2" unique_id=1273872672]
 position = Vector2(32, 0)
 points = PackedVector2Array(0, 0, 0, 150)
 width = 32.0
 texture = ExtResource("4_5f46n")
 texture_mode = 2
 
-[node name="Line2D10" type="Line2D" parent="Tentacles" index="3"]
+[node name="Line2D10" type="Line2D" parent="Tentacles" index="3" unique_id=1892089833]
 position = Vector2(-16, 0)
 points = PackedVector2Array(0, 0, 0, 100)
 width = 32.0
 texture = ExtResource("6_nuo0v")
 texture_mode = 2
 
-[node name="Line2D11" type="Line2D" parent="Tentacles" index="4"]
+[node name="Line2D11" type="Line2D" parent="Tentacles" index="4" unique_id=1656251868]
 position = Vector2(16, 0)
 points = PackedVector2Array(0, 0, 0, 100)
 width = 32.0
 texture = ExtResource("6_nuo0v")
 texture_mode = 2
 
-[node name="VisibleOnScreenNotifier2D" parent="." index="1"]
+[node name="VisibleOnScreenNotifier2D" parent="." index="1" unique_id=1780839485]
 position = Vector2(3.8147e-06, 61.5)
 scale = Vector2(6.4, 10.95)
 
-[node name="AnimatedSprite2D" parent="." index="2"]
+[node name="AnimatedSprite2D" parent="." index="2" unique_id=58809509]
 position = Vector2(0, -12)
 sprite_frames = ExtResource("3_8r5tt")
 animation = &"alive"
 
-[node name="HurtBox" parent="." index="3"]
+[node name="HurtBox" parent="." index="3" unique_id=1269771636]
 shape = SubResource("CircleShape2D_dh8h5")
 
-[node name="RandomTimer" parent="." index="5" instance=ExtResource("4_5j62k")]
+[node name="RandomTimer" parent="." index="5" unique_id=1111210682 instance=ExtResource("4_5j62k")]
 process_callback = 0
 autostart = true
 WaitTimeAverage = 5.0

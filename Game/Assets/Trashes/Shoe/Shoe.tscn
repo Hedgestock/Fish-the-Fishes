@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://8pxdejw8ptee"]
+[gd_scene format=3 uid="uid://8pxdejw8ptee"]
 
 [ext_resource type="PackedScene" uid="uid://cnjq5le44dwec" path="res://Game/Assets/Trashes/Trash.tscn" id="1_pn0g6"]
 [ext_resource type="Script" uid="uid://kqvntajjcf7q" path="res://Game/Assets/Trashes/Shoe/Shoe.cs" id="2_5d3ve"]
@@ -7,16 +7,16 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yx7oq"]
 size = Vector2(150, 150)
 
-[node name="Shoe" instance=ExtResource("1_pn0g6")]
+[node name="Shoe" unique_id=967964318 instance=ExtResource("1_pn0g6")]
 script = ExtResource("2_5d3ve")
 CompendiumName = "Shoe"
 CompendiumDescription = "Just how do you lose your shoe here?!"
 
-[node name="AnimatedSprite2D" parent="." index="0"]
+[node name="AnimatedSprite2D" parent="." index="0" unique_id=1394072120]
 sprite_frames = ExtResource("3_q1qr1")
 
-[node name="CollisionShape2D" parent="." index="1"]
+[node name="CollisionShape2D" parent="." index="1" unique_id=1794634938]
 shape = SubResource("RectangleShape2D_yx7oq")
 
-[node name="VisibleOnScreenNotifier2D" parent="." index="2"]
+[node name="VisibleOnScreenNotifier2D" parent="." index="2" unique_id=770819657]
 scale = Vector2(8, 8)

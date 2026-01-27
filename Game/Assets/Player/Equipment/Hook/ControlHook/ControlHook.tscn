@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cghnipcqvmc3k"]
+[gd_scene format=3 uid="uid://cghnipcqvmc3k"]
 
 [ext_resource type="PackedScene" uid="uid://caai7o1q2a1n0" path="res://Game/Assets/Player/Equipment/Hook/StandardHook/StandardHook.tscn" id="1_b3v4a"]
 [ext_resource type="Texture2D" uid="uid://b35566bewxhw3" path="res://Game/Assets/Player/Equipment/Hook/ControlHook/ControlHook_broken.png" id="1_pc67o"]
@@ -31,7 +31,7 @@ height = 100.0
 radius = 35.0
 height = 90.0
 
-[node name="ControlHook" instance=ExtResource("1_b3v4a")]
+[node name="ControlHook" unique_id=446600268 instance=ExtResource("1_b3v4a")]
 position = Vector2(-50, -15)
 sprite_frames = SubResource("SpriteFrames_37ege")
 AimOffset = 80

@@ -1,13 +1,9 @@
-[gd_resource type="Resource" script_class="PlayedXGames" load_steps=2 format=3 uid="uid://bguhgahmp6vvr"]
+[gd_resource type="Resource" script_class="PlayedXGames" format=3 uid="uid://bguhgahmp6vvr"]
 
 [ext_resource type="Script" uid="uid://bln4fmjg4mamo" path="res://Game/Assets/Achievements/DoneXTimes/PlayedXGames/PlayedXGames.cs" id="1_05lhh"]
 
 [resource]
 script = ExtResource("1_05lhh")
 Threshold = 100
-Category = 0
-Mode = 0
-UnlockableName = ""
-UnlockableType = 0
 CompendiumName = "Played 100 Games"
 CompendiumDescription = "A 100 games under your belt!"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dwv4cu7q6wlf6"]
+[gd_scene format=3 uid="uid://dwv4cu7q6wlf6"]
 
 [ext_resource type="Script" uid="uid://dc58akmbevtcf" path="res://Game/Scenes/Settings/Settings.cs" id="1_pgx6s"]
 [ext_resource type="PackedScene" uid="uid://bubgi8mpwbbne" path="res://Game/UI/DynamicBackground/DynamicBackground.tscn" id="2_dks8k"]
@@ -10,18 +10,18 @@ bg_color = Color(0.392157, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vkyyb"]
 
-[node name="Settings" type="CanvasLayer" node_paths=PackedStringArray("DeleteDataPopup", "CompetitiveMode", "Vibrations", "WaterEffect")]
+[node name="Settings" type="CanvasLayer" unique_id=1242727361 node_paths=PackedStringArray("DeleteDataPopup", "CompetitiveMode", "Vibrations", "WaterEffect")]
 script = ExtResource("1_pgx6s")
 DeleteDataPopup = NodePath("ResetDataPopup")
 CompetitiveMode = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/CompetitiveModeCheckBox")
 Vibrations = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/VibrationsCheckBox")
 WaterEffect = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/WaterEffectCheckBox")
 
-[node name="Background" parent="." instance=ExtResource("2_dks8k")]
+[node name="Background" parent="." unique_id=17325415 instance=ExtResource("2_dks8k")]
 offset_top = -360.0
 offset_bottom = 360.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1701726029]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -30,30 +30,30 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Control" type="Control" parent="VBoxContainer"]
+[node name="Control" type="Control" parent="VBoxContainer" unique_id=915610946]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Control"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Control" unique_id=1634823051]
 layout_mode = 0
 offset_right = 100.0
 offset_bottom = 100.0
 
-[node name="BackButton" parent="VBoxContainer/Control/MarginContainer" instance=ExtResource("3_io5b2")]
+[node name="BackButton" parent="VBoxContainer/Control/MarginContainer" unique_id=1397157660 instance=ExtResource("3_io5b2")]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=149121769]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Settings"
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" unique_id=831008345]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Panel" type="Panel" parent="VBoxContainer/MarginContainer"]
+[node name="Panel" type="Panel" parent="VBoxContainer/MarginContainer" unique_id=532906316]
 layout_mode = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer/Panel"]
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer/Panel" unique_id=869974009]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -62,65 +62,65 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer" unique_id=974739918]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer" unique_id=1658558107]
 layout_mode = 2
 
-[node name="CompetitiveModeCheckBox" type="CheckBox" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="CompetitiveModeCheckBox" type="CheckBox" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer" unique_id=2068623128]
 layout_mode = 2
 focus_mode = 0
 text = "Competitive Mode"
 flat = true
 
-[node name="VibrationsCheckBox" type="CheckBox" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="VibrationsCheckBox" type="CheckBox" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer" unique_id=131933066]
 layout_mode = 2
 focus_mode = 0
 button_pressed = true
 text = "Vibrations"
 flat = true
 
-[node name="WaterEffectCheckBox" type="CheckBox" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="WaterEffectCheckBox" type="CheckBox" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1816126698]
 layout_mode = 2
 focus_mode = 0
 button_pressed = true
 text = "Water Effect"
 flat = true
 
-[node name="HSeparator" type="HSeparator" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer" unique_id=260698263]
 layout_mode = 2
 
-[node name="Master" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_suojw")]
+[node name="Master" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1211905479 instance=ExtResource("7_suojw")]
 layout_mode = 2
 
-[node name="Music" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_suojw")]
+[node name="Music" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer" unique_id=868393363 instance=ExtResource("7_suojw")]
 layout_mode = 2
 Bus = 1
 
-[node name="SFX" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_suojw")]
+[node name="SFX" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1131180218 instance=ExtResource("7_suojw")]
 layout_mode = 2
 Bus = 3
 
-[node name="Ambiance" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_suojw")]
+[node name="Ambiance" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer" unique_id=733664880 instance=ExtResource("7_suojw")]
 layout_mode = 2
 Bus = 2
 
-[node name="Fishes" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_suojw")]
+[node name="Fishes" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer" unique_id=916677199 instance=ExtResource("7_suojw")]
 layout_mode = 2
 Bus = 4
 
-[node name="HSeparator2" type="HSeparator" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer" unique_id=2070141516]
 layout_mode = 2
 
-[node name="ResetButton" type="Button" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="ResetButton" type="Button" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer" unique_id=53579226]
 layout_mode = 2
 size_flags_horizontal = 0
 text = "Reset Data"
 
-[node name="ResetDataPopup" type="MarginContainer" parent="."]
+[node name="ResetDataPopup" type="MarginContainer" parent="." unique_id=1975918566]
 visible = false
 anchors_preset = 15
 anchor_right = 1.0
@@ -128,28 +128,28 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="ResetDataPopup"]
+[node name="PanelContainer" type="PanelContainer" parent="ResetDataPopup" unique_id=1031270218]
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_6flk2")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ResetDataPopup/PanelContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ResetDataPopup/PanelContainer" unique_id=198318735]
 layout_mode = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="ResetDataPopup/PanelContainer/VBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="ResetDataPopup/PanelContainer/VBoxContainer" unique_id=1307083136]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_vkyyb")
 
-[node name="Label" type="Label" parent="ResetDataPopup/PanelContainer/VBoxContainer/PanelContainer"]
+[node name="Label" type="Label" parent="ResetDataPopup/PanelContainer/VBoxContainer/PanelContainer" unique_id=1594145290]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.666667, 0, 0, 1)
 text = "Warning !"
 horizontal_alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="ResetDataPopup/PanelContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="ResetDataPopup/PanelContainer/VBoxContainer" unique_id=1793565679]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="ResetDataPopup/PanelContainer/VBoxContainer/MarginContainer"]
+[node name="Label" type="Label" parent="ResetDataPopup/PanelContainer/VBoxContainer/MarginContainer" unique_id=690253125]
 layout_mode = 2
 theme_type_variation = &"DescriptionLabel"
 text = "You are about to permanently delete all data concerning your statistics, achievements,  compendium, and game progression.
@@ -157,18 +157,18 @@ Please make sure that you understand what you are doing before proceeding forwar
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="MarginContainer2" type="MarginContainer" parent="ResetDataPopup/PanelContainer/VBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="ResetDataPopup/PanelContainer/VBoxContainer" unique_id=1038659146]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ResetDataPopup/PanelContainer/VBoxContainer/MarginContainer2"]
+[node name="HBoxContainer" type="HBoxContainer" parent="ResetDataPopup/PanelContainer/VBoxContainer/MarginContainer2" unique_id=1116108176]
 layout_mode = 2
 alignment = 1
 
-[node name="CancelButton" type="Button" parent="ResetDataPopup/PanelContainer/VBoxContainer/MarginContainer2/HBoxContainer"]
+[node name="CancelButton" type="Button" parent="ResetDataPopup/PanelContainer/VBoxContainer/MarginContainer2/HBoxContainer" unique_id=191978181]
 layout_mode = 2
 text = "Cancel"
 
-[node name="ProceedButton" type="Button" parent="ResetDataPopup/PanelContainer/VBoxContainer/MarginContainer2/HBoxContainer"]
+[node name="ProceedButton" type="Button" parent="ResetDataPopup/PanelContainer/VBoxContainer/MarginContainer2/HBoxContainer" unique_id=1650234739]
 layout_mode = 2
 text = "Proceed"
 

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Biome" load_steps=24 format=3 uid="uid://dvre55q8d3y0b"]
+[gd_resource type="Resource" script_class="Biome" format=3 uid="uid://dvre55q8d3y0b"]
 
 [ext_resource type="Script" uid="uid://bprtko2ut7gy0" path="res://Game/Utilities/Weighted/WeightedFish.cs" id="1_h6x5b"]
 [ext_resource type="Texture2D" uid="uid://b3xmgqijoo4cg" path="res://Game/Assets/Biomes/GreatBlue/GreatBlueBackground.png" id="1_n54uy"]

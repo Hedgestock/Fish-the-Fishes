@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://jdvp2d8dcy53"]
+[gd_scene format=3 uid="uid://jdvp2d8dcy53"]
 
 [ext_resource type="Script" uid="uid://djsaaoxieoacr" path="res://Game/Scenes/Equipment/Equipment.cs" id="1_vd6ao"]
 [ext_resource type="PackedScene" uid="uid://ifoga56i10w3" path="res://Game/Assets/RandomTimer.tscn" id="2_8vpwh"]
@@ -16,7 +16,7 @@ action = &"menu_go_back"
 [sub_resource type="Shortcut" id="Shortcut_y2krb"]
 events = [SubResource("InputEventAction_qkuki")]
 
-[node name="Equipment" type="CanvasLayer" node_paths=PackedStringArray("GameContainer", "FishingLine", "PlaceHolder", "DescriptionContainer", "EquipmentName", "EquipmentDescription", "EquipButton", "Menu")]
+[node name="Equipment" type="CanvasLayer" unique_id=1210319504 node_paths=PackedStringArray("GameContainer", "FishingLine", "PlaceHolder", "DescriptionContainer", "EquipmentName", "EquipmentDescription", "EquipButton", "Menu")]
 script = ExtResource("1_vd6ao")
 GameContainer = NodePath("GameContainer")
 FishingLine = NodePath("GameContainer/FishingLine")
@@ -28,18 +28,18 @@ EquipButton = NodePath("VBoxContainer/EquipmentDescriptionContainer/PanelContain
 Menu = NodePath("VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/MenuBoard")
 EquipmentUITemplate = ExtResource("2_53287")
 
-[node name="Background" parent="." instance=ExtResource("3_t0lio")]
+[node name="Background" parent="." unique_id=1540822220 instance=ExtResource("3_t0lio")]
 offset_top = -360.0
 offset_bottom = 360.0
 
-[node name="FishTimer" parent="." instance=ExtResource("2_8vpwh")]
+[node name="FishTimer" parent="." unique_id=1280780732 instance=ExtResource("2_8vpwh")]
 autostart = true
 
-[node name="GameContainer" type="Node" parent="."]
+[node name="GameContainer" type="Node" parent="." unique_id=520944752]
 
-[node name="FishingLine" parent="GameContainer" instance=ExtResource("2_au0c2")]
+[node name="FishingLine" parent="GameContainer" unique_id=1360544996 instance=ExtResource("2_au0c2")]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=322947129]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -48,45 +48,45 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer"]
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer" unique_id=942246691]
 layout_mode = 2
 
-[node name="BackButton" parent="VBoxContainer/MarginContainer3" instance=ExtResource("6_li6qf")]
+[node name="BackButton" parent="VBoxContainer/MarginContainer3" unique_id=353852873 instance=ExtResource("6_li6qf")]
 layout_mode = 2
 
-[node name="Placeholder" type="Control" parent="VBoxContainer"]
+[node name="Placeholder" type="Control" parent="VBoxContainer" unique_id=1944808784]
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 2
 
-[node name="EquipmentDescriptionContainer" type="MarginContainer" parent="VBoxContainer"]
+[node name="EquipmentDescriptionContainer" type="MarginContainer" parent="VBoxContainer" unique_id=597825576]
 visible = false
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/EquipmentDescriptionContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/EquipmentDescriptionContainer" unique_id=1117253567]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/EquipmentDescriptionContainer/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/EquipmentDescriptionContainer/PanelContainer" unique_id=1891917166]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/EquipmentDescriptionContainer/PanelContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/EquipmentDescriptionContainer/PanelContainer/MarginContainer" unique_id=1855002624]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HFlowContainer" parent="VBoxContainer/EquipmentDescriptionContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HFlowContainer" parent="VBoxContainer/EquipmentDescriptionContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1365247947]
 layout_mode = 2
 
-[node name="EquipmentName" type="Label" parent="VBoxContainer/EquipmentDescriptionContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="EquipmentName" type="Label" parent="VBoxContainer/EquipmentDescriptionContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=238659842]
 layout_mode = 2
 size_flags_horizontal = 0
 text = "???"
 
-[node name="EquipButton" type="Button" parent="VBoxContainer/EquipmentDescriptionContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="EquipButton" type="Button" parent="VBoxContainer/EquipmentDescriptionContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1760286748]
 layout_mode = 2
 size_flags_horizontal = 0
 text = "Equip"
 
-[node name="HideButton" type="TextureButton" parent="VBoxContainer/EquipmentDescriptionContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="HideButton" type="TextureButton" parent="VBoxContainer/EquipmentDescriptionContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=534144731]
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 4
@@ -98,35 +98,35 @@ texture_pressed = ExtResource("8_rjg8l")
 texture_hover = ExtResource("9_om5ev")
 stretch_mode = 0
 
-[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/EquipmentDescriptionContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/EquipmentDescriptionContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=49510054]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/EquipmentDescriptionContainer/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/EquipmentDescriptionContainer/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer" unique_id=1218884447]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="EquipmentDescription" type="Label" parent="VBoxContainer/EquipmentDescriptionContainer/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/MarginContainer"]
+[node name="EquipmentDescription" type="Label" parent="VBoxContainer/EquipmentDescriptionContainer/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/MarginContainer" unique_id=1727653046]
 layout_mode = 2
 size_flags_vertical = 0
 text = "Not unlocked yet"
 autowrap_mode = 3
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1639800582]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 text = "Equipment"
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" unique_id=624582422]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Panel" type="Panel" parent="VBoxContainer/MarginContainer"]
+[node name="Panel" type="Panel" parent="VBoxContainer/MarginContainer" unique_id=249417322]
 layout_mode = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer/Panel"]
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer/Panel" unique_id=880554286]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -135,12 +135,12 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer" unique_id=2022068405]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="MenuBoard" type="VBoxContainer" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer"]
+[node name="MenuBoard" type="VBoxContainer" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer" unique_id=1998083710]
 layout_mode = 2
 
 [connection signal="timeout" from="FishTimer" to="." method="SpawnFish"]

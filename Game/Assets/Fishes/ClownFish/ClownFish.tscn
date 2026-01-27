@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cw84k8wml5icn"]
+[gd_scene format=3 uid="uid://cw84k8wml5icn"]
 
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_sc6li"]
 [ext_resource type="SpriteFrames" uid="uid://kxtjwbw4m0xa" path="res://Game/Assets/Fishes/ClownFish/Animation/ClownFishAnimation.tres" id="2_6a7gd"]
@@ -8,23 +8,23 @@
 radius = 24.0
 height = 96.0
 
-[node name="ClownFish" instance=ExtResource("1_sc6li")]
+[node name="ClownFish" unique_id=1718916815 instance=ExtResource("1_sc6li")]
 script = ExtResource("2_tg0eg")
 CompendiumName = "Clown Fish"
 CompendiumDescription = "It does not sound as funny as its name lets us believe."
 AverageSize = 23.75
 
-[node name="VisibleOnScreenNotifier2D" parent="." index="0"]
+[node name="VisibleOnScreenNotifier2D" parent="." index="0" unique_id=1780839485]
 position = Vector2(1.5, 7.45058e-07)
 scale = Vector2(5.15, 3.1)
 
-[node name="AnimatedSprite2D" parent="." index="1"]
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=58809509]
 position = Vector2(1, 0)
 scale = Vector2(0.98, 1)
 sprite_frames = ExtResource("2_6a7gd")
 animation = &"alive"
 
-[node name="HurtBox" parent="." index="2"]
+[node name="HurtBox" parent="." index="2" unique_id=1269771636]
 position = Vector2(2, 0)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_tg0eg")

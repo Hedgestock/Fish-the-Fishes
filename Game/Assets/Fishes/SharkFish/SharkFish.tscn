@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dbp5wtcfp4yv5"]
+[gd_scene format=3 uid="uid://dbp5wtcfp4yv5"]
 
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_0ee32"]
 [ext_resource type="Script" uid="uid://c16knpal1qn53" path="res://Game/Assets/Fishes/SharkFish/SharkFish.cs" id="2_3d5gd"]
@@ -14,7 +14,7 @@ height = 532.0
 radius = 31.0
 height = 166.0
 
-[node name="SharkFish" node_paths=PackedStringArray("HitBox", "Bubbles") instance=ExtResource("1_0ee32")]
+[node name="SharkFish" unique_id=410085391 node_paths=PackedStringArray("HitBox", "Bubbles") instance=ExtResource("1_0ee32")]
 script = ExtResource("2_3d5gd")
 CantFlee = Array[int]([10, 3, 5, 8, 9, 7, 19, 20, 21, 22, 23])
 Blood = ExtResource("6_mxp71")
@@ -29,33 +29,33 @@ MaxSpeed = 2500.0
 TajectoryDeviation = 1.0
 AverageSize = 153.75
 
-[node name="VisibleOnScreenNotifier2D" parent="." index="0"]
+[node name="VisibleOnScreenNotifier2D" parent="." index="0" unique_id=1780839485]
 position = Vector2(-18, 0)
 scale = Vector2(33, 13)
 
-[node name="AnimatedSprite2D" parent="." index="1"]
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=58809509]
 sprite_frames = ExtResource("3_rhaxs")
 animation = &"alive"
 
-[node name="HurtBox" parent="." index="2"]
+[node name="HurtBox" parent="." index="2" unique_id=1269771636]
 position = Vector2(-18, 13)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_jdtfq")
 
-[node name="HitBox" type="Area2D" parent="." index="4" groups=["Hitboxes"]]
+[node name="HitBox" type="Area2D" parent="." index="4" unique_id=180333955 groups=["Hitboxes"]]
 position = Vector2(223, 19)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" index="0" unique_id=2071725646]
 rotation = 0.191986
 shape = SubResource("CapsuleShape2D_n0n4s")
 disabled = true
 debug_color = Color(1, 0, 0, 0.419608)
 
-[node name="BubblesRemoteTransform" type="RemoteTransform2D" parent="." index="5"]
+[node name="BubblesRemoteTransform" type="RemoteTransform2D" parent="." index="5" unique_id=1636869411]
 position = Vector2(-242, 19)
 remote_path = NodePath("../Bubbles")
 
-[node name="Bubbles" parent="." index="6" instance=ExtResource("5_5ikqo")]
+[node name="Bubbles" parent="." index="6" unique_id=930225781 instance=ExtResource("5_5ikqo")]
 position = Vector2(-242, 19)
 emitting = false
 

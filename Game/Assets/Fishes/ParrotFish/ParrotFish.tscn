@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bqmsa0kqy76gw"]
+[gd_scene format=3 uid="uid://bqmsa0kqy76gw"]
 
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_78x8d"]
 [ext_resource type="Script" uid="uid://cp1iu4iajmib2" path="res://Game/Assets/Fishes/ParrotFish/ParrotFish.cs" id="2_260lm"]
@@ -10,7 +10,7 @@ height = 230.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_78x8d"]
 
-[node name="ParrotFish" node_paths=PackedStringArray("HitBox") instance=ExtResource("1_78x8d")]
+[node name="ParrotFish" unique_id=857686724 node_paths=PackedStringArray("HitBox") instance=ExtResource("1_78x8d")]
 script = ExtResource("2_260lm")
 FoodTypes = Array[int]([10])
 HitBox = NodePath("HitBox/CollisionShape2D")
@@ -20,22 +20,22 @@ MinSpeed = 250.0
 MaxSpeed = 300.0
 AverageSize = 57.5
 
-[node name="VisibleOnScreenNotifier2D" parent="." index="0"]
+[node name="VisibleOnScreenNotifier2D" parent="." index="0" unique_id=1780839485]
 position = Vector2(-1.99999, -1.5)
 scale = Vector2(11.9, 5.15)
 
-[node name="AnimatedSprite2D" parent="." index="1"]
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=58809509]
 sprite_frames = ExtResource("3_uym21")
 animation = &"alive"
 
-[node name="HurtBox" parent="." index="2"]
+[node name="HurtBox" parent="." index="2" unique_id=1269771636]
 position = Vector2(0, -5)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_ctkeo")
 
-[node name="HitBox" type="Area2D" parent="." index="4" groups=["Hitboxes"]]
+[node name="HitBox" type="Area2D" parent="." index="4" unique_id=1432466874 groups=["Hitboxes"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" index="0" unique_id=643921866]
 position = Vector2(105, -2)
 shape = SubResource("CircleShape2D_78x8d")
 debug_color = Color(1, 0, 0, 0.419608)

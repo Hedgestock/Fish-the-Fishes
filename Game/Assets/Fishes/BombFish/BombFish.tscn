@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://514pdtjx8yd0"]
+[gd_scene format=3 uid="uid://514pdtjx8yd0"]
 
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_qt5lc"]
 [ext_resource type="Script" uid="uid://y3m5ejfd6iv" path="res://Game/Assets/Fishes/BombFish/BombFish.cs" id="2_kvoxu"]
@@ -88,37 +88,37 @@ radius = 52.03845
 [sub_resource type="CircleShape2D" id="CircleShape2D_wex35"]
 radius = 500.004
 
-[node name="BombFish" node_paths=PackedStringArray("Explosion", "ExplosionArea") instance=ExtResource("1_qt5lc")]
+[node name="BombFish" unique_id=1258476321 node_paths=PackedStringArray("Explosion", "ExplosionArea") instance=ExtResource("1_qt5lc")]
 script = ExtResource("2_kvoxu")
 Explosion = NodePath("ExplosionSprite")
 ExplosionArea = NodePath("ExplosionArea")
 CompendiumName = "Bomb Fish"
 CompendiumDescription = ""
 
-[node name="VisibleOnScreenNotifier2D" parent="." index="0"]
+[node name="VisibleOnScreenNotifier2D" parent="." index="0" unique_id=1780839485]
 position = Vector2(-69, 0)
 scale = Vector2(15, 7)
 
-[node name="AnimatedSprite2D" parent="." index="1"]
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=58809509]
 position = Vector2(-69, 0)
 sprite_frames = ExtResource("2_wbnha")
 animation = &"alive"
 
-[node name="ExplosionSprite" type="AnimatedSprite2D" parent="." index="2"]
+[node name="ExplosionSprite" type="AnimatedSprite2D" parent="." index="2" unique_id=1151884442]
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_8wsnm")
 frame = 10
 frame_progress = 1.0
 
-[node name="HurtBox" parent="." index="3"]
+[node name="HurtBox" parent="." index="3" unique_id=1269771636]
 position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_kvoxu")
 
-[node name="AudioStreamPlayer" parent="." index="4"]
+[node name="AudioStreamPlayer" parent="." index="4" unique_id=1927118382]
 position = Vector2(-69, 0)
 
-[node name="ExplosionArea" type="Area2D" parent="." index="5"]
+[node name="ExplosionArea" type="Area2D" parent="." index="5" unique_id=572310998]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ExplosionArea" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExplosionArea" index="0" unique_id=2086953334]
 shape = SubResource("CircleShape2D_wex35")
 debug_color = Color(1, 0.64685506, 0, 0.3)

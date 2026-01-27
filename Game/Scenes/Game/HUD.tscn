@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://yi82g384vgwb"]
+[gd_scene format=3 uid="uid://yi82g384vgwb"]
 
 [ext_resource type="Script" uid="uid://dsu5w3o51mu13" path="res://Game/Scenes/Game/HUD.cs" id="1_6mcuw"]
 [ext_resource type="FontFile" uid="uid://bfbfdje68lt7w" path="res://Game/Themes/fonts/Amatic-Bold.ttf" id="1_tvh2u"]
@@ -8,7 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://cpcouodm444js" path="res://Game/Audio/SFX/JingleLose.ogg" id="4_ae21k"]
 [ext_resource type="SpriteFrames" uid="uid://dtab4ysdktcpe" path="res://Game/Scenes/Game/Animation/ClassicLifeAnimation.tres" id="8_ixkn7"]
 
-[node name="HUD" type="CanvasLayer" node_paths=PackedStringArray("ScoreLabel", "ScoreChangeLabel", "TimeLabel", "GameTimer", "LivesContainer", "Target")]
+[node name="HUD" type="CanvasLayer" unique_id=262492646 node_paths=PackedStringArray("ScoreLabel", "ScoreChangeLabel", "TimeLabel", "GameTimer", "LivesContainer", "Target")]
 layer = 2
 script = ExtResource("1_6mcuw")
 ScoreLabel = NodePath("MarginContainer/HBoxContainer/Score")
@@ -21,7 +21,7 @@ ScoreUp = ExtResource("2_6lsm5")
 ScoreDown = ExtResource("3_ta1pc")
 LoseGame = ExtResource("4_ae21k")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=132774611]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -31,27 +31,27 @@ mouse_filter = 2
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_right = 50
 
-[node name="GameTimer" type="Timer" parent="MarginContainer"]
+[node name="GameTimer" type="Timer" parent="MarginContainer" unique_id=1014597710]
 wait_time = 60.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1602092782]
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="Score" type="Label" parent="MarginContainer/HBoxContainer"]
+[node name="Score" type="Label" parent="MarginContainer/HBoxContainer" unique_id=1150177154]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_fonts/font = ExtResource("1_tvh2u")
 text = "0"
 
-[node name="ScoreChange" type="Label" parent="MarginContainer/HBoxContainer"]
+[node name="ScoreChange" type="Label" parent="MarginContainer/HBoxContainer" unique_id=1721562607]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 text = "+0"
 
-[node name="Time" type="Label" parent="MarginContainer/HBoxContainer"]
+[node name="Time" type="Label" parent="MarginContainer/HBoxContainer" unique_id=1472239141]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 3
@@ -59,14 +59,14 @@ size_flags_vertical = 0
 text = "0"
 horizontal_alignment = 2
 
-[node name="Lives" type="HBoxContainer" parent="MarginContainer/HBoxContainer"]
+[node name="Lives" type="HBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=909957564]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 alignment = 2
 
-[node name="Life1" parent="MarginContainer/HBoxContainer/Lives" instance=ExtResource("4_38r4v")]
+[node name="Life1" parent="MarginContainer/HBoxContainer/Lives" unique_id=1632644861 instance=ExtResource("4_38r4v")]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
@@ -76,7 +76,7 @@ alignment = 1
 sprite_frames = ExtResource("8_ixkn7")
 animation = &"life"
 
-[node name="Life2" parent="MarginContainer/HBoxContainer/Lives" instance=ExtResource("4_38r4v")]
+[node name="Life2" parent="MarginContainer/HBoxContainer/Lives" unique_id=1596832205 instance=ExtResource("4_38r4v")]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
@@ -85,7 +85,7 @@ size_flags_vertical = 4
 sprite_frames = ExtResource("8_ixkn7")
 animation = &"life"
 
-[node name="Life3" parent="MarginContainer/HBoxContainer/Lives" instance=ExtResource("4_38r4v")]
+[node name="Life3" parent="MarginContainer/HBoxContainer/Lives" unique_id=1945821864 instance=ExtResource("4_38r4v")]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
@@ -95,12 +95,12 @@ alignment = 1
 sprite_frames = ExtResource("8_ixkn7")
 animation = &"life"
 
-[node name="Control" type="Control" parent="MarginContainer/HBoxContainer"]
+[node name="Control" type="Control" parent="MarginContainer/HBoxContainer" unique_id=1959811110]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Target" parent="MarginContainer/HBoxContainer/Control" instance=ExtResource("4_38r4v")]
+[node name="Target" parent="MarginContainer/HBoxContainer/Control" unique_id=945662291 instance=ExtResource("4_38r4v")]
 modulate = Color(1, 1, 1, 0.498039)
 layout_mode = 1
 anchors_preset = 1

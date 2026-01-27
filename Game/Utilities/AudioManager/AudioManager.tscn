@@ -1,22 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://dolcghep0mxf3"]
+[gd_scene format=3 uid="uid://dolcghep0mxf3"]
 
 [ext_resource type="Script" uid="uid://bju77ragxiv5" path="res://Game/Utilities/AudioManager/AudioManager.cs" id="1_enk5s"]
 [ext_resource type="AudioStream" uid="uid://b84474ttmp1x6" path="res://Game/Audio/Ambiance/Ambiance.ogg" id="2_uir8q"]
 
-[node name="AudioManager" type="Node" node_paths=PackedStringArray("UISounds", "Ambiance", "Music")]
+[node name="AudioManager" type="Node" unique_id=2144572789 node_paths=PackedStringArray("UISounds", "Ambiance", "Music")]
 script = ExtResource("1_enk5s")
 UISounds = NodePath("UISounds")
 Ambiance = NodePath("Ambiance")
 Music = NodePath("Music")
 
-[node name="UISounds" type="AudioStreamPlayer" parent="."]
+[node name="UISounds" type="AudioStreamPlayer" parent="." unique_id=445827868]
 max_polyphony = 16
 bus = &"SFX"
 
-[node name="Ambiance" type="AudioStreamPlayer" parent="."]
+[node name="Ambiance" type="AudioStreamPlayer" parent="." unique_id=52405621]
 stream = ExtResource("2_uir8q")
 autoplay = true
 bus = &"Ambiance"
 
-[node name="Music" type="AudioStreamPlayer" parent="."]
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1803543142]
 bus = &"Music"

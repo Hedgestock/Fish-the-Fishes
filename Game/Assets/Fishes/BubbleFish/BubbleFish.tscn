@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b127qcercspv5"]
+[gd_scene format=3 uid="uid://b127qcercspv5"]
 
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_k4nip"]
 [ext_resource type="Script" uid="uid://bj4w683nltxo7" path="res://Game/Assets/Fishes/BubbleFish/BubbleFish.cs" id="2_2bl1u"]
@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2bl1u"]
 size = Vector2(126, 107)
 
-[node name="BubbleFish" instance=ExtResource("1_k4nip")]
+[node name="BubbleFish" unique_id=1870731355 instance=ExtResource("1_k4nip")]
 script = ExtResource("2_2bl1u")
 CompendiumName = "Bubble Fish"
 CompendiumDescription = "This colorful fish is somehow really attracted by bubbles."
@@ -15,13 +15,13 @@ MinSpeed = 100.0
 MaxSpeed = 200.0
 AverageSize = 47.0
 
-[node name="VisibleOnScreenNotifier2D" parent="." index="0"]
+[node name="VisibleOnScreenNotifier2D" parent="." index="0" unique_id=1780839485]
 scale = Vector2(10, 7)
 
-[node name="AnimatedSprite2D" parent="." index="1"]
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=58809509]
 sprite_frames = ExtResource("3_r7usy")
 animation = &"alive"
 
-[node name="HurtBox" parent="." index="2"]
+[node name="HurtBox" parent="." index="2" unique_id=1269771636]
 position = Vector2(-10, -8.5)
 shape = SubResource("RectangleShape2D_2bl1u")

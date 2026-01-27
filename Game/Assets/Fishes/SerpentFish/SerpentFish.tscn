@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bcvq4yujb5igf"]
+[gd_scene format=3 uid="uid://bcvq4yujb5igf"]
 
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_32uni"]
 [ext_resource type="Script" uid="uid://xcsesbulx310" path="res://Game/Assets/Fishes/SerpentFish/SerpentFish.cs" id="2_ujnj7"]
@@ -16,7 +16,7 @@ point_count = 3
 [sub_resource type="CircleShape2D" id="CircleShape2D_8auy8"]
 radius = 30.0
 
-[node name="SerpentFish" node_paths=PackedStringArray("Body") instance=ExtResource("1_32uni")]
+[node name="SerpentFish" unique_id=2046153723 node_paths=PackedStringArray("Body") instance=ExtResource("1_32uni")]
 script = ExtResource("2_ujnj7")
 Body = NodePath("Line2D")
 AmplitudeCurve = SubResource("Curve_xo0c7")
@@ -26,7 +26,7 @@ Value = 2.0
 AverageSize = 125.0
 SizeDeviation = 0.2
 
-[node name="Line2D" type="Line2D" parent="." index="0"]
+[node name="Line2D" type="Line2D" parent="." index="0" unique_id=1620087815]
 points = PackedVector2Array(0, 0, -50, 0, -100, 0, -150, 0, -200, 0, -250, 0, -300, 0, -350, 0.39, -400, 0, -450, 0, -500, 0)
 width = 60.0
 width_curve = SubResource("Curve_btsbg")
@@ -36,16 +36,16 @@ joint_mode = 2
 begin_cap_mode = 2
 end_cap_mode = 2
 
-[node name="VisibleOnScreenNotifier2D" parent="." index="1"]
+[node name="VisibleOnScreenNotifier2D" parent="." index="1" unique_id=1780839485]
 position = Vector2(-224, 0)
 scale = Vector2(30, 15)
 
-[node name="AnimatedSprite2D" parent="." index="2"]
+[node name="AnimatedSprite2D" parent="." index="2" unique_id=58809509]
 position = Vector2(25, 1)
 sprite_frames = ExtResource("3_1g1s3")
 animation = &"alive"
 
-[node name="HurtBox" parent="." index="3"]
+[node name="HurtBox" parent="." index="3" unique_id=1269771636]
 position = Vector2(25, 1)
 rotation = 1.5708
 shape = SubResource("CircleShape2D_8auy8")

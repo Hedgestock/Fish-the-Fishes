@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://6520w7uakc1q"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://6520w7uakc1q"]
 
 [ext_resource type="Texture2D" uid="uid://73rgpry4gq1f" path="res://Game/Assets/Fishes/SharkFish/Animation/shark_alive_1.png" id="1_5qnaq"]
 [ext_resource type="Texture2D" uid="uid://5m45cbqmkbet" path="res://Game/Assets/Fishes/SharkFish/Animation/shark_alive_2.png" id="2_ajg0c"]

@@ -1,13 +1,10 @@
-[gd_resource type="Resource" script_class="PlayedXGames" load_steps=2 format=3 uid="uid://cokyudfgq6c0y"]
+[gd_resource type="Resource" script_class="PlayedXGames" format=3 uid="uid://cokyudfgq6c0y"]
 
 [ext_resource type="Script" uid="uid://bln4fmjg4mamo" path="res://Game/Assets/Achievements/DoneXTimes/PlayedXGames/PlayedXGames.cs" id="1_mpoer"]
 
 [resource]
 script = ExtResource("1_mpoer")
 Threshold = 1
-Category = 0
 Mode = 4
-UnlockableName = ""
-UnlockableType = 0
 CompendiumName = "Sport Fishing"
 CompendiumDescription = "Did you get the fish you expected?"

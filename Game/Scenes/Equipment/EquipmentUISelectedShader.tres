@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bcg4hkkxm8epo"]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bcg4hkkxm8epo"]
 
 [ext_resource type="Shader" uid="uid://73nb2edojvg7" path="res://Game/Scenes/Equipment/outline.gdshader" id="1_01ms1"]
 

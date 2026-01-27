@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dsv67b7l0uq40"]
+[gd_scene format=3 uid="uid://dsv67b7l0uq40"]
 
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_8tk53"]
 [ext_resource type="SpriteFrames" uid="uid://dxpxq818n4txw" path="res://Game/Assets/Fishes/GreenFish/Animation/GreenFishAnimation.tres" id="2_50e46"]
@@ -8,7 +8,7 @@
 radius = 34.0
 height = 100.0
 
-[node name="GreenFish" instance=ExtResource("1_8tk53")]
+[node name="GreenFish" unique_id=1782204829 instance=ExtResource("1_8tk53")]
 script = ExtResource("2_v3fog")
 CompendiumName = "Green Fish"
 CompendiumDescription = "Pretty common species of fish found seemingly everywhere."
@@ -16,16 +16,16 @@ MaxSpeed = 200.0
 SpawnRange = Vector2(0.2, 0.8)
 AverageSize = 32.5
 
-[node name="VisibleOnScreenNotifier2D" parent="." index="0"]
+[node name="VisibleOnScreenNotifier2D" parent="." index="0" unique_id=1780839485]
 position = Vector2(6.07967e-06, 1.00001)
 scale = Vector2(6.6, 5)
 
-[node name="AnimatedSprite2D" parent="." index="1"]
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=58809509]
 sprite_frames = ExtResource("2_50e46")
 animation = &"alive"
 frame_progress = 0.735181
 
-[node name="HurtBox" parent="." index="2"]
+[node name="HurtBox" parent="." index="2" unique_id=1269771636]
 position = Vector2(-5, 0)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_nhaen")

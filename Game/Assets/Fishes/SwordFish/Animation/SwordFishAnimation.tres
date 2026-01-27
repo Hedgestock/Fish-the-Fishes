@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=25 format=3 uid="uid://cyv8fnlha8eri"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://cyv8fnlha8eri"]
 
 [ext_resource type="Texture2D" uid="uid://ddmab508xlbtg" path="res://Game/Assets/Fishes/SwordFish/Animation/swordfish_alive_1.png" id="1_76oxb"]
 [ext_resource type="Texture2D" uid="uid://clp2u6ep7ey1i" path="res://Game/Assets/Fishes/SwordFish/Animation/swordfish_dead.png" id="2_0iyiy"]

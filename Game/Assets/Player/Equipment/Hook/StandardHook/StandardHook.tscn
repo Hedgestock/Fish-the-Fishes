@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://caai7o1q2a1n0"]
+[gd_scene format=3 uid="uid://caai7o1q2a1n0"]
 
 [ext_resource type="Texture2D" uid="uid://dee8677kcqnft" path="res://Game/Assets/Player/Equipment/Hook/StandardHook/StandardHook_broken.png" id="1_hhlor"]
 [ext_resource type="Texture2D" uid="uid://qjdujjo8m4n" path="res://Game/Assets/Player/Equipment/Hook/StandardHook/StandardHook_default.png" id="2_okh3i"]
@@ -33,7 +33,7 @@ height = 114.0
 radius = 39.0
 height = 92.0
 
-[node name="Hook" type="AnimatedSprite2D"]
+[node name="Hook" type="AnimatedSprite2D" unique_id=1910944965]
 position = Vector2(-78, -15)
 sprite_frames = SubResource("SpriteFrames_e7146")
 centered = false
@@ -42,19 +42,19 @@ AimOffset = 145
 EquipmentName = "Standard Hook"
 EquipmentDescription = "Standard fishing hook, good for all purpose fishing."
 
-[node name="FishBox" type="Area2D" parent="."]
+[node name="FishBox" type="Area2D" parent="." unique_id=1707825125]
 position = Vector2(82, 155)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FishBox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FishBox" unique_id=2087280751]
 material = SubResource("CanvasItemMaterial_p8im8")
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_61v6c")
 disabled = true
 
-[node name="HitBox" type="Area2D" parent="." groups=["Hitboxes"]]
+[node name="HitBox" type="Area2D" parent="." unique_id=1395526105 groups=["Hitboxes"]]
 position = Vector2(83, 145)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=931866860]
 material = SubResource("CanvasItemMaterial_p8im8")
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_p516e")

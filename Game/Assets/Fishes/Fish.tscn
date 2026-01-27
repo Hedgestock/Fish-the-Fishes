@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://mpb5fpciv02u"]
+[gd_scene format=3 uid="uid://mpb5fpciv02u"]
 
 [ext_resource type="Script" uid="uid://ky7k8nk7np7f" path="res://Game/Assets/Fishes/Fish.cs" id="1_y6aq3"]
 
-[node name="Fish" type="CharacterBody2D" node_paths=PackedStringArray("Sprite", "Sound", "VisibleOnScreenNotifier") groups=["Fishes"]]
+[node name="Fish" type="CharacterBody2D" unique_id=1297093968 node_paths=PackedStringArray("Sprite", "Sound", "VisibleOnScreenNotifier") groups=["Fishes"]]
 collision_mask = 0
 motion_mode = 1
 floor_stop_on_slope = false
@@ -16,13 +16,13 @@ CompendiumName = "Fish"
 CompendiumDescription = "This is a fish"
 AverageSize = 50.0
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1780839485]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=58809509]
 
-[node name="HurtBox" type="CollisionShape2D" parent="." groups=["Hurtboxes"]]
+[node name="HurtBox" type="CollisionShape2D" parent="." unique_id=1269771636 groups=["Hurtboxes"]]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1927118382]
 bus = &"Fishes"
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="Despawn"]

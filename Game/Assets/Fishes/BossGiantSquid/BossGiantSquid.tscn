@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dndtj2avudhph"]
+[gd_scene format=3 uid="uid://dndtj2avudhph"]
 
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_p0x88"]
 [ext_resource type="Script" uid="uid://c1haqaugu6cqi" path="res://Game/Assets/Fishes/BossGiantSquid/BossGiantSquid.cs" id="2_10rc6"]
@@ -15,7 +15,7 @@ point_count = 5
 radius = 115.0
 height = 676.0
 
-[node name="BossGiantSquid" instance=ExtResource("1_p0x88")]
+[node name="BossGiantSquid" unique_id=1397075422 instance=ExtResource("1_p0x88")]
 script = ExtResource("2_10rc6")
 MaxPasses = 5
 MinPasses = 3
@@ -31,31 +31,31 @@ SpawnRange = Vector2(0.5, 0.9)
 AverageSize = 700.0
 SizeDeviation = 0.3
 
-[node name="BossGiantSquidTentacle" parent="." index="0" instance=ExtResource("3_8rpoo")]
+[node name="BossGiantSquidTentacle" parent="." index="0" unique_id=1693619023 instance=ExtResource("3_8rpoo")]
 position = Vector2(-325, -77)
 
-[node name="BossGiantSquidTentacle2" parent="." index="1" instance=ExtResource("3_8rpoo")]
+[node name="BossGiantSquidTentacle2" parent="." index="1" unique_id=878431707 instance=ExtResource("3_8rpoo")]
 position = Vector2(-325, -55)
 
-[node name="BossGiantSquidTentacle3" parent="." index="2" instance=ExtResource("3_8rpoo")]
+[node name="BossGiantSquidTentacle3" parent="." index="2" unique_id=402170087 instance=ExtResource("3_8rpoo")]
 position = Vector2(-325, -33)
 
-[node name="BossGiantSquidTentacle4" parent="." index="3" instance=ExtResource("3_8rpoo")]
+[node name="BossGiantSquidTentacle4" parent="." index="3" unique_id=52204215 instance=ExtResource("3_8rpoo")]
 position = Vector2(-325, -11)
 
-[node name="BossGiantSquidTentacle5" parent="." index="4" instance=ExtResource("3_8rpoo")]
+[node name="BossGiantSquidTentacle5" parent="." index="4" unique_id=1519114557 instance=ExtResource("3_8rpoo")]
 position = Vector2(-325, 11)
 
-[node name="BossGiantSquidTentacle6" parent="." index="5" instance=ExtResource("3_8rpoo")]
+[node name="BossGiantSquidTentacle6" parent="." index="5" unique_id=259599788 instance=ExtResource("3_8rpoo")]
 position = Vector2(-325, 33)
 
-[node name="BossGiantSquidTentacle7" parent="." index="6" instance=ExtResource("3_8rpoo")]
+[node name="BossGiantSquidTentacle7" parent="." index="6" unique_id=851870733 instance=ExtResource("3_8rpoo")]
 position = Vector2(-325, 55)
 
-[node name="BossGiantSquidTentacle8" parent="." index="7" instance=ExtResource("3_8rpoo")]
+[node name="BossGiantSquidTentacle8" parent="." index="7" unique_id=972180531 instance=ExtResource("3_8rpoo")]
 position = Vector2(-325, 77)
 
-[node name="Arm1" parent="." index="8" instance=ExtResource("3_8rpoo")]
+[node name="Arm1" parent="." index="8" unique_id=2052306665 instance=ExtResource("3_8rpoo")]
 position = Vector2(-325, -35)
 AmplitudeCurve = SubResource("Curve_8rpoo")
 WaveAmplitude = 40
@@ -64,7 +64,7 @@ WaveAmplitude = 40
 points = PackedVector2Array(0, 0, -1200, 0)
 texture = ExtResource("4_ln052")
 
-[node name="Arm2" parent="." index="9" instance=ExtResource("3_8rpoo")]
+[node name="Arm2" parent="." index="9" unique_id=1988113460 instance=ExtResource("3_8rpoo")]
 position = Vector2(-325, 35)
 AmplitudeCurve = SubResource("Curve_8rpoo")
 WaveAmplitude = 40
@@ -73,23 +73,23 @@ WaveAmplitude = 40
 points = PackedVector2Array(0, 0, -1200, 0)
 texture = ExtResource("4_ln052")
 
-[node name="VisibleOnScreenNotifier2D" parent="." index="10"]
+[node name="VisibleOnScreenNotifier2D" parent="." index="10" unique_id=1780839485]
 position = Vector2(-590.99994, 0)
 scale = Vector2(100, 30)
 
-[node name="AnimatedSprite2D" parent="." index="11"]
+[node name="AnimatedSprite2D" parent="." index="11" unique_id=58809509]
 sprite_frames = ExtResource("3_uw8mj")
 animation = &"alive"
 
-[node name="HurtBox" parent="." index="12"]
+[node name="HurtBox" parent="." index="12" unique_id=1269771636]
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_10rc6")
 disabled = true
 
-[node name="BossGiantSquidEye1" parent="." index="14" instance=ExtResource("4_uw8mj")]
+[node name="BossGiantSquidEye1" parent="." index="14" unique_id=737984576 instance=ExtResource("4_uw8mj")]
 position = Vector2(-268, -116)
 
-[node name="BossGiantSquidEye2" parent="." index="15" instance=ExtResource("4_uw8mj")]
+[node name="BossGiantSquidEye2" parent="." index="15" unique_id=298685619 instance=ExtResource("4_uw8mj")]
 position = Vector2(-268, 107)
 scale = Vector2(1, -1)
 

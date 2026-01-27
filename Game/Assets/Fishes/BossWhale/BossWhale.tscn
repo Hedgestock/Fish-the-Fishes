@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://boa7mncaagpgp"]
+[gd_scene format=3 uid="uid://boa7mncaagpgp"]
 
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_snaee"]
 [ext_resource type="Script" uid="uid://bson8swbe80uu" path="res://Game/Assets/Fishes/BossWhale/BossWhale.cs" id="2_5kqeq"]
@@ -15,7 +15,7 @@ _data = {
 }
 point_count = 28
 
-[node name="BossWhale" node_paths=PackedStringArray("BarnaclePath") instance=ExtResource("1_snaee")]
+[node name="BossWhale" unique_id=435897324 node_paths=PackedStringArray("BarnaclePath") instance=ExtResource("1_snaee")]
 z_index = -1
 script = ExtResource("2_5kqeq")
 BarnacleScene = ExtResource("3_8jtwi")
@@ -34,27 +34,27 @@ SpawnRange = Vector2(0.45, 0.55)
 AverageSize = 2500.0
 SizeDeviation = 0.02
 
-[node name="VisibleOnScreenNotifier2D" parent="." index="0"]
+[node name="VisibleOnScreenNotifier2D" parent="." index="0" unique_id=1780839485]
 scale = Vector2(500, 150)
 
-[node name="AnimatedSprite2D" parent="." index="1"]
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=58809509]
 sprite_frames = ExtResource("2_dwf3w")
 animation = &"alive"
 
-[node name="HurtBox" parent="." index="2"]
+[node name="HurtBox" parent="." index="2" unique_id=1269771636]
 position = Vector2(44.000137, -79.00002)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_8jtwi")
 disabled = true
 
-[node name="AudioStreamPlayer" parent="." index="3"]
+[node name="AudioStreamPlayer" parent="." index="3" unique_id=1927118382]
 position = Vector2(4496, 171)
 stream = ExtResource("5_glwst")
 max_distance = 4096.0
 
-[node name="Path2D" type="Path2D" parent="." index="4"]
+[node name="Path2D" type="Path2D" parent="." index="4" unique_id=1078207300]
 curve = SubResource("Curve2D_glwst")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" index="0"]
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" index="0" unique_id=1282915129]
 position = Vector2(2269, 717)
 rotation = -2.977602

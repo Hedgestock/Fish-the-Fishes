@@ -1,11 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://bn4j1dckgh88u"]
+[gd_scene format=3 uid="uid://bn4j1dckgh88u"]
 
 [ext_resource type="PackedScene" uid="uid://0sb3i5bm7j4p" path="res://Game/Scenes/Game/Game.tscn" id="1_2q1to"]
 [ext_resource type="PackedScene" uid="uid://dfxhrdmj7km0i" path="res://Game/UI/BackButton/BackButton.tscn" id="3_xcukl"]
 
-[node name="Aquarium" type="Node"]
+[node name="Aquarium" type="Node" unique_id=1436542895]
 
-[node name="Game" parent="." instance=ExtResource("1_2q1to")]
+[node name="Game" parent="." unique_id=1180523809 instance=ExtResource("1_2q1to")]
 layer = -1
 
 [node name="HUD" parent="Game" index="1"]
@@ -14,13 +14,13 @@ visible = false
 [node name="PauseButton" parent="Game" index="7"]
 visible = false
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=279629244]
 offset_right = 100.0
 offset_bottom = 100.0
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 
-[node name="BackButton" parent="MarginContainer" instance=ExtResource("3_xcukl")]
+[node name="BackButton" parent="MarginContainer" unique_id=91450579 instance=ExtResource("3_xcukl")]
 layout_mode = 2
 
 [connection signal="pressed" from="MarginContainer/BackButton" to="MarginContainer/BackButton" method="GoBack"]

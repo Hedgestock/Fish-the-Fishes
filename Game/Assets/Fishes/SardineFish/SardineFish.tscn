@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c0df7a2ej0abq"]
+[gd_scene format=3 uid="uid://c0df7a2ej0abq"]
 
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_wxgi5"]
 [ext_resource type="Script" uid="uid://bot8k30fu6fb3" path="res://Game/Assets/Fishes/SardineFish/SardineFish.cs" id="2_kltwx"]
@@ -8,7 +8,7 @@
 radius = 11.0
 height = 86.0
 
-[node name="SardineFish" instance=ExtResource("1_wxgi5")]
+[node name="SardineFish" unique_id=1647331661 instance=ExtResource("1_wxgi5")]
 script = ExtResource("2_kltwx")
 shoalRadius = 40
 shoalSize = 6
@@ -17,15 +17,15 @@ CompendiumDescription = "This species usually form shoals that are a godsend for
 Value = 0.5
 AverageSize = 21.25
 
-[node name="VisibleOnScreenNotifier2D" parent="." index="0"]
+[node name="VisibleOnScreenNotifier2D" parent="." index="0" unique_id=1780839485]
 position = Vector2(-1.3113e-06, -0.5)
 scale = Vector2(4.5, 1.45)
 
-[node name="AnimatedSprite2D" parent="." index="1"]
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=58809509]
 sprite_frames = ExtResource("3_kidlv")
 animation = &"alive"
 frame_progress = 0.650529
 
-[node name="HurtBox" parent="." index="2"]
+[node name="HurtBox" parent="." index="2" unique_id=1269771636]
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_8sec2")

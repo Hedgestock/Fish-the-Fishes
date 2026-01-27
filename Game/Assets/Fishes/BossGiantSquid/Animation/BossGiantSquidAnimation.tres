@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://q7xal57gjeb6"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://q7xal57gjeb6"]
 
 [ext_resource type="Texture2D" uid="uid://bg4v11eg44xrn" path="res://Game/Assets/Fishes/BossGiantSquid/Animation/boss_giant_squid_alive_1.png" id="1_8q577"]
 [ext_resource type="Texture2D" uid="uid://dfhnxqg7b0a5r" path="res://Game/Assets/Fishes/BossGiantSquid/Animation/boss_giant_squid_alive_2.png" id="2_j8yhi"]

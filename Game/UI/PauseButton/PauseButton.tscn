@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://ceyknq2cha026"]
+[gd_scene format=3 uid="uid://ceyknq2cha026"]
 
 [ext_resource type="Texture2D" uid="uid://bqfldv7yo2y02" path="res://Game/UI/PauseButton/Pause.png" id="1_8c1x7"]
 [ext_resource type="Script" uid="uid://bnwcn2jyif221" path="res://Game/UI/PauseButton/PauseButton.cs" id="2_fli7m"]
 
-[node name="PauseButton" type="TextureButton"]
+[node name="PauseButton" type="TextureButton" unique_id=235189790]
 process_mode = 3
 anchors_preset = 2
 anchor_top = 1.0

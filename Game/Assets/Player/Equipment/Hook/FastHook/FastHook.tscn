@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dy1dv6tfxqajl"]
+[gd_scene format=3 uid="uid://dy1dv6tfxqajl"]
 
 [ext_resource type="Texture2D" uid="uid://dl7dxg3u7muqk" path="res://Game/Assets/Player/Equipment/Hook/FastHook/FastHook_broken.png" id="1_haf7i"]
 [ext_resource type="Texture2D" uid="uid://bm8si1gdsldf2" path="res://Game/Assets/Player/Equipment/Hook/FastHook/FastHook_default.png" id="2_yydt1"]
@@ -29,7 +29,7 @@ animations = [{
 radius = 33.0
 height = 66.0
 
-[node name="Hook" type="AnimatedSprite2D"]
+[node name="Hook" type="AnimatedSprite2D" unique_id=677052933]
 position = Vector2(-38, -118)
 sprite_frames = SubResource("SpriteFrames_e7146")
 centered = false
@@ -38,10 +38,10 @@ EquipmentName = "Standard Hook"
 SpeedMultiplierDown = 1.2
 SpeedMultiplierUp = 2.0
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=1479694377]
 position = Vector2(42, 67)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1438671236]
 material = SubResource("CanvasItemMaterial_p8im8")
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_61v6c")

@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://dxdjqi4fkfpfw"]
+[gd_scene format=3 uid="uid://dxdjqi4fkfpfw"]
 
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_kaxuj"]
 [ext_resource type="Script" uid="uid://cby6mc6hq6d8x" path="res://Game/Assets/Fishes/Boss.cs" id="2_n5rmh"]
 
-[node name="Boss" instance=ExtResource("1_kaxuj")]
+[node name="Boss" unique_id=971523596 instance=ExtResource("1_kaxuj")]
 script = ExtResource("2_n5rmh")
+MaxPasses = 5
+MinPasses = 3
+MaxWait = 12
+MinWait = 3

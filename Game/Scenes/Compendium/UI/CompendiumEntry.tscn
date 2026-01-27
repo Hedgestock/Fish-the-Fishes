@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://cu4qvea6vce5v"]
+[gd_scene format=3 uid="uid://cu4qvea6vce5v"]
 
 [ext_resource type="Script" uid="uid://bfdtmvs1uhtnl" path="res://Game/Scenes/Compendium/UI/CompendiumEntry.cs" id="2_hdjfk"]
 
-[node name="PanelContainer" type="PanelContainer" node_paths=PackedStringArray("CompendiumName", "CompendiumDescription", "NumberSeen")]
+[node name="PanelContainer" type="PanelContainer" unique_id=1664247406 node_paths=PackedStringArray("CompendiumName", "CompendiumDescription", "NumberSeen")]
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 324.0
@@ -14,42 +14,42 @@ CompendiumName = NodePath("MarginContainer/HBoxContainer/VBoxContainer/Compendiu
 CompendiumDescription = NodePath("MarginContainer/HBoxContainer/VBoxContainer/CompendiumDescription")
 NumberSeen = NodePath("MarginContainer/HBoxContainer/VBoxContainer/Stats/NumberOfTimesSeen")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=294656089]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1530732885]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1949082842]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="CompendiumName" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="CompendiumName" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1229967334]
 layout_mode = 2
 text = "???"
 
-[node name="CompendiumDescription" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="CompendiumDescription" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=825598979]
 layout_mode = 2
 size_flags_vertical = 2
 theme_type_variation = &"DescriptionLabel"
 text = "???"
 autowrap_mode = 3
 
-[node name="Stats" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Stats" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1817009]
 layout_mode = 2
 
-[node name="Seen" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Stats"]
+[node name="Seen" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Stats" unique_id=262280003]
 layout_mode = 2
 size_flags_vertical = 8
 theme_type_variation = &"DescriptionLabel"
 text = "Seen: "
 
-[node name="NumberOfTimesSeen" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Stats"]
+[node name="NumberOfTimesSeen" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Stats" unique_id=2127942199]
 layout_mode = 2
 size_flags_vertical = 8
 theme_type_variation = &"DescriptionLabel"
 text = "0"
 
-[node name="Graphic" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+[node name="Graphic" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=2042348686]
 layout_mode = 2
 size_flags_horizontal = 8

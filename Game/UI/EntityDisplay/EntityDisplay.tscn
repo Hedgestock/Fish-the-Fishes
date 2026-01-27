@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dvaaf84egrgis"]
+[gd_scene format=3 uid="uid://dvaaf84egrgis"]
 
 [ext_resource type="Script" uid="uid://h6iqp76k4n5f" path="res://Game/UI/EntityDisplay/EntityDisplay.cs" id="1_lkb7s"]
 [ext_resource type="Texture2D" uid="uid://sf5nbt1ewklc" path="res://Game/Assets/Fishes/ArrowFish/Animation/arrow_left.png" id="2_1de3d"]
@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://csxfp4n3h00us" path="res://Game/Assets/Fishes/ArrowFish/Animation/arrow_alive_3.png" id="7_cxc5r"]
 [ext_resource type="Texture2D" uid="uid://bcg3wdk8om5h4" path="res://Game/Assets/Fishes/ArrowFish/Animation/arrow_alive_2.png" id="8_f2fsi"]
 
-[node name="EntityDisplay" type="VBoxContainer" node_paths=PackedStringArray("Scroll", "EntityViewport", "ZoomButtons", "AnimationButtons")]
+[node name="EntityDisplay" type="VBoxContainer" unique_id=532987268 node_paths=PackedStringArray("Scroll", "EntityViewport", "ZoomButtons", "AnimationButtons")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -21,50 +21,50 @@ EntityViewport = NodePath("ScrollContainer/SubViewportContainer/SubViewport")
 ZoomButtons = NodePath("HBoxContainer/ZoomButtons")
 AnimationButtons = NodePath("HBoxContainer/AnimationButtons")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=2057559070]
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 2
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="ScrollContainer"]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="ScrollContainer" unique_id=1896031460]
 layout_mode = 2
 
-[node name="SubViewport" type="SubViewport" parent="ScrollContainer/SubViewportContainer"]
+[node name="SubViewport" type="SubViewport" parent="ScrollContainer/SubViewportContainer" unique_id=1056520683]
 transparent_bg = true
 handle_input_locally = false
 render_target_update_mode = 4
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=68841295]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
 alignment = 2
 
-[node name="ZoomButtons" type="HBoxContainer" parent="HBoxContainer"]
+[node name="ZoomButtons" type="HBoxContainer" parent="HBoxContainer" unique_id=1118619256]
 visible = false
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="Minus" type="Button" parent="HBoxContainer/ZoomButtons"]
+[node name="Minus" type="Button" parent="HBoxContainer/ZoomButtons" unique_id=1847396876]
 custom_minimum_size = Vector2(160, 160)
 layout_mode = 2
 size_flags_vertical = 0
 text = "-"
 
-[node name="Plus" type="Button" parent="HBoxContainer/ZoomButtons"]
+[node name="Plus" type="Button" parent="HBoxContainer/ZoomButtons" unique_id=268497031]
 custom_minimum_size = Vector2(160, 160)
 layout_mode = 2
 size_flags_vertical = 0
 text = "+"
 
-[node name="AnimationButtons" type="HBoxContainer" parent="HBoxContainer"]
+[node name="AnimationButtons" type="HBoxContainer" parent="HBoxContainer" unique_id=1102461528]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 2
 
-[node name="PreviousAnimationButton" type="TextureButton" parent="HBoxContainer/AnimationButtons"]
+[node name="PreviousAnimationButton" type="TextureButton" parent="HBoxContainer/AnimationButtons" unique_id=2136667079]
 layout_mode = 2
 mouse_filter = 1
 texture_normal = ExtResource("2_1de3d")
@@ -73,7 +73,7 @@ texture_hover = ExtResource("4_l6crr")
 texture_disabled = ExtResource("5_8xuxw")
 stretch_mode = 5
 
-[node name="NextAnimationButton" type="TextureButton" parent="HBoxContainer/AnimationButtons"]
+[node name="NextAnimationButton" type="TextureButton" parent="HBoxContainer/AnimationButtons" unique_id=1573151184]
 layout_mode = 2
 size_flags_vertical = 0
 mouse_filter = 1

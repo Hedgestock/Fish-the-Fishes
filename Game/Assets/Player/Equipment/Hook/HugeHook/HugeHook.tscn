@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ogoejx5sl264"]
+[gd_scene format=3 uid="uid://ogoejx5sl264"]
 
 [ext_resource type="Texture2D" uid="uid://b8kmjahmfjduy" path="res://Game/Assets/Player/Equipment/Hook/HugeHook/HugeHook_broken.png" id="1_8kf4b"]
 [ext_resource type="PackedScene" uid="uid://caai7o1q2a1n0" path="res://Game/Assets/Player/Equipment/Hook/StandardHook/StandardHook.tscn" id="1_h6te0"]
@@ -45,7 +45,7 @@ height = 186.0
 radius = 53.0
 height = 194.0
 
-[node name="HugeHook" instance=ExtResource("1_h6te0")]
+[node name="HugeHook" unique_id=2021134796 instance=ExtResource("1_h6te0")]
 position = Vector2(-100, -13)
 sprite_frames = SubResource("SpriteFrames_4ji8s")
 AimOffset = 190
@@ -59,14 +59,14 @@ position = Vector2(100, 155)
 position = Vector2(0, 34)
 shape = SubResource("CapsuleShape2D_n2inp")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="FishBox" index="1"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="FishBox" index="1" unique_id=1784857000]
 material = SubResource("CanvasItemMaterial_p8im8")
 position = Vector2(0, -29)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_dm274")
 disabled = true
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="FishBox" index="2"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="FishBox" index="2" unique_id=494610368]
 material = SubResource("CanvasItemMaterial_p8im8")
 position = Vector2(0, -80)
 rotation = 1.5708
@@ -80,7 +80,7 @@ position = Vector2(100, 142)
 position = Vector2(0, 47)
 shape = SubResource("CapsuleShape2D_ijvd3")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="HitBox" index="1"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="HitBox" index="1" unique_id=236211751]
 material = SubResource("CanvasItemMaterial_p8im8")
 shape = SubResource("CapsuleShape2D_6ba41")
 disabled = true

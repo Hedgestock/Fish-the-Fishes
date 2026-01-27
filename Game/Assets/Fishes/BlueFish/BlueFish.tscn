@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dw1u5k1ainq81"]
+[gd_scene format=3 uid="uid://dw1u5k1ainq81"]
 
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_fqoxl"]
 [ext_resource type="SpriteFrames" uid="uid://br2058c4eqn71" path="res://Game/Assets/Fishes/BlueFish/Animation/BlueFishAnimation.tres" id="2_3xtnc"]
@@ -8,7 +8,7 @@
 radius = 40.0
 height = 176.0
 
-[node name="BlueFish" instance=ExtResource("1_fqoxl")]
+[node name="BlueFish" unique_id=168232408 instance=ExtResource("1_fqoxl")]
 script = ExtResource("2_g7owi")
 CompendiumName = "Blue Fish"
 CompendiumDescription = "Almost as common as the green fish, the blue fish is found in deeper waters, try to look for it in the great blue!"
@@ -16,15 +16,15 @@ MinSpeed = 100.0
 MaxSpeed = 300.0
 AverageSize = 33.75
 
-[node name="VisibleOnScreenNotifier2D" parent="." index="0"]
+[node name="VisibleOnScreenNotifier2D" parent="." index="0" unique_id=1780839485]
 position = Vector2(0.999996, -4.76837e-07)
 scale = Vector2(9.5, 5.6)
 
-[node name="AnimatedSprite2D" parent="." index="1"]
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=58809509]
 sprite_frames = ExtResource("2_3xtnc")
 animation = &"alive"
 
-[node name="HurtBox" parent="." index="2"]
+[node name="HurtBox" parent="." index="2" unique_id=1269771636]
 position = Vector2(5, 2)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_g7owi")

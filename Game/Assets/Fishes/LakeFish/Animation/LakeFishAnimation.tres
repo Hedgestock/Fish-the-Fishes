@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://2ouyh6wa8r13"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://2ouyh6wa8r13"]
 
 [ext_resource type="Texture2D" uid="uid://dl6pnw5uwe254" path="res://Game/Assets/Fishes/LakeFish/Animation/perch_alive_1.png" id="1_y5cej"]
 [ext_resource type="Texture2D" uid="uid://cjxstlpdubwps" path="res://Game/Assets/Fishes/LakeFish/Animation/perch_alive_2.png" id="2_dkaws"]

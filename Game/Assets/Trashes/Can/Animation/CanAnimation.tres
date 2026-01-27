@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://cbfedbxtshtp5"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://cbfedbxtshtp5"]
 
 [ext_resource type="Texture2D" uid="uid://baku04tyxkn56" path="res://Game/Assets/Trashes/Can/Animation/can.png" id="1_akvwi"]
 

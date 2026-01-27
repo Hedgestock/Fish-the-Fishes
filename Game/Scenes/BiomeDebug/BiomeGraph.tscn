@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://do433bt3fxs1k"]
+[gd_scene format=3 uid="uid://do433bt3fxs1k"]
 
 [ext_resource type="Script" uid="uid://cgliuh1mq1etd" path="res://Game/Scenes/BiomeDebug/BiomeGraph.cs" id="1_bpcga"]
 [ext_resource type="PackedScene" uid="uid://dfvcoq3nvotbv" path="res://Game/Scenes/BiomeDebug/BiomeGraphNode.tscn" id="2_sedoo"]
 
-[node name="BiomeGraph" type="GraphEdit"]
+[node name="BiomeGraph" type="GraphEdit" unique_id=1630637645]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://kxtjwbw4m0xa"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://kxtjwbw4m0xa"]
 
 [ext_resource type="Texture2D" uid="uid://duto118vtxtrn" path="res://Game/Assets/Fishes/ClownFish/Animation/clown_alive_1.png" id="1_pan4j"]
 [ext_resource type="Texture2D" uid="uid://ccn426aeo7h1q" path="res://Game/Assets/Fishes/ClownFish/Animation/clown_alive_2.png" id="2_pcrkv"]

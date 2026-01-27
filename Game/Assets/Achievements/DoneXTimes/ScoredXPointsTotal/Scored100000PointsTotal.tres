@@ -1,13 +1,9 @@
-[gd_resource type="Resource" script_class="ScoredXPointsTotal" load_steps=2 format=3 uid="uid://c15csc5ypu6g5"]
+[gd_resource type="Resource" script_class="ScoredXPointsTotal" format=3 uid="uid://c15csc5ypu6g5"]
 
 [ext_resource type="Script" uid="uid://dmmsdmc2hc0is" path="res://Game/Assets/Achievements/DoneXTimes/ScoredXPointsTotal/ScoredXPointsTotal.cs" id="1_1j7be"]
 
 [resource]
 script = ExtResource("1_1j7be")
 Threshold = 100000
-Category = 0
-Mode = 0
-UnlockableName = ""
-UnlockableType = 0
 CompendiumName = "100000 Points"
 CompendiumDescription = "You've reached the end! (Of those achievmements at least)"

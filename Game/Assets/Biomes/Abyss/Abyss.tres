@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Biome" load_steps=18 format=3 uid="uid://cub1hi1q8poi"]
+[gd_resource type="Resource" script_class="Biome" format=3 uid="uid://cub1hi1q8poi"]
 
 [ext_resource type="Texture2D" uid="uid://horqethlbwnb" path="res://Game/Assets/Biomes/Abyss/AbyssBackground.png" id="1_6jhds"]
 [ext_resource type="Script" uid="uid://bprtko2ut7gy0" path="res://Game/Utilities/Weighted/WeightedFish.cs" id="1_l3bwr"]

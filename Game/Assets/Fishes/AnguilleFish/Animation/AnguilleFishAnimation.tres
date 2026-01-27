@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://l22v2s0dn5uh"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://l22v2s0dn5uh"]
 
 [ext_resource type="Texture2D" uid="uid://ccwjhm1rcm3l6" path="res://Game/Assets/Fishes/AnguilleFish/Animation/anguille_alive_1.png" id="1_23pm0"]
 [ext_resource type="Texture2D" uid="uid://6uxjh3p4bjnc" path="res://Game/Assets/Fishes/AnguilleFish/Animation/anguille_alive_2.png" id="2_w6f4r"]

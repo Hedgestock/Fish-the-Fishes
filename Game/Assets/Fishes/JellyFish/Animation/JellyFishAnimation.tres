@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://dfq5oyqiu8wpr"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://dfq5oyqiu8wpr"]
 
 [ext_resource type="Texture2D" uid="uid://bmgjxky08w1m6" path="res://Game/Assets/Fishes/JellyFish/Animation/Jellyfish_head.png" id="1_5ybio"]
 

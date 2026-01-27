@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cx6ahor51tgex"]
+[gd_scene format=3 uid="uid://cx6ahor51tgex"]
 
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_y6vpg"]
 [ext_resource type="Script" uid="uid://2wi35i43lops" path="res://Game/Assets/Fishes/BossGiantSquid/BossGiantSquidTentacle.cs" id="2_erl5v"]
@@ -24,7 +24,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_erl5v"]
 radius = 25.0
 
-[node name="BossGiantSquidTentacle" node_paths=PackedStringArray("Body") instance=ExtResource("1_y6vpg")]
+[node name="BossGiantSquidTentacle" unique_id=2049366736 node_paths=PackedStringArray("Body") instance=ExtResource("1_y6vpg")]
 script = ExtResource("2_erl5v")
 Body = NodePath("Line2D")
 AmplitudeCurve = SubResource("Curve_erl5v")
@@ -35,19 +35,19 @@ CompendiumDescription = "You're not supposed to see that description."
 Value = 2.0
 SizeDeviation = 0.0
 
-[node name="VisibleOnScreenNotifier2D" parent="." index="0"]
+[node name="VisibleOnScreenNotifier2D" parent="." index="0" unique_id=1780839485]
 position = Vector2(-350, 0)
 scale = Vector2(40, 10)
 show_rect = false
 
-[node name="AnimatedSprite2D" parent="." index="1"]
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=58809509]
 sprite_frames = SubResource("SpriteFrames_erl5v")
 animation = &"dead"
 
-[node name="HurtBox" parent="." index="2"]
+[node name="HurtBox" parent="." index="2" unique_id=1269771636]
 shape = SubResource("CircleShape2D_erl5v")
 
-[node name="Line2D" type="Line2D" parent="." index="4"]
+[node name="Line2D" type="Line2D" parent="." index="4" unique_id=1905554672]
 points = PackedVector2Array(0, 0, -700, 0)
 width = 60.0
 texture = ExtResource("3_us57q")

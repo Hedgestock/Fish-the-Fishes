@@ -1,19 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://cifa65xrf1ken"]
+[gd_scene format=3 uid="uid://cifa65xrf1ken"]
 
 [ext_resource type="Script" uid="uid://bb7og3t4c4pgl" path="res://Game/UI/FishableButton/FishableButton.cs" id="2_tjulj"]
 
-[node name="FishableButton" type="StaticBody2D"]
+[node name="FishableButton" type="StaticBody2D" unique_id=56195135]
 script = ExtResource("2_tjulj")
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=412595709]
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="." unique_id=465503358]
 offset_right = 558.0
 offset_bottom = 253.0
 mouse_filter = 1
 text = "Button"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1691079331]
 disabled = true
 
 [connection signal="pressed" from="Button" to="." method="OnPressed"]

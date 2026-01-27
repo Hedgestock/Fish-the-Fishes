@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://ti5hjckxy2yf"]
+[gd_scene format=3 uid="uid://ti5hjckxy2yf"]
 
 [ext_resource type="Texture2D" uid="uid://bwod4mkcoj270" path="res://Game/Assets/Player/Equipment/Weight/Cork/Round2.png" id="1_mad75"]
 [ext_resource type="Script" uid="uid://dvqpn4f8nq7mo" path="res://Game/Assets/Player/Equipment/EquipmentPiece.cs" id="2_6gavm"]
@@ -14,7 +14,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Cork" type="AnimatedSprite2D"]
+[node name="Cork" type="AnimatedSprite2D" unique_id=518741628]
 position = Vector2(27, 51)
 scale = Vector2(3.7, 6.1)
 sprite_frames = SubResource("SpriteFrames_4uh7i")

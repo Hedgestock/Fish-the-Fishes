@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cm8364e26h8h3"]
+[gd_scene format=3 uid="uid://cm8364e26h8h3"]
 
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_f5cnx"]
 [ext_resource type="Script" uid="uid://c486g3xwge0cc" path="res://Game/Assets/Fishes/LanternFish/LanternFish.cs" id="2_qgwwi"]
@@ -18,7 +18,7 @@ height = 182.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_y23ad"]
 radius = 69.0
 
-[node name="LanternFish" node_paths=PackedStringArray("AttractionBox", "HitBox", "MouthRange", "Timer") instance=ExtResource("1_f5cnx")]
+[node name="LanternFish" unique_id=97796850 node_paths=PackedStringArray("AttractionBox", "HitBox", "MouthRange", "Timer") instance=ExtResource("1_f5cnx")]
 script = ExtResource("2_qgwwi")
 ImmuneToAttraction = Array[int]([3, 5, 20, 19, 23, 7, 9, 8])
 Blood = ExtResource("3_5j1mm")
@@ -33,40 +33,40 @@ MinSpeed = 100.0
 MaxSpeed = 150.0
 SpawnRange = Vector2(0.5, 0.9)
 
-[node name="VisibleOnScreenNotifier2D" parent="." index="0"]
+[node name="VisibleOnScreenNotifier2D" parent="." index="0" unique_id=1780839485]
 scale = Vector2(10, 10)
 
-[node name="AnimatedSprite2D" parent="." index="1"]
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=58809509]
 sprite_frames = ExtResource("3_y23ad")
 animation = &"alive"
 
-[node name="AttractionArea" type="Area2D" parent="." index="2"]
+[node name="AttractionArea" type="Area2D" parent="." index="2" unique_id=48850955]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AttractionArea" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttractionArea" index="0" unique_id=855212890]
 shape = SubResource("CircleShape2D_7lf0f")
 debug_color = Color(1, 1, 0, 0.1)
 
-[node name="HitBox" type="Area2D" parent="." index="3"]
+[node name="HitBox" type="Area2D" parent="." index="3" unique_id=1594466839]
 position = Vector2(81, -37)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" index="0" unique_id=1515560082]
 shape = SubResource("CircleShape2D_5j1mm")
 debug_color = Color(1, 0, 0, 0.419608)
 
-[node name="MouthHitBox" type="Area2D" parent="." index="4"]
+[node name="MouthHitBox" type="Area2D" parent="." index="4" unique_id=1475396895]
 position = Vector2(81, -12)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MouthHitBox" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MouthHitBox" index="0" unique_id=736798081]
 position = Vector2(-3, 1)
 shape = SubResource("CapsuleShape2D_y23ad")
 disabled = true
 debug_color = Color(1, 0, 0, 0.419608)
 
-[node name="HurtBox" parent="." index="5"]
+[node name="HurtBox" parent="." index="5" unique_id=1269771636]
 position = Vector2(-11, 12)
 shape = SubResource("CircleShape2D_y23ad")
 
-[node name="Timer" type="Timer" parent="." index="7"]
+[node name="Timer" type="Timer" parent="." index="7" unique_id=241843185]
 process_callback = 0
 wait_time = 0.2
 one_shot = true

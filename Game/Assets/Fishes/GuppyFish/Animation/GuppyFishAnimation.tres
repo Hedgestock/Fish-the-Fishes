@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://kqfuh01ynigi"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://kqfuh01ynigi"]
 
 [ext_resource type="Texture2D" uid="uid://ccnak3lh0eexn" path="res://Game/Assets/Fishes/GuppyFish/Animation/guppy_alive_1.png" id="1_h2qun"]
 [ext_resource type="Texture2D" uid="uid://csbea8eeh0cqx" path="res://Game/Assets/Fishes/GuppyFish/Animation/guppy_alive_2.png" id="2_qtrci"]
