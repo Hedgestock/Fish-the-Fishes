@@ -3,4 +3,9 @@
     <TargetFramework>net9.0</TargetFramework>
     <EnableDynamicLoading>true</EnableDynamicLoading>
   </PropertyGroup>
+  <ItemGroup>
+    <None Include="NOTES.md" />
+    <None Include="README.md" />
+    <None Include="TODO.md" />
+  </ItemGroup>
 </Project>
