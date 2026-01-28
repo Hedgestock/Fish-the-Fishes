@@ -17,6 +17,11 @@ public partial class BossWhale : Boss
     public override void _Ready()
     {
         base._Ready();
+
+        if (IsInDisplay) return;
+
+        if (UserSettings.Vibrations) Input.VibrateHandheld(1000);
+
         BarnaclesLeft = BarnaclesMax = GD.RandRange(80, 120);
 
         for (int i = 0; i < BarnaclesMax; i++)

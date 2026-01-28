@@ -46,9 +46,16 @@ public partial class JellyFish : Fish, IPowerup
                 TravelAxis = (objective - Position).Normalized();
             }
         }
+
         base._Ready();
 
         if (IsInDisplay) return;
+
+        if (UserSettings.Vibrations)
+        {
+            Input.VibrateHandheld(100);
+            GetTree().CreateTimer(0.1).Timeout += () => Input.VibrateHandheld(100);
+        }
 
         LastPosition = Position;
 

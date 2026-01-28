@@ -34,6 +34,9 @@ public partial class BombFish : Fish
         base.Kill();
         Explosion.Play();
 
+        if (UserSettings.Vibrations) Input.VibrateHandheld(250);
+
+
         FishingLine Line = GetNode<FishingLine>("../FishingLine");
         if (ExplosionArea.OverlapsArea(Line.HitBox))
             Line.GetHit(FishingLine.DamageType.Explosion);

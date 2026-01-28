@@ -1,7 +1,7 @@
 using Godot;
 using WaffleStock;
 
-public partial class Trash : CharacterBody2D, IDescriptible
+public partial class Trash : CharacterBody2D, IDescriptible, IFishable
 {
     [Export]
     private float GravityScale = 0.2f;
@@ -13,6 +13,8 @@ public partial class Trash : CharacterBody2D, IDescriptible
     public string CompendiumDescription { get; set; }
 
     public bool IsInDisplay { get; set; }
+    public bool IsCaught { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+    public bool CantGetCaught { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
 
 
     // Called when the node enters the scene tree for the first time.
@@ -42,6 +44,16 @@ public partial class Trash : CharacterBody2D, IDescriptible
         if (GameManager.Mode <= Game.Mode.Training) return;
         if (UserData.TrashCompendium.TryGetValue(GetType().Name, out UserData.TrashCompendiumEntry entry)) entry.Seen++;
         else UserData.TrashCompendium[GetType().Name] = new UserData.TrashCompendiumEntry();
+    }
+
+    public bool Escape(IFisher fisher)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void GetCaughtBy(IFisher fisher)
+    {
+        throw new System.NotImplementedException();
     }
 }
 
