@@ -13,8 +13,16 @@ public partial class Trash : CharacterBody2D, IDescriptible, IFishable
     public string CompendiumDescription { get; set; }
 
     public bool IsInDisplay { get; set; }
-    public bool IsCaught { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-    public bool CantGetCaught { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+    public bool IsCaught
+    {
+        get; set;
+        //get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException();
+    }
+    public bool CantGetCaught
+    {
+        get; set;
+        //get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException();
+    }
 
 
     // Called when the node enters the scene tree for the first time.
@@ -36,8 +44,8 @@ public partial class Trash : CharacterBody2D, IDescriptible, IFishable
     protected void Despawn()
     {
         if (!IsInDisplay)
-                   QueueFree();
-            }
+            QueueFree();
+    }
 
     protected void NotifySpawn()
     {
@@ -48,12 +56,13 @@ public partial class Trash : CharacterBody2D, IDescriptible, IFishable
 
     public bool Escape(IFisher fisher)
     {
-        throw new System.NotImplementedException();
+        return false;
+        //throw new System.NotImplementedException();
     }
 
     public void GetCaughtBy(IFisher fisher)
     {
-        throw new System.NotImplementedException();
+        //throw new System.NotImplementedException();
     }
 }
 

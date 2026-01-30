@@ -8,10 +8,7 @@
 script = ExtResource("2_pthwn")
 EntityDisplay = NodePath("MarginContainer/HBoxContainer/Graphic/EntityDisplay")
 
-[node name="VBoxContainer" parent="MarginContainer/HBoxContainer" index="0"]
-size_flags_horizontal = 2
-
-[node name="Graphic" parent="MarginContainer/HBoxContainer" index="1"]
+[node name="Graphic" parent="MarginContainer/HBoxContainer" parent_id_path=PackedInt32Array(1530732885) index="1" unique_id=2042348686]
 size_flags_horizontal = 1
 
 [node name="EntityDisplay" parent="MarginContainer/HBoxContainer/Graphic" index="0" unique_id=1197655059 instance=ExtResource("3_qgptv")]
