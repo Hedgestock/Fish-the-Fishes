@@ -14,6 +14,7 @@ CheckBox = NodePath("CheckBox")
 [node name="CheckBox" type="CheckBox" parent="." unique_id=1467243053]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 1
 button_pressed = true
 text = "Item"
 flat = true
