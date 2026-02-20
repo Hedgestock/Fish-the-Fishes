@@ -238,11 +238,11 @@
 - [x] Gérer le retournement des poissons créés manuellement
 - [x] Ne pas débloquer de haut-faits en entraînement
 - [x] Ne pas sauvegarder en sortant du mode entraînement
-- [ ] Passer à des listes de noms plutôt que des énumérations
+- [x] [**Solution autre**] Passer à des listes de noms plutôt que des énumérations
+- [x] Rendre les énumérations statiques
 - [ ] Mettre un point de deboggage sur `GetCaughtBy()` semble s'activer à chaque frame pour la ligne, mais pas les espadons
 - [ ] Corriger la fonction d'oscillation des tentacules du kraken
 - [ ] Ajouter la génération de chemim de scene
-- [ ] Rendre les énumérations statiques
 - [ ] Optimiser les appels aux fonctions de transformation en chaine de caractères
 - [ ] Ne connecter la fonction de dessin des collisions qu'une seule fois
 - [ ] Déconnecter la fonction de dessin des formes correctement

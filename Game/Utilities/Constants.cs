@@ -27,54 +27,57 @@ namespace WaffleStock
 
         public enum Fishes
         {
-            AnguilleFish,
-            ArrowFish,
-            GreenFish,
-            RedFish,
-            SardineFish,
-            SwordFish,
-            YellowFish,
-            SharkFish,
-            SerpentFish,
-            JellyFish,
-            SeaUrchin,
-            BlueFish,
-            ClownFish,
-            ParrotFish,
-            GuppyFish,
-            LakeFish,
-            RiverFish,
-            BubbleFish,
-            CurrentFish,
-            BossGiantSquid,
-            BossWhale,
-            PoisonFish,
-            BombFish,
-            LanternFish,
+            AnguilleFish    = 0,
+            ArrowFish       = 1,
+            BlueFish        = 11,
+            BombFish        = 22,
+            BossGiantSquid  = 19,
+            BossWhale       = 20,
+            BubbleFish      = 17,
+            ClownFish       = 12,
+            CurrentFish     = 18,
+            GreenFish       = 2,
+            GuppyFish       = 14,
+            JellyFish       = 9,
+            LakeFish        = 15,
+            LanternFish     = 23,
+            ParrotFish      = 13,
+            PoisonFish      = 21,
+            RedFish         = 3,
+            RiverFish       = 16,
+            SardineFish     = 4,
+            SeaUrchin       = 10,
+            SerpentFish     = 8,
+            SharkFish       = 7,
+            SwordFish       = 5,
+            YellowFish      = 6,
         }
+        // Highest 23, next 24
 
         public static string TrashesFolder = "res://Game/Assets/Trashes/";
 
         public enum Trashes
         {
-            Can,
-            Shoe,
-            Tire,
+            Can  = 0,
+            Shoe = 1,
+            Tire = 2,
         }
+        // Highest 2, next 3
 
         public static string BiomesFolder = "res://Game/Assets/Biomes/";
 
         public enum Biomes
         {
-            Beach,
-            WreckDeck,
-            WreckInside,
-            Abyss,
-            CoralReef,
-            GreatBlue,
-            OceanCurrent,
-            Lake,
+            Abyss           = 3,
+            Beach           = 0,
+            CoralReef       = 4,
+            GreatBlue       = 5,
+            Lake            = 7,
+            OceanCurrent    = 6,
+            WreckDeck       = 1,
+            WreckInside     = 2,
         }
+        // Highest 7, next 8
 
         public static string EquipmentsFolder = "res://Game/Assets/Player/Equipment/";
 
