@@ -150,6 +150,7 @@
 - [x] Ajouter la sauvegarde en pleine partie
 - [x] Ajouter un moyen de trier/filtrer le compendium
 - [x] Ajouter plus de composition
+- [x] Rendre les objets pondérés génériques
 - [ ] Support de différentes langues
 	- [x] Anglais
 	- [ ] Français
@@ -184,7 +185,6 @@
 - [ ] Ajouter un moyen d'exporter/importer une sauvegarde
 - [ ] Ajouter le chargement dans un fil pour le compendium
 - [ ] Baisser le volume de la musique en pause
-- [ ] Rendre les objets pondérés génériques
 
 # Corrections
 
@@ -252,6 +252,7 @@
 - [x] Corriger la capture des tentacules du kraken
 - [x] Corriger le problème du reparentage d'espadon
 - [x] Corriger la collision du hameçon
+- [ ] Corriger l'affichage des scores en fin de partie
 
 # Interactions
 

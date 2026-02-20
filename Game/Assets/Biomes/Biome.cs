@@ -41,19 +41,19 @@ public partial class Biome : Resource, IDescriptible
 
     public static string GetRandomPathFrom(Array<WeightedFish> list)
     {
-        string FishType = (WeightedItem.ChooseFrom(list.ToArray()) as WeightedFish).Fish.ToString();
+        string FishType = WeightedFish.ChooseFrom(list).ToString();
         return $"{Constants.FishesFolder}{FishType}/{FishType}.tscn";
     }
 
     public static string GetRandomPathFrom(Array<WeightedTrash> list)
     {
-        string TrashType = (WeightedItem.ChooseFrom(list.ToArray()) as WeightedTrash).Trash.ToString();
+        string TrashType = WeightedTrash.ChooseFrom(list).ToString();
         return $"{Constants.TrashesFolder}{TrashType}/{TrashType}.tscn";
     }
 
     public static string GetRandomPathFrom(Array<WeightedBiome> list)
     {
-        string BiomeType = (WeightedItem.ChooseFrom(list.ToArray()) as WeightedBiome).Biome.ToString();
+        string BiomeType = WeightedBiome.ChooseFrom(list).ToString();
         return $"{Constants.BiomesFolder}{BiomeType}/{BiomeType}.tres";
     }
 }

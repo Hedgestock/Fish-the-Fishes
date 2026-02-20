@@ -185,8 +185,8 @@ public partial class Compendium : CanvasLayer
 
         string entryKey = ((Biomes)biomeIndex).ToString();
         Biome biome = GD.Load<Biome>($"{BiomesFolder}{entryKey}/{entryKey}.tres");
-        string[] fishes = biome.Fishes.Select(f => f.Fish.ToString()).ToArray();
-        string[] trashes = biome.Trashes.Select(f => f.Trash.ToString()).ToArray();
+        string[] fishes = biome.Fishes.Select(f => f.Item.ToString()).ToArray();
+        string[] trashes = biome.Trashes.Select(f => f.Item.ToString()).ToArray();
         foreach (var fishEntry in Fishes.GetChildren().OfType<FishCompendiumEntry>())
         {
             fishEntry.Visible = fishes.Contains(fishEntry.EntryKey);

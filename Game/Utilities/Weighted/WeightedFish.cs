@@ -3,8 +3,12 @@ using WaffleStock;
 using System;
 
 [GlobalClass]
-public partial class WeightedFish : WeightedItem
+public partial class WeightedFish : WeightedItem<Constants.Fishes>
 {
     [Export]
-    public Constants.Fishes Fish { get; set; }
+    new public Constants.Fishes Item
+    {
+        get { return base.Item; }
+        set { base.Item = value; }
+    }
 }

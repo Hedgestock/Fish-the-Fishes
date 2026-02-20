@@ -1,10 +1,13 @@
 using Godot;
 using WaffleStock;
-using System;
 
 [GlobalClass]
-public partial class WeightedTrash : WeightedItem
+public partial class WeightedTrash : WeightedItem<Constants.Trashes>
 {
     [Export]
-    public Constants.Trashes Trash { get; set; }
+    new public Constants.Trashes Item
+    {
+        get { return base.Item; }
+        set { base.Item = value; }
+    }
 }

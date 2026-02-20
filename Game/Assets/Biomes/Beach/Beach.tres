@@ -9,74 +9,74 @@
 
 [sub_resource type="Resource" id="Resource_f4pan"]
 script = ExtResource("2_6h1jc")
-Fish = 2
+Item = 2
 
 [sub_resource type="Resource" id="Resource_xyg2j"]
 script = ExtResource("2_6h1jc")
-Fish = 6
+Item = 6
 
 [sub_resource type="Resource" id="Resource_4x3xt"]
 script = ExtResource("2_6h1jc")
-Fish = 16
+Item = 16
 Weight = 50
 metadata/_custom_type_script = "uid://bprtko2ut7gy0"
 
 [sub_resource type="Resource" id="Resource_cn611"]
 script = ExtResource("2_6h1jc")
-Fish = 4
+Item = 4
 Weight = 30
 
 [sub_resource type="Resource" id="Resource_bsslm"]
 script = ExtResource("2_6h1jc")
-Fish = 17
+Item = 17
 Weight = 20
 metadata/_custom_type_script = "uid://bprtko2ut7gy0"
 
 [sub_resource type="Resource" id="Resource_okm2r"]
 script = ExtResource("2_6h1jc")
-Fish = 3
+Item = 3
 Weight = 10
 
 [sub_resource type="Resource" id="Resource_1c6ge"]
 script = ExtResource("2_6h1jc")
-Fish = 5
+Item = 5
 Weight = 10
 
 [sub_resource type="Resource" id="Resource_3ginu"]
 script = ExtResource("2_6h1jc")
-Fish = 1
+Item = 1
 Weight = 5
 
 [sub_resource type="Resource" id="Resource_es0i4"]
 script = ExtResource("2_6h1jc")
-Fish = 10
+Item = 10
 Weight = 2
 metadata/_custom_type_script = "uid://bprtko2ut7gy0"
 
 [sub_resource type="Resource" id="Resource_74w15"]
 script = ExtResource("2_6h1jc")
-Fish = 9
+Item = 9
 Weight = 1
 metadata/_custom_type_script = "uid://bprtko2ut7gy0"
 
 [sub_resource type="Resource" id="Resource_l62ly"]
 script = ExtResource("3_xwyyq")
-Biome = 1
+Item = 1
 
 [sub_resource type="Resource" id="Resource_qu4fq"]
 script = ExtResource("3_xwyyq")
-Biome = 4
+Item = 4
 
 [sub_resource type="Resource" id="Resource_jbhkk"]
 script = ExtResource("3_brc6y")
 
 [sub_resource type="Resource" id="Resource_8v5i1"]
 script = ExtResource("3_brc6y")
-Trash = 1
+Item = 1
 
 [sub_resource type="Resource" id="Resource_bqsre"]
 script = ExtResource("3_brc6y")
-Trash = 2
+Item = 2
 
 [resource]
 resource_name = "Beach"

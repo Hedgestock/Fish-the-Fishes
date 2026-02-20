@@ -19,19 +19,19 @@ public partial class TrainingUI : FoldableContainer
     {
         base._Ready();
 
-        GameManager.Biome.Fishes = new(Enum.GetValues<Constants.Fishes>().Select(f => new WeightedFish { Fish = f }));
-        GameManager.Biome.Trashes = new(Enum.GetValues<Constants.Trashes>().Select(t => new WeightedTrash { Trash = t }));
+        GameManager.Biome.Fishes = new(Enum.GetValues<Constants.Fishes>().Select(fish => new WeightedFish { Item = fish }));
+        GameManager.Biome.Trashes = new(Enum.GetValues<Constants.Trashes>().Select(trash => new WeightedTrash { Item = trash }));
 
         foreach (var fish in GameManager.Biome.Fishes)
         {
-            SpawnLine spawnLine = SpawnLineScene.Instantiate<SpawnLine>();
+            SpawnLine<Constants.Fishes> spawnLine = SpawnLineScene.Instantiate<SpawnLine<Constants.Fishes>>();
             spawnLine.Item = fish;
             FishesSettings.AddChild(spawnLine);
         }
 
         foreach (var trash in GameManager.Biome.Trashes)
         {
-            SpawnLine spawnLine = SpawnLineScene.Instantiate<SpawnLine>();
+            SpawnLine<Constants.Trashes> spawnLine = SpawnLineScene.Instantiate<SpawnLine<Constants.Trashes>>();
             spawnLine.Item = trash;
             TrashesSettings.AddChild(spawnLine);
         }
@@ -54,14 +54,14 @@ public partial class TrainingUI : FoldableContainer
 
     void SetAllFishes(bool spawn)
     {
-        foreach (var spawnLine in FishesSettings.GetChildren().OfType<SpawnLine>())
+        foreach (var spawnLine in FishesSettings.GetChildren().OfType<SpawnLine<Constants.Fishes>>())
         {
             spawnLine.CheckBox.ButtonPressed = spawn;
         }
     }
     void SetAllTrashes(bool spawn)
     {
-        foreach (var spawnLine in TrashesSettings.GetChildren().OfType<SpawnLine>())
+        foreach (var spawnLine in TrashesSettings.GetChildren().OfType<SpawnLine<Constants.Trashes>>())
         {
             spawnLine.CheckBox.ButtonPressed = spawn;
         }

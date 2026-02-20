@@ -9,15 +9,15 @@
 
 [sub_resource type="Resource" id="Resource_f4pan"]
 script = ExtResource("1_h6x5b")
-Fish = 2
+Item = 2
 
 [sub_resource type="Resource" id="Resource_xyg2j"]
 script = ExtResource("1_h6x5b")
-Fish = 6
+Item = 6
 
 [sub_resource type="Resource" id="Resource_nn0c1"]
 script = ExtResource("1_h6x5b")
-Fish = 11
+Item = 11
 metadata/_custom_type_script = "uid://bprtko2ut7gy0"
 
 [sub_resource type="Resource" id="Resource_7w1j6"]
@@ -25,64 +25,64 @@ script = ExtResource("1_h6x5b")
 
 [sub_resource type="Resource" id="Resource_cn611"]
 script = ExtResource("1_h6x5b")
-Fish = 4
+Item = 4
 
 [sub_resource type="Resource" id="Resource_1c6ge"]
 script = ExtResource("1_h6x5b")
-Fish = 5
+Item = 5
 Weight = 70
 
 [sub_resource type="Resource" id="Resource_66j3p"]
 script = ExtResource("1_h6x5b")
-Fish = 18
+Item = 18
 Weight = 40
 metadata/_custom_type_script = "uid://bprtko2ut7gy0"
 
 [sub_resource type="Resource" id="Resource_okm2r"]
 script = ExtResource("1_h6x5b")
-Fish = 3
+Item = 3
 Weight = 30
 
 [sub_resource type="Resource" id="Resource_qul34"]
 script = ExtResource("1_h6x5b")
-Fish = 7
+Item = 7
 Weight = 20
 
 [sub_resource type="Resource" id="Resource_3ginu"]
 script = ExtResource("1_h6x5b")
-Fish = 1
+Item = 1
 Weight = 10
 
 [sub_resource type="Resource" id="Resource_xrelp"]
 script = ExtResource("1_h6x5b")
-Fish = 9
+Item = 9
 Weight = 2
 metadata/_custom_type_script = "uid://bprtko2ut7gy0"
 
 [sub_resource type="Resource" id="Resource_2h74o"]
 script = ExtResource("1_h6x5b")
-Fish = 20
+Item = 20
 Weight = 1
 metadata/_custom_type_script = "uid://bprtko2ut7gy0"
 
 [sub_resource type="Resource" id="Resource_l62ly"]
 script = ExtResource("2_cnfug")
-Biome = 6
+Item = 6
 
 [sub_resource type="Resource" id="Resource_o0ehq"]
 script = ExtResource("2_cnfug")
-Biome = 3
+Item = 3
 
 [sub_resource type="Resource" id="Resource_jbhkk"]
 script = ExtResource("3_l2tfw")
 
 [sub_resource type="Resource" id="Resource_8v5i1"]
 script = ExtResource("3_l2tfw")
-Trash = 1
+Item = 1
 
 [sub_resource type="Resource" id="Resource_bqsre"]
 script = ExtResource("3_l2tfw")
-Trash = 2
+Item = 2
 
 [resource]
 resource_name = "GreatBlue"

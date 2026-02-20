@@ -1,18 +1,8 @@
 {
   "profiles": {
-    "Godot": {
-      "commandName": "Project"
-    },
-    "Profile 1": {
+    "Godot 4.6": {
       "commandName": "Executable",
-      "executablePath": "C:\\Users\\Hedgestock\\Documents\\Godot_v4.5-stable_mono_win64\\Godot_v4.5-stable_mono_win64.exe",
-      "commandLineArgs": "--path.--verbose",
-      "workingDirectory": ".",
-      "nativeDebugging": true
-    },
-    "Profile 2": {
-      "commandName": "Executable",
-      "executablePath": "C:\\Users\\Hedgestock\\Documents\\Godot_v4.6-stable_mono_win64\\Godot_v4.6-stable_mono_win64_console.exe",
+      "executablePath": "C:\\Users\\Hedgestock\\Documents\\Godot_v4.6-stable_mono_win64\\Godot_v4.6-stable_mono_win64.exe",
       "commandLineArgs": "--path.--verbose",
       "workingDirectory": "."
     }

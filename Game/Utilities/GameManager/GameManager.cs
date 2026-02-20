@@ -100,7 +100,7 @@ public partial class GameManager : Node
 
     static public void ChangeTarget()
     {
-        _target = (WeightedItem.ChooseFrom(Biome.Fishes.ToArray()) as WeightedFish).Fish;
+        _target = WeightedFish.ChooseFrom(Biome.Fishes);
         _instance.EmitSignal(SignalName.TargetChanged);
     }
 
@@ -111,7 +111,7 @@ public partial class GameManager : Node
 
         // That's a mouthfull, but we simply check the current biome to check if the target is still valid
         // otherwise, we just set a new one.
-        if (Mode == Game.Mode.Target && !Biome.Fishes.Select(fish => fish.Fish).Contains(Target))
+        if (Mode == Game.Mode.Target && !Biome.Fishes.Select(fish => fish.Item).Contains(Target))
             ChangeTarget();
     }
 
@@ -149,9 +149,9 @@ public partial class GameManager : Node
     {
         if (list.Contains(CurrentBiome.ResourceName)) return;
         list.Add(CurrentBiome.ResourceName);
-        foreach (var item in CurrentBiome.FollowupBiomes)
+        foreach (var weightedBiome in CurrentBiome.FollowupBiomes)
         {
-            string BiomeType = item.Biome.ToString();
+            string BiomeType = weightedBiome.Item.ToString();
             TestRec(list, GD.Load<Biome>($"{Constants.BiomesFolder}{BiomeType}/{BiomeType}.tres"));
         }
     }

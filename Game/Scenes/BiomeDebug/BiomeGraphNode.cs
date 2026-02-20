@@ -36,12 +36,12 @@ public partial class BiomeGraphNode : GraphNode
 
         foreach (WeightedFish weightedFish in Biome.Fishes)
         {
-            AddItem(weightedFish, WeightedItem.GetTotalWeight(Biome.Fishes.ToArray()));
+            AddItem(weightedFish, WeightedFish.GetTotalWeight(Biome.Fishes.ToArray()));
         }
 
         foreach (WeightedTrash weightedTrash in Biome.Trashes)
         {
-            AddItem(weightedTrash, WeightedItem.GetTotalWeight(Biome.Trashes.ToArray())); ;
+            AddItem(weightedTrash, WeightedTrash.GetTotalWeight(Biome.Trashes.ToArray())); ;
         }
 
         //FishDensity.Text += $"{Biome.TimeToSpawnFish}({Biome.TimeToSpawnFishDeviation})";
@@ -49,37 +49,36 @@ public partial class BiomeGraphNode : GraphNode
         //NextBiomeThreshold.Text += $"{Biome.ChangeBiomeThreshold}({Biome.ChangeBiomeThresholdDeviation})";
     }
 
-    public void AddItem(WeightedItem item, uint maxWeight)
+    public void AddItem<ItemType>(WeightedItem<ItemType> weightedItem, uint maxWeight)
     {
         Label name = new();
         ProgressBar weight = new();
 
         name.SizeFlagsHorizontal = SizeFlags.ExpandFill;
 
-        weight.Value = item.Weight;
+        weight.Value = weightedItem.Weight;
         weight.MaxValue = maxWeight;
         weight.CustomMinimumSize = new Vector2(200, 0);
         weight.MouseFilter = MouseFilterEnum.Ignore;
-        if (item is WeightedFish fish)
+
+        name.Text = weightedItem.Item.ToString();
+
+        if (weightedItem is WeightedFish fish)
         {
-            name.Text = fish.Fish.ToString();
             if (!UserData.BiomeCompendium.ContainsKey(Biome.ResourceName) || !UserData.FishCompendium.ContainsKey(name.Text))
                 name.Text = "???";
             Fishes.AddChild(name);
             Fishes.AddChild(weight);
         }
-        else if (item is WeightedTrash trash)
+        else if (weightedItem is WeightedTrash trash)
         {
-            name.Text = trash.Trash.ToString();
             if (!UserData.BiomeCompendium.ContainsKey(Biome.ResourceName) || !UserData.TrashCompendium.ContainsKey(name.Text))
                 name.Text = "???";
             Trashes.AddChild(name);
             Trashes.AddChild(weight);
         }
-        else if (item is WeightedBiome biome)
+        else if (weightedItem is WeightedBiome biome)
         {
-
-            name.Text = biome.Biome.ToString();
             if (!UserData.BiomeCompendium.ContainsKey(name.Text))
                 name.Text = "???";
 

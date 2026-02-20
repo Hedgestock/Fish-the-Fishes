@@ -9,48 +9,48 @@
 
 [sub_resource type="Resource" id="Resource_0cb85"]
 script = ExtResource("2_17j4d")
-Fish = 12
+Item = 12
 Weight = 200
 metadata/_custom_type_script = "uid://bprtko2ut7gy0"
 
 [sub_resource type="Resource" id="Resource_oao2e"]
 script = ExtResource("2_17j4d")
-Fish = 17
+Item = 17
 metadata/_custom_type_script = "uid://bprtko2ut7gy0"
 
 [sub_resource type="Resource" id="Resource_f4pan"]
 script = ExtResource("2_17j4d")
-Fish = 2
+Item = 2
 
 [sub_resource type="Resource" id="Resource_3olg4"]
 script = ExtResource("2_17j4d")
-Fish = 11
+Item = 11
 metadata/_custom_type_script = "uid://bprtko2ut7gy0"
 
 [sub_resource type="Resource" id="Resource_xyg2j"]
 script = ExtResource("2_17j4d")
-Fish = 6
+Item = 6
 
 [sub_resource type="Resource" id="Resource_s6o80"]
 script = ExtResource("2_17j4d")
-Fish = 13
+Item = 13
 Weight = 50
 metadata/_custom_type_script = "uid://bprtko2ut7gy0"
 
 [sub_resource type="Resource" id="Resource_1ox07"]
 script = ExtResource("2_17j4d")
-Fish = 8
+Item = 8
 Weight = 30
 metadata/_custom_type_script = "uid://bprtko2ut7gy0"
 
 [sub_resource type="Resource" id="Resource_1c6ge"]
 script = ExtResource("2_17j4d")
-Fish = 5
+Item = 5
 Weight = 30
 
 [sub_resource type="Resource" id="Resource_okm2r"]
 script = ExtResource("2_17j4d")
-Fish = 3
+Item = 3
 Weight = 30
 
 [sub_resource type="Resource" id="Resource_7w1j6"]
@@ -59,39 +59,39 @@ Weight = 20
 
 [sub_resource type="Resource" id="Resource_cn611"]
 script = ExtResource("2_17j4d")
-Fish = 4
+Item = 4
 Weight = 15
 
 [sub_resource type="Resource" id="Resource_3wuju"]
 script = ExtResource("2_17j4d")
-Fish = 10
+Item = 10
 Weight = 10
 metadata/_custom_type_script = "uid://bprtko2ut7gy0"
 
 [sub_resource type="Resource" id="Resource_p1mqj"]
 script = ExtResource("2_17j4d")
-Fish = 9
+Item = 9
 Weight = 6
 metadata/_custom_type_script = "uid://bprtko2ut7gy0"
 
 [sub_resource type="Resource" id="Resource_l62ly"]
 script = ExtResource("3_tt0m1")
-Biome = 5
+Item = 5
 
 [sub_resource type="Resource" id="Resource_3cux3"]
 script = ExtResource("3_tt0m1")
-Biome = 6
+Item = 6
 
 [sub_resource type="Resource" id="Resource_jbhkk"]
 script = ExtResource("4_75g0y")
 
 [sub_resource type="Resource" id="Resource_8v5i1"]
 script = ExtResource("4_75g0y")
-Trash = 1
+Item = 1
 
 [sub_resource type="Resource" id="Resource_bqsre"]
 script = ExtResource("4_75g0y")
-Trash = 2
+Item = 2
 
 [resource]
 resource_name = "CoralReef"

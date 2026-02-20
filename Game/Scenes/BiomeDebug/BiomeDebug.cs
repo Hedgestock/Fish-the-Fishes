@@ -53,10 +53,10 @@ public partial class BiomeDebug : CanvasLayer
 
         foreach (WeightedBiome weightedBiome in thisBiome.FollowupBiomes)
         {
-            thisBiomeNode.AddItem(weightedBiome, WeightedItem.GetTotalWeight(thisBiome.FollowupBiomes.ToArray()));
+            thisBiomeNode.AddItem(weightedBiome, WeightedBiome.GetTotalWeight(thisBiome.FollowupBiomes));
             thisBiomeNode.SetSlotEnabledRight(slotNumber, true);
             //thisBiomeNode.SetSlotColorRight(slotNumber, new Color("purple"));
-            TraverseBiomes(weightedBiome.Biome.ToString(), thisBiomeNode, slotNumber - 1);
+            TraverseBiomes(weightedBiome.Item.ToString(), thisBiomeNode, slotNumber - 1);
             slotNumber++;
         }
     }

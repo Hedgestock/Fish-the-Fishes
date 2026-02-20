@@ -1,27 +1,19 @@
 using Godot;
-using System;
+using WaffleStock;
 
-public partial class SpawnLine : HBoxContainer
+public partial class SpawnLine<ItemType> : HBoxContainer
 {
     [Export]
     public CheckBox CheckBox;
 
-    WeightedItem _item;
-    public WeightedItem Item
+    WeightedItem<ItemType> _item;
+    public WeightedItem<ItemType> Item
     {
         get { return _item; }
         set
         {
             _item = value;
-            switch (value)
-            {
-                case WeightedFish wf:
-                    CheckBox.Text = wf.Fish.ToString();
-                    break;
-                case WeightedTrash wt:
-                    CheckBox.Text = wt.Trash.ToString();
-                    break;
-            }
+            CheckBox.Text = value.Item.ToString();
         }
     }
 
@@ -29,7 +21,6 @@ public partial class SpawnLine : HBoxContainer
     {
         _item.Weight = (uint)weight;
     }
-
 
     private void OnSpawnToggle(bool spawning)
     {

@@ -106,6 +106,11 @@ public partial class Home : CanvasLayer
         GameManager.ChangeSceneToFile("uid://ereddneqlo34");
     }
 
+    void GoToDebug()
+    {
+        GameManager.ChangeSceneToFile("uid://bv5ebnrlqpwku");
+    }
+
     void GoToCompendium()
     {
         GameManager.ChangeSceneToFile("uid://b0nv1b3x0suu5");

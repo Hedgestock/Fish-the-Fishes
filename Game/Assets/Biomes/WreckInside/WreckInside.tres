@@ -13,68 +13,68 @@ Weight = 150
 
 [sub_resource type="Resource" id="Resource_b0bxr"]
 script = ExtResource("1_s5ogd")
-Fish = 12
+Item = 12
 metadata/_custom_type_script = "uid://bprtko2ut7gy0"
 
 [sub_resource type="Resource" id="Resource_e1vti"]
 script = ExtResource("1_s5ogd")
-Fish = 4
+Item = 4
 
 [sub_resource type="Resource" id="Resource_yfq0p"]
 script = ExtResource("1_s5ogd")
-Fish = 8
+Item = 8
 Weight = 70
 metadata/_custom_type_script = "uid://bprtko2ut7gy0"
 
 [sub_resource type="Resource" id="Resource_igdd7"]
 script = ExtResource("1_s5ogd")
-Fish = 3
+Item = 3
 Weight = 50
 
 [sub_resource type="Resource" id="Resource_bwx4x"]
 script = ExtResource("1_s5ogd")
-Fish = 6
+Item = 6
 Weight = 20
 
 [sub_resource type="Resource" id="Resource_k1o2i"]
 script = ExtResource("1_s5ogd")
-Fish = 2
+Item = 2
 Weight = 20
 
 [sub_resource type="Resource" id="Resource_4aqr4"]
 script = ExtResource("1_s5ogd")
-Fish = 11
+Item = 11
 Weight = 20
 metadata/_custom_type_script = "uid://bprtko2ut7gy0"
 
 [sub_resource type="Resource" id="Resource_m78x2"]
 script = ExtResource("1_s5ogd")
-Fish = 10
+Item = 10
 Weight = 7
 metadata/_custom_type_script = "uid://bprtko2ut7gy0"
 
 [sub_resource type="Resource" id="Resource_q1u8b"]
 script = ExtResource("2_pjrry")
-Biome = 4
+Item = 4
 
 [sub_resource type="Resource" id="Resource_1tna7"]
 script = ExtResource("2_pjrry")
-Biome = 5
+Item = 5
 
 [sub_resource type="Resource" id="Resource_eh8is"]
 script = ExtResource("2_pjrry")
-Biome = 6
+Item = 6
 
 [sub_resource type="Resource" id="Resource_1d7gb"]
 script = ExtResource("1_qjkc5")
 
 [sub_resource type="Resource" id="Resource_whwyb"]
 script = ExtResource("1_qjkc5")
-Trash = 1
+Item = 1
 
 [sub_resource type="Resource" id="Resource_7dqit"]
 script = ExtResource("1_qjkc5")
-Trash = 2
+Item = 2
 
 [resource]
 resource_name = "WreckInside"

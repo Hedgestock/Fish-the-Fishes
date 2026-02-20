@@ -13,50 +13,50 @@ Weight = 300
 
 [sub_resource type="Resource" id="Resource_vh5i2"]
 script = ExtResource("1_l3bwr")
-Fish = 8
+Item = 8
 metadata/_custom_type_script = "uid://bprtko2ut7gy0"
 
 [sub_resource type="Resource" id="Resource_h78nu"]
 script = ExtResource("1_l3bwr")
-Fish = 3
+Item = 3
 Weight = 50
 
 [sub_resource type="Resource" id="Resource_dqesl"]
 script = ExtResource("1_l3bwr")
-Fish = 10
+Item = 10
 Weight = 1
 metadata/_custom_type_script = "uid://bprtko2ut7gy0"
 
 [sub_resource type="Resource" id="Resource_aok0y"]
 script = ExtResource("1_l3bwr")
-Fish = 19
+Item = 19
 Weight = 1
 metadata/_custom_type_script = "uid://bprtko2ut7gy0"
 
 [sub_resource type="Resource" id="Resource_e8lrw"]
 script = ExtResource("2_nsdd8")
-Biome = 5
+Item = 5
 Weight = 10
 
 [sub_resource type="Resource" id="Resource_a21oa"]
 script = ExtResource("2_nsdd8")
-Biome = 6
+Item = 6
 Weight = 10
 
 [sub_resource type="Resource" id="Resource_e6gle"]
 script = ExtResource("2_nsdd8")
-Biome = 3
+Item = 3
 
 [sub_resource type="Resource" id="Resource_0d7d5"]
 script = ExtResource("3_r1s2o")
 
 [sub_resource type="Resource" id="Resource_ld3fx"]
 script = ExtResource("3_r1s2o")
-Trash = 1
+Item = 1
 
 [sub_resource type="Resource" id="Resource_0f7p0"]
 script = ExtResource("3_r1s2o")
-Trash = 2
+Item = 2
 
 [resource]
 resource_name = "Abyss"

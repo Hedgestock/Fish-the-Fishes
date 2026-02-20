@@ -3,8 +3,12 @@ using WaffleStock;
 using System;
 
 [GlobalClass]
-public partial class WeightedBiome : WeightedItem
+public partial class WeightedBiome : WeightedItem<Constants.Biomes>
 {
     [Export]
-    public Constants.Biomes Biome { get; set; }
+    new public Constants.Biomes Item
+    {
+        get { return base.Item; }
+        set { base.Item = value; }
+    }
 }
