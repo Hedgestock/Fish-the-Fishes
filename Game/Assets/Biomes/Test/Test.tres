@@ -10,11 +10,6 @@ script = ExtResource("1_bycrx")
 Item = 3
 metadata/_custom_type_script = "uid://bprtko2ut7gy0"
 
-[sub_resource type="Resource" id="Resource_m1ufk"]
-script = ExtResource("1_bycrx")
-Item = 20
-metadata/_custom_type_script = "uid://bprtko2ut7gy0"
-
 [sub_resource type="Resource" id="Resource_xt8bu"]
 script = ExtResource("1_bycrx")
 Item = 22
@@ -27,7 +22,7 @@ script = ExtResource("3_xj8ii")
 resource_name = "Test"
 script = ExtResource("12_3wj4f")
 TimeToSpawnFishDeviation = 0.2
-Fishes = Array[Object]([SubResource("Resource_qbc61"), SubResource("Resource_m1ufk"), SubResource("Resource_xt8bu")])
+Fishes = Array[Object]([SubResource("Resource_qbc61"), SubResource("Resource_xt8bu")])
 Trashes = Array[Object]([SubResource("Resource_cigae")])
 FollowupBiomes = Array[Object]([])
 CompendiumName = "Test"

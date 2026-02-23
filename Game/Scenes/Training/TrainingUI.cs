@@ -7,7 +7,9 @@ using WaffleStock;
 public partial class TrainingUI : FoldableContainer
 {
     [Export]
-    PackedScene SpawnLineScene;
+    PackedScene SpawnLineFishScene;
+    [Export]
+    PackedScene SpawnLineTrashScene;
 
     [Export]
     Container FishesSettings;
@@ -24,14 +26,14 @@ public partial class TrainingUI : FoldableContainer
 
         foreach (var fish in GameManager.Biome.Fishes)
         {
-            SpawnLine<Constants.Fishes> spawnLine = SpawnLineScene.Instantiate<SpawnLine<Constants.Fishes>>();
+            SpawnLine<Constants.Fishes> spawnLine = SpawnLineFishScene.Instantiate<SpawnLineFish>();
             spawnLine.Item = fish;
             FishesSettings.AddChild(spawnLine);
         }
 
         foreach (var trash in GameManager.Biome.Trashes)
         {
-            SpawnLine<Constants.Trashes> spawnLine = SpawnLineScene.Instantiate<SpawnLine<Constants.Trashes>>();
+            SpawnLine<Constants.Trashes> spawnLine = SpawnLineTrashScene.Instantiate<SpawnLineTrash>();
             spawnLine.Item = trash;
             TrashesSettings.AddChild(spawnLine);
         }

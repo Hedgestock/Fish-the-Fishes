@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cs4hfgiwtbxyg"
-path="res://.godot/imported/Bombfish.png-e7959f8742ba2d6386f35e77edc06c1e.ctex"
+uid="uid://bu2mv0fuevv6i"
+path="res://.godot/imported/BombFish_alive.png-b7adbf775da96c207050cca3c9f811ef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/Assets/Fishes/BombFish/Animation/Bombfish.png"
-dest_files=["res://.godot/imported/Bombfish.png-e7959f8742ba2d6386f35e77edc06c1e.ctex"]
+source_file="res://Game/Assets/Fishes/BombFish/Animation/BombFish_alive.png"
+dest_files=["res://.godot/imported/BombFish_alive.png-b7adbf775da96c207050cca3c9f811ef.ctex"]
 
 [params]
 

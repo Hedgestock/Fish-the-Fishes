@@ -1,7 +1,7 @@
 using Godot;
 using WaffleStock;
 
-public partial class SpawnLine<ItemType> : HBoxContainer
+public abstract partial class SpawnLine<ItemType> : HBoxContainer
 {
     [Export]
     public CheckBox CheckBox;

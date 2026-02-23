@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cir4wut2o5fx5"]
+
+[ext_resource type="PackedScene" uid="uid://qm1hpjicotin" path="res://Game/Scenes/Training/SpawnLine/SpawnLine.tscn" id="1_x34wb"]
+[ext_resource type="Script" uid="uid://bph6nnnvhmp2w" path="res://Game/Scenes/Training/SpawnLine/SpawnLineTrash.cs" id="2_sdwt4"]
+
+[node name="SpawnLineTrash" unique_id=80955447 node_paths=PackedStringArray("CheckBox") instance=ExtResource("1_x34wb")]
+script = ExtResource("2_sdwt4")
+CheckBox = NodePath("CheckBox")

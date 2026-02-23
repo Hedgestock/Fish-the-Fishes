@@ -1,15 +1,11 @@
 [gd_scene format=3 uid="uid://qm1hpjicotin"]
 
-[ext_resource type="Script" uid="uid://cfcex0scq2y1t" path="res://Game/Scenes/Training/SpawnLine/SpawnLine.cs" id="1_qk2tn"]
-
-[node name="SpawnLine" type="HBoxContainer" unique_id=80955447 node_paths=PackedStringArray("CheckBox")]
+[node name="SpawnLine" type="HBoxContainer" unique_id=80955447]
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 158.0
 grow_horizontal = 2
 size_flags_horizontal = 3
-script = ExtResource("1_qk2tn")
-CheckBox = NodePath("CheckBox")
 
 [node name="CheckBox" type="CheckBox" parent="." unique_id=1467243053]
 layout_mode = 2
