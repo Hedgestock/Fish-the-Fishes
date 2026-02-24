@@ -1,9 +1,10 @@
 using Godot;
 using Godot.Collections;
-using WaffleStock;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using WaffleStock;
 
 public partial class GameManager : Node
 {
@@ -17,14 +18,16 @@ public partial class GameManager : Node
     public delegate void LifeUpEventHandler();
 
     [Export]
-    private Array<Biome> _startingBiomes;
+    private Array<WeightedBiome> _startingBiomes;
     [Export]
     private Biome _testBiome;
 
-    public static Biome StartingBiome {
-        get 
+    public static Biome StartingBiome
+    {
+        get
         {
-            return _instance._startingBiomes.PickRandom();
+            string BiomeType = WeightedBiome.ChooseFrom(_instance._startingBiomes).ToString();
+            return GD.Load<Biome>($"{Constants.BiomesFolder}{BiomeType}/{BiomeType}.tres");
         }
     }
     public static Biome TestBiome { get { return _instance._testBiome; } }

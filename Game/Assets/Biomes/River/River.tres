@@ -1,0 +1,66 @@
+[gd_resource type="Resource" script_class="Biome" format=3 uid="uid://cfu7bn4rguutw"]
+
+[ext_resource type="Script" uid="uid://bprtko2ut7gy0" path="res://Game/Utilities/Weighted/WeightedFish.cs" id="1_dbqi7"]
+[ext_resource type="Script" uid="uid://62lfoitacli2" path="res://Game/Assets/Biomes/Biome.cs" id="1_yfr07"]
+[ext_resource type="Script" uid="uid://bysvm4vph3aiq" path="res://Game/Utilities/Weighted/WeightedBiome.cs" id="2_8pv1i"]
+[ext_resource type="AudioStream" uid="uid://chjsaiofjkspt" path="res://Game/Assets/Biomes/River/Floating Downstream.wav" id="2_pdt1m"]
+[ext_resource type="Script" uid="uid://du5t70kmo5wl6" path="res://Game/Utilities/Weighted/WeightedTrash.cs" id="3_8pv1i"]
+
+[sub_resource type="Resource" id="Resource_dbqi7"]
+script = ExtResource("1_dbqi7")
+Item = 16
+metadata/_custom_type_script = "uid://bprtko2ut7gy0"
+
+[sub_resource type="Resource" id="Resource_pdt1m"]
+script = ExtResource("1_dbqi7")
+Item = 15
+metadata/_custom_type_script = "uid://bprtko2ut7gy0"
+
+[sub_resource type="Resource" id="Resource_8pv1i"]
+script = ExtResource("1_dbqi7")
+Item = 14
+Weight = 70
+metadata/_custom_type_script = "uid://bprtko2ut7gy0"
+
+[sub_resource type="Resource" id="Resource_bpwvn"]
+script = ExtResource("1_dbqi7")
+Weight = 20
+metadata/_custom_type_script = "uid://bprtko2ut7gy0"
+
+[sub_resource type="Resource" id="Resource_ysihk"]
+script = ExtResource("1_dbqi7")
+Item = 3
+Weight = 10
+metadata/_custom_type_script = "uid://bprtko2ut7gy0"
+
+[sub_resource type="Resource" id="Resource_3xdlt"]
+script = ExtResource("2_8pv1i")
+metadata/_custom_type_script = "uid://bysvm4vph3aiq"
+
+[sub_resource type="Resource" id="Resource_v6url"]
+script = ExtResource("2_8pv1i")
+Item = 7
+Weight = 20
+metadata/_custom_type_script = "uid://bysvm4vph3aiq"
+
+[sub_resource type="Resource" id="Resource_muunb"]
+script = ExtResource("3_8pv1i")
+metadata/_custom_type_script = "uid://du5t70kmo5wl6"
+
+[sub_resource type="Resource" id="Resource_74a31"]
+script = ExtResource("3_8pv1i")
+Item = 1
+metadata/_custom_type_script = "uid://du5t70kmo5wl6"
+
+[sub_resource type="Resource" id="Resource_deh8s"]
+script = ExtResource("3_8pv1i")
+Item = 2
+metadata/_custom_type_script = "uid://du5t70kmo5wl6"
+
+[resource]
+script = ExtResource("1_yfr07")
+Fishes = Array[Object]([SubResource("Resource_dbqi7"), SubResource("Resource_pdt1m"), SubResource("Resource_8pv1i"), SubResource("Resource_bpwvn"), SubResource("Resource_ysihk")])
+Trashes = Array[Object]([SubResource("Resource_muunb"), SubResource("Resource_74a31"), SubResource("Resource_deh8s")])
+FollowupBiomes = Array[Object]([SubResource("Resource_3xdlt"), SubResource("Resource_v6url")])
+Music = ExtResource("2_pdt1m")
+metadata/_custom_type_script = "uid://62lfoitacli2"

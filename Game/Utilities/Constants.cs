@@ -74,10 +74,11 @@ namespace WaffleStock
             GreatBlue       = 5,
             Lake            = 7,
             OceanCurrent    = 6,
+            River           = 8,
             WreckDeck       = 1,
             WreckInside     = 2,
         }
-        // Highest 7, next 8
+        // Highest 8, next 9
 
         public static string EquipmentsFolder = "res://Game/Assets/Player/Equipment/";
 

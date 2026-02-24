@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://chjsaiofjkspt"
+path="res://.godot/imported/Floating Downstream.wav-299eba0f540319fb769fde73472b4500.sample"
+
+[deps]
+
+source_file="res://Game/Assets/Biomes/River/Floating Downstream.wav"
+dest_files=["res://.godot/imported/Floating Downstream.wav-299eba0f540319fb769fde73472b4500.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
