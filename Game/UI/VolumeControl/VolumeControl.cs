@@ -1,14 +1,11 @@
 using Godot;
 using Godot.Collections;
-using System;
 
-[Tool]
+[Tool, GlobalClass, Icon("./VolumeControl.svg")]
 public partial class VolumeControl : VBoxContainer
 {
-    [Export]
-    Button MuteCheckBox;
-    [Export]
-    Slider VolumeSlider;
+    CheckBox MuteCheckBox;
+    HSlider VolumeSlider;
 
     enum AudioBus { }
     [Export]
@@ -34,9 +31,25 @@ public partial class VolumeControl : VBoxContainer
     public override void _Ready()
     {
         base._Ready();
-        MuteCheckBox.ButtonPressed = !AudioServer.IsBusMute((int)Bus);
-        MuteCheckBox.Text = AudioServer.GetBusName((int)Bus) + " Volume";
-        VolumeSlider.Value = AudioServer.GetBusVolumeLinear((int)Bus);
+        MuteCheckBox = new()
+        {
+            ButtonPressed = !AudioServer.IsBusMute((int)Bus),
+            Text = AudioServer.GetBusName((int)Bus) + " Volume",
+            Flat = true
+        };
+        MuteCheckBox.Connect(CheckBox.SignalName.Toggled, Callable.From<bool>(MuteVolume));
+        AddChild(MuteCheckBox);
+
+        GD.Print(AudioServer.GetBusName((int)Bus), AudioServer.GetBusVolumeLinear((int)Bus));
+
+        VolumeSlider = new()
+        {
+            MaxValue = 1,
+            Step = 0.01f,
+            Value = AudioServer.GetBusVolumeLinear((int)Bus),
+        };
+        VolumeSlider.Connect(HSlider.SignalName.ValueChanged, Callable.From<float>(VolumeChanged));
+        AddChild(VolumeSlider);
     }
 
     void MuteVolume(bool on)

@@ -61,8 +61,8 @@ namespace WaffleStock
 
             for (int bus = 0; bus < AudioServer.BusCount; bus++)
             {
-                AudioServer.SetBusMute(bus, (bool)config.GetValue("Audio", AudioServer.GetBusName(bus) + "IsMuted", false));
-                AudioServer.SetBusVolumeLinear(bus, (float)config.GetValue("Audio", AudioServer.GetBusName(bus) + "Volume", 1));
+                AudioServer.SetBusMute(bus, (bool)config.GetValue("Audio", AudioServer.GetBusName(bus) + "IsMuted", AudioServer.IsBusMute(bus)));
+                AudioServer.SetBusVolumeLinear(bus, (float)config.GetValue("Audio", AudioServer.GetBusName(bus) + "Volume", AudioServer.GetBusVolumeLinear(bus)));
             }
 
             return true;
