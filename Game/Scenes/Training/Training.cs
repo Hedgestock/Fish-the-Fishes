@@ -5,48 +5,34 @@ public partial class Training : CanvasLayer
     [Export]
     Game Game;
 
-    Callable ConnectColorBoxes;
+    Callable SetRendering;
 
     public override void _Ready()
     {
         base._Ready();
 
-        ConnectColorBoxes = Callable.From<Node>((node) =>
-        {
-            Callable.From<Node2D>(FindAndConnect).CallDeferred(node);
-        });
+        SetRendering = Callable.From<Node>((node) => FindAndSetRendering(node, true));
     }
 
     void VisibleCollisions(bool visible)
     {
         if (visible)
         {
-            Game.Connect(SignalName.ChildEnteredTree, ConnectColorBoxes);
-            FindAndConnect(Game);
+            Game.Connect(SignalName.ChildEnteredTree, SetRendering);
+            FindAndSetRendering(Game, true);
         }
         else
         {
-            Game.Disconnect(SignalName.ChildEnteredTree, ConnectColorBoxes);
+            Game.Disconnect(SignalName.ChildEnteredTree, SetRendering);
+            FindAndSetRendering(Game, false);
         }
     }
 
-    void FindAndConnect(Node node)
+    void FindAndSetRendering(Node node, bool rendering)
     {
         if (node is CollisionShape2D cShape)
-            cShape.Connect(Node2D.SignalName.Draw, Callable.From(() => DrawCollision(cShape)));
+            cShape.Rendering = rendering;
         foreach (var child in node.GetChildren())
-            FindAndConnect(child);
-    }
-
-    void DrawCollision(CollisionShape2D shape)
-    {
-        Color drawColor = shape.DebugColor;
-
-        if (shape.Disabled)
-        {
-            drawColor = new Color(drawColor.V, drawColor.V, drawColor.V, 0.5f);
-        }
-
-        shape.Shape.Draw(shape.GetCanvasItem(), drawColor);
+            FindAndSetRendering(child, rendering);
     }
 }
