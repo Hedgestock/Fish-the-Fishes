@@ -18,7 +18,7 @@ public partial class Training : CanvasLayer
     {
         if (visible)
         {
-            Game.Connect(SignalName.ChildEnteredTree, SetRendering);
+            Game.Connect(SignalName.ChildEnteredTree, SetRendering, (uint)ConnectFlags.Deferred);
             FindAndSetRendering(Game, true);
         }
         else
