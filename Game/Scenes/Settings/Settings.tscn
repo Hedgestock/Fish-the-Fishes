@@ -98,11 +98,6 @@ layout_mode = 2
 script = ExtResource("4_qnf0y")
 metadata/_custom_type_script = "uid://bexbntpjwpx0k"
 
-[node name="Master2" type="VBoxContainer" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1051232671]
-layout_mode = 2
-script = ExtResource("4_qnf0y")
-metadata/_custom_type_script = "uid://bexbntpjwpx0k"
-
 [node name="Music" type="VBoxContainer" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer" unique_id=433686703]
 layout_mode = 2
 script = ExtResource("4_qnf0y")
