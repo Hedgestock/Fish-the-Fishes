@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="Biome" format=3 uid="uid://cfu7bn4rguutw"]
 
+[ext_resource type="Texture2D" uid="uid://cgho1xrvx16rf" path="res://Game/Assets/Biomes/River/RiverBackground.png" id="1_8pv1i"]
 [ext_resource type="Script" uid="uid://bprtko2ut7gy0" path="res://Game/Utilities/Weighted/WeightedFish.cs" id="1_dbqi7"]
 [ext_resource type="Script" uid="uid://62lfoitacli2" path="res://Game/Assets/Biomes/Biome.cs" id="1_yfr07"]
 [ext_resource type="Script" uid="uid://bysvm4vph3aiq" path="res://Game/Utilities/Weighted/WeightedBiome.cs" id="2_8pv1i"]
@@ -62,5 +63,6 @@ script = ExtResource("1_yfr07")
 Fishes = Array[Object]([SubResource("Resource_dbqi7"), SubResource("Resource_pdt1m"), SubResource("Resource_8pv1i"), SubResource("Resource_bpwvn"), SubResource("Resource_ysihk")])
 Trashes = Array[Object]([SubResource("Resource_muunb"), SubResource("Resource_74a31"), SubResource("Resource_deh8s")])
 FollowupBiomes = Array[Object]([SubResource("Resource_3xdlt"), SubResource("Resource_v6url")])
+Background = ExtResource("1_8pv1i")
 Music = ExtResource("2_pdt1m")
 metadata/_custom_type_script = "uid://62lfoitacli2"
