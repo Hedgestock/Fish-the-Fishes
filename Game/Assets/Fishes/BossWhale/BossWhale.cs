@@ -4,7 +4,6 @@ using WaffleStock;
 
 public partial class BossWhale : Boss
 {
-
     [Export]
     PackedScene BarnacleScene;
 
@@ -41,7 +40,7 @@ public partial class BossWhale : Boss
         BarnaclesLeft--;
         if (!IsCaught && BarnaclesLeft <= BarnaclesMax * 0.2)
         {
-            //IsCaught = true;
+            IsCaught = true;
 
             int score = 0;
 
