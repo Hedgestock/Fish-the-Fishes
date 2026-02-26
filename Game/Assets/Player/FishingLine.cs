@@ -228,7 +228,8 @@ public partial class FishingLine : CharacterBody2D, IFisher
         {
             if ((this as IFisher).FishedThings().Count == 0 || IsInvincible) return;
 
-            UserData.TrashCompendium[trash.GetType().Name].Hit++;
+            if (GameManager.Mode > Game.Mode.Training)
+                UserData.TrashCompendium[trash.GetType().Name].Hit++;
 
             GetHit(DamageType.Trash);
         }
@@ -239,6 +240,7 @@ public partial class FishingLine : CharacterBody2D, IFisher
         if ((this as IFisher).FishedThings().Count == 0 || _invincible) return;
         EmitSignal(SignalName.Hit, (int)damageType);
         Hook.State = GettingHit;
+
         AchievementsManager.OnHit(damageType);
 
         if (damageType == DamageType.Trash)
