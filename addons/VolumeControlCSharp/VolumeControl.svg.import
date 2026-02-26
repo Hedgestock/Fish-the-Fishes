@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cx1lvah5cqn5t"
-path="res://.godot/imported/VolumeControl.svg-58246733d4b6ee232e5381c09b71c34e.ctex"
+path="res://.godot/imported/VolumeControl.svg-a8df5a5793c0d58a817f23bbfe0f3579.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/UI/VolumeControl/VolumeControl.svg"
-dest_files=["res://.godot/imported/VolumeControl.svg-58246733d4b6ee232e5381c09b71c34e.ctex"]
+source_file="res://addons/VolumeControlCSharp/VolumeControl.svg"
+dest_files=["res://.godot/imported/VolumeControl.svg-a8df5a5793c0d58a817f23bbfe0f3579.ctex"]
 
 [params]
 
