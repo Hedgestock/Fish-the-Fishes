@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://dmq24l7gf5imq"]
+
+[ext_resource type="Script" uid="uid://862tv3trf265" path="res://Game/UI/SplashScreen/SplashScreen.cs" id="1_ia7kr"]
+[ext_resource type="Texture2D" uid="uid://c6e7skm87m6s7" path="res://Game/UI/SplashScreen/Logo_anime_frame_30.png" id="2_ia7kr"]
+[ext_resource type="Shader" uid="uid://bjk3mw3ciraq8" path="res://Game/UI/SplashScreen/SplashScreen.gdshader" id="3_b1k3k"]
+[ext_resource type="VideoStream" uid="uid://iobpxpn81rjt" path="res://Game/UI/SplashScreen/wafflestock animé fond vert.ogv" id="3_ia7kr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_76s3c"]
+shader = ExtResource("3_b1k3k")
+shader_parameter/transparent_color = Color(0, 1, 0, 1)
+shader_parameter/pickup_range = 0.3
+shader_parameter/fade_amount = 0.5
+
+[node name="SplashScreen" type="ColorRect" unique_id=258136971 node_paths=PackedStringArray("WaffleStock", "Logo", "LastFrame")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0980392, 0.27451, 0.407843, 1)
+script = ExtResource("1_ia7kr")
+WaffleStock = NodePath("AspectRatioContainer/WaffleStock")
+Logo = NodePath("AspectRatioContainer/Logo")
+LastFrame = NodePath("AspectRatioContainer/LastFrame")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="." unique_id=469649768]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LastFrame" type="TextureRect" parent="AspectRatioContainer" unique_id=1570465499]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_ia7kr")
+expand_mode = 4
+stretch_mode = 4
+
+[node name="Logo" type="VideoStreamPlayer" parent="AspectRatioContainer" unique_id=367658186]
+modulate = Color(1, 1, 1, 0.49400002)
+material = SubResource("ShaderMaterial_76s3c")
+layout_mode = 2
+stream = ExtResource("3_ia7kr")
+expand = true
+
+[node name="WaffleStock" type="Label" parent="AspectRatioContainer" unique_id=1926533450]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 120
+text = "WaffleStock
+"
+horizontal_alignment = 1

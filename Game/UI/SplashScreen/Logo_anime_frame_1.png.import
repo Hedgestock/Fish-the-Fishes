@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkwhancs5j6o5"
-path="res://.godot/imported/Logo_anime_last_frame.png-2b2f96b6238289870de7640c43791264.ctex"
+uid="uid://bmg835jwf4615"
+path="res://.godot/imported/Logo_anime_frame_1.png-385837d639c76755086fdd85b3fc8211.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://WaffleStock/Logo_anime_last_frame.png"
-dest_files=["res://.godot/imported/Logo_anime_last_frame.png-2b2f96b6238289870de7640c43791264.ctex"]
+source_file="res://Game/UI/SplashScreen/Logo_anime_frame_1.png"
+dest_files=["res://.godot/imported/Logo_anime_frame_1.png-385837d639c76755086fdd85b3fc8211.ctex"]
 
 [params]
 

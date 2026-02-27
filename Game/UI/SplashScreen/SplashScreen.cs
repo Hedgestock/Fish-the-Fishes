@@ -9,8 +9,6 @@ public partial class SplashScreen : ColorRect
     VideoStreamPlayer Logo;
     [Export]
     TextureRect LastFrame;
-    [Export]
-    AudioStreamPlayer FTF;
 
     public override void _Ready()
     {
@@ -22,13 +20,9 @@ public partial class SplashScreen : ColorRect
         Logo.Play();
         Logo.Connect(VideoStreamPlayer.SignalName.Finished, Callable.From(() => { LastFrame.Show(); Logo.Hide(); }));
         Tween tween = GetTree().CreateTween();
-        tween.TweenProperty(WaffleStock, "modulate", new Color("ffffff"), .5);
-        tween.TweenProperty(this, "modulate", new Color("ffffff"), 1);
+        tween.TweenProperty(WaffleStock, "modulate", new Color("ffffff"), .75);
+        tween.TweenProperty(this, "modulate", new Color("ffffff"), 1.25);
         tween.TweenProperty(this, "modulate", new Color("ffffff00"), .5);
-        tween.TweenCallback(Callable.From(() =>
-            {
-                QueueFree();
-                FTF.Play();
-            }));
+        tween.TweenCallback(Callable.From(QueueFree));
     }
 }
