@@ -1,7 +1,6 @@
 using Godot;
 using Godot.Collections;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using WaffleStock;
@@ -81,7 +80,6 @@ public partial class GameManager : Node
     }
     public static int CalculatedBiomeThreshold = 0;
 
-    public static string PrevScene = "";
     public static Vector2 ScreenSize;
 
     static private GameManager _instance = null;
@@ -118,44 +116,8 @@ public partial class GameManager : Node
             ChangeTarget();
     }
 
-    static public void ChangeSceneToFile(string file)
-    {
-        PrevScene = _instance.GetTree().CurrentScene.SceneFilePath;
-        _instance.GetTree().ChangeSceneToFile(file);
-    }
-
-    static public void ChangeSceneToPacked(PackedScene scene)
-    {
-        PrevScene = _instance.GetTree().CurrentScene.SceneFilePath;
-        _instance.GetTree().ChangeSceneToPacked(scene);
-    }
-
-    static public void GoToPreviousScene()
-    {
-        var _tmpPrevScene = _instance.GetTree().CurrentScene.SceneFilePath;
-        _instance.GetTree().ChangeSceneToFile(PrevScene);
-        PrevScene = _tmpPrevScene;
-    }
-
     private void OnScreenResize()
     {
         ScreenSize = GetViewport().GetVisibleRect().Size;
-    }
-
-    private void Test()
-    {
-        List<string> list = new List<string>();
-        TestRec(list, StartingBiome);
-        list.ForEach(item => GD.Print("biome: ", item));
-    }
-    private void TestRec(List<string> list, Biome CurrentBiome)
-    {
-        if (list.Contains(CurrentBiome.ResourceName)) return;
-        list.Add(CurrentBiome.ResourceName);
-        foreach (var weightedBiome in CurrentBiome.FollowupBiomes)
-        {
-            string BiomeType = weightedBiome.Item.ToString();
-            TestRec(list, GD.Load<Biome>($"{Constants.BiomesFolder}{BiomeType}/{BiomeType}.tres"));
-        }
     }
 }

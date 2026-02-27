@@ -36,6 +36,6 @@ public partial class BiomeCompendiumEntry : CompendiumEntry
     private void LaunchAquarium()
     {
         GameManager.Biome = Instance as Biome;
-        GameManager.ChangeSceneToFile("res://Game/Scenes/Aquarium/Aquarium.tscn");
+        SceneManager.ChangeSceneToFile("uid://bn4j1dckgh88u");
     }
 }

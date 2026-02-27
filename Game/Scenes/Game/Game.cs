@@ -51,7 +51,7 @@ public partial class Game : CanvasLayer
         }
 
         GameManager.Mode = Mode.Menu;
-        GameManager.ChangeSceneToFile("uid://blkg0i7vjb6il");
+        SceneManager.ChangeSceneToFile("uid://blkg0i7vjb6il");
     }
 
     private void SpawnFish()

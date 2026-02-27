@@ -14,6 +14,6 @@ public partial class PauseButton : TextureButton
         GetTree().Paused = false;
         if (GameManager.Mode > Mode.Training)
             SaveManager.SaveGame();
-        GameManager.ChangeSceneToFile("res://Game/Scenes/Home.tscn");
+        SceneManager.ChangeSceneToFile("uid://blkg0i7vjb6il");
     }
 }

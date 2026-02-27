@@ -26,8 +26,9 @@ buses/default_bus_layout="res://Game/Audio/FTF_bus_layout.tres"
 
 [autoload]
 
+SceneManager="*uid://byla7fbin1bhf"
 GameManager="*res://Game/Utilities/GameManager/GameManager.tscn"
-SaveManager="*res://Game/Utilities/SaveManager.cs"
+SaveManager="*res://Game/Utilities/SaveManager/SaveManager.cs"
 AudioManager="*res://Game/Utilities/AudioManager/AudioManager.tscn"
 AchievementsManager="*res://Game/Utilities/AchievementsManager.cs"
 

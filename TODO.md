@@ -151,6 +151,7 @@
 - [x] Ajouter un moyen de trier/filtrer le compendium
 - [x] Ajouter plus de composition
 - [x] Rendre les objets pondérés génériques
+- [x] Passer au gestionnaire de scène, de sauvegarde etc... Standards de wafflestock
 - [ ] Support de différentes langues
 	- [x] Anglais
 	- [ ] Français
@@ -178,7 +179,6 @@
 - [ ] Ajouter du balancement sur les pics des oursins
 - [ ] Faire apparaître les oursins en clusters
 - [ ] Faire en sorte que le poisson flèche mette tous les autres poissons dans son sens
-- [ ] Passer au gestionnaire de scène, de sauvegarde etc... Standards de wafflestock
 - [ ] Ajouter de la physique aux poissons pêchés
 - [ ] Ombre et shaders sur les biomes
 - [ ] Ajuster les taux d'apparition des poubelles en fonction de la largeur de l'écran
