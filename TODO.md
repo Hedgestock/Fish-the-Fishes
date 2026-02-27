@@ -152,6 +152,7 @@
 - [x] Ajouter plus de composition
 - [x] Rendre les objets pondérés génériques
 - [x] Passer au gestionnaire de scène, de sauvegarde etc... Standards de wafflestock
+- [x] Baisser le volume de la musique en pause
 - [ ] Support de différentes langues
 	- [x] Anglais
 	- [ ] Français
@@ -184,7 +185,6 @@
 - [ ] Ajuster les taux d'apparition des poubelles en fonction de la largeur de l'écran
 - [ ] Ajouter un moyen d'exporter/importer une sauvegarde
 - [ ] Ajouter le chargement dans un fil pour le compendium
-- [ ] Baisser le volume de la musique en pause
 
 # Corrections
 
@@ -240,19 +240,19 @@
 - [x] Ne pas sauvegarder en sortant du mode entraînement
 - [x] [**Solution autre**] Passer à des listes de noms plutôt que des énumérations
 - [x] Rendre les énumérations statiques
+- [x] Déconnecter la fonction de dessin des formes correctement
+- [x] Ne connecter la fonction de dessin des collisions qu'une seule fois
+- [x] Ajouter la génération de chemim de scene
 - [ ] Mettre un point de deboggage sur `GetCaughtBy()` semble s'activer à chaque frame pour la ligne, mais pas les espadons
 - [ ] Corriger la fonction d'oscillation des tentacules du kraken
-- [ ] Ajouter la génération de chemim de scene
 - [ ] Optimiser les appels aux fonctions de transformation en chaine de caractères
-- [ ] Ne connecter la fonction de dessin des collisions qu'une seule fois
-- [ ] Déconnecter la fonction de dessin des formes correctement
 
 # Regression
 
 - [x] Corriger la capture des tentacules du kraken
 - [x] Corriger le problème du reparentage d'espadon
 - [x] Corriger la collision du hameçon
-- [ ] Corriger l'affichage des scores en fin de partie
+- [ ] Corriger l'affichage des scores en fin de partie (le gestionnaire de scene ne peut pas comparer des chemins et des uuid)
 
 # Interactions
 

@@ -3,11 +3,10 @@
 [ext_resource type="Script" uid="uid://bju77ragxiv5" path="res://Game/Utilities/AudioManager/AudioManager.cs" id="1_enk5s"]
 [ext_resource type="AudioStream" uid="uid://b84474ttmp1x6" path="res://Game/Audio/Ambiance/Ambiance.ogg" id="2_uir8q"]
 
-[node name="AudioManager" type="Node" unique_id=2144572789 node_paths=PackedStringArray("UISounds", "Ambiance", "Music")]
+[node name="AudioManager" type="Node" unique_id=2144572789 node_paths=PackedStringArray("Players")]
+process_mode = 3
 script = ExtResource("1_enk5s")
-UISounds = NodePath("UISounds")
-Ambiance = NodePath("Ambiance")
-Music = NodePath("Music")
+Players = [NodePath("Music"), NodePath("UISounds"), NodePath("Ambiance")]
 
 [node name="UISounds" type="AudioStreamPlayer" parent="." unique_id=445827868]
 max_polyphony = 16

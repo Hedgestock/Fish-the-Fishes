@@ -1,14 +1,12 @@
 using Godot;
-using System;
+using Godot.Collections;
+using System.Linq;
 
 public partial class AudioManager : Node
 {
+
     [Export]
-    private AudioStreamPlayer UISounds;
-    [Export]
-    private AudioStreamPlayer Ambiance;
-    [Export]
-    private AudioStreamPlayer Music;
+    private Array<AudioStreamPlayer> Players;
 
     static private AudioManager _instance = null;
     public static AudioManager Instance { get { return _instance; } }
@@ -26,36 +24,60 @@ public partial class AudioManager : Node
 
     }
 
+    private bool _paused;
+
+    public override void _Process(double delta)
+    {
+        base._Process(delta);
+        if (_paused != GetTree().Paused)
+        {
+            _paused = GetTree().Paused;
+            foreach (var player in Players)
+            {
+                SetPlayerVolume(player, _paused ? .5f : 1);
+            }
+        }
+    }
+
     public static void UIPlay(AudioStream sound)
     {
-        _instance.UISounds.Stream = sound;
-        _instance.UISounds.Play();
+        var UIPlayer = _instance.Players.First(player => player.Bus == "SFX");
+        UIPlayer.Stream = sound;
+        UIPlayer.Play();
     }
 
     public static void PlayMusic(AudioStream music)
     {
-        if (music == _instance.Music.Stream) return;
+        var musicPlayer = _instance.Players.First(player => player.Bus == "Music");
+        if (music == musicPlayer.Stream) return;
         Tween tween = _instance.CreateTween();
-        if (_instance.Music.Stream != null)
-            tween.TweenProperty(_instance.Music, "volume_linear", 0, .5f);
+        if (musicPlayer.Stream != null)
+            tween.TweenProperty(musicPlayer, "volume_linear", 0, .5f);
         tween.TweenCallback(
             Callable.From(() =>
             {
-                _instance.Music.Stream = music;
-                _instance.Music.Play();
+                musicPlayer.Stream = music;
+                musicPlayer.Play();
             }));
-        tween.TweenProperty(_instance.Music, "volume_linear", 1, .5f);
+        tween.TweenProperty(musicPlayer, "volume_linear", 1, .5f);
     }
 
     public static void StopMusic()
     {
+        var musicPlayer = _instance.Players.First(player => player.Bus == "Music");
         Tween tween = _instance.CreateTween();
-        tween.TweenProperty(_instance.Music, "volume_linear", 0, .5f);
+        tween.TweenProperty(musicPlayer, "volume_linear", 0, .5f);
         tween.TweenCallback(
             Callable.From(() =>
             {
-                _instance.Music.Stop();
-                _instance.Music.Stream = null;
+                musicPlayer.Stop();
+                musicPlayer.Stream = null;
             }));
+    }
+
+    public static void SetPlayerVolume(AudioStreamPlayer player, float volume)
+    {
+        Tween tween = _instance.CreateTween();
+        tween.TweenProperty(player, "volume_linear", volume, .5f);
     }
 }
