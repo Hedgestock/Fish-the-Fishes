@@ -1,11 +1,9 @@
 [gd_scene format=3 uid="uid://cpc2lk8mjeebi"]
 
-[ext_resource type="Script" uid="uid://ddb5usq1uqexh" path="res://Game/Scenes/Credits/Credits.cs" id="1_okroq"]
 [ext_resource type="PackedScene" uid="uid://bubgi8mpwbbne" path="res://Game/UI/DynamicBackground/DynamicBackground.tscn" id="2_m8kky"]
 [ext_resource type="PackedScene" uid="uid://dfxhrdmj7km0i" path="res://Game/UI/BackButton/BackButton.tscn" id="3_tmwxg"]
 
 [node name="Credits" type="CanvasLayer" unique_id=1822456140]
-script = ExtResource("1_okroq")
 
 [node name="Background" parent="." unique_id=101631027 instance=ExtResource("2_m8kky")]
 offset_top = -360.0

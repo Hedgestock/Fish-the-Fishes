@@ -65,10 +65,6 @@ public partial class Compendium : CanvasLayer
         FilterButton.Selected = biomes.Length;
     }
 
-    private void GoToHome()
-    {
-        GameManager.ChangeSceneToFile("res://Game/Scenes/Home.tscn");
-    }
 
     private void PopulateFishCompendium()
     {

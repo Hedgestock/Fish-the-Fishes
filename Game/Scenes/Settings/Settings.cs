@@ -21,10 +21,9 @@ public partial class Settings : CanvasLayer
         WaterEffect.ButtonPressed = UserSettings.WaterEffect;
     }
 
-    private void GoToHome()
+    private void SaveSettings()
     {
         SaveManager.SaveSettings();
-        GameManager.ChangeSceneToFile("res://Game/Scenes/Home.tscn");
     }
 
     private void SetCompetitiveMode(bool competition)

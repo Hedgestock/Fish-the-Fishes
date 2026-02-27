@@ -106,11 +106,6 @@ public partial class Equipment : CanvasLayer
         DescriptionContainer.Visible = false;
     }
 
-    private void GoToHome()
-    {
-        GameManager.ChangeSceneToFile("res://Game/Scenes/Home.tscn");
-    }
-
     private void SpawnFish()
     {
         PackedScene FishScene = GD.Load<PackedScene>(Biome.GetRandomPathFrom(GameManager.Biome.Fishes));
