@@ -1,0 +1,34 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://c8sk70xwhh55o"]
+
+[ext_resource type="Texture2D" uid="uid://bleialfm2fvb" path="res://Game/Assets/Fishes/SpadeFish/Animation/Spadefish_alive_0001.png" id="1_spf01"]
+[ext_resource type="Texture2D" uid="uid://c3jlsqdj7fbws" path="res://Game/Assets/Fishes/SpadeFish/Animation/Spadefish_alive_0002.png" id="2_spf02"]
+[ext_resource type="Texture2D" uid="uid://rv52hdwww4lm" path="res://Game/Assets/Fishes/SpadeFish/Animation/Spadefish_alive_0003.png" id="3_spf03"]
+[ext_resource type="Texture2D" uid="uid://dgci5b1rvxglb" path="res://Game/Assets/Fishes/SpadeFish/Animation/Spadefish_dead.png" id="4_spfdd"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_spf01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_spf02")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_spf01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_spf03")
+}],
+"loop": true,
+"name": &"alive",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_spfdd")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}]

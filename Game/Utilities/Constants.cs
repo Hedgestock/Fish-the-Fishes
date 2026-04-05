@@ -20,9 +20,6 @@ namespace WaffleStock
 
         public static string AchievementsFolder = "res://Game/Assets/Achievements/";
 
-        // /!\ WARNING /!\ Add new fishes/trashes/biomes at the end of enums to avoid messing the underlying numbering
-        // /!\ WARNING /!\ Do NOT arrange them alpabetically because the '.tres' are only keeping track of the integer
-
         public static string FishesFolder = "res://Game/Assets/Fishes/";
 
         public enum Fishes
@@ -53,8 +50,12 @@ namespace WaffleStock
             SharkFish       = 7,
             SwordFish       = 5,
             YellowFish      = 6,
+            CloverFish      = 26,
+            DiamondFish     = 27,
+            HeartFish       = 28,
+            SpadeFish       = 29,
         }
-        // Highest 25, next 26
+        // Highest 29, next 30
 
         public static string TrashesFolder = "res://Game/Assets/Trashes/";
 

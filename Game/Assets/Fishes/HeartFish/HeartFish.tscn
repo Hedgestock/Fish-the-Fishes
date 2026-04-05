@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://d386e007p42uw"]
+
+[ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_htf01"]
+[ext_resource type="SpriteFrames" path="res://Game/Assets/Fishes/HeartFish/Animation/HeartFishAnimation.tres" id="2_htf02"]
+[ext_resource type="Script" uid="uid://dyu1hite7q8ve" path="res://Game/Assets/Fishes/HeartFish/HeartFish.cs" id="2_htf03"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ixkn1"]
+radius = 52.009613
+
+[node name="HeartFish" unique_id=627483019 instance=ExtResource("1_htf01")]
+script = ExtResource("2_htf03")
+CompendiumName = "Heart Fish"
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="0" unique_id=1780839485]
+scale = Vector2(7, 7)
+
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=58809509]
+sprite_frames = ExtResource("2_htf02")
+animation = &"alive"
+
+[node name="HurtBox" parent="." index="2" unique_id=1269771636]
+position = Vector2(-10, 0)
+shape = SubResource("CircleShape2D_ixkn1")

@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dkrexwox7ynt6"]
+
+[ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_spf01"]
+[ext_resource type="SpriteFrames" path="res://Game/Assets/Fishes/SpadeFish/Animation/SpadeFishAnimation.tres" id="2_spf02"]
+[ext_resource type="Script" path="res://Game/Assets/Fishes/SpadeFish/SpadeFish.cs" id="2_spf03"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mhkk6"]
+radius = 33.0
+height = 128.0
+
+[node name="SpadeFish" unique_id=713849205 instance=ExtResource("1_spf01")]
+script = ExtResource("2_spf03")
+CompendiumName = "Spade Fish"
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="0" unique_id=1780839485]
+scale = Vector2(7, 6)
+
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=58809509]
+sprite_frames = ExtResource("2_spf02")
+animation = &"alive"
+
+[node name="HurtBox" parent="." index="2" unique_id=1269771636]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_mhkk6")

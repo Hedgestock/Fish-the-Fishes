@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://cxcaw4nqf2mk7" path="res://Game/Assets/Fishes/BoxFish/BoxFish.cs" id="2_bxf03"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wtfgm"]
-size = Vector2(76.99997, 140)
+size = Vector2(140, 77)
 
 [node name="BoxFish" unique_id=492738651 instance=ExtResource("1_bxf01")]
 script = ExtResource("2_bxf03")
@@ -20,5 +20,4 @@ animation = &"alive"
 
 [node name="HurtBox" parent="." index="2" unique_id=1269771636]
 position = Vector2(-5.999996, -1.4999814)
-rotation = 1.5708
 shape = SubResource("RectangleShape2D_wtfgm")

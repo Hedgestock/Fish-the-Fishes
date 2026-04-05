@@ -1,0 +1,34 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://clf2k8mwqbn7r"]
+
+[ext_resource type="Texture2D" uid="uid://dgybm86lhqb82" path="res://Game/Assets/Fishes/CloverFish/Animation/Cloverfish_alive_0001.png" id="1_clf01"]
+[ext_resource type="Texture2D" uid="uid://daoiv7w8unkyd" path="res://Game/Assets/Fishes/CloverFish/Animation/Cloverfish_alive_0002.png" id="2_clf02"]
+[ext_resource type="Texture2D" uid="uid://ddtn70uo6mv78" path="res://Game/Assets/Fishes/CloverFish/Animation/Cloverfish_alive_0003.png" id="3_clf03"]
+[ext_resource type="Texture2D" uid="uid://beoacy3mk46dp" path="res://Game/Assets/Fishes/CloverFish/Animation/Cloverfish_dead.png" id="4_clfdd"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_clf01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_clf02")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_clf01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_clf03")
+}],
+"loop": true,
+"name": &"alive",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_clfdd")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}]

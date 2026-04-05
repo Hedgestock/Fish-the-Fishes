@@ -1,0 +1,34 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://dmf2k8mwqbn8s"]
+
+[ext_resource type="Texture2D" uid="uid://1h30mmr5auc8" path="res://Game/Assets/Fishes/DiamondFish/Animation/Diamond_alive_0001.png" id="1_dmf01"]
+[ext_resource type="Texture2D" uid="uid://dxitp31y754gp" path="res://Game/Assets/Fishes/DiamondFish/Animation/Diamond_alive_0002.png" id="2_dmf02"]
+[ext_resource type="Texture2D" uid="uid://ybnuwvj18n3y" path="res://Game/Assets/Fishes/DiamondFish/Animation/Diamond_alive_0003.png" id="3_dmf03"]
+[ext_resource type="Texture2D" uid="uid://vaw2mvni6uyt" path="res://Game/Assets/Fishes/DiamondFish/Animation/Diamond_dead.png" id="4_dmfdd"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dmf01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dmf02")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_dmf01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_dmf03")
+}],
+"loop": true,
+"name": &"alive",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_dmfdd")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}]

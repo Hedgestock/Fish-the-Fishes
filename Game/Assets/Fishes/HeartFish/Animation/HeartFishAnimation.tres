@@ -1,0 +1,34 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://dx06y6pn53sex"]
+
+[ext_resource type="Texture2D" uid="uid://bwgbmmbg6evw0" path="res://Game/Assets/Fishes/HeartFish/Animation/Heartfish_alive_0001.png" id="1_htf01"]
+[ext_resource type="Texture2D" uid="uid://fs8bgagogx0g" path="res://Game/Assets/Fishes/HeartFish/Animation/Heartfish_alive_0002.png" id="2_htf02"]
+[ext_resource type="Texture2D" uid="uid://cq1y1x4vh167o" path="res://Game/Assets/Fishes/HeartFish/Animation/Heartfish_alive_0003.png" id="3_htf03"]
+[ext_resource type="Texture2D" uid="uid://dtv1cjbmg8ywh" path="res://Game/Assets/Fishes/HeartFish/Animation/Heartfish_dead.png" id="4_htfdd"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_htf01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_htf02")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_htf01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_htf03")
+}],
+"loop": true,
+"name": &"alive",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_htfdd")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}]

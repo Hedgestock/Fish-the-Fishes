@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dnxkqg6f6tqn1"]
+
+[ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_clf01"]
+[ext_resource type="SpriteFrames" path="res://Game/Assets/Fishes/CloverFish/Animation/CloverFishAnimation.tres" id="2_clf02"]
+[ext_resource type="Script" path="res://Game/Assets/Fishes/CloverFish/CloverFish.cs" id="2_clf03"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sn3e0"]
+radius = 40.0
+height = 120.0
+
+[node name="CloverFish" unique_id=839274561 instance=ExtResource("1_clf01")]
+script = ExtResource("2_clf03")
+CompendiumName = "Clover Fish"
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="0" unique_id=1780839485]
+scale = Vector2(7, 6)
+
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=58809509]
+sprite_frames = ExtResource("2_clf02")
+animation = &"alive"
+
+[node name="HurtBox" parent="." index="2" unique_id=1269771636]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_sn3e0")

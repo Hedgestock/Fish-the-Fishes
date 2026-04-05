@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bptuy8odxxmxp"]
+
+[ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_dmf01"]
+[ext_resource type="SpriteFrames" path="res://Game/Assets/Fishes/DiamondFish/Animation/DiamondFishAnimation.tres" id="2_dmf02"]
+[ext_resource type="Script" path="res://Game/Assets/Fishes/DiamondFish/DiamondFish.cs" id="2_dmf03"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_803cx"]
+size = Vector2(70, 70)
+
+[node name="DiamondFish" unique_id=952016837 instance=ExtResource("1_dmf01")]
+script = ExtResource("2_dmf03")
+CompendiumName = "Diamond Fish"
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="0" unique_id=1780839485]
+scale = Vector2(7, 5)
+
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=58809509]
+sprite_frames = ExtResource("2_dmf02")
+animation = &"alive"
+
+[node name="HurtBox" parent="." index="2" unique_id=1269771636]
+rotation = 0.5235988
+skew = 0.5235988
+shape = SubResource("RectangleShape2D_803cx")

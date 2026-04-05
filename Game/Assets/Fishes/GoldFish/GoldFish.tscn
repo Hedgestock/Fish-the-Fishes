@@ -1,24 +1,25 @@
-[gd_scene format=3 uid="uid://cm4qabxnqf7v3"]
+[gd_scene format=3 uid="uid://bb1wlouvh3l3x"]
 
 [ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_gdf01"]
-[ext_resource type="SpriteFrames" uid="uid://gf3k8mwqbn5p2" path="res://Game/Assets/Fishes/GoldFish/Animation/GoldFishAnimation.tres" id="2_gdf02"]
+[ext_resource type="SpriteFrames" uid="uid://ckopnk0hqhayb" path="res://Game/Assets/Fishes/GoldFish/Animation/GoldFishAnimation.tres" id="2_gdf02"]
 [ext_resource type="Script" uid="uid://dg7v2kqnrx4m5" path="res://Game/Assets/Fishes/GoldFish/GoldFish.cs" id="2_gdf03"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gdf01"]
-size = Vector2(76.99997, 140)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uysxi"]
+radius = 18.499977
+height = 61.999966
 
 [node name="GoldFish" unique_id=381947265 instance=ExtResource("1_gdf01")]
 script = ExtResource("2_gdf03")
 CompendiumName = "Gold Fish"
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0" unique_id=1780839485]
-scale = Vector2(11, 5)
+scale = Vector2(5, 4)
 
 [node name="AnimatedSprite2D" parent="." index="1" unique_id=58809509]
 sprite_frames = ExtResource("2_gdf02")
 animation = &"alive"
 
 [node name="HurtBox" parent="." index="2" unique_id=1269771636]
-position = Vector2(-5.999996, -1.4999814)
+position = Vector2(13, 4)
 rotation = 1.5708
-shape = SubResource("RectangleShape2D_gdf01")
+shape = SubResource("CapsuleShape2D_uysxi")
