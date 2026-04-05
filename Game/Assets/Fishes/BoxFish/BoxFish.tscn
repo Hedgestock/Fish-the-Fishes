@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://co47trgayd4yy"]
+
+[ext_resource type="PackedScene" uid="uid://mpb5fpciv02u" path="res://Game/Assets/Fishes/Fish.tscn" id="1_bxf01"]
+[ext_resource type="SpriteFrames" uid="uid://bx5f2mwpllacd" path="res://Game/Assets/Fishes/BoxFish/Animation/BoxFishAnimation.tres" id="2_bxf02"]
+[ext_resource type="Script" uid="uid://cxcaw4nqf2mk7" path="res://Game/Assets/Fishes/BoxFish/BoxFish.cs" id="2_bxf03"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wtfgm"]
+size = Vector2(76.99997, 140)
+
+[node name="BoxFish" unique_id=492738651 instance=ExtResource("1_bxf01")]
+script = ExtResource("2_bxf03")
+CompendiumName = "Box Fish"
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="0" unique_id=1780839485]
+scale = Vector2(11, 5)
+
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=58809509]
+sprite_frames = ExtResource("2_bxf02")
+animation = &"alive"
+
+[node name="HurtBox" parent="." index="2" unique_id=1269771636]
+position = Vector2(-5.999996, -1.4999814)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_wtfgm")

@@ -1,0 +1,34 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://ckopnk0hqhayb"]
+
+[ext_resource type="Texture2D" uid="uid://crw48h4nh8yns" path="res://Game/Assets/Fishes/GoldFish/Animation/goldfish_alive_0001.png" id="1_gdf01"]
+[ext_resource type="Texture2D" uid="uid://4jxxrab4ifd" path="res://Game/Assets/Fishes/GoldFish/Animation/goldfish_alive_0002.png" id="2_gdf02"]
+[ext_resource type="Texture2D" uid="uid://b1xw44kmhebg5" path="res://Game/Assets/Fishes/GoldFish/Animation/goldfish_alive_0003.png" id="3_gdf03"]
+[ext_resource type="Texture2D" uid="uid://d37u8n3plwu8s" path="res://Game/Assets/Fishes/GoldFish/Animation/goldfish_dead.png" id="4_gdfdd"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gdf01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_gdf02")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_gdf01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gdf03")
+}],
+"loop": true,
+"name": &"alive",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_gdfdd")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}]

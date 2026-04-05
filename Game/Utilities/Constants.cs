@@ -31,7 +31,9 @@ namespace WaffleStock
             ArrowFish       = 1,
             BlueFish        = 11,
             BombFish        = 22,
+            BoxFish         = 24,
             BossGiantSquid  = 19,
+            GoldFish        = 25,
             BossWhale       = 20,
             BubbleFish      = 17,
             ClownFish       = 12,
@@ -52,7 +54,7 @@ namespace WaffleStock
             SwordFish       = 5,
             YellowFish      = 6,
         }
-        // Highest 23, next 24
+        // Highest 25, next 26
 
         public static string TrashesFolder = "res://Game/Assets/Trashes/";
 
