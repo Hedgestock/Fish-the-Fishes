@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://55p5l8pjn305"
+
+[deps]
+
+files=["res://Game/Translations/FTF localisation.en.translation", "res://Game/Translations/FTF localisation.en.translation"]
+
+source_file="res://Game/Translations/FTF localisation.csv"
+dest_files=["res://Game/Translations/FTF localisation.en.translation", "res://Game/Translations/FTF localisation.en.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true
