@@ -9,8 +9,8 @@ size = Vector2(126, 107)
 
 [node name="BubbleFish" unique_id=1870731355 instance=ExtResource("1_k4nip")]
 script = ExtResource("2_2bl1u")
-CompendiumName = "Bubble Fish"
-CompendiumDescription = "This colorful fish is somehow really attracted by bubbles."
+CompendiumName = "BUBBLE_FISH"
+CompendiumDescription = "BUBBLE_FISH_DESCRIPTION"
 MinSpeed = 100.0
 MaxSpeed = 200.0
 AverageSize = 47.0

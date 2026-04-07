@@ -6,5 +6,5 @@
 script = ExtResource("1_mpoer")
 Threshold = 1
 Mode = 4
-CompendiumName = "Sport Fishing"
-CompendiumDescription = "Did you get the fish you expected?"
+CompendiumName = "PLAYED_1_TARGET_GAME"
+CompendiumDescription = "PLAYED_1_TARGET_GAME_DESCRIPTION"

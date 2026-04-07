@@ -6,5 +6,5 @@
 script = ExtResource("1_0xgx2")
 Threshold = 10
 Mode = 2
-CompendiumName = "10 Classics"
-CompendiumDescription = "Classic games are a nice passtime!"
+CompendiumName = "PLAYED_10_CLASSIC_GAMES"
+CompendiumDescription = "PLAYED_10_CLASSIC_GAMES_DESCRIPTION"

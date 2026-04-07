@@ -6,5 +6,5 @@
 script = ExtResource("1_we7l8")
 Threshold = 40
 UnlockableName = "HarpoonHook"
-CompendiumName = "40 in 1"
-CompendiumDescription = "So many points, you're now allowed to use professional gear!"
+CompendiumName = "SCORED_40_POINTS_MAX"
+CompendiumDescription = "SCORED_40_POINTS_MAX_DESCRIPTION"

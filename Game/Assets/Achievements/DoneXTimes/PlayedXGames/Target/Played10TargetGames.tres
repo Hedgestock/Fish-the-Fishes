@@ -7,5 +7,5 @@ script = ExtResource("1_ysc64")
 Threshold = 10
 Mode = 4
 UnlockableName = "ControlHook"
-CompendiumName = "Looking for it"
-CompendiumDescription = "Sometimes, a little bit of patience is a good thing."
+CompendiumName = "PLAYED_10_TARGET_GAMES"
+CompendiumDescription = "PLAYED_10_TARGET_GAMES_DESCRIPTION"

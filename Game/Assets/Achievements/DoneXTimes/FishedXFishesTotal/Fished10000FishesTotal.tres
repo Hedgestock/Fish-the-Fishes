@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_hfqf2")
 Threshold = 10000
-CompendiumName = "Intensive fishing"
-CompendiumDescription = "You might get a visit from the Food and Agriculture Organization now!"
+CompendiumName = "FISHED_10000_FISHES_TOTAL"
+CompendiumDescription = "FISHED_10000_FISHES_TOTAL_DESCRIPTION"

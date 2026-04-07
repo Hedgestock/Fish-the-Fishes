@@ -9,7 +9,8 @@ radius = 52.009613
 
 [node name="HeartFish" unique_id=627483019 instance=ExtResource("1_htf01")]
 script = ExtResource("2_htf03")
-CompendiumName = "Heart Fish"
+CompendiumName = "HEART_FISH"
+CompendiumDescription = "HEART_FISH_DESCRIPTION"
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0" unique_id=1780839485]
 scale = Vector2(7, 7)

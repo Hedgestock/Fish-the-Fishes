@@ -10,8 +10,8 @@ height = 262.0
 
 [node name="AnguilleFish" unique_id=724774079 instance=ExtResource("1_d3b32")]
 script = ExtResource("2_2x4bm")
-CompendiumName = "Eel"
-CompendiumDescription = "This slippery fish loves lurking under rocks and mostly inhabits dark biomes."
+CompendiumName = "ANGUILLE_FISH"
+CompendiumDescription = "ANGUILLE_FISH_DESCRIPTION"
 MinSpeed = 200.0
 MaxSpeed = 300.0
 SpawnRange = Vector2(0.5, 1)

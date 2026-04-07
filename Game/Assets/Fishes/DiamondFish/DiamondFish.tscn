@@ -9,7 +9,8 @@ size = Vector2(70, 70)
 
 [node name="DiamondFish" unique_id=952016837 instance=ExtResource("1_dmf01")]
 script = ExtResource("2_dmf03")
-CompendiumName = "Diamond Fish"
+CompendiumName = "DIAMOND_FISH"
+CompendiumDescription = "DIAMOND_FISH_DESCRIPTION"
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0" unique_id=1780839485]
 scale = Vector2(7, 5)

@@ -11,8 +11,8 @@ height = 156.0
 
 [node name="PoisonFish" unique_id=180073452 instance=ExtResource("1_28mxf")]
 script = ExtResource("2_p1g2j")
-CompendiumName = "Poison Fish"
-CompendiumDescription = ""
+CompendiumName = "POISON_FISH"
+CompendiumDescription = "POISON_FISH_DESCRIPTION"
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0" unique_id=1780839485]
 scale = Vector2(10, 6)

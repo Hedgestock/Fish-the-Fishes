@@ -6,5 +6,5 @@
 script = ExtResource("1_2qy25")
 Threshold = 1
 Mode = 6
-CompendiumName = "Attacked the time"
-CompendiumDescription = "Everything is better with a deadline."
+CompendiumName = "PLAYED_1_TA_GAME"
+CompendiumDescription = "PLAYED_1_TA_GAME_DESCRIPTION"

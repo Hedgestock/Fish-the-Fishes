@@ -79,6 +79,10 @@ screen_hold={
 
 pointing/android/enable_pan_and_scale_gestures=true
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://Game/Translations/FTF localisation.en.translation", "res://Game/Translations/FTF localisation.fr.translation")
+
 [physics]
 
 2d/default_linear_damp=1.0

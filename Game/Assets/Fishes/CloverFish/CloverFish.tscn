@@ -10,7 +10,8 @@ height = 120.0
 
 [node name="CloverFish" unique_id=839274561 instance=ExtResource("1_clf01")]
 script = ExtResource("2_clf03")
-CompendiumName = "Clover Fish"
+CompendiumName = "CLOVER_FISH"
+CompendiumDescription = "CLOVER_FISH_DESCRIPTION"
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0" unique_id=1780839485]
 scale = Vector2(7, 6)

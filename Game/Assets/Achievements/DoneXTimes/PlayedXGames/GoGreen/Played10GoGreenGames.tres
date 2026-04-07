@@ -6,5 +6,5 @@
 script = ExtResource("1_fr0ak")
 Threshold = 10
 Mode = 3
-CompendiumName = "Environmental Protector "
-CompendiumDescription = "Small actions help tremendously when done regularly."
+CompendiumName = "PLAYED_10_GO_GREEN_GAMES"
+CompendiumDescription = "PLAYED_10_GO_GREEN_GAMES_DESCRIPTION"

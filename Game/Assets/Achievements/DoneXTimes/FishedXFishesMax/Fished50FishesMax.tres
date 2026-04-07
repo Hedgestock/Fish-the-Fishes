@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_251g4")
 Threshold = 50
-CompendiumName = "That's a shoal!!!"
-CompendiumDescription = "You probably fished sardines!"
+CompendiumName = "FISHED_50_FISHES_MAX"
+CompendiumDescription = "FISHED_50_FISHES_MAX_DESCRIPTION"

@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_7mutb")
 Threshold = 5
-CompendiumName = "5 in 1"
-CompendiumDescription = "You scored 5 points in a single line throw!"
+CompendiumName = "SCORED_5_POINTS_MAX"
+CompendiumDescription = "SCORED_5_POINTS_MAX_DESCRIPTION"

@@ -7,5 +7,5 @@ script = ExtResource("1_4wfuq")
 Threshold = 1
 UnlockableName = "Lead"
 UnlockableType = 2
-CompendiumName = "Started playing Classic"
-CompendiumDescription = "Nothing better than a good classic game."
+CompendiumName = "PLAYED_1_CLASSIC_GAME"
+CompendiumDescription = "PLAYED_1_CLASSIC_GAME_DESCRIPTION"

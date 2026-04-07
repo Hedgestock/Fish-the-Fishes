@@ -9,7 +9,8 @@ height = 92.0
 
 [node name="GuppyFish" unique_id=1927063022 instance=ExtResource("1_txpkp")]
 script = ExtResource("2_sxa50")
-CompendiumName = "Guppy Fish"
+CompendiumName = "GUPPY_FISH"
+CompendiumDescription = "GUPPY_FISH_DESCRIPTION"
 AverageSize = 22.5
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0" unique_id=1780839485]

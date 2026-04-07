@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_pro8p")
 Threshold = 80
-CompendiumName = "80 in 1"
-CompendiumDescription = "The fisherman strikes back!"
+CompendiumName = "SCORED_80_POINTS_MAX"
+CompendiumDescription = "SCORED_80_POINTS_MAX_DESCRIPTION"

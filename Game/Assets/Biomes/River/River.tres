@@ -65,4 +65,6 @@ Trashes = Array[Object]([SubResource("Resource_muunb"), SubResource("Resource_74
 FollowupBiomes = Array[Object]([SubResource("Resource_3xdlt"), SubResource("Resource_v6url")])
 Background = ExtResource("1_8pv1i")
 Music = ExtResource("2_pdt1m")
+CompendiumName = "RIVER"
+CompendiumDescription = "RIVER_DESCRIPTION"
 metadata/_custom_type_script = "uid://62lfoitacli2"

@@ -10,7 +10,8 @@ height = 144.0
 
 [node name="RiverFish" unique_id=1817181931 instance=ExtResource("1_h8xj4")]
 script = ExtResource("2_t3ocf")
-CompendiumName = "River Fish"
+CompendiumName = "RIVER_FISH"
+CompendiumDescription = "RIVER_FISH_DESCRIPTION"
 AverageSize = 38.75
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0" unique_id=1780839485]

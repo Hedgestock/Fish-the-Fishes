@@ -2,14 +2,14 @@
 
 importer="csv_translation"
 type="Translation"
-uid="uid://55p5l8pjn305"
+uid="uid://6sfckylnopwn"
 
 [deps]
 
-files=["res://Game/Translations/FTF localisation.en.translation", "res://Game/Translations/FTF localisation.en.translation"]
+files=["res://Game/Translations/FTF localisation.en.translation", "res://Game/Translations/FTF localisation.fr.translation"]
 
 source_file="res://Game/Translations/FTF localisation.csv"
-dest_files=["res://Game/Translations/FTF localisation.en.translation", "res://Game/Translations/FTF localisation.en.translation"]
+dest_files=["res://Game/Translations/FTF localisation.en.translation", "res://Game/Translations/FTF localisation.fr.translation"]
 
 [params]
 

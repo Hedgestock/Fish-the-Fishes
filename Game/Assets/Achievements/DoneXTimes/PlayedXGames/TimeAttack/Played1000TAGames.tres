@@ -6,5 +6,5 @@
 script = ExtResource("1_b1hp0")
 Threshold = 1000
 Mode = 6
-CompendiumName = "...definitely furious"
-CompendiumDescription = "You played for family."
+CompendiumName = "PLAYED_1000_TA_GAMES"
+CompendiumDescription = "PLAYED_1000_TA_GAMES_DESCRIPTION"

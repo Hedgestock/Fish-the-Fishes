@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_eprqu")
 Threshold = 1000
-CompendiumName = "Played 1000 Games"
-CompendiumDescription = "You're now a master baiter!"
+CompendiumName = "PLAYED_1000_GAMES"
+CompendiumDescription = "PLAYED_1000_GAMES_DESCRIPTION"

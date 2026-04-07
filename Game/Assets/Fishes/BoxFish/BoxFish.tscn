@@ -9,7 +9,8 @@ size = Vector2(140, 77)
 
 [node name="BoxFish" unique_id=492738651 instance=ExtResource("1_bxf01")]
 script = ExtResource("2_bxf03")
-CompendiumName = "Box Fish"
+CompendiumName = "BOX_FISH"
+CompendiumDescription = "BOX_FISH_DESCRIPTION"
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0" unique_id=1780839485]
 scale = Vector2(11, 5)

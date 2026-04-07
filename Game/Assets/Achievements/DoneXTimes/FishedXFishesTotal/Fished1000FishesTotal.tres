@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_tbnpk")
 Threshold = 1000
-CompendiumName = "One Kilo Please"
-CompendiumDescription = "A 1000 of them! Hopefully you like seafood!"
+CompendiumName = "FISHED_1000_FISHES_TOTAL"
+CompendiumDescription = "FISHED_1000_FISHES_TOTAL_DESCRIPTION"

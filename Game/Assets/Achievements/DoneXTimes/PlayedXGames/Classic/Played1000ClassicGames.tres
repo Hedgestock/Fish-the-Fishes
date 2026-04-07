@@ -6,5 +6,5 @@
 script = ExtResource("1_555d3")
 Threshold = 1000
 Mode = 2
-CompendiumName = "Addicted"
-CompendiumDescription = "Standard Basic Classic"
+CompendiumName = "PLAYED_1000_CLASSIC_GAMES"
+CompendiumDescription = "PLAYED_1000_CLASSIC_GAMES_DESCRIPTION"

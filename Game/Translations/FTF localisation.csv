@@ -1,58 +1,163 @@
 key,en,fr
 FISHES,,
-ANGUILLE_FISH,Eel,
-ANGUILLE_FISH_DESCRIPTION,This slippery fish loves lurking under rocks and mostly inhabits dark biomes.,
-ARROW_FISH,Arrow Fish,
-ARROW_FISH_DESCRIPTION,"This strangely shaped fish is pretty common, so common in fact that you could swear having already seen it somewhere else...",
-BLUE_FISH,Blue Fish,
-BLUE_FISH_DESCRIPTION,"Almost as common as the green fish, the blue fish is found in deeper waters, try to look for it in the great blue!",
-BOMB_FISH,Bomb Fish,
-BOMB_FISH_DESCRIPTION,,
-BOX_FISH,Box Fish,
-BOX_FISH_DESCRIPTION,,
-BUBBLE_FISH,Bubble Fish,
-BUBBLE_FISH_DESCRIPTION,This colorful fish is somehow really attracted by bubbles.,
-CLOVER_FISH,Clover Fish,
-CLOVER_FISH_DESCRIPTION,,
-CLOWN_FISH,Clown Fish,
-CLOWN_FISH_DESCRIPTION,It does not sound as funny as its name lets us believe.,
-CURRENT_FISH,Current Fish,
-CURRENT_FISH_DESCRIPTION,This slim profiled fish adapted itself to swim in strong currents.,
-DIAMOND_FISH,Diamond Fish,
-DIAMOND_FISH_DESCRIPTION,,
-GOLD_FISH,Gold Fish,
-GOLD_FISH_DESCRIPTION,,
-GREEN_FISH,Green Fish,
-GREEN_FISH_DESCRIPTION,Pretty common species of fish found seemingly everywhere.,
-GUPPY_FISH,Guppy Fish,
-GUPPY_FISH_DESCRIPTION,,
-HEART_FISH,Heart Fish,
-HEART_FISH_DESCRIPTION,,
-JELLY_FISH,Jellyfish,
-JELLY_FISH_DESCRIPTION,"Legends are telling that catching a jellyfish would extend your life expectancy...",
-LAKE_FISH,Lake Fish,
-LAKE_FISH_DESCRIPTION,,
-LANTERN_FISH,Lantern Fish,
-LANTERN_FISH_DESCRIPTION,,
-PARROT_FISH,Parrot Fish,
-PARROT_FISH_DESCRIPTION,This colorful fish feeds on corrals and thus is immune to urchins spikes.,
-POISON_FISH,Poison Fish,
-POISON_FISH_DESCRIPTION,,
-RED_FISH,Red Fish,
-RED_FISH_DESCRIPTION,"That is unable to swim fast, and thus developed a strong toxin that it injects via its spikes to any other animal that has the misfortune of swimming to close. Fishing such a specimen can spoil a whole batch of fishes.",
-RIVER_FISH,River Fish,
-RIVER_FISH_DESCRIPTION,,
-SARDINE_FISH,Sardine,
-SARDINE_FISH_DESCRIPTION,This species usually form shoals that are a godsend for any fisherman lucky enough to cast a line there.,
-SEA_URCHIN,Urchin,
-SEA_URCHIN_DESCRIPTION,"Fishes often get caught in the long spikes of the urchins, even though urchins themselve do not feed off of fishes.",
-SERPENT_FISH,Sea Snake,
-SERPENT_FISH_DESCRIPTION,Those were the first slithering species to be found in the oceans.,
-SHARK_FISH,Shark,
-SHARK_FISH_DESCRIPTION,"A fierce predator almost unstoppable. It will eat anything in its path as long as it fits in its mouth.",
-SPADE_FISH,Spade Fish,
-SPADE_FISH_DESCRIPTION,,
-SWORD_FISH,Swordfish,
-SWORD_FISH_DESCRIPTION,Moving at speeds that few other fishes can match this fast swimmer uses its bill to skewer its prey before they can even react.,
-YELLOW_FISH,Yellow Fish,
-YELLOW_FISH_DESCRIPTION,"The Yellow Fish is often found in the same environment as the Green Fish and share a lot of similarities with it, although it is on average noticeably smaller.",
+ANGUILLE_FISH,Eel,MISSING_TRANSLATION
+ANGUILLE_FISH_DESCRIPTION,This slippery fish loves lurking under rocks and mostly inhabits dark biomes.,MISSING_TRANSLATION
+ARROW_FISH,Arrow Fish,MISSING_TRANSLATION
+ARROW_FISH_DESCRIPTION,"This strangely shaped fish is pretty common, so common in fact that you could swear having already seen it somewhere else...",MISSING_TRANSLATION
+BLUE_FISH,Blue Fish,MISSING_TRANSLATION
+BLUE_FISH_DESCRIPTION,"Almost as common as the green fish, the blue fish is found in deeper waters, try to look for it in the great blue!",MISSING_TRANSLATION
+BOMB_FISH,Bomb Fish,MISSING_TRANSLATION
+BOMB_FISH_DESCRIPTION,,MISSING_TRANSLATION
+BOX_FISH,Box Fish,MISSING_TRANSLATION
+BOX_FISH_DESCRIPTION,,MISSING_TRANSLATION
+BUBBLE_FISH,Bubble Fish,MISSING_TRANSLATION
+BUBBLE_FISH_DESCRIPTION,This colorful fish is somehow really attracted by bubbles.,MISSING_TRANSLATION
+CLOVER_FISH,Clover Fish,MISSING_TRANSLATION
+CLOVER_FISH_DESCRIPTION,,MISSING_TRANSLATION
+CLOWN_FISH,Clown Fish,MISSING_TRANSLATION
+CLOWN_FISH_DESCRIPTION,It does not sound as funny as its name lets us believe.,MISSING_TRANSLATION
+CURRENT_FISH,Current Fish,MISSING_TRANSLATION
+CURRENT_FISH_DESCRIPTION,This slim profiled fish adapted itself to swim in strong currents.,MISSING_TRANSLATION
+DIAMOND_FISH,Diamond Fish,MISSING_TRANSLATION
+DIAMOND_FISH_DESCRIPTION,,MISSING_TRANSLATION
+GOLD_FISH,Gold Fish,MISSING_TRANSLATION
+GOLD_FISH_DESCRIPTION,,MISSING_TRANSLATION
+GREEN_FISH,Green Fish,MISSING_TRANSLATION
+GREEN_FISH_DESCRIPTION,Pretty common species of fish found seemingly everywhere.,MISSING_TRANSLATION
+GUPPY_FISH,Guppy Fish,MISSING_TRANSLATION
+GUPPY_FISH_DESCRIPTION,,MISSING_TRANSLATION
+HEART_FISH,Heart Fish,MISSING_TRANSLATION
+HEART_FISH_DESCRIPTION,,MISSING_TRANSLATION
+JELLY_FISH,Jellyfish,MISSING_TRANSLATION
+JELLY_FISH_DESCRIPTION,Legends are telling that catching a jellyfish would extend your life expectancy...,MISSING_TRANSLATION
+LAKE_FISH,Lake Fish,MISSING_TRANSLATION
+LAKE_FISH_DESCRIPTION,,MISSING_TRANSLATION
+LANTERN_FISH,Lantern Fish,MISSING_TRANSLATION
+LANTERN_FISH_DESCRIPTION,,MISSING_TRANSLATION
+PARROT_FISH,Parrot Fish,MISSING_TRANSLATION
+PARROT_FISH_DESCRIPTION,This colorful fish feeds on corrals and thus is immune to urchins spikes.,MISSING_TRANSLATION
+POISON_FISH,Poison Fish,MISSING_TRANSLATION
+POISON_FISH_DESCRIPTION,,MISSING_TRANSLATION
+RED_FISH,Red Fish,MISSING_TRANSLATION
+RED_FISH_DESCRIPTION,"That is unable to swim fast, and thus developed a strong toxin that it injects via its spikes to any other animal that has the misfortune of swimming to close. Fishing such a specimen can spoil a whole batch of fishes.",MISSING_TRANSLATION
+RIVER_FISH,River Fish,MISSING_TRANSLATION
+RIVER_FISH_DESCRIPTION,,MISSING_TRANSLATION
+SARDINE_FISH,Sardine,MISSING_TRANSLATION
+SARDINE_FISH_DESCRIPTION,This species usually form shoals that are a godsend for any fisherman lucky enough to cast a line there.,MISSING_TRANSLATION
+SEA_URCHIN,Urchin,MISSING_TRANSLATION
+SEA_URCHIN_DESCRIPTION,"Fishes often get caught in the long spikes of the urchins, even though urchins themselve do not feed off of fishes.",MISSING_TRANSLATION
+SERPENT_FISH,Sea Snake,MISSING_TRANSLATION
+SERPENT_FISH_DESCRIPTION,Those were the first slithering species to be found in the oceans.,MISSING_TRANSLATION
+SHARK_FISH,Shark,MISSING_TRANSLATION
+SHARK_FISH_DESCRIPTION,A fierce predator almost unstoppable. It will eat anything in its path as long as it fits in its mouth.,MISSING_TRANSLATION
+SPADE_FISH,Spade Fish,MISSING_TRANSLATION
+SPADE_FISH_DESCRIPTION,,MISSING_TRANSLATION
+SWORD_FISH,Swordfish,MISSING_TRANSLATION
+SWORD_FISH_DESCRIPTION,Moving at speeds that few other fishes can match this fast swimmer uses its bill to skewer its prey before they can even react.,MISSING_TRANSLATION
+YELLOW_FISH,Yellow Fish,MISSING_TRANSLATION
+YELLOW_FISH_DESCRIPTION,"The Yellow Fish is often found in the same environment as the Green Fish and share a lot of similarities with it, although it is on average noticeably smaller.",MISSING_TRANSLATION
+TRASHES,,
+CAN,Can,MISSING_TRANSLATION
+CAN_DESCRIPTION,Please do not throw that in the water...,MISSING_TRANSLATION
+SHOE,Shoe,MISSING_TRANSLATION
+SHOE_DESCRIPTION,Just how do you lose your shoe here?!,MISSING_TRANSLATION
+TIRE,Tire,MISSING_TRANSLATION
+TIRE_DESCRIPTION,Someone must have had an accident!,MISSING_TRANSLATION
+BIOMES,,
+ABYSS,Abyss,MISSING_TRANSLATION
+ABYSS_DESCRIPTION,Those are the abysses,MISSING_TRANSLATION
+BEACH,Beach,MISSING_TRANSLATION
+BEACH_DESCRIPTION,"A nice and peaceful beach where the shallow water hosts a lot of common fishes, althous you might occasionally see some predators looking for easy food.",MISSING_TRANSLATION
+CORAL_REEF,Coral Reef,MISSING_TRANSLATION
+CORAL_REEF_DESCRIPTION,A gorgeous coral reel full of colorful life and slippery fishes.,MISSING_TRANSLATION
+GREAT_BLUE,Great Blue,MISSING_TRANSLATION
+GREAT_BLUE_DESCRIPTION,A deep and spacious expense of water far from the coast where all kind of marine animals cohabit.,MISSING_TRANSLATION
+LAKE,Lake,MISSING_TRANSLATION
+LAKE_DESCRIPTION,,MISSING_TRANSLATION
+OCEAN_CURRENT,Ocean Current,MISSING_TRANSLATION
+OCEAN_CURRENT_DESCRIPTION,"Similar to the Great Blue, this place is vast and mostly empty, however the strong currents promote the development of stronger fishes, able to swim against the stream of water.",MISSING_TRANSLATION
+RIVER,River,MISSING_TRANSLATION
+RIVER_DESCRIPTION,,MISSING_TRANSLATION
+TEST,Test,MISSING_TRANSLATION
+TEST_DESCRIPTION,"This is the debug biome, you should never see it during normal gameplay.",MISSING_TRANSLATION
+WRECK_DECK,Wreck Deck,MISSING_TRANSLATION
+WRECK_DECK_DESCRIPTION,"The deck of a sunken ship, now overgrown by marine life.",MISSING_TRANSLATION
+WRECK_INSIDE,Wreck Inside,MISSING_TRANSLATION
+WRECK_INSIDE_DESCRIPTION,"The interior of this ship emulates almost perfectly a coral reef environment, although the lack of luminosity is better suited for species more adapted to the dark.",MISSING_TRANSLATION
+ACHIEVEMENTS,,
+FISHED_3_FISHES_MAX,3 at once,MISSING_TRANSLATION
+FISHED_3_FISHES_MAX_DESCRIPTION,3 at once! Did you see the score multiplier?,MISSING_TRANSLATION
+FISHED_7_FISHES_MAX,7 at once,MISSING_TRANSLATION
+FISHED_7_FISHES_MAX_DESCRIPTION,"You got seven at once, much like some tailor.",MISSING_TRANSLATION
+FISHED_25_FISHES_MAX,Go big,MISSING_TRANSLATION
+FISHED_25_FISHES_MAX_DESCRIPTION,"Time to go big or go home, looks like you've unlocked a ""little"" something!",MISSING_TRANSLATION
+FISHED_50_FISHES_MAX,That's a shoal!!!,MISSING_TRANSLATION
+FISHED_50_FISHES_MAX_DESCRIPTION,You probably fished sardines!,MISSING_TRANSLATION
+FISHED_1_FISH_TOTAL,First catch!,MISSING_TRANSLATION
+FISHED_1_FISH_TOTAL_DESCRIPTION,"Yeah, you understood the game!",MISSING_TRANSLATION
+FISHED_10_FISH_TOTAL,10 already!,MISSING_TRANSLATION
+FISHED_10_FISH_TOTAL_DESCRIPTION,You're starting a new journey!,MISSING_TRANSLATION
+FISHED_100_FISHES_TOTAL,100 Fishes,MISSING_TRANSLATION
+FISHED_100_FISHES_TOTAL_DESCRIPTION,"Okay, now you get it!",MISSING_TRANSLATION
+FISHED_1000_FISHES_TOTAL,One Kilo Please,MISSING_TRANSLATION
+FISHED_1000_FISHES_TOTAL_DESCRIPTION,A 1000 of them! Hopefully you like seafood!,MISSING_TRANSLATION
+FISHED_10000_FISHES_TOTAL,Intensive fishing,MISSING_TRANSLATION
+FISHED_10000_FISHES_TOTAL_DESCRIPTION,You might get a visit from the Food and Agriculture Organization now!,MISSING_TRANSLATION
+PLAYED_1_GAME,Started playing,MISSING_TRANSLATION
+PLAYED_1_GAME_DESCRIPTION,You started playing!,MISSING_TRANSLATION
+PLAYED_10_GAMES,Played 10 Games,MISSING_TRANSLATION
+PLAYED_10_GAMES_DESCRIPTION,You played 10 games!,MISSING_TRANSLATION
+PLAYED_100_GAMES,Played 100 Games,MISSING_TRANSLATION
+PLAYED_100_GAMES_DESCRIPTION,A 100 games under your belt!,MISSING_TRANSLATION
+PLAYED_1000_GAMES,Played 1000 Games,MISSING_TRANSLATION
+PLAYED_1000_GAMES_DESCRIPTION,You're now a master baiter!,MISSING_TRANSLATION
+PLAYED_1_CLASSIC_GAME,Started playing Classic,MISSING_TRANSLATION
+PLAYED_1_CLASSIC_GAME_DESCRIPTION,Nothing better than a good classic game.,MISSING_TRANSLATION
+PLAYED_10_CLASSIC_GAMES,10 Classics,MISSING_TRANSLATION
+PLAYED_10_CLASSIC_GAMES_DESCRIPTION,Classic games are a nice passtime!,MISSING_TRANSLATION
+PLAYED_100_CLASSIC_GAMES,A hundred!,MISSING_TRANSLATION
+PLAYED_100_CLASSIC_GAMES_DESCRIPTION,Nice job!,MISSING_TRANSLATION
+PLAYED_1000_CLASSIC_GAMES,Addicted,MISSING_TRANSLATION
+PLAYED_1000_CLASSIC_GAMES_DESCRIPTION,Standard Basic Classic,MISSING_TRANSLATION
+PLAYED_1_GO_GREEN_GAME,Played Go Green,MISSING_TRANSLATION
+PLAYED_1_GO_GREEN_GAME_DESCRIPTION,Cleaning the ocean starts here!,MISSING_TRANSLATION
+PLAYED_10_GO_GREEN_GAMES,Environmental Protector,MISSING_TRANSLATION
+PLAYED_10_GO_GREEN_GAMES_DESCRIPTION,Small actions help tremendously when done regularly.,MISSING_TRANSLATION
+PLAYED_100_GO_GREEN_GAMES,Environmental Activist,MISSING_TRANSLATION
+PLAYED_100_GO_GREEN_GAMES_DESCRIPTION,You're commited to the cause!,MISSING_TRANSLATION
+PLAYED_1000_GO_GREEN_GAMES,Cleaner Master,MISSING_TRANSLATION
+PLAYED_1000_GO_GREEN_GAMES_DESCRIPTION,Cleaning the waters is now officially YOUR thing!,MISSING_TRANSLATION
+PLAYED_1_TARGET_GAME,Sport Fishing,MISSING_TRANSLATION
+PLAYED_1_TARGET_GAME_DESCRIPTION,Did you get the fish you expected?,MISSING_TRANSLATION
+PLAYED_10_TARGET_GAMES,Looking for it,MISSING_TRANSLATION
+PLAYED_10_TARGET_GAMES_DESCRIPTION,"Sometimes, a little bit of patience is a good thing.",MISSING_TRANSLATION
+PLAYED_100_TARGET_GAMES,I know them,MISSING_TRANSLATION
+PLAYED_100_TARGET_GAMES_DESCRIPTION,Getting to know your catch!,MISSING_TRANSLATION
+PLAYED_1000_TARGET_GAMES,Fish sniper,MISSING_TRANSLATION
+PLAYED_1000_TARGET_GAMES_DESCRIPTION,The most precise marksman.,MISSING_TRANSLATION
+PLAYED_1_TA_GAME,Attacked the time,MISSING_TRANSLATION
+PLAYED_1_TA_GAME_DESCRIPTION,Everything is better with a deadline.,MISSING_TRANSLATION
+PLAYED_10_TA_GAMES,Handling the stress,MISSING_TRANSLATION
+PLAYED_10_TA_GAMES_DESCRIPTION,You're performing under pressure!,MISSING_TRANSLATION
+PLAYED_100_TA_GAMES,Fast and...,MISSING_TRANSLATION
+PLAYED_100_TA_GAMES_DESCRIPTION,Fan of some hedgehog?,MISSING_TRANSLATION
+PLAYED_1000_TA_GAMES,...definitely furious,MISSING_TRANSLATION
+PLAYED_1000_TA_GAMES_DESCRIPTION,You played for family.,MISSING_TRANSLATION
+SCORED_5_POINTS_MAX,5 in 1,MISSING_TRANSLATION
+SCORED_5_POINTS_MAX_DESCRIPTION,You scored 5 points in a single line throw!,MISSING_TRANSLATION
+SCORED_10_POINTS_MAX,10 in 1,MISSING_TRANSLATION
+SCORED_10_POINTS_MAX_DESCRIPTION,You deserve a tenner!,MISSING_TRANSLATION
+SCORED_40_POINTS_MAX,40 in 1,MISSING_TRANSLATION
+SCORED_40_POINTS_MAX_DESCRIPTION,"So many points, you're now allowed to use professional gear!",MISSING_TRANSLATION
+SCORED_80_POINTS_MAX,80 in 1,MISSING_TRANSLATION
+SCORED_80_POINTS_MAX_DESCRIPTION,The fisherman strikes back!,MISSING_TRANSLATION
+SCORED_100_POINTS_MAX,100 in 1,MISSING_TRANSLATION
+SCORED_100_POINTS_MAX_DESCRIPTION,How is that even possible!!!,MISSING_TRANSLATION
+SCORED_100_POINTS_TOTAL,100 Points,MISSING_TRANSLATION
+SCORED_100_POINTS_TOTAL_DESCRIPTION,You scored a 100 points!,MISSING_TRANSLATION
+SCORED_1000_POINTS_TOTAL,1000 Points,MISSING_TRANSLATION
+SCORED_1000_POINTS_TOTAL_DESCRIPTION,That's 10 times more than 100!,MISSING_TRANSLATION
+SCORED_10000_POINTS_TOTAL,10000 Points,MISSING_TRANSLATION
+SCORED_10000_POINTS_TOTAL_DESCRIPTION,It's over 9000!!!,MISSING_TRANSLATION
+SCORED_100000_POINTS_TOTAL,100000 Points,MISSING_TRANSLATION
+SCORED_100000_POINTS_TOTAL_DESCRIPTION,You've reached the end! (Of those achievmements at least),MISSING_TRANSLATION

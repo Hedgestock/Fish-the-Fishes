@@ -1,4 +1,5 @@
 ﻿using Godot;
+using System.Globalization;
 
 namespace WaffleStock
 {
@@ -22,6 +23,8 @@ namespace WaffleStock
         public static bool Save(string path)
         {
             ConfigFile config = new();
+
+            config.SetValue(null, "UILanguage", TranslationServer.GetLocale());
 
             config.SetValue(null, nameof(CompetitiveMode), CompetitiveMode);
             config.SetValue(null, nameof(Vibrations), Vibrations);
@@ -54,6 +57,10 @@ namespace WaffleStock
             {
                 GD.PrintErr($"Error loading settings file, creating a fresh one: {err}");
             }
+
+            TranslationServer.SetLocale((string)config.GetValue(null, "UILanguage", new CultureInfo(TranslationServer.GetLocale(), false).TwoLetterISOLanguageName));
+
+            GD.Print($"locale {TranslationServer.GetLocale()} {TranslationServer.Translate("GREEN_FISH")}");
 
             CompetitiveMode = (bool)config.GetValue(null, nameof(CompetitiveMode), CompetitiveMode);
             Vibrations = (bool)config.GetValue(null, nameof(Vibrations), Vibrations);

@@ -6,5 +6,5 @@
 script = ExtResource("1_e3dag")
 Threshold = 10
 Mode = 6
-CompendiumName = "Handling the stress"
-CompendiumDescription = "You're performing under pressure!"
+CompendiumName = "PLAYED_10_TA_GAMES"
+CompendiumDescription = "PLAYED_10_TA_GAMES_DESCRIPTION"

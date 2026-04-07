@@ -6,5 +6,5 @@
 script = ExtResource("1_4d5i8")
 Threshold = 1
 Mode = 3
-CompendiumName = "Played Go Green"
-CompendiumDescription = "Cleaning the ocean starts here!"
+CompendiumName = "PLAYED_1_GO_GREEN_GAME"
+CompendiumDescription = "PLAYED_1_GO_GREEN_GAME_DESCRIPTION"

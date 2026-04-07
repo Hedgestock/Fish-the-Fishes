@@ -6,5 +6,5 @@
 script = ExtResource("1_c1swc")
 Threshold = 1000
 Mode = 4
-CompendiumName = "Fish sniper"
-CompendiumDescription = "The most precise marksman."
+CompendiumName = "PLAYED_1000_TARGET_GAMES"
+CompendiumDescription = "PLAYED_1000_TARGET_GAMES_DESCRIPTION"

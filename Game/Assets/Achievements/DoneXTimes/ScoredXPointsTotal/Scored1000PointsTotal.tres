@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_1wsbh")
 Threshold = 1000
-CompendiumName = "1000 Points"
-CompendiumDescription = "That's 10 times more than 100!"
+CompendiumName = "SCORED_1000_POINTS_TOTAL"
+CompendiumDescription = "SCORED_1000_POINTS_TOTAL_DESCRIPTION"

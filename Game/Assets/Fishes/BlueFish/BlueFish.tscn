@@ -10,8 +10,8 @@ height = 176.0
 
 [node name="BlueFish" unique_id=168232408 instance=ExtResource("1_fqoxl")]
 script = ExtResource("2_g7owi")
-CompendiumName = "Blue Fish"
-CompendiumDescription = "Almost as common as the green fish, the blue fish is found in deeper waters, try to look for it in the great blue!"
+CompendiumName = "BLUE_FISH"
+CompendiumDescription = "BLUE_FISH_DESCRIPTION"
 MinSpeed = 100.0
 MaxSpeed = 300.0
 AverageSize = 33.75

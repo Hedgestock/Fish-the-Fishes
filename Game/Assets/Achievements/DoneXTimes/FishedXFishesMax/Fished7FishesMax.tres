@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_12fb8")
 Threshold = 7
-CompendiumName = "7 at once"
-CompendiumDescription = "You got seven at once, much like some tailor."
+CompendiumName = "FISHED_7_FISHES_MAX"
+CompendiumDescription = "FISHED_7_FISHES_MAX_DESCRIPTION"

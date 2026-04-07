@@ -10,8 +10,8 @@ height = 96.0
 
 [node name="ClownFish" unique_id=1718916815 instance=ExtResource("1_sc6li")]
 script = ExtResource("2_tg0eg")
-CompendiumName = "Clown Fish"
-CompendiumDescription = "It does not sound as funny as its name lets us believe."
+CompendiumName = "CLOWN_FISH"
+CompendiumDescription = "CLOWN_FISH_DESCRIPTION"
 AverageSize = 23.75
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0" unique_id=1780839485]

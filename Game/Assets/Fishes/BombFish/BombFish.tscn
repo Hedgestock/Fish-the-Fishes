@@ -121,8 +121,8 @@ Sparks2 = NodePath("AnimatedSprite2D/Line2D/Sparks2")
 Explosion = NodePath("ExplosionSprite")
 ExplosionArea = NodePath("ExplosionArea")
 AmplitudeCurve = SubResource("Curve_118ja")
-CompendiumName = "Bomb Fish"
-CompendiumDescription = ""
+CompendiumName = "BOMB_FISH"
+CompendiumDescription = "BOMB_FISH_DESCRIPTION"
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0" unique_id=1780839485]
 position = Vector2(-69, 0)

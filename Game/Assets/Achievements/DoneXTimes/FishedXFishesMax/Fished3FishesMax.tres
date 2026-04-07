@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_e8omp")
 Threshold = 3
-CompendiumName = "3 at once"
-CompendiumDescription = "3 at once! Did you see the score multiplier?"
+CompendiumName = "FISHED_3_FISHES_MAX"
+CompendiumDescription = "FISHED_3_FISHES_MAX_DESCRIPTION"

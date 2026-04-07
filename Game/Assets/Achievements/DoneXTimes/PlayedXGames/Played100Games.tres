@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_05lhh")
 Threshold = 100
-CompendiumName = "Played 100 Games"
-CompendiumDescription = "A 100 games under your belt!"
+CompendiumName = "PLAYED_100_GAMES"
+CompendiumDescription = "PLAYED_100_GAMES_DESCRIPTION"

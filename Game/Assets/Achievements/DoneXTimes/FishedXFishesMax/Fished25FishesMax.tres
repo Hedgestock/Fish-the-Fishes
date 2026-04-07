@@ -6,5 +6,5 @@
 script = ExtResource("1_u5u4c")
 Threshold = 25
 UnlockableName = "ControlHook"
-CompendiumName = "Go big"
-CompendiumDescription = "Time to go big or go home, looks like you've unlocked a \"little\" something!"
+CompendiumName = "FISHED_25_FISHES_MAX"
+CompendiumDescription = "FISHED_25_FISHES_MAX_DESCRIPTION"

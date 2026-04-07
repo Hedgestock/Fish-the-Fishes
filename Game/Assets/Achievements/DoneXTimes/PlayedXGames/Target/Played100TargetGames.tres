@@ -6,5 +6,5 @@
 script = ExtResource("1_7pxfo")
 Threshold = 100
 Mode = 4
-CompendiumName = "I know them"
-CompendiumDescription = "Getting to know your catch!"
+CompendiumName = "PLAYED_100_TARGET_GAMES"
+CompendiumDescription = "PLAYED_100_TARGET_GAMES_DESCRIPTION"

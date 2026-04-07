@@ -10,7 +10,8 @@ height = 61.999966
 
 [node name="GoldFish" unique_id=381947265 instance=ExtResource("1_gdf01")]
 script = ExtResource("2_gdf03")
-CompendiumName = "Gold Fish"
+CompendiumName = "GOLD_FISH"
+CompendiumDescription = "GOLD_FISH_DESCRIPTION"
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0" unique_id=1780839485]
 scale = Vector2(5, 4)

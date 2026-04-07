@@ -10,7 +10,8 @@ height = 128.0
 
 [node name="SpadeFish" unique_id=713849205 instance=ExtResource("1_spf01")]
 script = ExtResource("2_spf03")
-CompendiumName = "Spade Fish"
+CompendiumName = "SPADE_FISH"
+CompendiumDescription = "SPADE_FISH_DESCRIPTION"
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0" unique_id=1780839485]
 scale = Vector2(7, 6)

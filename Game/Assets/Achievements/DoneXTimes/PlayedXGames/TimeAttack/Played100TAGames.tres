@@ -6,5 +6,5 @@
 script = ExtResource("1_b6uid")
 Threshold = 100
 Mode = 6
-CompendiumName = "Fast and..."
-CompendiumDescription = "Fan of some hedgehog?"
+CompendiumName = "PLAYED_100_TA_GAMES"
+CompendiumDescription = "PLAYED_100_TA_GAMES_DESCRIPTION"

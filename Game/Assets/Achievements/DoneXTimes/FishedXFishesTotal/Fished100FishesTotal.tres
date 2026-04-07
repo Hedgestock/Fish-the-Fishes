@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_ojtyt")
 Threshold = 100
-CompendiumName = "100 Fishes"
-CompendiumDescription = "Okay, now you get it!"
+CompendiumName = "FISHED_100_FISHES_TOTAL"
+CompendiumDescription = "FISHED_100_FISHES_TOTAL_DESCRIPTION"

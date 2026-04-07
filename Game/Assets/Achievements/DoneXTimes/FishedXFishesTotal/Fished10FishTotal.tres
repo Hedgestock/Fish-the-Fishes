@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_634ck")
 Threshold = 10
-CompendiumName = "10 already!"
-CompendiumDescription = "You're starting a new journey!"
+CompendiumName = "FISHED_10_FISH_TOTAL"
+CompendiumDescription = "FISHED_10_FISH_TOTAL_DESCRIPTION"

@@ -12,8 +12,8 @@ height = 86.0
 script = ExtResource("2_kltwx")
 shoalRadius = 40
 shoalSize = 6
-CompendiumName = "Sardine"
-CompendiumDescription = "This species usually form shoals that are a godsend for any fisherman lucky enough to cast a line there."
+CompendiumName = "SARDINE_FISH"
+CompendiumDescription = "SARDINE_FISH_DESCRIPTION"
 Value = 0.5
 AverageSize = 21.25
 

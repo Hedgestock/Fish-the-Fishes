@@ -6,5 +6,5 @@
 script = ExtResource("1_s3dm7")
 Threshold = 100
 Mode = 3
-CompendiumName = "Environmental Activist"
-CompendiumDescription = "You're commited to the cause!"
+CompendiumName = "PLAYED_100_GO_GREEN_GAMES"
+CompendiumDescription = "PLAYED_100_GO_GREEN_GAMES_DESCRIPTION"
