@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://cpc2lk8mjeebi"]
 
+[ext_resource type="Script" uid="uid://r005vtfjvur3" path="res://Game/Scenes/Credits/Credits.cs" id="1_tmwxg"]
 [ext_resource type="PackedScene" uid="uid://bubgi8mpwbbne" path="res://Game/UI/DynamicBackground/DynamicBackground.tscn" id="2_m8kky"]
 [ext_resource type="PackedScene" uid="uid://dfxhrdmj7km0i" path="res://Game/UI/BackButton/BackButton.tscn" id="3_tmwxg"]
 
 [node name="Credits" type="CanvasLayer" unique_id=1822456140]
+script = ExtResource("1_tmwxg")
 
 [node name="Background" parent="." unique_id=101631027 instance=ExtResource("2_m8kky")]
 offset_top = -360.0
@@ -32,7 +34,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=122299814]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Credits"
+text = "CREDITS"
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" unique_id=1082824319]
 layout_mode = 2
@@ -49,25 +51,7 @@ metadata/_tab_index = 0
 [node name="Credits" type="RichTextLabel" parent="VBoxContainer/MarginContainer/Panel/Credits" unique_id=1003137495]
 layout_mode = 2
 bbcode_enabled = true
-text = "[center][img]res://Game/Assets/Fishes/AnguilleFish/Animation/anguille_alive_1.png[/img]
-Developper: Hedgestock
-[img]res://Game/Assets/Fishes/GreenFish/Animation/green_alive_1.png[/img]
-Graphic Designer: Beewaffle
-[img]res://Game/Assets/Fishes/YellowFish/Animation/yellow_alive_1.png[/img]
-Sound Designer: Odun
-[img]res://Game/Assets/Fishes/BlueFish/Animation/blue_alive_1.png[/img]
-[url=https://flowerheadmusic.itch.io/somewhat-good-underwater]Music by flowerhead[/url]
-[img]res://Game/Assets/Fishes/ArrowFish/Animation/arrow_alive_1.png[/img]
-
-Game developped with the Godot game engine and using the C# programming language.
-[img=200]res://WaffleStock/TechStack/Logo_Godot.svg[/img]    [img=200]res://WaffleStock/TechStack/Logo_C_sharp.svg[/img]
-
-Copyritght © 2023
-WaffleStock
-[img=400]res://WaffleStock/Logo_WaffleStock.png[/img][img=400]res://Game/Graphics/AndroidIcon/Logo_FTF.png[/img]
-All rights reserved.
-[/center]
-"
+text = "CREDITS_MESSAGE"
 
 [node name="Patch Notes" type="MarginContainer" parent="VBoxContainer/MarginContainer/Panel" unique_id=795368437]
 visible = false
