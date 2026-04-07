@@ -23,11 +23,21 @@ namespace Hedgestock
                 if (MuteCheckBox != null)
                 {
                     MuteCheckBox.ButtonPressed = !AudioServer.IsBusMute(_bus);
-                    MuteCheckBox.Text = AudioServer.GetBusName(_bus) + " Volume";
+                    MuteCheckBox.Text = BusName(_bus);
                 }
                 if (VolumeSlider != null)
                     VolumeSlider.Value = AudioServer.GetBusVolumeLinear(_bus);
             }
+        }
+
+        private string BusName(int bus)
+        {
+            string busName = AudioServer.GetBusName(_bus);
+            var key = busName.ToUpper() + "_VOLUME";
+            var text = Tr(key);
+            GD.Print(key, text);
+            return text != key ? text : busName + " Volume";
+            // If the text and the key are identical, translation failed and we fall back.
         }
 
         public override void _ValidateProperty(Dictionary property)
@@ -54,7 +64,7 @@ namespace Hedgestock
             MuteCheckBox = new()
             {
                 ButtonPressed = !AudioServer.IsBusMute(_bus),
-                Text = AudioServer.GetBusName(_bus) + " Volume",
+                Text = BusName(_bus),
                 Flat = true,
                 Name = "MuteCheckBox",
             };

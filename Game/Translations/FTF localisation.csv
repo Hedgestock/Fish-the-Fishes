@@ -200,6 +200,11 @@ SETTINGS,Settings,MISSING_TRANSLATION
 COMPETITIVE_MODE,Competitive Mode,MISSING_TRANSLATION
 VIBRATIONS,Vibrations,MISSING_TRANSLATION
 WATER_EFFECT,Water Effect,MISSING_TRANSLATION
+MASTER_VOLUME,Master Volume,MISSING_TRANSLATION
+MUSIC_VOLUME,Music Volume,MISSING_TRANSLATION
+SFX_VOLUME,SFX Volume,MISSING_TRANSLATION
+AMBIANCE_VOLUME,Ambiance Volume,MISSING_TRANSLATION
+FISHES_VOLUME,Fishes Volume,MISSING_TRANSLATION
 RESET_DATA,Reset Data,MISSING_TRANSLATION
 WARNING,Warning!,MISSING_TRANSLATION
 WARNING_MESSAGE,"You are about to permanently delete all data concerning your statistics, achievements, compendium, and game progression. Please make sure that you understand what you are doing before proceeding forward with this action!",MISSING_TRANSLATION

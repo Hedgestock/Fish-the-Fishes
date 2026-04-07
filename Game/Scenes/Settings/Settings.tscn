@@ -44,7 +44,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=149121769]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Settings"
+text = "SETTINGS"
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" unique_id=831008345]
 layout_mode = 2
@@ -73,21 +73,21 @@ layout_mode = 2
 [node name="CompetitiveModeCheckBox" type="CheckBox" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer" unique_id=2068623128]
 layout_mode = 2
 focus_mode = 0
-text = "Competitive Mode"
+text = "COMPETITIVE_MODE"
 flat = true
 
 [node name="VibrationsCheckBox" type="CheckBox" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer" unique_id=131933066]
 layout_mode = 2
 focus_mode = 0
 button_pressed = true
-text = "Vibrations"
+text = "VIBRATIONS"
 flat = true
 
 [node name="WaterEffectCheckBox" type="CheckBox" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1816126698]
 layout_mode = 2
 focus_mode = 0
 button_pressed = true
-text = "Water Effect"
+text = "WATER_EFFECT"
 flat = true
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer" unique_id=260698263]
@@ -128,7 +128,7 @@ layout_mode = 2
 [node name="ResetButton" type="Button" parent="VBoxContainer/MarginContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer" unique_id=53579226]
 layout_mode = 2
 size_flags_horizontal = 0
-text = "Reset Data"
+text = "RESET_DATA"
 
 [node name="ResetDataPopup" type="MarginContainer" parent="." unique_id=1975918566]
 visible = false
@@ -153,7 +153,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_vkyyb")
 [node name="Label" type="Label" parent="ResetDataPopup/PanelContainer/VBoxContainer/PanelContainer" unique_id=1594145290]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.666667, 0, 0, 1)
-text = "Warning !"
+text = "WARNING"
 horizontal_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="ResetDataPopup/PanelContainer/VBoxContainer" unique_id=1793565679]
@@ -162,8 +162,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="ResetDataPopup/PanelContainer/VBoxContainer/MarginContainer" unique_id=690253125]
 layout_mode = 2
 theme_type_variation = &"DescriptionLabel"
-text = "You are about to permanently delete all data concerning your statistics, achievements,  compendium, and game progression.
-Please make sure that you understand what you are doing before proceeding forward with this action !"
+text = "WARNING_MESSAGE"
 horizontal_alignment = 1
 autowrap_mode = 3
 
@@ -176,11 +175,11 @@ alignment = 1
 
 [node name="CancelButton" type="Button" parent="ResetDataPopup/PanelContainer/VBoxContainer/MarginContainer2/HBoxContainer" unique_id=191978181]
 layout_mode = 2
-text = "Cancel"
+text = "CANCEL"
 
 [node name="ProceedButton" type="Button" parent="ResetDataPopup/PanelContainer/VBoxContainer/MarginContainer2/HBoxContainer" unique_id=1650234739]
 layout_mode = 2
-text = "Proceed"
+text = "PROCEED"
 
 [connection signal="pressed" from="VBoxContainer/Control/MarginContainer/BackButton" to="." method="SaveSettings"]
 [connection signal="pressed" from="VBoxContainer/Control/MarginContainer/BackButton" to="VBoxContainer/Control/MarginContainer/BackButton" method="GoToHome" flags=3]
