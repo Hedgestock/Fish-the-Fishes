@@ -15,7 +15,7 @@ public partial class AchievementCompendiumEntry : CompendiumEntry
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        NumberSeen.Text = "???";
+        Seen.Text = Tr("DATE").Replace("{date}", "???");
 
         Instance = GD.Load<Achievement>(EntryKey);
 
@@ -34,6 +34,6 @@ public partial class AchievementCompendiumEntry : CompendiumEntry
         //Icon.Texture = (Instance as Achievement).Background;
         CompendiumDescription.Text = Instance.CompendiumDescription;
 
-        NumberSeen.Text = UserData.Achievements.GetValueOrDefault(EntryKey).ToString();
+        Seen.Text = Tr("DATE").Replace("{date}", UserData.Achievements.GetValueOrDefault(EntryKey).ToString());
     }
 }

@@ -8,17 +8,18 @@
 [sub_resource type="CanvasTexture" id="CanvasTexture_jfg4q"]
 
 [node name="PanelContainer" unique_id=1415316698 node_paths=PackedStringArray("ProgressBar") instance=ExtResource("1_bu23o")]
+offset_bottom = 396.0
 script = ExtResource("2_3v10s")
 ProgressBar = NodePath("MarginContainer/HBoxContainer/Graphic/ProgressBar")
 
-[node name="Seen" parent="MarginContainer/HBoxContainer/VBoxContainer/Stats" index="0"]
-text = "Date: "
+[node name="Seen" parent="MarginContainer/HBoxContainer/VBoxContainer/Stats" parent_id_path=PackedInt32Array(1817009) index="0" unique_id=262280003]
+text = "DATE"
 
-[node name="NumberOfTimesSeen" parent="MarginContainer/HBoxContainer/VBoxContainer/Stats" index="1"]
+[node name="NumberOfTimesSeen" parent="MarginContainer/HBoxContainer/VBoxContainer/Stats" parent_id_path=PackedInt32Array(1817009) index="1" unique_id=2127942199]
 text = "
 "
 
-[node name="Graphic" parent="MarginContainer/HBoxContainer" index="1"]
+[node name="Graphic" parent="MarginContainer/HBoxContainer" parent_id_path=PackedInt32Array(1530732885) index="1" unique_id=2042348686]
 size_flags_horizontal = 1
 
 [node name="ProgressBar" type="TextureProgressBar" parent="MarginContainer/HBoxContainer/Graphic" index="0" unique_id=354527155]

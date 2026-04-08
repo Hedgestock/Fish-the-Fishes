@@ -11,7 +11,7 @@ public partial class CompendiumEntry : PanelContainer
     [Export]
     protected Label CompendiumDescription;
     [Export]
-    protected Label NumberSeen;
+    protected Label Seen;
 
     public Compendium.EntryType EntryType;
 
@@ -47,6 +47,6 @@ public partial class CompendiumEntry : PanelContainer
         if (Entry == null) return;
 
         CompendiumName.Text = Instance.CompendiumName;
-        NumberSeen.Text = Entry.Seen.ToString();
+        Seen.Text = Tr("SEEN").Replace("0", Entry.Seen.ToString());
     }
 }

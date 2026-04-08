@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bfdtmvs1uhtnl" path="res://Game/Scenes/Compendium/UI/CompendiumEntry.cs" id="2_hdjfk"]
 
-[node name="PanelContainer" type="PanelContainer" unique_id=1664247406 node_paths=PackedStringArray("CompendiumName", "CompendiumDescription", "NumberSeen")]
+[node name="PanelContainer" type="PanelContainer" unique_id=1664247406 node_paths=PackedStringArray("CompendiumName", "CompendiumDescription", "Seen")]
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 324.0
@@ -12,7 +12,7 @@ mouse_filter = 1
 script = ExtResource("2_hdjfk")
 CompendiumName = NodePath("MarginContainer/HBoxContainer/VBoxContainer/CompendiumName")
 CompendiumDescription = NodePath("MarginContainer/HBoxContainer/VBoxContainer/CompendiumDescription")
-NumberSeen = NodePath("MarginContainer/HBoxContainer/VBoxContainer/Stats/NumberOfTimesSeen")
+Seen = NodePath("MarginContainer/HBoxContainer/VBoxContainer/Stats/Seen")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=294656089]
 layout_mode = 2
@@ -37,18 +37,13 @@ autowrap_mode = 3
 
 [node name="Stats" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1817009]
 layout_mode = 2
+theme_override_constants/separation = 20
 
 [node name="Seen" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Stats" unique_id=262280003]
 layout_mode = 2
 size_flags_vertical = 8
 theme_type_variation = &"DescriptionLabel"
-text = "Seen: "
-
-[node name="NumberOfTimesSeen" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Stats" unique_id=2127942199]
-layout_mode = 2
-size_flags_vertical = 8
-theme_type_variation = &"DescriptionLabel"
-text = "0"
+text = "SEEN"
 
 [node name="Graphic" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=2042348686]
 layout_mode = 2

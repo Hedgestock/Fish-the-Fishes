@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace WaffleStock
 {
@@ -17,6 +18,9 @@ namespace WaffleStock
         public static string TotalGamesPlayed = nameof(TotalGamesPlayed);
         public static string LongestSession = nameof(LongestSession);
         public static string TotalTimePlayed = nameof(TotalTimePlayed);
+
+        public static string ToScreamingSnakeCase(string pascalCase)
+            => Regex.Replace(pascalCase, "(?<!^)([A-Z])", "_$1").ToUpper();
 
         public static string AchievementsFolder = "res://Game/Assets/Achievements/";
 

@@ -13,7 +13,7 @@ public abstract partial class SpawnLine<ItemType> : HBoxContainer
         set
         {
             _item = value;
-            CheckBox.Text = System.Text.RegularExpressions.Regex.Replace(value.Item.ToString(), "(?<!^)([A-Z])", "_$1").ToUpper();
+            CheckBox.Text = Constants.ToScreamingSnakeCase(value.Item.ToString());
         }
     }
 

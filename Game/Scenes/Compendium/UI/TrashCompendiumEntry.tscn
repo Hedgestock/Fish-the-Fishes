@@ -3,31 +3,19 @@
 [ext_resource type="PackedScene" uid="uid://bjjph3hx7hdwx" path="res://Game/Scenes/Compendium/UI/AnimatedCompendiumEntry.tscn" id="1_hm5on"]
 [ext_resource type="Script" uid="uid://darynntdwqxy3" path="res://Game/Scenes/Compendium/UI/TrashCompendiumEntry.cs" id="2_ssflb"]
 
-[node name="PanelContainer" unique_id=1138789698 node_paths=PackedStringArray("NumberCleaned", "NumberHit") instance=ExtResource("1_hm5on")]
+[node name="PanelContainer" unique_id=1138789698 node_paths=PackedStringArray("Hit", "Cleaned") instance=ExtResource("1_hm5on")]
 script = ExtResource("2_ssflb")
-NumberCleaned = NodePath("MarginContainer/HBoxContainer/VBoxContainer/Stats/NumberOfTimesCleaned")
-NumberHit = NodePath("MarginContainer/HBoxContainer/VBoxContainer/Stats/NumberOfTimesHit")
+Hit = NodePath("MarginContainer/HBoxContainer/VBoxContainer/Stats/Hit")
+Cleaned = NodePath("MarginContainer/HBoxContainer/VBoxContainer/Stats/Cleaned")
 
-[node name="Hit" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Stats" parent_id_path=PackedInt32Array(1817009) index="2" unique_id=1176263698]
+[node name="Hit" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Stats" parent_id_path=PackedInt32Array(1817009) index="1" unique_id=1176263698]
 layout_mode = 2
 size_flags_vertical = 8
 theme_type_variation = &"DescriptionLabel"
-text = " Hit: "
+text = "HIT"
 
-[node name="NumberOfTimesHit" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Stats" parent_id_path=PackedInt32Array(1817009) index="3" unique_id=801118769]
+[node name="Cleaned" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Stats" parent_id_path=PackedInt32Array(1817009) index="2" unique_id=186904641]
 layout_mode = 2
 size_flags_vertical = 8
 theme_type_variation = &"DescriptionLabel"
-text = "0"
-
-[node name="Cleaned" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Stats" parent_id_path=PackedInt32Array(1817009) index="4" unique_id=186904641]
-layout_mode = 2
-size_flags_vertical = 8
-theme_type_variation = &"DescriptionLabel"
-text = " Cleaned: "
-
-[node name="NumberOfTimesCleaned" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Stats" parent_id_path=PackedInt32Array(1817009) index="5" unique_id=2122795650]
-layout_mode = 2
-size_flags_vertical = 8
-theme_type_variation = &"DescriptionLabel"
-text = "0"
+text = "CLEANED"

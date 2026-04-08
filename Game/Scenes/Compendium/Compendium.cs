@@ -29,7 +29,7 @@ public partial class Compendium : CanvasLayer
     [Export]
     OptionButton TabButton;
     [Export]
-    TabContainer TabContainer;
+    TabContainer Tabs;
 
     [Export]
     OptionButton FilterButton;
@@ -45,6 +45,11 @@ public partial class Compendium : CanvasLayer
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
+        Tabs.SetTabTitle(0, Tr("FISHES"));
+        Tabs.SetTabTitle(1, Tr("TRASHES"));
+        Tabs.SetTabTitle(2, Tr("BIOMES"));
+        Tabs.SetTabTitle(3, Tr("ACHIEVEMENTS"));
+
         PopulateFishCompendium();
         PopulateTrashCompendium();
         PopulateBiomeCompendium();
@@ -53,15 +58,15 @@ public partial class Compendium : CanvasLayer
         // TODO: Actually look at the tabs
         foreach (EntryType entryType in Enum.GetValues<EntryType>())
         {
-            TabButton.AddItem(entryType.ToString(), (int)entryType);
+            TabButton.AddItem(ToScreamingSnakeCase(entryType.ToString()), (int)entryType);
         }
 
         Biomes[] biomes = Enum.GetValues<Biomes>();
         foreach (Biomes biome in biomes)
         {
-            FilterButton.AddItem(biome.ToString(), (int)biome);
+            FilterButton.AddItem(ToScreamingSnakeCase(biome.ToString()), (int)biome);
         }
-        FilterButton.AddItem("No filter", biomes.Length);
+        FilterButton.AddItem("NO_FILTER", biomes.Length);
         FilterButton.Selected = biomes.Length;
     }
 
@@ -160,7 +165,7 @@ public partial class Compendium : CanvasLayer
 
     private void ChangeTab(int tabIndex)
     {
-        TabContainer.CurrentTab = tabIndex;
+        Tabs.CurrentTab = tabIndex;
         FilterButton.Visible = tabIndex <= (int)EntryType.Trash;
     }
 

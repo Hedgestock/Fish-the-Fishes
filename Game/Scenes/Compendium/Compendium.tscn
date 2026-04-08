@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bubgi8mpwbbne" path="res://Game/UI/DynamicBackground/DynamicBackground.tscn" id="6_jltip"]
 [ext_resource type="PackedScene" uid="uid://dfxhrdmj7km0i" path="res://Game/UI/BackButton/BackButton.tscn" id="7_unkw3"]
 
-[node name="Compendium" type="CanvasLayer" unique_id=147769311 node_paths=PackedStringArray("Fishes", "Trashes", "Biomes", "Achievements", "TabButton", "TabContainer", "FilterButton")]
+[node name="Compendium" type="CanvasLayer" unique_id=147769311 node_paths=PackedStringArray("Fishes", "Trashes", "Biomes", "Achievements", "TabButton", "Tabs", "FilterButton")]
 script = ExtResource("1_lwdf7")
 Fishes = NodePath("VBoxContainer/MarginContainer/VBoxContainer/TabContainer/Fishes/MarginContainer/FishCompendiumEntriesContainer")
 FishEntry = ExtResource("2_8qvf3")
@@ -20,7 +20,7 @@ BiomeEntry = ExtResource("4_c2qa6")
 Achievements = NodePath("VBoxContainer/MarginContainer/VBoxContainer/TabContainer/Achievements/MarginContainer/AchievementsCompendiumEntriesContainer")
 AchievementEntry = ExtResource("5_1s78k")
 TabButton = NodePath("VBoxContainer/MarginContainer/VBoxContainer/HFlowContainer/TabButton")
-TabContainer = NodePath("VBoxContainer/MarginContainer/VBoxContainer/TabContainer")
+Tabs = NodePath("VBoxContainer/MarginContainer/VBoxContainer/TabContainer")
 FilterButton = NodePath("VBoxContainer/MarginContainer/VBoxContainer/HFlowContainer/FilterButton")
 
 [node name="Background" parent="." unique_id=588928907 instance=ExtResource("6_jltip")]
@@ -52,7 +52,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("3_y1rnp")
-text = "Compendium"
+text = "COMPENDIUM"
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" unique_id=907914687]
 layout_mode = 2

@@ -30,6 +30,7 @@
 - [ ] Ajouter un jingle pour les meilleurs scores
 - [ ] Ajouter un tutoriel
 - [ ] Ajouter de la physique aux boutons du menu principal
+- [ ] Ajouter un mode pieds/pouces à la place de centimètres
 
 # Poissons
 
@@ -60,6 +61,12 @@
 - [x] Baleine
 - [x] Kraken
 - [x] Baudroie
+- [x] Poisson cœur
+- [x] Poisson pique
+- [x] Poisson carreau
+- [x] Poisson trèfle
+- [x] Poisson rouge
+- [x] Poisson coffre
 
 # Objets pêchables
 

@@ -6,7 +6,7 @@ public partial class FishCompendiumEntry : AnimatedCompendiumEntry
 {
 
     [Export]
-    private Label NumberFished;
+    private Label Fished;
     [Export]
     private Label MaxSize;
     [Export]
@@ -19,7 +19,7 @@ public partial class FishCompendiumEntry : AnimatedCompendiumEntry
 
         if (Entry == null) return;
 
-        NumberFished.Text = (Entry as UserData.FishCompendiumEntry).Caught.ToString();
+        Fished.Text = Tr("FISHED").Replace("0", (Entry as UserData.FishCompendiumEntry).Caught.ToString());
 
         if (UserData.FishCompendium[EntryKey].Caught > 0)
         {
