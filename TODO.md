@@ -246,6 +246,7 @@
 - [ ] Mettre un point de deboggage sur `GetCaughtBy()` semble s'activer à chaque frame pour la ligne, mais pas les espadons
 - [ ] Corriger la fonction d'oscillation des tentacules du kraken
 - [ ] Optimiser les appels aux fonctions de transformation en chaine de caractères
+- [ ] Corriger les oursins qui font une boucle infinie avec les boutons du menu
 
 # Regression
 

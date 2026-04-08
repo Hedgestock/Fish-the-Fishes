@@ -1,5 +1,5 @@
 key,en,fr
-FISHES,,
+FISHES,Fishes,MISSING_TRANSLATION
 ANGUILLE_FISH,Eel,MISSING_TRANSLATION
 ANGUILLE_FISH_DESCRIPTION,This slippery fish loves lurking under rocks and mostly inhabits dark biomes.,MISSING_TRANSLATION
 ARROW_FISH,Arrow Fish,MISSING_TRANSLATION
@@ -56,14 +56,14 @@ SWORD_FISH,Swordfish,MISSING_TRANSLATION
 SWORD_FISH_DESCRIPTION,Moving at speeds that few other fishes can match this fast swimmer uses its bill to skewer its prey before they can even react.,MISSING_TRANSLATION
 YELLOW_FISH,Yellow Fish,MISSING_TRANSLATION
 YELLOW_FISH_DESCRIPTION,"The Yellow Fish is often found in the same environment as the Green Fish and share a lot of similarities with it, although it is on average noticeably smaller.",MISSING_TRANSLATION
-TRASHES,,
+TRASHES,Trashes,MISSING_TRANSLATION
 CAN,Can,MISSING_TRANSLATION
 CAN_DESCRIPTION,Please do not throw that in the water...,MISSING_TRANSLATION
 SHOE,Shoe,MISSING_TRANSLATION
 SHOE_DESCRIPTION,Just how do you lose your shoe here?!,MISSING_TRANSLATION
 TIRE,Tire,MISSING_TRANSLATION
 TIRE_DESCRIPTION,Someone must have had an accident!,MISSING_TRANSLATION
-BIOMES,,
+BIOMES,Biomes,MISSING_TRANSLATION
 ABYSS,Abyss,MISSING_TRANSLATION
 ABYSS_DESCRIPTION,Those are the abysses,MISSING_TRANSLATION
 BEACH,Beach,MISSING_TRANSLATION
@@ -84,7 +84,7 @@ WRECK_DECK,Wreck Deck,MISSING_TRANSLATION
 WRECK_DECK_DESCRIPTION,"The deck of a sunken ship, now overgrown by marine life.",MISSING_TRANSLATION
 WRECK_INSIDE,Wreck Inside,MISSING_TRANSLATION
 WRECK_INSIDE_DESCRIPTION,"The interior of this ship emulates almost perfectly a coral reef environment, although the lack of luminosity is better suited for species more adapted to the dark.",MISSING_TRANSLATION
-ACHIEVEMENTS,,
+ACHIEVEMENTS,Achievements,MISSING_TRANSLATION
 FISHED_3_FISHES_MAX,3 at once,MISSING_TRANSLATION
 FISHED_3_FISHES_MAX_DESCRIPTION,3 at once! Did you see the score multiplier?,MISSING_TRANSLATION
 FISHED_7_FISHES_MAX,7 at once,MISSING_TRANSLATION
@@ -214,8 +214,10 @@ PLAY_TRAINING,Training,MISSING_TRANSLATION
 BIOME_SETTINGS,Biome Settings,MISSING_TRANSLATION
 VISIBLE_COLLISIONS,Visible Collisions,MISSING_TRANSLATION
 DRAG_TO_SPAWN,Drag To Spawn,MISSING_TRANSLATION
-ALL,All,MISSING_TRANSLATION
-NONE,None,MISSING_TRANSLATION
+ALL_FISHES,All,MISSING_TRANSLATION
+NO_FISHES,None,MISSING_TRANSLATION
+ALL_TRASHES,All,MISSING_TRANSLATION
+NO_TRASHES,None,MISSING_TRANSLATION
 CREDITS,Credits,MISSING_TRANSLATION
 PATCH_NOTES,Patch Notes,MISSING_TRANSLATION
 CREDITS_MESSAGE,"[center][img]res://Game/Assets/Fishes/AnguilleFish/Animation/anguille_alive_1.png[/img]

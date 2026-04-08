@@ -12,14 +12,19 @@ public partial class TrainingUI : FoldableContainer
     PackedScene SpawnLineTrashScene;
 
     [Export]
+    TabContainer Tabs;
+    [Export]
     Container FishesSettings;
-
     [Export]
     Container TrashesSettings;
 
     public override void _Ready()
     {
         base._Ready();
+
+        Tabs.SetTabTitle(0, Tr("GENERAL"));
+        Tabs.SetTabTitle(1, Tr("FISHES"));
+        Tabs.SetTabTitle(2, Tr("TRASHES"));
 
         GameManager.Biome.Fishes = new(Enum.GetValues<Constants.Fishes>().Select(fish => new WeightedFish { Item = fish }));
         GameManager.Biome.Trashes = new(Enum.GetValues<Constants.Trashes>().Select(trash => new WeightedTrash { Item = trash }));

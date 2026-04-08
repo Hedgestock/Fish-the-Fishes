@@ -10,7 +10,6 @@ public partial class Training : CanvasLayer
     public override void _Ready()
     {
         base._Ready();
-
         SetRendering = Callable.From<Node>((node) => FindAndSetRendering(node, true));
     }
 

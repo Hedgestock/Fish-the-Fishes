@@ -27,19 +27,20 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="FoldableContainer" type="FoldableContainer" parent="MarginContainer" unique_id=1300945505 node_paths=PackedStringArray("FishesSettings", "TrashesSettings")]
+[node name="FoldableContainer" type="FoldableContainer" parent="MarginContainer" unique_id=1300945505 node_paths=PackedStringArray("Tabs", "FishesSettings", "TrashesSettings")]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 focus_mode = 0
 mouse_default_cursor_shape = 2
 folded = true
-title = "Biome Settings"
+title = "BIOME_SETTINGS"
 title_alignment = 2
 title_position = 1
 script = ExtResource("3_w5y2v")
 SpawnLineFishScene = ExtResource("5_pesve")
 SpawnLineTrashScene = ExtResource("6_bptrk")
+Tabs = NodePath("TabContainer")
 FishesSettings = NodePath("TabContainer/Fishes/Fishes/ScrollContainer/FishesSettings")
 TrashesSettings = NodePath("TabContainer/Trashes/Trashes/ScrollContainer/TrashesSettings")
 
@@ -58,12 +59,12 @@ layout_mode = 2
 
 [node name="VisibleCollisions" type="CheckBox" parent="MarginContainer/FoldableContainer/TabContainer/General/General" unique_id=875462100]
 layout_mode = 2
-text = "Visible Collisions"
+text = "VISIBLE_COLLISIONS"
 flat = true
 
 [node name="DragToSpawn" type="CheckBox" parent="MarginContainer/FoldableContainer/TabContainer/General/General" unique_id=227237516]
 layout_mode = 2
-text = "Drag To Spawn"
+text = "DRAG_TO_SPAWN"
 flat = true
 
 [node name="LoadedFish" type="OptionButton" parent="MarginContainer/FoldableContainer/TabContainer/General/General" unique_id=952357800]
@@ -84,12 +85,12 @@ layout_mode = 2
 [node name="AllFishes" type="Button" parent="MarginContainer/FoldableContainer/TabContainer/Fishes/Fishes/HBoxContainer" unique_id=1540345091]
 layout_mode = 2
 focus_mode = 0
-text = "All"
+text = "ALL_FISHES"
 
 [node name="NoFishes" type="Button" parent="MarginContainer/FoldableContainer/TabContainer/Fishes/Fishes/HBoxContainer" unique_id=2055445273]
 layout_mode = 2
 focus_mode = 0
-text = "None"
+text = "NO_FISHES"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/FoldableContainer/TabContainer/Fishes/Fishes" unique_id=1481718008]
 layout_mode = 2
@@ -130,12 +131,12 @@ layout_mode = 2
 [node name="AllTrashes" type="Button" parent="MarginContainer/FoldableContainer/TabContainer/Trashes/Trashes/HBoxContainer" unique_id=952831630]
 layout_mode = 2
 focus_mode = 0
-text = "All"
+text = "ALL_TRASHES"
 
 [node name="NoTrashes" type="Button" parent="MarginContainer/FoldableContainer/TabContainer/Trashes/Trashes/HBoxContainer" unique_id=1471411348]
 layout_mode = 2
 focus_mode = 0
-text = "None"
+text = "NO_TRASHES"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/FoldableContainer/TabContainer/Trashes/Trashes" unique_id=599438595]
 layout_mode = 2
