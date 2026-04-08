@@ -32,7 +32,7 @@ public partial class Home : CanvasLayer
             ContinueButton.Show();
 
         if (SceneManager.PrevScene == "uid://0sb3i5bm7j4p")
-            Message.Text = "Last Score:\n" + GameManager.Score.ToString();
+            Message.Text = Tr("LAST_SCORE").Replace("{score}", GameManager.Score.ToString());
 
     }
 
