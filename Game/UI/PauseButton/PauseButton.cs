@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using static Game;
+using static SceneManager;
 
 public partial class PauseButton : TextureButton
 {
@@ -14,6 +15,6 @@ public partial class PauseButton : TextureButton
         GetTree().Paused = false;
         if (GameManager.Mode > Mode.Training)
             SaveManager.SaveGame();
-        SceneManager.ChangeSceneToFile("uid://blkg0i7vjb6il");
+        ChangeSceneToFile(HomeUID);
     }
 }

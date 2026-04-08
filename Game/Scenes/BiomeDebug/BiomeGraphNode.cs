@@ -1,8 +1,7 @@
 using Godot;
 using WaffleStock;
-using System;
 using System.Linq;
-using System.Xml.Linq;
+using static SceneManager;
 
 public partial class BiomeGraphNode : GraphNode
 {
@@ -93,6 +92,6 @@ public partial class BiomeGraphNode : GraphNode
     private void LaunchAquarium()
     {
         GameManager.Biome = Biome;
-        SceneManager.ChangeSceneToFile("res://Game/Scenes/Aquarium/Aquarium.tscn");
+        ChangeSceneToFile(AquariumUID);
     }
 }

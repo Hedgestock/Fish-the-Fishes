@@ -1,4 +1,5 @@
 using Godot;
+using static SceneManager;
 
 public partial class BiomeCompendiumEntry : CompendiumEntry
 {
@@ -36,6 +37,6 @@ public partial class BiomeCompendiumEntry : CompendiumEntry
     private void LaunchAquarium()
     {
         GameManager.Biome = Instance as Biome;
-        SceneManager.ChangeSceneToFile("uid://bn4j1dckgh88u");
+        ChangeSceneToFile(AquariumUID);
     }
 }

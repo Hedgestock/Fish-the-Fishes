@@ -1,12 +1,13 @@
 using Godot;
 using System;
+using static SceneManager;
 
 [GlobalClass]
 public partial class BackButton : TextureButton
 {
     private void GoToHome()
     {
-        SceneManager.ChangeSceneToFile("uid://blkg0i7vjb6il");
+        ChangeSceneToFile(HomeUID);
     }
 
     private void GoBack()

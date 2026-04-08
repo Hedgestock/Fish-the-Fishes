@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using WaffleStock;
+using static SceneManager;
 
 public partial class Home : CanvasLayer
 {
@@ -59,7 +60,7 @@ public partial class Home : CanvasLayer
         GameManager.Lives = 3;
         GameManager.StartTime = DateTime.Now;
 
-        SceneManager.ChangeSceneToFile("uid://0sb3i5bm7j4p");
+        ChangeSceneToFile(GameUID);
     }
 
     void Continue()
@@ -72,7 +73,7 @@ public partial class Home : CanvasLayer
         GameManager.CalculatedBiomeThreshold = (int)GameManager.GameSave?.CalculatedBiomeThreshold;
         GameManager.StartTime = (DateTime)(DateTime.Now - GameManager.GameSave?.TimePlayed);
 
-        SceneManager.ChangeSceneToFile("uid://0sb3i5bm7j4p");
+        ChangeSceneToFile(GameUID);
     }
 
     void PlayClassic()
@@ -103,41 +104,41 @@ public partial class Home : CanvasLayer
         GameManager.Lives = 3;
         GameManager.StartTime = DateTime.Now;
 
-        SceneManager.ChangeSceneToFile("uid://ereddneqlo34");
+        ChangeSceneToFile(TrainingUID);
     }
 
     void GoToDebug()
     {
-        SceneManager.ChangeSceneToFile("uid://bv5ebnrlqpwku");
+        ChangeSceneToFile(BiomeDebugUID);
     }
 
     void GoToCompendium()
     {
-        SceneManager.ChangeSceneToFile("uid://b0nv1b3x0suu5");
+        ChangeSceneToFile(CompendiumUID);
     }
 
     void GoToStats()
     {
-        SceneManager.ChangeSceneToFile("uid://r1tsllld4k82");
+        ChangeSceneToFile(StatsUID);
     }
 
     void GoToEquipment()
     {
-        SceneManager.ChangeSceneToFile("uid://jdvp2d8dcy53");
+        ChangeSceneToFile(EquipmentUID);
     }
 
     void GoToSettings()
     {
-        SceneManager.ChangeSceneToFile("uid://dwv4cu7q6wlf6");
+        ChangeSceneToFile(SettingsUID);
     }
 
     void GoToTutorial()
     {
-        SceneManager.ChangeSceneToFile("res://Game/Scenes/Tutorial/Tutorial.tscn");
+        ChangeSceneToFile(TutorialUID);
     }
 
     void GoToCredits()
     {
-        SceneManager.ChangeSceneToFile("uid://cpc2lk8mjeebi");
+        ChangeSceneToFile(CreditsUID);
     }
 }

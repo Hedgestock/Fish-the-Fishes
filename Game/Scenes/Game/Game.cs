@@ -1,6 +1,7 @@
 using Godot;
 using WaffleStock;
 using System;
+using static SceneManager;
 
 
 public partial class Game : CanvasLayer
@@ -51,7 +52,7 @@ public partial class Game : CanvasLayer
         }
 
         GameManager.Mode = Mode.Menu;
-        SceneManager.ChangeSceneToFile("uid://blkg0i7vjb6il");
+        ChangeSceneToFile(HomeUID);
     }
 
     private void SpawnFish()
